@@ -1,8 +1,8 @@
 Source: xorg
 Section: x11
 Priority: optional
-Maintainer: Ubuntu X Maintainers <ubuntu-devel@lists.ubuntu.com>
-Uploaders: Daniel Stone <daniel.stone@ubuntu.com>, Fabio M. Di Nitto <fabbione@ubuntu.com>
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>
 Standards-Version: 3.6.1
 Build-Depends: dpkg (>= 1.7.0), po-debconf, debhelper (>= 4.1.16)
 
@@ -63,33 +63,3 @@ Description: X Window System core components
  It should be noted that a package providing x-window-manager and a package
  providing x-terminal-emulator should also be installed to ensure a
  comfortable X experience.
-
-Package: xlibs-dev
-Section: oldlibs
-Priority: extra
-Depends: libice-dev, libsm-dev, libx11-dev, libxext-dev, libxi-dev, libxmu-dev, libxmuu-dev, libxpm-dev, libxrandr-dev, libxt-dev, libxtrap-dev, libxtst-dev, libxv-dev, x-dev, zlib1g-dev
-Architecture: all
-Description: X Window System client library development files transitional package
- This package smooths upgrades from Debian 3.0 by depending on libice-dev,
- libsm-dev, libx11-dev, libxext-dev, libxi-dev, libxmu-dev, libxmuu-dev,
- libxpm-dev, libxrandr-dev, libxt-dev, libxtrap-dev, libxtst-dev, libxv-dev,
- x-dev, and xlibs-static-dev.  This transitional package is only depended upon
- by packages that haven't yet corrected their dependencies to reflect the new
- library arrangement.
-
-Package: xbase-clients
-Architecture: all
-Depends: xauth, xdpyinfo, xhost, xinit, xkbutils, xpmutils, xprop, xrandr, xrdb, xsetmode, xsetpointer, xvinfo, mesa-utils, xset, xmodmap, xdriinfo, appres, beforelight, bitmap, editres, fstobdf, iceauth, ico, listres, oclock, smproxy, viewres, x11perf, xauth, xbiff, xcalc, xclipboard, xclock, xconsole, xcursorgen, xditview, xdpyinfo, xev, xeyes, xf86dga, xfd, xfontsel, xgamma, xgc, xhost, xinit, xkbutils, xkill, xload, xlogo, xlsatoms, xlsclients, xlsfonts, xmag, xman, xmessage, xmodmap, xmore, xprop, xrandr, xrgb, xrefresh, xset, xsetmode, xsetpointer, xsetroot, xsm, xstdcmap, xtrap, xvidtune, xvinfo, xwd, xwininfo, xwud, xutils
-Description: X Window System client utility transitional package
- This package smooths upgrades from Ubuntu 5.04 ('Hoary') to Ubuntu 5.10
- ('Breezy') by ensuring that most base X client utilities are installed.
- If you are running Breezy already, you may safely remove this package.
-
-Package: xutils
-Architecture: all
-Depends: imake, xcursorgen, sessreg, xfonts-utils, xmkmf
-Description: X Window System miscellaneous utility transitional package
- This package smooths upgrades from Ubuntu 5.04 ('Hoary') to Ubuntu 5.10
- ('Breezy') by ensuring that most miscellaneous utilities traditionally
- shipped with the sample implementation of X are installed.  For base X
- clients, see the xbase-clients transitional package.
