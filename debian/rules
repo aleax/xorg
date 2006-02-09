@@ -107,8 +107,8 @@ binary-arch: build install
 	dh_fixperms
 	dh_installdeb
 	dh_shlibdeps
-	dh_gencontrol -- -VF:XServer-Xorg-Driver-Depends=$(XSERVER_XORG_DRIVER_DEPENDS) \
-	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS) \
+	dh_gencontrol -- -VF:XServer-Xorg-Driver-Depends=$(XORG_VIDEO_DRIVER_DEPENDS) \
+	                 -VF:XServer-Xorg-Input-Depends=$(XORG_INPUT_DRIVER_DEPENDS) \
 	                 -VServer-ABI-Version=$(SERVERABIBUMP)
 	dh_md5sums
 	dh_builddeb
