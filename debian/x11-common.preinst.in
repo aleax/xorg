@@ -1,0 +1,105 @@
+#!/bin/sh
+# Debian x11-common package pre-installation script
+# Copyright 1998--2001, 2003 Branden Robinson.
+# Licensed under the GNU General Public License, version 2.  See the file
+# /usr/share/common-licenses/GPL or <http://www.gnu.org/copyleft/gpl.txt>.
+# Acknowlegements to Stephen Early, Mark Eichin, and Manoj Srivastava.
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+THIS_PACKAGE=x11-common
+THIS_SCRIPT=preinst
+CONFIG_DIR=/etc/X11
+XWRAPPER_CONFIG="$CONFIG_DIR/Xwrapper.config"
+CONFIG_AUX_DIR=/var/lib/x11
+XWRAPPER_CONFIG_ROSTER_BASE="${XWRAPPER_CONFIG##*/}.roster"
+XWRAPPER_CONFIG_ROSTER="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_ROSTER_BASE"
+XWRAPPER_CONFIG_CHECKSUM_BASE="${XWRAPPER_CONFIG##*/}.md5sum"
+XWRAPPER_CONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_CHECKSUM_BASE"
+
+#INCLUDE_SHELL_LIB#
+
+if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
+  # create the configuration files' main and auxiliary directories if they
+  # don't exist
+  for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
+    if ! [ -e "$DIR" ]; then
+      observe "creating $DIR"
+      mkdir --mode=755 --parents "$DIR"
+    fi
+  done
+
+  # symlink -> dir transition
+  for i in include share lib; do
+    if [ -L "/usr/${i}/X11" ]; then
+      rm /usr/${i}/X11
+    fi
+  done
+
+  # migration hilarity
+  if [ -n "$FIRSTINST" ]; then
+    for i in allowed_users actual_allowed_users nice_value; do
+      _TEMPLATE=xwrapper/$i
+      db_fget x11-common/$_TEMPLATE seen
+      if [ "$RET" = "false" ]; then
+        if db_fget xserver-common/$_TEMPLATE seen && [ "$RET" = "true" ]; then
+          if db_get xserver-common/$_TEMPLATE; then
+            _VALUE="$RET"
+            observe "migrating debconf question $_TEMPLATE from xserver-common"
+            db_set x11-common/$_TEMPLATE $_VALUE
+          fi
+        fi
+      fi
+    done
+
+    if [ -e "/var/lib/xfree86" ]; then
+      if [ -e "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE" ] && \
+         [ -e "/var/lib/xfree86/$XWRAPPER_CONFIG_CHECKSUM_BASE" ]; then
+        if fgrep -qx "xserver-common" \
+           "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE"; then
+          # construct temporary roster file with our package name removed, ignoring
+          # failure
+          fgrep -vx "xserver-common" \
+            "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE" > \
+            "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
+            || true
+
+          # is there anything left?
+          if [ -s "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp" ]; then
+            # yes, replace the roster file
+            mv "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp" \
+               "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE"
+          else
+            # no; remove both the original and our temporary copy
+            rm -f "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE" \
+                  "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp"
+
+            # migrate the checksum if it doesn't exist
+            if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ]; then
+              rm "/var/lib/xfree86/$XWRAPPER_CONFIG_CHECKSUM_BASE"
+            else
+              mv "/var/lib/xfree86/$XWRAPPER_CONFIG_CHECKSUM_BASE" \
+                 "$XWRAPPER_CONFIG_CHECKSUM"
+            fi
+          fi
+        fi
+      fi
+
+      rmdir /var/lib/xfree86 2>/dev/null || true
+    fi
+
+    # place config files under management if they do *not* already exist
+    if ! [ -e "$XWRAPPER_CONFIG" ]; then
+      touch "$XWRAPPER_CONFIG"
+      md5sum "$XWRAPPER_CONFIG" > "$XWRAPPER_CONFIG_CHECKSUM"
+    fi
+  fi
+fi
+
+#DEBHELPER#
+
+exit 0
+
+# vim:set ai et sts=2 sw=2 tw=0:

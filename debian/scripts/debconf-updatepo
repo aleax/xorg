@@ -1,0 +1,197 @@
+#!/bin/sh
+
+# This is a replacement for the real debconf-updatepo, which unfortunately
+# mangles our debian/po/templates.pot file beyond recognition.
+
+#  Copyright (C) 2002-2004  Denis Barbier <barbier@debian.org>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or (at
+#  your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful, but
+#  WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#  General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the
+#  Free Software Foundation, Inc.,
+#  59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+# Branden Robinson, 2004-11-11
+
+PROGNAME=${0##*/}
+
+usage() {
+        cat <<EOF
+Usage: $PROGNAME [OPTIONS]
+Options:
+  -h,  --help          display this help message
+  -v,  --verbose       enable verbose mode
+  --podir=DIR          specify PO directory (searched by default in
+                       debian/po, ./po and ../po)
+  --pot-header=FILE    replace beginning of generated POT file with FILE
+                       (relative to PO directory)
+  --skip-pot           skip POT file; update only PO files
+EOF
+}
+
+trace () {
+        if [ -n "$verbose" ]
+        then
+                echo "$PROGNAME: $*" >&2
+        fi
+}
+
+error () {
+        echo "$PROGNAME: error: $*" >&2
+        exit 1
+}
+
+die () {
+        error "$*"
+        exit 1
+}
+
+repair_header () {
+        if [ $# -ne 2 ]
+        then
+                die "repair_header() needs 2 arguments; got $#"
+        fi
+
+        trace "repairing header of $2"
+        ( cat "$1"; sed -n '/^$/,$p' "$2" ) >"$2.new" && mv "$2.new" "$2"
+}
+
+: ${PODEBCONF_LIB=/usr/share/intltool-debian}
+INTLTOOL_EXTRACT=${PODEBCONF_LIB}/intltool-extract
+export INTLTOOL_EXTRACT
+
+#  See intltool-extract
+INTLTOOL_DEBIAN_TYPE=po-debconf
+export INTLTOOL_DEBIAN_TYPE
+
+# Prevent automatic conversion to UTF-8 by Perl.
+unset LANGUAGE LANG LC_ALL LC_CTYPE
+
+help=
+verbose=
+podir=
+pot_header=
+skip_pot=
+
+for option
+do
+        if [ -n "$prev" ]; then
+                eval "$prev=\$option"
+                prev=
+                shift
+                continue
+        fi
+        optarg=$(expr "$option" : '[^=]*=\(.*\)')
+        case $option in
+            -h | --h | --help )
+                help=1 ;;
+            -v | --v | --verbose )
+                verbose=--verbose ;;
+            --podir )
+                prev=podir ;;
+            --podir=* )
+                podir="$optarg" ;;
+            --pot-header=* )
+                pot_header="$optarg" ;;
+            --skip-pot )
+                skip_pot=1 ;;
+            -* )
+                error "unknown option $option"
+                usage >&2
+                exit 1 ;;
+            * ) break ;;
+        esac
+        shift
+done
+
+if [ -n "$help" ]
+then
+        usage
+        exit 0
+fi
+
+if [ -z "$podir" ]
+then
+        for d in debian/po po ../po
+        do
+                if [ -d $d ]
+                then
+                        podir=$d
+                        break
+                fi
+        done
+fi
+
+if [ -z "$podir" ]
+then
+        die "No PO directory found; use --podir to specify location"
+fi
+
+if ! [ -d "$podir" ]
+then
+        die "PO directory $podir is not a directory"
+fi
+
+if ! [ -f "$podir/POTFILES.in" ]
+then
+        die "$podir/POTFILES.in does not exist"
+fi
+
+trace "PO directory is $podir"
+
+cd "$podir"
+
+if [ -f debian.pot ]
+then
+        domain=debian
+else
+        domain=templates
+fi
+
+if [ -z "$skip_pot" ]; then
+        cmd="\"$PODEBCONF_LIB/intltool-update\" \"$verbose\" --gettext-package=\"$domain\" --pot"
+        eval trace "$cmd"
+        if ! eval $cmd
+        then
+                die "intltool-update failed"
+        fi
+
+        # Repair the header of the POT file if necessary.
+        trace "\$pot_header is $pot_header"
+        if [ -n "$pot_header" ]
+        then
+                repair_header "$pot_header" "$domain.pot"
+        fi
+else
+        trace "skipping update of $domain.pot"
+fi
+
+for lang in *.po
+do
+        if [ "$lang" = "*.po" ]
+        then
+                break
+        fi
+
+        if sed -e '1,/^msgid/d' -e ':t /^msgstr/,${N;/\nmsgid/q;bt;};' "$lang" \
+          | grep charset=CHARSET >/dev/null 2>&1; then
+                echo "$podir/$lang: missing charset; file skipped" >&2
+                continue
+        fi
+
+        lang=${lang%.po}
+        "$PODEBCONF_LIB/intltool-update" --dist $verbose --gettext-package=$domain $lang || exit 1
+done
+
+rm -f messages.mo 2>/dev/null
+
+# vim:set ai et sts=8 sw=8 tw=80:

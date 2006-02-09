@@ -1,0 +1,157 @@
+#!/usr/bin/make -f
+# Debian rules file for xfree86 source package
+# Originally by Stephen Early <sde1000@debian.org>
+# Modified by Mark W. Eichin <eichin@kitten.gen.ma.us>
+# Modified by Adam Heath <doogie@debian.org>
+# Modified by Branden Robinson <branden@debian.org>
+# Modified by Fabio Massimo Di Nitto <fabbione@fabbione.net>
+# Modified by Daniel Stone <daniel.stone@ubuntu.com>
+# Copyright 1996--2005 Software in the Public Interest, Inc.
+# Licensed under the GNU General Public License, version 2.  See the file
+# /usr/share/common-licenses/GPL or <http://www.gnu.org/copyleft/gpl.txt>.
+# Acknowledgements to Stephen Early, Mark Eichin, and Manoj Srivastava.
+
+# debhelper
+export DH_OPTIONS
+
+# latest ABI is 7.0 final
+SERVERABIBUMP = 7.0.0
+
+# Get package version info.
+SOURCE_VERSION:=$(shell dpkg-parsechangelog -ldebian/changelog | grep '^Version:' | awk '{print $$2}')
+
+# The DEB_HOST_ARCH variable may be set per the Debian cross-compilation policy.
+ifdef DEB_HOST_ARCH
+ ARCH:=$(DEB_HOST_ARCH)
+else
+ # dpkg-cross sets the ARCH environment variable; if set, use it.
+ ifndef ARCH
+  ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
+ endif
+endif
+
+# Read in important variables.
+include debian/scripts/vars
+# Read in architecture-specific variables of importance.
+include debian/scripts/vars.$(ARCH)
+
+clean: cleanscripts
+	dh_testdir
+	dh_clean stamp-* debian/local/X debian/po/pothead
+
+
+SCRIPTS=$(shell ls debian/*.config.in debian/*.postinst.in debian/*.postrm.in debian/*.preinst.in debian/*.prerm.in)
+
+cleanscripts:
+	rm -f debian/*.config debian/*.postinst debian/*.postrm debian/*.preinst debian/*.prerm
+	rm -f stamp-scripts stamp-genscripts stamp-validatescripts
+
+scripts: stamp-scripts
+stamp-scripts: genscripts validatescripts
+	touch $@
+
+validatescripts: genscripts stamp-validatescripts
+stamp-validatescripts: debian/local/dexconf
+	sh debian/scripts/validate-posix-sh $<
+	touch $@
+
+genscripts: stamp-genscripts
+stamp-genscripts: $(SCRIPTS)
+	for FILE in $(SCRIPTS); do \
+	  if [ -e "$$FILE" ]; then \
+	    MAINTSCRIPT=$$(echo $$FILE | sed 's/.in$$//'); \
+	    if egrep -q '^#INCLUDE_SHELL_LIB#$$' $$FILE; then \
+	      sed -n '1,/^#INCLUDE_SHELL_LIB#$$/p' < $$FILE | sed -e '/^#INCLUDE_SHELL_LIB#$$/d' > $$MAINTSCRIPT.tmp; \
+	      cat debian/shell-lib.sh >> $$MAINTSCRIPT.tmp; \
+	      sed -n '/^#INCLUDE_SHELL_LIB#$$/,$$p' < $$FILE | sed -e '/^#INCLUDE_SHELL_LIB#$$/d' >> $$MAINTSCRIPT.tmp; \
+	    else \
+	      cp $$FILE $$MAINTSCRIPT.tmp; \
+	    fi; \
+	    sed -e 's/@SOURCE_VERSION@/$(SOURCE_VERSION)/' < $$MAINTSCRIPT.tmp > $$MAINTSCRIPT; \
+	    rm $$MAINTSCRIPT.tmp; \
+	    sh debian/scripts/validate-posix-sh $$MAINTSCRIPT; \
+	  fi; \
+	done
+	touch $@
+
+# Generate the debconf templates POT file header.
+debian/po/pothead: debian/po/pothead.in
+	sed -e 's/SOURCE_VERSION/$(SOURCE_VERSION)/' \
+	  -e 's/DATE/$(shell date "+%F %X%z"/)' \
+	  <debian/po/pothead.in >$@
+
+# Update POT and PO files.
+updatepo: debian/po/pothead
+	debian/scripts/debconf-updatepo --pot-header=pothead --verbose
+
+build: stamp-build
+stamp-build: stamp-scripts
+	dh_testdir
+	# build Debian's X server wrapper
+	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
+	touch $@
+
+build-arch-only: build
+build-all:
+
+install: stamp-install
+stamp-install: stamp-build
+	dh_testdir
+	dh_testroot
+	umask 022
+	dh_clean -k
+	touch $@
+
+binary-indep: DH_OPTIONS=-i
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_install
+	dh_installdebconf
+	dh_installdirs
+	dh_installdocs
+	dh_installinit -Nx11-common
+	dh_installinit -px11-common -u'start 70 S .'
+	dh_installchangelogs
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+	touch stamp-$@
+
+binary-arch: DH_OPTIONS=-s
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_install
+	dh_installdebconf
+	dh_installdirs
+	dh_installdocs
+	dh_installinit
+	dh_installchangelogs
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol -- -VF:XServer-Xorg-Driver-Depends=$(XSERVER_XORG_DRIVER_DEPENDS) \
+	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS) \
+	                 -VServer-ABI-Version=$(SERVERABIBUMP)
+	dh_md5sums
+	dh_builddeb
+	touch stamp-$@
+
+binary: binary-indep binary-arch
+
+.PHONY: default
+.PHONY: genscripts cleanscripts scripts validatescripts
+.PHONY: updatepo
+.PHONY: clean configure install
+.PHONY: build build-arch-only build-all
+.PHONY: binary binary-arch binary-indep
+.PHONY: environment
+
+# vim:set noet ai sts=8 sw=8 tw=0:

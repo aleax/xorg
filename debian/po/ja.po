@@ -1,0 +1,1675 @@
+# debconf templates for xfree86 package
+# Japanese translation
+#
+# $Id: ja.po 1763M 2004-10-11 07:13:17Z (local) $
+#
+# Copyrights:
+# Branden Robinson, 2000--2004
+# ISHIKAWA Mutsumi, 2001
+# Tomohiro KUBOTA, 2001, 2002
+# Kenshi Muto, 2001, 2003, 2004
+# Takeo Nakano, 2001, 2003
+#
+# This file is distributed under the same license as the xfree86 package.
+# Please see debian/copyright.
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfree86 4.3.0\n"
+"Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
+"POT-Creation-Date: 2006-01-18 08:45+1100\n"
+"PO-Revision-Date: 2004-09-18 15:41+0900\n"
+"Last-Translator: Kenshi Muto <kmuto@debian.org> and ISHIKAWA Mutsumi "
+"<ishikawa@debian.org>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=EUC-JP\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../x11-common.templates:3
+msgid "Root Only, Console Users Only, Anybody"
+msgstr "Root のみ, コンソールユーザのみ, だれでも"
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:5
+msgid "Select what type of user has permission to start the X server."
+msgstr "どのタイプのユーザに X サーバを起動する権限を与えるか選んで下さい。"
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:5
+msgid ""
+"Because the X server runs with superuser privileges, it may be unwise to "
+"permit any user to start it, for security reasons.  On the other hand, it is "
+"even more unwise to run general-purpose X client programs as root, which is "
+"what may happen if only root is permitted to start the X server.  A good "
+"compromise is to permit the X server to be started only by users logged in "
+"to one of the virtual consoles."
+msgstr ""
+"X サーバはスーパーユーザ権限で動作するため、任意のユーザからの実行を許可する"
+"のはセキュリティ上好ましくないでしょう。一方 X サーバの起動許可を root に限る"
+"と、一般的な用途の X クライアントプログラムを実行する場合でも root が必要とな"
+"り、これも好ましくありません。よりよい妥協点は、 仮想コンソールのうちの 1 つ"
+"にログインしたユーザにのみ X サーバの起動を許可することでしょう。"
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+msgid "Enter the desired nice value for the X server to use."
+msgstr "使用する X サーバに見合う nice 値を入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+#, fuzzy
+msgid ""
+"When using operating system kernels with a particular scheduling strategy, "
+"it has been widely noted that the X server's performance improves when it is "
+"run at a higher process priority than the default; a process's priority is "
+"known as its \"nice\" value.  They range from -20 (extremely high priority, "
+"or \"not nice\" to other processes) to 19 (extremely low priority).  The "
+"default nice value for ordinary processes is 0, and this is also the "
+"recommend value for the X server."
+msgstr ""
+"\"nice\" 値として知られているプロセスの優先度をデフォルトより高い値に設定する"
+"ことで、X サーバのパフォーマンスが向上することは広く知られています。\"nice\" "
+"値の範囲は -20 (非常に高い優先度、もしくはほかのプロセスにとって「よくない"
+"(\"not nice\" な)」優先度) から 19 まで (非常に低い優先度)  です。通常のプロ"
+"セスに対するデフォルトの nice 値は 0 です。シングルユーザワークステーションに"
+"おいては、-10 をデフォルト値とすると良いでしょう。(Web サーバのような) コン"
+"ソールユーザとの対話以外に役割を持っているマシンでは 0 がよいデフォルト値で"
+"す。"
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+msgid ""
+"Values outside the range of -10 to 0 are not recommended; too negative, and "
+"the X server will interfere with important system tasks.  Too positive, and "
+"the X server will be sluggish and unresponsive."
+msgstr ""
+"-10 から 0 の範囲以外の値を与えるのは推奨しません。小さすぎる値を用いると、X "
+"サーバは重要なシステムタスクの邪魔をするでしょう。大きすぎる値を用いると、X "
+"サーバは活発に動作せず反応が悪くなるでしょう。"
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:35
+msgid "Please enter an integer between -20 and 19."
+msgstr "-20 〜 19 の間の整数を入力して下さい。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid "Attempt to autodetect video hardware?"
+msgstr "ビデオハードウェアを自動認識させますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid ""
+"Accept this option if you would like to attempt to autodetect the "
+"recommended X server and driver module for your video card.  If "
+"autodetection fails, you will be asked to specify the desired X server and/"
+"or driver module.  If autodetection succeeds, further debconf questions "
+"about your video hardware will be pre-answered."
+msgstr ""
+"あなたのビデオカードに対して、自動的にお奨めの X サーバ・ドライバモジュールを"
+"検出させたければ、Yes と答えてください。自動検出に失敗すると、使いたい X サー"
+"バと (または) ドライバモジュールを手動で入力することになります。自動検出が成"
+"功すれば、ビデオハードウェアに関する debconf の以降の質問は、自動的に回答され"
+"ます。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid ""
+"If you would rather select the X server and driver module yourself, decline "
+"this option.  You will not be asked to select the X server if there is only "
+"one available."
+msgstr ""
+"X サーバとドライバモジュールをあなた自身で選びたいのであれば、この選択肢では "
+"No を選んでください。もし利用できる X サーバが 1 つだけであれば X サーバの選"
+"択は尋ねられません。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:17
+msgid "No X server known for your video hardware."
+msgstr "あなたのビデオハードウェアに対応する X サーバがわかりませんでした。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:17
+msgid ""
+"Either you have no video hardware installed on this machine (serial console "
+"only?), or the \"discover\" program was unable to determine which X server "
+"is appropriate for your video hardware.  This could be due to incomplete "
+"information in discover's hardware database, or it could be that your video "
+"hardware is simply not supported by any available X servers."
+msgstr ""
+"このマシンにビデオハードウェアが装着されていない (シリアルコンソールのみ?) "
+"か、あるいは「discover」プログラムはあなたのビデオハードウェアに適切な X サー"
+"バを決定できませんでした。discover のハードウェアデータベースの情報が不完全な"
+"ためか、単純にあなたのビデオハードウェアが既存の X サーバのいずれによってもサ"
+"ポートされていないことが考えられます。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:26
+msgid "Multiple potential default X servers for your hardware."
+msgstr "あなたのハードウェアにはデフォルト X サーバの候補が複数あります。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:26
+msgid ""
+"Multiple video cards have been detected, and different X servers are "
+"required to support the various devices.  It is thus not possible to "
+"automatically select a default X server.  Please configure the device that "
+"will serve as your computer's \"primary head\"; this is generally the video "
+"card and monitor to which the computer displays when it first boots."
+msgstr ""
+"複数のビデオカードが検出され、それらのデバイスをサポートするために異なる X "
+"サーバが必要とされています。したがって、自動的にデフォルト X サーバを選択する"
+"ことは不可能です。あなたのコンピュータの「プライマリヘッド」 (これは通常、コ"
+"ンピュータが最初のブート時に表示するのに使うビデオカードとモニタです) として"
+"使いたいデバイスを設定して下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid "Select the desired default X server."
+msgstr "利用したいデフォルト X サーバを選択します。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid ""
+"The X server is the hardware interface of the X Window System.  Its job is "
+"to communicate with video display and input devices, providing a foundation "
+"for the chosen Graphical User Interface (GUI)."
+msgstr ""
+"X サーバは X Window System のハードウェアインタフェースです。その役割は、ビデ"
+"オディスプレイおよび入力デバイスと通信し、選んだグラフィカルユーザインタ"
+"フェース (GUI) の土台を提供することです。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid ""
+"Several X servers may be available; the default is selected via the /etc/X11/"
+"X symbolic link.  Some X servers may not work with your particular graphics "
+"hardware."
+msgstr ""
+"いくつかの X サーバを利用できます。デフォルトはシンボリックリンク /etc/X11/X "
+"によって選択されます。あなたの使っているグラフィックハードウェアでは動作しな"
+"い X サーバもあるかもしれません。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+msgid "Write default Files section to configuration file?"
+msgstr "設定ファイルにデフォルトの Files セクションを書きますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+msgid ""
+"The Files section of the X server configuration file tells the X server "
+"where to find server modules, the RGB color database, and font files.  This "
+"option is for advanced users.  In most cases, you should enable it."
+msgstr ""
+"X サーバ設定ファイルの Files セクションは、X サーバがサーバモジュール・RGB 色"
+"データベース・フォントファイルを探す場所を指定します。このオプショ ンは熟練"
+"ユーザのためのものです。多くの場合、ここで Yes と答えるべきです。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+#, fuzzy
+msgid ""
+"Disable this option if you want to write your own \"Files\" section into the "
+"X.Org server configuration file.  You may wish to do this if you need to "
+"remove the reference to the local font server, add a reference to a "
+"different font server, or rearrange the default set of local font paths."
+msgstr ""
+"XFree86 サーバ設定ファイルの Files セクションを自分で書きたい場合、ここでNo "
+"と答えて下さい。ローカルのフォントサーバを参照しなくしたり、別のフォントサー"
+"バを参照するようにしたり、ローカルのフォントパスを作りかえたりしたい場合は "
+"No と答えます。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid "Select the X.Org server modules that should be loaded by default."
+msgstr "デフォルトでロードされる XFree86 サーバモジュールを選んで下さい。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"It is possible to customize (or completely omit) the list of modules that "
+"the X server loads by default.  This option is for advanced users.  In most "
+"cases, all of these modules should be enabled."
+msgstr ""
+"X サーバがデフォルトで読み込むモジュールのリストをカスタマイズ (あるいは完全"
+"に削除) できます。このオプションは熟練ユーザのためのものです。多くの場合、こ"
+"れらすべてのモジュールを有効にすべきです。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid ""
+"The glx module enables support for OpenGL rendering.  The dri module enables "
+"support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+"that support for DRI must also exist in the kernel, the video card, and the "
+"installed version of the Mesa libraries for hardware-accelerated 3D "
+"operations using DRI to work.  Otherwise, the server falls back to software "
+"rendering."
+msgstr ""
+"GLCore と glx モジュールは、ソフトウェアによる OpenGL レンダリングを可能にし"
+"ます。dri モジュールは X サーバによる Direct Rendering Infrastructure (DRI) "
+"のサポートを可能にします。DRI を用いた 3D 操作のハードウェアアクセラレーショ"
+"ンを動作させるには、DRI のサポートがカーネル、ビデオカードおよび現在インス"
+"トールされている Mesa ライブラリのすべてにおいても必要です。この条件が満たさ"
+"れなければ、サーバはソフトウェアによるレンダリン グを用います。"
+
+# nakano has looked until this line.
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+"Display Channel, respectively.  These modules are used to query monitor "
+"capabilties via the video card.  The int10 module is a real-mode x86 "
+"emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+"module depends on the int10 module, so if you wish to enable vbe, enable "
+"int10 as well."
+msgstr ""
+"vbe および ddc モジュールは VESA BIOS 拡張とデータディスプレイチャネルのサ"
+"ポートをそれぞれ有効にします。これらのモジュールは、ビデオカード経由でモニタ"
+"の能力を問い合わせるのに使われます。int10 モジュールはリアル モード x86 エ"
+"ミュレータで、2 番目の VGA カードをソフトブートするのに使われます。vbe モ"
+"ジュールは int10 モジュールに依存しているので、vbe を有効にするときには "
+"int10 もやはり有効にする必要があることに注意して下さい。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The dbe module enables the double-buffering extension in the server, and is "
+"useful for animation and video operations."
+msgstr ""
+"dbe モジュールはサーバのダブルバッファリング拡張を可能にします。アニメーショ"
+"ンやビデオ操作に便利です。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The extmod module enables many traditional and commonly used extensions, "
+"such as shaped windows, shared memory, video mode switching, DGA, and Xv.  "
+"The record module implements the RECORD extension, commonly used in server "
+"testing."
+msgstr ""
+"extmod モジュールは、shaped window、共有メモリ、ビデオモード切り替え、DGA、"
+"Xv といった伝統的で広く用いられている拡張をサポートします。recode モジュール"
+"は、サーバ試験に一般的に使われている RECORD 拡張を実装しています。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
+msgstr ""
+"bitmap、freetype、speedo、type1、xtt の各モジュールはすべてフォントラスタライ"
+"ザです。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid ""
+"For further information about these modules, please consult the X.Org "
+"documentation."
+msgstr ""
+"これらのモジュールの詳細な情報については、XFree86 のドキュメントを参照して下"
+"さい。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"If you unsure what to do, leave all of the modules enabled.  Advanced users "
+"may wish to disable all modules -- in which case no Modules section will be "
+"written to the X server configuration file -- and add their own Modules "
+"section to the file manually."
+msgstr ""
+"どうしたらよいか不確かなときには、すべてのモジュールを有効にしたままにしてお"
+"きます。熟練ユーザはすべてのモジュールを無効にし (この場合、Modules セクショ"
+"ンは X サーバ設定ファイルに書き込まれません) 、自身の Modules セクションを"
+"ファイルに手動で書き込むことができます。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+#, fuzzy
+msgid "Multiple potential default X.Org server drivers for your hardware."
+msgstr ""
+"あなたのハードウェアでは複数のデフォルト XFree86 サーバドライバ候補がありま"
+"す。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+#, fuzzy
+msgid ""
+"Multiple video cards have been detected, and different drivers are required "
+"to support the various devices.  It is thus not possible to automatically "
+"select a default X.Org server driver.  Please configure the device that will "
+"serve as your computer's \"primary head\"; this is generally the video card "
+"and monitor to which the computer displays when it first boots."
+msgstr ""
+"複数のビデオカードが検出され、さまざまなデバイスをサポートするために異なるド"
+"ライバが必要とされています。したがって、自動的にデフォルト XFree86 サーバドラ"
+"イバを選択することは不可能です。あなたのコンピュータの「プライマリヘッド」(こ"
+"れは通常、コンピュータが最初のブート時に表示するのに使うビデオカードとモニタ"
+"です) として使いたいデバイスを設定して下さい。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+msgid ""
+"At the present time, only a single-headed setup is supported by debconf; "
+"however, the X server configuration files can be edited to support a multi-"
+"head configuration."
+msgstr ""
+"現在のところ、debconf ではシングルヘッド (1 つのビデオカード) のセットアップ"
+"だけがサポートされています。ただし、X サーバの設定ファイルを編集すればマルチ"
+"ヘッドの設定もできます。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:118
+msgid "Enter an identifier for your video card."
+msgstr "あなたのビデオカードの識別子を入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:118
+#, fuzzy
+msgid ""
+"The X server configuration file associates your video card with a name that "
+"you may provide.  This is usually the vendor or brand name followed by the "
+"model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
+"6600\"."
+msgstr ""
+"X サーバの設定ファイルはあなたのビデオカードを指定の名前と関連付けます。これ"
+"は通常、ベンダ名かブランド名のあとにモデル名が付きます。たとえば「3Dfx "
+"Voodoo3」や「ATI Rage Fury Maxx」などです。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid "Select the desired X server driver."
+msgstr "利用したい X サーバドライバを選択します。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid ""
+"For the X Window System graphical user interface to operate correctly, it is "
+"necessary to select a video card driver for the X server."
+msgstr ""
+"X Window System のグラフィカルユーザインタフェースを正しく動作させるために"
+"は、X サーバのビデオカードドライバを選択する必要があります。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid ""
+"Drivers are typically named for the video card or chipset manufacturer, or "
+"for a specific model or family of chipsets."
+msgstr ""
+"ドライバは通常、ビデオカードやチップセットの製造元や、特定のモデルやチップ"
+"セットのファミリの名前がつけられています。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid "Use kernel framebuffer device interface?"
+msgstr "カーネルフレームバッファデバイスを使いますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid ""
+"Rather than communicating directly with the video hardware, the X server may "
+"be configured to perform some operations, such as video mode switching, via "
+"the kernel's framebuffer driver."
+msgstr ""
+"X サーバは、ビデオモードの切り替えなどの操作をする際、ビデオハードウェアと直"
+"接通信する代わりに、カーネルのフレームバッファドライバを用いることができま"
+"す。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid ""
+"In theory, either approach should work, but in practice, sometimes one does "
+"and the other does not.  Enabling this option is the safe bet, but feel free "
+"to turn it off if it appears to cause problems."
+msgstr ""
+"理論的には、どちらの方法でもきちんと動くはずですが、実際には、うまくいったり"
+"いかなかったりします。Yes と答えるのは安全ではありますが、問題があれば無効に"
+"することもできます。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid "Please enter the video card's bus identifier."
+msgstr "ビデオカードのバス識別子を入力して下さい"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+"Users of PowerPC machines, and users of any computer with multiple video "
+"devices, should specify the BusID of the video card in an accepted bus-"
+"specific format."
+msgstr ""
+"PowerPC マシンや複数のビデオデバイスを持つコンピュータのユーザは、ビデオカー"
+"ドのバス ID を、容認されているバス特有の書式で入力する必要があります。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid "Examples:"
+msgstr "例:"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
+msgstr ""
+"ISA:1\n"
+"PCI:0:16:0\n"
+"SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+#, fuzzy
+msgid ""
+"For users of multi-head setups, this option will configure only one of the "
+"heads.  Further configuration will have to be done manually in the X server "
+"configuration file, /etc/X11/xorg.conf."
+msgstr ""
+"マルチヘッドのセットアップを用いる場合、このオプションはひとつのヘッドしか設"
+"定できません。他のヘッドの設定は、/etc/X11/XF8Config-4 を直接変更することで"
+"行って下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+#, fuzzy
+msgid ""
+"You may wish to use the \"lspci -X\" command to determine the bus location "
+"of your PCI, AGP, or PCI-Express video card."
+msgstr ""
+"\"lspci\" コマンドを使って、PCI/AGP ビデオカードのバスの位置を決めたいかもし"
+"れません。この場合、lspci コマンドはバス・デバイス・機能番号を 10 進数ではな"
+"く 16 進数で報告するということに注意して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+"When possible, this question has been pre-answered for you and you should "
+"accept the default unless you know it doesn't work."
+msgstr ""
+"可能なら、この質問は自動的に返答され、もしそれがうまくいかないと前もって分"
+"かっている場合以外はそのデフォルトを受け入れるべきです。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:169
+msgid "Please enter a bus identifier in the proper format."
+msgstr "バス ID を正しい書式で入力して下さい。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:169
+msgid "The BusID entered was not in a recognized format."
+msgstr "入力されたバス ID は認められる書式ではありません。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid "Enter the amount of memory (in kB) to be used by your video card."
+msgstr "あなたのビデオカードが利用するメモリ量 (kB 単位で) を入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid ""
+"Typically, the amount of dedicated memory your video card has is "
+"autodetected by the X server, but some integrated video chips (such as the "
+"Intel i810) have little or no video memory of their own, and instead borrow "
+"main system memory for their needs."
+msgstr ""
+"一般的に、あなたのビデオカードが持っている専用メモリの量は X サーバによって自"
+"動検出されますが、統合化されたビデオチップ (Intel i810 など) などでは自分自身"
+"のビデオメモリをほんのわずかしか (あるいはまったく) 持っておらず、メインシス"
+"テムメモリから必要な分を代用します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid ""
+"It is perfectly acceptable to leave this parameter blank; only if your video "
+"card lacks RAM, or if the X server has trouble autodetecting the amount, is "
+"it necessary to specify the amount of video RAM."
+msgstr ""
+"このパラメータは空にしておいてもまったく問題ありません。あなたのビデ オカード"
+"にメモリがないか、または X サーバが自動的にメモリの量を検出するのに失敗した場"
+"合にのみ、メモリの量を指定する必要があります。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+msgid "Please select the XKB rule set to use."
+msgstr "XKB ルールセットを選んで下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+msgid ""
+"For the X server to handle your keyboard correctly, an XKB rule set must be "
+"chosen."
+msgstr ""
+"X サーバがキーボードを正しく扱うために、XKB ルールセットを選ぶ必要がありま"
+"す。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid ""
+"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
+"5 keyboards, however, should enter \"sun\"."
+msgstr ""
+"ほとんどのキーボードの場合、「xfree86」と入力すればよいです。Sun タイプ 4 や"
+"タイプ 5 キーボードの場合、「sun」と入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid ""
+"Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
+"package has been unpacked, see the /etc/X11/xkb/rules directory for "
+"available rule sets."
+msgstr ""
+"熟練ユーザは、好きな定義された XKB ルールセットを選ぶことができます。 利用可"
+"能なルールセット名を知るには、/etc/X11/xkb/rules ディレクトリを見て下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid "If you don't know what rule set to use, enter \"xorg\"."
+msgstr "どう答えてよいか分からないときは、「xfree86」と入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid "Please select your keyboard model."
+msgstr "キーボードモデルを選んで下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"For the X server to handle your keyboard correctly, a keyboard model must be "
+"entered.  Available models depend on which XKB rule set is in use."
+msgstr ""
+"X サーバがキーボードを正しく扱うために、キーボードモデルを入力する必要があり"
+"ます。利用可能なモデルは XKB ルールセットに依存します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc101\" keyboard is a traditional IBM PC/AT style keyboard with 101 "
+"keys, historically common in the United States.  It does not have the \"logo"
+"\" or \"menu\" keys."
+msgstr ""
+"「pc101」は、101 個のキーを持つ、伝統的な IBM PC/AT スタイルのキーボードで、"
+"米国で広く使われています。このキーボードには「(Windows) ロゴ」や「メニュー」"
+"といったキーがありません。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc104\" keyboard is like the pc101 model, with additional keys.  These "
+"keys are usually engraved with a \"logo\" symbol (there is typically a pair "
+"of these, between each set of control and alt keys), and a \"menu\" key."
+msgstr ""
+"「pc104」キーボードは pc101 に似ていますが、いくつか追加のキーがあります。左"
+"右の control と alt キーの間にそれぞれ「(Windows) ロゴ」キーがあり、「メ"
+"ニュー」キーもあります。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc102\" and \"pc105\" models are versions of the pc101 and pc104 "
+"keyboards, respectively, often found in Europe.  If your keyboard has a \"< >"
+"\" key (a single key engraved with both the less-than and greater-than "
+"symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
+"\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
+msgstr ""
+"「pc102」と「pc105」は、pc101 と pc104 の変種で、ヨーロッパでしばしば見られま"
+"す。「< >」キー (1 つのキーに < と > の両方の形が刻まれているもの) のあるキー"
+"ボードであるときにはおそらく、「pc102」か「pc105」モデルでしょう。「pc101」ま"
+"たは「pc104」を代わりに選んでしまうと、「< >」キーは動作しません。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"macintosh\" model is for Macintosh keyboards where the kernel and "
+"console tools use the new input layer which uses Linux keycodes; "
+"\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
+"input layer."
+msgstr ""
+"「macintosh」は Macintosh のキーボードで、カーネルと console tools は Linux "
+"キーコードを使う新しい入力レイヤーを使います。「macintosh_old」は、その新しい"
+"入力レイヤーを使わない Macintosh キーボードです。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid "All of the above models use the \"xorg\" rule set."
+msgstr "上記のすべてのモデルは「xfree86」ルールセットを使います。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"type4\" and \"type5\" models are for Sun Type4 and Type5 keyboards, "
+"respectively.  These models can only be used if the \"sun\" XKB rule set is "
+"in use."
+msgstr ""
+"「type4」と「type5」モデルは、Sun の Type4 と Type5 キーボードのためのもので"
+"す。これらのモデルは XKB ルールセットに「sun」を用いている場合のみ使うことが"
+"きます。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"Laptop keyboards often do not have as many keys as standalone models; laptop "
+"users should select the keyboard model most closely approximated by the "
+"above."
+msgstr ""
+"ノートパソコン (laptop) は、デスクトップ機のキーボードより少ない数のキーしか"
+"ないことがよくあります。ノートパソコンユーザは上記キーボードのうち最も近いも"
+"のを選んで下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid ""
+"Advanced users can use any model defined by the selected XKB rule set.  If "
+"the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
+"directory for available rule sets."
+msgstr ""
+"熟練ユーザは、選んだ XKB ルールセットによって定義された、好きなモデルを選ぶこ"
+"とができます。/etc/X11/xkb/rules ディレクトリに、利用できるルールセットがあり"
+"ます。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid ""
+"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
+"most other keyboards should generally enter \"pc105\"."
+msgstr ""
+"米国の英語キーボードのユーザは通常「pc104」と入力します。日本の JIS キーボー"
+"ドのユーザは通常「jp106」と入力します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid "Please select your keyboard layout."
+msgstr "キーボードレイアウトを選んで下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid ""
+"For the X server to handle your keyboard correctly, a keyboard layout must "
+"be entered.  Available layouts depend on which XKB rule set and keyboard "
+"model were previously selected."
+msgstr ""
+"X サーバがキーボードを正しく扱うために、キーボードレイアウトを入力する必要が"
+"あります。利用できるレイアウトは、選択した XKB ルールセットと キーボードモデ"
+"ルに依存します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+#, fuzzy
+msgid ""
+"Advanced users can use any layout supported by the selected XKB rule set.  "
+"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
+"rules directory for available rule sets."
+msgstr ""
+"熟練ユーザは、選んだ XKB ルールセットによって定義された、好きなモデルを選ぶこ"
+"とができます。/etc/X11/xkb/rules ディレクトリに、利用できるルールセットがあり"
+"ます。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid ""
+"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+"localized for other countries should generally enter their ISO 3166 country "
+"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+msgstr ""
+"米国の英語キーボードのユーザは「us」と入力します。日本の JIS キーボ ードの"
+"ユーザは「jp」と入力します。他国のキーボードは、ISO 3166 国コ ードで入力して"
+"下さい。例えばフランスは「fr」、ドイツは「de」です。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid "Please select your keyboard variant."
+msgstr "キーボードバリアントを入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"For the X server to handle your keyboard as you desire, a keyboard variant "
+"may be entered.  Available variants depend on which XKB rule set, model, and "
+"layout were previously selected."
+msgstr ""
+"X サーバがキーボードを正しく扱うために、キーボードバリアント (変種) を入力し"
+"なければならない場合があります。利用できるバリアントの種類は、いままで選択し"
+"てきた XKB ルールセット・モデル・レイアウトに依存します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
+"spacing accent marks and diaereses as normal spacing keys, and if this is "
+"the preferred behavior, enter \"nodeadkeys\"."
+msgstr ""
+"多くのキーボードレイアウトが、文字幅を持たないアクセント記号などの \"dead\" "
+"キーを文字幅を持つ通常の文字として扱うオプションをサポートしています。もしこ"
+"の動作が好ましいなら、「nodeadkeys」と入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+#, fuzzy
+msgid ""
+"Advanced users can use any variant supported by the selected XKB layout.  If "
+"the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
+"directory for the file corresponding to your selected layout for available "
+"variants."
+msgstr ""
+"熟練ユーザは、選択した XKB レイアウトによってサポートされる好きなバリアントを"
+"選択できます。/etc/X11/xkb/symbols ディレクトリ中の、選択したレイアウトに相当"
+"するファイルを見ると、利用可能なバリアントがあります。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"Users of U.S. English keyboards should generally leave this entry blank."
+msgstr "米国の英語キーボードのユーザは、一般的に空欄にしておくべきです。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid "Please select your keyboard options."
+msgstr "キーボードオプションを入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"For the X server to handle your keyboard as you desire, keyboard options may "
+"be entered.  Available options depend on which XKB rule set was previously "
+"selected.  Not all options will work with every keyboard model and layout."
+msgstr ""
+"X サーバがキーボードを正しく扱うために、キーボードオプションを入力しなければ"
+"ならない場合があります。利用可能なオプションは、以前に入力した XKB ルールセッ"
+"トに依存します。全てのオプションが全てのモデルやレイアウトで利用できるとは限"
+"りません。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"For example, if you wish the Caps Lock key to behave as an additional "
+"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
+"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+msgstr ""
+"例えば、Caps Lock キーが Control キーとして働いてほしい場合、「ctrl:nocaps」"
+"と入力します。Caps Lock と左 Control を交換したい場合、「ctrl:swapcaps」と入"
+"力します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"As another example, some people prefer having the Meta keys available on "
+"their keyboard's Alt keys (this is the default), while other people prefer "
+"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
+"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
+"meta_win\"."
+msgstr ""
+"別の例として、ある人々は Meta キーを彼らのキーボードの Alt キー (これはデフォ"
+"ルト) として利用できるようにすることを望み、ほかの人々は Windows あるいは "
+"「ロゴ」 キーを代わりに利用できることを望んだとします。 Windows あるいはロゴ"
+"キーを Meta キーとして使いたいのであれば、「altwin:meta_win」と入力します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"You can combine options by separating them with a comma; for example, if you "
+"wish the Caps Lock key to behave as an additional Control key and you would "
+"like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
+"nocaps,altwin:meta_win\"."
+msgstr ""
+"例えば、Caps Lock キーが Control キーとして働いてほしい場合、「ctrl:nocaps」"
+"と入力します。Caps Lock と左 Control を交換したい場合、「ctrl:swapcaps」と入"
+"力します。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"Advanced users can use any options compatible with the selected XKB model, "
+"layout and variant."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid "If you don't know what options to use, leave this entry blank."
+msgstr "どのオプションを使ってよいか分からなければ、空欄のままにして下さい。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid "Attempt mouse device autodetection?"
+msgstr "マウスの自動認識を試みますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid ""
+"If you have a mouse attached to the computer, an attempt to detect it can be "
+"made; it may help to move the mouse while detection is attempted (also, the "
+"gpm program should not be running).  If you would like to attach a PS/2 or "
+"bus/inport mouse to your computer, you should shut down the system, turn off "
+"the computer's power, connect the mouse, turn the computer back on, and "
+"reboot.  If you wish to select a mouse type manually, decline this option."
+msgstr ""
+"もしコンピュータにマウスがつながっていれば、それの自動検出を試みることができ"
+"ます。検出作業中にマウスを動かすと、マウスの自動検出を助けます (gpm は走らせ"
+"ないで下さい)。PS/2 や バス/inport マウスを接続すると きは、システムをシャッ"
+"トダウンして、コンピュータの電源を切り、マウスを接続し、コンピュータの電源を"
+"入れ、リブートして下さい。マウスの種類を手動で入力したい場合、ここで No と答"
+"えて下さい。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid ""
+"If you accept this option and autodetection fails, you will be asked this "
+"question again.  You may attempt autodetection as many times as desired.  If "
+"autodetection succeeds, further debconf questions about your mouse will be "
+"pre-answered."
+msgstr ""
+"ここで Yes と答えたけれども自動検出に失敗した場合、この質問が再び出てきます。"
+"マウスの自動検出は何度でも好きなだけ試みることができます。自動検出が成功した"
+"ら、マウスに関する debconf の質問が自動的に回答されます。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid "Please choose your mouse port."
+msgstr "あなたのマウスポートを選択して下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of your mouse (or other pointing device, such as a "
+"trackball) must be known."
+msgstr ""
+"X Window System のグラフィカルユーザインタフェースを正しく動作させるために"
+"は、あなたのマウス (あるいはトラックボールのようなその他のポインティングデバ"
+"イス) の正しい特性を知ることが必要です。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid ""
+"It is necessary to determine which port (connection type) your mouse uses. "
+"Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 or DB-"
+"25); the mouse connector is female (has holes) and the computer connector is "
+"male (has pins).  PS/2 ports are small round connectors (DIN) with 6 pins; "
+"the mouse connector is male and the computer side female.  You may "
+"alternatively have a USB mouse, a bus/inport (very old) mouse, or be using "
+"the gpm program as a repeater.  If you need to attach or remove PS/2 or bus/"
+"inport devices from your computer, please do so with the computer's power "
+"off."
+msgstr ""
+"どのポート (接続タイプ) をあなたのマウスが使っているかを決めることが必要で"
+"す。シリアルポートは 9 または 25 ピンの D 型のコネクタ (またの名を DB-9 や "
+"DB-25) を利用し、マウス側のコネクタはメス (穴側) で、コンピュータ側のコネクタ"
+"はオス (ピン側) です。PS/2 ポートは 6 ピンの小さな円形のコネクタ (DIN) です。"
+"マウス側のコネクタはオスで、コンピュータ側はメスです。あるいは USB マウスや、"
+"バス/インポートマウス (非常に古い) を使っているか、あるいはリピータとして "
+"gpm プログラムを使って いるかもしれません。もしデバイスを装着あるいはあなたの"
+"コンピュータから除去する必要がある場合は、シャットダウンした上で電源を切って"
+"下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:337
+msgid "Please choose the entry that best describes your mouse."
+msgstr "あなたのマウスに最適の説明があるエントリを選択して下さい。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid "Emulate 3 button mouse?"
+msgstr "3 ボタンマウスのエミュレートを行いますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"Most programs in the X Window System expect your mouse to have 3 buttons "
+"(left, right, and middle).  Mice with only 2 buttons can emulate the "
+"presence of a middle button by treating simultaneous clicks or drags of the "
+"left and right buttons as middle button events."
+msgstr ""
+"X Window System のほとんどのプログラムは、あなたのマウスが 3 つのボタン (左、"
+"右、それに真ん中) を持っていると想定しています。2 ボタンしかないマウスでは、"
+"中ボタンイベントを行いたいときに左右のボタンを同時にクリックするかドラッグす"
+"ることで、中ボタンを実行したようにエミュレートできます。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"This option may also be used on mice with 3 or more buttons; the middle "
+"button will continue to work normally."
+msgstr ""
+"この選択は3 つ以上のボタンがあるマウスでも利用できます。中ボタンは普通に中ボ"
+"タンとして働き続けます。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"Note that mouse buttons in excess of five (counting a scroll wheel as two "
+"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
+"\") are not yet supported with this configuration tool."
+msgstr ""
+"5 つを超えるマウスボタン (スクロールホイールは「上」と「下」の 2 つのボタンと"
+"して計上され、3 つ目はホイールの「クリック」です) はまだこの設定ツールではサ"
+"ポートされていないことに注意してください。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid "Attempt monitor autodetection?"
+msgstr "モニタの自動認識を試みますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid ""
+"Many monitors (including LCD's) and video cards support a communication "
+"protocol that allows the monitor's technical characteristics to be "
+"communicated back to the computer.  If your monitor and video card speak the "
+"same dialect of this protocol, further debconf questions about your monitor "
+"will be pre-answered."
+msgstr ""
+"多くのモニタ (LCD を含む) とビデオカードは、通信しあって、モニタの特性情報を"
+"コンピュータに通知することができます。もしモニタとビデオカードがこのプロトコ"
+"ルの同じ方言をしゃべる場合、モニタに関する debconf の質問が自動的に回答されま"
+"す。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid ""
+"If autodetection fails, you will be asked for information about your monitor."
+msgstr "自動検出に失敗すれば、モニタに関する情報があなたに質問されます。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid "Please choose a method for selecting your monitor characteristics."
+msgstr "あなたのモニタの特性を選ぶ方法を選択して下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of your monitor must be known."
+msgstr ""
+"X Window System のグラフィカルユーザインタフェースを正しく動作させるために"
+"は、あなたのモニタの正しい特性を知ることが必要です。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+#, fuzzy
+msgid ""
+"For the \"simple\" option, you need only know the monitor's physical size; "
+"this will set some configuration values appropriate for a typical CRT of the "
+"corresponding size, but may be suboptimal for high-quality CRT's."
+msgstr ""
+"オプション「simple」では、あなたはモニタの物理サイズを知っているだけで済みま"
+"す。これはサイズに一致する典型的な CRT で適切ないくつかの設定値を設定します"
+"が、ハイクオリティな CRT では最適値ではないでしょう (このオプションは LCD パ"
+"ネルのユーザには無効です。LCD では特別な解像度が設定されます)。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"The \"medium\" option will present you with a list of resolutions and "
+"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
+"you wish to use (and that you know your monitor is capable of)."
+msgstr ""
+"オプション「medium」では、あなたに「800x600 @85Hz」のような解像度とリフレッ"
+"シュレートの一覧が示されます。あなたは使いたいと思う (かつあなたのモニタが受"
+"容可能であるとわかっている) 最適のモードを選べます。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"The \"advanced\" option will let you specify your monitor's horizontal sync "
+"and vertical refresh tolerances directly."
+msgstr ""
+"オプション「advanced」では、あなたのモニタの水平同期と垂直リフレッシュ耐性を"
+"直接指定します。"
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:387
+msgid ""
+"Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
+"inches (480-510 mm), 21 inches (530 mm) or more"
+msgstr ""
+"14 インチ (355 mm) 以下, 15 インチ (380 mm), 17 インチ (430 mm), 19〜20 イン"
+"チ (480 〜 510 mm), 21 インチ (530 mm) 以上"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:389
+msgid "Please choose your approximate monitor size."
+msgstr "あなたのモニタサイズに近いものを選んで下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:389
+msgid "High-quality CRT's may be able to use the next highest size category."
+msgstr "高品質の CRT では、2 番目に大きなサイズを使うことができるでしょう。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:396
+msgid "Please select your monitor's best video mode."
+msgstr "あなたのモニタに最適なビデオモードを選択して下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:396
+msgid ""
+"Choose the \"best\" resolution and refresh rate you believe your monitor "
+"capable of.  Larger resolutions and refresh rates are better.  If you use a "
+"CRT monitor, it is perfectly acceptable to select a \"worse\" video mode "
+"than your monitor's best if you wish.  Users of LCD displays may also be "
+"able to do this, but only if both the video chipset and the driver support "
+"it; if in doubt, use the video mode recommended by the manufacturer of your "
+"LCD."
+msgstr ""
+"あなたのモニタが受容可能と思われる「最適な」解像度とリフレッシュレートを選び"
+"ます。解像度とリフレッシュレートが大きいほどよいでしょう。もし CRT モニタを"
+"使っているなら、最適より「悪い」ビデオモードを選択してもまったくかまいませ"
+"ん。LCD ディスプレイを使っている場合も、そのようにしても構いませんが、ビデオ"
+"チップセットとドライバの両方がそれをサポートしている必要があります。もし分か"
+"らなければ、LCD の製造元が推奨するビデオモードを使ってください。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:406
+msgid "Enter an identifier for your monitor."
+msgstr "あなたのモニタの識別子を入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:406
+msgid ""
+"The X server configuration file associates your monitor with a name that you "
+"may provide.  This is usually the vendor or brand name followed by the model "
+"name, e.g., \"Sony E200\" or \"Dell E770s\"."
+msgstr ""
+"X サーバの設定ファイルはあなたのモニタを指定の名前と関連付けます。これは通"
+"常、ベンダ名かブランド名のあとにモデル名が付きます。たとえば「Sony E200」や"
+"「Dell E770s」などです。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:413
+#, fuzzy
+msgid "Write monitor sync ranges to configuration file?"
+msgstr "設定ファイルに DRI セクションを書き込みますか?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:413
+msgid ""
+"The monitor synchronization ranges should be autodetected by the X server in "
+"most cases, but sometimes it needs hinting.  This option is for advanced "
+"users, and should be left at its default."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:420
+msgid "Enter your monitor's horizontal sync range."
+msgstr "あなたのモニタの水平同期の幅を入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:420
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in your monitor's manual.  "
+"Values lower than 30 or higher than 130 are extremely rare."
+msgstr ""
+"とびとびの特定の値をコンマで区切ったリスト (固定周波数のディスプレイ用) ある"
+"いはダッシュで区切った一対の値 (すべての最近の CRT 用) のどちらか、あるいは両"
+"方で入力して下さい。この情報はあなたのモニタのマニュアルで得られるはずです。"
+"30 以下の値や 130 以上の値はきわめてまれです。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:428
+msgid "Enter your monitor's vertical refresh range."
+msgstr "あなたのモニタの垂直リフレッシュの範囲を入力して下さい。"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:428
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in your monitor's manual.  "
+"Values lower than 50 or higher than 160 are extremely rare."
+msgstr ""
+"とびとびの特定の値をコンマで区切ったリスト (固定周波数のディスプレイ用) ある"
+"いはダッシュで区切った一対の値 (すべての最近の CRT 用) のどちらか、あるいは両"
+"方で入力して下さい。この情報はあなたのモニタのマニュ アルで得られるはずで"
+"す。 50 以下の値や 160 以上の値はきわめてまれです。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:436
+msgid "Please enter a comma-separated list of ranges or values."
+msgstr "コンマで区切られた範囲のリストあるいは値を入力して下さい。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:436
+msgid ""
+"The valid syntax is a comma-separated list of discrete values, or a pair of "
+"values separated by a dash."
+msgstr ""
+"有効な指定方法は、とびとびの値をコンマで区切ったリストかダッシュで区切った一"
+"対の値です。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:444
+msgid "Select the video modes you would like the X server to use."
+msgstr "X サーバで利用したいビデオモードを選択して下さい。"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:444
+msgid ""
+"If there are some resolutions you would not like the X server to use even if "
+"your hardware is capable of them, remove them from the list below.  Removing "
+"all of them is effectively the same as removing none, since in both cases "
+"the X server will attempt to use the highest possible resolution."
+msgstr ""
+"もし(ハードウェアが許す場合でも) X サーバでは使いたくないような解像度がある場"
+"合は、次のリストからそれらを除去します。全部削除しようとすると全然削除しない"
+"のと実質的に同じことになってしまいます。これらの両方のいずれでも、X サーバは"
+"最も高い解像度を利用しようとするからです。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid "Please select your desired default color depth in bits."
+msgstr "使いたいデフォルトの色深度のビットを選択して下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid ""
+"Usually 24-bit color is desirable, but on graphics cards with limited "
+"amounts of framebuffer memory, higher resolutions may be achieved at the "
+"expense of higher color depth.  Also, some cards support hardware 3D "
+"acceleration only for certain depths.  Consult your video card manual for "
+"more information."
+msgstr ""
+"通常 24 ビットカラーを使いたいでしょうが、フレームバッファメモリの量に制限の"
+"あるグラフィックカードでは、解像度を高くすると色深度は小さくなってしまいます "
+"(逆も同じ)。また、いくつかのカードはハードウェア 3D アクセラレーションを一定"
+"の色深度でのみサポートしています。詳しい情報はあなたのビデオカードのマニュア"
+"ルで調べて下さい。"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid ""
+"(So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
+"bits of alpha channel or simple zero padding; the X Window System can handle "
+"both.  If you want either, select 24 bits.)"
+msgstr ""
+"(よく言われる「32 ビットカラー」は実は 24 ビットの色情報と 8 ビットのアルファ"
+"チャネル (または単純な 0 埋め) です。X Window System は両方とも操作できます。"
+"もしどちらかを望むのであれば、24 ビットを選択して下さい。)"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:466
+msgid "Please enter a value for the entry."
+msgstr "何かを入力して下さい。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:466
+msgid "A null entry is not permitted."
+msgstr "空欄のままにしないで、何かを入力しないといけません。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:471
+msgid "Please enter a value without double-quotes."
+msgstr "二重引用符を使わないで下さい。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:471
+msgid "Double-quote (\") characters are not permitted in the entry value."
+msgstr "ここでは二重引用符 (\") の使用はできません。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:476
+msgid "Please enter only a numeric value."
+msgstr "数値を入力して下さい。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:476
+msgid "Characters other than digits are not allowed in the entry."
+msgstr "数字以外の文字はここでは入力しないで下さい。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+#, fuzzy
+msgid "Autodetect keyboard layout?"
+msgstr "キーボードレイアウトを選んで下さい。"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+msgid ""
+"The default keyboard layout selection for the Xorg server will be based on a "
+"combination of the language and the keyboard layout selected in the "
+"installer."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+msgid ""
+"Accept this option if you want the keyboard layout to be redetected.  "
+"Decline it if you want to keep your current layout."
+msgstr ""
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "マウスホイールでスクロールイベントを可能にしますか?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "ホイールマウスのホイールからのイベントは、追加ボタン (ボタン 4 と 5) とし"
+#~ "て扱うことができます。いくつかの X アプリケーションでは、マウスホイールが"
+#~ "期待どおりに働くとして、ボタン 4 と 5 をスクロールアップとスクロールダウン"
+#~ "のイベントとして扱います。しかし、これはアプリケーションレベルの動作なの"
+#~ "で、いつも働くというわけではありません。ホイールに加えて 3 ボタン以上ある"
+#~ "エキゾチックなマウスでは、もしこのオプションを設定すると予想しない振舞いを"
+#~ "するかもしれません。"
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr "ホイールのないマウスでこの設定をしても、害はありません。"
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Linux カーネルバージョン 2.6 (および \"O(1) スケジューラ\" が実装されて以"
+#~ "降の 2.5 シリーズ) では上記は真と言えません。そのようなシステムでは、X "
+#~ "サーバの nice 値は 0 に設定すべきです。"
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "SGI Indigo2 XL マシンや完全にサポートされていないその他のバスを持つマシン"
+#~ "のユーザは、単に \"1\" をここで指定すべきです (これは動作を保証するもので"
+#~ "はありません)。"
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "PowerPC または SGI Indigo2 XL 以外のマシンで 1つしかビデオカードのないユー"
+#~ "ザは、ここは空欄のままにしておいて下さい。"
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "あなたのモニタは LCD デバイスですか?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "もしあなたのモニタが液晶ディスプレイ (ほとんどすべてのラップトップではそ"
+#~ "う) ならば、このオプションを設定すべきです。"
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "伝統的なブラウン管 (CRT) モニタのユーザは、このオプションを設定すべきでは"
+#~ "ありません。"
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "設定ファイルに DRI セクションを書き込みますか?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "X サーバ設定ファイルの DRI セクションは、DRI デバイスの権限を決定します。"
+#~ "このオプションは熟練ユーザのためのものです。たいていの場合、ここで Yes と"
+#~ "答えるべきです。"
+
+#, fuzzy
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "自分で DRI セクションを書きたい場合、ここで No と答えます。DRI ポートへの"
+#~ "アクセス権限を変更したい場合、そうするのがよいでしょう。"
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "熟練ユーザは、XKB ルールセットにおってサポートされる好きなレイアウトを選択"
+#~ "できます。/etc/X11/xkb/rules に利用可能なルールセット一覧が、そして/etc/"
+#~ "X11/xkb/symbols に利用可能なレイアウト一覧があります。"
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "熟練ユーザは、選択した XKB モデル・レイアウト・バリアントで使える好きなオ"
+#~ "プションを指定できます。/etc/X11/xkb/symbols ディレクトリにオプションを定"
+#~ "義したファイルがあります。それらのファイルには不完全なキーボ ード変換が定"
+#~ "義してあります。(例えば、/etc/X11/xkb/xkb/symbols/ctrl)。"
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "NVidia ビデオカードを使っている場合、このビデオカードの DDC プロトコルサ"
+#~ "ポートは出来が悪くてシステムロックアップの原因となりうるので、自動検出は使"
+#~ "わないほうがよいでしょう。"
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Mach8 (VGA Wonder)、Mach32、初期の Mach64 (\"GX\") チップセットのようにい"
+#~ "くつかの古い ATI ハードウェアでは、8 以上の深度はサポートされていません。"
+
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "実験的なバージョンの XFree86 パッケージ"
+
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "あなたは Debian 用 XFree86 パッケージの実験的なバージョンを使っています。"
+#~ "まだ Debian ディストリビューションに正式にリリースしていないので、 Debian "
+#~ "バグ追跡システムにはこのバージョンのパッケージについてバグを登録しないでく"
+#~ "ださい。"
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "これらのパッケージで問題を体験した、あるいはパッチを送りたいときには、 "
+#~ "Debian X メーリングリストにメールを送ってください。World Wide Web でメーリ"
+#~ "ングリストの詳細について見ることができます:\n"
+#~ "  http://lists.debian.org/debian-x/"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "実験的な X パッケージを実行したくないのであれば、次の 2 つの作業が必要で"
+#~ "す:\n"
+#~ "  1) /etc/apt/sources.list ファイルから実験的なパッケージリポジトリを完全"
+#~ "に外す。\n"
+#~ "  2) apt で XFree86 を適当なリリースバージョンにダウングレードする。\n"
+#~ "     これは、\"apt-get\" のときにパッケージスイート名をパッケージ名に付け"
+#~ "る\n"
+#~ "    ことでできます。たとえば:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "    または\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "    いくつかのパッケージについて、さらにダウングレードを指定する必要が\n"
+#~ "    あるかもしれません。"
+
+#~ msgid "Migrate XKB configuration directory?"
+#~ msgstr "XKB 設定ディレクトリを移行しますか?"
+
+#~ msgid ""
+#~ "The directory where configuration information (including keyboard data) "
+#~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
+#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
+#~ msgstr ""
+#~ "X KEYBOARD Extension (XKB) の設定情報 (キーボードのデータを含む) の格納場"
+#~ "所のディレクトリは、/usr/X11R6/lib/X11/xkb から /etc/X11/xkb に変更されま"
+#~ "した。"
+
+#~ msgid ""
+#~ "Your system is using the old location, and some programs, such as those "
+#~ "from old or unofficial Debian packages, may continue to install files "
+#~ "there."
+#~ msgstr ""
+#~ "あなたのシステムは、この古い場所と、古いあるいは非公式の Debian パッケージ"
+#~ "のようないくつかのプログラムを使っており、ファイルをそこにインストールした"
+#~ "ままにしておいてもかまいません。"
+
+#~ msgid ""
+#~ "Would you like the XKB configuration files on the system to be "
+#~ "automatically migrated from the old location to the new one?  Any "
+#~ "existing files in the new location that have the same name will be backed "
+#~ "up and replaced by the files from the old location.  A symbolic link from "
+#~ "the old location to the new one will be created to prevent legacy "
+#~ "applications from breaking."
+#~ msgstr ""
+#~ "システムの XKB 設定ファイルを自動的に古い場所から新しい場所に移行します"
+#~ "か? 新しい場所にある同じ名前を持つ既存のファイルはバックアップされ、古い場"
+#~ "所からのファイルによって置き換えられます。旧来のアプリケーションを障害から"
+#~ "避けるため、古い場所から新しい場所へのシンボリックリンクが作成されます。"
+
+#~ msgid "Migrate Xt application defaults directory?"
+#~ msgstr "Xft アプリケーションのデフォルトディレクトリを移行しますか?"
+
+#~ msgid ""
+#~ "The directory where application defaults for X Window System client "
+#~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
+#~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
+#~ msgstr ""
+#~ "X Toolkit Intrinsics (Xt) ベースの X Window System クライアントプログラム"
+#~ "のアプリケーションのデフォルト設定の格納場所のディレクトリは、/usr/X11R6/"
+#~ "lib/X11/app-defaults から /etc/X11/app-defaults に変更されました。"
+
+#~ msgid ""
+#~ "Would you like the app-defaults files on the system to be automatically "
+#~ "migrated from the old location to the new one?  Any existing files in the "
+#~ "new location that have the same name will be backed up and replaced by "
+#~ "the files from the old location.  A symbolic link from the old location "
+#~ "to the new one will be created to prevent legacy applications from "
+#~ "breaking."
+#~ msgstr ""
+#~ "システムの app-defaults ファイルを自動的に古い場所から新しい場所に移行しま"
+#~ "すか? 新しい場所にある同じ名前を持つ既存のファイルはバックアップされ、古い"
+#~ "場所からのファイルによって置き換えられます。旧来のアプリケーションを障害か"
+#~ "ら避けるため、古い場所から新しい場所へのシンボリックリンクが作成されます。"
+
+#~ msgid "Select the desired default display manager."
+#~ msgstr "デフォルトで使いたいディスプレイマネージャを選んで下さい。"
+
+#~ msgid ""
+#~ "A display manager is a program that provides graphical login capabilities "
+#~ "for the X Window System."
+#~ msgstr ""
+#~ "ディスプレイマネージャとは、X Window System 上でのグラフィカルなログイン機"
+#~ "能を提供するものです。"
+
+#~ msgid ""
+#~ "Only one display manager can manage a given X server, but multiple "
+#~ "display manager packages are installed.  Please select which display "
+#~ "manager should run by default."
+#~ msgstr ""
+#~ "ひとつの X サーバを管理できるのはひとつのディスプレイマネージャだけです"
+#~ "が、現在複数のディスプレイマネージャがインストールされています。どのディス"
+#~ "プレイマネージャをデフォルトで起動させるか選択して下さい。"
+
+#~ msgid ""
+#~ "(Multiple display managers can run simultaneously if they are configured "
+#~ "to manage different servers; to achieve this, configure the display "
+#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
+#~ "disable the check for a default display manager.)"
+#~ msgstr ""
+#~ "(異なるサーバを担当するように設定すれば、複数のディスプレイサーバは同時に"
+#~ "動作できます。そのようにするには、/etc/init.d にある各ディスプレイマネー"
+#~ "ジャの初期化スクリプトを編集し、デフォルトディスプレイマネージャのチェック"
+#~ "を無効にして下さい。)"
+
+#~ msgid "Do you wish to stop the xdm daemon?"
+#~ msgstr "xdm デーモンを停止しますか?"
+
+#~ msgid ""
+#~ "The X display manager (xdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session. If xdm is stopped now, any X sessions it manages will be "
+#~ "terminated. Otherwise you may leave xdm running, and the new version will "
+#~ "take effect the next time the daemon is restarted."
+#~ msgstr ""
+#~ "X ディスプレイマネージャ (xdm) デーモンは、普通、パッケージの更新や削除の"
+#~ "際に停止させられます。しかし xdm は現在動作中の X セッションを最低ひとつは"
+#~ "管理しているようです。いま xdm を停止すると、この xdm が管理している X "
+#~ "セッションは停止します。あるいは xdm の動作を継続し、次にデーモンをリス"
+#~ "タートしたときに新しいバージョンの xdm を有効にすることもできます。"

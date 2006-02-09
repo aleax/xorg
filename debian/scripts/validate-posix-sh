@@ -1,0 +1,63 @@
+#!/bin/sh
+
+
+# Run this before committing changes to shell scripts.
+
+PROGNAME=${0##*/}
+
+ASH="ash -n"
+BASH="bash --posix -n"
+DASH="dash -n"
+KSH="ksh -n"
+POSH="posh -n"
+ERROR=""
+
+usage () {
+    cat <<EOF
+Usage: $PROGNAME SCRIPT ...
+Perform syntax checks on each SCRIPT with POSIX-compatible shells available on
+the system.
+EOF
+}
+
+howl () {
+    echo "$PROGNAME: error; $*" >&2
+}
+
+warn () {
+    echo "$PROGNAME: warning; $*" >&2
+}
+
+if [ -z "$1" ]; then
+    usage >&2
+    exit 2
+fi
+
+while [ -n "$1" ]; do
+    if ! [ -r "$1" ]; then
+        howl "\"$1\" does not exist or is not readable"
+        usage >&2
+        exit 2
+    fi
+    for SH in "$BASH" "$DASH" "$KSH" "$POSH"; do
+        CMD=${SH%% *}
+        if which "$CMD" >/dev/null 2>&1; then
+            if ! $SH "$1"; then
+                echo "$PROGNAME: \"$1\" failed syntax check with $CMD"
+                error="yes"
+            fi
+        else
+            warn "cannot verify correctness of \"$1\" with $CMD; shell not" \
+                 "available"
+        fi
+    done
+    shift
+done
+
+if [ -n "$ERROR" ]; then
+  exit 1
+fi
+
+exit 0
+
+# vim:set ai et sts=4 sw=4 tw=80:

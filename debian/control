@@ -1,0 +1,95 @@
+Source: xorg
+Section: x11
+Priority: optional
+Maintainer: Ubuntu X Maintainers <ubuntu-devel@lists.ubuntu.com>
+Uploaders: Daniel Stone <daniel.stone@ubuntu.com>, Fabio M. Di Nitto <fabbione@ubuntu.com>
+Standards-Version: 3.6.1
+Build-Depends: dpkg (>= 1.7.0), po-debconf, debhelper (>= 4.1.16)
+
+Package: x11-common
+Architecture: any
+Depends: ${misc:Depends}, debianutils (>= 1.13), lsb-base (>= 1.3-9ubuntu2), laptop-detect
+Conflicts: xfree86-common, xorg-common, xserver-common, x-common
+Replaces: xfree86-common, xorg-common, xserver-common, x-common
+Description: X Window System (X.Org) infrastructure
+ x11-common contains the filesystem infrastructure required for further
+ installation of the X Window System in any configuration; it does not
+ provide a full installation of clients, servers, libraries, and utilities
+ required to run the X Window System.
+ .
+ A number of terms are used to refer to the X Window System, including "X", "X
+ Version 11", "X11", "X11R6", and "X11R7".  The version of X used in Debian and
+ Ubuntu is derived from the version released by the X.Org Foundation, and is
+ thus often also referred to as "X.Org".  All of the preceding quoted terms are
+ functionally interchangeable in an Ubuntu system.
+
+Package: xserver-xorg
+Architecture: all
+Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
+Depends: xserver-xorg-core, xserver-xorg-driver-all | xserver-xorg-driver, xserver-xorg-input-all | xserver-xorg-input, x11-common, laptop-detect, xresprobe, mdetect, discover1
+Description: the X.Org X server
+ This package depends on the full suite of the server and drivers for the
+ X.Org X server, as well as providing a configuration infrastructure to manage
+ xorg.conf.  It does not provide the actual server itself, but removing it
+ is strongly discouraged.
+
+Package: xserver-xorg-driver-all
+Architecture: alpha amd64 arm hppa hurd-i386 i386 ia64 m68k mips mipsel powerpc sparc
+Depends: ${F:XServer-Xorg-Driver-Depends}
+Description: the X.Org X server -- output driver metapackage
+ This package depends on the full suite of output drivers for the X.Org X server
+ (Xorg).  It does not provide any drivers itself, and may be removed if you wish
+ to only have certain drivers installed.
+
+Package: xserver-xorg-input-all
+Architecture: alpha amd64 arm hppa hurd-i386 i386 ia64 m68k mips mipsel powerpc sparc
+Depends: ${F:XServer-Xorg-Input-Depends}
+Description: the X.Org X server -- input driver metapackage
+ This package depends on the full suite of input drivers for the X.Org X server
+ (Xorg).  It does not provide any drivers itself, and may be removed if you wish
+ to only have certain drivers installed.
+
+Package: x-window-system-core
+Architecture: any
+Depends: xserver-xorg, libgl1-mesa, libgl1-mesa-dri, libglu1-mesa, xfonts-base, xfonts-100dpi, xfonts-75dpi, xfonts-scalable, xbase-clients, xutils, xkeyboard-config
+Description: X Window System core components
+ This metapackage provides the essential components for a standalone
+ workstation running the X Window System.  It provides the X libraries, an X
+ server, a set of fonts, and a group of basic X clients and utilities.
+ .
+ Higher level metapackages, such as those for desktop environments, can
+ depend on this package and simplify their dependencies.
+ .
+ It should be noted that a package providing x-window-manager and a package
+ providing x-terminal-emulator should also be installed to ensure a
+ comfortable X experience.
+
+Package: xlibs-dev
+Section: oldlibs
+Priority: extra
+Depends: libice-dev, libsm-dev, libx11-dev, libxext-dev, libxi-dev, libxmu-dev, libxmuu-dev, libxpm-dev, libxrandr-dev, libxt-dev, libxtrap-dev, libxtst-dev, libxv-dev, x-dev, zlib1g-dev
+Architecture: all
+Description: X Window System client library development files transitional package
+ This package smooths upgrades from Debian 3.0 by depending on libice-dev,
+ libsm-dev, libx11-dev, libxext-dev, libxi-dev, libxmu-dev, libxmuu-dev,
+ libxpm-dev, libxrandr-dev, libxt-dev, libxtrap-dev, libxtst-dev, libxv-dev,
+ x-dev, and xlibs-static-dev.  This transitional package is only depended upon
+ by packages that haven't yet corrected their dependencies to reflect the new
+ library arrangement.
+
+Package: xbase-clients
+Architecture: all
+Depends: xauth, xdpyinfo, xhost, xinit, xkbutils, xpmutils, xprop, xrandr, xrdb, xsetmode, xsetpointer, xvinfo, mesa-utils, xset, xmodmap, xdriinfo, appres, beforelight, bitmap, editres, fstobdf, iceauth, ico, listres, oclock, smproxy, viewres, x11perf, xauth, xbiff, xcalc, xclipboard, xclock, xconsole, xcursorgen, xditview, xdpyinfo, xev, xeyes, xf86dga, xfd, xfontsel, xgamma, xgc, xhost, xinit, xkbutils, xkill, xload, xlogo, xlsatoms, xlsclients, xlsfonts, xmag, xman, xmessage, xmodmap, xmore, xprop, xrandr, xrgb, xrefresh, xset, xsetmode, xsetpointer, xsetroot, xsm, xstdcmap, xtrap, xvidtune, xvinfo, xwd, xwininfo, xwud, xutils
+Description: X Window System client utility transitional package
+ This package smooths upgrades from Ubuntu 5.04 ('Hoary') to Ubuntu 5.10
+ ('Breezy') by ensuring that most base X client utilities are installed.
+ If you are running Breezy already, you may safely remove this package.
+
+Package: xutils
+Architecture: all
+Depends: imake, xcursorgen, sessreg, xfonts-utils, xmkmf
+Description: X Window System miscellaneous utility transitional package
+ This package smooths upgrades from Ubuntu 5.04 ('Hoary') to Ubuntu 5.10
+ ('Breezy') by ensuring that most miscellaneous utilities traditionally
+ shipped with the sample implementation of X are installed.  For base X
+ clients, see the xbase-clients transitional package.

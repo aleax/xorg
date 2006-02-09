@@ -1,0 +1,142 @@
+#!/bin/sh
+# Debian xserver-xorg package pre-installation script
+# Copyright 2003, 2004 Branden Robinson.
+# Licensed under the GNU General Public License, version 2.  See the file
+# /usr/share/common-licenses/GPL or <http://www.gnu.org/copyleft/gpl.txt>.
+
+
+set -e
+
+# source debconf library
+. /usr/share/debconf/confmodule
+
+THIS_PACKAGE=xserver-xorg
+THIS_SCRIPT=preinst
+
+#INCLUDE_SHELL_LIB#
+
+CONFIG_DIR=/etc/X11
+SERVER_SYMLINK="$CONFIG_DIR/X"
+XF86CONFIG="$CONFIG_DIR/XF86Config-4"
+XORGCONFIG="$CONFIG_DIR/xorg.conf"
+CONFIG_AUX_DIR=/var/lib/x11
+SERVER_SYMLINK_CHECKSUM_BASE="${SERVER_SYMLINK##*/}.md5sum"
+SERVER_SYMLINK_CHECKSUM="$CONFIG_AUX_DIR/$SERVER_SYMLINK_CHECKSUM_BASE"
+SERVER_SYMLINK_ROSTER_BASE="${SERVER_SYMLINK##*/}.roster"
+SERVER_SYMLINK_ROSTER="$CONFIG_AUX_DIR/$SERVER_SYMLINK_ROSTER_BASE"
+XORGCONFIG_CHECKSUM_BASE="${XORGCONFIG##*/}.md5sum"
+XORGCONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XORGCONFIG_CHECKSUM_BASE"
+XORGCONFIG_ROSTER_BASE="${XORGCONFIG##*/}.roster"
+XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/$XORGCONFIG_ROSTER_BASE"
+THIS_SERVER=/usr/bin/Xorg
+UNCONFIGURED_LINK_TARGET=$(which true)
+
+if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
+  # create the configuration files' main and auxiliary directories if they
+  # don't exist
+  for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
+    if ! [ -e "$DIR" ]; then
+      observe "creating $DIR"
+      mkdir --mode=755 --parents "$DIR"
+    fi
+  done
+
+  # the transition from /var/lib/xfree86 to /var/lib/x11 occurred in
+  # 7.0.0-0ubuntu1
+  if [ -n "$UPGRADE" ] && \
+     dpkg --compare-versions "$2" lt "7.0.0"; then
+    if [ -e "/var/lib/xfree86" ]; then
+      if [ -e "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" ] && \
+         [ -e "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE" ]; then
+        if fgrep -qx "$THIS_PACKAGE" \
+           "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE"; then
+          # construct temporary roster file with our package name removed, ignoring
+          # failure
+          fgrep -vx "$THIS_PACKAGE" \
+            "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" > \
+            "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
+            || true
+
+          # is there anything left?
+          if [ -s "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" ]; then
+            # yes, replace the roster file
+            mv "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" \
+               "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE"
+          else
+            # no; remove both the original and our temporary copy
+            rm -f "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" \
+                  "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp"
+
+            # migrate the checksum if it doesn't exist
+            if [ -e "$SERVER_SYMLINK_CHECKSUM" ]; then
+              rm "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE"
+            else
+              mv "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE" \
+                 "$SERVER_SYMLINK_CHECKSUM"
+            fi
+          fi
+        fi
+      fi
+
+      if [ -e "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" ] && \
+         [ -e "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" ]; then
+        if fgrep -qx "$THIS_PACKAGE" \
+           "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"; then
+          # construct temporary roster file with our package name removed, ignoring
+          # failure
+          fgrep -vx "$THIS_PACKAGE" \
+            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" > \
+            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
+            || true
+
+          # is there anything left?
+          if [ -s "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" ]; then
+            # yes, replace the roster file
+            mv "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" \
+               "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"
+          else
+            # no; remove both the original and our temporary copy
+            rm -f "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" \
+                  "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp"
+
+            # migrate the checksum if it doesn't exist
+            if [ -e "$XORGCONFIG_CHECKSUM" ]; then
+              rm "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE"
+            else
+              mv "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" \
+                 "$XORGCONFIG_CHECKSUM"
+            fi
+          fi
+        fi
+      fi
+
+      rmdir /var/lib/xfree86 2>/dev/null || true
+    fi
+  fi
+
+  # implement (simplified) ucf-style configration file handling
+
+  # if performing a fresh install, place config files under management if they
+  # do *not* already exist
+  if [ "$1" = "install" ]; then
+    # first, create and checksum the X server symlink; only do this if it
+    # both does not exist and is not a symbolic link
+    if ! [ -e "$SERVER_SYMLINK" ] && ! [ -L "$SERVER_SYMLINK" ]; then
+      # set the target to the unconfigured default
+      ln -s "$UNCONFIGURED_LINK_TARGET" "$SERVER_SYMLINK"
+      readlink "$SERVER_SYMLINK" | md5sum > "$SERVER_SYMLINK_CHECKSUM"
+    fi
+    # next, xorg.conf
+    if ! [ -e "$XORGCONFIG" ]; then
+      # cheap, fork()-free version of "touch"
+      : > "$XORGCONFIG"
+      md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
+    fi
+  fi
+fi
+
+#DEBHELPER#
+
+exit 0
+
+# vim:set ai et sts=2 sw=2 tw=0:

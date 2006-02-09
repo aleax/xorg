@@ -1,0 +1,1632 @@
+# debconf templates for xfree86 package
+# Turkish translation
+#
+# $Id: tr.po 1763M 2004-10-11 07:13:18Z (local) $
+#
+# Copyrights:
+# Branden Robinson, 2000--2004
+# Osman Yüksel <yuxel@sonsuzdongu.com>, 2004
+# Recai Oktas <roktas@omu.edu.tr>, 2004
+#
+# This file is distributed under the same license as the xfree86 package.
+# Please see debian/copyright.
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xserver-xorg\n"
+"Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
+"POT-Creation-Date: 2006-01-18 08:45+1100\n"
+"PO-Revision-Date: 2004-06-26 16:54+0300\n"
+"Last-Translator: Osman Yüksel <yuxel@sonsuzdongu.com>\n"
+"Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../x11-common.templates:3
+msgid "Root Only, Console Users Only, Anybody"
+msgstr "Sadece Root, Sadece Konsol Kullanıcıları, Herhangi Birisi"
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:5
+msgid "Select what type of user has permission to start the X server."
+msgstr "X sunucusunu çalıştırmaya yetkili kullanıcıları seçin."
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:5
+msgid ""
+"Because the X server runs with superuser privileges, it may be unwise to "
+"permit any user to start it, for security reasons.  On the other hand, it is "
+"even more unwise to run general-purpose X client programs as root, which is "
+"what may happen if only root is permitted to start the X server.  A good "
+"compromise is to permit the X server to be started only by users logged in "
+"to one of the virtual consoles."
+msgstr ""
+"X sunucusu süper-kullanıcı haklarıyla çalıştırıldığından, herhangi bir "
+"kullanıcının sunucuyu başlatmasına izin vermek, güvenlik gerekçeleriyle "
+"tavsiye edilmez.  Öte yandan X uygulamalarını root olarak çalıştırmak daha "
+"da yanlış  olacaktır.  Uygun bir seçim, X sunucusunu sadece sanal konsollara "
+"giriş yapmış kullanıcılar tarafından kullanılacak şekilde ayarlamaktır."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+msgid "Enter the desired nice value for the X server to use."
+msgstr ""
+"X sunucusunun kullanmasını istediğiniz öncelik değerini (\"nice\") girin."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+#, fuzzy
+msgid ""
+"When using operating system kernels with a particular scheduling strategy, "
+"it has been widely noted that the X server's performance improves when it is "
+"run at a higher process priority than the default; a process's priority is "
+"known as its \"nice\" value.  They range from -20 (extremely high priority, "
+"or \"not nice\" to other processes) to 19 (extremely low priority).  The "
+"default nice value for ordinary processes is 0, and this is also the "
+"recommend value for the X server."
+msgstr ""
+"Belirli bir zamanlama (scheduling) stratejisi kullanan işletim sistemi "
+"çekirdeklerinde X sunucusunun öntanımlı değerden daha yüksek bir öncelikte "
+"(bu öncelik \"nice\" değeri olarak da bilinir) çalışması halinde "
+"performansın arttığı gözlenmiştir.  \"nice\" değeri -20 (en yüksek öncelik "
+"veya diğer işlemlere göre \"not nice\") ile 19 değerleri (en düşük öncelik) "
+"arasında olabilir.  Sıradan süreçler için öntanımlı 'nice' değeri 0'dır.  "
+"Tek kullanıcılı bir iş istasyonu için -10 uygun bir değerdir.  Diğer konsol "
+"kullanıcıları tarafından pek kullanılmayan bir makine için (ör. web "
+"sunucusu) 0 uygun bir değerdir."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+msgid ""
+"Values outside the range of -10 to 0 are not recommended; too negative, and "
+"the X server will interfere with important system tasks.  Too positive, and "
+"the X server will be sluggish and unresponsive."
+msgstr ""
+"-10'dan 0'a kadar olan aralığın dışına çıkmak tavsiye edilmez; çok negatif "
+"bir değer verirseniz X sunucusu önemli sistem görevleriyle karışabilir, çok "
+"pozitif bir değer ise X sunucusunu yavaşlatacak ve tepkisiz hale "
+"getirecektir."
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:35
+msgid "Please enter an integer between -20 and 19."
+msgstr "Lütfen -20 ve 19 arasında bir tamsayı girin."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid "Attempt to autodetect video hardware?"
+msgstr "Ekran kartının otomatik olarak algılanması denensin mi?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid ""
+"Accept this option if you would like to attempt to autodetect the "
+"recommended X server and driver module for your video card.  If "
+"autodetection fails, you will be asked to specify the desired X server and/"
+"or driver module.  If autodetection succeeds, further debconf questions "
+"about your video hardware will be pre-answered."
+msgstr ""
+"X sunucusunun kullanacağı sürücü ve modüllerin otomatik olarak algılanmasını "
+"denemek istiyorsanız bu işlemi onaylayın.  Otomatik algılamanın başarısız "
+"olması durumunda istenen X sunucusu ve/veya sürücü modülleri size "
+"sorulacaktır.  Eğer otomatik algılama başarılı olursa gelecek adımlardaki "
+"debconf soruları önceden cevaplanmış olacaktır."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid ""
+"If you would rather select the X server and driver module yourself, decline "
+"this option.  You will not be asked to select the X server if there is only "
+"one available."
+msgstr ""
+"Eğer X sunucusu ve modüllerini kendiniz seçmek isterseniz bu seçeneği "
+"onaylamayın.  Eğer uygun durumda olan sadece bir X sunucusu varsa, seçim "
+"yapmaya gerek olmayacaktır."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:17
+msgid "No X server known for your video hardware."
+msgstr "Donanımınıza uygun bir X sunucusu bilinmiyor."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:17
+msgid ""
+"Either you have no video hardware installed on this machine (serial console "
+"only?), or the \"discover\" program was unable to determine which X server "
+"is appropriate for your video hardware.  This could be due to incomplete "
+"information in discover's hardware database, or it could be that your video "
+"hardware is simply not supported by any available X servers."
+msgstr ""
+"Makinenizde kurulu bir ekran kartı yok (sadece seri konsol?) veya \"discover"
+"\" programı donanımınıza uygun X sunucusunu bulamadı.  Bunun nedeni "
+"discover'ın donanım veritabanındaki bir eksiklik veya donanımınızın "
+"desteklenmemesi olabilir."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:26
+msgid "Multiple potential default X servers for your hardware."
+msgstr "Donanımınız için birden fazla kullanılabilir X sunucusu mevcut."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:26
+msgid ""
+"Multiple video cards have been detected, and different X servers are "
+"required to support the various devices.  It is thus not possible to "
+"automatically select a default X server.  Please configure the device that "
+"will serve as your computer's \"primary head\"; this is generally the video "
+"card and monitor to which the computer displays when it first boots."
+msgstr ""
+"Çoklu ekran kartı tespit edildi.  Aygıtlar farklı X sunucuları tarafından "
+"destekleniyor.  Bu durum X sunucusunun otomatik olarak seçilmesini "
+"engelliyor.  Lütfen bilgisayarınız için \"birincil ekran kartı\" olarak "
+"hizmet edecek aygıtı seçin; bu genelde makine ilk açıldığında ekranda "
+"gösterilen ekran kartı ve monitördür."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid "Select the desired default X server."
+msgstr "Kullanmak istediğiniz öntanımlı X sunucusunu seçin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid ""
+"The X server is the hardware interface of the X Window System.  Its job is "
+"to communicate with video display and input devices, providing a foundation "
+"for the chosen Graphical User Interface (GUI)."
+msgstr ""
+"X sunucusu, X Window Sistemi'nin donanım arayüzüdür.  Görevi, ekran "
+"görüntüsü ve giriş aygıtları arasındaki iletişimi ve Grafik Kullanıcı "
+"Arayüzlerinin (GUI) kullanılmasını sağlamaktır."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid ""
+"Several X servers may be available; the default is selected via the /etc/X11/"
+"X symbolic link.  Some X servers may not work with your particular graphics "
+"hardware."
+msgstr ""
+"Birden fazla X sunucusu mevcut olabilir.  Öntanımlı sunucu /etc/X11/X "
+"sembolik bağı tarafından belirlenir.  Bazı X sunucuları, grafik "
+"donanımınızla çalışmayabilir."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+msgid "Write default Files section to configuration file?"
+msgstr "Öntanımlı \"Files\" bölümü yapılandırma dosyasına yazılsın mı?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+msgid ""
+"The Files section of the X server configuration file tells the X server "
+"where to find server modules, the RGB color database, and font files.  This "
+"option is for advanced users.  In most cases, you should enable it."
+msgstr ""
+"X sunucu yapılandırmasında \"Files\" (dosyalar) bölümü; X sunucusuna sunucu "
+"modüllerinin, RGB renk veritabanının ve yazıtipi dosyalarının nerede "
+"olduğunu belirtir.  Bu seçenek ileri seviye kullanıcılar içindir.  Çoğu "
+"durumda bunu etkinleştirmelisiniz."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+#, fuzzy
+msgid ""
+"Disable this option if you want to write your own \"Files\" section into the "
+"X.Org server configuration file.  You may wish to do this if you need to "
+"remove the reference to the local font server, add a reference to a "
+"different font server, or rearrange the default set of local font paths."
+msgstr ""
+"Eğer XFree86 sunucu yapılandırma dosyasına \"Files\" bölümünü kendiniz "
+"yazmak istiyorsanız bu seçeneği etkisizleştirebilirsiniz.  Eğer yerel "
+"yazıtipi sunucusunu kullanmak istemiyorsanız; başka bir yazıtipi sunucusuna "
+"yönlendirmek veya yerel yazıtipi yollarını yeniden düzenlemek istiyorsanız "
+"böyle yapmayı tercih edebilirsiniz."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid "Select the X.Org server modules that should be loaded by default."
+msgstr "Öntanımlı olarak yüklenecek XFree86 sunucu modüllerini seçin."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"It is possible to customize (or completely omit) the list of modules that "
+"the X server loads by default.  This option is for advanced users.  In most "
+"cases, all of these modules should be enabled."
+msgstr ""
+"X sunucusunun öntanımlı olarak yüklediği modül listesini yapılandırmak (veya "
+"bu adımı tamamıyla atlamak) mümkündür.  Bu seçenek, ileri seviye "
+"kullanıcılar içindir.  Çoğu durumda, bu modüllerin tümü etkin olmalıdır."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid ""
+"The glx module enables support for OpenGL rendering.  The dri module enables "
+"support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+"that support for DRI must also exist in the kernel, the video card, and the "
+"installed version of the Mesa libraries for hardware-accelerated 3D "
+"operations using DRI to work.  Otherwise, the server falls back to software "
+"rendering."
+msgstr ""
+"\"GLCore\" ve \"glx\" modülleri OpenGL yazılım modelleme (rendering) "
+"içindir.  \"dri\" modülü X sunucusuna Doğrudan Modelleme Alt yapısı (DRI) "
+"desteğini kazandırır.  DRI desteğinin çekirdek, ekran kartı ve DRI'nin "
+"donanım hızlandırmalı 3B işlemler yapmasını sağlayan Mesa kitaplıklarının "
+"kurulu sürümleri tarafından da desteklenmesi gerektiğini unutmayın.  Aksi "
+"takdirde sunucu yazılım modellemeye geri dönecektir."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+"Display Channel, respectively.  These modules are used to query monitor "
+"capabilties via the video card.  The int10 module is a real-mode x86 "
+"emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+"module depends on the int10 module, so if you wish to enable vbe, enable "
+"int10 as well."
+msgstr ""
+"\"vbe\" ve \"ddc\" modülleri sırasıyla, VESA BIOS Uzantıları ve Veri "
+"Görüntüleme Kanalı (DDC) desteklerini etkinleştirir.  Bu modüller ekran "
+"kartı ile monitör özelliklerini sorgular.  \"int10\" modülü, ikincil VGA "
+"kartlarını etkinleştiren bir gerçek-kip x86 emülatörüdür.  \"vbe\" modülünün "
+"int10 modülüne bağımlı olduğunu ve vbe modülünü etkinleştirmek istediğinizde "
+"int10 modülünü de etkinleştirmeniz gerektiğini unutmayın."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The dbe module enables the double-buffering extension in the server, and is "
+"useful for animation and video operations."
+msgstr ""
+"\"dbe\" modülü, sunucudaki çifte tamponlama uzantısını etkinleştirir.  Bu "
+"modül canlandırma ve görüntü işlemleri için yararlıdır."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The extmod module enables many traditional and commonly used extensions, "
+"such as shaped windows, shared memory, video mode switching, DGA, and Xv.  "
+"The record module implements the RECORD extension, commonly used in server "
+"testing."
+msgstr ""
+"\"extmod\" modülü; biçimlendirilmiş pencereler, paylaşılmış bellek, ekran "
+"kipi değiştirme, DGA ve Xv gibi  geleneksel ve sık kullanılan uzantıları "
+"etkinleştirir.  \"record\" modülü ise genellikle sunucu testlerinde "
+"kullanılan RECORD uzantısını etkinleştirir."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
+msgstr ""
+"\"bitmap\", \"freetype\", \"speedo\", \"type1\" ve \"xtt\" modüllerinin "
+"hepsi birer yazıtipi işlemcisidir."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid ""
+"For further information about these modules, please consult the X.Org "
+"documentation."
+msgstr ""
+"Bu modüller hakkında daha fazla bilgi edinmek için lütfen XFree86 "
+"belgelerini inceleyin."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"If you unsure what to do, leave all of the modules enabled.  Advanced users "
+"may wish to disable all modules -- in which case no Modules section will be "
+"written to the X server configuration file -- and add their own Modules "
+"section to the file manually."
+msgstr ""
+"Eğer ne yapmanız gerektiğinden emin değilseniz, tüm modülleri "
+"etkinleştirilmiş halde bırakın.  İleri seviye kullanıcılar, kendi seçtikleri "
+"modülleri daha sonra elle X yapılandırma dosyasının \"Modules\" bölümüne "
+"eklemek için tüm modülleri etkisizleştirebilirler."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+#, fuzzy
+msgid "Multiple potential default X.Org server drivers for your hardware."
+msgstr "Donanımınıza uygun olası XFree86 sunucu sürücüleri."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+#, fuzzy
+msgid ""
+"Multiple video cards have been detected, and different drivers are required "
+"to support the various devices.  It is thus not possible to automatically "
+"select a default X.Org server driver.  Please configure the device that will "
+"serve as your computer's \"primary head\"; this is generally the video card "
+"and monitor to which the computer displays when it first boots."
+msgstr ""
+"Birden fazla ekran kartı tespit edildi.  Farklı aygıtların desteklenmesi "
+"için değişik sürücülerin kullanılması gerekecek.  Bu yüzden öntanımlı "
+"XFree86 sürücüsünü otomatik seçmek mümkün değil.  Lütfen bilgisayarınızda "
+"\"birincil ekran kartı\" olarak hizmet edecek aygıtı yapılandırın.  Bu "
+"genelde bilgisayar ilk açıldığında gösterilen ekran kartı ve monitördür."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+msgid ""
+"At the present time, only a single-headed setup is supported by debconf; "
+"however, the X server configuration files can be edited to support a multi-"
+"head configuration."
+msgstr ""
+"Şu anda debconf tarafından, sadece tek-çıkışlı veya tek-ekranlı ayarlamalar "
+"desteklenmektedir.  Bununla birlikte çoklu çıkış veya çoklu ekran desteğini "
+"etkinleştirmek için X sunucu yapılandırma dosyaları düzenlenebilir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:118
+msgid "Enter an identifier for your video card."
+msgstr "Ekran kartınız için bir tanımlayıcı girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:118
+#, fuzzy
+msgid ""
+"The X server configuration file associates your video card with a name that "
+"you may provide.  This is usually the vendor or brand name followed by the "
+"model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
+"6600\"."
+msgstr ""
+"X sunucu yapılandırma dosyası, ekran kartınızı sizin belirleyeceğiniz bir "
+"isme göre tanımlar.  Bu genelde, üretici firma veya marka adını takip eden "
+"model adıdır.  ör. \"3Dfx Voodoo3\" veya \"ATI Rage Fury Maxx\"."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid "Select the desired X server driver."
+msgstr "Kullanmak istediğiniz X sunucu sürücüsünü seçin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid ""
+"For the X Window System graphical user interface to operate correctly, it is "
+"necessary to select a video card driver for the X server."
+msgstr ""
+"X Window Sisteminin, grafik kullanıcı arayüzlerini doğru işlemesi için, X "
+"sunucusu için bir ekran kartı sürücüsü seçmelisiniz."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid ""
+"Drivers are typically named for the video card or chipset manufacturer, or "
+"for a specific model or family of chipsets."
+msgstr ""
+"Sürücüler genelde, ekran kartı adı, yonga seti, özel bir model veya bir "
+"yonga ailesi olarak adlandırılır."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid "Use kernel framebuffer device interface?"
+msgstr "Çekirdek kare tamponu arayüzü kullanılsın mı?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid ""
+"Rather than communicating directly with the video hardware, the X server may "
+"be configured to perform some operations, such as video mode switching, via "
+"the kernel's framebuffer driver."
+msgstr ""
+"X sunucusu, ekran donanımına doğrudan ulaşmak yerine, çekirdek kare tamponu "
+"(framebuffer) kullanarak ekran kipi değiştirme gibi işlemleri yapmak için de "
+"yapılandırılabilir."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid ""
+"In theory, either approach should work, but in practice, sometimes one does "
+"and the other does not.  Enabling this option is the safe bet, but feel free "
+"to turn it off if it appears to cause problems."
+msgstr ""
+"Teorik olarak her ikisi de çalışmalıdır.  Ancak pratikte bazen biri veya "
+"diğeri çalışmaz.  Bu seçeneği etkinleştirmekte bir sakınca yoktur, fakat "
+"sorunlara yol açtığı görülüyorsa iptal etmekten çekinmeyin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid "Please enter the video card's bus identifier."
+msgstr "Ekran kartının veriyolu tanımlayıcısını girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+"Users of PowerPC machines, and users of any computer with multiple video "
+"devices, should specify the BusID of the video card in an accepted bus-"
+"specific format."
+msgstr ""
+"PowerPC kullanıcıları ve çoklu ekran aygıtı kullanan kullanıcılar, ekran "
+"kartı için veriyolu kimliğini (BusID) kullanılan veriyoluna özgü bir biçemde "
+"belirtmelidirler."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid "Examples:"
+msgstr "Örnekler:"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
+msgstr ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+#, fuzzy
+msgid ""
+"For users of multi-head setups, this option will configure only one of the "
+"heads.  Further configuration will have to be done manually in the X server "
+"configuration file, /etc/X11/xorg.conf."
+msgstr ""
+"Çok-çıkışlı ekran kartı kullanan kullanıcılar için, bu seçenek sadece "
+"çıkışlardan bir tanesini yapılandıracaktır.  Diğer ayarlar /etc/X11/"
+"XF86Config-4'de bulunan X sunucu yapılandırma dosyasında elle yapılmalıdır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+#, fuzzy
+msgid ""
+"You may wish to use the \"lspci -X\" command to determine the bus location "
+"of your PCI, AGP, or PCI-Express video card."
+msgstr ""
+"PCI veya AGP kartınızın veriyolunu tespit etmek için \"lspci\" komutunu "
+"kullanabilirsiniz.  lspci'ın; veriyolunu, aygıtı ve işlev numarasını ondalık "
+"sayılar yerine on altılık biçimde bildirdiğini unutmayın."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+"When possible, this question has been pre-answered for you and you should "
+"accept the default unless you know it doesn't work."
+msgstr ""
+"Eğer bu mümkünse, bu soru sizin için önceden cevaplanmış olacaktır.  "
+"Çalışmayacağına emin olmadığınız sürece öntanımlı değerleri kabul "
+"etmelisiniz."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:169
+msgid "Please enter a bus identifier in the proper format."
+msgstr "Lütfen, veriyolu tanımlayıcısını uygun biçemde girin."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:169
+msgid "The BusID entered was not in a recognized format."
+msgstr "Girilen veriyolu kimliği (BusID) tanınan bir biçeme sahip değil."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid "Enter the amount of memory (in kB) to be used by your video card."
+msgstr "Ekran kartınız tarafından kullanılacak belleği (kB olarak) girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid ""
+"Typically, the amount of dedicated memory your video card has is "
+"autodetected by the X server, but some integrated video chips (such as the "
+"Intel i810) have little or no video memory of their own, and instead borrow "
+"main system memory for their needs."
+msgstr ""
+"Normalde, ekran kartınıza ayrılan bellek miktarı, X sunucusu tarafından "
+"otomatik olarak tespit edilecektir, ancak bazı tümleşik video yongaları "
+"(Intel i810 gibi) üzerlerinde çok az ekran belleği taşır veya hiç bellek "
+"taşımazlar ve bunun yerine ihtiyaçlarını ana sistem belleğinden karşılarlar."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid ""
+"It is perfectly acceptable to leave this parameter blank; only if your video "
+"card lacks RAM, or if the X server has trouble autodetecting the amount, is "
+"it necessary to specify the amount of video RAM."
+msgstr ""
+"Eğer ekran kartınızın RAM'ı yetersiz veya X sunucusu ekran bellek miktarını "
+"otomatik olarak tanımakta sorun çıkarıyorsa bu parametreyi boş bırakın."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+msgid "Please select the XKB rule set to use."
+msgstr "Lütfen kullanılacak XKB kural kümesini seçin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+msgid ""
+"For the X server to handle your keyboard correctly, an XKB rule set must be "
+"chosen."
+msgstr ""
+"X sunucusunun klavyeyi doğru tanıması için, bir XKB kural seti seçilmeli."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid ""
+"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
+"5 keyboards, however, should enter \"sun\"."
+msgstr ""
+"Çoğu kullanıcı bu alana \"xfree86\" girmelidir.  Sun Tip 4 ve Tip 5 klavye "
+"kullanıcıları ise \"sun\" girmelidir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid ""
+"Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
+"package has been unpacked, see the /etc/X11/xkb/rules directory for "
+"available rule sets."
+msgstr ""
+"İleri seviye kullanıcılar, mevcut herhangi bir XKB kural kümesini "
+"kullanabilir.  Eğer xlibs paketi kurulmuşsa, mevcut kural kümelerini /etc/"
+"X11/xkb/rules dizininde görebilirsiniz."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid "If you don't know what rule set to use, enter \"xorg\"."
+msgstr ""
+"Eğer hangi kural kümesini kullanacağınızı bilmiyorsanız \"xfree86\" girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid "Please select your keyboard model."
+msgstr "Klavye tipini seçin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"For the X server to handle your keyboard correctly, a keyboard model must be "
+"entered.  Available models depend on which XKB rule set is in use."
+msgstr ""
+"X sunucusunun klavyeyi doğru tanıması için, bir klavye tipi girilmeli.  "
+"Mevcut tipler, kullanılan XKB kural kümesine bağlıdır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc101\" keyboard is a traditional IBM PC/AT style keyboard with 101 "
+"keys, historically common in the United States.  It does not have the \"logo"
+"\" or \"menu\" keys."
+msgstr ""
+"\"pc101\" klavye, genelde Birleşik Devletler'de kullanılan, geleneksel 101 "
+"tuşlu IBM PC/AT stili klavyedir.  \"logo\" veya  \"menu\" tuşları yoktur."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc104\" keyboard is like the pc101 model, with additional keys.  These "
+"keys are usually engraved with a \"logo\" symbol (there is typically a pair "
+"of these, between each set of control and alt keys), and a \"menu\" key."
+msgstr ""
+"\"pc104\" klavye, pc101 klavye tipine benzeyen, fakat ek tuşların bulunduğu "
+"klavye tipidir.  Bu ek tuşlar genellikle, üzerinde bir \"logo\" sembolünün "
+"olduğu tuş (control ve alt tuşları arasında bunlardan birer çift vardır) ve "
+"\"menu\" tuşundan oluşur."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc102\" and \"pc105\" models are versions of the pc101 and pc104 "
+"keyboards, respectively, often found in Europe.  If your keyboard has a \"< >"
+"\" key (a single key engraved with both the less-than and greater-than "
+"symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
+"\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
+msgstr ""
+"\"pc102\" ve \"pc105\" modelleri, sırasıyla pc101 ve pc104 tipi klavyelerin "
+"genelde Avrupa'da kullanılan türleridir.  Eğer kullandığınız klavye "
+"(üzerinde 'küçüktür' ve 'büyüktür' sembollerinin bulunduğu tek bir)  \"< >\" "
+"tuşuna sahipse, bu klavyenin modeli büyük olasılıkla \"pc102\" veya \"pc105"
+"\"dir.  Eğer \"pc101\" veya \"pc104\" modelini seçersiniz, \"< >\" tuşu "
+"çalışmayabilir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"macintosh\" model is for Macintosh keyboards where the kernel and "
+"console tools use the new input layer which uses Linux keycodes; "
+"\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
+"input layer."
+msgstr ""
+"\"macintosh\" modeli, Linux tuş kodlarını kullanan yeni giriş katmanına "
+"dayalı çekirdek ve konsol araçları için geçerli Macintosh klavyesidir; "
+"\"macintosh_old\" ise yeni giriş katmanını kullanmayan eski Macintosh "
+"klavyeler içindir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid "All of the above models use the \"xorg\" rule set."
+msgstr "Üstteki tüm modeller \"xfree86\" kural kümesini kullanır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"type4\" and \"type5\" models are for Sun Type4 and Type5 keyboards, "
+"respectively.  These models can only be used if the \"sun\" XKB rule set is "
+"in use."
+msgstr ""
+"\"type4\" ve \"type5\" modelleri sırasıyla, Sun Type4 ve Type5 klavyeler "
+"içindir.  Bu modeller \"sun\" XKB kural kümesini kullanır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"Laptop keyboards often do not have as many keys as standalone models; laptop "
+"users should select the keyboard model most closely approximated by the "
+"above."
+msgstr ""
+"Dizüstü klavyelerinde, normal klavyelerdeki çoğu tuş yoktur.  Dizüstü "
+"bilgisayar kullanıcıları klavye modellerini yukarıdakilerden en yakın olana "
+"ayarlamalıdır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid ""
+"Advanced users can use any model defined by the selected XKB rule set.  If "
+"the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
+"directory for available rule sets."
+msgstr ""
+"İleri seviye kullanıcılar seçili XKB kural setine göre tanımlı herhangi bir "
+"modeli seçebilir.  Eğer xlibs paketi kurulu ise mevcut kural kümelerini, /"
+"etc/X11/xkb/rules dizininde bulabilirsiniz."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid ""
+"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
+"most other keyboards should generally enter \"pc105\"."
+msgstr "U.S. İngilizce klavye kullanıcıları genel olarak \"pc104\" girmelidir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid "Please select your keyboard layout."
+msgstr "Klavye düzeni seçin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid ""
+"For the X server to handle your keyboard correctly, a keyboard layout must "
+"be entered.  Available layouts depend on which XKB rule set and keyboard "
+"model were previously selected."
+msgstr ""
+"X sunucusunun klavyeyi doğru tanıması için bir klavye düzeni girilmelidir.  "
+"Mevcut düzenler, seçili XKB kural seti ve klavye modeline bağlıdır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+#, fuzzy
+msgid ""
+"Advanced users can use any layout supported by the selected XKB rule set.  "
+"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
+"rules directory for available rule sets."
+msgstr ""
+"İleri seviye kullanıcılar seçili XKB kural setine göre tanımlı herhangi bir "
+"modeli seçebilir.  Eğer xlibs paketi kurulu ise mevcut kural kümelerini, /"
+"etc/X11/xkb/rules dizininde bulabilirsiniz."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid ""
+"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+"localized for other countries should generally enter their ISO 3166 country "
+"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+msgstr ""
+"U.S İngilizce klavye kullanıcıları \"us\" girebilirler.  Diğer ülkelere özel "
+"yerelleştirilmiş klavye kullananlar, ülkelerine ait ISO 3166 kodunu "
+"girmelidirler.  Örnek: Türk kullanıcılar için \"tr\", Alman kullanıcılar "
+"için \"de\"."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid "Please select your keyboard variant."
+msgstr "Klavye alt türünü (varyant) seçin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"For the X server to handle your keyboard as you desire, a keyboard variant "
+"may be entered.  Available variants depend on which XKB rule set, model, and "
+"layout were previously selected."
+msgstr ""
+"X sunucusunun klavyenizi isteğinize uygun şekilde kullanması için bir klavye "
+"alt türü (varyant) girilebilir.  Mevcut alt türler, seçili XKB kural setine "
+"modele ve düzene bağlıdır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
+"spacing accent marks and diaereses as normal spacing keys, and if this is "
+"the preferred behavior, enter \"nodeadkeys\"."
+msgstr ""
+"Çoğu klavye düzeni \"ölü\" tuşların aksan ve telaffuz imleri (diaeresis) "
+"gibi davranmasını destekler.  Eğer bu tercih edilen davranış ise \"nodeadkeys"
+"\" girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+#, fuzzy
+msgid ""
+"Advanced users can use any variant supported by the selected XKB layout.  If "
+"the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
+"directory for the file corresponding to your selected layout for available "
+"variants."
+msgstr ""
+"İleri seviye kullanıcılar XKB kural setince desteklenen herhangi bir alt "
+"türü seçebilir.  Eğer xlibs paketi kurulu ise, seçili düzen için mevcut alt "
+"türleri /etc/X11/xkb/symbols dizininde görebilirsiniz."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"Users of U.S. English keyboards should generally leave this entry blank."
+msgstr ""
+"U.S. İngilizce klavye kullanıcıları genelde burayı boş bırakmalıdır.  Türkçe "
+"F klavye kullanıcıları bu alana \"tr_f\" değerini girmelidir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid "Please select your keyboard options."
+msgstr "Lütfen klavye seçenekleri seçin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"For the X server to handle your keyboard as you desire, keyboard options may "
+"be entered.  Available options depend on which XKB rule set was previously "
+"selected.  Not all options will work with every keyboard model and layout."
+msgstr ""
+"X sunucusunun klavyeyi isteğinize uygun şekilde kullanması için klavye "
+"seçenekleri girilebilir.  Mevcut seçenekler, seçili XKB kural setine "
+"bağlıdır.  Her seçenek her klavye modeli veya düzeninde çalışmayabilir."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"For example, if you wish the Caps Lock key to behave as an additional "
+"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
+"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+msgstr ""
+"Örneğin; Caps Lock tuşunu ek bir Control tuşu olarak kullanmak isterseniz "
+"\"ctrl:nocaps\", Caps Lock ve sol Control tuşlarını değiştirmek isterseniz "
+"\"ctrl:swapcaps\" girebilirsiniz."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"As another example, some people prefer having the Meta keys available on "
+"their keyboard's Alt keys (this is the default), while other people prefer "
+"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
+"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
+"meta_win\"."
+msgstr ""
+"Başka bir örnek: bazı kullanıcılar Alt tuşlarını Meta tuşları olarak "
+"kullanmayı tercih eder (öntanımlı ayar böyledir).  Diğer bazıları ise "
+"Windows veya \"logo\" tuşlarını Meta tuşları olarak kullanmayı tercih eder.  "
+"Windows veya logo tuşlarını Meta tuşları olarak kullanmak isterseniz, "
+"\"altwin:meta_win\" girebilirsiniz."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"You can combine options by separating them with a comma; for example, if you "
+"wish the Caps Lock key to behave as an additional Control key and you would "
+"like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
+"nocaps,altwin:meta_win\"."
+msgstr ""
+"Seçenekleri araya virgül koyarak birleştirebilirsiniz.  Örneğin; Caps Lock "
+"tuşunun Control tuşu gibi davranmasını ve, Windows veya logo tuşlarını Meta "
+"tuşlar olarak kullanılmasını istiyorsanız \"ctrl:nocaps,altwin:meta_win\" "
+"girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"Advanced users can use any options compatible with the selected XKB model, "
+"layout and variant."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid "If you don't know what options to use, leave this entry blank."
+msgstr ""
+"Eğer hangi seçenekleri kullanmanız gerektiğini bilmiyorsanız, bu alanı boş "
+"bırakın."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid "Attempt mouse device autodetection?"
+msgstr "Farenin otomatik olarak algılanması denensin mi?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid ""
+"If you have a mouse attached to the computer, an attempt to detect it can be "
+"made; it may help to move the mouse while detection is attempted (also, the "
+"gpm program should not be running).  If you would like to attach a PS/2 or "
+"bus/inport mouse to your computer, you should shut down the system, turn off "
+"the computer's power, connect the mouse, turn the computer back on, and "
+"reboot.  If you wish to select a mouse type manually, decline this option."
+msgstr ""
+"Eğer bilgisayarınıza takılı bir fare var ise, bu otomatik olarak "
+"algılanabilir.  Algılama denemesinde fareyi hareket ettirmeniz algılamaya "
+"yardımcı olabilir (deneme sırasında gpm programı da çalışmıyor olmalıdır).  "
+"Eğer bilgisayarınıza bir PS/2 veya seri bağlantılı fare takmak isterseniz; "
+"bilgisayarınızı kapatın, fareyi takın ve bilgisayarınızı yeniden açın.  Eğer "
+"fare tipi seçimini elle yapmak isterseniz bu seçeneğin uygulanmasını "
+"onaylamayın."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid ""
+"If you accept this option and autodetection fails, you will be asked this "
+"question again.  You may attempt autodetection as many times as desired.  If "
+"autodetection succeeds, further debconf questions about your mouse will be "
+"pre-answered."
+msgstr ""
+"Eğer bu seçeneği onaylarsanız ve otomatik algılama başarısız olursa bu soru "
+"size tekrar sorulacaktır.  Otomatik algılamayı isteğinize göre defalarca "
+"tekrarlayabilirsiniz.  Eğer otomatik algılama başarılı olursa gelecek "
+"adımlardaki debconf soruları önceden cevaplanmış olacaktır."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid "Please choose your mouse port."
+msgstr "Lütfen farenin bağlı olduğu girişi seçin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of your mouse (or other pointing device, such as a "
+"trackball) must be known."
+msgstr ""
+"X Window Sistemi grafik kullanıcı arayüzünün doğru çalışması için, farenin "
+"(veya iztopu gibi başka bir işaretçinin) özellikleri bilinmelidir."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid ""
+"It is necessary to determine which port (connection type) your mouse uses. "
+"Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 or DB-"
+"25); the mouse connector is female (has holes) and the computer connector is "
+"male (has pins).  PS/2 ports are small round connectors (DIN) with 6 pins; "
+"the mouse connector is male and the computer side female.  You may "
+"alternatively have a USB mouse, a bus/inport (very old) mouse, or be using "
+"the gpm program as a repeater.  If you need to attach or remove PS/2 or bus/"
+"inport devices from your computer, please do so with the computer's power "
+"off."
+msgstr ""
+"Farenin hangi girişi (bağlantı tipini) kullandığı belirlenmeli.  Seri "
+"portlar 9 veya 25 (DB-9 veya DB-25) iğneli, D-şekilli bağlayıcılar "
+"kullanır.  Fare bağlayıcı dişi (delikleri vardır), bilgisayar bağlayıcıları "
+"erkektir (iğneleri vardır).  PS/2 portlar 6 iğneli küçük yuvarlak "
+"bağlayıcılardır (DIN); fare tarafındaki bağlayıcı erkek, bilgisayar "
+"tarafındaki ise dişidir.  Alternatif olarak USB fare, seri bağlantılı fare "
+"(çok eski) veya tekrarlayıcı olarak gpm programını kullanıyor "
+"olabilirsiniz.  Eğer bir PS/2 veya seri bağlantılı fare takmak veya çıkarmak "
+"isterseniz, lütfen bu işlemi bilgisayar kapalıyken yapın."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:337
+msgid "Please choose the entry that best describes your mouse."
+msgstr "Lütfen farenizi tanımlayan en iyi girdiyi seçin."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid "Emulate 3 button mouse?"
+msgstr "3 tuş emülasyonu kullanılsın mı?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"Most programs in the X Window System expect your mouse to have 3 buttons "
+"(left, right, and middle).  Mice with only 2 buttons can emulate the "
+"presence of a middle button by treating simultaneous clicks or drags of the "
+"left and right buttons as middle button events."
+msgstr ""
+"X Window Sistemindeki çoğu program farenizin 3 tuşlu (sağ, sol ve orta) "
+"olmasını bekler.  2 tuşlu fare, iki tuşa aynı anda basarak veya, sağ ve sol "
+"tuşun sürüklenmesi ile orta tuş görevini görür."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"This option may also be used on mice with 3 or more buttons; the middle "
+"button will continue to work normally."
+msgstr ""
+"Bu seçenek 3 tuşlu farelerde de kullanılabilir, orta tuş normal işlevini "
+"devam ettirecektir."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"Note that mouse buttons in excess of five (counting a scroll wheel as two "
+"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
+"\") are not yet supported with this configuration tool."
+msgstr ""
+"5 tuşun üzeri farelerin (tekerleği; yukarı kaydırma, aşağı kaydırma ve "
+"tıklama şeklinde 3 tuş olarak sayarsak) bu yapılandırma aracı tarafından "
+"desteklenmediğini unutmayın."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid "Attempt monitor autodetection?"
+msgstr "Monitörün otomatik olarak algılanması denensin mi?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid ""
+"Many monitors (including LCD's) and video cards support a communication "
+"protocol that allows the monitor's technical characteristics to be "
+"communicated back to the computer.  If your monitor and video card speak the "
+"same dialect of this protocol, further debconf questions about your monitor "
+"will be pre-answered."
+msgstr ""
+"Çoğu monitör (LCD monitörler dahil) ve ekran kartı, monitörün teknik "
+"özelliklerinin bilgisayara iletilmesi için bir haberleşme protokolü sunar.  "
+"Eğer monitörünüz ve ekran kartınız böyle bir protokol ile konuşuyorsa, "
+"gelecek debconf soruları önceden cevaplanmış olacaktır."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid ""
+"If autodetection fails, you will be asked for information about your monitor."
+msgstr ""
+"Eğer otomatik algılama başarısız olursa, monitörünüzün hakkında bilgi "
+"toplamak için size bir dizi soru sorulacaktır."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid "Please choose a method for selecting your monitor characteristics."
+msgstr ""
+"Lütfen monitörünüze ait özellikleri belirtmekte kullanılacak bir yöntem "
+"seçin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of your monitor must be known."
+msgstr ""
+"X Window Sisteminin grafik kullanıcı arayüzünün doğru çalışması için, "
+"monitörünüzün özellikleri bilinmelidir."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+#, fuzzy
+msgid ""
+"For the \"simple\" option, you need only know the monitor's physical size; "
+"this will set some configuration values appropriate for a typical CRT of the "
+"corresponding size, but may be suboptimal for high-quality CRT's."
+msgstr ""
+"\"simple\" seçeneği için sadece monitörün fiziksel boyutunu bilmeniz "
+"yeterlidir.  Bu seçenek, tipik CRT monitörlere göre yapılandırma değerlerini "
+"belirleyecektir.  (Bu seçenek, LCD panel kullanıcıları için etkin değildir.  "
+"Çünkü bu aygıtlar belirli bir çözünürlük için yapılandırılmıştır.)"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"The \"medium\" option will present you with a list of resolutions and "
+"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
+"you wish to use (and that you know your monitor is capable of)."
+msgstr ""
+"\"medium\" seçeneğiyle, \"800x600 @ 85Hz\" gibi çözünürlük ve tazeleme "
+"oranlarından oluşan bir liste görüntülenecektir.  Bu listede sizin için en "
+"iyi olan ve monitörünüz tarafından da desteklenen seçeneği seçmelisiniz."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"The \"advanced\" option will let you specify your monitor's horizontal sync "
+"and vertical refresh tolerances directly."
+msgstr ""
+"\"advanced\" seçeneği monitörün yatay tarama aralığı ve dikey tazeleme "
+"oranlarını doğrudan belirtmenizi sağlayacaktır."
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:387
+msgid ""
+"Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
+"inches (480-510 mm), 21 inches (530 mm) or more"
+msgstr ""
+"14 inç'e kadar (355 mm), 15 inç (380 mm), 17 inç (430 mm), 19-20 inç (480-"
+"510 mm), 21 inç (530 mm) veya daha üstü"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:389
+msgid "Please choose your approximate monitor size."
+msgstr "Lütfen monitörünüzün yaklaşık boyutunu girin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:389
+msgid "High-quality CRT's may be able to use the next highest size category."
+msgstr ""
+"Yüksek kalite CRT'ler bir sonraki yüksek boyut kategorisini kullanabilir."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:396
+msgid "Please select your monitor's best video mode."
+msgstr "Lütfen monitörünüze ait en iyi ekran kipini seçin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:396
+msgid ""
+"Choose the \"best\" resolution and refresh rate you believe your monitor "
+"capable of.  Larger resolutions and refresh rates are better.  If you use a "
+"CRT monitor, it is perfectly acceptable to select a \"worse\" video mode "
+"than your monitor's best if you wish.  Users of LCD displays may also be "
+"able to do this, but only if both the video chipset and the driver support "
+"it; if in doubt, use the video mode recommended by the manufacturer of your "
+"LCD."
+msgstr ""
+"Monitörünüz için \"en iyi\" çözünürlük ve tazeleme oranını seçin.  Yüksek "
+"çözünürlük ve tazeleme oranları daha iyidir.  Eğer bir CRT monitör "
+"kullanıyorsanız, monitörünüz için en iyi olan yerine \"daha kötü\" bir ekran "
+"kipi seçme hakkına da sahipsiniz.  LCD monitör kullanıcıları da böyle "
+"yapabilir, ancak ekran yonga seti ve sürücüsü bunu desteklemelidir.  Emin "
+"değilseniz LCD monitörünüzün üreticisi tarafından önerilen ekran kipini "
+"seçin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:406
+msgid "Enter an identifier for your monitor."
+msgstr "Monitörünüz için bir tanımlayıcı girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:406
+msgid ""
+"The X server configuration file associates your monitor with a name that you "
+"may provide.  This is usually the vendor or brand name followed by the model "
+"name, e.g., \"Sony E200\" or \"Dell E770s\"."
+msgstr ""
+"X sunucu yapılandırma dosyası monitörünüzü bir isimle ilişkilendirir.  Bu, "
+"genelde üretici adını takip eden model numarasıdır.  ör. \"Sony E200\" veya "
+"\"Dell E770s\"."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:413
+#, fuzzy
+msgid "Write monitor sync ranges to configuration file?"
+msgstr "Yapılandırma dosyasına öntanımlı \"DRI\" bölümü yazılsın mı?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:413
+msgid ""
+"The monitor synchronization ranges should be autodetected by the X server in "
+"most cases, but sometimes it needs hinting.  This option is for advanced "
+"users, and should be left at its default."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:420
+msgid "Enter your monitor's horizontal sync range."
+msgstr "Monitörünüzün yatay tarama aralığını girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:420
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in your monitor's manual.  "
+"Values lower than 30 or higher than 130 are extremely rare."
+msgstr ""
+"Lütfen ayrık frekans değerlerini virgülle ayrılmış şekilde (sabit frekanslı "
+"ekranlar için), veya (tüm modern CRT'ler için) değer çiftlerini tire ile "
+"ayrılmış şekilde girin.  Bu bilgi monitörünüzün kitapçığında bulunmalıdır.  "
+"30'un altı ve 130'un üstü değerler çok nadiren kullanılır."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:428
+msgid "Enter your monitor's vertical refresh range."
+msgstr "Monitörünüzün dikey tazeleme aralığını girin."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:428
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in your monitor's manual.  "
+"Values lower than 50 or higher than 160 are extremely rare."
+msgstr ""
+"Lütfen ayrık frekans değerlerini virgülle ayrılmış şekilde (sabit frekanslı "
+"ekranlar için), veya (tüm modern CRT'ler için) değer çiftlerini tire ile "
+"ayrılmış şekilde girin.  Bu bilgi monitörünüzün kitapçığında bulunmalıdır.  "
+"50'nin altı ve 160'ın üstü değerler çok nadiren kullanılır."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:436
+msgid "Please enter a comma-separated list of ranges or values."
+msgstr "Lütfen virgül ile ayrılmış aralık veya değerleri girin."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:436
+msgid ""
+"The valid syntax is a comma-separated list of discrete values, or a pair of "
+"values separated by a dash."
+msgstr ""
+"Geçerli girdi virgül ile ayrılmış bir ayrık değerler listesi veya tire ile "
+"ayrılmış bir değer çiftidir."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:444
+msgid "Select the video modes you would like the X server to use."
+msgstr "X sunucusu tarafından kullanılacak ekran kiplerini seçin."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:444
+msgid ""
+"If there are some resolutions you would not like the X server to use even if "
+"your hardware is capable of them, remove them from the list below.  Removing "
+"all of them is effectively the same as removing none, since in both cases "
+"the X server will attempt to use the highest possible resolution."
+msgstr ""
+"Eğer X sunucusu tarafından kullanılmamasını istediğiniz bazı çözünürlükler "
+"var ise bunları aşağıdaki listeden kaldırın.  Hepsini kaldırmanız hiç birini "
+"kaldırmamanız demektir, bu durumda X sunucusu olası en yüksek çözünürlüğü "
+"kullanacaktır."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid "Please select your desired default color depth in bits."
+msgstr "Kullanmak istediğiniz öntanımlı renk derinliğini bit olarak girin."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid ""
+"Usually 24-bit color is desirable, but on graphics cards with limited "
+"amounts of framebuffer memory, higher resolutions may be achieved at the "
+"expense of higher color depth.  Also, some cards support hardware 3D "
+"acceleration only for certain depths.  Consult your video card manual for "
+"more information."
+msgstr ""
+"Genellikle 24 bit renk kullanılır, ancak sınırlı kare tamponu (frame buffer) "
+"belleğine sahip kartlarda daha yüksek renk derinliğinde daha yüksek "
+"çözünürlükler elde edilebilir.  Ayrıca bazı kartlar donanımsal 3B "
+"hızlandırma desteğini ancak belli renk derinliklerinde sağlamaktadır.  Daha "
+"fazla bilgi için ekran kartınızın kitapçığına başvurun."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid ""
+"(So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
+"bits of alpha channel or simple zero padding; the X Window System can handle "
+"both.  If you want either, select 24 bits.)"
+msgstr ""
+"(\"32-bit renk\" denilen şey aslında 24 bit renk ve buna ek olarak 8 bitlik "
+"alfa kanalı veya basitçe sıfırlardan oluşmaktadır.  X Window Sistemi her "
+"ikisini de idare edebilir.  İkisini de kullanmak isterseniz, 24 bit'i seçin.)"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:466
+msgid "Please enter a value for the entry."
+msgstr "Lütfen bir değer girin."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:466
+msgid "A null entry is not permitted."
+msgstr "Bu alanı boş geçemezsiniz."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:471
+msgid "Please enter a value without double-quotes."
+msgstr "Lütfen tırnak işareti kullanmadan bir değer girin."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:471
+msgid "Double-quote (\") characters are not permitted in the entry value."
+msgstr "Tırnak işareti karakteri (\") girdi bölümünde kullanılamaz."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:476
+msgid "Please enter only a numeric value."
+msgstr "Lütfen sadece bir rakamsal değer girin."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:476
+msgid "Characters other than digits are not allowed in the entry."
+msgstr "Girdilerde, rakamlardan başka karakter kullanılamaz."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+#, fuzzy
+msgid "Autodetect keyboard layout?"
+msgstr "Klavye düzeni seçin."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+msgid ""
+"The default keyboard layout selection for the Xorg server will be based on a "
+"combination of the language and the keyboard layout selected in the "
+"installer."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+msgid ""
+"Accept this option if you want the keyboard layout to be redetected.  "
+"Decline it if you want to keep your current layout."
+msgstr ""
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Fare tekerleği işlevsel hale getirilsin mi?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Tekerlekli farelerin tekerlek hareketleri ek tuş (4. ve 5. tuş) işlevini "
+#~ "görür.  Bazı X uygulamaları 4. ve 5. tuşu yukarı ve aşağı kaydırma "
+#~ "(scroll-up, scroll-down) işlemleri için kullanır.  Bu uygulamaya bağlıdır "
+#~ "ve her zaman çalışmayabilir.  Ayrıca eğer bu özelliği ayarlarsanız, 3'den "
+#~ "fazla tuşlu ve tekerlekli farelerin bu tuşları beklenmedik şekilde "
+#~ "davranabilir."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr ""
+#~ "Eğer tekerlekli bir fareniz yoksa bu seçeneği etkinleştirmenizde bir "
+#~ "sakınca yoktur."
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Yukarıdaki açıklamalar Linux kernel 2.6 (veya \"O(1) zamanlayıcı\" içeren "
+#~ "2.5 serisi) için doğru değildir.  Bu sistemlerde X sunucusunun öncelik "
+#~ "değeri 0 olarak ayarlanmıştır."
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "SGI Indigo2 XL veya henüz tam olarak desteklenmeyen bir veriyoluna sahip "
+#~ "diğer makineler için burada basitçe \"1\" girilmelidir.  (Bu ayarın iş "
+#~ "göreceği konusunda garanti verilemez.)"
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "Sadece bir ekran kartına sahip PowerPC veya SGI Indigo2 XL dışında bir "
+#~ "makine kullanan kullanıcılar, bu alanı boş bırakmalıdır."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Monitörünüz bir LCD aygıtı mı?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Eğer monitörünüz bir sıvı-kristal görüntü birimi (LCD, çoğu dizüstü "
+#~ "bilgisayarda kullanılır) ise bu seçeneği seçmelisiniz."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "Geleneksel katot-ışınlı tüp (CRT) monitörü kullananlar bu seçeneği "
+#~ "seçmemelidir."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Yapılandırma dosyasına öntanımlı \"DRI\" bölümü yazılsın mı?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "X sunucu yapılandırma dosyasının DRI bölümü, DRI aygıt izinlerini "
+#~ "belirler. Bu seçenek ileri seviye kullanıcılar içindir.  Çoğu durumda, "
+#~ "bunu etkinleştirmelisiniz."
+
+#, fuzzy
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Eğer \"DRI\" bölümünü XFree86 sunucu yapılandırma dosyasına kendiniz "
+#~ "yazmak istiyorsanız bu seçeneği iptal edin.  DRI portunun erişim "
+#~ "haklarını değiştirmek için bunu yapmak isteyebilirsiniz."
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "İleri seviye kullanıcılar seçili XKB kural setince desteklenen herhangi "
+#~ "bir düzeni seçebilir.  Eğer xlibs paketi kurulu ise, mevcut kural "
+#~ "kümeleri için /etc/X11/xkb/rules dizinine, mevcut düzenler için de /etc/"
+#~ "X11/xkb/symbols dizinine bakabilirsiniz."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "İleri seviye kullanıcılar, seçili XKB modeli, düzeni ve alt türüyle "
+#~ "uyumlu olan herhangi bir seçeneği kullanabilirler.  Eğer xlibs paketi "
+#~ "kurulu ise /etc/X11/xkb/symbols dizininde, sadece kısmî klavye "
+#~ "çevirilerinin bulunduğu mevcut seçenek dosyalarını görebilirsiniz (/etc/"
+#~ "X11/xkb/symbols/ctrl gibi)."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Eğer bir NVidia kartınız var ise bu seçeneği onaylamak "
+#~ "istemeyebilirsiniz.  Bu kartların DDC desteği çok kötüdür ve sistemin "
+#~ "çakılmasına sebep olabilir."
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Mach8 (VGA Wonder), Mach32 ve eski Mach64 (\"GX\") yonga seti gibi eski "
+#~ "ATI donanımlarında 8'den yüksek renk derinliklerinin desteklenmediğini "
+#~ "unutmayın."
+
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "XFree86 paketleri deneysel (experimental) sürümü"
+
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Debian için XFree86 paketlerinin deneysel sürümünü kullanıyorsunuz.  Bu "
+#~ "paketler Debian dağıtımına henüz girmediğinden, lütfen Debian Hata "
+#~ "Bildirim Sistemine bu paket sürümleri hakkında hata bildirimleri "
+#~ "göndermeyin."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Eğer bu paketlerle sorunlar yaşarsanız veya bir yama göndermek isterseniz "
+#~ "Debian X mail listesine bir ileti gönderin.  Aşağıdaki bağı kullanarak bu "
+#~ "liste hakkında daha fazla bilgi alabilirsiniz:\n"
+#~ "  http://lists.debian.org/debian-x/ "
+
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Eğer deneysel X paketlerini kullanmak istemiyorsanız yapmanız gereken iki "
+#~ "şey var:\n"
+#~ "  1) /etc/apt/sources.list dosyasında deneysel paket depolarının\n"
+#~ "     tanımlanmadığından emin olun.\n"
+#~ "  2) apt'ın XFree86 paketlerini, eski sürümler ile değiştirmesini\n"
+#~ "     sağlamalısınız; bu amaçla \"apt-get\" komut satırında paket\n"
+#~ "     ismine bir dağıtım ismi ekleyebilirsiniz -- örneğin:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "     veya\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "     Bu sürüm alçaltma işlemini birçok paket için yapmanız gerekebilir."
+
+#~ msgid "Select the desired default display manager."
+#~ msgstr "Kullanmak istediğiniz öntanımlı ekran yöneticisini seçin."
+
+#~ msgid ""
+#~ "A display manager is a program that provides graphical login capabilities "
+#~ "for the X Window System."
+#~ msgstr ""
+#~ "Ekran yöneticisi, X Window Sistemi'ne grafik arayüz ile giriş yapmayı "
+#~ "sağlar."
+
+#~ msgid ""
+#~ "Only one display manager can manage a given X server, but multiple "
+#~ "display manager packages are installed.  Please select which display "
+#~ "manager should run by default."
+#~ msgstr ""
+#~ "Sadece bir ekran yöneticisi verilen X sunucusunu yönetebilir, ancak "
+#~ "birden fazla ekran yöneticisi kurulu durumda.  Lütfen, öntanımlı olarak "
+#~ "çalıştırmak istediğiniz ekran yöneticisini seçin."
+
+#~ msgid ""
+#~ "(Multiple display managers can run simultaneously if they are configured "
+#~ "to manage different servers; to achieve this, configure the display "
+#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
+#~ "disable the check for a default display manager.)"
+#~ msgstr ""
+#~ "(Eğer farklı sunucuları çalıştırmak için ayarlanırsa birden fazla ekran "
+#~ "yöneticisi kullanılabilir.  Bunun için /etc/init.d içindeki ilgili "
+#~ "betikleri değiştirin ve öntanımlı ekran yöneticisini denetleyen işlevleri "
+#~ "devre dışı bırakın.)"
+
+#~ msgid "Do you wish to stop the xdm daemon?"
+#~ msgstr "xdm servisini durdurmak istiyor musunuz?"
+
+#~ msgid ""
+#~ "The X display manager (xdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session. If xdm is stopped now, any X sessions it manages will be "
+#~ "terminated. Otherwise you may leave xdm running, and the new version will "
+#~ "take effect the next time the daemon is restarted."
+#~ msgstr ""
+#~ "X ekran yöneticisi (xdm) servisi, paket güncelleme ve kaldırma sırasında "
+#~ "genellikle durdurulur.  Fakat öyle görünüyorki xdm, çalışan (en az) bir X "
+#~ "oturumunu yönetiyor.  Eğer xdm şimdi durdurulursa, yönetilen X oturumları "
+#~ "da sonlandırılacaktır.  Böyle yapmak yerine xdm'i çalışır vaziyette "
+#~ "bırakabilirsiniz.  Yeni sürüm, xdm servisinin bir sonraki "
+#~ "çalıştırılışında etkin olacaktır."

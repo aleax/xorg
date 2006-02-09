@@ -1,0 +1,1749 @@
+# debconf templates for xfree86 package
+# Italian translation
+#
+# $Id: it.po 1763M 2004-10-11 07:13:17Z (local) $
+#
+# Copyrights:
+# Branden Robinson, 2000--2004
+# Matteo Dell'Amico, 2002
+# Emanuele Aina, 2002
+# Danilo Piazzalunga, 2004
+# Luca Monducci, 2004
+#
+# This file is distributed under the same license as the xfree86 package.
+# Please see debian/copyright.
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfree86 4.3.0.dfsg.1\n"
+"Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
+"POT-Creation-Date: 2006-01-18 08:45+1100\n"
+"PO-Revision-Date: 2004-09-05 18:34+0200\n"
+"Last-Translator: Danilo Piazzalunga <danilopiazza@libero.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Choices
+#: ../x11-common.templates:3
+msgid "Root Only, Console Users Only, Anybody"
+msgstr "Solo root, Solo gli utenti della console, Chiunque"
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:5
+msgid "Select what type of user has permission to start the X server."
+msgstr "Scegliere che tipo di utenti ha il permesso di eseguire il server X."
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:5
+msgid ""
+"Because the X server runs with superuser privileges, it may be unwise to "
+"permit any user to start it, for security reasons.  On the other hand, it is "
+"even more unwise to run general-purpose X client programs as root, which is "
+"what may happen if only root is permitted to start the X server.  A good "
+"compromise is to permit the X server to be started only by users logged in "
+"to one of the virtual consoles."
+msgstr ""
+"Dato che il server X viene eseguito con i privilegi di super utente, può "
+"essere poco consigliabile, per ragioni di sicurezza, permettere a qualsiasi "
+"utente di eseguirlo. D'altra parte, se solo a root fosse permesso di avviare "
+"il server X, sarebbe necessario eseguire come root i programmi client X (e "
+"ciò sarebbe ancora peggio). Un buon compromesso consiste nel permettere che "
+"il server X possa essere avviato solo dagli utenti collegati ad una delle "
+"console virtuali."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+msgid "Enter the desired nice value for the X server to use."
+msgstr "Inserire il valore di nice desiderato da usare per il server X."
+
+# NEW-TRANSLATION
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+#, fuzzy
+msgid ""
+"When using operating system kernels with a particular scheduling strategy, "
+"it has been widely noted that the X server's performance improves when it is "
+"run at a higher process priority than the default; a process's priority is "
+"known as its \"nice\" value.  They range from -20 (extremely high priority, "
+"or \"not nice\" to other processes) to 19 (extremely low priority).  The "
+"default nice value for ordinary processes is 0, and this is also the "
+"recommend value for the X server."
+msgstr ""
+"È stato spesso notato che le prestazioni del server X migliorano se questo "
+"viene eseguito ad una priorità di processo più alta di quella predefinita; "
+"la priorità di un processo è conosciuta come il valore di «nice», che varia "
+"tra -20 (priorità estremamente alta, che penalizza gli altri processi) e 19 "
+"(priorità estremamente bassa). Il valore di nice predefinito per i processi "
+"ordinari è 0. -10 è una buona scelta per una workstation con un unico "
+"utente, mentre 0 è un valore adatto per una macchina che ha altri compiti "
+"oltre ad interagire con l'utente alla console (come un server web)."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:20
+msgid ""
+"Values outside the range of -10 to 0 are not recommended; too negative, and "
+"the X server will interfere with important system tasks.  Too positive, and "
+"the X server will be sluggish and unresponsive."
+msgstr ""
+"I valori fuori dalla gamma tra -10 e 0 non sono raccomandati; per uno troppo "
+"negativo, il server X interferirebbe con processi di sistema importanti. Per "
+"uno troppo positivo, il server X sarebbe lento e poco reattivo."
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:35
+msgid "Please enter an integer between -20 and 19."
+msgstr "Inserire un intero compreso tra -20 e 19."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid "Attempt to autodetect video hardware?"
+msgstr "Rilevare automaticamente l'hardware video?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid ""
+"Accept this option if you would like to attempt to autodetect the "
+"recommended X server and driver module for your video card.  If "
+"autodetection fails, you will be asked to specify the desired X server and/"
+"or driver module.  If autodetection succeeds, further debconf questions "
+"about your video hardware will be pre-answered."
+msgstr ""
+"Accettare questa opzione per tentare di rilevare automaticamente il server X "
+"e il modulo del driver raccomandati per la scheda video. Se il rilevamento "
+"fallisce, verrà chiesto di specificare il server X e/o il modulo del driver "
+"desiderato; se invece va a buon fine, le prossime domande di debconf "
+"sull'hardware video avranno risposte predefinite."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:4
+msgid ""
+"If you would rather select the X server and driver module yourself, decline "
+"this option.  You will not be asked to select the X server if there is only "
+"one available."
+msgstr ""
+"Per scegliere esplicitamente il server X e il modulo del driver, rispondere "
+"no. Non verrà chiesto di scegliere il server X se ne è disponibile solamente "
+"uno."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:17
+msgid "No X server known for your video hardware."
+msgstr "Nessun server X conosciuto per l'hardware video."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:17
+msgid ""
+"Either you have no video hardware installed on this machine (serial console "
+"only?), or the \"discover\" program was unable to determine which X server "
+"is appropriate for your video hardware.  This could be due to incomplete "
+"information in discover's hardware database, or it could be that your video "
+"hardware is simply not supported by any available X servers."
+msgstr ""
+"Potrebbe non essere installato nessun hardware video su questa macchina "
+"(solo una console seriale?), oppure il programma «discover» non è stato in "
+"grado di determinare il server X appropriato per l'hardware video. Ciò "
+"potrebbe essere dovuto a mancanza di informazioni nel database di discover, "
+"oppure l'hardware video potrebbe semplicemente non essere supportato da "
+"nessun server X disponibile."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:26
+msgid "Multiple potential default X servers for your hardware."
+msgstr "È possibile utilizzare più di un server X con l'hardware trovato."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:26
+msgid ""
+"Multiple video cards have been detected, and different X servers are "
+"required to support the various devices.  It is thus not possible to "
+"automatically select a default X server.  Please configure the device that "
+"will serve as your computer's \"primary head\"; this is generally the video "
+"card and monitor to which the computer displays when it first boots."
+msgstr ""
+"Sono state identificate diverse schede video, e sono necessari diversi "
+"server X per supportare le varie schede. Per questo, non è possibile "
+"selezionare automaticamente un server X predefinito. Scegliere il "
+"dispositivo che funzionerà come monitor primario del computer; generalmente "
+"si tratta della scheda video e del monitor su cui il computer dirige "
+"l'output all'avvio."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid "Select the desired default X server."
+msgstr "Scegliere il server X predefinito."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid ""
+"The X server is the hardware interface of the X Window System.  Its job is "
+"to communicate with video display and input devices, providing a foundation "
+"for the chosen Graphical User Interface (GUI)."
+msgstr ""
+"Il server X è l'interfaccia verso l'hardware del sistema X Window. Il suo "
+"compito è comunicare con il display video e le periferiche di input, "
+"fornendo le fondamenta per l'interfaccia grafica (GUI) scelta."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:40
+msgid ""
+"Several X servers may be available; the default is selected via the /etc/X11/"
+"X symbolic link.  Some X servers may not work with your particular graphics "
+"hardware."
+msgstr ""
+"Potrebbero essere disponibili diversi server X; quello predefinito è "
+"selezionato attraverso il link simbolico /etc/X11/X. Alcuni server X "
+"potrebbero non funzionare con un particolare hardware grafico."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+msgid "Write default Files section to configuration file?"
+msgstr "Scrivere una sezione «Files» predefinita nel file di configurazione?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+msgid ""
+"The Files section of the X server configuration file tells the X server "
+"where to find server modules, the RGB color database, and font files.  This "
+"option is for advanced users.  In most cases, you should enable it."
+msgstr ""
+"La sezione «Files» del file di configurazione del server X dice al server X "
+"dove trovare i moduli del server, il database di colori RGB e i file dei "
+"tipi di carattere. Questa opzione è per utenti esperti. Nella maggior parte "
+"dei casi, è consigliato abilitarla."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:52
+#, fuzzy
+msgid ""
+"Disable this option if you want to write your own \"Files\" section into the "
+"X.Org server configuration file.  You may wish to do this if you need to "
+"remove the reference to the local font server, add a reference to a "
+"different font server, or rearrange the default set of local font paths."
+msgstr ""
+"Disabilitare questa opzione se si vuole scrivere una propria sezione «Files» "
+"nel file di configurazione del server XFree86. Si potrebbe voler fare questo "
+"se si deve rimuovere il riferimento al font server locale, aggiungere un "
+"riferimento ad un font server diverso oppure modificare i percorsi "
+"predefiniti per i tipi di carattere locali."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid "Select the X.Org server modules that should be loaded by default."
+msgstr "Scegliere i moduli del server XFree86 da caricare automaticamente."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"It is possible to customize (or completely omit) the list of modules that "
+"the X server loads by default.  This option is for advanced users.  In most "
+"cases, all of these modules should be enabled."
+msgstr ""
+"È possibile modificare (oppure omettere completamente) la lista dei moduli "
+"che il server X carica automaticamente. Questa opzione è per utenti esperti. "
+"Nella maggior parte dei casi, è consigliato abilitare tutti i moduli."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid ""
+"The glx module enables support for OpenGL rendering.  The dri module enables "
+"support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+"that support for DRI must also exist in the kernel, the video card, and the "
+"installed version of the Mesa libraries for hardware-accelerated 3D "
+"operations using DRI to work.  Otherwise, the server falls back to software "
+"rendering."
+msgstr ""
+"I moduli GLCore e glx abilitano il rendering OpenGL via software. Il modulo "
+"dri abilita il supporto nel server X per il Direct Rendering Infrastructure "
+"(DRI). Per fare in modo che le operazioni 3D con accelerazione hardware "
+"tramite DRI funzionino, il supporto per il DRI deve essere presente anche "
+"nel kernel, nella scheda video e nella versione installata delle librerie "
+"Mesa. In caso contrario, il server utilizzerà il rendering via software."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+"Display Channel, respectively.  These modules are used to query monitor "
+"capabilties via the video card.  The int10 module is a real-mode x86 "
+"emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+"module depends on the int10 module, so if you wish to enable vbe, enable "
+"int10 as well."
+msgstr ""
+"I moduli vbe e ddc abilitano rispettivamente il supporto per le estensioni "
+"BIOS VESA e per il Data Display Channel. Questi moduli vengono usati per "
+"richiedere le possibilità del monitor attraverso la scheda video. Il modulo "
+"int10 è un emulatore x86 in modalità reale che viene usato per effettuare il "
+"soft boot di schede VGA secondarie. Notare che il modulo vbe dipende dal "
+"modulo int10: è necessario quindi abilitare anche quest'ultimo se si vuole "
+"abilitare il vbe."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The dbe module enables the double-buffering extension in the server, and is "
+"useful for animation and video operations."
+msgstr ""
+"Il modulo dbe abilita l'estensione double-buffering nel server; è utile per "
+"le animazioni e le operazioni sui video."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"The extmod module enables many traditional and commonly used extensions, "
+"such as shaped windows, shared memory, video mode switching, DGA, and Xv.  "
+"The record module implements the RECORD extension, commonly used in server "
+"testing."
+msgstr ""
+"Il modulo extmod abilita molte estensioni tradizionali e usate comunemente, "
+"come le shaped window, la memoria condivisa, il cambio di modalità video, "
+"DGA e Xv. Il modulo record implementa l'estensione RECORD, utilizzata "
+"comunemente per eseguire dei test sul server."
+
+# NdT: FIXME: Come tradurre «font rasterizer»?
+# Un font rasterizer è il sistema usato per disegnare i font, cioè traduce la
+# forma del font per la rappresentazione a video.
+# NEW-TRANSLATION
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
+msgstr ""
+"I moduli bitmap, freetype, speedo, type1, e xtt sono tutti dei font "
+"rasterizer."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+#, fuzzy
+msgid ""
+"For further information about these modules, please consult the X.Org "
+"documentation."
+msgstr ""
+"Per altre informazioni su questi moduli, consultare la documentazione di "
+"XFree86."
+
+# NEW-TRANSLATION
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:66
+msgid ""
+"If you unsure what to do, leave all of the modules enabled.  Advanced users "
+"may wish to disable all modules -- in which case no Modules section will be "
+"written to the X server configuration file -- and add their own Modules "
+"section to the file manually."
+msgstr ""
+"Se si hanno dei dubbi, si consiglia di lasciare tutti i moduli abilitati. "
+"Gli utenti esperti potrebbero voler disabilitare tutti i moduli (in tal caso "
+"nessuna sezione «Modules» verrà scritta nel file di configurazione del "
+"server X) e aggiungere manualmente la propria sezione «Modules» al file."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+#, fuzzy
+msgid "Multiple potential default X.Org server drivers for your hardware."
+msgstr ""
+"È possibile utilizzare più di un driver del server XFree86 con l'hardware "
+"trovato."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+#, fuzzy
+msgid ""
+"Multiple video cards have been detected, and different drivers are required "
+"to support the various devices.  It is thus not possible to automatically "
+"select a default X.Org server driver.  Please configure the device that will "
+"serve as your computer's \"primary head\"; this is generally the video card "
+"and monitor to which the computer displays when it first boots."
+msgstr ""
+"Sono state identificate diverse schede video e sono necessari diversi driver "
+"per supportare le varie schede. Per questo non è possibile selezionare "
+"automaticamente un driver del server XFree86 predefinito. Scegliere il "
+"dispositivo che funzionerà come monitor primario del computer; generalmente "
+"si tratta della scheda video e del monitor su cui il computer dirige "
+"l'output all'avvio."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:105
+msgid ""
+"At the present time, only a single-headed setup is supported by debconf; "
+"however, the X server configuration files can be edited to support a multi-"
+"head configuration."
+msgstr ""
+"Per ora, debconf permette di configurare solamente un unico monitor; in ogni "
+"caso, i file di configurazione del server X possono venire modificati per "
+"permettere di avere una configurazione con più monitor."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:118
+msgid "Enter an identifier for your video card."
+msgstr "Inserire un identificatore per la scheda video."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:118
+#, fuzzy
+msgid ""
+"The X server configuration file associates your video card with a name that "
+"you may provide.  This is usually the vendor or brand name followed by the "
+"model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
+"6600\"."
+msgstr ""
+"Si può associare nel file di configurazione del server X un nome alla scheda "
+"video. Tipicamente viene scelto il produttore o la marca seguiti dal nome "
+"del modello (per esempio, «3DFX Voodoo3» o «ATI Rage Fury Maxx»)."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid "Select the desired X server driver."
+msgstr "Scegliere il driver del server X desiderato."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid ""
+"For the X Window System graphical user interface to operate correctly, it is "
+"necessary to select a video card driver for the X server."
+msgstr ""
+"Perché l'interfaccia grafica del sistema X Window funzioni correttamente, è "
+"necessario scegliere un driver della scheda video per il server X."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:126
+msgid ""
+"Drivers are typically named for the video card or chipset manufacturer, or "
+"for a specific model or family of chipsets."
+msgstr ""
+"I driver hanno tipicamente il nome della scheda video, del produttore del "
+"chipset, di un modello specifico o della famiglia del chipset."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid "Use kernel framebuffer device interface?"
+msgstr "Usare l'interfaccia per il dispositivo framebuffer del kernel?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid ""
+"Rather than communicating directly with the video hardware, the X server may "
+"be configured to perform some operations, such as video mode switching, via "
+"the kernel's framebuffer driver."
+msgstr ""
+"Piuttosto che comunicare direttamente con l'hardware video, il server X può "
+"venire configurato per svolgere qualche operazione, come cambiare la "
+"modalità video, attraverso il driver framebuffer del kernel."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:135
+msgid ""
+"In theory, either approach should work, but in practice, sometimes one does "
+"and the other does not.  Enabling this option is the safe bet, but feel free "
+"to turn it off if it appears to cause problems."
+msgstr ""
+"In teoria, entrambi gli approcci dovrebbero funzionare ma, in pratica, "
+"qualche volta uno funziona e l'altro no. Abilitare questa opzione è una "
+"scelta sicura, ma la si può tranquillamente disabilitare se sembra causare "
+"problemi."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid "Please enter the video card's bus identifier."
+msgstr "Inserire l'identificatore del bus della scheda video."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+"Users of PowerPC machines, and users of any computer with multiple video "
+"devices, should specify the BusID of the video card in an accepted bus-"
+"specific format."
+msgstr ""
+"Gli utenti di macchine PowerPC o di qualsiasi computer con dispositivi video "
+"multipli devono specificare il BusID della scheda video in uno specifico "
+"formato, diverso a seconda del tipo di bus."
+
+# NEW-TRANSLATION
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid "Examples:"
+msgstr "Esempi:"
+
+# NEW-TRANSLATION
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
+msgstr ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+#, fuzzy
+msgid ""
+"For users of multi-head setups, this option will configure only one of the "
+"heads.  Further configuration will have to be done manually in the X server "
+"configuration file, /etc/X11/xorg.conf."
+msgstr ""
+"Se si sta usando un sistema con più monitor, questa opzione ne configurerà "
+"solo uno. Sarà necessario modificare manualmente il file di configurazione "
+"dei server X, /etc/X11/XF86Config-4."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+#, fuzzy
+msgid ""
+"You may wish to use the \"lspci -X\" command to determine the bus location "
+"of your PCI, AGP, or PCI-Express video card."
+msgstr ""
+"Si può usare il comando «lspci» per determinare la collocazione sul bus "
+"della scheda video PCI o AGP. Si tenga presente che lspci restituisce numeri "
+"di bus, device e funzione in formato esadecimale e non decimale."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:146
+msgid ""
+"When possible, this question has been pre-answered for you and you should "
+"accept the default unless you know it doesn't work."
+msgstr ""
+"Quando possibile, questa domanda ha una risposta predefinita che si dovrebbe "
+"accettare, a meno di non essere sicuri che sia sbagliata."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:169
+msgid "Please enter a bus identifier in the proper format."
+msgstr "Inserire un identificatore per il bus nel formato appropriato."
+
+# NEW-TRANSLATION
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:169
+msgid "The BusID entered was not in a recognized format."
+msgstr "Il BusID inserito è espresso in un formato non riconosciuto."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid "Enter the amount of memory (in kB) to be used by your video card."
+msgstr "Inserire la quantità di memoria (in kB) usata dalla scheda video."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid ""
+"Typically, the amount of dedicated memory your video card has is "
+"autodetected by the X server, but some integrated video chips (such as the "
+"Intel i810) have little or no video memory of their own, and instead borrow "
+"main system memory for their needs."
+msgstr ""
+"Tipicamente, la quantità di memoria dedicata di cui la scheda video dispone "
+"viene rilevata automaticamente dal server X, ma alcuni chip video integrati "
+"(come gli Intel i810) sono sprovvisti di memoria interna o ne hanno poca e "
+"devono ricorrere alla memoria principale di sistema per i loro scopi."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:174
+msgid ""
+"It is perfectly acceptable to leave this parameter blank; only if your video "
+"card lacks RAM, or if the X server has trouble autodetecting the amount, is "
+"it necessary to specify the amount of video RAM."
+msgstr ""
+"È perfettamente accettabile lasciare questo parametro vuoto; solo se alla "
+"scheda video manca RAM, o se il server X ha problemi a rilevarne "
+"automaticamente la quantità, è necessario specificare la quantità di RAM "
+"video."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+msgid "Please select the XKB rule set to use."
+msgstr "Scegliere il set di regole XKB da usare."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+msgid ""
+"For the X server to handle your keyboard correctly, an XKB rule set must be "
+"chosen."
+msgstr ""
+"Perché il server X funzioni correttamente, occorre selezionare il set di "
+"regole XKB."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid ""
+"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
+"5 keyboards, however, should enter \"sun\"."
+msgstr ""
+"La scelta adatta alla maggior parte delle tastiere è «xfree86»; per le "
+"tastiere Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid ""
+"Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
+"package has been unpacked, see the /etc/X11/xkb/rules directory for "
+"available rule sets."
+msgstr ""
+"Gli utenti esperti possono usare qualsiasi set di regole XKB. Se il "
+"pacchetto xlibs è già stato estratto, consultare la directory /etc/X11/xkb/"
+"rules per le regole disponibili."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:186
+#, fuzzy
+msgid "If you don't know what rule set to use, enter \"xorg\"."
+msgstr "Se ci si trova in dubbio, scegliere «xfree86»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid "Please select your keyboard model."
+msgstr "Scegliere il modello della tastiera."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"For the X server to handle your keyboard correctly, a keyboard model must be "
+"entered.  Available models depend on which XKB rule set is in use."
+msgstr ""
+"Perché il server X gestisca correttamente la tastiera, deve venire inserito "
+"un modello di tastiera. I modelli disponibili dipendono da quale set di "
+"regole XKB è in uso."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc101\" keyboard is a traditional IBM PC/AT style keyboard with 101 "
+"keys, historically common in the United States.  It does not have the \"logo"
+"\" or \"menu\" keys."
+msgstr ""
+"La tastiera «pc101» è una tradizionale tastiera stile IBM PC/AT con 101 "
+"tasti, storicamente comune negli Stati Uniti. Non ha i tasti «logo» o «menu»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc104\" keyboard is like the pc101 model, with additional keys.  These "
+"keys are usually engraved with a \"logo\" symbol (there is typically a pair "
+"of these, between each set of control and alt keys), and a \"menu\" key."
+msgstr ""
+"La tastiera «pc104» è come il modello pc101, con tasti aggiuntivi. Questi "
+"ultimi solitamente hanno un simbolo «logo» (tipicamente ce ne sono due, tra "
+"ciascuna coppia di tasti control ed alt) e un simbolo «menu»."
+
+# NEW-TRANSLATION
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"pc102\" and \"pc105\" models are versions of the pc101 and pc104 "
+"keyboards, respectively, often found in Europe.  If your keyboard has a \"< >"
+"\" key (a single key engraved with both the less-than and greater-than "
+"symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
+"\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
+msgstr ""
+"I modelli «pc102» e «pc105» sono variazioni comuni in Europa rispettivamente "
+"delle tastiere pc101 e pc104. Se la tastiera possiede un tasto \"< >\" (un "
+"tasto singolo con entrambi i simboli di maggiore e minore), molto "
+"probabilmente si sta usando un modello «pc102» o «pc105»; scegliendo invece "
+"«pc101» o «pc104», il tasto \"< >\" potrebbe non funzionare."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"macintosh\" model is for Macintosh keyboards where the kernel and "
+"console tools use the new input layer which uses Linux keycodes; "
+"\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
+"input layer."
+msgstr ""
+"Il modello «macintosh» è per le tastiere Macintosh dove il kernel e i "
+"programmi per la console usano il nuovo layer di input che fa uso dei codici "
+"dei tasti Linux; «macintosh_old» è per gli utenti di tastiere Macintosh che "
+"non usano il nuovo layer di input."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid "All of the above models use the \"xorg\" rule set."
+msgstr "Tutti i modelli sopra menzionati usano le regole «xfree86»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"The \"type4\" and \"type5\" models are for Sun Type4 and Type5 keyboards, "
+"respectively.  These models can only be used if the \"sun\" XKB rule set is "
+"in use."
+msgstr ""
+"I modelli «type4» e «type5» sono rispettivamente per le tastiere Sun Type4 e "
+"Type5. Questi modelli possono venire usati solo se il set di regole XKB "
+"«sun» è in uso."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+msgid ""
+"Laptop keyboards often do not have as many keys as standalone models; laptop "
+"users should select the keyboard model most closely approximated by the "
+"above."
+msgstr ""
+"Le tastiere dei computer portatili spesso non hanno tanti tasti come quelle "
+"normali; in questo caso scegliere il modello di tastiera meglio approssimato "
+"tra i precedenti."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid ""
+"Advanced users can use any model defined by the selected XKB rule set.  If "
+"the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
+"directory for available rule sets."
+msgstr ""
+"Gli utenti esperti possono usare un qualsiasi modello definito dal set di "
+"regole XKB. Se il pacchetto xlibs è già stato estratto, consultare la "
+"directory /etc/X11/xkb/rules per le regole disponibili."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:201
+#, fuzzy
+msgid ""
+"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
+"most other keyboards should generally enter \"pc105\"."
+msgstr "Per le tastiere italiane, la scelta adatta è generalmente «pc105»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid "Please select your keyboard layout."
+msgstr "Scegliere il layout della tastiera."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid ""
+"For the X server to handle your keyboard correctly, a keyboard layout must "
+"be entered.  Available layouts depend on which XKB rule set and keyboard "
+"model were previously selected."
+msgstr ""
+"Per fare in modo che il server X gestisca correttamente la tastiera, si deve "
+"scegliere un layout di tastiera. I layout disponibili dipendono dal set di "
+"regole XKB e dal modello di tastiera scelti precedentemente."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+#, fuzzy
+msgid ""
+"Advanced users can use any layout supported by the selected XKB rule set.  "
+"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
+"rules directory for available rule sets."
+msgstr ""
+"Gli utenti esperti possono usare un qualsiasi modello definito dal set di "
+"regole XKB. Se il pacchetto xlibs è già stato estratto, consultare la "
+"directory /etc/X11/xkb/rules per le regole disponibili."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:242
+msgid ""
+"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+"localized for other countries should generally enter their ISO 3166 country "
+"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+msgstr ""
+"Per le tastiere italiane, la scelta adatta è «it». Gli utenti di tastiere "
+"localizzate per altri paesi dovrebbero generalmente inserire il loro codice "
+"di nazione ISO 3166. Per esempio, gli Stati Uniti usano «us» e la Francia "
+"usa «fr»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid "Please select your keyboard variant."
+msgstr "Scegliere la variante di tastiera."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"For the X server to handle your keyboard as you desire, a keyboard variant "
+"may be entered.  Available variants depend on which XKB rule set, model, and "
+"layout were previously selected."
+msgstr ""
+"Per fare in modo che il server X gestisca la tastiera come desiderato, è "
+"possibile selezionare una variante di tastiera. Le varianti disponibili "
+"dipendono da quale set di regole XKB, modello e layout sono stati scelti "
+"precedentemente."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
+"spacing accent marks and diaereses as normal spacing keys, and if this is "
+"the preferred behavior, enter \"nodeadkeys\"."
+msgstr ""
+"Molti layout di tastiera hanno un'opzione per trattare i tasti «morti» (ad "
+"es. i segni di accento o le dieresi) come tasti normali; se questo è il "
+"comportamento desiderato scegliere «nodeadkeys»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+#, fuzzy
+msgid ""
+"Advanced users can use any variant supported by the selected XKB layout.  If "
+"the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
+"directory for the file corresponding to your selected layout for available "
+"variants."
+msgstr ""
+"Gli utenti esperti possono usare qualsiasi variante supportata dal loro "
+"layout XKB. Se il pacchetto xlibs è già stato estratto, consultare il file "
+"che corrisponde al layout selezionato nella directory /etc/X11/xkb/symbols "
+"per le varianti disponibili."
+
+# NdT: Con le versioni di X da woody in poi, anche gli italiani dovrebbero
+# lasciare vuoto questo campo.
+# "questo campo."
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:257
+msgid ""
+"Users of U.S. English keyboards should generally leave this entry blank."
+msgstr ""
+"Gli utenti di tastiere italiane possono in genere lasciare vuoto questo "
+"campo."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid "Please select your keyboard options."
+msgstr "Scegliere le opzioni per la tastiera."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"For the X server to handle your keyboard as you desire, keyboard options may "
+"be entered.  Available options depend on which XKB rule set was previously "
+"selected.  Not all options will work with every keyboard model and layout."
+msgstr ""
+"Perché il server X gestisca la tastiera come si desidera, si possono "
+"inserire opzioni per la tastiera. Le opzioni disponibili dipendono da quali "
+"regole XKB sono state scelte precedentemente. Non tutte le opzioni "
+"funzioneranno con ogni modello e layout di tastiera."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"For example, if you wish the Caps Lock key to behave as an additional "
+"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
+"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+msgstr ""
+"Per esempio, se si vuole che il tasto Caps Lock funzioni come un tasto "
+"Control addizionale, si può inserire «ctrl:nocaps»; se si vuole scambiare i "
+"tasti Caps Lock e Control sinistro, si può inserire «ctrl:swapcaps»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"As another example, some people prefer having the Meta keys available on "
+"their keyboard's Alt keys (this is the default), while other people prefer "
+"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
+"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
+"meta_win\"."
+msgstr ""
+"Un altro esempio: alcune persone preferiscono avere i tasti Meta disponibili "
+"sui tasti Alt della tastiera (questa è l'impostazione predefinita) invece "
+"altre persone preferiscono avere i tasti Meta sui tasti Windows o «logo». Se "
+"si preferisce usare i tasti Windows o logo come tasti Meta, si può inserire "
+"«altwin:meta_win»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"You can combine options by separating them with a comma; for example, if you "
+"wish the Caps Lock key to behave as an additional Control key and you would "
+"like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
+"nocaps,altwin:meta_win\"."
+msgstr ""
+"Si possono combinare più opzioni separandole con virgole; per esempio, se si "
+"desidera che il tasto Caps Lock funzioni come un tasto Control addizionale e "
+"che i tasti Windows o logo siano usati come tasti Meta, si può inserire "
+"«ctrl:nocaps,altwin:meta_win»."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid ""
+"Advanced users can use any options compatible with the selected XKB model, "
+"layout and variant."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:275
+msgid "If you don't know what options to use, leave this entry blank."
+msgstr "Se non si sa quali opzioni usare, lasciare vuoto questo campo."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid "Attempt mouse device autodetection?"
+msgstr "Tentare di rilevare automaticamente il mouse?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid ""
+"If you have a mouse attached to the computer, an attempt to detect it can be "
+"made; it may help to move the mouse while detection is attempted (also, the "
+"gpm program should not be running).  If you would like to attach a PS/2 or "
+"bus/inport mouse to your computer, you should shut down the system, turn off "
+"the computer's power, connect the mouse, turn the computer back on, and "
+"reboot.  If you wish to select a mouse type manually, decline this option."
+msgstr ""
+"Se un mouse è collegato al computer, si può tentare di rilevarlo; potrebbe "
+"essere utile muovere il mouse mentre viene tentato il rilevamento (inoltre, "
+"il programma gpm non dovrebbe essere in esecuzione). Se si vuole collegare "
+"un mouse PS/2 o bus/inport al computer, spengere il sistema, spengere "
+"l'interruttore del computer, collegare il mouse, riaccendere il computer e "
+"riavviare. Se si vuole selezionare il tipo di mouse manualmente, rifiutare "
+"questa opzione."
+
+# NEW-TRANSLATION
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:303
+msgid ""
+"If you accept this option and autodetection fails, you will be asked this "
+"question again.  You may attempt autodetection as many times as desired.  If "
+"autodetection succeeds, further debconf questions about your mouse will be "
+"pre-answered."
+msgstr ""
+"Se si accetta questa opzione e la rilevazione automatica fallisce, verrà "
+"posta nuovamente questa domanda. Si può tentare la rilevazione automatica "
+"quante volte si vuole. Se la rilevazione automatica ha successo, le prossime "
+"domande di debconf a riguardo del mouse avranno una risposta predefinita."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid "Please choose your mouse port."
+msgstr "Scegliere la porta del mouse."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of your mouse (or other pointing device, such as a "
+"trackball) must be known."
+msgstr ""
+"Perché l'interfaccia grafica del sistema X Window operi correttamente, "
+"alcune caratteristiche del vostro mouse (o altro dispositivo di puntamento, "
+"come una trackball) devono essere conosciute."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:319
+msgid ""
+"It is necessary to determine which port (connection type) your mouse uses. "
+"Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 or DB-"
+"25); the mouse connector is female (has holes) and the computer connector is "
+"male (has pins).  PS/2 ports are small round connectors (DIN) with 6 pins; "
+"the mouse connector is male and the computer side female.  You may "
+"alternatively have a USB mouse, a bus/inport (very old) mouse, or be using "
+"the gpm program as a repeater.  If you need to attach or remove PS/2 or bus/"
+"inport devices from your computer, please do so with the computer's power "
+"off."
+msgstr ""
+"È necessario determinare quale porta (tipo di connessione) il mouse usi. Le "
+"porte seriali usano connettori a forma di D con 9 o 25 pin (conosciute anche "
+"come DB-9 o DB-25); il connettore del mouse è femmina (ha buchi) e il "
+"connettore del computer è maschio (ha pin). Le porte PS/2 sono piccoli "
+"connettori tondi (DIN) con 6 pin; il connettore del mouse è maschio e il "
+"lato del computer femmina. È anche possibile avere un mouse USB, un mouse "
+"bus/inport (molto vecchio), oppure usare il programma gpm come repeater. I "
+"dispositivi PS/2 o bus/inport dal computer devono essere collegati a "
+"computer spento."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:337
+msgid "Please choose the entry that best describes your mouse."
+msgstr "Scegliere la voce che descrive meglio il mouse."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid "Emulate 3 button mouse?"
+msgstr "Emulare un mouse a 3 tasti?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"Most programs in the X Window System expect your mouse to have 3 buttons "
+"(left, right, and middle).  Mice with only 2 buttons can emulate the "
+"presence of a middle button by treating simultaneous clicks or drags of the "
+"left and right buttons as middle button events."
+msgstr ""
+"La maggior parte dei programmi nel sistema X Window si aspettano che il "
+"mouse abbia 3 tasti (sinistro, destro e centrale). I mouse con solo 2 tasti "
+"possono emulare la presenza di un tasto centrale trattando click simultanei "
+"o trascinamenti dei tasti sinistro e destro come eventi del tasto centrale."
+
+# NEW-TRANSLATION
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"This option may also be used on mice with 3 or more buttons; the middle "
+"button will continue to work normally."
+msgstr ""
+"Questa opzione può essere usata anche con mouse con 3 o più tasti; il tasto "
+"centrale continuerà a funzionare normalmente."
+
+# NEW-TRANSLATION
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:342
+msgid ""
+"Note that mouse buttons in excess of five (counting a scroll wheel as two "
+"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
+"\") are not yet supported with this configuration tool."
+msgstr ""
+"Notare che i tasti in eccesso a cinque (contando per la rotella due tasti, "
+"uno per «su» e l'altro per «giù», e un terzo se la rotella funziona anche da "
+"tasto) non sono ancora supportati da questo programma di configurazione."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid "Attempt monitor autodetection?"
+msgstr "Tentare il rilevamento automatico del monitor?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid ""
+"Many monitors (including LCD's) and video cards support a communication "
+"protocol that allows the monitor's technical characteristics to be "
+"communicated back to the computer.  If your monitor and video card speak the "
+"same dialect of this protocol, further debconf questions about your monitor "
+"will be pre-answered."
+msgstr ""
+"Molti monitor (inclusi gli LCD) e schede video supportano un protocollo di "
+"comunicazione che permette di comunicare al computer le caratteristiche "
+"tecniche del monitor. Se il monitor e la scheda video parlano lo stesso "
+"dialetto di questo protocollo, le prossime domande di debconf a riguardo del "
+"monitor avranno una risposta predefinita."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:358
+msgid ""
+"If autodetection fails, you will be asked for information about your monitor."
+msgstr ""
+"Se il rilevamento automatico fallirà, verranno chieste informazioni sul "
+"monitor."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid "Please choose a method for selecting your monitor characteristics."
+msgstr "Scegliere un metodo per selezionare le caratteristiche del monitor."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of your monitor must be known."
+msgstr ""
+"Perché l'interfaccia utente del sistema X Window operi correttamente, alcune "
+"caratteristiche del monitor devono essere conosciute."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+#, fuzzy
+msgid ""
+"For the \"simple\" option, you need only know the monitor's physical size; "
+"this will set some configuration values appropriate for a typical CRT of the "
+"corresponding size, but may be suboptimal for high-quality CRT's."
+msgstr ""
+"Per l'opzione «simple», è necessario solo sapere la dimensione fisica del "
+"monitor; questo abiliterà alcuni valori di configurazione appropriati per un "
+"CRT tipico della dimensione corrispondente, ma può non essere ottimale per "
+"CRT di alta qualità (questa opzione è disabilitata per gli utenti di "
+"pannelli LCD, perché quei display sono configurati per una particolare "
+"risoluzione)."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"The \"medium\" option will present you with a list of resolutions and "
+"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
+"you wish to use (and that you know your monitor is capable of)."
+msgstr ""
+"L'opzione «medium» presenterà una lista di risoluzioni e frequenze di "
+"refresh, come «800x600 @ 85Hz»; si dovrebbe scegliere la modalità migliore "
+"che si vuole usare (e che si sa che il monitor può supportare)."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:370
+msgid ""
+"The \"advanced\" option will let you specify your monitor's horizontal sync "
+"and vertical refresh tolerances directly."
+msgstr ""
+"L'opzione «advanced» permetterà di specificare direttamente le frequenze "
+"orizzontale e verticale del monitor."
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:387
+msgid ""
+"Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
+"inches (480-510 mm), 21 inches (530 mm) or more"
+msgstr ""
+"Fino a 14 pollici (355 mm), 15 pollici (380 mm), 17 pollici (430 mm), 19-20 "
+"pollici (480-510 mm), 21 pollici (530 mm) ed oltre"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:389
+msgid "Please choose your approximate monitor size."
+msgstr "Scegliere la dimensione del monitor appropriata."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:389
+msgid "High-quality CRT's may be able to use the next highest size category."
+msgstr ""
+"I CRT di alta qualità potrebbero usare la categoria di dimensione superiore."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:396
+msgid "Please select your monitor's best video mode."
+msgstr "Scegliere la miglior modalità video del monitor."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:396
+msgid ""
+"Choose the \"best\" resolution and refresh rate you believe your monitor "
+"capable of.  Larger resolutions and refresh rates are better.  If you use a "
+"CRT monitor, it is perfectly acceptable to select a \"worse\" video mode "
+"than your monitor's best if you wish.  Users of LCD displays may also be "
+"able to do this, but only if both the video chipset and the driver support "
+"it; if in doubt, use the video mode recommended by the manufacturer of your "
+"LCD."
+msgstr ""
+"Scegliere la «migliore» risoluzione e frequenza di refresh di cui si crede "
+"capace il monitor: le risoluzioni e le frequenze di refresh più alte sono "
+"considerate migliori. Se si usa un monitor CRT, se lo si desidera, è "
+"perfettamente accettabile scegliere una modalità video «peggiore» del meglio "
+"che il monitor è capace di fare. Anche gli utenti di display LCD potrebbero "
+"essere in grado di farlo, ma solamente se sia il chipset video che il driver "
+"lo supportano; se si hanno dei dubbi, usare la modalità video raccomandata "
+"dal produttore del vostro LCD."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:406
+msgid "Enter an identifier for your monitor."
+msgstr "Inserire un identificatore per il monitor."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:406
+msgid ""
+"The X server configuration file associates your monitor with a name that you "
+"may provide.  This is usually the vendor or brand name followed by the model "
+"name, e.g., \"Sony E200\" or \"Dell E770s\"."
+msgstr ""
+"Si può associare nel file di configurazione del server X un nome al monitor. "
+"Tipicamente si sceglie il nome del produttore o della marca seguiti dal nome "
+"del modello, per esempio «Sony E200» o «Dell E770s»."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:413
+#, fuzzy
+msgid "Write monitor sync ranges to configuration file?"
+msgstr "Scrivere una sezione «DRI» predefinita nel file di configurazione?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:413
+msgid ""
+"The monitor synchronization ranges should be autodetected by the X server in "
+"most cases, but sometimes it needs hinting.  This option is for advanced "
+"users, and should be left at its default."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:420
+msgid "Enter your monitor's horizontal sync range."
+msgstr ""
+"Inserire la gamma di frequenze orizzontali di sincronizzazione del monitor."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:420
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in your monitor's manual.  "
+"Values lower than 30 or higher than 130 are extremely rare."
+msgstr ""
+"Inserire una lista separata da virgole di valori discreti (per monitor a "
+"frequenza fissa) o una coppia di valori separata da un trattino (tutti i CRT "
+"moderni). Questa informazione dovrebbe essere disponibile nel manuale del "
+"monitor. Valori più bassi di 30 o più alti di 130 sono estremamente rari."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:428
+msgid "Enter your monitor's vertical refresh range."
+msgstr "Inserire la gamma di frequenze verticali di refresh del monitor."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:428
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in your monitor's manual.  "
+"Values lower than 50 or higher than 160 are extremely rare."
+msgstr ""
+"Inserire una lista separata da virgole di valori discreti (per monitor a "
+"frequenza fissa) o una coppia di valori separati da un trattino (tutti i CRT "
+"moderni). Questa informazione dovrebbe essere disponibile nel manuale del "
+"monitor. Valori più bassi di 50 o più alti di 160 sono estremamente rari."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:436
+msgid "Please enter a comma-separated list of ranges or values."
+msgstr "Inserire una lista separata da virgole di gamme di valori o valori."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:436
+msgid ""
+"The valid syntax is a comma-separated list of discrete values, or a pair of "
+"values separated by a dash."
+msgstr ""
+"La sintassi valida è una lista separata da virgole di valori discreti, o una "
+"coppia di valori separata da un trattino."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:444
+msgid "Select the video modes you would like the X server to use."
+msgstr "Scegliere le modalità video che si vuole che il server X usi."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:444
+msgid ""
+"If there are some resolutions you would not like the X server to use even if "
+"your hardware is capable of them, remove them from the list below.  Removing "
+"all of them is effectively the same as removing none, since in both cases "
+"the X server will attempt to use the highest possible resolution."
+msgstr ""
+"Se ci sono risoluzioni che non si vuole che il server X usi anche se "
+"l'hardware ne è in grado, rimuoverle dalla lista sottostante. Rimuoverle "
+"tutte ha lo stesso effetto di non rimuoverne nessuna, dato che in entrambi i "
+"casi il server X tenterà di usare la più alta risoluzione possibile."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid "Please select your desired default color depth in bits."
+msgstr "Scegliere la profondità di colore predefinita in bit."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid ""
+"Usually 24-bit color is desirable, but on graphics cards with limited "
+"amounts of framebuffer memory, higher resolutions may be achieved at the "
+"expense of higher color depth.  Also, some cards support hardware 3D "
+"acceleration only for certain depths.  Consult your video card manual for "
+"more information."
+msgstr ""
+"Solitamente sono preferibili colori a 24 bit, ma su schede grafiche con "
+"framebuffer con memoria limitata, risoluzioni più alte possono essere "
+"raggiunte al costo di una profondità di colore minore. Inoltre, alcune "
+"schede permettono l'accelerazione 3D hardware solo per alcune profondità. "
+"Consultare il manuale della scheda video per ulteriori informazioni."
+
+# NEW-TRANSLATION
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:454
+msgid ""
+"(So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
+"bits of alpha channel or simple zero padding; the X Window System can handle "
+"both.  If you want either, select 24 bits.)"
+msgstr ""
+"Il cosiddetto «colore a 32 bit» consiste in effetti di 24 bit di "
+"informazione sul colore più 8 bit di canale alfa o semplici zeri; il sistema "
+"X Window può gestirli entrambi, è sufficiente scegliere 24 bit."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:466
+msgid "Please enter a value for the entry."
+msgstr "Inserire un valore per la risposta."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:466
+msgid "A null entry is not permitted."
+msgstr "Una risposta nulla non è permessa."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:471
+msgid "Please enter a value without double-quotes."
+msgstr "Inserire un valore senza virgolette."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:471
+msgid "Double-quote (\") characters are not permitted in the entry value."
+msgstr "Le virgolette (\") non sono permesse nella risposta."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:476
+msgid "Please enter only a numeric value."
+msgstr "Inserire solo un valore numerico."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:476
+msgid "Characters other than digits are not allowed in the entry."
+msgstr "Caratteri diversi dalle cifre non sono permessi nella risposta."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+#, fuzzy
+msgid "Autodetect keyboard layout?"
+msgstr "Scegliere il layout della tastiera."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+msgid ""
+"The default keyboard layout selection for the Xorg server will be based on a "
+"combination of the language and the keyboard layout selected in the "
+"installer."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:482
+msgid ""
+"Accept this option if you want the keyboard layout to be redetected.  "
+"Decline it if you want to keep your current layout."
+msgstr ""
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Abilitare gli eventi di scrolling dalla rotella del mouse?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Gli eventi dalla rotella di un mouse che ne è dotato possono essere "
+#~ "trattati come click di tasti addizionali (tasti 4 e 5). Alcune "
+#~ "applicazioni X trattano i tasti 4 e 5 come eventi scroll-up e scroll-"
+#~ "down, facendo funzionare come previsto la rotella del mouse. Questo è "
+#~ "comunque un comportamento a livello di applicazione, e potrebbe non "
+#~ "funzionare sempre. Inoltre, i mouse esotici con più di 3 tasti oltre alla "
+#~ "rotella potrebbero funzionare in maniera inaspettata se questa opzione è "
+#~ "abilitata."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr ""
+#~ "Abilitare questa opzione non crea problemi se il mouse è sprovvisto di "
+#~ "rotella."
+
+# NEW-TRANSLATION
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Quanto detto sopra non si applica ai kernel Linux della serie 2.6 (né a "
+#~ "quelli della serie 2.5 successivi all'inclusione dello «scheduler O(1)»); "
+#~ "su tali sistemi il valore di nice del server X andrebbe impostato a 0."
+
+# NEW-TRANSLATION
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "Gli utenti di macchine SGI Indigo2 XL, o di macchine con altri tipi di "
+#~ "bus non ancora completamente supportati, dovrebbero semplicemente "
+#~ "specificare «1» (anche se non è garantito che funzioni)."
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "La scelta migliore per tutte le macchine con una sola scheda video "
+#~ "(tranne per PowerPC o SGI Indigo2 XL) è lasciare vuoto questo campo."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Il monitor è un dispositivo LCD?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Se il monitor è un display a cristalli liquidi (come succede per quasi "
+#~ "tutti i portatili), si dovrebbe abilitare questa opzione."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "Gli utenti di monitor con tubo catodico (CRT) non dovrebbero abilitare "
+#~ "questa opzione."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Scrivere una sezione «DRI» predefinita nel file di configurazione?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "La sezione DRI del file di configurazione del server X determina i "
+#~ "permessi del dispositivi DRI. Questa opzione è per gli utenti esperti. "
+#~ "Nella maggior parte dei casi, si dovrebbe abilitarla."
+
+#, fuzzy
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Disabilitare questa opzione se si vuole scrivere la propria sezione «DRI» "
+#~ "nel file di configurazione del server di XFree86. Si potrebbe voler fare "
+#~ "questo per cambiare i privilegi di accesso alla porta DRI."
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "Gli utenti esperti possono scegliere qualsiasi layout supportato dal set "
+#~ "di regole XKB selezionato. Se il pacchetto xlibs è già stato estratto, "
+#~ "consultare la directory /etc/X11/xkb/rules per le regole disponibili e la "
+#~ "directory /etc/X11/xkb/symbols per i layout disponibili."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "Gli utenti esperti possono usare qualsiasi opzione compatibile con il "
+#~ "modello XKB selezionato, layout e variante. Se il pacchetto xlibs è già "
+#~ "stato estratto, consultare nella directory /etc/X11/xkb/symbols i file di "
+#~ "opzioni disponibili, che definiscono solamente traduzioni parziali di "
+#~ "tastiera (per esempio, /etc/X11/xkb/symbols/ctrl)."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Se si ha una scheda grafica NVidia, si potrebbe voler rifiutare questa "
+#~ "opzione, dato che il supporto per il protocollo DDC di queste schede è "
+#~ "spesso così scadente che i tentativi di usarlo possono avere l'effetto di "
+#~ "bloccare il sistema."
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Attenzione che su qualche vecchio hardware ATI, come i chipset Mach8 (VGA "
+#~ "Wonder), Mach32 e i primi Mach64 («GX»), le profondità di colore "
+#~ "superiori a 8 bit non sono supportate."
+
+# NEW-TRANSLATION
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "Versione sperimentale dei pacchetti di XFree86"
+
+# NEW-TRANSLATION
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Si sta usando una versione sperimentale dei pacchetti XFree86 per Debian. "
+#~ "Si prega di non inviare, tramite il sistema Debian di tracciamento dei "
+#~ "bug, segnalazioni riguardo a questa versione dei pacchetti, dal momento "
+#~ "che non sono stati ancora inclusi nella distribuzione Debian."
+
+# NEW-TRANSLATION
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Se si verificano problemi nell'utilizzo di questi pacchetti o si desidera "
+#~ "inviare delle patch, scrivere alla lista «Debian X». Per saperne di più, "
+#~ "consultare:\n"
+#~ "  http://lists.debian.org/debian-x/"
+
+# NEW-TRANSLATION
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Se non si desidera usare le versioni sperimentali dei pacchetti X, è "
+#~ "posibile:\n"
+#~ "  1) Assicurarsi di non aver incluso le sorgenti dei pacchetti\n"
+#~ "     sperimentali in /etc/apt/sources.list;\n"
+#~ "  2) Fare in modo che apt riporti XFree86 ad una versione già "
+#~ "rilasciata;\n"
+#~ "     con «apt-get», è sufficiente specificare la distribuzione dopo il "
+#~ "nome\n"
+#~ "     del pacchetto. Ad esempio:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "     oppure\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "     Potrebbe essere necessario riportare a versioni precedenti più "
+#~ "pacchetti."
+
+#~ msgid "Migrate XKB configuration directory?"
+#~ msgstr "Spostare la directory di configurazione di XKB?"
+
+#~ msgid ""
+#~ "The directory where configuration information (including keyboard data) "
+#~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
+#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
+#~ msgstr ""
+#~ "Le informazioni sulla configurazione (inclusi i dati della tastiera) "
+#~ "dell'estensione X KEYBOARD (XKB) ora vengono conservate nella directory /"
+#~ "etc/X11/xkb e non più in /usr/X11R6/lib/X11/xkb."
+
+#~ msgid ""
+#~ "Your system is using the old location, and some programs, such as those "
+#~ "from old or unofficial Debian packages, may continue to install files "
+#~ "there."
+#~ msgstr ""
+#~ "Questo sistema usa ancora la vecchia posizione e certi programmi, ad "
+#~ "esempio quelli provenienti da pacchetti Debian vecchi o non ufficiali, "
+#~ "potrebbero continuare a installare lì i propri file."
+
+#~ msgid ""
+#~ "Would you like the XKB configuration files on the system to be "
+#~ "automatically migrated from the old location to the new one?  Any "
+#~ "existing files in the new location that have the same name will be backed "
+#~ "up and replaced by the files from the old location.  A symbolic link from "
+#~ "the old location to the new one will be created to prevent legacy "
+#~ "applications from breaking."
+#~ msgstr ""
+#~ "Si desidera che i file di configurazione di XKB vengano automaticamente "
+#~ "spostati dalla vecchia posizione a quella nuova? Ogni file già esistente "
+#~ "che si trovi nella nuova posizione verrà sostituito (dopo averne creato "
+#~ "una copia di backup) dai file provenienti dalla vecchia posizione. Verrà "
+#~ "inoltre creato un collegamento simbolico dalla vecchia posizione a quella "
+#~ "nuova, in modo da permettere alle vecchie applicazioni di funzionare "
+#~ "ancora."
+
+#~ msgid "Migrate Xt application defaults directory?"
+#~ msgstr ""
+#~ "Spostare la directory delle impostazioni predefinite delle applicazioni "
+#~ "Xt?"
+
+#~ msgid ""
+#~ "The directory where application defaults for X Window System client "
+#~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
+#~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
+#~ msgstr ""
+#~ "Le impostazioni predefinite dell'applicazione per i programmi client "
+#~ "basati sul toolkit Xt ora vengono conservate nella directory /etc/X11/app-"
+#~ "defaults e non più in /usr/X11R6/lib/X11/app-defaults."
+
+#~ msgid ""
+#~ "Would you like the app-defaults files on the system to be automatically "
+#~ "migrated from the old location to the new one?  Any existing files in the "
+#~ "new location that have the same name will be backed up and replaced by "
+#~ "the files from the old location.  A symbolic link from the old location "
+#~ "to the new one will be created to prevent legacy applications from "
+#~ "breaking."
+#~ msgstr ""
+#~ "Si desidera che i file degli app-defaults vengano automaticamente "
+#~ "spostati dalla vecchia posizione a quella nuova? Ogni file già esistente "
+#~ "che si trovi nella nuova posizione verrà sostituito (dopo averne creato "
+#~ "una copia di backup) dai file provenienti dalla vecchia posizione. Verrà "
+#~ "inoltre creato un collegamento simbolico dalla vecchia posizione a quella "
+#~ "nuova, in modo da permettere alle vecchie applicazioni di funzionare "
+#~ "ancora."
+
+#~ msgid "Select the desired default display manager."
+#~ msgstr "Scegliere il display manager predefinito."
+
+#~ msgid ""
+#~ "A display manager is a program that provides graphical login capabilities "
+#~ "for the X Window System."
+#~ msgstr ""
+#~ "Un display manager è un programma che fornisce capacità di login grafico "
+#~ "per il sistema X Window."
+
+#~ msgid ""
+#~ "Only one display manager can manage a given X server, but multiple "
+#~ "display manager packages are installed.  Please select which display "
+#~ "manager should run by default."
+#~ msgstr ""
+#~ "Solo un display manager può gestire un dato server X, ma sono installati "
+#~ "più pacchetti di display manager. Scegliere quale display manager usare."
+
+# NdT: L'originale è tra parentesi, ma si tratta di un uso scorretto della
+# punteggiatura (specialmente in italiano).
+#~ msgid ""
+#~ "(Multiple display managers can run simultaneously if they are configured "
+#~ "to manage different servers; to achieve this, configure the display "
+#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
+#~ "disable the check for a default display manager.)"
+#~ msgstr ""
+#~ "Possono essere eseguiti più display manager contemporaneamente, a patto "
+#~ "che siano impostati per gestire server diversi; per fare questo, "
+#~ "configurare i display manager in maniera appropriata, modificare ciascuno "
+#~ "dei loro script di avvio in /etc/init.d e disabilitare il controllo per "
+#~ "un display manager predefinito."
+
+# NEW-TRANSLATION
+#~ msgid "Do you wish to stop the xdm daemon?"
+#~ msgstr "Arrestare il demone xdm?"
+
+# NEW-TRANSLATION
+#~ msgid ""
+#~ "The X display manager (xdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session. If xdm is stopped now, any X sessions it manages will be "
+#~ "terminated. Otherwise you may leave xdm running, and the new version will "
+#~ "take effect the next time the daemon is restarted."
+#~ msgstr ""
+#~ "Il demone del display manager X (xdm) viene tipicamente fermato in fase "
+#~ "di aggiornamento o rimozione del pacchetto, ma pare che al momento stia "
+#~ "gestendo almeno una sessione attiva di X: se xdm viene arrestato ora, "
+#~ "anche tutte le sessioni di X che gestisce verranno terminate. In "
+#~ "alternativa, si può lasciare xdm attivo: la nuova versione sarà usata a "
+#~ "partire dal prossimo avvio del demone."

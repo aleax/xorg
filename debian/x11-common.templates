@@ -1,0 +1,35 @@
+Template: x11-common/xwrapper/allowed_users
+Type: select
+_Choices: Root Only, Console Users Only, Anybody
+Default: Console Users Only
+_Description: Select what type of user has permission to start the X server.
+ Because the X server runs with superuser privileges, it may be unwise to
+ permit any user to start it, for security reasons.  On the other hand, it is
+ even more unwise to run general-purpose X client programs as root, which is
+ what may happen if only root is permitted to start the X server.  A good
+ compromise is to permit the X server to be started only by users logged in to
+ one of the virtual consoles.
+
+Template: x11-common/xwrapper/actual_allowed_users
+Type: string
+Description: internal use only
+ This template is never shown to the user and does not require translation.
+
+Template: x11-common/xwrapper/nice_value
+Type: string
+_Description: Enter the desired nice value for the X server to use.
+ When using operating system kernels with a particular scheduling strategy,
+ it has been widely noted that the X server's performance improves when it
+ is run at a higher process priority than the default; a process's priority
+ is known as its "nice" value.  They range from -20 (extremely high
+ priority, or "not nice" to other processes) to 19 (extremely low
+ priority).  The default nice value for ordinary processes is 0, and this
+ is also the recommend value for the X server.
+ .
+ Values outside the range of -10 to 0 are not recommended; too negative,
+ and the X server will interfere with important system tasks.  Too
+ positive, and the X server will be sluggish and unresponsive.
+
+Template: x11-common/xwrapper/nice_value/error
+Type: note
+_Description: Please enter an integer between -20 and 19.

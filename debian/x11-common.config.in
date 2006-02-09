@@ -1,0 +1,161 @@
+#!/bin/sh
+# Debian x11-common package configuration script
+# Copyright 2000--2003 Branden Robinson.
+# Licensed under the GNU General Public License, version 2.  See the file
+# /usr/share/common-licenses/GPL or <http://www.gnu.org/copyleft/gpl.txt>.
+
+set -e
+
+# source debconf library
+. /usr/share/debconf/confmodule
+
+THIS_PACKAGE=x11-common
+THIS_SCRIPT=config
+
+#INCLUDE_SHELL_LIB#
+
+CONFIG_DIR=/etc/X11
+XWRAPPER_CONFIG="$CONFIG_DIR/Xwrapper.config"
+OLD_CONFIG_FILE="$CONFIG_DIR/Xserver"
+
+allowed_users_english_to_actual () {
+  case "$1" in
+    "Root Only")
+      echo "rootonly"
+      ;;
+    "Console Users Only")
+      echo "console"
+      ;;
+    "Anybody")
+      echo "anybody"
+      ;;
+    *)
+      # garbage input; return default
+      observe "allowed_users_english_to_actual(): unrecognized input \"$1\";" \
+              "using default"
+      echo "console"
+      ;;
+  esac
+}
+
+allowed_users_actual_to_english () {
+  case "$1" in
+    "rootonly")
+      echo "Root Only"
+      ;;
+    "console")
+      echo "Console Users Only"
+      ;;
+    "anybody")
+      echo "Anybody"
+      ;;
+    *)
+      # garbage input; return default
+      observe "allowed_users_actual_to_english(): unrecognized input \"$1\";" \
+              "using default"
+      echo "Console Users Only"
+      ;;
+  esac
+}
+
+validate_nice_value () {
+  _retval=1
+  # first, try to subtract number from itself to validate numeric input
+  # (expr is noisy, always throw away its output)
+  set +e
+  expr "$1" - "$1" > /dev/null 2>&1
+  if [ $? -ne 2 ]; then
+    # now check for valid range
+    if expr "$1" ">=" "-20" > /dev/null 2>&1 &&
+       expr "$1" "<=" "19" > /dev/null 2>&1; then
+       _retval=0
+    fi
+  fi
+  set -e
+  return $_retval
+}
+
+CURRENT_ALLOWED_USERS=
+CURRENT_NICE_VALUE=
+
+# scan the X wrapper config file for existing settings, if it exists
+if [ -e "$XWRAPPER_CONFIG" ]; then
+  if MATCHES=$(grep "^allowed_users=.\+" "$XWRAPPER_CONFIG"); then
+    CURRENT_ALLOWED_USERS=$(echo "${MATCHES##*=}" | head -n 1)
+  fi
+  if MATCHES=$(grep "^nice_value=.\+" "$XWRAPPER_CONFIG"); then
+    CURRENT_NICE_VALUE=$(echo "${MATCHES##*=}" | head -n 1)
+  fi
+fi
+
+if [ -n "$CURRENT_ALLOWED_USERS" ]; then
+  observe "setting x11-common/xwrapper/allowed_users from configuration" \
+          "file"
+  run db_set x11-common/xwrapper/allowed_users \
+                      $(allowed_users_actual_to_english \
+                      "$CURRENT_ALLOWED_USERS")
+fi
+
+if [ -n "$CURRENT_NICE_VALUE" ]; then
+  observe "setting x11-common/xwrapper/nice_value from configuration file"
+  if validate_nice_value "$CURRENT_NICE_VALUE"; then
+    run db_set x11-common/xwrapper/nice_value \
+                        "$CURRENT_NICE_VALUE"
+  fi
+fi
+
+run db_input low x11-common/xwrapper/allowed_users
+run db_go
+
+RET=
+if db_get x11-common/xwrapper/allowed_users; then
+  if [ -n "$RET" ]; then
+    run db_set x11-common/xwrapper/actual_allowed_users \
+                        $(allowed_users_english_to_actual "$RET")
+  fi
+fi
+
+# next question requires input validation; assume safe valid value already
+# present (possibly the template default)
+SAFE=
+if db_get x11-common/xwrapper/nice_value; then
+  SAFE="$RET"
+fi
+
+# make sure it's really safe; if not, use the default
+if ! validate_nice_value "$RET"; then
+  SAFE="0"
+  run db_set x11-common/xwrapper/nice_value "$SAFE"
+fi
+
+set +e
+while :; do
+  run db_input low x11-common/xwrapper/nice_value
+  # is the question going to be asked?
+  if [ $? -eq 30 ]; then
+    break # no; bail out of validation loop
+  fi
+  run db_go
+  RET=
+  if db_get x11-common/xwrapper/nice_value; then
+    # string, needs input validation
+    if validate_nice_value "$RET"; then
+      # valid input from user
+      break
+    else
+      # the input was invalid; restore the known good value in case we are
+      # interrupted before the user provides a valid one
+      run db_set x11-common/xwrapper/nice_value "$SAFE"
+      run db_fset x11-common/xwrapper/nice_value seen false
+      # now display the error message
+      run db_fset x11-common/xwrapper/nice_value/error seen false
+      run db_input critical x11-common/xwrapper/nice_value/error
+      run db_go
+    fi
+  fi
+done
+set -e
+
+exit 0
+
+# vim:set ai et sts=2 sw=2 tw=0:
