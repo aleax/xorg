@@ -6,6 +6,7 @@
 # Modified by Branden Robinson <branden@debian.org>
 # Modified by Fabio Massimo Di Nitto <fabbione@fabbione.net>
 # Modified by Daniel Stone <daniel.stone@ubuntu.com>
+# Modified by David Nusinow <dnusinow@debian.org>
 # Copyright 1996--2005 Software in the Public Interest, Inc.
 # Licensed under the GNU General Public License, version 2.  See the file
 # /usr/share/common-licenses/GPL or <http://www.gnu.org/copyleft/gpl.txt>.
@@ -16,6 +17,8 @@ export DH_OPTIONS
 
 # latest ABI is 7.0 final
 SERVERABIBUMP = 7.0.0
+
+include debian/xsfbs/xsfbs.mk
 
 # Get package version info.
 SOURCE_VERSION:=$(shell dpkg-parsechangelog -ldebian/changelog | grep '^Version:' | awk '{print $$2}')
@@ -42,10 +45,6 @@ clean: cleanscripts
 
 SCRIPTS=$(shell ls debian/*.config.in debian/*.postinst.in debian/*.postrm.in debian/*.preinst.in debian/*.prerm.in)
 
-cleanscripts:
-	rm -f debian/*.config debian/*.postinst debian/*.postrm debian/*.preinst debian/*.prerm
-	rm -f stamp-scripts stamp-genscripts stamp-validatescripts
-
 scripts: stamp-scripts
 stamp-scripts: genscripts validatescripts
 	touch $@
@@ -54,35 +53,6 @@ validatescripts: genscripts stamp-validatescripts
 stamp-validatescripts: debian/local/dexconf
 	sh debian/scripts/validate-posix-sh $<
 	touch $@
-
-genscripts: stamp-genscripts
-stamp-genscripts: $(SCRIPTS)
-	for FILE in $(SCRIPTS); do \
-	  if [ -e "$$FILE" ]; then \
-	    MAINTSCRIPT=$$(echo $$FILE | sed 's/.in$$//'); \
-	    if egrep -q '^#INCLUDE_SHELL_LIB#$$' $$FILE; then \
-	      sed -n '1,/^#INCLUDE_SHELL_LIB#$$/p' < $$FILE | sed -e '/^#INCLUDE_SHELL_LIB#$$/d' > $$MAINTSCRIPT.tmp; \
-	      cat debian/shell-lib.sh >> $$MAINTSCRIPT.tmp; \
-	      sed -n '/^#INCLUDE_SHELL_LIB#$$/,$$p' < $$FILE | sed -e '/^#INCLUDE_SHELL_LIB#$$/d' >> $$MAINTSCRIPT.tmp; \
-	    else \
-	      cp $$FILE $$MAINTSCRIPT.tmp; \
-	    fi; \
-	    sed -e 's/@SOURCE_VERSION@/$(SOURCE_VERSION)/' < $$MAINTSCRIPT.tmp > $$MAINTSCRIPT; \
-	    rm $$MAINTSCRIPT.tmp; \
-	    sh debian/scripts/validate-posix-sh $$MAINTSCRIPT; \
-	  fi; \
-	done
-	touch $@
-
-# Generate the debconf templates POT file header.
-debian/po/pothead: debian/po/pothead.in
-	sed -e 's/SOURCE_VERSION/$(SOURCE_VERSION)/' \
-	  -e 's/DATE/$(shell date "+%F %X%z"/)' \
-	  <debian/po/pothead.in >$@
-
-# Update POT and PO files.
-updatepo: debian/po/pothead
-	debian/scripts/debconf-updatepo --pot-header=pothead --verbose
 
 build: stamp-build
 stamp-build: stamp-scripts
