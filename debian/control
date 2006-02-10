@@ -26,22 +26,22 @@ Description: X Window System (X.Org) infrastructure
 Package: xserver-xorg
 Architecture: all
 Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
-Depends: xserver-xorg-core, xorg-video-drivers-all | xorg-video-driver, xorg-input-drivers-all | xorg-input-driver, x11-common, laptop-detect, xresprobe, mdetect, discover1
+Depends: xserver-xorg-core, xserver-xorg-video-all | xserver-xorg-video, xserver-xorg-input-all | xserver-xorg-input, x11-common, laptop-detect, xresprobe, mdetect, discover1
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server, as well as providing a configuration infrastructure to manage
  xorg.conf.  It does not provide the actual server itself, but removing it
  is strongly discouraged.
 
-Package: xorg-video-drivers-all
+Package: xserver-xorg-video-all
 Architecture: alpha amd64 arm hppa hurd-i386 i386 ia64 m68k mips mipsel powerpc sparc
-Depends: ${F:XServer-Xorg-Driver-Depends}
+Depends: ${F:XServer-Xorg-Video-Depends}
 Description: the X.Org X server -- output driver metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
  to only have certain drivers installed.
 
-Package: xorg-input-drivers-all
+Package: xserver-xorg-input-all
 Architecture: alpha amd64 arm hppa hurd-i386 i386 ia64 m68k mips mipsel powerpc sparc
 Depends: ${F:XServer-Xorg-Input-Depends}
 Description: the X.Org X server -- input driver metapackage
