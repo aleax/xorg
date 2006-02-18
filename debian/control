@@ -25,6 +25,7 @@ Description: X Window System (X.Org) infrastructure
 
 Package: xserver-xorg
 Architecture: all
+Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1)
 Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
 Depends: xserver-xorg-core, xserver-xorg-video-all | xserver-xorg-video, xserver-xorg-input-all | xserver-xorg-input, laptop-detect, xresprobe, mdetect, discover1, debconf
 Description: the X.Org X server
@@ -32,6 +33,13 @@ Description: the X.Org X server
  X.Org X server, as well as providing a configuration infrastructure to manage
  xorg.conf.  It does not provide the actual server itself, but removing it
  is strongly discouraged.
+
+
+Package: xserver-xfree86
+Architecture: alpha amd64 arm hppa hurd-i386 i386 ia64 kfreebsd-i386 m68k mips mipsel netbsd-i386 powerpc sparc
+Depends: xserver-xorg
+Description: transitional package for moving from xfree86 to X.Org
+ This package smooths upgrades from Debian 3.1 by depending on xserver-xorg.
 
 Package: xserver-xorg-video-all
 Architecture: alpha amd64 arm hppa hurd-i386 i386 ia64 m68k mips mipsel powerpc sparc
@@ -63,3 +71,12 @@ Description: X Window System core components
  It should be noted that a package providing x-window-manager and a package
  providing x-terminal-emulator should also be installed to ensure a
  comfortable X experience.
+
+Package: xlibs
+Architecture: any
+Depends: xkb-data | xkb-data-legacy
+Description: transitional package
+
+Package: xlibs-data
+Architecture:any
+Depends: xbitmaps, xcursor-themes

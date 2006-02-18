@@ -105,6 +105,8 @@ binary-arch: build install
 	dh_link
 	dh_compress
 	dh_fixperms
+	chown root:root debian/x11-common/usr/bin/X
+	chmod ug+s debian/x11-common/usr/bin/X
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol -- -VF:XServer-Xorg-Video-Depends=$(XSERVER_XORG_VIDEO_DEPENDS) \
