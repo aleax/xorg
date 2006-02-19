@@ -17,8 +17,12 @@ xorg (1:7.0.0) experimental; urgency=low
   * setuid for /usr/bin/X (stolen from monolith's debian/rules)
   * Provide xlibs and xlibs-data transitional packages. These are empty
     packages that depend on the packages that replace them.
+  * Create an xorg metapackage that provides x-window-system(-core). This is a
+    simpler name and should suffice. We don't need this split between -system
+    and -system-core. If people want twm and so forth they can install it.
+    This package installs -core plus xterm currently.
 
- -- David Nusinow <dnusinow@debian.org>  Sat, 18 Feb 2006 19:51:58 -0500
+ -- David Nusinow <dnusinow@debian.org>  Sat, 18 Feb 2006 20:06:30 -0500
 
 xorg (7.0.0-0ubuntu14) dapper; urgency=low
 

@@ -57,20 +57,20 @@ Description: the X.Org X server -- input driver metapackage
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
  to only have certain drivers installed.
 
-Package: x-window-system-core
+Package: xorg
 Architecture: any
-Depends: xserver-xorg, libgl1-mesa, libgl1-mesa-dri, libglu1-mesa, xfonts-base, xfonts-100dpi, xfonts-75dpi, xfonts-scalable, xbase-clients, xutils, xkeyboard-config
-Description: X Window System core components
- This metapackage provides the essential components for a standalone
+Depends: xserver-xorg, libgl1-mesa, libgl1-mesa-dri, libglu1-mesa, xfonts-misc, xfonts-100dpi, xfonts-75dpi, xfonts-scalable, xbase-clients, xutils, xkeyboard-config, xterm
+Provides: x-window-system, x-window-system-core
+Description: X.Org X Window System
+ This metapackage provides the components for a standalone
  workstation running the X Window System.  It provides the X libraries, an X
  server, a set of fonts, and a group of basic X clients and utilities.
  .
  Higher level metapackages, such as those for desktop environments, can
  depend on this package and simplify their dependencies.
  .
- It should be noted that a package providing x-window-manager and a package
- providing x-terminal-emulator should also be installed to ensure a
- comfortable X experience.
+ It should be noted that a package providing x-window-manager should also
+ be installed to ensure a comfortable X experience.
 
 Package: xlibs
 Architecture: any
