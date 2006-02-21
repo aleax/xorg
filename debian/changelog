@@ -24,8 +24,11 @@ xorg (1:7.0.0) experimental; urgency=low
   * Re-add x-window-system-dev package under the new name of xorg-dev. Note to
     packagers: this is not meant to be build-dep'ed on, but is a convenience
     package for users.
+  * Provide a compatibility symlink to /usr/lib/X11/fonts (their new home) at
+    /usr/X11R6/lib/X11/fonts. This will let external fonts work as expected.
+    Thanks Eugene Konev.
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 20 Feb 2006 19:46:10 -0500
+ -- David Nusinow <dnusinow@debian.org>  Mon, 20 Feb 2006 22:10:54 -0500
 
 xorg (7.0.0-0ubuntu14) dapper; urgency=low
 
