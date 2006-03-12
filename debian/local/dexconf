@@ -202,13 +202,13 @@ if [ "$RET" = "true" ]; then
   exec 4>"$DEXCONFTMPDIR/Files"
   cat >&4 <<SECTION
 Section "Files"
-	FontPath	"/usr/share/X11/fonts/misc"
-	FontPath	"/usr/share/X11/fonts/cyrillic"
-	FontPath	"/usr/share/X11/fonts/100dpi/:unscaled"
-	FontPath	"/usr/share/X11/fonts/75dpi/:unscaled"
-	FontPath	"/usr/share/X11/fonts/Type1"
-	FontPath	"/usr/share/X11/fonts/100dpi"
-	FontPath	"/usr/share/X11/fonts/75dpi"
+	FontPath	"/usr/share/fonts/X11/misc"
+	FontPath	"/usr/share/fonts/X11/cyrillic"
+	FontPath	"/usr/share/fonts/X11/100dpi/:unscaled"
+	FontPath	"/usr/share/fonts/X11/75dpi/:unscaled"
+	FontPath	"/usr/share/fonts/X11/Type1"
+	FontPath	"/usr/share/fonts/X11/100dpi"
+	FontPath	"/usr/share/fonts/X11/75dpi"
 	# path to defoma fonts
 	FontPath	"/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType"
 EndSection
