@@ -29,6 +29,7 @@ Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
 Replaces: xserver-common
 Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
 Depends: xserver-xorg-core, xserver-xorg-video-all | xserver-xorg-video, xserver-xorg-input-all | xserver-xorg-input, laptop-detect, xresprobe, mdetect, discover1, debconf
+Recommends: xkb-data
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server, as well as providing a configuration infrastructure to manage
@@ -88,14 +89,6 @@ Description: the X.Org development libraries
  .
  Note that this is a convinience package for users and is not a package for
  Debian developers to have their package depend on.
-
-
-Package: xlibs
-Architecture: any
-Depends: xkb-data | xkb-data-legacy
-Description: transitional package for xkb data
- This package is provided to ease upgrades from Debian 3.1 ("sarge"). It
- may be safely removed from your system.
 
 Package: xlibs-data
 Architecture:any
