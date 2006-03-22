@@ -4,8 +4,11 @@ xorg (1:7.0.6) experimental; urgency=low
     the xserver-xorg package recommend xkb-data instead. xkb-data should
     already be pulled in by several pieces including the xorg metapackage,
     xutils, and xbase-clients
+  * Double the font compatibility symlink. One set at /usr/X11R6/lib/X11/fonts
+    and one at /usr/lib/X11/fonts. Both point to /usr/share/fonts/X11, which
+    is our home for the fonts.
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 20 Mar 2006 21:24:55 -0500
+ -- David Nusinow <dnusinow@debian.org>  Tue, 21 Mar 2006 23:29:42 -0500
 
 xorg (1:7.0.5) experimental; urgency=low
 
