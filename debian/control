@@ -97,6 +97,17 @@ Description: transitional package for X11 client data
  This package is provided to ease upgrades from Debian 3.1 ("sarge"). It
  may be safely removed from your system.
 
+Package: xlibs-static-dev
+Architecture: all
+Depends: libxfont-dev, libfontenc-dev
+Description: Transitional Metapackage
+ This package depends on the individual libraries that used to be contained
+ within the package of this name. These libraries used to be static
+ libraries, but have since become shared libraries with their own packages
+ and can be depended on by themselves. This package is for transitional
+ purposes to prevent disruptions during automated package builds, and my be
+ safely removed from your system.
+
 Package: xlibmesa-dri
 Section: libdevel
 Architecture: any
