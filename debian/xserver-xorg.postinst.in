@@ -730,7 +730,8 @@ done
 if [ -L "$SERVER_SYMLINK" ] || ! [ -e "$SERVER_SYMLINK" ]; then
   # migrate from old symlinks.
   if [ "$(readlink /etc/X11/X)" = "/usr/X11R6/bin/Xorg" ] || \
-     [ "$(readlink /etc/X11/X)" = "/usr/bin/X11/Xorg" ]; then
+     [ "$(readlink /etc/X11/X)" = "/usr/bin/X11/Xorg" ] || \
+     [ "$(readlink /etc/X11/X)" = "/bin/true" ]; then
     rm /etc/X11/X
     ln -s $THIS_SERVER /etc/X11/X
   fi
