@@ -4,10 +4,15 @@ xorg (1:7.0.11) unstable; urgency=low
     any more. Thanks to a lot of people. (closes: #362112, #362105)
   * Make various metapackages arch: any rather than arch: all
   * Add s390 vars script source to allow the package to build on that arch.
-    Provides only the dummy video driver currently. 
+    Provides only the dummy video driver currently.
     (closes: #361908, #361909)
+  * On xserver-xorg postinst, reconfigure for all versions less than or equal
+    to this one. This will only occur if the file is not customized. This will
+    automatically correct for new font and xkb data paths. Users with
+    customized files will have to make the necessary changes, documented in
+    the NEWS.Debian file for the xserver-xorg-core package.
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 19:30:03 -0400
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 19:53:28 -0400
 
 xorg (1:7.0.10) unstable; urgency=low
 
