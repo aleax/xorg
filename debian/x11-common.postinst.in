@@ -50,6 +50,11 @@ if ! [ -L "/usr/bin/X11" ] && [ -d "/usr/bin/X11" ]; then
   fi
 fi
 
+if [ -d "/usr/X11R6/bin" ]; then
+  rmdir "/usr/X11R6/bin" || die "Could not remove /usr/X11R6/bin. Is not yet empty"
+  ln -s /usr/bin /usr/X11R6/bin || die "Could not link /usr/bin to /usr/X11R6/bin"
+fi
+
 # only mess with config file it exists; otherwise, assume that's the way the
 # user wants it, but only if upgrading
 if [ -e "$XWRAPPER_CONFIG" ] || [ -z "$UPGRADE" ]; then
