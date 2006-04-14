@@ -11,8 +11,14 @@ xorg (1:7.0.11) unstable; urgency=low
     automatically correct for new font and xkb data paths. Users with
     customized files will have to make the necessary changes, documented in
     the NEWS.Debian file for the xserver-xorg-core package.
+  * Have x11-common conflict with packages installing binaries to
+    /usr/X11R6/bin. We need to remove them in order to install a proper
+    symlink at this location to /usr/bin. Packages will still be able to
+    install to /usr/X11R6/bin, but they need to be removed from the system
+    first so that we can set up the symlink and not drop them out of the path.
+    Thanks Steve Langasek. (closes: #362524)
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 19:58:25 -0400
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 20:05:57 -0400
 
 xorg (1:7.0.10) unstable; urgency=low
 
