@@ -31,8 +31,11 @@ xorg (1:7.0.11) unstable; urgency=low
     Manterola. (closes: #362255)
   * Document the metapackage name change in x11-common's NEWS.Debian.
   * Have xserver-xorg depend on xbase-clients
+  * Ensure that config file md5sum gets migrated from /var/lib/xfree86 to
+    /var/libx11. To do so, separate the test for it from the roster file in
+    the xserver-xorg preinst.
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 23:03:09 -0400
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 23:50:33 -0400
 
 xorg (1:7.0.10) unstable; urgency=low
 

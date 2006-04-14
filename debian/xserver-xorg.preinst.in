@@ -44,7 +44,7 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   # the transition from /var/lib/xfree86 to /var/lib/x11 occurred in
   # 7.0.0-0ubuntu1
   if [ -n "$UPGRADE" ] && \
-     dpkg --compare-versions "$2" lt "7.0.0"; then
+     dpkg --compare-versions "$2" lt "1:7.0.11"; then
     if [ -e "/var/lib/xfree86" ]; then
       if [ -e "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" ] && \
          [ -e "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE" ]; then
@@ -61,7 +61,7 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
           if [ -s "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" ]; then
             # yes, replace the roster file
             mv "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" \
-               "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE"
+               "$CONFIG_AUX_DIR/$SERVER_SYMLINK_ROSTER_BASE"
           else
             # no; remove both the original and our temporary copy
             rm -f "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" \
@@ -78,8 +78,7 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
         fi
       fi
 
-      if [ -e "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" ] && \
-         [ -e "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" ]; then
+      if [ -e "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" ]; then \
         if fgrep -qx "$THIS_PACKAGE" \
            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"; then
           # construct temporary roster file with our package name removed, ignoring
@@ -98,15 +97,17 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
             # no; remove both the original and our temporary copy
             rm -f "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" \
                   "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp"
-
-            # migrate the checksum if it doesn't exist
-            if [ -e "$XORGCONFIG_CHECKSUM" ]; then
-              rm "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE"
-            else
-              mv "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" \
-                 "$XORGCONFIG_CHECKSUM"
-            fi
           fi
+        fi
+      fi
+
+      if  [ -e "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" ]; then
+        # migrate the checksum if it doesn't exist
+        if [ -e "$XORGCONFIG_CHECKSUM" ]; then
+          rm "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE"
+        else
+          mv "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" \
+             "$XORGCONFIG_CHECKSUM"
         fi
       fi
 
