@@ -37,6 +37,12 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
       rm /usr/${i}/X11
     fi
   done
+  # We provided this as a symlink in versions between 7.0.0 and 7.0.11. We want
+  # to be sure this is a directory after install to allow font packages to
+  # install properly even if they haven't transitioned
+  if [ -L "/usr/X11R6/lib/X11/fonts" ]; then
+    rm /usr/X11R6/lib/X11/fonts
+  fi
 
   # migration hilarity
   if [ -n "$FIRSTINST" ]; then

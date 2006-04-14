@@ -1,0 +1,11 @@
+x11-common (1:7.0.11) unstable; urgency=low
+
+ * With the change to X11R7, various paths have been changed, including
+   where binaries are stored. In X11R6, binaries were installed to
+   /usr/X11R6/bin and /usr/bin/X11 was a symlink pointing to this
+   directory. Now binaries are installed to /usr/bin and /usr/bin/X11 is a
+   symlink that points to /usr/bin. As such, any legacy application that
+   installs its binaries to /usr/X11R6/bin may be outside your PATH, and
+   you will need to update the configuration on your system accordingly.
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 22:13:17 -0400

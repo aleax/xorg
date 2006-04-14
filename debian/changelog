@@ -19,8 +19,16 @@ xorg (1:7.0.11) unstable; urgency=low
     Thanks Steve Langasek. (closes: #362524, #362200)
   * Symlink /usr/X11R6/bin to /usr/bin in x11-common.postinst. Thanks Steve
     Langasek.
+  * Several fixes for fonts. Include /usr/X11R6/lib/X11/fonts as a directory
+    in x11-common for font packages that have not transitioned to the new
+    directory. /usr/lib/X11/fonts symlinks to this directory. Both of these
+    used to be symlinks to /usr/share/fonts/X11 but no longer. We explicitly
+    remove the symlink at /usr/X11R6/lib/X11/fonts in the x11-common preinst
+    to ensure this transition. Thanks Eugene Konev.
+  * Document the change of PATH to /usr/X11R6/bin in x11-common NEWS.Debian
+    file. Thanks Joey Hess. (closes: #362222)
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 20:18:25 -0400
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 22:13:17 -0400
 
 xorg (1:7.0.10) unstable; urgency=low
 
