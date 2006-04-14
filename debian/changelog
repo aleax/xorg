@@ -33,9 +33,15 @@ xorg (1:7.0.11) unstable; urgency=low
   * Have xserver-xorg depend on xbase-clients
   * Ensure that config file md5sum gets migrated from /var/lib/xfree86 to
     /var/libx11. To do so, separate the test for it from the roster file in
-    the xserver-xorg preinst.
+    the xserver-xorg preinst. Properly handle the migration itself as well by
+    using better variables in the mv command. Thanks Justin Pryzby.
+    (closes: #331690)
+  * Similarly separate the md5sum for the server symlink from the roster. Also
+    handle the case where the server symlink md5sum is removed but the symlink
+    itself is in place. Here we just remake the md5sum using that symlink
+    silently.
 
- -- David Nusinow <dnusinow@debian.org>  Thu, 13 Apr 2006 23:50:33 -0400
+ -- David Nusinow <dnusinow@debian.org>  Fri, 14 Apr 2006 01:38:14 -0400
 
 xorg (1:7.0.10) unstable; urgency=low
 
