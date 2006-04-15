@@ -51,7 +51,7 @@ if ! [ -L "/usr/bin/X11" ] && [ -d "/usr/bin/X11" ]; then
 fi
 
 if [ -d "/usr/X11R6/bin" ]; then
-  rmdir "/usr/X11R6/bin" || die "Could not remove /usr/X11R6/bin. Is not yet empty"
+  rmdir "/usr/X11R6/bin" || die "Could not remove /usr/X11R6/bin. Is not yet empty. Please remove any items still in the directory. You can move them back after the install has completed successfully."
   ln -s /usr/bin /usr/X11R6/bin || die "Could not link /usr/bin to /usr/X11R6/bin"
 fi
 
