@@ -9,10 +9,13 @@ xorg (1:7.0.12) unstable; urgency=low
     on upgrade. Tell people in the error message that they can move the items
     there back after the installation has finished.
   * Make xserver-xorg-(input|video)-all arch: any rather than all, to let them
-    build properly. Thanks Eugene Konev for the fix. Thanks Paul Wise and LIU 
+    build properly. Thanks Eugene Konev for the fix. Thanks Paul Wise and LIU
     Xin. (closes: #362719, #362720, #362694)
+  * Remove the /usr/X11R6/bin/X symlink from xserver-xorg. Also bump the
+    x11-common conflicts with xserver-xorg to this version. Thanks Joey Hess
+    and Steve Langasek. (closes: #362713)
 
- -- David Nusinow <dnusinow@debian.org>  Sat, 15 Apr 2006 12:07:38 -0400
+ -- David Nusinow <dnusinow@debian.org>  Sat, 15 Apr 2006 12:15:06 -0400
 
 xorg (1:7.0.11) unstable; urgency=low
 
