@@ -50,7 +50,7 @@ if ! [ -L "/usr/bin/X11" ] && [ -d "/usr/bin/X11" ]; then
   fi
 fi
 
-if [ ! -L -e -d "/usr/X11R6/bin" ]; then
+if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
   rmdir "/usr/X11R6/bin" || die "Could not remove /usr/X11R6/bin. Is not yet empty. Please remove any items still in the directory. You can move them back after the install has completed successfully."
 fi
 if ! [ -e "/usr/X11R6/bin" ]; then
