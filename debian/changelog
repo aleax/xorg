@@ -15,8 +15,12 @@ xorg (1:7.0.14) unstable; urgency=low
     and will be removed upon the release of etch.
   * Make x11-common not depend on laptop-detect. This is now only recommended
     by xserver-xorg. Thanks Marc Wilson. (closes: #363081)
+  * Have xserver-xorg-input-all pull in synaptics driver on all arches that
+    it's set to build on. This required not loading the plain vars file in
+    debian/rules, and having the variable listing the input drivers moved to
+    the arch-specific vars files.
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 17 Apr 2006 11:59:39 -0400
+ -- David Nusinow <dnusinow@debian.org>  Mon, 17 Apr 2006 12:30:06 -0400
 
 xorg (1:7.0.13) unstable; urgency=low
 
