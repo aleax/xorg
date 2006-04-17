@@ -10,8 +10,11 @@ xorg (1:7.0.14) unstable; urgency=low
     tracking this down. (closes: #362891, #363021)
   * Make x11-common pre-depend on debconf | debconf-2.0. Thanks Steve
     Langasek. (closes: #362992)
+  * Make x-window-system and x-window-system-core transitional packages that
+    depend on the xorg package. These packages will smooth upgrades from sarge
+    and will be removed upon the release of etch.
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 17 Apr 2006 10:09:48 -0400
+ -- David Nusinow <dnusinow@debian.org>  Mon, 17 Apr 2006 10:13:07 -0400
 
 xorg (1:7.0.13) unstable; urgency=low
 
