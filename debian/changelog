@@ -2,8 +2,14 @@ xorg (1:7.0.14) unstable; urgency=low
 
   * Add more versioned conflicts (libmotif-dev, motif-clients, xslideshow,
     xtrkcad). Thanks Steve Langasek.
+  * Grab discover_video function from xserver-xorg.config.in from 6.9. The
+    discover2 support was dropped solely in favor of discover1. This caused
+    people with discover installed instead of discover1 to have an error
+    returning 64 on their xserver-xorg postinstall. Thanks to Daniele
+    Venzano for the bug report. Thanks to Steve Gran and Steve Langasek for
+    tracking this down. (closes: #362891)
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 17 Apr 2006 00:13:35 -0400
+ -- David Nusinow <dnusinow@debian.org>  Mon, 17 Apr 2006 02:10:50 -0400
 
 xorg (1:7.0.13) unstable; urgency=low
 

@@ -59,14 +59,43 @@ debug_report_status () {
 }
 
 discover_video () {
-  if which discover >/dev/null 2>&1; then
-    # must be Discover 1.x
-    DISCOVERED_VIDEO=$(discover --disable-all --enable=pci \
-                                --format="%V %M\t%S\t%D\n" video 2>/dev/null)
+  # wrapper for discover command that can distinguish Discover 1.x and 2.x
+
+  # Ugh, Discover 1.x didn't exit with nonzero status if given an unrecongized option!
+  # Double ugh!  Discover is crashy.  People blame X when it crashes (but then,
+  # people blame X when *anything* crashes).
+  DISCOVER_ERRORFILE=$(tempfile)
+  if DISCOVER_TEST=$(discover --version 2>>"$DISCOVER_ERRORFILE"); then
+    if expr "$DISCOVER_TEST" : 'discover 2.*' > /dev/null 2>&1; then
+      # Discover 2.x
+      # XXX: this is sort of nasty
+      VENDOR_MODEL_FILE=$(tempfile)
+      SERVER_FILE=$(tempfile)
+      DRIVER_FILE=$(tempfile)
+
+      CMD="discover --type-summary display"
+      eval $CMD >>$VENDOR_MODEL_FILE || debug_report_status "$CMD" "$?"
+      CMD="discover --data-path=xfree86/server/name \
+                    --data-version=${SOURCE_VERSION%-*} display"
+      eval $CMD >>$SERVER_FILE || debug_report_status "$CMD" "$?"
+      CMD="discover --data-path=xfree86/server/device/driver \
+                    --data-version=${SOURCE_VERSION%-*} display"
+      eval $CMD >>$DRIVER_FILE || debug_report_status "$CMD" "$?"
+
+      DISCOVERED_VIDEO=$(paste $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE)
+      rm -f $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE
+    else
+      # must be Discover 1.x
+      DISCOVERED_VIDEO=$(discover --disable=serial,parallel,usb,ide,scsi \
+                                  --format="%V %M\t%S\t%D\n" video 2>/dev/null)
+    fi
     echo "$DISCOVERED_VIDEO"
   else
-    warn "discover not found; video autodetection not available"
+    warn "cannot use discover; failed with error message:" \
+         "$(cat "$DISCOVER_ERRORFILE")"
   fi
+  rm "$DISCOVER_ERRORFILE" || warn "discover error file never created, or" \
+                                   "already removed"
 }
 
 validate_string_db_input () {
