@@ -1,10 +1,9 @@
-# translation of xserver-xorg_debian_po_ro.po to Romanian
+# Romanian translation
 # debconf templates for xorg-x11 package
 #
 # $Id: pothead.in 189 2005-06-11 00:04:27Z branden $
 #
 # Copyright:
-# Branden Robinson, 2000--2004
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
@@ -20,24 +19,25 @@
 #         or http://www.debian.org/intl/l10n/po-debconf/README-trans
 #
 #    Developers do not need to manually edit POT or PO files.
+#
+# Branden Robinson, 2000--2004.
 # Eddy Petrişor <eddy.petrisor@gmail.com>, 2005.
 # Ruşeţ Zeno <rzeno@cwazy.co.uk>, 2005.
 # Eddy Petrisor <eddy.petrisor@gmail.com>, 2005.
-#
+# Eddy Petrisor <eddy_petrisor@yahoo.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po_ro\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2005-11-13 18:24+0200\n"
-"Last-Translator: Eddy Petrişor <eddy.petrisor@gmail.com>\n"
-"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"PO-Revision-Date: 2006-04-20 21:56+0300\n"
+"Last-Translator: Eddy Petrisor <eddy_petrisor@yahoo.com>\n"
+"Language-Team: Romanian <Romanian>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
-"Plural-Forms: nplurals=3;plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
-"2:1))\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=3;plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1))\n"
 
 #. Type: select
 #. Choices
@@ -80,7 +80,6 @@ msgstr "Introduceţi valoarea nice pe care doriţi să o folosească serverul X.
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -96,11 +95,7 @@ msgstr ""
 "implicită; prioritatea unui proces este cunoscută sub numele de valoarea sa "
 "\"nice\". Ea poate lua valori între -20 (prioritate extrem de ridicată, sau "
 "bădăran cu celelalte procese) până la 19 (prioritate extrem de scăzută). "
-"Valoarea implicită nice pentru procesele obişnuite este 0. -10 este o "
-"valoare implicită bună pentru o staţie de lucru pentru un singur utilizator; "
-"0 este o valoare implicită bună pentru o maşină care are şi alte sarcini "
-"decât să interacţioneze cu utilizatorul la consolă (cum ar fi un server de "
-"web)."
+"Valoarea implicită nice pentru procesele obişnuite este 0, iar aceasta e valoarea recomandată şi pentru serverul X."
 
 #. Type: string
 #. Description
@@ -287,7 +282,6 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -297,16 +291,15 @@ msgid ""
 "rendering."
 msgstr ""
 "Modulul glx activează softul de randare OpenGL. Modulul dri activează "
-"suportul pentru Direct Rendering Infrastructure (DRI) în serverul X. Ţineţi "
+"suportul pentru Infrastructura de Randare Directă (DRI) din serverul X. Ţineţi "
 "cont că suportul pentru DRI trebuie, de asemenea, să existe în nucleu, placa "
-"video şi versiunea instalată a bibliotecii Mesa pentru ca operaţiile de "
+"video şi versiunea instalată a bibliotecilor Mesa pentru ca operaţiile de "
 "accelerare hardware 3D care folosesc DRI să funcţioneze. Altfel serverul "
-"eşuează la randarea soft."
+"va recurge la randarea soft."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
 "Display Channel, respectively.  These modules are used to query monitor "
@@ -319,9 +312,8 @@ msgstr ""
 "respectiv Data Display Channel. Aceste module sunt folosite pentru "
 "interogarea monitorului asupra capabilităţilor sale prin intermediul placii "
 "video. Modulul int10 este un emulator în mod real x86 care este utilizat la "
-"pornirea soft a plăcilor VGA secundare. Ţineţi cont că modulul vbe depinde "
-"de modulul int10, astfel că dacă doriţi să activaţi vbe trebuie de asemenea "
-"să activaţi int10."
+"pornirea din software a plăcilor VGA secundare. Ţineţi cont că modulul vbe depinde "
+"de modulul int10, astfel că dacă doriţi să activaţi vbe va trebui să-l activaţi şi modulul int10."
 
 #. Type: multiselect
 #. Description
@@ -425,17 +417,15 @@ msgstr "Introduceţi un identificator pentru placa dvs. video."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
-#, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
-"Fişierul de configurare al serverului dvs. X asociază plăcii video cu un "
-"nume pe care trebuie să-l furnizaţi. Acesta este de obicei numele "
-"vânzătorului sau marca urmată de numele modelului, de exemplu \"3Dfx Voodoo3"
-"\" sau \"ATI Rage Fury Maxx\"."
+"Fişierul de configurare al serverului dvs. X asociază plăcii dvs. video un "
+"nume pe care puteţi să-l furnizaţi. Acesta este de obicei numele "
+"vânzătorului sau marca urmată de numele modelului, de exemplu \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce 6600\"."
 
 #. Type: select
 #. Description
@@ -548,15 +538,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"S-ar putea să doriţi să folosiţi comanda \"lspci\" pentru determinarea "
-"locaţiei pe magistrală a plăcii dvs. video, PCI sau AGP. Reţineţi că lspci "
-"raportează magistrala, dispozitivul şi numerele funcţiilor în hexazecimal, "
-"nu zecimal."
+"S-ar putea să doriţi să folosiţi comanda \"lspci -X\" pentru determinarea "
+"locaţiei pe magistrală a plăcii dvs. video, PCI sau AGP sau PCI-Express."
 
 #. Type: string
 #. Description
@@ -581,8 +568,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "The BusID entered was not in a recognized format."
-msgstr ""
-"Identificatorul de magistrală introdus nu a fost într-un format recunoscut."
+msgstr "Identificatorul de magistrală introdus nu a fost într-un format recunoscut."
 
 #. Type: string
 #. Description
@@ -648,14 +634,13 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
-"Utilizatorii avansat,i pot utiliza orice set de reguli XKB definit. Dacă "
-"pachetul xlibs a fost despachetat, vedeţi directorul /etc/X11/xlb/rules "
+"Utilizatorii avansaţi pot utiliza orice set de reguli XKB definit. Dacă "
+"pachetul xkeyborad-config a fost despachetat, a se vedea directorul /etc/X11/xlb/rules "
 "pentru seturile de reguli disponibile."
 
 #. Type: string
@@ -730,9 +715,9 @@ msgid ""
 "input layer."
 msgstr ""
 "Modelul \"macintosh\" este pentru tastaturile Macintosh unde nucleul şi "
-"uneltele consolei folosesc formatul de intrare nou care utilizează coduri de "
+"uneltele consolei folosesc modelul de intrare nou care utilizează codurile de "
 "taste Linux; \"machintosh_old\" este pentru utilizatorii tastaturii "
-"Macintosh care nu foloseşte formatul nou de intrare."
+"Macintosh care nu foloseşte modelul nou de intrare."
 
 #. Type: string
 #. Description
@@ -767,32 +752,29 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
 "Utilizatorii avansaţi pot folosi orice model definit prin selecţia setului "
-"de reguli XKB. Dacă pachetul xlibs este despachetat, vedeţi directorul /etc/"
-"X11/xkb/rules pentru seturile de reguli disponibile."
+"de reguli XKB. Dacă pachetul xkeyborad-config este despachetat, a se vedea directorul /etc/X11/xkb/rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
 "Utilizatorii de tastaturi U.S. English trebuie în general să introducă "
-"\"pc104\"."
+"\"pc104\". Utilizatorii altor tastaturi, de cele mai multe ori, ar trebui să introducă \"pc105\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
 msgid "Please select your keyboard layout."
-msgstr "Vă rugăm selectaţi formatul tastaturii dvs.."
+msgstr "Vă rugăm selectaţi aranjamentul tastaturii dvs."
 
 #. Type: string
 #. Description
@@ -803,21 +785,19 @@ msgid ""
 "model were previously selected."
 msgstr ""
 "Pentru ca serverul X să poată manipula corect tastatura dvs., trebuie să "
-"introduceţi un format de tastatură. Formatele disponibile depind de setul de "
+"introduceţi un aranjament de tastatură. Aranjamentele disponibile depind de setul de "
 "reguli XKB şi modelul de tastatura selectate anterior."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
-#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
 "Utilizatorii avansaţi pot folosi orice model definit prin selecţia setului "
-"de reguli XKB. Dacă pachetul xlibs este despachetat, vedeţi directorul /etc/"
-"X11/xkb/rules pentru seturile de reguli disponibile."
+"de reguli XKB. Dacă pachetul xkeyboard-config este despachetat, a se vedea directorul /etc/X11/xkb/rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
@@ -859,15 +839,13 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
-"Multe formate de tastatură suportă o opţiune care tratează tastele \"moarte"
-"\" - accent fară spaţiere şi semnul de difong - ca taste cu spaţiere "
-"normală, şi dacă acesta este comportamentul preferat, introduceţi "
+"Multe aranjamente de tastatură suportă o opţiune care tratează tastele \"moarte\" - accent fară spaţiere şi semne precum trema - ca taste cu spaţiere "
+"normală; dacă acesta este comportamentul preferat, introduceţi "
 "\"nodeadkeys\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
-#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
@@ -875,15 +853,12 @@ msgid ""
 "variants."
 msgstr ""
 "Utilizatorii avansaţi pot utiliza orice variantă suportată prin selecţia "
-"formatului XKB. Dacă pachetul xlibs este despachetat, vedeţi directorul /etc/"
-"X11/xkb/symbols, fişierul corespunzătoar formatului selectat de dvs. pentru "
-"variantele disponibile."
+"aranjamentului XKB. Dacă pachetul xkeyboard-config este despachetat, a se vedea directorul /etc/X11/xkb/symbols, fişierul corespunzător aranjamentului selectat de dvs. pentru variantele disponibile."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
+msgid "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
 "Utilizatorii tastaturilor U.S. English ar trebui în general să lase această "
 "intrare necompletată."
@@ -905,7 +880,7 @@ msgstr ""
 "Pentru ca severul X să manipuleze tastatura cum doriţi, trebuie să "
 "introduceţi opţiunile pentru tastatură. Opţiunile disponibile depind de "
 "setul de reguli XKB selectat anterior. Nu toate opţiunile vor funcţiona cu "
-"orice model şi format de tastatură."
+"orice model şi aranjament de tastatură."
 
 #. Type: string
 #. Description
@@ -956,14 +931,13 @@ msgstr ""
 msgid ""
 "Advanced users can use any options compatible with the selected XKB model, "
 "layout and variant."
-msgstr ""
+msgstr "Utilizatorii avansaţi pot utiliza orice opţiuni compatibile cu modelul XKB, aranjamentul şi varianta selectată."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "If you don't know what options to use, leave this entry blank."
-msgstr ""
-"Dacă nu ştiţi ce opţiune să folosiţi, lăsaţi această intrare necompletată."
+msgstr "Dacă nu ştiţi ce opţiune să folosiţi, lăsaţi această intrare necompletată."
 
 #. Type: boolean
 #. Description
@@ -1120,10 +1094,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:358
-msgid ""
-"If autodetection fails, you will be asked for information about your monitor."
-msgstr ""
-"Dacă autodetecţia eşuează, vi se vor cere informaţii despre monitorul dvs.."
+msgid "If autodetection fails, you will be asked for information about your monitor."
+msgstr "Dacă autodetecţia eşuează, vi se vor cere informaţii despre monitorul dvs.."
 
 #. Type: select
 #. Description
@@ -1146,18 +1118,14 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
-#, fuzzy
 msgid ""
 "For the \"simple\" option, you need only know the monitor's physical size; "
 "this will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
 "Pentru opţiunea \"simplu\" aveţi nevoie doar să ştiţi dimensiunea fizică a "
-"monitorului; aceasta va activa câteva valori de configurare apropiate pentru "
-"un CRT tipic de dimensiunea corespunzătoare, dar poate fi suboptimală pentru "
-"CRT-urile de înaltă calitate. (Această opţiune este dezactivată pentru "
-"utilizatorii de panouri LCD, atât timp cât astfel de afişaje sunt "
-"configurate pentru o rezoluţie particulară.)"
+"monitorului; aceasta va activa câteva valori de configurare potrivite pentru "
+"un afişaj CRT tipic de dimensiunea corespunzătoare, dar acestea pot fi suboptimale pentru afişajele CRT de calitate superioară."
 
 #. Type: select
 #. Description
@@ -1318,8 +1286,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:436
 msgid "Please enter a comma-separated list of ranges or values."
-msgstr ""
-"Vă rugăm introduceţi o listă de domenii sau valori separate prin virgule."
+msgstr "Vă rugăm introduceţi o listă de domenii sau valori separate prin virgule."
 
 #. Type: note
 #. Description
@@ -1356,8 +1323,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:454
 msgid "Please select your desired default color depth in bits."
-msgstr ""
-"Vă rugăm selectaţi adâncimea de culoare pe care o doriţi implicit, în biţi."
+msgstr "Vă rugăm selectaţi adâncimea de culoare pe care o doriţi implicit, în biţi."
 
 #. Type: select
 #. Description
@@ -1429,9 +1395,8 @@ msgstr "Nu sunt permise alte caractere decât cifre."
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
-#, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Vă rugăm selectaţi formatul tastaturii dvs.."
+msgstr "Se detectează automat aranjamentul de tastatură?"
 
 #. Type: boolean
 #. Description
@@ -1440,7 +1405,7 @@ msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
 "installer."
-msgstr ""
+msgstr "Aranjamentul implicit selectat pentru severul Xorg va fi ales pe baza unei combinaţii dintre limbă şi aranjamentul de tastatură selectate în programul de instalare."
 
 #. Type: boolean
 #. Description
@@ -1448,7 +1413,7 @@ msgstr ""
 msgid ""
 "Accept this option if you want the keyboard layout to be redetected.  "
 "Decline it if you want to keep your current layout."
-msgstr ""
+msgstr "Acceptaţi această opţiune dacă doriţi să se reefectueze detecţia aranjamentului. Refuzaţi dacă doriţi să păstraţi aranjamentul curent."
 
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "Se migrează directorul de configurare XKB?"
@@ -1747,3 +1712,4 @@ msgstr ""
 #~ msgid "The v4l module enables support for the Video4Linux kernel interface."
 #~ msgstr ""
 #~ "Modulul v4l activează suportul pentru interfaţa Video4Linux a nucleului."
+
