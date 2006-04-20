@@ -1,5 +1,6 @@
 xorg (1:7.0.15) UNRELEASED; urgency=low
 
+  [ Christian Perrier ]
   * Debconf translations:
     - Merge translations from the 6.9 branch. Most of them were pending
       there and have not been merged when 7.0 came in
@@ -15,7 +16,13 @@ xorg (1:7.0.15) UNRELEASED; urgency=low
     - Update Galician translation (Jacobo Tarrio). Closes: #362821
     - Update Romanian translation (Eddy Petrisor).
 
- -- Christian Perrier <bubulle@debian.org>  Thu, 20 Apr 2006 13:58:25 +0200
+  [ Steve Langasek ]
+  * Add pmud-utils (<= 0.10-9) to the conflicts list for x11-common; 
+    missed earlier because the package only exists on !i386
+  * Also conflict with wmnet 1.0.5-12, which is still shipping
+    /usr/X11R6/bin; thanks to Roger Leigh.  Closes: #364007.
+
+ -- Steve Langasek <vorlon@debian.org>  Thu, 20 Apr 2006 15:53:58 -0700
 
 xorg (1:7.0.14) unstable; urgency=low
 
