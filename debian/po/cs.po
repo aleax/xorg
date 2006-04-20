@@ -1,13 +1,13 @@
-# debconf templates for xfree86 package
+# debconf templates for xorg-x11 package
 # Czech translation
 #
-# $Id: cs.po 1763M 2004-10-11 07:13:16Z (local) $
+# $Id: cs.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
-# Branden Robinson, 2000--2004
+# Branden Robinson, 2000-2004
 # Miroslav Kure <kurem@debian.cz>, 2004
 #
-# This file is distributed under the same license as the xfree86 package.
+# This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
 #    Translators, if you are not familiar with the PO format, gettext
@@ -24,12 +24,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfree86\n"
+"Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2004-09-26 17:19+0200\n"
+"PO-Revision-Date: 2005-09-10 18:42+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
-"Language-Team: Czech <provoz@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -160,7 +160,7 @@ msgstr ""
 "Buď v tomto počítači není grafická karta (pouze sériová konzole?), nebo "
 "program \"discover\" neuměl určit odpovídající X server pro váš hardware. To "
 "mohou mít na svědomí dvě věci. Buď jsou informace v databázi discoveru "
-"neúplné, nebo grafická karna není podporována žádným dostupným X serverem."
+"neúplné, nebo grafická karta není podporována žádným dostupným X serverem."
 
 #. Type: note
 #. Description
@@ -199,7 +199,7 @@ msgid ""
 msgstr ""
 "X server je hardwarové rozhraní X Window Systému. Jeho úkol je komunikace s "
 "grafickou kartou a vstupními zařízeními, čímž tvoří základ pro vybrané "
-"grafické uživatelské rozgraní (GUI)."
+"grafické uživatelské rozhraní (GUI)."
 
 #. Type: select
 #. Description
@@ -234,21 +234,19 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
-#, fuzzy
 msgid ""
 "Disable this option if you want to write your own \"Files\" section into the "
 "X.Org server configuration file.  You may wish to do this if you need to "
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
-"Pokud si chcete napsat vlastní \"Files\" sekci (například pokud chcete "
-"odstranit odkaz na lokální font server, přidat jiný font server, nebo změnit "
-"pořadí cest), tuto možnost zamítněte."
+"Pokud si chcete do konfiguračního souboru X.Org napsat vlastní sekci \"Files"
+"\" (například pokud chcete odstranit odkaz na lokální font server, přidat "
+"jiný font server, nebo změnit pořadí cest), tuto možnost zamítněte."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "Select the X.Org server modules that should be loaded by default."
 msgstr "Vyberte moduly X serveru, které se mají standardně zavádět."
 
@@ -307,7 +305,7 @@ msgid ""
 "useful for animation and video operations."
 msgstr ""
 "Rozšíření dbe v serveru povolí dvojité bufferování, které je užitečné pro "
-"animace a operae s videem."
+"animace a operace s videem."
 
 #. Type: multiselect
 #. Description
@@ -325,19 +323,16 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-msgstr ""
-"Moduly bitmap, freetype, speedo, type1 a xtt slouží pro rastrování fontů."
+msgstr "Moduly bitmap, freetype a type1 slouží pro rastrování fontů."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
-msgstr "Více informací o těchto modulech naleznete v dokumetaci XFree86."
+msgstr "Více informací o těchto modulech naleznete v dokumentaci X.Org."
 
 #. Type: multiselect
 #. Description
@@ -355,14 +350,12 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Více potenciálních XFree86 ovladačů."
+msgstr "Více potenciálních X.Org ovladačů pro váš hardware."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different drivers are required "
 "to support the various devices.  It is thus not possible to automatically "
@@ -371,7 +364,8 @@ msgid ""
 "and monitor to which the computer displays when it first boots."
 msgstr ""
 "Bylo rozpoznáno více grafických karet a je pro ně potřeba několik různých "
-"ovladačů. Vyberte zařízení, které bude sloužit jako \"primární\"; to obvykle "
+"ovladačů. Není možné automaticky rozhodnout o výchozím ovladači X.Org "
+"serveru. Vyberte zařízení, které bude sloužit jako \"primární\"; to obvykle "
 "bývá grafická karta a monitor, na kterém se zobrazují zprávy, když se "
 "počítač zavádí."
 
@@ -458,7 +452,7 @@ msgid ""
 "to turn it off if it appears to cause problems."
 msgstr ""
 "Teoreticky by měly fungovat oba přístupy, ale v praxi občas jeden funguje a "
-"dryhý ne. Zkuste tuto volbu povolit a kdyby působila problémy, zase ji "
+"druhý ne. Zkuste tuto volbu povolit a kdyby působila problémy, zase ji "
 "vypněte."
 
 #. Type: string
@@ -500,14 +494,13 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
 "Pro uživatele s více monitory nastaví tato volba pouze jeden z nich. Ostatní "
-"budete muset nastavit ručně v souboru /etc/X11/XFConfig-4."
+"budete muset nastavit ručně v konfiguračním souboru /etc/X11/xorg.conf."
 
 #. Type: string
 #. Description
@@ -535,7 +528,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "Please enter a bus identifier in the proper format."
-msgstr "Zadejte identifikátor ve strávném tvaru."
+msgstr "Zadejte identifikátor ve správném tvaru."
 
 #. Type: note
 #. Description
@@ -593,13 +586,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Většina uživatelů by měla zadat \"xfree86\". Uživatelé klávesnic Sun Type 4 "
-"a Type 5 by měli zadat \"sun\"."
+"Většina uživatelů by měla zadat \"xorg\". Uživatelé klávesnic Sun Type 4 a "
+"Type 5 by měli zadat \"sun\"."
 
 #. Type: string
 #. Description
@@ -617,9 +609,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr "Pokud nevíte jakou množinu pravidel zadat, použijte \"xfree86\"."
+msgstr "Pokud nevíte jakou množinu pravidel zadat, použijte \"xorg\"."
 
 #. Type: string
 #. Description
@@ -692,9 +683,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Všechny dosud zmíněné modely používají množinu pravidel \"xfree86\"."
+msgstr "Všechny dosud zmíněné modely používají množinu pravidel \"xorg\"."
 
 #. Type: string
 #. Description
@@ -810,7 +800,7 @@ msgid ""
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
 "Mnoho rozložení klávesnic umí změnit chování \"mrtvých\" kláves (háček a "
-"čárka), aby fungonaly jako ostatní klávesy (posunou kurzor dál). Pokud je to "
+"čárka), aby fungovaly jako ostatní klávesy (posunou kurzor dál). Pokud je to "
 "požadované chování, zadejte \"nodeadkeys\"."
 
 #. Type: string
@@ -833,7 +823,7 @@ msgstr ""
 #: ../xserver-xorg.templates:257
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "Uživalelé anglické US klávesnice by toto pole měli nechat prázdné."
+msgstr "Uživatelé anglické US klávesnice by toto pole měli nechat prázdné."
 
 #. Type: string
 #. Description
@@ -1004,7 +994,7 @@ msgid ""
 "left and right buttons as middle button events."
 msgstr ""
 "Většina programů v X Window Systému předpokládá, že myš má tři tlačítka "
-"(levé, prostřední a pravé). Myš se dvěmi tlačítky může emulovat prostřední "
+"(levé, prostřední a pravé). Myš se dvěma tlačítky může emulovat prostřední "
 "tlačítko současným stiskem obou tlačítek."
 
 #. Type: boolean
@@ -1179,9 +1169,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
-#, fuzzy
 msgid "Write monitor sync ranges to configuration file?"
-msgstr "Zapsat do konfiguračního souboru standardní sekci DRI?"
+msgstr "Zapsat do konfiguračního souboru frekvenční rozsah monitoru?"
 
 #. Type: boolean
 #. Description
@@ -1191,6 +1180,9 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
+"X server většinou umí frekvenční rozsahy monitoru rozpoznat sám, ale občas "
+"potřebuje pomoci. Tato volba je pro pokročilé uživatele a měla by být "
+"ponechána na výchozí hodnotě."
 
 #. Type: string
 #. Description
@@ -1361,177 +1353,6 @@ msgid ""
 "Decline it if you want to keep your current layout."
 msgstr ""
 
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "Povolit rolovací události z kolečka myši?"
-
-#~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
-#~ msgstr ""
-#~ "Události z kolečka myši se mohou brát jako kliknutí dalších tlačítek (4. "
-#~ "a 5.). Některé X aplikace chápou tlačítka 4 a 5 jako události roluj-"
-#~ "nahoru a roluj-dolů, takže kolečko funguje podle očekávání. Toto chování "
-#~ "nemusí vždy fungovat dle očekávání. Také exotické myši s více než třemi "
-#~ "tlačítky se mohou při této volbě chovat neočekávaně."
-
-#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr "Pokud vaše myš nemá kolečko, je zapnutí této volby neškodné."
-
-#~ msgid ""
-#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
-#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
-#~ "value of the X server should be set to 0."
-#~ msgstr ""
-#~ "Předchozí neplatí v linuxových jádrech řady 2.6 (ani v řadě 2.5 po "
-#~ "zahrnutí plánovače O(1)). Na těchto systémech by měl mít X server hodnotu "
-#~ "nice = 0."
-
-#~ msgid ""
-#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
-#~ "fully supported, should specify simply \"1\" here.  (This is not "
-#~ "guaranteed to work.)"
-#~ msgstr ""
-#~ "Uživatelé strojů SGI Indigo2 XL, nebo uživatelé ostatních počítačů s málo "
-#~ "podporovovanými sběrnicemi by zde měli zadat \"1\". (Což ovšem neznamená, "
-#~ "že to bude fungovat.)"
-
-#~ msgid ""
-#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
-#~ "video card should leave this entry blank."
-#~ msgstr ""
-#~ "Uživatelé, kteří mají pouze jednu grafickou kartu a daný počítač není "
-#~ "PowerPC nebo SGI Indigo2, by měli toto pole ponechat prázdné."
-
-#~ msgid "Is your monitor an LCD device?"
-#~ msgstr "Je váš monitor LCD zařízením?"
-
-#~ msgid ""
-#~ "If your monitor is a liquid-crystal display (which is the case with "
-#~ "almost all laptops), you should set this option."
-#~ msgstr ""
-#~ "Pokud je váš monitor typu LCD (což je případ naprosté většiny notebooků), "
-#~ "měli byste odpovědět kladně."
-
-#~ msgid ""
-#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
-#~ "option."
-#~ msgstr "Uživatelé klasických monitorů (CRT) by měli odpovědět záporně."
-
-#~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "Zapsat do konfiguračního souboru standardní sekci DRI?"
-
-#~ msgid ""
-#~ "The DRI section of the X server configuration file determines the "
-#~ "permissions of the DRI device.  This option is for advanced users.  In "
-#~ "most cases, you should enable it."
-#~ msgstr ""
-#~ "Sekce DRI v konfiguračním souboru X serveru určuje práva DRI zařízení. "
-#~ "Tato volba je pro pokročilé uživatele. Ve většině případů byste ji měli "
-#~ "povolit."
-
-#, fuzzy
-#~ msgid ""
-#~ "Disable this option if you want to write your own \"DRI\" section into "
-#~ "the X.Org server configuration file.  You may wish to do this if you want "
-#~ "to change the access privileges to the DRI port."
-#~ msgstr ""
-#~ "Pokud si chcete napsat vlastní \"DRI\" sekci (například pokud chcete "
-#~ "změnit práva pro přístup k DRI portu), tuto možnost zamítněte."
-
-#~ msgid ""
-#~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
-#~ msgstr ""
-#~ "Pokročilí uživatelé mohou použít libovolné rozložení podporované pravidly "
-#~ "XKB. Pokud již byl rozbalen balík xlibs, v adresáři /etc/X11/xkb/rules "
-#~ "naleznete všechna dostupná pravidla a v adresáři /etc/X11/xkb/symbols "
-#~ "dostupná rozložení."
-
-#~ msgid ""
-#~ "Advanced users can use any options compatible with the selected XKB "
-#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
-#~ msgstr ""
-#~ "Pokročilí uživatelé mohou použít libovolnou volbu kompatibilní se "
-#~ "zvoleným XKB modelem, rozložením a variantou. Pokud již byl rozbalen "
-#~ "balík xlibs, podívejte se na soubory v adresáři /etc/X11/xkb/symbols, "
-#~ "které definují částečné překlady kláves (např. /etc/X11/xkb/symbols/ctrl)."
-
-#~ msgid ""
-#~ "If you have an NVidia video card, you may want to decline this option, as "
-#~ "these cards' support for the DDC protocol is often so poor that attempts "
-#~ "to use it can result in system lockups."
-#~ msgstr ""
-#~ "Jestliže máte grafickou kartu NVidia, raději tuto možnost zamítněte, "
-#~ "protože zmíněné karty implementují DDC protokol tak bídně, že při pokusu "
-#~ "jej použít, můžete dokonce zablokovat systém."
-
-#~ msgid ""
-#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
-#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
-#~ "unsupported."
-#~ msgstr ""
-#~ "Na některých starých kartách od ATI s čipovými sadami Mach8 (VGA Wonder), "
-#~ "Mach32 a rané Mach64 (\"GX\") nejsou podporovány hloubky větší než 8 bitů."
-
-#~ msgid "experimental version of XFree86 packages"
-#~ msgstr "experimentální verze balíků XFree86"
-
-#~ msgid ""
-#~ "You are using an experimental version of XFree86 packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Právě používáte experimentální verzi balíků XFree86 pro Debian. Prosíme "
-#~ "nehlašte do BTS (Bug Tracking System) chyby proti této verzi balíků, "
-#~ "protože ještě nejsou součástí distribuce."
-
-#~ msgid ""
-#~ "If you experience problems with these packages or would like to submit "
-#~ "patches, please send mail to the Debian X mailing list.  You can read "
-#~ "more about this mailing list on the World Wide Web:\n"
-#~ "  http://lists.debian.org/debian-x/"
-#~ msgstr ""
-#~ "Pokud v těchto balících zaznamenáte chybu, nebo chcete zaslat nějaké "
-#~ "opravy, pište prosím do poštovní konference Debian X. Více si o této "
-#~ "konferenci můžete přečíst na http://lists.debian.org/debian-x/"
-
-#, fuzzy
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
-#~ "version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install xfree86-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install xfree86-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Pokud nechcete používat experimentální balíky X, musíte zajistit dvě "
-#~ "věci:\n"
-#~ "  1) Ujistěte se, že v souboru /etc/apt/sources.list nemáte uvedené\n"
-#~ "     zdroje pro experimentální balíky.\n"
-#~ "  2) Řekněte aptu, aby degradoval XFree86 na odpovídající uvolněnou\n"
-#~ "     verzi. Dosáhnete toho například přidáním sady za jméno balíku:\n"
-#~ "       apt-get install xorg-common/unstable\n"
-#~ "     nebo\n"
-#~ "       apt-get install xorg-common/stable\n"
-#~ "     Možná takdo budete muset degradovat více balíků."
-
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "Přenést adresář s nastavením XKB?"
 
@@ -1593,7 +1414,7 @@ msgstr ""
 #~ "adresář."
 
 #~ msgid "Select the desired default display manager."
-#~ msgstr "Vyberte implicitního správce obrazovky."
+#~ msgstr "Vyberte výchozího správce obrazovky."
 
 #~ msgid ""
 #~ "A display manager is a program that provides graphical login capabilities "
@@ -1608,7 +1429,7 @@ msgstr ""
 #~ "manager should run by default."
 #~ msgstr ""
 #~ "Je nainstalováno několik správců obrazovky, ale jen jeden může obsluhovat "
-#~ "daný X server. Vyberte, který správce se má spouštět standardně."
+#~ "daný X server. Vyberte, který správce se má spouštět jako výchozí."
 
 #~ msgid ""
 #~ "(Multiple display managers can run simultaneously if they are configured "
@@ -1617,9 +1438,9 @@ msgstr ""
 #~ "disable the check for a default display manager.)"
 #~ msgstr ""
 #~ "(Více správců obrazovky může běžet zároveň pouze pokud spravují různé "
-#~ "servery. Pro dosažení takového nastavení musíte je správně "
+#~ "servery. Pro dosažení takového nastavení je musíte správně "
 #~ "nakonfigurovat, upravit jejich spouštěcí skripty v /etc/init.d a zakázat "
-#~ "kontrolu standardního správce obrazovky.)"
+#~ "kontrolu výchozího správce obrazovky.)"
 
 #~ msgid "Do you wish to stop the xdm daemon?"
 #~ msgstr "Chcete zastavit démona xdm?"
@@ -1633,9 +1454,292 @@ msgstr ""
 #~ msgstr ""
 #~ "Démon xdm (X display manager) je obvykle při aktualizaci nebo odstranění "
 #~ "balíku zastaven, ale zdá se, že spravuje minimálně jedno X sezení. Pokud "
-#~ "by byl xdm zastaven nyní, všechny jím spravované X sezení by skončily. V "
-#~ "opačném případě můžene nechat xdm běžet a nová verze se spustí s příštím "
-#~ "restartem démona."
+#~ "by byl xdm zastaven nyní, všechna jím spravovaná X sezení by se ukončila. "
+#~ "V opačném případě můžete nechat xdm běžet a nová verze se spustí s "
+#~ "příštím restartem démona."
+
+#~ msgid "experimental version of X.Org packages"
+#~ msgstr "experimentální verze balíků X.Org"
+
+#~ msgid ""
+#~ "You are using an experimental version of X.Org packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Právě používáte experimentální verzi balíků X.Org pro Debian. Prosíme "
+#~ "nehlaste do BTS (Bug Tracking System) chyby proti této verzi balíků, "
+#~ "protože ještě nejsou součástí distribuce."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Pokud v těchto balících zaznamenáte chybu, nebo chcete zaslat nějaké "
+#~ "opravy, pište prosím do poštovní konference Debian X. Více si o této "
+#~ "konferenci můžete přečíst na http://lists.debian.org/debian-x/"
+
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Pokud nechcete používat experimentální balíky X, musíte zajistit dvě "
+#~ "věci:\n"
+#~ "  1) Ujistěte se, že v souboru /etc/apt/sources.list nemáte uvedené\n"
+#~ "     zdroje pro experimentální balíky.\n"
+#~ "  2) Řekněte aptu, aby degradoval X.Org na odpovídající uvolněnou\n"
+#~ "     verzi. Dosáhnete toho například přidáním sady za jméno balíku:\n"
+#~ "     Například:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "     nebo\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "     Možná takto budete muset degradovat více balíků."
+
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  They range from -20 "
+#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
+#~ "(extremely low priority).  The default nice value for ordinary processes "
+#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
+#~ "default for a machine that has duties other than interacting with the "
+#~ "console user (such as a web server)."
+#~ msgstr ""
+#~ "Je známo, že při použití jádra operačního systému s určitou plánovací "
+#~ "strategií, se výkon X serveru zlepší, pokud je spuštěn s vyšší prioritou, "
+#~ "než standardní. Priorita procesu je známá jako hodnota 'nice'. Může "
+#~ "nabývat hodnot od -20 (velmi vysoká priorita) až po 19 (velmi nízká "
+#~ "priorita). Standardní hodnota nice obyčejného procesu je 0. Pro "
+#~ "jednouživatelskou stanici je rozumná hodnota -10, pro počítač, který má i "
+#~ "jiné povinnosti (např. webový server), je doporučená hodnota 0."
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Předchozí neplatí v linuxových jádrech řady 2.6 (ani v řadě 2.5 po "
+#~ "zahrnutí plánovače O(1)). Na těchto systémech by měl mít X server hodnotu "
+#~ "nice = 0."
+
+#~ msgid ""
+#~ "The glx module enables software OpenGL rendering.  The dri module enables "
+#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+#~ "that support for DRI must also exist in the kernel, the video card, and "
+#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
+#~ "operations using DRI to work.  Otherwise, the server falls back to "
+#~ "software rendering."
+#~ msgstr ""
+#~ "Modul glx zpřístupní softwarové OpenGL, modul dri povolí podporu DRI "
+#~ "(Direct Rendering Infrastructure). Nezapomeňte, že podporu pro DRI musí "
+#~ "obsahovat také jádro, grafická karta a instalovaná verze Mesa knihoven "
+#~ "(pro 3D akceleraci). Pokud tomu tak není, server nouzově použije "
+#~ "softwarové vykreslování."
+
+#~ msgid ""
+#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+#~ "Display Channel, respectively.  These modules are used to query monitor "
+#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
+#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
+#~ "int10 as well."
+#~ msgstr ""
+#~ "Moduly vbe a ddc povolí podporu pro VESA BIOS Extensions resp. Data "
+#~ "Display Channel. Tyto moduly slouží pro zjištění vlastností monitoru "
+#~ "skrze grafickou kartu. Modul int10 je emulátor reálného módu x86, který "
+#~ "se používá pro zavedení sekundárních VGA karet. Pamatujte, že modul vbe "
+#~ "závisí na modulu int10, takže při výběru modulu vbe vyberte i modul int10."
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
+#~ msgstr ""
+#~ "Konfigurační soubor X serveru spáruje grafickou kartu se jménem, které "
+#~ "zde zadáte. Obvykle se používá jméno výrobce nebo značky následované "
+#~ "názvem modelu, třeba \"3Dfx Voodoo3\" nebo \"ATI Rage Fury Maxx\"."
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "Uživatelé strojů SGI Indigo2 XL, nebo uživatelé ostatních počítačů s málo "
+#~ "podporovanými sběrnicemi by zde měli zadat \"1\". (Což ovšem neznamená, "
+#~ "že to bude fungovat.)"
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
+#~ "device, and function numbers in hexadecimal, not decimal."
+#~ msgstr ""
+#~ "Pro určení umístění grafické karty PCI nebo AGP můžete použít příkaz "
+#~ "\"lspci\". Pamatujete, že lspci vypisuje čísla sběrnic, zařízení a funkcí "
+#~ "v šestnáctkové (ne v desítkové) soustavě."
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "Uživatelé, kteří mají pouze jednu grafickou kartu a daný počítač není "
+#~ "PowerPC nebo SGI Indigo2, by měli toto pole ponechat prázdné."
+
+#~ msgid ""
+#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
+#~ msgstr ""
+#~ "Pokročilí uživatelé mohou použít libovolnou definovanou množinu XKB "
+#~ "pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /etc/X11/xkb/"
+#~ "rules naleznete všechna dostupná pravidla."
+
+#~ msgid ""
+#~ "Advanced users can use any model defined by the selected XKB rule set.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets."
+#~ msgstr ""
+#~ "Pokročilí uživatelé mohou použít libovolný model definovaný zvolenou "
+#~ "množinou XKB pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /"
+#~ "etc/X11/xkb/rules naleznete všechna dostupná pravidla."
+
+#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
+#~ msgstr "Uživatelé anglické US klávesnice by měli většinou zadat \"pc104\"."
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "Pokročilí uživatelé mohou použít libovolné rozložení podporované pravidly "
+#~ "XKB. Pokud již byl rozbalen balík xlibs, v adresáři /etc/X11/xkb/rules "
+#~ "naleznete všechna dostupná pravidla a v adresáři /etc/X11/xkb/symbols "
+#~ "dostupná rozložení."
+
+#~ msgid ""
+#~ "Advanced users can use any variant supported by the selected XKB layout.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
+#~ "available variants."
+#~ msgstr ""
+#~ "Pokročilí uživatelé mohou použít libovolnou variantu podporovanou "
+#~ "zvolenými pravidly XKB. Pokud již byl rozbalen balík xlibs, naleznete "
+#~ "dostupné varianty v adresáři /etc/X11/xkb/symbols v souboru "
+#~ "odpovídajícímu vybranému rozložení."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "Pokročilí uživatelé mohou použít libovolnou volbu kompatibilní se "
+#~ "zvoleným XKB modelem, rozložením a variantou. Pokud již byl rozbalen "
+#~ "balík xlibs, podívejte se na soubory v adresáři /etc/X11/xkb/symbols, "
+#~ "které definují částečné překlady kláves (např. /etc/X11/xkb/symbols/ctrl)."
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Povolit rolovací události z kolečka myši?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Události z kolečka myši se mohou brát jako kliknutí dalších tlačítek (4. "
+#~ "a 5.). Některé X aplikace chápou tlačítka 4 a 5 jako události roluj-"
+#~ "nahoru a roluj-dolů, takže kolečko funguje podle očekávání. Toto chování "
+#~ "nemusí vždy fungovat dle očekávání. Také exotické myši s více než třemi "
+#~ "tlačítky se mohou při této volbě chovat neočekávaně."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr "Pokud vaše myš nemá kolečko, je zapnutí této volby neškodné."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Jestliže máte grafickou kartu NVidia, raději tuto možnost zamítněte, "
+#~ "protože zmíněné karty implementují DDC protokol tak bídně, že při pokusu "
+#~ "jej použít, můžete dokonce zablokovat systém."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Je váš monitor LCD zařízením?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Pokud je váš monitor typu LCD (což je případ naprosté většiny notebooků), "
+#~ "měli byste odpovědět kladně."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr "Uživatelé klasických monitorů (CRT) by měli odpovědět záporně."
+
+#~ msgid ""
+#~ "For the \"simple\" option, you need only know the monitor's physical "
+#~ "size; this will set some configuration values appropriate for a typical "
+#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
+#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
+#~ "are configured for a particular resolution.)"
+#~ msgstr ""
+#~ "Pro volbu \"simple\" vám stačí znát pouze fyzickou velikost monitoru. Tím "
+#~ "se nastaví standardní hodnoty pro typický CRT monitor této velikosti, "
+#~ "které ale nemusí vyhovovat vysoce kvalitním monitorům. (Tato volba je "
+#~ "nedostupná pro uživatele s LCD, protože tyto obrazovky se konfigurují pro "
+#~ "konkrétní rozlišení.)"
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Na některých starých kartách od ATI s čipovými sadami Mach8 (VGA Wonder), "
+#~ "Mach32 a rané Mach64 (\"GX\") nejsou podporovány hloubky větší než 8 bitů."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Zapsat do konfiguračního souboru standardní sekci DRI?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "Sekce DRI v konfiguračním souboru X serveru určuje práva DRI zařízení. "
+#~ "Tato volba je pro pokročilé uživatele. Ve většině případů byste ji měli "
+#~ "povolit."
+
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Pokud si chcete do konfiguračního souboru X.Org napsat vlastní sekci \"DRI"
+#~ "\" (například pokud chcete změnit práva pro přístup k DRI portu), tuto "
+#~ "možnost zamítněte."
+
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr "Modul v4l povolí podporu pro rozhraní jádra nazvané Video4Linux."
 
 #~ msgid ""
 #~ "(where each nn is a decimal number referring to the card's bus, device, "
@@ -1659,3 +1763,43 @@ msgstr ""
 #~ "Kde \"typsběrnice\" je pro grafické karty PCI a AGP \"PCI\", a ostatní "
 #~ "položky jsou desítkové (ne šestnáckové) hodnoty. Příklad správného "
 #~ "vstupu: \"PCI:0:16:0\" (bez uvozovek)."
+
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "experimentální verze balíků XFree86"
+
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Právě používáte experimentální verzi balíků XFree86 pro Debian. Prosíme "
+#~ "nehlašte do BTS (Bug Tracking System) chyby proti této verzi balíků, "
+#~ "protože ještě nejsou součástí distribuce."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Pokud nechcete používat experimentální balíky X, musíte zajistit dvě "
+#~ "věci:\n"
+#~ "  1) Ujistěte se, že v souboru /etc/apt/sources.list nemáte uvedené\n"
+#~ "     zdroje pro experimentální balíky.\n"
+#~ "  2) Řekněte aptu, aby degradoval XFree86 na odpovídající uvolněnou\n"
+#~ "     verzi. Dosáhnete toho například přidáním sady za jméno balíku:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "     nebo\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "     Možná takdo budete muset degradovat více balíků."

@@ -1,38 +1,52 @@
 # debconf templates for xorg-x11 package
-# Galician translation
+# Chinese (People's Republic of China) translation
 #
-# $Id: gl.po 1080 2006-01-14 02:15:39Z ender $
+# $Id: zh_CN.po 490 2005-08-03 09:59:07Z ender $
 #
 # Copyrights:
 # Branden Robinson, 2000-2004
-# Jacobo Tarrio, 2001, 2006
+# Carlos Z.F. Liu <carlosliu@users.sourceforge.net>, 2005
+# Ming Hua <minghua@rice.edu>, 2005
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: xorg-x11\n"
+"Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2006-01-13 11:55+0100\n"
-"Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"PO-Revision-Date: 2005-08-04 21:57-0500\n"
+"Last-Translator: Ming Hua <minghua@rice.edu>\n"
+"Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:3
 msgid "Root Only, Console Users Only, Anybody"
-msgstr "Só o administrador, Só os usuarios da consola, Todos"
+msgstr "仅根(root)用户, 仅控制台(console)用户, 任何用户"
 
 #. Type: select
 #. Description
 #: ../x11-common.templates:5
 msgid "Select what type of user has permission to start the X server."
-msgstr "Escolla que tipo de usuario ten permiso para iniciar o servidor X."
+msgstr "请选择何种用户拥有启动 X 服务器的权限。"
 
 #. Type: select
 #. Description
@@ -45,19 +59,16 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
-"Como o servidor X se executa con privilexios de superusuario, pode non ser "
-"unha boa idea permitir que calquera usuario o inicie, por motivos de "
-"seguridade. Por outro lado, pode ser aínda unha peor idea executar programas "
-"cliente X de propósito xeral coma administrador, que é o que podería ocorrer "
-"se só root pode iniciar o servidor X. Un bo compromiso consiste en permitir "
-"que o servidor X o inicien só os usuarios que traballen nunha consola "
-"virtual."
+"因为 X 服务器是以超级用户权限运行，所以从安全角度来说，允许任何用户启动它不是"
+"一个明智的选择。在另一方面，以根(root)用户身份运行一般用途的 X 客户端程序则是"
+"更加愚蠢的做法，这在仅允许根(root)用户启动 X 服务器时可能会发生。较好的解决办"
+"法是允许那些能登录到虚拟控制台的用户启动 X 服务器。"
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
 msgid "Enter the desired nice value for the X server to use."
-msgstr "Introduza o nivel de amabilidade para o servidor X."
+msgstr "请输入您期望 X 服务器使用的 nice 值(即优先值)。"
 
 #. Type: string
 #. Description
@@ -72,13 +83,11 @@ msgid ""
 "default nice value for ordinary processes is 0, and this is also the "
 "recommend value for the X server."
 msgstr ""
-"Tense advertido que o rendemento do servidor X mellora se se executa cunha "
-"prioridade superior á normal; a prioridade dun proceso coñécese coma a súa "
-"amabilidade (valor \"nice\"). Pode ter valores entre -20 (prioridade moi "
-"alta, ou \"pouco amable\" con outros procesos) e 19 (prioridade moi baixa). "
-"A amabilidade normal é 0. -10 é un bo valor para unha estación de traballo; "
-"0 é un bo valor para unha máquina que fai outras cousas que interactuar co "
-"usuario da consola (coma un servidor web)."
+"如果在操作系统内核中使用某种调度策略，一个很普遍的看法是让 X 服务器在比默认优"
+"先级更高的进程中运行能够提升其表现；一个进程的优先级也叫做它的 nice 值。优先"
+"级的范围从 -20 (极高的优先级，或者说对其它进程“不 nice”)到 19 (极低的优先"
+"级)。普通进程的默认 nice 值是 0。对单用户工作站而言，-10 是个不错的选择；对于"
+"有和终端用户交流之外的任务的机器(例如网站服务器)，0 是比较好的选择。"
 
 #. Type: string
 #. Description
@@ -88,21 +97,20 @@ msgid ""
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
-"Non se recomendan os valores fóra do rango -10 a 0. Se é negativo de máis, o "
-"servidor X ha interferir con tarefas importantes do sistema. Se é positivo "
-"de máis, o servidor X ha ir moi lento."
+"不推荐使用超出 -10 到 0 范围的值。如果设置太小，X 服务器会干扰其它重要的系统"
+"任务；如果设置得太大，X 服务器就会变得缓慢和迟钝。"
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:35
 msgid "Please enter an integer between -20 and 19."
-msgstr "Introduza un número enteiro entre -20 e 19."
+msgstr "请输入一个大于 -20 且小于 19 的整数。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
 msgid "Attempt to autodetect video hardware?"
-msgstr "¿Tentar autodetectar o hardware de vídeo?"
+msgstr "尝试自动探测视频显示硬件设备吗？"
 
 #. Type: boolean
 #. Description
@@ -114,11 +122,9 @@ msgid ""
 "or driver module.  If autodetection succeeds, further debconf questions "
 "about your video hardware will be pre-answered."
 msgstr ""
-"Acepte esta opción se quere tentar autodetectar o servidor X e módulo "
-"controlador recomendados para a súa tarxeta de vídeo. Se a autodetección "
-"falla, háselle pedir que especifique o servidor X e/ou módulo controlador "
-"que desexa. Se a autodetección ten éxito, respóstanse automaticamente as "
-"posteriores preguntas de debconf sobre o seu hardware de vídeo."
+"如果您想尝试让程序自动探测适合您的显示卡的的 X 服务器和驱动模块，请接受此选"
+"项。如果自动探测失败，程序会要求您指定合适的 X 服务器和驱动模块。如果自动探测"
+"成功，接下来有关您的视频显示设备的 debconf 问题会被预设好答案。"
 
 #. Type: boolean
 #. Description
@@ -128,15 +134,14 @@ msgid ""
 "this option.  You will not be asked to select the X server if there is only "
 "one available."
 msgstr ""
-"Se prefire escoller vostede mesmo o servidor X e módulo controlador, rexeite "
-"esta opción. Non se lle ha pedir que escolla o servidor X se só hai un "
-"dispoñible."
+"如果您更愿意自已手动选择 X 服务器和驱动模块，请拒绝此选项。当然，如果只有一个"
+"可用的 X 服务器，您并不会被要求进行选择。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
 msgid "No X server known for your video hardware."
-msgstr "Non se coñece un servidor X para o seu hardware de vídeo."
+msgstr "没有适合您的视频硬件设备的 X 服务器。"
 
 #. Type: note
 #. Description
@@ -148,18 +153,16 @@ msgid ""
 "information in discover's hardware database, or it could be that your video "
 "hardware is simply not supported by any available X servers."
 msgstr ""
-"Ou non ten hardware de vídeo instalado nesta máquina (¿só ten consola por "
-"porto serie?) ou o programa \"discover\" non puido determinar que servidor X "
-"é axeitado para o seu hardware de vídeo. Isto pode estar causado por "
-"información incompleta na base de datos de hardware de discover, ou podería "
-"ser que o seu hardware de vídeo non estea soportado por ningún servidor X "
-"dispoñible."
+"要么是您这台机器并未安装显示卡(仅有串行控制台？)，又或者“discover”程序无法确"
+"定哪种 X 服务器适用于您的视频硬件设备。这可能是由于 discover 程序的硬件设备资"
+"料库所包含的信息不够完整所造成的，或者是您的视频硬件设备根本就不被任何现有的 "
+"X 服务器所支持。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:26
 msgid "Multiple potential default X servers for your hardware."
-msgstr "Varios servidores X potenciais para o seu hardware."
+msgstr "多个可能的默认 X 服务器适用于您的硬件。"
 
 #. Type: note
 #. Description
@@ -171,18 +174,15 @@ msgid ""
 "will serve as your computer's \"primary head\"; this is generally the video "
 "card and monitor to which the computer displays when it first boots."
 msgstr ""
-"Detectáronse varias tarxetas de vídeo, e son precisos varios servidores X "
-"para que soporten os distintos dispositivos. Polo tanto, non é posible "
-"escoller automaticamente un servidor X por defecto. Configure o dispositivo "
-"que ha servir coma \"consola principal\" do seu ordenador; adoita ser a "
-"tarxeta de vídeo e monitor no que se amosan as cousas do ordenador cando se "
-"inicia."
+"程序已探测到多张显示卡，并且需要使用不同的 X 服务器来支持各个不同的设备。因"
+"此，本程序无法自动选择一个默认的 X 服务器。请对您的计算机的“主显示设备"
+"(primary head)”的设备进行配置，这通常是计算机启动时显示画面的显卡和显示器。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:40
 msgid "Select the desired default X server."
-msgstr "Escolla o servidor X por defecto que desexe."
+msgstr "请选择您所期望的默认 X 服务器。"
 
 #. Type: select
 #. Description
@@ -192,9 +192,8 @@ msgid ""
 "to communicate with video display and input devices, providing a foundation "
 "for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"O servidor X é a interface co hardware do sistema X Window. O seu traballo é "
-"comunicarse cos dispositivos de pantalla e entrada para que funcione a "
-"interface gráfica de usuario (GUI) que escolla."
+"X 服务器乃是 X 窗口系统的硬件接口。它的工作任务是与视频显示和输入设备通讯，为"
+"所选的图形用户界面(GUI)提供底层支持。"
 
 #. Type: select
 #. Description
@@ -204,15 +203,14 @@ msgid ""
 "X symbolic link.  Some X servers may not work with your particular graphics "
 "hardware."
 msgstr ""
-"Hai varios servidores X dispoñibles; o servidor por defecto selecciónase coa "
-"ligazón simbólica /etc/X11/X . Algúns servidores X poderían non funcionar co "
-"seu hardware gráfico."
+"系统中有多个可用的 X 服务器，其中默认服务器是通过 /etc/X11/X 符号链接被选定。"
+"一些 X 服务器可能无法在您特有的图形硬件设备上工作。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
 msgid "Write default Files section to configuration file?"
-msgstr "¿Gravar a sección Files por defecto no ficheiro de configuración?"
+msgstr "是否往配置文件写入默认的 Files 段落内容？"
 
 #. Type: boolean
 #. Description
@@ -222,10 +220,9 @@ msgid ""
 "where to find server modules, the RGB color database, and font files.  This "
 "option is for advanced users.  In most cases, you should enable it."
 msgstr ""
-"A sección Files do ficheiro de configuración do servidor X dille ao servidor "
-"X onde atopar os módulos do servidor, a base de datos de cores RGB, e os "
-"ficheiros de tipos de letra. Esta opción é para usuarios avanzados. Nos máis "
-"casos debería activala."
+"X 服务器配置文件中的 Files 段落内容会告诉 X 服务器去哪里寻找服务器模块、RGB "
+"色彩数据库，以及字体文件。此选项是为高级用户设计。在大部分情况下，您应该开启"
+"之。"
 
 #. Type: boolean
 #. Description
@@ -236,18 +233,15 @@ msgid ""
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
-"Desactive esta opción se quere escribir a súa propia sección \"Files\" no "
-"ficheiro de configuración do servidor de X.Org. Pode ter que facelo se quere "
-"eliminar a referencia ao servidor de tipos de letras local, engadir unha "
-"referencia a outro servidor de tipos de letras ou reordear a lista de rutas "
-"de tipos de letras."
+"如果您想向 X.Org 服务器配置文件中写入您自己定义的“Files”段落，请禁用此选项。"
+"例如，如果您想要删除本地字体服务器、增加其它的字体服务器或者重新调整默认的本"
+"地字体路径等内容，您可能就会想要这样做。"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr ""
-"Escolla os módulos do servidor de X.Org que se deberían cargar por defecto."
+msgstr "请选择应该默认被加载的 X.Org 服务器模块。"
 
 #. Type: multiselect
 #. Description
@@ -257,13 +251,13 @@ msgid ""
 "the X server loads by default.  This option is for advanced users.  In most "
 "cases, all of these modules should be enabled."
 msgstr ""
-"É posible persoalizar (ou omitir completamente) a lista de módulos que o "
-"servidor X carga por defecto. Esta opción é para usuarios avanzados. Nos "
-"máis casos, deberían activarse tódolos módulos."
+"您可以自定义(或完全忽略) X 服务器默认挂载的模块列表。此选项是为高级用户设计。"
+"在大部分情况下，您应该启动所有这些模块。"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
+#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -272,10 +266,14 @@ msgid ""
 "operations using DRI to work.  Otherwise, the server falls back to software "
 "rendering."
 msgstr ""
+"glx 模块将开启软件 OpenGL 渲染。dri 模块将开启 X 服务器中对基层直接渲染(DRI)"
+"的支持。注意，内核和显示卡都必须支持 DRI，已安装的用于硬件加速 3D 操作的 "
+"Mesa 库也需要通过 DRI 进行工作。否则，服务器将降回软件渲染模式。"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
+#, fuzzy
 msgid ""
 "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
 "Display Channel, respectively.  These modules are used to query monitor "
@@ -284,6 +282,10 @@ msgid ""
 "module depends on the int10 module, so if you wish to enable vbe, enable "
 "int10 as well."
 msgstr ""
+"vbe 和 ddc 模块将分别开启 VESA BIOS 扩展和数据显示通道(ddc)的支持。这些模块用"
+"于通过显卡征询显示器的显示能力。int10 模块是实模式 x86 模拟器，用于软启动第"
+"二 VGA 卡。注意，vbe 模块依赖于 int10 模块，所以如果您想要启用 vbe，请同时开"
+"启 int10。"
 
 #. Type: multiselect
 #. Description
@@ -291,9 +293,7 @@ msgstr ""
 msgid ""
 "The dbe module enables the double-buffering extension in the server, and is "
 "useful for animation and video operations."
-msgstr ""
-"O módulo dbe activa a extensión de dobre buffer, e é útil para animacións e "
-"operacións de vídeo."
+msgstr "dbe 模块将开启服务器中的双重缓冲扩展，对于动画和视频操作很有用处。"
 
 #. Type: multiselect
 #. Description
@@ -304,16 +304,14 @@ msgid ""
 "The record module implements the RECORD extension, commonly used in server "
 "testing."
 msgstr ""
-"O módulo extmod activa varias extensións tradicionais e moi usadas, coma "
-"fiestras con forma, memoria compartida, cambio de modo de vídeo, DGA e Xv. O "
-"módulo record implementa a extensión RECORD, que se adoita empregar nas "
-"probas de servidores."
+"extmod 模块将开启很多传统并普遍使用的扩展，例如：shaped 窗口、共享内存、视频"
+"模式切换、DGA 和 Xv。record 模块则实现了 RECORD 扩展，通常用于服务器测试。"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-msgstr "Os módulos bitmap, freetype e type1 serven para debuxar letras."
+msgstr "bitmap、freetype 和 type1 模块全都是字体绘制器(rasterizer)。"
 
 #. Type: multiselect
 #. Description
@@ -321,9 +319,7 @@ msgstr "Os módulos bitmap, freetype e type1 serven para debuxar letras."
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
-msgstr ""
-"Para obter máis información sobre estes módulos, consulte a documentación de "
-"X.Org."
+msgstr "更多有关这些模块的信息，请参考 X.Org 文档。"
 
 #. Type: multiselect
 #. Description
@@ -334,16 +330,15 @@ msgid ""
 "written to the X server configuration file -- and add their own Modules "
 "section to the file manually."
 msgstr ""
-"Se non está seguro do que facer, active tódolos módulos. Os usuarios "
-"avanzados poden querer desactivar tódolos módulos -- nese caso non se ha "
-"gravar unha sección Modules no ficheiro de configuración do servidor X -- e "
-"engadir a súa propia sección Modules ao ficheiro manualmente."
+"如果您不确定该怎么选择，请保留所以模块至开启状态。高级用户也可能想要禁用所有"
+"的模块(这时程序将不会向 X 服务器配置文件写入 Modules 段落)并手动添加自己的 "
+"Modules 段落内容。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Varios controladores do servidor X.Org potenciais para o seu hardware."
+msgstr "有多个可能的默认 X.Org 服务器驱动适用于您的硬件。"
 
 #. Type: note
 #. Description
@@ -355,12 +350,9 @@ msgid ""
 "serve as your computer's \"primary head\"; this is generally the video card "
 "and monitor to which the computer displays when it first boots."
 msgstr ""
-"Detectáronse varias tarxetas de vídeo, e son precisos varios controladores "
-"para que soporten os distintos dispositivos. Polo tanto, non é posible "
-"escoller automaticamente un controlador por defecto do servidor X. Configure "
-"o dispositivo que ha servir coma \"consola principal\" do seu ordenador; "
-"adoita ser a tarxeta de vídeo e monitor no que se amosan as cousas do "
-"ordenador cando se inicia."
+"程序已探测到多张显示卡，并且需要使用不同的驱动程式来支持各个不同的设备。因"
+"此，本程序无法自动选择一个默认的 X.Org 服务器驱动。请对您的计算机的“主显示设"
+"备(primary head)”的设备进行配置，这通常是计算机启动时显示画面的显卡和显示器。"
 
 #. Type: note
 #. Description
@@ -370,15 +362,14 @@ msgid ""
 "however, the X server configuration files can be edited to support a multi-"
 "head configuration."
 msgstr ""
-"Actualmente, debconf só soporta configuracións cun só monitor. Nembargantes, "
-"pódense editar os ficheiros de configuración do servidor X para soportar "
-"unha configuración con varios monitores."
+"当前，debconf 仅支持单头设定。但是，可以通过直接编辑 X 服务器配置文件来支持多"
+"头配置。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
 msgid "Enter an identifier for your video card."
-msgstr "Introduza un identificador para a súa tarxeta de vídeo."
+msgstr "请为您的显示卡输入一个标识符。"
 
 #. Type: string
 #. Description
@@ -390,15 +381,14 @@ msgid ""
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
-"O ficheiro de ocnfiguración do servidor X asocia a tarxeta de video cun nome "
-"que pode proporcionar. Adoita se-la marca seguida do modelo, por exemplo, "
-"\"3Dfx Voodoo3\", ou \"ATI Rage Fury Maxx\"."
+"X 服务器配置文件将把您的显示卡与您所提供的名称对应。这通过是厂商或品牌名称加"
+"上型号名称，例如：“3Dfx Voodoo3”或“ATI Rage Fury Maxx”。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:126
 msgid "Select the desired X server driver."
-msgstr "Escolla o controlador do servidor X que desexe."
+msgstr "请输入您所期望的 X 服务器驱动。"
 
 #. Type: select
 #. Description
@@ -407,9 +397,8 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
 msgstr ""
-"Para que a interface gráfica de usuario do sistema X Window funcione "
-"correctamente, é necesario escoller un controlador da tarxeta de vídeo para "
-"o servidor X."
+"要正确显示和使用 X 窗口系统的图形用户界面，您必须为 X 服务器选择一个显示卡驱"
+"动。"
 
 #. Type: select
 #. Description
@@ -418,14 +407,13 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
-"Os controladores adoitan ter o nome do fabricante da tarxeta de vídeo ou "
-"chipset, ou o dun modelo ou familia de chipsets determinado."
+"驱动通常都被命名为显示卡或显示芯片厂商，或者是某个特定型号或芯片族的名称。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:135
 msgid "Use kernel framebuffer device interface?"
-msgstr "¿Empregar a interface de dispositivo framebuffer do núcleo?"
+msgstr "是否使用内核帧缓冲设备接口？"
 
 #. Type: boolean
 #. Description
@@ -435,9 +423,8 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
-"Pódese configurar o servidor X para que, no canto de se comunicar "
-"directamente co hardware de vídeo, realice algunhas operacións (coma o "
-"cambio de modo de vídeo), mediante o controlador de framebuffer do núcleo."
+"X 服务器还可以被配置为通过内核的帧缓冲驱动来执行某些操作(例如视频模式切换)，"
+"而非直接与视频硬件进行通讯。"
 
 #. Type: boolean
 #. Description
@@ -447,15 +434,14 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
-"En teoría os dous sistemas debían funcionar, pero na práctica adoita "
-"funcionar un pero non o outro. Activar esta opción é o máis seguro, pero "
-"pode desactivala se semella que causa problemas."
+"在理论上，两种途径都应该能工作。但在实践中，常常是一个可以而另一个不行。开启"
+"此选项可以看作是安全保险，但如果它造成了某些问题，您完全可以将其关闭。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Please enter the video card's bus identifier."
-msgstr "Introduza o identificador de bus da tarxeta de vídeo."
+msgstr "请输入显示卡的通道标识符。"
 
 #. Type: string
 #. Description
@@ -465,15 +451,14 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
-"Os usuarios de máquinas PowerPC e de calquera ordenador con varios "
-"dispositivos de vídeo deberían especificar o ID de bus da tarxeta de vídeo "
-"nun formato específico do bus aceptado."
+"PowerPC 机器用户，以及任何带有多个视频显示设备的计算机用户，都应该使用可被接"
+"受的 bus 专用格式来设定显示卡的 BusID，。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Examples:"
-msgstr "Exemplos:"
+msgstr "例如："
 
 #. Type: string
 #. Description
@@ -495,17 +480,19 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"Para os usuarios de configuracións con varios monitores, esta opción só ha "
-"configurar un dos monitores. Se quere configurar o resto ha ter que o facer "
-"a man no ficheiro de configuración do servidor X, /etc/X11/xorg.conf."
+"对于使用多头设定的用户，此选项将仅仅配置其中一个显示设备。接下来，您还需要手"
+"动编辑 X 的配置文件，/etc/X11/xorg.conf。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
+#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
+"您也许会想使用“lspci”命令来确定您的 PCI 或 AGP 显示卡的通道位置。请记住，"
+"lspci 所报告的通道、设备和功能号都是十六进制，而非十进制数。"
 
 #. Type: string
 #. Description
@@ -514,27 +501,26 @@ msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
 msgstr ""
-"Se foi posible, esta pregunta xa se respostou automaticamente, e vostede "
-"debería aceptar a resposta por defecto a menos que saiba que non funciona."
+"如果可能的话，此问题应该已经被预设好了答案。除非您知道该设置不能工作，否则您"
+"应该接受之。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "Please enter a bus identifier in the proper format."
-msgstr "Introduza un identificador de bus no formato axeitado."
+msgstr "请以适当的格式输入通道标识符(bus identifer)。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "The BusID entered was not in a recognized format."
-msgstr "O ID de bus que introduciu non está nun formato recoñecido."
+msgstr "您所输入的 BusID 不是可识别的格式。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "Enter the amount of memory (in kB) to be used by your video card."
-msgstr ""
-"Introduza a cantidade de memoria (en kB) que emprega a súa tarxeta de vídeo."
+msgstr "请输入您的显示卡所使用的内存大小(单位：kB)。"
 
 #. Type: string
 #. Description
@@ -545,10 +531,9 @@ msgid ""
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
-"Normalmente o servidor X autodetecta a cantidade de memoria adicada que ten "
-"a súa tarxeta de vídeo, pero algúns chips de vídeo integrados (coma o Intel "
-"i810) teñen pouca ou ningunha memoria propia, senón que toman emprestada "
-"memoria principal do sistema para as súas necesidades."
+"一般来说，您的显示卡所拥有的内存大小可以被 X 服务器自动探测到。但是某些集成显"
+"示芯片(例如 Intel i810)本身没有或只有很少显示内存，他们将会根据需要从系统主内"
+"存中借用。"
 
 #. Type: string
 #. Description
@@ -558,15 +543,14 @@ msgid ""
 "card lacks RAM, or if the X server has trouble autodetecting the amount, is "
 "it necessary to specify the amount of video RAM."
 msgstr ""
-"É perfectamente aceptable deixar este parámetro en branco; só é necesario "
-"especificar a cantidade de RAM de vídeo se falla RAM na súa tarxeta de vídeo "
-"ou se o servidor X ten problemas autodetectando a cantidade."
+"将此参数留空就很好。只有在您的显卡缺少 RAM 或 X 服务器无法自动探测内存大小"
+"时，您才有必要指定显存的大小。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "Please select the XKB rule set to use."
-msgstr "Escolla o conxunto de regras de XKB a empregar."
+msgstr "请选择要使用的 XKB 规则集。"
 
 #. Type: string
 #. Description
@@ -574,9 +558,7 @@ msgstr "Escolla o conxunto de regras de XKB a empregar."
 msgid ""
 "For the X server to handle your keyboard correctly, an XKB rule set must be "
 "chosen."
-msgstr ""
-"Para que o seu servidor X xestione correctamente o teclado debe escollerse "
-"un conxunto de regras de XKB."
+msgstr "要使 X 服务器能正确处理您的键盘，您必须选择一个 XKB 规则集。"
 
 #. Type: string
 #. Description
@@ -585,30 +567,32 @@ msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Os usuarios da maioría dos teclados deberían introducir \"xorg\". Os "
-"usuarios de teclados Sun Type 4 e Type 5, nembargantes, deberían introducir "
-"\"sun\"."
+"绝大部分键盘的用户都应该输入“xorg”，但是 Sun Type 4 和 Type 5 键盘的用户应该"
+"输入“sun”。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
+#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
+"高级用户可以使用任何已定义的 XKB 规则集。如果 xlibs 软件包已被解包，请到 /"
+"etc/X11/xkb/rules 目录下查找可用的规则集。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr "Se non sabe que conxunto de regras empregar, introduza \"xorg\"."
+msgstr "如果您不知道应该使用何种规则集，请输入“xorg”。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "Please select your keyboard model."
-msgstr "Escolla o seu modelo de teclado."
+msgstr "请输入您的键盘型号。"
 
 #. Type: string
 #. Description
@@ -617,9 +601,8 @@ msgid ""
 "For the X server to handle your keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
-"Para que o servidor X xestione correctamente o teclado, debería introducir "
-"un modelo. Os modelos dispoñibles dependen do conxunto de regras XKB que se "
-"estea a empregar."
+"要使 X 服务器能正确处理您的键盘，您必须输入一个键盘型号。可用的型号依赖于使用"
+"哪种 XKB 规则集。"
 
 #. Type: string
 #. Description
@@ -629,9 +612,8 @@ msgid ""
 "keys, historically common in the United States.  It does not have the \"logo"
 "\" or \"menu\" keys."
 msgstr ""
-"O teclado \"pc101\" é un teclado tradicional de estilo IBM PC/AT con 101 "
-"teclas, historicamente habitual nos Estados Unidos. Non ten as teclas \"logo"
-"\" nin \"menú\"."
+"“pc101”键盘是传统的 101 键 IBM PC/AT 类型键盘，在美国曾普遍使用。该键盘不"
+"含“logo”或“菜单”键。"
 
 #. Type: string
 #. Description
@@ -641,10 +623,8 @@ msgid ""
 "keys are usually engraved with a \"logo\" symbol (there is typically a pair "
 "of these, between each set of control and alt keys), and a \"menu\" key."
 msgstr ""
-"O teclado \"pc104\" é coma o modelo pc101, con teclas adicionais. Esas "
-"teclas adoitan ter gravado un símbolo \"logo\" (adoita haber dúas, unha "
-"entre cada conxunto de teclas Control e Alt), e tamén hai unha tecla \"menu"
-"\"."
+"“pc104”键盘与 pc101 型号类似，但含有附加键。这些键通常被刻有一个“logo”符号(该"
+"键多半是一对，分别位于两对 control 和 alt 键之间)，以及一个“菜单”键。"
 
 #. Type: string
 #. Description
@@ -656,10 +636,10 @@ msgid ""
 "symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
 "\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
 msgstr ""
-"Os modelos \"pc102\" e \"pc105\" son versións dos teclados pc101 e pc104, "
-"respectivamente, que se adoitan atopar en Europa. Se o seu teclado ten unha "
-"tecla \"< >\", seguramente teña un modelo \"pc102\" ou \"pc105\"; se escolle "
-"\"pc101\" ou \"pc104\" no seu canto, a súa tecla \"< >\" pode non funcionar."
+"“pc102”和“pc105”型号分别是 pc101 和 pc104 键盘的改版，通常用于欧洲地区。如果"
+"您的键盘有一个“< >”键(一个单独的键上刻有大于号和小于号)，那多半就是一"
+"个“pc102”和“pc105”型号。如果您在这儿选择了“pc101”或“pc104”，那么您的“< >”键可"
+"能无法工作。"
 
 #. Type: string
 #. Description
@@ -670,16 +650,15 @@ msgid ""
 "\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
 "input layer."
 msgstr ""
-"O modelo \"macintosh\" é para teclados Macintosh para os que o núcleo e as "
-"ferramentas da consola empregan a nova capa de entrada con códigos de "
-"teclado Linux; \"macintosh_old\" é para usuarios de teclado Macintosh que "
-"non empregan a nova capa de entrada."
+"“macintosh”型号适用于内核和终端工具使用了新输入层的 Macintosh 键盘，这种新输"
+"入层使用了 Linux 键盘编码；“macintosh_old”适用于不使用新输入层的 Macintosh 键"
+"盘用户。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Tódolos modelos de enriba empregan o conxunto de regras \"xorg\"."
+msgstr "以上所有型号都使用“xorg”规则集。"
 
 #. Type: string
 #. Description
@@ -689,9 +668,8 @@ msgid ""
 "respectively.  These models can only be used if the \"sun\" XKB rule set is "
 "in use."
 msgstr ""
-"Os modelos \"type4\" e \"type5\" son para teclados Sun Type4 e Type5, "
-"respectivamente. Estes modelos só se poden empregar se se emprega o conxunto "
-"de regras XKB \"sun\"."
+"“type4”和“type5”型号分别用于 Sun Type4 和 Type5 键盘。这些型号仅在使"
+"用“sun”XKB 规则集时才生效。"
 
 #. Type: string
 #. Description
@@ -701,32 +679,35 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
-"Os teclados de ordenador portátil adoitan non ter tantas teclas coma os "
-"teclados normais; os usuarios de portátil deberían escoller o modelo de "
-"teclado máis semellante aos de enriba."
+"笔记本电脑键盘通常没有标准键盘那么多键。用户应该选择一个大致上最接近以上所列"
+"键盘的型号。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
+#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
+"高级用户可以使用任何由被选 XKB 规则集所定义的键盘型号。如果 xlibs 软件包已被"
+"解包，请到 /etc/X11/xkb/rules 目录下查找可用的规则集。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
+#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
-msgstr ""
+msgstr "美国英语键盘用户通常应该输入“pc104”。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
 msgid "Please select your keyboard layout."
-msgstr "Escolla a súa disposición de teclado."
+msgstr "请选择您的键盘布局。"
 
 #. Type: string
 #. Description
@@ -736,18 +717,20 @@ msgid ""
 "be entered.  Available layouts depend on which XKB rule set and keyboard "
 "model were previously selected."
 msgstr ""
-"Para que o servidor X xestione correctamente o seu teclado debe introducir "
-"unha disposición de teclado. As disposicións dispoñibles dependen do "
-"conxunto de regras XKB e modelo de teclado que escollera."
+"要使 X 服务器能正确处理您的键盘，您必须选择一个键盘布局。可用的布局依赖于您前"
+"面所选择的 XKB 规则集和键盘型号。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
+#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
+"高级用户可以使用任何由被选 XKB 规则集所定义的键盘型号。如果 xlibs 软件包已被"
+"解包，请到 /etc/X11/xkb/rules 目录下查找可用的规则集。"
 
 #. Type: string
 #. Description
@@ -757,16 +740,15 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"Os usuarios de teclados españois deberían introducir \"es\". Os usuarios de "
-"teclados adaptados para outros países deberían introducir, normalmente, o "
-"seu código de país ISO 3166. Por exemplo, os EE.UU. empregan \"us\", "
-"Portugal \"pt\" e Alemaña emprega \"de\"."
+"美国英语键盘用户应该输入“us”。使用其它国家特有键盘的用户通常应该输入其国家的 "
+"ISO 3166 国家代码。例如，法国用户应该使用“fr”，德国用户应该使用“de”。"
 
+# 变种?? 怪怪的。
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
 msgid "Please select your keyboard variant."
-msgstr "Escolla a súa variante de teclado."
+msgstr "请选择您的键盘变种(variant)。"
 
 #. Type: string
 #. Description
@@ -776,9 +758,8 @@ msgid ""
 "may be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
-"Para que o servidor X xestione o teclado como vostede quere, pódese "
-"introducir unha variante de teclado. As variantes dispoñibles dependen do "
-"conxunto de regras XKB, modelo e disposición de teclado seleccionados."
+"要使 X 服务器能按照您的期望处理键盘，您必须输入一个键盘变种(variant)。可用的"
+"种类依赖于您前面所选择的 XKB 规则集、键盘型号和布局。"
 
 #. Type: string
 #. Description
@@ -788,33 +769,34 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
-"Moitas disposicións de teclado soportan unha opción para tratar as teclas "
-"\"mortas\", coma as marcas de acentos e diéreses, coma teclas normais. Se "
-"ese é o comportamento que prefire, introduza \"nodeadkeys\"."
+"有许多键盘布局支持一个处理“dead”键的选项，例如将非空格的音调符号和分音符作为"
+"普通空格键使用。如果这是您期望的工作方式，请输入“nodeadkeys”。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
+#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
 "directory for the file corresponding to your selected layout for available "
 "variants."
 msgstr ""
+"高级用户可以使用任何由被选 XKB 布局所支持的变种(variant)。如果 xlibs 软件包已"
+"被解包，请到 /etc/X11/xkb/symbols 目录下查找对应于您所选布局的可用变种。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Os usuarios de teclados españois normalmente deberían deixar isto en branco."
+msgstr "美国英语键盘用户通常应该将此栏留空。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "Please select your keyboard options."
-msgstr "Escolla as súas opcións de teclado."
+msgstr "请选择您的键盘选项。"
 
 #. Type: string
 #. Description
@@ -824,10 +806,8 @@ msgid ""
 "be entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
-"Para que o servidor X xestione o teclado como desexa, pódense introducir "
-"opcións de teclado. As opcións dispoñibles dependen do conxunto de regras "
-"XKB seleccionado. Non tódalas opcións funcionan con tódolos modelos e "
-"disposicións de teclado."
+"要使 X 服务器能按照您的期望处理键盘，您可能需要输入键盘选项。可用的选项依赖于"
+"您前面所选择的 XKB 规则集。并不是所有的选项都能在每种键盘型号的布局上工作。"
 
 #. Type: string
 #. Description
@@ -837,10 +817,9 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
-"Por exemplo, se quere que a tecla \"Bloq Mayús\" funcione coma unha tecla "
-"Control adicional, pode introducir \"ctrl:nocaps\"; se quere intercambiar a "
-"tecla \"Bloq Mayús\" e Control da esquerda, pode introducir \"ctrl:swapcaps"
-"\"."
+"例如，如果您想将 Caps Lock 键当成额外的 Control 键使用，就需要输入“ctrl:"
+"nocaps”；如果您想将 Caps Lock 键与左 Control 键交换使用，就需要输入“ctrl:"
+"swapcaps”。"
 
 #. Type: string
 #. Description
@@ -852,10 +831,9 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
-"Outro exemplo: algunha xente prefire ter as teclas Meta dispoñibles nas "
-"teclas Alt do seu teclado (opción por defecto), mentres que outros prefiren "
-"ter as teclas Meta nas teclas Windows ou \"logo\". Se prefire empregar as "
-"teclas Windows ou logo coma teclas Meta, pode introducir \"altwin:meta_win\"."
+"再举一个例子，有些人喜欢将 Meta 键设到键盘的 Alt 键上(这是默认的设置)，然而其"
+"他人可能更希望将 Meta 键放到 Windows 或“logo”键上。如果您想将 Windows 或 "
+"logo 键当成 Meta 键使用，就需要输入“altwin:meta_win”。"
 
 #. Type: string
 #. Description
@@ -866,10 +844,9 @@ msgid ""
 "like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
-"Pode combinar opcións separándoas cunha coma; por exemplo, se quere que a "
-"tecla \"Bloq Mayús\" funcione coma unha tecla Control adicional e tamén "
-"quere empregar as súas teclas Windows ou logo coma teclas Meta, pode "
-"introducir \"ctrl:nocaps,altwin:meta_win\"."
+"您可以将多个选项组合使用，方法是加入逗号作为间隔。例如，如果您想将 Caps Lock "
+"键当成额外的 Control 键使用，并且将 Windows 或 logo 键用作 Meta 键，就应该输"
+"入“ctrl:nocaps,altwin:meta_win”。"
 
 #. Type: string
 #. Description
@@ -883,13 +860,13 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "If you don't know what options to use, leave this entry blank."
-msgstr "Se non sabe que opcións empregar, deixe esta entrada en branco."
+msgstr "如果您不知道该使用什么选项，请将此栏留空。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:303
 msgid "Attempt mouse device autodetection?"
-msgstr "¿Tentar a autodetección dos dispositivos de rato?"
+msgstr "尝试鼠标自动探测吗？"
 
 #. Type: boolean
 #. Description
@@ -902,11 +879,10 @@ msgid ""
 "the computer's power, connect the mouse, turn the computer back on, and "
 "reboot.  If you wish to select a mouse type manually, decline this option."
 msgstr ""
-"Se ten un rato conectado ao ordenador, pódese tentar detectalo. Pode axudar "
-"se se move o rato mentres se tenta a detección (non debería estar a "
-"funcionar o programa gpm). Se quere conectar un rato PS/2 ou de bus, debería "
-"apagar o ordenador, conectar o rato, e volver acender o ordenador. Se quere "
-"seleccionar un tipo de rato manualmente, rexeite esta opción."
+"如果您在电脑上插有一只鼠标，就可以在此尝试对其进行探测。在探测过程中移动鼠标"
+"也许会对探测效果有所帮助(同时，gpm 程序应该停止运行)。如果您想要将 PS/2 或 "
+"bus/inport 鼠标连接到您的电脑上，应该先关闭系统切断电源，接上鼠标，并重新开启"
+"电脑。如果您想要手动选择鼠标类型，请拒绝此选项。"
 
 #. Type: boolean
 #. Description
@@ -917,16 +893,15 @@ msgid ""
 "autodetection succeeds, further debconf questions about your mouse will be "
 "pre-answered."
 msgstr ""
-"Se acepta esta opción e falla a autodetección, háselle volver facer esta "
-"pregunta. Pode tentar a autodetección tantas veces como queira. Se a "
-"autodetección ten éxito, hanse respostar automaticamente as demais preguntas "
-"sobre o seu rato."
+"如果您同意此选项，但自动探测却失败了，程序将再次向您提出此问题。您可以按需要"
+"进行任意次数的自动探测。如果探测成功，接下来有关鼠标的 debconf 问题都将被预置"
+"答案。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:319
 msgid "Please choose your mouse port."
-msgstr "Escolla o porto do rato."
+msgstr "请选择您的鼠标端口。"
 
 #. Type: select
 #. Description
@@ -936,9 +911,8 @@ msgid ""
 "certain characteristics of your mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
-"Para que a interface gráfica do sistema X Window funcione correctamente, é "
-"necesario coñecer algunhas características do seu rato (ou de outro "
-"dispositivo de punteiro, coma un trackball)."
+"要能正确操作 X 窗口系统的图形用户界面，系统必须知道您的鼠标(或其它指点设备，"
+"例如轨迹球)的某些特征指标。"
 
 #. Type: select
 #. Description
@@ -954,26 +928,24 @@ msgid ""
 "inport devices from your computer, please do so with the computer's power "
 "off."
 msgstr ""
-"É preciso determinar o porto (tipo de conexión) que emprega o seu rato. Os "
-"portos serie empregan conectores con forma de D e de 9 a 25 patas (DB-9 ou "
-"DB-25); o conector do rato é femia (ten buratos) e o conector do ordenador é "
-"macho (ten patas). Os portos PS/2 son conectores redondos pequenos (DIN) con "
-"6 patas; o conector do rato é macho e o lado do ordenador é femia. Tamén "
-"pode ter un rato USB, un rato de bus (moi antigo) ou pode estar a empregar o "
-"programa gpm coma repetidor. Se ten que conectar ou desconectar ratos PS/2 "
-"ou bus do seu ordenador, fágao co ordenador apagado."
+"系统必须知道您的鼠标使用的是哪个端口(连接类型)。串行端口使用的是 9 针或 15 针"
+"的 D 形插口(即 DB-9 或 DB-25)，其中鼠标插头是母(洞)，计算机上的插座是公(针)。"
+"PS/2 端口则是 5 针的小圆口(DIN)，其中鼠标插头是公，计算机上的插座是母。您所使"
+"用的还可能是 USB 鼠标、bus/inport 鼠标(很旧的型号)或者使用 gpm 程序作为中继"
+"器。如果您需要从计算机上插拔 PS/2 或 bus/inport 设备，请先关闭电源再进行操"
+"作。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:337
 msgid "Please choose the entry that best describes your mouse."
-msgstr "Escolla a entrada que describa mellor o seu rato."
+msgstr "请选择最符合您的鼠标的描述的项。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:342
 msgid "Emulate 3 button mouse?"
-msgstr "¿Emular un rato de 3 botóns?"
+msgstr "模拟 3 键鼠标？"
 
 #. Type: boolean
 #. Description
@@ -984,10 +956,8 @@ msgid ""
 "presence of a middle button by treating simultaneous clicks or drags of the "
 "left and right buttons as middle button events."
 msgstr ""
-"Moitos programas do sistema X Window esperan que o seu rato teña 3 botóns "
-"(esquerdo, dereito e central). Os ratos con só 2 botóns poden emular a "
-"presencia dun botón central facendo que ao premer os dous botóns ao mesmo "
-"tempo se trate coma un botón central."
+"X 窗口系统中的大部分程序都期望您的的鼠标拥有 3 个按键(左、右、中)。只有 2 键"
+"的鼠标可以通过摁下或拖动左键和右键来模拟中键行为。"
 
 #. Type: boolean
 #. Description
@@ -995,9 +965,7 @@ msgstr ""
 msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
-msgstr ""
-"Esta opción tamén se pode empregar con ratos de 3 botóns ou máis; o botón do "
-"medio ha seguir a funcionar normalmente."
+msgstr "此选项也可被用在 3 键或更多键的鼠标上，中键将继续按通常方式工作。"
 
 #. Type: boolean
 #. Description
@@ -1007,15 +975,14 @@ msgid ""
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
 "\") are not yet supported with this configuration tool."
 msgstr ""
-"Teña en conta que os botóns por riba do quinto (contando unha roda coma dous "
-"botóns, un para subir e outro para baixar, e un terceiro para os clics ca "
-"roda) non teñen soporte nesta ferramenta de configuración."
+"注意，本配置工具并不支持超过 5 个以外的鼠标按键(鼠标滚轮算两个按键，分别"
+"是“上”和“下”，如果滚轮还可以点击的话就算是三个按键)。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:358
 msgid "Attempt monitor autodetection?"
-msgstr "¿Tentar a autodetección do monitor?"
+msgstr "尝试显示器自动探测吗？"
 
 #. Type: boolean
 #. Description
@@ -1027,25 +994,22 @@ msgid ""
 "same dialect of this protocol, further debconf questions about your monitor "
 "will be pre-answered."
 msgstr ""
-"Moitos monitores (incluíndo LCDs) e tarxetas de vídeo soportan un protocolo "
-"de comunicacións que permiten comunicarlle ao ordenador as características "
-"técnicas do monitor. Se o seu monitor e tarxeta de vídeo falan o mesmo "
-"dialecto deste protocolo, hanse respostar automaticamente as outras "
-"preguntas sobre o seu monitor."
+"许多显示器(包括 LCD)和显示卡都支持一种允许将显示卡的技术参数特性传递回计算机"
+"的通讯协议。如果您的显示器和显示卡使用的是该协议的同一子类(dialect)，接下来有"
+"关您的显示器的 debconf 问题将被预置好答案。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:358
 msgid ""
 "If autodetection fails, you will be asked for information about your monitor."
-msgstr ""
-"Se falla a autodetección háselle pedir información sobre o seu monitor."
+msgstr "如果自动探测失败，程序会询问有关您的显示器的信息。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
 msgid "Please choose a method for selecting your monitor characteristics."
-msgstr "Escolla un método para seleccionar as características do seu monitor."
+msgstr "请选取一种选择您的显示器特性的方法。"
 
 #. Type: select
 #. Description
@@ -1054,8 +1018,7 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of your monitor must be known."
 msgstr ""
-"Para que a interface gráfica do sistema X Window funcione correctamente, "
-"deben coñecerse algunhas características do seu monitor."
+"要使 X 窗口系统的图形用户界面能正常操作，程序必须知道您的显示器某些特性。"
 
 #. Type: select
 #. Description
@@ -1066,11 +1029,9 @@ msgid ""
 "this will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
-"Para a opción \"simple\", só é preciso coñece-lo tamaño físico do monitor; "
-"isto ha estabrecer algúns valores de configuración apropiados para un "
-"monitor CRT dese tamaño, pero pode non ser óptimo para CRTs de alta "
-"calidade. (Esta opción está desactivada para usuarios de paneis LCD, porque "
-"esas pantallas están configuradas para unha resolución determinada)."
+"如果采用“simple”方法，您只需要知道您的显示器的物理尺寸；这样会按照该尺寸的典"
+"型 CRT 显示器来设置参数，但是对于高级 CRT 显示器来说可能并非最佳。(这一选项对"
+"于 LCD 平面显示器的用户是关闭的，因为 LCD 显示器是设置为某一特定分辨率的。)"
 
 #. Type: select
 #. Description
@@ -1080,9 +1041,8 @@ msgid ""
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know your monitor is capable of)."
 msgstr ""
-"A opción \"media\" halle presentar unha lista de resolucións e velocidades "
-"de refresco, coma \"800x600 @ 85 Hz\"; debería escoller o mellor modo que "
-"quere empregar (e que saiba que o monitor pode presentar)."
+"如果采用“medium”方法，您将看到一个分辨率和刷新频率的列表，例如“800x600 @ "
+"85Hz”；您应当选择你想要使用（并且知道您的显示器能够支持）的最佳模式。"
 
 #. Type: select
 #. Description
@@ -1091,8 +1051,8 @@ msgid ""
 "The \"advanced\" option will let you specify your monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
-"A opción \"avanzada\" halle permitir especificar directamente as tolerancias "
-"de sincronía horizontal e refresco vertical do seu monitor."
+"如果采用“advanced”方法，您将直接指定您的显示器的水平同步频率和垂直刷新频率的"
+"可用范围。"
 
 #. Type: select
 #. Choices
@@ -1101,28 +1061,26 @@ msgid ""
 "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
 "inches (480-510 mm), 21 inches (530 mm) or more"
 msgstr ""
-"Ata 14 polgadas (355 mm), 15 polgadas (380 mm), 17 polgadas (430 mm), 19-20 "
-"polgadas (480-510 mm), 21 polgadas (530 mm) ou máis"
+"最大 14 英寸(355 毫米), 15 英寸(380 毫米), 17 英寸(430 毫米), 19-20 英寸 "
+"(480-510 毫米), 21 英寸(530 毫米)或更大"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
 msgid "Please choose your approximate monitor size."
-msgstr "Escolla o tamaño aproximado do seu monitor."
+msgstr "请选择您的显示器的大概尺寸。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
 msgid "High-quality CRT's may be able to use the next highest size category."
-msgstr ""
-"Os CRTs de alta calidade poderían funcionar coma un monitor da seguinte "
-"categoría de tamaños."
+msgstr "高级 CRT 显示器可能能够使用比其实际尺寸更高一级的设置。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:396
 msgid "Please select your monitor's best video mode."
-msgstr "Escolla o mellor modo de vídeo do seu monitor."
+msgstr "请选择您的显示器的最佳显示模式。"
 
 #. Type: select
 #. Description
@@ -1136,19 +1094,17 @@ msgid ""
 "it; if in doubt, use the video mode recommended by the manufacturer of your "
 "LCD."
 msgstr ""
-"Escolla a \"mellor\" resolución e velocidade de refresco que crea que pode "
-"dar o seu monitor. É mellor unha maior resolución e velocidade de refresco. "
-"Se emprega un monitor CRT, é perfectamente aceptable escoller un modo de "
-"vídeo \"peor\" que o máximo do seu monitor, se quere. Os usuarios de "
-"pantallas LCD tamén poden facelo, pero só se o chipset de vídeo e o "
-"controlador o soportan; se non sabe, empregue o modo de vídeo recomendado "
-"polo fabricante da súa pantalla."
+"请选择您认为您的显示器所能使用的“最佳”的分辨率和刷新频率。分辨率和刷新频率都"
+"是越高越好。如果您使用的是 CRT 显示器，您完全可以根据您的需要选择一个比您的显"
+"示器所能达到的最高水平要“差”的显示模式。LCD 显示器的用户如果要这么做，则需要"
+"显示芯片和驱动程序两者都支持才行；如果您不清楚，请使用您的 LCD 的制造商所推荐"
+"的显示模式。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:406
 msgid "Enter an identifier for your monitor."
-msgstr "Introduza un identificador para o seu monitor."
+msgstr "请为您的显示器输入一个标识符。"
 
 #. Type: string
 #. Description
@@ -1158,16 +1114,14 @@ msgid ""
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
-"O ficheiro de configuración do servidor X asocia o seu monitor cun nome que "
-"pode fornecer. Adoita ser a marca seguida polo modelo, por exemplo: \"Sony "
-"E200\" ou \"Dell E770s\"."
+"X 服务器的配置文件会给您的显示器取一个标识名称，这个名称可以由您提供。通常该"
+"名称由厂商或品牌名加上型号组成，例如“Sony E200”或“Dell E770s”。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
 msgid "Write monitor sync ranges to configuration file?"
-msgstr ""
-"¿Gravar os rangos de sincronía do monitor no ficheiro de configuración?"
+msgstr "是否将显示器同步频率范围写入配置文件？"
 
 #. Type: boolean
 #. Description
@@ -1177,15 +1131,14 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
-"Os rangos de sincronía do monitor deberían ser autodetectados polo servidor "
-"X na maioría dos csaso, pero ás veces precisa de axuda. Esta opción é para "
-"usuarios avanzados, e debería deixarse no valor por defecto."
+"在大多数情况下，X 服务器能够自行探测到显示器的同步频率范围，但是有时它还需要"
+"一些提示。这一选项为高级用户提供，应该保留其默认值。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:420
 msgid "Enter your monitor's horizontal sync range."
-msgstr "Introduza o rango de sincronía horizontal do seu monitor."
+msgstr "请输入您的显示器的水平同步频率范围。"
 
 #. Type: string
 #. Description
@@ -1196,17 +1149,15 @@ msgid ""
 "CRT's).  This information should be available in your monitor's manual.  "
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
-"Introduza unha lista de valores discretos separados por comas (para "
-"pantallas de frecuencia fixa) ou unha parella de valores separados por un "
-"guión (tódolos CRTs modernos). Esta información debería estar dispoñible no "
-"manual do seu monitor. Os valores inferiores a 30 ou superiores a 130 son "
-"extremadamente raros."
+"请输入一个以逗号分隔的列表，每一项或者是独立的数值(适用于固定频率的显示器)，"
+"或者是以横杠(-)相连的一对数值(适用于所有新式 CRT)。这一信息应该能在您的显示器"
+"手册中找到。低于 30 或高于 130 的数值都是极其罕见的。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:428
 msgid "Enter your monitor's vertical refresh range."
-msgstr "Introduza o rango de refresco vertical do seu monitor."
+msgstr "请输入您的显示器的垂直刷新频率范围。"
 
 #. Type: string
 #. Description
@@ -1217,17 +1168,15 @@ msgid ""
 "CRT's).  This information should be available in your monitor's manual.  "
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
-"Introduza unha lista de valores discretos separados por comas (para "
-"pantallas de frecuencia fixa) ou unha parella de valores separados por un "
-"guión (tódolos CRTs modernos). Esta información debería estar dispoñible no "
-"manual do seu monitor. Os valores inferiores a 50 ou superiores a 160 son "
-"extremadamente raros."
+"请输入一个以逗号分隔的列表，每一项或者是独立的数值(适用于固定频率的显示器)，"
+"或者是以横杠(-)相连的一对数值(适用于所有新式 CRT)。这一信息应该能在您的显示器"
+"手册中找到。低于 50 或高于 160 的数值都是极其罕见的。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:436
 msgid "Please enter a comma-separated list of ranges or values."
-msgstr "Introduza unha lista separada por comas de rangos ou valores."
+msgstr "请输入一系列数值或范围，用逗号分隔。"
 
 #. Type: note
 #. Description
@@ -1236,14 +1185,14 @@ msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
 msgstr ""
-"A sintaxe válida é unha lista de valores discretos separados por comas ou "
-"unha parella de valores separados por un guión."
+"合法的格式是一个以逗号分隔的列表，每一项或者是分立的数值，或者是以横杠(-)连接"
+"的一对数值。"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:444
 msgid "Select the video modes you would like the X server to use."
-msgstr "Escolla os modos de vídeo que quere que empregue o servidor X."
+msgstr "请选择您想让 X 服务器使用的显示模式。"
 
 #. Type: multiselect
 #. Description
@@ -1254,16 +1203,15 @@ msgid ""
 "all of them is effectively the same as removing none, since in both cases "
 "the X server will attempt to use the highest possible resolution."
 msgstr ""
-"Se hai algunhas resolucións que non quere que empregue o servidor X incluso "
-"se o hardware as pode facer, elimíneas da lista de embaixo. Eliminalas todas "
-"é o mesmo que non eliminar ningunha, xa que nos dous casos o servidor X ha "
-"tentar empregar a resolución máis alta posible."
+"如果有一些分辨率是即使您的硬件能够支持，您也不想让 X 服务器使用的，请在下表中"
+"将它们删除。把所有选项都删除和什么都不删除的效果是一样的，因为两种情况下 X 服"
+"务器都会尝试使用可能的最高分辨率。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:454
 msgid "Please select your desired default color depth in bits."
-msgstr "Escolla a profundidade de cor desexada en bits."
+msgstr "请输入您想要的默认色深(单位：位)。"
 
 #. Type: select
 #. Description
@@ -1275,11 +1223,9 @@ msgid ""
 "acceleration only for certain depths.  Consult your video card manual for "
 "more information."
 msgstr ""
-"Normalmente é preferible a cor de 24 bits, pero en tarxetas gráficas con "
-"cantidades limitadas de memoria pódense conseguir resolucións máis elevadas "
-"reducindo a profundidade de cor. Tamén, algunhas tarxetas só soportan "
-"aceleración 3D hardware nalgunhas profundidades de cor determinadas. "
-"Consulte o manual da súa tarxeta de vídeo para obter máis información."
+"一般来说 24 位色是最好的，但是对有些帧缓冲内存有限的显示卡来说，可能需要牺牲"
+"色深来达到更高的分辨率。另外，有些显示卡只在特定的色深下支持硬件 3D 加速。请"
+"查阅您的显示卡手册以获得更多信息。"
 
 #. Type: select
 #. Description
@@ -1289,52 +1235,51 @@ msgid ""
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits.)"
 msgstr ""
-"A chamada \"cor de 32 bits\" consiste realmente en 24 bits de información de "
-"cor máis 8 bits de canle alfa ou simple recheo; o sistema X Window pode "
-"tratar cos dous. Se quere algún, escolla 24 bits.)"
+"(所谓的“32 位色”实际是 24 位的色彩信息加上 8 位的 alpha 通道或简单地用零补"
+"齐；X 窗口系统对两者都支持。如果你需要两者中的任一种，都请选择 24 位。)"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "Please enter a value for the entry."
-msgstr "Introduza un valor."
+msgstr "请在此栏输入一个值。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "A null entry is not permitted."
-msgstr "Non se permite unha entrada nula."
+msgstr "此栏不能为空。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Please enter a value without double-quotes."
-msgstr "Introduza un valor sen comiñas dobres."
+msgstr "请输入一个不带双引号的值。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Non se permiten caracteres de comiñas dobres no valor de entrada."
+msgstr "此栏的值中不能带有双引号(\")字符。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Please enter only a numeric value."
-msgstr "Introduza só un valor numérico."
+msgstr "请输入一个纯数字的值。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Characters other than digits are not allowed in the entry."
-msgstr "Non se permiten caracteres distintos a díxitos."
+msgstr "此栏中不能有数字以外的字符。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
 #, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Escolla o mellor modo de video do monitor."
+msgstr "请选择您的键盘布局。"
 
 #. Type: boolean
 #. Description
@@ -1354,25 +1299,23 @@ msgid ""
 msgstr ""
 
 #~ msgid "Migrate XKB configuration directory?"
-#~ msgstr "¿Migrar o directorio de configuración de XKB?"
+#~ msgstr "迁移 XKB 的配置目录吗？"
 
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
 #~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
-#~ "O directorio no que se armacena a información de configuración (que "
-#~ "inclúe os datos do teclado) para a extensión X KEYBOARD (XKB) cambiou de /"
-#~ "usr/X11R6/lib/X11/xkb a /etc/X11/xkb ."
+#~ "存放 X KEYBOARD Extension (XKB) 的配置信息(包括键盘数据)的目录已经从 /usr/"
+#~ "X11R6/lib/X11/xkb 切换到了 /etc/X11/xkb。"
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
 #~ "from old or unofficial Debian packages, may continue to install files "
 #~ "there."
 #~ msgstr ""
-#~ "O seu sistema está a empregar a localización antiga, e algúns programas, "
-#~ "entre eles paquetes Debian antigos ou non oficiais, poden seguir a "
-#~ "instalar ficheiros alí."
+#~ "您的系统正在使用旧的存放位置，而且有些程序可能会继续将文件安装到那儿，比如"
+#~ "旧版本或非官方版本的 Debian 软件包。"
 
 #~ msgid ""
 #~ "Would you like the XKB configuration files on the system to be "
@@ -1382,23 +1325,20 @@ msgstr ""
 #~ "the old location to the new one will be created to prevent legacy "
 #~ "applications from breaking."
 #~ msgstr ""
-#~ "¿Quere migrar automaticamente os ficheiros XKB do sistema da antiga "
-#~ "localización á nova? Calquera ficheiro que xa exista na nova localización "
-#~ "hase copiar e substituír por un ficheiro da antiga localización. Hase "
-#~ "crear unha ligazón simbólica da antiga localización á nova para que as "
-#~ "aplicacións antigas non rompan."
+#~ "您是否期望系统中的 XKB 的配置文件被自动迁移至新位置？新位置下的同名文件将"
+#~ "会被备份，然后被旧位置下的文件所覆盖。程序还会在旧位置创建一个指向新位置的"
+#~ "符号链接，以避免老式应用程序无法运行。"
 
 #~ msgid "Migrate Xt application defaults directory?"
-#~ msgstr "¿Migrar o directorio de opcións por defecto de aplicacións Xt?"
+#~ msgstr "迁移 Xt 应用程序的默认目录吗?"
 
 #~ msgid ""
 #~ "The directory where application defaults for X Window System client "
 #~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
 #~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
 #~ msgstr ""
-#~ "O directorio no que se gardan as opcións por defecto para os programas "
-#~ "cliente de X Window baseados en X Toolkit Intrinsics (Xt) cambiouse de /"
-#~ "usr/X11R6/lib/X11/app-defaults a /etc/X11/app-defaults ."
+#~ "用于存放基于 X Toolkit Intrinsics (Xt) 的 X 窗口系统客户端程序默认设置的目"
+#~ "录已经从 /usr/X11R6/lib/X11/app-defaults 切换到了 /etc/X11/app-defaults。"
 
 #~ msgid ""
 #~ "Would you like the app-defaults files on the system to be automatically "
@@ -1408,30 +1348,25 @@ msgstr ""
 #~ "to the new one will be created to prevent legacy applications from "
 #~ "breaking."
 #~ msgstr ""
-#~ "¿Quere migrar automaticamente os ficheiros app-defaults do sistema da "
-#~ "antiga localización á nova? Calquera ficheiro que xa exista na nova "
-#~ "localización hase copiar e substituír por un ficheiro da antiga "
-#~ "localización. Hase crear unha ligazón simbólica da antiga localización á "
-#~ "nova para que as aplicacións antigas non rompan."
+#~ "您是否期望系统中的 app-defaults 文件被自动迁移至新位置？新位置下的同名文件"
+#~ "将会被备份，然后被旧位置下的文件所覆盖。程序还会在旧位置创建一个指向新位置"
+#~ "的符号链接，以避免老式应用程序无法运行。"
 
 #~ msgid "Select the desired default display manager."
-#~ msgstr "Escolla o xestor de pantalla por defecto que desexe."
+#~ msgstr "请选择您想使用的默认显示管理器。"
 
 #~ msgid ""
 #~ "A display manager is a program that provides graphical login capabilities "
 #~ "for the X Window System."
-#~ msgstr ""
-#~ "Un xestor de pantalla é un programa que fornece capacidades de inicio de "
-#~ "sesión gráfico para o sistema X Window."
+#~ msgstr "显示管理器即为 X 窗口系统提供图形界面登录模式的程序。"
 
 #~ msgid ""
 #~ "Only one display manager can manage a given X server, but multiple "
 #~ "display manager packages are installed.  Please select which display "
 #~ "manager should run by default."
 #~ msgstr ""
-#~ "Só un xestor de pantalla pode xestionar un servidor X determinado, pero "
-#~ "hai varios paquetes de xestores de pantalla instalados. Escolla o que se "
-#~ "debería executar por defecto."
+#~ "一个给定的 X 服务器只能由一个显示管理器来管理，但是您的系统中已经安装了多"
+#~ "个显示管理器软件包。请选择一个作为默认的显示管理器。"
 
 #~ msgid ""
 #~ "(Multiple display managers can run simultaneously if they are configured "
@@ -1439,13 +1374,12 @@ msgstr ""
 #~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
 #~ "disable the check for a default display manager.)"
 #~ msgstr ""
-#~ "(Pódense executar varios xestores de pantalla ao mesmo tempo se se "
-#~ "configuran para xestionar servidores distintos; para facelo, configure os "
-#~ "xestores de pantalla, edite os seus scripts de inicio de /etc/init.d e "
-#~ "desactive a comprobación do xestor de pantalla por defecto)."
+#~ "(如果多个显示管理器分别被配置为管理不同的 X 服务器，那么它们可以同时运行。"
+#~ "要做到这一点，您需要根据需要分别对显示管理器进行设置，编辑它们在 /etc/"
+#~ "init.d 目录下的 init 脚本，并且禁止检查默认显示管理器。)"
 
 #~ msgid "Do you wish to stop the xdm daemon?"
-#~ msgstr "¿Quere deter o daemon de xdm?"
+#~ msgstr "您是否想要停止 xdm 守护进程？"
 
 #~ msgid ""
 #~ "The X display manager (xdm) daemon is typically stopped on package "
@@ -1454,14 +1388,13 @@ msgstr ""
 #~ "terminated. Otherwise you may leave xdm running, and the new version will "
 #~ "take effect the next time the daemon is restarted."
 #~ msgstr ""
-#~ "Normalmente adóitase deter o daemon do xestor de pantalla de X (xdm) ao "
-#~ "actualizar ou eliminar o paquete, pero semella que está a xestionar "
-#~ "alomenos unha sesión X en execución. Se se detén xdm agora, hase cortar "
-#~ "calquera sesión X que xestione. Se non, pode deixar xdm a se executar, e "
-#~ "a nova versión ha tomar efecto a próxima vez que reinicie o daemon."
+#~ "X 显示管理器(xdm)守护进程通常会在软件包升级和卸载时被停止，但它目前显然正"
+#~ "负责管理至少一个正在运行的 X 会话。如果 xdm 现在就被停止，它所管理的所有 "
+#~ "X 会话都被中止。然而，您也可以保持 xdm 运行，新安装的版本将会在守护进程下"
+#~ "次重新启动时生效。"
 
 #~ msgid "experimental version of X.Org packages"
-#~ msgstr "versión experimental dos paquetes de X.Org"
+#~ msgstr "试验版(experimental) X.Org 软件包"
 
 #~ msgid ""
 #~ "You are using an experimental version of X.Org packages for Debian.  "
@@ -1469,10 +1402,8 @@ msgstr ""
 #~ "version of the packages, since they have not been released to the Debian "
 #~ "distribution yet."
 #~ msgstr ""
-#~ "Está a empregar unha versión experimental dos paquetes de X.Org para "
-#~ "Debian. Non informe no Sistema de Seguemento de Fallos de Debian de "
-#~ "fallos nesta versión dos paquetes, xa que aínda non se publicaron en "
-#~ "Debian."
+#~ "您正在使用 Debian 的试验版 X.Org 软件包。因为此版本尚未发布至 Debian 分发"
+#~ "版，所以请不要针对这些软件包向 Debian 错误跟踪系统提交 bug 报告。"
 
 #~ msgid ""
 #~ "If you experience problems with these packages or would like to submit "
@@ -1480,9 +1411,8 @@ msgstr ""
 #~ "more about this mailing list on the World Wide Web:\n"
 #~ "  http://lists.debian.org/debian-x/"
 #~ msgstr ""
-#~ "Se ten problemas con estes paquetes ou quere enviar parches, envíe unha "
-#~ "mensaxe á lista de correo Debian X. Pode ler máis información sobre esta "
-#~ "lista de correo na web:\n"
+#~ "如果您在使用这些软件包的过程中遇到了问题或者想提交补丁，请发信至 Debian X "
+#~ "邮件列表。您可以在互联网上读到更多有关此邮件列表的信息：\n"
 #~ "  http://lists.debian.org/debian-x/"
 
 #~ msgid ""
@@ -1499,140 +1429,38 @@ msgstr ""
 #~ "       apt-get install x11-common/stable\n"
 #~ "    You may need to specify downgrades for several packages."
 #~ msgstr ""
-#~ "Se non quere executar paquetes X experimentais, ten que facer dúas "
-#~ "cousas:\n"
-#~ "  1) Asegúrese de que non ten repositorios de paquetes experimentais no "
-#~ "seu\n"
-#~ "     ficheiro /etc/apt/sources.list;\n"
-#~ "  2) Dígalle a apt que desactualice X.Org a unha versión publicada "
-#~ "axeitada;\n"
-#~ "     pode facelo engadindo o nome dun conxunto de paquetes ao nome do "
-#~ "paquete\n"
-#~ "     con \"apt-get\" -- por exemplo:\n"
+#~ "如果您不再想使用这些试验版的 X 软件包，您需要做以下两件事：\n"
+#~ "  1) 确保您的 /etc/apt/sources.list 文件中不再包含任何 experimental \n"
+#~ "     软件包安装源；\n"
+#~ "  2) 告诉 apt 将 X.Org 降级到某个合适的发行版本：\n"
+#~ "     您需要将软件包所属的发行版名称附加在软件包名之后，然后通过\n"
+#~ "     “apt-get”进行操作──例如：\n"
 #~ "       apt-get install x11-common/unstable\n"
-#~ "     ou\n"
+#~ "     或者\n"
 #~ "       apt-get install x11-common/stable\n"
-#~ "     Pode ter que especificar desactualizacións para varios paquetes."
-
-#~ msgid ""
-#~ "When using operating system kernels with a particular scheduling "
-#~ "strategy, it has been widely noted that the X server's performance "
-#~ "improves when it is run at a higher process priority than the default; a "
-#~ "process's priority is known as its \"nice\" value.  They range from -20 "
-#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
-#~ "(extremely low priority).  The default nice value for ordinary processes "
-#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
-#~ "default for a machine that has duties other than interacting with the "
-#~ "console user (such as a web server)."
-#~ msgstr ""
-#~ "Cando se empregan núcleos de sistemas operativos cunha estratexia de "
-#~ "planificación determinada, tense observado en moitas partes que o "
-#~ "rendemento do servidor X mellora cando se executa cunha prioridade maior "
-#~ "á prioridade por defecto. A prioridade dun proceso coñécese coma o seu "
-#~ "nivel de amabilidade. Este nivel pode ir de -20 (prioridade moi alta, ou "
-#~ "\"non amable\" con outros procesos) a 19 (prioridade moi baixa). O valor "
-#~ "de amabilidade por defecto para os procesos normais é 0. -10 é un bo "
-#~ "valor por defecto para unha estación de traballo para un só usuario; 0 é "
-#~ "un bo valor para unha máquina que fai cousas distintas de interactuar co "
-#~ "usuario da consola (coma un servidor web)."
+#~ "     您也许需要具体指明需要降级的多个软件包。"
 
 #~ msgid ""
 #~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
 #~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
 #~ "value of the X server should be set to 0."
 #~ msgstr ""
-#~ "O que se explica enriba non é certo con Linux versión 2.6 (ou 2.5 despois "
-#~ "de que se incluira o planificador \"O(1)\"); neses sistemas, o valor de "
-#~ "amabilidade do servidor X debería ser 0."
-
-#~ msgid ""
-#~ "The glx module enables software OpenGL rendering.  The dri module enables "
-#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
-#~ "that support for DRI must also exist in the kernel, the video card, and "
-#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
-#~ "operations using DRI to work.  Otherwise, the server falls back to "
-#~ "software rendering."
-#~ msgstr ""
-#~ "O módulo glx activa o debuxado OpenGL por software. O módulo dri activa o "
-#~ "soporte no servidor X para Direct Rendering Infrastructure (DRI). Teña en "
-#~ "conta que tamén ten que existir soporte para DRI no núcleo, na tarxeta de "
-#~ "vídeo e na versión instalada das bibliotecas Mesa para que funcionen as "
-#~ "operacións 3D aceleradas por hardware mediante DRI. Se non, o servidor "
-#~ "emprega debuxado por software."
-
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "Os módulos vbe e dcc activan o soporte de VESA BIOS Extensions e Data "
-#~ "Display Channel, respectivamente. Estes módulos empréganse para obter as "
-#~ "capacidades do monitor mediante a tarxeta de vídeo. O módulo int10 é un "
-#~ "emulador de x86 en modo real que se emprega para iniciar as tarxetas VGA "
-#~ "secundarias. Teña en conta que o módulo vbe depende do módulo int10, así "
-#~ "que se quere activar vbe ten que activar tamén int10."
-
-#~ msgid ""
-#~ "The X server configuration file associates your video card with a name "
-#~ "that you may provide.  This is usually the vendor or brand name followed "
-#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
-#~ msgstr ""
-#~ "O ficheiro de configuración do servidor X asocia a súa tarxeta de vídeo "
-#~ "cun nome que pode fornecer. Adoita ser a marca seguida polo modelo; por "
-#~ "exemplo: \"3Dfx Voodoo3\" ou \"ATI Rage Fury Maxx\"."
+#~ "以上说法对于 2.6 版 Linux 内核并不正确(同样也不适用于包含了“O(1) "
+#~ "scheduler”的 2.5 版内核)。在这些系统中，X 服务器的 nice 值应该被设为 0。"
 
 #~ msgid ""
 #~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
 #~ "fully supported, should specify simply \"1\" here.  (This is not "
 #~ "guaranteed to work.)"
 #~ msgstr ""
-#~ "Os usuarios de máquinas SGI Indigo2 XL, ou de máquinas con buses non "
-#~ "soportados totalmente, deberían especificar só \"1\" aquí. (Non se "
-#~ "garante que funcione)."
-
-#~ msgid ""
-#~ "You may wish to use the \"lspci\" command to determine the bus location "
-#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
-#~ "device, and function numbers in hexadecimal, not decimal."
-#~ msgstr ""
-#~ "Se cadra teña que empregar a orde \"lspci\" para determinar a "
-#~ "localización no bus da súa tarxeta de vídeo PCI ou AGP. Teña en conta que "
-#~ "lspci dá os números de bus, dispositivo e función en hexadecimal, non en "
-#~ "decimal."
+#~ "SGI Indigo2 XL 机器或其它使用不被完全支持的通道的机器用户只需要简单的在此"
+#~ "指定“1”即可。(当然，这并不能保证可以工作。)"
 
 #~ msgid ""
 #~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
 #~ "video card should leave this entry blank."
 #~ msgstr ""
-#~ "Os usuarios de máquinas distintas de PowerPC ou SGI Indigo2 XL cunha soa "
-#~ "tarxeta de vídoe deberían deixar esta entrada en branco."
-
-#~ msgid ""
-#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
-#~ "rule sets."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera conxunto de regras XKB "
-#~ "definido. Se se desempaquetou o paquete xlibs, pode ver os conxuntos de "
-#~ "regras dispoñibles no directorio /etc/X11/xkb/rules ."
-
-#~ msgid ""
-#~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera modelo definido polo "
-#~ "conxunto de regras XKB seleccionado. Se se desempaquetou o paquete xlibs, "
-#~ "pode buscar os conxuntos de regras dispoñibles no directorio /etc/X11/xkb/"
-#~ "rules ."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr ""
-#~ "Os usuarios de teclados españois normalmente deberían introducir \"pc105"
-#~ "\"."
+#~ "非 PowerPC 或 SGI Indigo2 XL 机器且只有一张显示卡的用户应该将此栏留空。"
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
@@ -1640,21 +1468,9 @@ msgstr ""
 #~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
 #~ "for available layouts."
 #~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera disposición soportada polo "
-#~ "conxunto de regras XKB seleccionado. Se se desempaquetou o paquete xlibs, "
-#~ "consulte o directorio /etc/X11/xkb/rules para ver os conxuntos de regras "
-#~ "dispoñibles, e o directorio /etc/X11/xkb/symbols para ver as disposicións."
-
-#~ msgid ""
-#~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
-#~ "directory for the file corresponding to your selected layout for "
-#~ "available variants."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera variante soportada pola "
-#~ "disposición XKB seleccionada. Se se desempaquetou o paquete xlibs, "
-#~ "consulte o diretorio /etc/X11/xkb/symbols para consultar as variantes "
-#~ "dispoñibles no ficheiro correspondente á súa disposición seleccionada."
+#~ "高级用户可以使用任何由被选 XKB 规则集所支持键盘布局。如果 xlibs 软件包已被"
+#~ "解包，请到 /etc/X11/xkb/rules 目录下查找可用的规则集，并到 /etc/X11/xkb/"
+#~ "symbols 目录下查找可用的布局。"
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
@@ -1663,14 +1479,12 @@ msgstr ""
 #~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
 #~ "ctrl.)"
 #~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera opción compatible co "
-#~ "modelo, disposición e variante XKB seleccionados. Se se desempaquetou o "
-#~ "paquete xlibs, pode consultar os ficheiros de opcións dispoñibles no "
-#~ "directorio /etc/X11/xkb/symbols, que só definen traducións parciais de "
-#~ "teclado. (Por exemplo, /etc/X11/xkb/symbols/ctrl)."
+#~ "高级用户可以使用任何与被选 XKB 型号、布局和变种(variant)相兼容的选项。如"
+#~ "果 xlibs 软件包已被解包，请到 /etc/X11/xkb/symbols 目录下查找可用的选项文"
+#~ "件，其中仅定义了部分键盘转义。(例如：/etc/X11/xkb/symbols/ctrl。)"
 
 #~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "¿Activar os eventos de desprazamento da roda do rato?"
+#~ msgstr "启用来自鼠标滚轮的滚动事件信号吗？"
 
 #~ msgid ""
 #~ "Events from a wheeled mouse's wheel can be treated as clicks of "
@@ -1680,105 +1494,63 @@ msgstr ""
 #~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
 #~ "wheel may behave in an unexpected fashion if this option is set."
 #~ msgstr ""
-#~ "Os eventos da roda dun rato con roda pódense tratar coma clics de botóns "
-#~ "adicionais (botóns 4 e 5). Algunhas aplicacións X tratan os botóns 4 e 5 "
-#~ "coma eventos de desprazamento arriba e abaixo, o que fai que a roda do "
-#~ "rato funcione como se espera. Nembargantes, este comportamento depende da "
-#~ "aplicación, e pode non funcionar sempre. Tamén, os ratos exóticos con "
-#~ "máis de 3 botóns ademáis dunha roda poden funcionar dun xeito inesperado "
-#~ "se se activa esta opción."
+#~ "鼠标滚轮所发出的信号可以被认为是点击额外按键(第 4 和第 5 键)的行为。有些 "
+#~ "X 应用程序将第 4 和第 5 键处理成上滚和下滚事件，这将使鼠标滚轮得以正常工"
+#~ "作。这是在应用程序级别上的行为，因此并不总是能奏效。另外，如果开启此选项的"
+#~ "话，一些除滚轮外拥有超过 3 键的鼠标可能会有意外的行为。"
 
 #~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr ""
-#~ "Activar esta opción non causa problemas se o seu rato non ten unha roda."
+#~ msgstr "即使您的鼠标没有滚轮，开启此选项也是无害的。"
 
 #~ msgid ""
 #~ "If you have an NVidia video card, you may want to decline this option, as "
 #~ "these cards' support for the DDC protocol is often so poor that attempts "
 #~ "to use it can result in system lockups."
 #~ msgstr ""
-#~ "Se ten unha tarxeta de vídeo NVidia é mellor que rexeite esta opción, xa "
-#~ "que o soporte do protocolo DDC destas tarxetas adoita ser tan malo que ao "
-#~ "tentar usalo queda bloqueado o sistema."
+#~ "如果您拥有一张 NVidia 显示卡，您可能会想要拒绝此选项。原因是这种板卡对 "
+#~ "DDC 协议的支持太差，以至于如果进行探测的话可能会导致系统锁死。"
 
 #~ msgid "Is your monitor an LCD device?"
-#~ msgstr "¿O seu monitor é un dispositivo LCD?"
+#~ msgstr "您的显示器是 LCD 设备吗？"
 
 #~ msgid ""
 #~ "If your monitor is a liquid-crystal display (which is the case with "
 #~ "almost all laptops), you should set this option."
 #~ msgstr ""
-#~ "Se o seu monitor é unha pantalla de cristal líquido (o que adoita ser o "
-#~ "caso con case tódolos portátiles), debería activar esta opción."
+#~ "如果您的显示器是一台液晶显示器(笔记本型电脑基本上都是这种类型)，您应该设定"
+#~ "此选项。"
 
 #~ msgid ""
 #~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
 #~ "option."
-#~ msgstr ""
-#~ "Os usuarios de monitores tradicionais de tubo de raios catódicos (CRT) "
-#~ "non deberían activar esta opción."
-
-#~ msgid ""
-#~ "For the \"simple\" option, you need only know the monitor's physical "
-#~ "size; this will set some configuration values appropriate for a typical "
-#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
-#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
-#~ "are configured for a particular resolution.)"
-#~ msgstr ""
-#~ "Para a opción \"simple\" só precisa de saber o tamaño físico do monitor; "
-#~ "con isto hanse estabrecer algúns valores de configuración axeitados para "
-#~ "un monitor CRT do tamaño correspondente, pero pode non ser óptimo para "
-#~ "CRTs de alta calidade. (Esta opción está desactivada para os usuarios de "
-#~ "panel LCD, xa que esas pantallas están configuradas para unha resolución "
-#~ "determinada)."
+#~ msgstr "传统阴极射线管(CRT)显示器的用户则不应设定此选项。"
 
 #~ msgid ""
 #~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
 #~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
 #~ "unsupported."
 #~ msgstr ""
-#~ "Teña en conta que nalgún hardware ATI antigo, coma os chipsets Mach8 (VGA "
-#~ "Wonder), Mach32 e os primeiros Mach64 (\"GX\"), non se soportan "
-#~ "profundidades superiores a 8."
+#~ "注意在某些旧 ATI 硬件，例如 Mach8 (VGA Wonder)、Mach32 和早期的 Mach64 "
+#~ "(“GX”) 芯片上面，高于 8 位的色深是不被支持的。"
 
 #~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "¿Gravar a sección DRI por defecto no ficheiro de configuración?"
+#~ msgstr "是否将默认的 DRI 段落内容写入配置文件？"
 
 #~ msgid ""
 #~ "The DRI section of the X server configuration file determines the "
 #~ "permissions of the DRI device.  This option is for advanced users.  In "
 #~ "most cases, you should enable it."
 #~ msgstr ""
-#~ "A sección DRI do ficheiro de configuración do servidor X determina os "
-#~ "permisos do dispositivo DRI. Esta opción é para usuarios avanzados. Na "
-#~ "maioría dos casos debería activala."
+#~ "X 服务器配置文件的 DRI 段落内容决定 DRI 设备的权限。这一选项适于高级用户。"
+#~ "在绝大多数情况下您应当开启该选项。"
 
 #~ msgid ""
 #~ "Disable this option if you want to write your own \"DRI\" section into "
 #~ "the X.Org server configuration file.  You may wish to do this if you want "
 #~ "to change the access privileges to the DRI port."
 #~ msgstr ""
-#~ "Desactive esta opción se quere gravar a súa propia sección \"DRI\" no "
-#~ "ficheiro de configuración do servidor X.Org. Pode querer facelo se quere "
-#~ "cambiar os privilexios de acceso ao porto DRI."
+#~ "如果您打算将自己的“DRI”段落写入 X.org 服务器配置文件，请关闭这一选项。这样"
+#~ "做的原因可能是您想要改变 DRI 端口的访问权限。"
 
-#~ msgid "Replace symbolic link to default X server?"
-#~ msgstr "¿Substituí-la ligazón simbólica ao servidor X por defecto?"
-
-#~ msgid ""
-#~ "The symbolic link /etc/X11/X already exists; this means that a default X "
-#~ "server has already been selected.  You may be prompted by debconf to "
-#~ "select your default X server, but any change will not take effect unless "
-#~ "this symbolic link is overwritten.  If you do elect to replace the "
-#~ "symbolic link, the change in default X server will take effect the next "
-#~ "time the X server is started."
-#~ msgstr ""
-#~ "A ligazón simbólica /etc/X11/X xa existe; isto significa que xa se "
-#~ "escolleu un servidor X por defecto. Poida que debconf lle pida que "
-#~ "escolla o servidor X por defecto, pero os cambios non han ter efecto ata "
-#~ "que se sobrescriba a ligazón simbólica. Se escolle cambia-la ligazón "
-#~ "simbólica, o cambio do servidor X por defecto ha ter efecto a próxima vez "
-#~ "que se inicie."
-
-#~ msgid "-10"
-#~ msgstr "-10"
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr "v4l 模块将开启对 Video4Linux 内核界面的支持。"

@@ -1,15 +1,15 @@
-# debconf templates for xfree86 package
+# debconf templates for xorg-x11 package
 # Danish translation
 #
-# $Id: da.po 1763M 2004-10-11 07:13:16Z (local) $
+# $Id: da.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
-# Branden Robinson, 2000--2004
+# Branden Robinson, 2000-2004
 # Dennis Haney, 2002
-# Morten Brix Pedersen <morten@wtf.dk>, 2003
-# Claus Hindsgaul <claus_h@image.dk>, 2004
+# Morten Brix Pedersen <morten@wtf.dk>, 2003.
+# Claus Hindsgaul <claus_h@image.dk>, 2004, 2005.
 #
-# This file is distributed under the same license as the xfree86 package.
+# This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
 #    Translators, if you are not familiar with the PO format, gettext
@@ -26,16 +26,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfree86_4.3.0-3_da\n"
+"Project-Id-Version: xorg-x11 6.8.2.dfsg.1-5+SVN\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2004-09-29 21:45+0200\n"
+"PO-Revision-Date: 2005-08-29 17:06+0200\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Type: select
@@ -240,25 +240,22 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
-#, fuzzy
 msgid ""
 "Disable this option if you want to write your own \"Files\" section into the "
 "X.Org server configuration file.  You may wish to do this if you need to "
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
-"Slå dette fra hvis du ønsker at skrive din egen \"files\"-afsnit ind i "
-"XFree86-serverens opsætningsfil. Hvis du ønsker at fjerne henvisningen til "
-"en lokal skrifttypeserver, tilføje en henvisning til en anden "
-"skrifttypeserver eller ændre stien til de lokale skrifttyper, kan du slå "
-"dette fra."
+"Slå dette fra hvis du ønsker at skrive din egen \"Files\"-afsnit ind i X.org-"
+"serverens opsætningsfil. Hvis du ønsker at fjerne henvisningen til en lokal "
+"skrifttypeserver, tilføje en henvisning til en anden skrifttypeserver eller "
+"ændre stien til de lokale skrifttyper, kan du slå dette fra."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr "Vælg hvilke XFree86-servermoduler, der skal indlæses som standard."
+msgstr "Vælg hvilke X.org-servermoduler, der skal indlæses som standard."
 
 #. Type: multiselect
 #. Description
@@ -334,21 +331,16 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-msgstr ""
-"Modulerne bitmap, freetype, speedo, type1 og xtt er alle skrifttype-"
-"optegnere."
+msgstr "Modulerne bitmap, freetype og type1 er alle skrifttype-optegnere."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
-msgstr ""
-"Se XFree86-dokumentationen for yderligere oplysninger om disse moduler."
+msgstr "Se X.org-dokumentationen for yderligere oplysninger om disse moduler."
 
 #. Type: multiselect
 #. Description
@@ -367,14 +359,12 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Flere mulige XFree86-serverdrivere til dit udstyr."
+msgstr "Flere mulige X.org-serverdrivere til dit udstyr."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different drivers are required "
 "to support the various devices.  It is thus not possible to automatically "
@@ -383,10 +373,10 @@ msgid ""
 "and monitor to which the computer displays when it first boots."
 msgstr ""
 "Der er fundet flere grafikkort og der kræves forskellige drivere for at "
-"understøtte de forskellige kort. Det er derfor ikke muligt at vælge én "
-"standarddriver. Sæt det kort op, som vil være dit primære (\"primary head"
-"\"). Det er normalt det kort og den skærm, som computeren bruger under "
-"opstarten."
+"understøtte de forskellige kort. Det er derfor ikke muligt automatisk at "
+"vælge en X.org-serverdriver. Sæt det kort op, som vil være dit primære "
+"(\"primary head\"). Det er normalt det kort og den skærm, som computeren "
+"bruger under opstarten."
 
 #. Type: note
 #. Description
@@ -515,15 +505,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"For brugere af flerskærm-opsætninger vil dette kun sætte en af skærmene op. "
+"For brugere af flerskærmsopsætninger vil dette kun sætte en af skærmene op. "
 "Yderligere opsætning skal laves manuelt i X-serverens opsætningsfil /etc/X11/"
-"XF86Config-4."
+"xorg.conf."
 
 #. Type: string
 #. Description
@@ -609,13 +598,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Brugere af de fleste tastaturer bør vælge \"xfree86\". Brugere af Suns Type "
-"4 og Type 5 tastaturer bør vælge \"sun\"."
+"Brugere af de fleste tastaturer bør vælge \"xorg\". Brugere af Suns Type 4 "
+"og Type 5 tastaturer bør vælge \"sun\"."
 
 #. Type: string
 #. Description
@@ -633,10 +621,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr ""
-"Hvis du ikke ved hvilket regelsæt der skal benyttes, så vælg \"xfree86\"."
+msgstr "Hvis du ikke ved hvilket regelsæt der skal benyttes, så vælg \"xorg\"."
 
 #. Type: string
 #. Description
@@ -663,7 +649,7 @@ msgid ""
 "keys, historically common in the United States.  It does not have the \"logo"
 "\" or \"menu\" keys."
 msgstr ""
-"\"pc101\"-tastaturet er et normalt IBM/AT-tastatatur med 101 taster, og er "
+"\"pc101\"-tastaturet er et normalt IBM/AT-tastatur med 101 taster, og er "
 "hyppigt forekommende i USA. Det har hverken tasterne \"menu\" eller \"logo\"."
 
 #. Type: string
@@ -710,9 +696,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Alle ovenstående modeller benytter \"xfree86\"-regelsættet."
+msgstr "Alle ovenstående modeller benytter regelsættet \"xorg\"."
 
 #. Type: string
 #. Description
@@ -723,7 +708,7 @@ msgid ""
 "in use."
 msgstr ""
 "\"type4\" og \"type5\" er til hhv. Sun's Type 4 og Type 5-tastaturer. Disse "
-"modeller kan kun bruges hvis XKB regelsættet \"sun\" er i brug."
+"modeller kan kun bruges hvis XKB-regelsættet \"sun\" er i brug."
 
 #. Type: string
 #. Description
@@ -799,7 +784,7 @@ msgid ""
 msgstr ""
 "Brugere med danske tastaturer bør vælge \"dk\". Brugere af tastaturer fra "
 "andre lande, bør vælge det efter ISO 3166-landekoderne. F.eks. bruger "
-"Frankrig bruger \"fr\" og Tyskland \"de\"."
+"Frankrig \"fr\" og Tyskland \"de\"."
 
 #. Type: string
 #. Description
@@ -1200,9 +1185,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
-#, fuzzy
 msgid "Write monitor sync ranges to configuration file?"
-msgstr "Skriv standard \"DRI\"-afsnit til opsætningsfilen?"
+msgstr "Skriv skærmens synkroniseringsområder til opsætningsfilen?"
 
 #. Type: boolean
 #. Description
@@ -1212,6 +1196,10 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
+"Skærmens synkroniseringsområder bør i de fleste tilfælde bestemmes "
+"automatisk af X-serveren, men den har nogle gange brug for lidt hjælp. Denne "
+"indstilling er for avancerede brugere, og bør normalt efterlades i "
+"standardindstillingen."
 
 #. Type: string
 #. Description
@@ -1382,180 +1370,6 @@ msgid ""
 "Decline it if you want to keep your current layout."
 msgstr ""
 
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "Slå musehjulet til?"
-
-#~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
-#~ msgstr ""
-#~ "Begivenheder fra en mus' hjul kan håndteres som klik af yderligere "
-#~ "knapper (knap 4 og 5). Nogle X-programmer håndterer knap 4 og 5 som rul-"
-#~ "op og rul-ned og får dermed hjulet til at virke som forventet. Dette "
-#~ "afhænger af programmet og virker ikke altid. Desuden kan en mus med mere "
-#~ "end 3 knapper gøre at hjulet opfører sig uventet hvis dette er aktiveret."
-
-#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr "Du kan roligt slå dette til selvom musen intet hjul har."
-
-#~ msgid ""
-#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
-#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
-#~ "value of the X server should be set to 0."
-#~ msgstr ""
-#~ "Ovenstående gælder ikke version 2.6 af Linux kernen (heller ikke i 2.5-"
-#~ "serien efter at \"O(1)-planlæggeren\" blev inkluderet); på sådanne "
-#~ "systemer, bør X­-serverens nice værdi sættes til 0."
-
-#~ msgid ""
-#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
-#~ "fully supported, should specify simply \"1\" here.  (This is not "
-#~ "guaranteed to work.)"
-#~ msgstr ""
-#~ "Brugere af SGI Indigo2 XL-maskiner eller maskiner med andre busser, der "
-#~ "endnu ikke understøttes fuldt ud, skal blot skive \"1\" her. (Det er "
-#~ "ingen garanti for at det vil virke.)"
-
-#~ msgid ""
-#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
-#~ "video card should leave this entry blank."
-#~ msgstr ""
-#~ "Brugere af andre maskiner end PowerPC og SGI Indigo2 XL'er med kun ét "
-#~ "grafikkort skal ikke skrive noget her."
-
-#~ msgid "Is your monitor an LCD device?"
-#~ msgstr "Er din skærm en LCD-skærm?"
-
-#~ msgid ""
-#~ "If your monitor is a liquid-crystal display (which is the case with "
-#~ "almost all laptops), you should set this option."
-#~ msgstr ""
-#~ "Hvis din skærm er en LCD-skærm (som det er tilfældet for de fleste "
-#~ "bærbare og fladskærme), bør du vælge dette."
-
-#~ msgid ""
-#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
-#~ "option."
-#~ msgstr "Brugere af normale skærme med billedrør bør ikke vælge dette."
-
-#~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "Skriv standard \"DRI\"-afsnit til opsætningsfilen?"
-
-#~ msgid ""
-#~ "The DRI section of the X server configuration file determines the "
-#~ "permissions of the DRI device.  This option is for advanced users.  In "
-#~ "most cases, you should enable it."
-#~ msgstr ""
-#~ "DRI-afsnittet i X-serverens opsætningsfil bestemmer rettighederne til DRI-"
-#~ "enheden. Denne indstilling er for avancerede brugere. I de fleste "
-#~ "tilfælde bør du slå det til."
-
-#, fuzzy
-#~ msgid ""
-#~ "Disable this option if you want to write your own \"DRI\" section into "
-#~ "the X.Org server configuration file.  You may wish to do this if you want "
-#~ "to change the access privileges to the DRI port."
-#~ msgstr ""
-#~ "Slå dette fra, hvis du ønsker at lave dit eget \"DRI\"-afsnit i "
-#~ "opsætningsfilen. Hvis du f.eks. ønsker at ændre adgangsrettighedernetil "
-#~ "DRI-porten."
-
-#~ msgid ""
-#~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
-#~ msgstr ""
-#~ "Avancerede brugere kan benytte enhver tastaturudlægning, der understøttes "
-#~ "af det valgte XKB-regelsæt. Hvis pakken xlibs er blevet pakket ud, kan de "
-#~ "tilgængelige tastaturudlægninger ses i mappen /etc/X11/xkb/rules."
-
-#~ msgid ""
-#~ "Advanced users can use any options compatible with the selected XKB "
-#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
-#~ msgstr ""
-#~ "Avancerede brugere kan benytte alle de indstillinger, der er kompatible "
-#~ "med den valgte XKB-model, tastaturudlægning og -variant. Hvis pakken "
-#~ "xlibs er blevet pakket ud, kan du se de tilgængelige indstillingsfiler, "
-#~ "der kun definerer delvise tastaturoversættelser i mappen /etc/X11/xkb/"
-#~ "symbols. (F.eks. filen /etc/X11/xkb/symbols/ctrl.)"
-
-#~ msgid ""
-#~ "If you have an NVidia video card, you may want to decline this option, as "
-#~ "these cards' support for the DDC protocol is often so poor that attempts "
-#~ "to use it can result in system lockups."
-#~ msgstr ""
-#~ "Hvis du har et NVidia grafikkort, så bør du nok sige nej til denne "
-#~ "mulighed, da disse korts understøttelse af DDC-protokollen ofte er så "
-#~ "ringe at forsøg på at benytte den, kan få systemet til at fryse."
-
-#~ msgid ""
-#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
-#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
-#~ "unsupported."
-#~ msgstr ""
-#~ "Bemærk at visse ældre ATI-grafikkort, såsom Mach8 (VGA Wonder), Mach32, "
-#~ "og tidlige Mach64 (\"GX\")-chipsæt, ikke understøtter dybder højere end 8."
-
-#~ msgid "experimental version of XFree86 packages"
-#~ msgstr "eksperimentel version af XFree86-pakkerne"
-
-#~ msgid ""
-#~ "You are using an experimental version of XFree86 packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Du bruger en eksperimentel version af Debians XFree86-pakker. Du bedes "
-#~ "undlade at rapportere fejl imod Debian fejlrapporteringssystemet, når du "
-#~ "bruger denne version af pakkerne, da de ikke er blevet udgivet til Debian-"
-#~ "distributionen endnu."
-
-#~ msgid ""
-#~ "If you experience problems with these packages or would like to submit "
-#~ "patches, please send mail to the Debian X mailing list.  You can read "
-#~ "more about this mailing list on the World Wide Web:\n"
-#~ "  http://lists.debian.org/debian-x/"
-#~ msgstr ""
-#~ "Hvis du oplever problemer med disse pakker eller vil tilføje "
-#~ "programlapper, så send et brev til Debians X-postliste. Du kan læse mere "
-#~ "om denne postliste på WWW:\n"
-#~ "  http://lists.debian.org/debian-x/"
-
-#, fuzzy
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
-#~ "version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install xfree86-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install xfree86-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Hvis du ikke vil køre eksperimentale X-pakker, skal du gøre to ting:\n"
-#~ "  1) Sørg for at du ikke har eksperimentelle pakkearkiver i filen\n"
-#~ "     /etc/apt/sources.list.\n"
-#~ "  2) Fortæl apt at den skal nedgradere XFree86 til en fornuftig udgivet\n"
-#~ "     version. Dette kan du gøre ved at tilføje pakke-placeringen til\n"
-#~ "     pakkenavnet med \"apt-get\" -- f.eks.:\n"
-#~ "        apt-get install xorg-common/unstable\n"
-#~ "     eller\n"
-#~ "        apt-get install xorg-common/stable\n"
-#~ "     Du skal måske angive nedgraderinger for adskillige pakker."
-
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "Migrér XKB-opsætningsmappen?"
 
@@ -1662,7 +1476,332 @@ msgstr ""
 #~ "take effect the next time the daemon is restarted."
 #~ msgstr ""
 #~ "X-logindhåndteringsdæmonen (xdm) stoppes typisk under opgradering eller "
-#~ "fjernelse af pakken, men det ser ud til at der allerede kører mindst én X-"
-#~ "session. Hvis xdm bliver stoppet nu, vil alle de X-sessioner, den "
+#~ "afinstallation af pakken, men det ser ud til at der allerede kører mindst "
+#~ "én X-session. Hvis xdm bliver stoppet nu, vil alle de X-sessioner, den "
 #~ "håndterer, blive afbrudt. Ellers kan du lade xdm køre, så den nye version "
 #~ "først bliver taget i brug næste gang dæmonen bliver genstartet."
+
+#~ msgid "experimental version of X.Org packages"
+#~ msgstr "eksperimentel version af X.Org-pakkerne"
+
+#~ msgid ""
+#~ "You are using an experimental version of X.Org packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Du bruger en eksperimentel version af Debians X.Org-pakker. Du bedes "
+#~ "undlade at rapportere fejl i Debian fejlrapporteringssystemet, når du "
+#~ "bruger denne version af pakkerne, da de endnu ikke er blevet udgivet til "
+#~ "Debian-distributionen."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Hvis du oplever problemer med disse pakker eller vil tilføje "
+#~ "programlapper, så send et brev til Debians X-postliste. Du kan læse mere "
+#~ "om denne postliste på WWW:\n"
+#~ "  http://lists.debian.org/debian-x/"
+
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Hvis du ikke vil køre eksperimentale X-pakker, skal du gøre to ting:\n"
+#~ "  1) Sørg for at du ikke har eksperimentelle pakkearkiver i filen\n"
+#~ "     /etc/apt/sources.list.\n"
+#~ "  2) Fortæl apt at den skal nedgradere X.Org til en fornuftig udgivet\n"
+#~ "     version. Dette kan du gøre ved at tilføje pakke-placeringen til\n"
+#~ "     pakkenavnet med \"apt-get\" -- f.eks.:\n"
+#~ "        apt-get install x11-common/unstable\n"
+#~ "     eller\n"
+#~ "        apt-get install x11-common/stable\n"
+#~ "     Du skal måske angive nedgraderinger for adskillige pakker."
+
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  They range from -20 "
+#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
+#~ "(extremely low priority).  The default nice value for ordinary processes "
+#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
+#~ "default for a machine that has duties other than interacting with the "
+#~ "console user (such as a web server)."
+#~ msgstr ""
+#~ "Når man bruger operativsystem kerner med en bestemt prioriterings-"
+#~ "strategi, forøges X-serverens ydelse tydeligt hvis den kører med en "
+#~ "højere prioritet end normalt. En proces's prioritet er kendt som dens "
+#~ "\"nice\" værdi. Den går fra -20 (ekstremt høj prioritet) til 19 (ekstremt "
+#~ "lav prioritet). Den normale værdi er 0. -10 er et godt valg for "
+#~ "enkeltbruger-arbejdsstationer, 0 er godt for maskiner der har andet at "
+#~ "lave (f.eks. at køre en webserver)."
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Ovenstående gælder ikke version 2.6 af Linux kernen (heller ikke i 2.5-"
+#~ "serien efter at \"O(1)-planlæggeren\" blev inkluderet); på sådanne "
+#~ "systemer, bør X­-serverens nice værdi sættes til 0."
+
+#~ msgid ""
+#~ "The glx module enables software OpenGL rendering.  The dri module enables "
+#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+#~ "that support for DRI must also exist in the kernel, the video card, and "
+#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
+#~ "operations using DRI to work.  Otherwise, the server falls back to "
+#~ "software rendering."
+#~ msgstr ""
+#~ "Modulet glx muliggør programmeret OpenGL-optegning. dri-modulet slår "
+#~ "understøttelse af \"Direct Rendering Infrastructure\" (DRI) til. Bemærk "
+#~ "at DRI både skal understøttes i kernen, grafikkort og den installerede "
+#~ "version af Mesa-bibliotekerne for at få maskinaccelererede 3D-operationer "
+#~ "til at virke. Ellers vil serveren falde tilbage på programmeret optegning."
+
+#~ msgid ""
+#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+#~ "Display Channel, respectively.  These modules are used to query monitor "
+#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
+#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
+#~ "int10 as well."
+#~ msgstr ""
+#~ "Modulerne vbe og ddc slår understøttelse af henholdsvis VESA BIOS-"
+#~ "udvidelser og Data Display Channel til. Disse moduler bruges til at "
+#~ "spørge skærmen hvad den kan via grafikkortet. int10-modulet er en "
+#~ "realtids x86-emulator til at genstarte sekundære VGA-kort. Bemærk at vbe-"
+#~ "modulet afhænger af int10-modulet, så hvis du vil aktivere vbe, skal du "
+#~ "også aktivere int10."
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
+#~ msgstr ""
+#~ "X-serverens opsætningsfil associerer dit grafikkort med det navn,du "
+#~ "angiver. Du kan f.eks. skrive grafikkorts producent efterfulgt af "
+#~ "modelnavnet. f.eks. \"3Dfx Voodoo3\" eller \"ATI Rage Fury Maxx\"."
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "Brugere af SGI Indigo2 XL-maskiner eller maskiner med andre busser, der "
+#~ "endnu ikke understøttes fuldt ud, skal blot skive \"1\" her. (Det er "
+#~ "ingen garanti for at det vil virke.)"
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
+#~ "device, and function numbers in hexadecimal, not decimal."
+#~ msgstr ""
+#~ "Du kan bruge programmet \"lspci\" til at bestemme tallene for dit PCI- "
+#~ "eller AGP-kort. Husk at lspci rapporterer tallene i hexadecimal frem for "
+#~ "almindelige decimaltal."
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "Brugere af andre maskiner end PowerPC og SGI Indigo2 XL'er med kun ét "
+#~ "grafikkort skal ikke skrive noget her."
+
+#~ msgid ""
+#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
+#~ msgstr ""
+#~ "Avancerede brugere kan vælge ethvert defineret regelsæt. Hvis pakken "
+#~ "xlibs er blevet pakket ud, kan du se de tilgængelige regelsæt i mappen /"
+#~ "etc/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Advanced users can use any model defined by the selected XKB rule set.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets."
+#~ msgstr ""
+#~ "Avancerede brugere kan benytte enhver model, der er defineret i det "
+#~ "valgte XKB-regelsæt. Hvis pakken xlibs er blevet pakket ud, kan de "
+#~ "tilgængelige regelsæt ses i mappen /etc/X11/xkb/rules."
+
+#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
+#~ msgstr "Brugere af danske tastaturer bør normalt vælge \"pc105\"."
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "Avancerede brugere kan benytte enhver tastaturudlægning, der understøttes "
+#~ "af det valgte XKB-regelsæt. Hvis pakken xlibs er blevet pakket ud, kan de "
+#~ "tilgængelige tastaturudlægninger ses i mappen /etc/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Advanced users can use any variant supported by the selected XKB layout.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
+#~ "available variants."
+#~ msgstr ""
+#~ "Avancerede brugere kan benytte enhver variant, der understøttes af den "
+#~ "valgte XKB-tastaturudlægning. Hvis pakken xlibs er blevet pakket ud, kan "
+#~ "de tilgængelige varianter ses i mappen /etc/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "Avancerede brugere kan benytte alle de indstillinger, der er kompatible "
+#~ "med den valgte XKB-model, tastaturudlægning og -variant. Hvis pakken "
+#~ "xlibs er blevet pakket ud, kan du se de tilgængelige indstillingsfiler, "
+#~ "der kun definerer delvise tastaturoversættelser i mappen /etc/X11/xkb/"
+#~ "symbols. (F.eks. filen /etc/X11/xkb/symbols/ctrl.)"
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Slå musehjulet til?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Begivenheder fra en mus' hjul kan håndteres som klik af yderligere "
+#~ "knapper (knap 4 og 5). Nogle X-programmer håndterer knap 4 og 5 som rul-"
+#~ "op og rul-ned og får dermed hjulet til at virke som forventet. Dette "
+#~ "afhænger af programmet og virker ikke altid. Desuden kan en mus med mere "
+#~ "end 3 knapper gøre at hjulet opfører sig uventet hvis dette er aktiveret."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr "Du kan roligt slå dette til selvom musen intet hjul har."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Hvis du har et NVidia grafikkort, så bør du nok sige nej til denne "
+#~ "mulighed, da disse korts understøttelse af DDC-protokollen ofte er så "
+#~ "ringe at forsøg på at benytte den, kan få systemet til at fryse."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Er din skærm en LCD-skærm?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Hvis din skærm er en LCD-skærm (som det er tilfældet for de fleste "
+#~ "bærbare og fladskærme), bør du vælge dette."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr "Brugere af normale skærme med billedrør bør ikke vælge dette."
+
+#~ msgid ""
+#~ "For the \"simple\" option, you need only know the monitor's physical "
+#~ "size; this will set some configuration values appropriate for a typical "
+#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
+#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
+#~ "are configured for a particular resolution.)"
+#~ msgstr ""
+#~ "\"simpel\" kræver kun at du kender din skærms fysiske størrelse. Dette "
+#~ "vil vælge nogle indstillinger, der gælder for typiske skærme af denne "
+#~ "størrelse, men muligvis er dårlige valg for kvalitetsskærme. (Denne "
+#~ "valgmulighed er slået fra for LCD-brugere, da disse skærme har en fast "
+#~ "opløsning.)"
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Bemærk at visse ældre ATI-grafikkort, såsom Mach8 (VGA Wonder), Mach32, "
+#~ "og tidlige Mach64 (\"GX\")-chipsæt, ikke understøtter dybder højere end 8."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Skriv standard \"DRI\"-afsnit til opsætningsfilen?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "DRI-afsnittet i X-serverens opsætningsfil bestemmer rettighederne til DRI-"
+#~ "enheden. Denne indstilling er for avancerede brugere. I de fleste "
+#~ "tilfælde bør du slå det til."
+
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Slå dette fra, hvis du ønsker at skrive dit eget \"DRI\"-afsnit i X-"
+#~ "opsætningsfilen. Hvis du f.eks. ønsker at ændre adgangsrettighedernetil "
+#~ "DRI-porten."
+
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr "Modulet v4l giver understøttelse af kernegrænsefladen Video4Linux."
+
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "eksperimentel version af XFree86-pakkerne"
+
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Du bruger en eksperimentel version af Debians XFree86-pakker. Du bedes "
+#~ "undlade at rapportere fejl imod Debian fejlrapporteringssystemet, når du "
+#~ "bruger denne version af pakkerne, da de ikke er blevet udgivet til Debian-"
+#~ "distributionen endnu."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Hvis du ikke vil køre eksperimentale X-pakker, skal du gøre to ting:\n"
+#~ "  1) Sørg for at du ikke har eksperimentelle pakkearkiver i filen\n"
+#~ "     /etc/apt/sources.list.\n"
+#~ "  2) Fortæl apt at den skal nedgradere XFree86 til en fornuftig udgivet\n"
+#~ "     version. Dette kan du gøre ved at tilføje pakke-placeringen til\n"
+#~ "     pakkenavnet med \"apt-get\" -- f.eks.:\n"
+#~ "        apt-get install xorg-common/unstable\n"
+#~ "     eller\n"
+#~ "        apt-get install xorg-common/stable\n"
+#~ "     Du skal måske angive nedgraderinger for adskillige pakker."

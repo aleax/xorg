@@ -1,15 +1,15 @@
-# debconf templates for xfree86 package
+# debconf templates for xorg-x11 package
 # Spanish translation
 #
-# $Id: es.po 1763M 2004-10-11 07:13:17Z (local) $
+# $Id: es.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
-# Branden Robinson 2000--2004
+# Branden Robinson 2000-2004
 # Carlos Valdivia Yagüe, 2001
-# David Martínez Moreno, 2001, 2002
 # Javier Fernandez-Sanguino Peña, 2003
+# David Martínez Moreno, 2001, 2002, 2005
 #
-# This file is distributed under the same license as the xfree86 package.
+# This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
 #    Translators, if you are not familiar with the PO format, gettext
@@ -26,11 +26,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfree86 4.2.1-6\n"
+"Project-Id-Version: xorg-x11 6.8.2.dfsg.1-4\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2003-03-24 20:21+0100\n"
-"Last-Translator: Javier Fernandez-Sanguino Peña <jfs@debian.org>\n"
+"PO-Revision-Date: 2005-07-28 18:21+0100\n"
+"Last-Translator: David Martínez Moreno <ender@debian.org>\n"
 "Language-Team: ES <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
@@ -47,7 +47,7 @@ msgstr "Sólo root, Sólo usuarios de consola, Cualquiera"
 #: ../x11-common.templates:5
 msgid "Select what type of user has permission to start the X server."
 msgstr ""
-"Seleccione qué tipo de usuarios tendrá permiso para iniciar el servidor X."
+"Seleccione qué tipo de usuarios tendrán permiso para iniciar el servidor X."
 
 #. Type: select
 #. Description
@@ -72,7 +72,9 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:20
 msgid "Enter the desired nice value for the X server to use."
-msgstr "Introduzca el valor deseado de «nice» que desea que use el servidor X."
+msgstr ""
+"Introduzca el valor deseado de «nice» (prioridad) que desea que use el "
+"servidor X."
 
 #. Type: string
 #. Description
@@ -101,15 +103,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid ""
 "Values outside the range of -10 to 0 are not recommended; too negative, and "
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
 "No se recomiendan los valores fuera del rango de -10 a 0: demasiado bajo, y "
-"el servidor X interferirá con tareas importantes; demasiado alto, y el "
-"servidor X se mostrará perezoso y aletargado."
+"el servidor X interferirá con tareas importantes del sistema; demasiado "
+"alto, y el servidor X se mostrará perezoso y aletargado."
 
 #. Type: note
 #. Description
@@ -250,7 +251,6 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
-#, fuzzy
 msgid ""
 "Disable this option if you want to write your own \"Files\" section into the "
 "X.Org server configuration file.  You may wish to do this if you need to "
@@ -258,7 +258,7 @@ msgid ""
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
 "Desactive esta opción si quiere escribir su propia sección «Files» en el "
-"fichero de configuración del servidor XFree86. Puede desear hacer esto si "
+"fichero de configuración del servidor X.Org. Puede desear hacer esto si "
 "necesita quitar la referencia al servidor de fuentes locales, añadir una "
 "referencia a un servidor de fuentes diferente, o recolocar el orden por "
 "defecto de las rutas de fuentes locales."
@@ -266,16 +266,13 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "Select the X.Org server modules that should be loaded by default."
 msgstr ""
-"Seleccione los módulos del servidor XFree86 que deberían cargarse por "
-"defecto."
+"Seleccione los módulos del servidor X.Org que deberían cargarse por defecto."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "It is possible to customize (or completely omit) the list of modules that "
 "the X server loads by default.  This option is for advanced users.  In most "
@@ -283,8 +280,7 @@ msgid ""
 msgstr ""
 "Es posible personalizar (u omitir completamente) la lista de módulos que el "
 "servidor X carga por omisión. Esta opción es para usuarios avanzados. En la "
-"gran mayoría de los casos, deberían activarse todos estos módulos excepto "
-"xtt."
+"gran mayoría de los casos, deberían activarse todos estos módulos."
 
 #. Type: multiselect
 #. Description
@@ -355,45 +351,42 @@ msgstr ""
 #: ../xserver-xorg.templates:66
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
 msgstr ""
+"Los módulos bitmap, freetype, y type1 son todos ellos rasterizadores de "
+"tipos de letra."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
 msgstr ""
 "Para más información de estos módulos, consulte por favor la documentación "
-"de XFree86."
+"de X.Org."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "If you unsure what to do, leave all of the modules enabled.  Advanced users "
 "may wish to disable all modules -- in which case no Modules section will be "
 "written to the X server configuration file -- and add their own Modules "
 "section to the file manually."
 msgstr ""
-"Si no está seguro de qué hacer, deje todos los módulos activos salvo por "
-"xtt. Los usuarios avanzados pueden deshabilitar todos los módulos (en este "
-"caso no se escribirá una sección Modules en el fichero de configuración del "
-"servidor de X) y pueden añadir su propia sección de Modulos al fichero "
-"manualmente."
+"Si no está seguro de qué hacer, deje todos los módulos activos. Los usuarios "
+"avanzados pueden querer deshabilitar todos los módulos (en cuyo caso no se "
+"escribirá una sección Modules en el fichero de configuración del servidor de "
+"X) y pueden añadir su propia sección de Modulos al fichero manualmente."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Hay varios controladores para el servidor XFree86 para su hardware."
+msgstr "Hay varios controladores del servidor X.Org para su hardware."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different drivers are required "
 "to support the various devices.  It is thus not possible to automatically "
@@ -403,8 +396,8 @@ msgid ""
 msgstr ""
 "Se han detectado varias tarjetas de vídeo, y se precisan distintos "
 "controladores para soportar los distintos dispositivos. Por ello, no es "
-"posible seleccionar automáticamente un controlador para el servidor X por "
-"defecto. Por favor, configure el dispositivo que haga de su «pantalla "
+"posible seleccionar automáticamente un controlador predeterminado para el "
+"servidor X.Org. Por favor, configure el dispositivo que haga de su «pantalla "
 "primaria»; por lo general es la tarjeta de vídeo y monitor en los que el "
 "ordenador muestra información nada más arrancar."
 
@@ -510,7 +503,6 @@ msgstr "Por favor, introduzca el identificador del bus de la tarjeta de vídeo."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -524,7 +516,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Examples:"
-msgstr ""
+msgstr "Ejemplos:"
 
 #. Type: string
 #. Description
@@ -534,11 +526,13 @@ msgid ""
 " PCI:0:16:0\n"
 " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
 msgstr ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -547,7 +541,7 @@ msgstr ""
 "Para usuarios de configuraciones multitarjeta, esta opción sólamente "
 "configurará una de las tarjetas. La configuración adicional tendrá que "
 "hacerse manualmente en el fichero de configuración del servidor X, /etc/X11/"
-"XF86Config-4."
+"xorg.conf."
 
 #. Type: string
 #. Description
@@ -583,13 +577,16 @@ msgstr "Por favor, introduzca un identificador de bus con el formato adecuado."
 #: ../xserver-xorg.templates:169
 msgid "The BusID entered was not in a recognized format."
 msgstr ""
+"El identificador de bus que se ha introducido no tiene un formato "
+"reconocible."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "Enter the amount of memory (in kB) to be used by your video card."
 msgstr ""
-"Introduzca la cantidad de memoria (en kB) usada por su tarjeta de vídeo."
+"Introduzca la cantidad de memoria (en kB) que desea que use su tarjeta de "
+"vídeo."
 
 #. Type: string
 #. Description
@@ -637,13 +634,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Los usuarios de la gran mayoría de los teclados deberían escoger «xfree86». "
-"Los usuarios de teclados de Sun de tipo 4 y tipo 5, sin embargo, deberían "
+"Los usuarios de la gran mayoría de los teclados deberían escoger «xorg». Los "
+"usuarios de teclados de Sun de tipo 4 y tipo 5, sin embargo, deberían "
 "escoger «sun»."
 
 #. Type: string
@@ -662,9 +658,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr "Si no sabe qué conjunto de reglas escoger, escoja «xfree86»."
+msgstr "Si no sabe qué conjunto de reglas escoger, escoja «xorg»."
 
 #. Type: string
 #. Description
@@ -717,6 +712,11 @@ msgid ""
 "symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
 "\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
 msgstr ""
+"Los modelos «pc102» y «pc105» son versiones de los teclados pc101 y pc104, "
+"respectivamente, y que pueden encontrarse comúnmente en Europa.Si su teclado "
+"tiene una tecla con los símbolos de mayor y menor («<>»), casi con toda "
+"seguridad lo que tiene es un modelo «pc102» o «pc105»; si escoge «pc101» o "
+"«pc104», su tecla «<>» podría no funcionar."
 
 #. Type: string
 #. Description
@@ -735,9 +735,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Todos los modelos anteriores usan el conjunto de reglas «xfree86»."
+msgstr "Todos los modelos anteriores usan el conjunto de reglas «xorg»."
 
 #. Type: string
 #. Description
@@ -1255,9 +1254,10 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
-#, fuzzy
 msgid "Write monitor sync ranges to configuration file?"
-msgstr "¿Escribir sección DRI predefinida en el fichero de configuración?"
+msgstr ""
+"¿Escribir los rangos de sincronismo del monitor en el fichero de "
+"configuración?"
 
 #. Type: boolean
 #. Description
@@ -1267,6 +1267,10 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
+"El servidor X debería autodetectar los rangos de sincronismo de su monitor "
+"en la mayoría de los casos, pero a veces necesita algo de ayuda. Esta opción "
+"es para usuarios avanzados, y como tal, normalmente debería dejarse con el "
+"valor predeterminado."
 
 #. Type: string
 #. Description
@@ -1445,174 +1449,72 @@ msgid ""
 "Decline it if you want to keep your current layout."
 msgstr ""
 
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "¿Activar eventos de desplazamiento con la rueda del ratón?"
+#~ msgid "Migrate XKB configuration directory?"
+#~ msgstr "¿Quiere migrar el directorio de configuración de XKB?"
 
 #~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ "The directory where configuration information (including keyboard data) "
+#~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
+#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
-#~ "Los eventos de la rueda de un ratón pueden ser tratados como pulsaciones "
-#~ "de botones extra (botones 4 y 5). Algunos programas de X tratan los "
-#~ "botones 4 y 5 como eventos de desplazamiento arriba y abajo, haciendo que "
-#~ "la rueda funcione como se espera. Sin embargo, esto depende del programa, "
-#~ "y puede que no siempre funcione. Además, los ratones exóticos con más de "
-#~ "tres botones además de la rueda pueden comportarse de manera extraña con "
-#~ "esta opción."
-
-#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr ""
-#~ "Activar esta opción es inocuo si su ratón no tiene rueda de "
-#~ "desplazamiento."
-
-#, fuzzy
-#~ msgid ""
-#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
-#~ "video card should leave this entry blank."
-#~ msgstr ""
-#~ "Los usuarios de máquinas que no sean PowerPC y que tengan una sola "
-#~ "tarjeta de vídeo deberían dejar este campo en blanco."
-
-#~ msgid "Is your monitor an LCD device?"
-#~ msgstr "¿Es su monitor un dispositivo LCD?"
+#~ "El directorio donde se almacena la información de configuración "
+#~ "(incluidos los datos de teclado) de la extensión KEYBOARD de X (XKB) ha "
+#~ "cambiado de /usr/X11R6/lib/X11/xkb a /etc/X11/xkb."
 
 #~ msgid ""
-#~ "If your monitor is a liquid-crystal display (which is the case with "
-#~ "almost all laptops), you should set this option."
+#~ "Your system is using the old location, and some programs, such as those "
+#~ "from old or unofficial Debian packages, may continue to install files "
+#~ "there."
 #~ msgstr ""
-#~ "Si su monitor es una pantalla de cristal líquido (que es el caso de "
-#~ "prácticamente todos los portátiles), debería activar esta opción."
+#~ "Su sistema está usando el lugar antiguo, y algunos programas, incluidos "
+#~ "en paquetes debian antiguos o no oficiales, pueden seguir instalando "
+#~ "ficheros en este sitio."
 
 #~ msgid ""
-#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
-#~ "option."
+#~ "Would you like the XKB configuration files on the system to be "
+#~ "automatically migrated from the old location to the new one?  Any "
+#~ "existing files in the new location that have the same name will be backed "
+#~ "up and replaced by the files from the old location.  A symbolic link from "
+#~ "the old location to the new one will be created to prevent legacy "
+#~ "applications from breaking."
 #~ msgstr ""
-#~ "Los usuarios de monitores tradicionales de rayos catódicos (CRT) no "
-#~ "deberían activar esta opción."
+#~ "¿Desea que los ficheros de configuración de XKB sean migrados "
+#~ "automáticamente del lugar antiguo al nuevo? Si existe en el nuevo "
+#~ "directorio algún fichero con el mismo nombre, se le colocará una "
+#~ "extensión diferente para no machacarlo con los ficheros copiados desde el "
+#~ "sitio antiguo. Asimismo, se creará un enlace simbólico desde el sitio "
+#~ "antiguo al nuevo para evitar que las aplicaciones antiguas dejen de "
+#~ "funcionar."
 
-#~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "¿Escribir sección DRI predefinida en el fichero de configuración?"
+#~ msgid "Migrate Xt application defaults directory?"
+#~ msgstr ""
+#~ "¿Desea migrar el directorio de configuraciones predeterminadas de "
+#~ "aplicaciones Xt?"
 
 #~ msgid ""
-#~ "The DRI section of the X server configuration file determines the "
-#~ "permissions of the DRI device.  This option is for advanced users.  In "
-#~ "most cases, you should enable it."
+#~ "The directory where application defaults for X Window System client "
+#~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
+#~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
 #~ msgstr ""
-#~ "La sección DRI del fichero de configuración del servidor X determina los "
-#~ "permisos del dispositivo DRI. Esta opción es para usuarios avanzados. En "
-#~ "la mayoría de los casos, debería activarla."
-
-#, fuzzy
-#~ msgid ""
-#~ "Disable this option if you want to write your own \"DRI\" section into "
-#~ "the X.Org server configuration file.  You may wish to do this if you want "
-#~ "to change the access privileges to the DRI port."
-#~ msgstr ""
-#~ "Desactive esta opción si quiere escribir su propia sección «DRI» en el "
-#~ "fichero de configuración del servidor XFree86. Puede que quiera hacerlo "
-#~ "si desea cambiar los privilegios de acceso al puerto DRI."
+#~ "El directorio donde se almacena la configuración predeterminada de los "
+#~ "programas basados en X Toolkit Intrinsics (Xt) ha cambiado de /usr/X11R6/"
+#~ "lib/X11/app-defaults a /etc/X11/app-defaults."
 
 #~ msgid ""
-#~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
+#~ "Would you like the app-defaults files on the system to be automatically "
+#~ "migrated from the old location to the new one?  Any existing files in the "
+#~ "new location that have the same name will be backed up and replaced by "
+#~ "the files from the old location.  A symbolic link from the old location "
+#~ "to the new one will be created to prevent legacy applications from "
+#~ "breaking."
 #~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier diseño para el que el "
-#~ "conjunto de reglas XKB que hayan escogido tenga soporte. Vea en el "
-#~ "directorio /etc/X11/xkb/rules los conjuntos de reglas disponibles, y en "
-#~ "el directorio /etc/X11/xkb/symbols los diseños disponibles."
-
-#~ msgid ""
-#~ "Advanced users can use any options compatible with the selected XKB "
-#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
-#~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier opción compatible con el "
-#~ "modelo, diseño y variante XKB seleccionados. Si el paquete xlibs ha sido "
-#~ "desempaqueteado, consulte los ficheros de opciones disponibles en el "
-#~ "directorio /etc/X11/xkb/symbols, en los que se definen sólamente "
-#~ "traducciones parciales de teclado (por ejemplo, /etc/X11/xkb/symbols/"
-#~ "ctrl)."
-
-#~ msgid ""
-#~ "If you have an NVidia video card, you may want to decline this option, as "
-#~ "these cards' support for the DDC protocol is often so poor that attempts "
-#~ "to use it can result in system lockups."
-#~ msgstr ""
-#~ "Si tiene una tarjeta de vídeo NVidia, puede que desee ignorar esta "
-#~ "opción, ya que el soporte del protocolo DDC de estas tarjetas es a menudo "
-#~ "tan pobre que los intentos de uso pueden provocar que el sistema se "
-#~ "bloquee."
-
-#~ msgid ""
-#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
-#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
-#~ "unsupported."
-#~ msgstr ""
-#~ "Observe que en algún hardware de ATI antiguo, como en los chipsets Mach8 "
-#~ "(VGA Wonder), Mach32, y Mach64 original («GX»), no se soporta profundidad "
-#~ "superior a 8."
-
-#~ msgid "experimental version of XFree86 packages"
-#~ msgstr "versión experimental de los paquetes de XFree86"
-
-#~ msgid ""
-#~ "You are using an experimental version of XFree86 packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Vd. está utilizando una versión experimental de los paquetes XFree86 para "
-#~ "Debian. Por favor, no envíe avisos de fallos al Sistema de Seguimiento de "
-#~ "Erratas de Debian sobre estas versiones de paquetes, dado que no han sido "
-#~ "incluídas aún dentro de la distribución de Debian."
-
-#~ msgid ""
-#~ "If you experience problems with these packages or would like to submit "
-#~ "patches, please send mail to the Debian X mailing list.  You can read "
-#~ "more about this mailing list on the World Wide Web:\n"
-#~ "  http://lists.debian.org/debian-x/"
-#~ msgstr ""
-#~ "Si tiene problemas con estos paquetes o desea enviar parches, por favor, "
-#~ "envié un correo a la lista de correo Debian X. Puede leer más sobre esta "
-#~ "lista de correo en Internet:\n"
-#~ "  http://lists.debian.org/debian-x/"
-
-#, fuzzy
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
-#~ "version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install xfree86-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install xfree86-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Si no desea utilizar paquetes de X experimentales, debe hacer dos cosas:\n"
-#~ "  1) Asegurarse de que no tiene repositorios de paquetes experimentales "
-#~ "en\n"
-#~ "     su fichero /etc/apt/sources.list\n"
-#~ "  2) Solicite a apt que utilice una versión apropiada de XFree86.\n"
-#~ "     Puede hacer esto añadiendo el conjunto de paquetes al nombre\n"
-#~ "     con «apt-get» -- por ejemplo:\n"
-#~ "       apt-get install xorg-common/unstable\n"
-#~ "    o\n"
-#~ "       apt-get install xorg-common/stable\n"
-#~ "    Puede que necesite especificar versiones anteriores de más de un "
-#~ "paquete."
+#~ "¿Desea que los ficheros de configuración predeterminada se migren "
+#~ "automáticamente del lugar antiguo al nuevo? Si existe en el nuevo "
+#~ "directorio algún fichero con el mismo nombre, se le colocará una "
+#~ "extensión diferente para no machacarlo con los ficheros copiados desde el "
+#~ "sitio antiguo. Asimismo, se creará un enlace simbólico desde el sitio "
+#~ "antiguo al nuevo para evitar que las aplicaciones antiguas dejen de "
+#~ "funcionar."
 
 #~ msgid "Select the desired default display manager."
 #~ msgstr "Escoja el gestor de sesiones que desea tener por defecto."
@@ -1643,7 +1545,7 @@ msgstr ""
 #~ "configuran para gestionar distintos servidores; para conseguir esto, "
 #~ "configure los gestores de sesiones apropiadamente, edite cada uno de sus "
 #~ "guiones de inicio en /etc/init.d, y desactive el chequeo de un gestor de "
-#~ "sesiones por defecto)"
+#~ "sesiones por defecto)."
 
 #~ msgid "Do you wish to stop the xdm daemon?"
 #~ msgstr "¿Desea parar el demonio de xdm?"
@@ -1657,9 +1559,322 @@ msgstr ""
 #~ msgstr ""
 #~ "El demonio del gestor de sesiones (xdm) generalmente se para al "
 #~ "actualizar los paquetes y al eliminarlos, pero parece que gestiona por lo "
-#~ "menos una sesión X actualmente. Si se para xdm ahora, cualquier sesión X "
-#~ "que gestione será destruida. Puede dejar que xdm siga ejecutándose, y la "
-#~ "siguiente versión tendrá efecto cuando el demonio se rearranque."
+#~ "menos una sesión X en estos momentos. Si detiene xdm ahora, cualquier "
+#~ "sesión X que gestione será destruida. Puede dejar que xdm siga "
+#~ "ejecutándose, y la siguiente versión tendrá efecto cuando el demonio se "
+#~ "rearranque."
+
+#~ msgid "experimental version of X.Org packages"
+#~ msgstr "versión experimental de los paquetes de X.Org"
+
+#~ msgid ""
+#~ "You are using an experimental version of X.Org packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Vd. está utilizando una versión experimental de los paquetes X.Org para "
+#~ "Debian. Por favor, no envíe avisos de fallos al sistema de seguimiento de "
+#~ "errores de Debian sobre estas versiones de paquetes, dado que no han sido "
+#~ "incluídas aún dentro de la distribución de Debian."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Si tiene problemas con estos paquetes o desea enviar parches, por favor, "
+#~ "envíe un correo a la lista de correo Debian X. Puede leer más sobre esta "
+#~ "lista de correo en Internet:\n"
+#~ "  http://lists.debian.org/debian-x/"
+
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Si no desea utilizar paquetes de X experimentales, debe hacer dos cosas:\n"
+#~ "  1) Asegurarse de que no tiene repositorios de paquetes experimentales "
+#~ "en\n"
+#~ "     su fichero /etc/apt/sources.list\n"
+#~ "  2) Solicite a apt que utilice una versión apropiada de X.Org.\n"
+#~ "     Puede hacer esto añadiendo el conjunto de paquetes al nombre\n"
+#~ "     con «apt-get» -- por ejemplo:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    o\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    Puede que necesite especificar versiones anteriores de más de un "
+#~ "paquete."
+
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  They range from -20 "
+#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
+#~ "(extremely low priority).  The default nice value for ordinary processes "
+#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
+#~ "default for a machine that has duties other than interacting with the "
+#~ "console user (such as a web server)."
+#~ msgstr ""
+#~ "Está ampliamente demostrado que el rendimiento del servidor X mejora si "
+#~ "se está ejecutando con una prioridad mayor que la predeterminada; la "
+#~ "prioridad de un proceso se conoce como su valor de «nice». Éste puede "
+#~ "variar desde -20 (una prioridad extremadamente alta, o «not nice» (nada "
+#~ "amable) con el resto de procesos) hasta 19 (una prioridad extremadamente "
+#~ "baja). El valor por defecto de «nice» para los procesos ordinarios es 0. "
+#~ "Por tanto, -10 es un buen valor por defecto para una estación de trabajo "
+#~ "monousuario, y 0 es n buen valor por defecto para una máquina que tenga "
+#~ "otras tareas además de tener que interactuar con el usuario de consola "
+#~ "(como por ejemplo, un servidor web)."
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Lo anterior no es cierto en los núcleos Linux de la versión 2.6 (ni en "
+#~ "los de la versión 2.5 posteriores a la inclusión del \"planificador de "
+#~ "tareas O(1)\"); en tales sistemas, el valor «nice» del servidor debe ser "
+#~ "0."
+
+#~ msgid ""
+#~ "The glx module enables software OpenGL rendering.  The dri module enables "
+#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+#~ "that support for DRI must also exist in the kernel, the video card, and "
+#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
+#~ "operations using DRI to work.  Otherwise, the server falls back to "
+#~ "software rendering."
+#~ msgstr ""
+#~ "El módulo glx activa el renderizado OpenGL por software. El módulo dri "
+#~ "activa el soporte en el servidor X de la «Infraestructura de renderizado "
+#~ "directo (en inglés, Direct Rendering Infrastructure, DRI). Tenga en "
+#~ "cuenta que para que las operaciones de 3D aceleradas por hardware que "
+#~ "usen DRI funcionen, el soporte DRI también ha de existir en el núcleo, en "
+#~ "la tarjeta de vídeo y en la versión instalada de las bibliotecas Mesa. De "
+#~ "otra forma, el servidor simplemente usa renderizado por software."
+
+#~ msgid ""
+#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+#~ "Display Channel, respectively.  These modules are used to query monitor "
+#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
+#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
+#~ "int10 as well."
+#~ msgstr ""
+#~ "Los módulos vbe y ddc activan el soporte para las extensiones de BIOS "
+#~ "VESA (VESA BIOS Extensions) y Data Display Channel, respectivamente. "
+#~ "Estos módulos se usan para consultar las capacidades del monitor a través "
+#~ "de la tarjeta de vídeo. El módulo int10 es un emulador de x86 en modo "
+#~ "real usado para iniciar en modo soft tarjetas VGA secundarias. Observe "
+#~ "que el módulo vbe depende del módulo int10, así que si desea activar vbe "
+#~ "debe activar int10 al mismo tiempo."
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
+#~ msgstr ""
+#~ "El fichero de configuración del servidor X asocia su tarjeta de vídeo con "
+#~ "un nombre que usted puede proporcionar. Éste es normalmente la marca o el "
+#~ "nombre del vendedor seguido del nombre del modelo, p. ej.: «3Dfx Voodoo3» "
+#~ "o «ATI Rage Fury Maxx»."
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "Los usuarios de máquinas SGI Indigo2 XL u otras con buses con soporte "
+#~ "incompleto, deberían especificar simplemente «1» en este campo (aunque "
+#~ "eso tampoco significa que vaya a funcionar)."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
+#~ "device, and function numbers in hexadecimal, not decimal."
+#~ msgstr ""
+#~ "Puede que quiera usar la orden «lspci» para determinar la localización en "
+#~ "el bus de su tarjeta de vídeo PCI o AGP. Tenga en mente que lspci "
+#~ "devuelve el bus, dispositivo y números de función en hexadecimal, no en "
+#~ "decimal."
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "Los usuarios de máquinas que no sean PowerPC o SGI Indigo2 XL y que "
+#~ "tengan una sola tarjeta de vídeo deberían dejar este campo en blanco."
+
+#~ msgid ""
+#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
+#~ msgstr ""
+#~ "Los usuarios avanzados pueden usar cualquier conjunto de reglas XKB "
+#~ "definido. Si el paquete xlibs ha sido desempaquetado, vea en el "
+#~ "directorio /etc/X11/xkb/rules los conjuntos de reglas disponibles."
+
+#~ msgid ""
+#~ "Advanced users can use any model defined by the selected XKB rule set.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets."
+#~ msgstr ""
+#~ "Los usuarios avanzados pueden usar cualquier modelo definido por el "
+#~ "conjunto de reglas XKB que hayan seleccionado. Si el paquete xlibs ha "
+#~ "sido desempaquetado, vea en el directorio /etc/X11/xkb/rules los "
+#~ "conjuntos de reglas disponibles."
+
+#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
+#~ msgstr ""
+#~ "Los usuarios de teclados Americanos o ingleses deberían introducir "
+#~ "«pc104». "
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "Los usuarios avanzados pueden usar cualquier diseño para el que el "
+#~ "conjunto de reglas XKB que hayan escogido tenga soporte. Vea en el "
+#~ "directorio /etc/X11/xkb/rules los conjuntos de reglas disponibles, y en "
+#~ "el directorio /etc/X11/xkb/symbols los diseños disponibles."
+
+#~ msgid ""
+#~ "Advanced users can use any variant supported by the selected XKB layout.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
+#~ "available variants."
+#~ msgstr ""
+#~ "Los usuarios avanzados pueden usar cualquier variante para la que ofrezca "
+#~ "soporte el diseño de XKB escogido. Si el paquete de xlibs ha sido "
+#~ "desempaquetado, puede ver las variantes disponibles en el fichero que "
+#~ "corresponde al diseño que ha seleccionado, y que puede encontrar en el "
+#~ "directorio /etc/X11/xkb/symbols."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "Los usuarios avanzados pueden usar cualquier opción compatible con el "
+#~ "modelo, diseño y variante XKB seleccionados. Si el paquete xlibs ha sido "
+#~ "desempaqueteado, consulte los ficheros de opciones disponibles en el "
+#~ "directorio /etc/X11/xkb/symbols, en los que se definen sólamente "
+#~ "traducciones parciales de teclado (por ejemplo, /etc/X11/xkb/symbols/"
+#~ "ctrl)."
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "¿Activar eventos de desplazamiento con la rueda del ratón?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Los eventos de la rueda de un ratón pueden ser tratados como pulsaciones "
+#~ "de botones extra (botones 4 y 5). Algunos programas de X tratan los "
+#~ "botones 4 y 5 como eventos de desplazamiento arriba y abajo, haciendo que "
+#~ "la rueda funcione como se espera. Sin embargo, esto depende del programa, "
+#~ "y puede que no siempre funcione. Además, los ratones exóticos con más de "
+#~ "tres botones además de la rueda pueden comportarse de manera extraña con "
+#~ "esta opción."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr ""
+#~ "Activar esta opción es inocuo si su ratón no tiene rueda de "
+#~ "desplazamiento."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Si tiene una tarjeta de vídeo NVidia, puede que desee ignorar esta "
+#~ "opción, ya que el soporte del protocolo DDC de estas tarjetas es a menudo "
+#~ "tan pobre que los intentos de uso pueden provocar que el sistema se "
+#~ "bloquee."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "¿Es su monitor un dispositivo LCD?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Si su monitor es una pantalla de cristal líquido (que es el caso de "
+#~ "prácticamente todos los portátiles), debería activar esta opción."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "Los usuarios de monitores tradicionales de rayos catódicos (CRT) no "
+#~ "deberían activar esta opción."
+
+#~ msgid ""
+#~ "For the \"simple\" option, you need only know the monitor's physical "
+#~ "size; this will set some configuration values appropriate for a typical "
+#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
+#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
+#~ "are configured for a particular resolution.)"
+#~ msgstr ""
+#~ "Para la opción «simple», sólo necesita saber el tamaño físico del "
+#~ "monitor; con eso se darán algunos valores de configuración apropiados "
+#~ "para un monitor CRT típico del tamaño correspondiente, pero pueden no ser "
+#~ "los óptimos para monitores CRT de buena calidad. (Esta opción está "
+#~ "desactivada para usuarios de pantallas LCD, ya que tales pantallas están "
+#~ "configuradas para una resolución en particular)."
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Observe que en algún hardware de ATI antiguo, como en los chipsets Mach8 "
+#~ "(VGA Wonder), Mach32, y Mach64 original («GX»), no se soporta profundidad "
+#~ "superior a 8."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "¿Escribir sección DRI predefinida en el fichero de configuración?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "La sección DRI del fichero de configuración del servidor X determina los "
+#~ "permisos del dispositivo DRI. Esta opción es para usuarios avanzados. En "
+#~ "la mayoría de los casos, debería activarla."
+
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Desactive esta opción si quiere escribir su propia sección «DRI» en el "
+#~ "fichero de configuración del servidor X.Org. Puede que quiera hacerlo si "
+#~ "desea cambiar los privilegios de acceso al puerto DRI."
+
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr ""
+#~ "El módulo v4l activa el soporte para la interfaz Video4Linux del núcleo."
 
 #~ msgid "PCI:nn:nn:nn"
 #~ msgstr "PCI:nn:nn:nn"
@@ -1833,3 +2048,46 @@ msgstr ""
 #~ "gestionará el fichero de configuración existente, y no tendrá que "
 #~ "responder a preguntas adicionales sobre la configuración del servidor "
 #~ "XFree86 4.x."
+
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "versión experimental de los paquetes de XFree86"
+
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Vd. está utilizando una versión experimental de los paquetes XFree86 para "
+#~ "Debian. Por favor, no envíe avisos de fallos al Sistema de Seguimiento de "
+#~ "Erratas de Debian sobre estas versiones de paquetes, dado que no han sido "
+#~ "incluídas aún dentro de la distribución de Debian."
+
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Si no desea utilizar paquetes de X experimentales, debe hacer dos cosas:\n"
+#~ "  1) Asegurarse de que no tiene repositorios de paquetes experimentales "
+#~ "en\n"
+#~ "     su fichero /etc/apt/sources.list\n"
+#~ "  2) Solicite a apt que utilice una versión apropiada de XFree86.\n"
+#~ "     Puede hacer esto añadiendo el conjunto de paquetes al nombre\n"
+#~ "     con «apt-get» -- por ejemplo:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "    o\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "    Puede que necesite especificar versiones anteriores de más de un "
+#~ "paquete."

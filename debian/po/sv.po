@@ -1,15 +1,15 @@
-# debconf templates for xfree86 package
+# debconf templates for xorg-x11 package
 # Swedish translation
 #
-# $Id: sv.po 1763M 2004-10-11 07:13:18Z (local) $
+# $Id: sv.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
-# Branden Robinson, 2000--2004
+# Branden Robinson, 2000-2004
 # André Dahlqvist, 2001
 # Peter Toneby, 2002
 # Mikael Hedin, 2002
 #
-# This file is distributed under the same license as the xfree86 package.
+# This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
 #    Translators, if you are not familiar with the PO format, gettext
@@ -26,15 +26,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: xserver-xorg\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2005-10-14 00:19+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
 
 #. Type: select
 #. Choices
@@ -101,6 +104,9 @@ msgid ""
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
+"Värden utanför intervallet -10 till 0 är inte rekommenderat, för negativt "
+"och X-servern kommer att inkräkta på viktiga systemuppgifter.  För positivt "
+"och X-servern kommer att trög och trött på att svara på anrop."
 
 #. Type: note
 #. Description
@@ -112,7 +118,7 @@ msgstr "Ange ett heltal mellan -20 och 19."
 #. Description
 #: ../xserver-xorg.templates:4
 msgid "Attempt to autodetect video hardware?"
-msgstr ""
+msgstr "Försöka att autodetektera grafikhårdvaran?"
 
 #. Type: boolean
 #. Description
@@ -124,6 +130,11 @@ msgid ""
 "or driver module.  If autodetection succeeds, further debconf questions "
 "about your video hardware will be pre-answered."
 msgstr ""
+"Acceptera denna funktion om du vill försöka att autodetektera den "
+"rekommenderade X-servern och drivrutinsmodulerna för ditt grafikkort.  Om "
+"autodetektering misslyckas kommer du bli frågad om att specificera den "
+"önskade X-servern och/eller drivrutinsmoduler.  Om autodetekteringen lyckas "
+"kommer senare frågor om din grafikhårdvara att vara svarade på."
 
 #. Type: boolean
 #. Description
@@ -133,6 +144,9 @@ msgid ""
 "this option.  You will not be asked to select the X server if there is only "
 "one available."
 msgstr ""
+"Om du hellre vill välja X-servern och drivrutinsmodulerna själv, vägra denna "
+"inställning.  Du kommer inte att bli frågad att välja X-server om det bara "
+"finns en tillgänglig."
 
 #. Type: note
 #. Description
@@ -165,7 +179,6 @@ msgstr "Flera möjliga X-servrar för din hårdvara."
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:26
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -174,8 +187,10 @@ msgid ""
 "card and monitor to which the computer displays when it first boots."
 msgstr ""
 "Flera grafikkort har upptäckts, och olika X-servrar krävs för att stödja de "
-"olika enheterna. Det är därför ej möjligt att automatiskt välja en server "
-"att använda som standard."
+"olika enheterna. Det är därför inte möjligt att automatiskt välja en X-"
+"server att använda som standard.  Vänligen konfigurera den enhet som ska "
+"fungera som din dators primära \"huvud\", detta är generellt det grafikkort "
+"och skärm som datorn visar på när den först startar upp."
 
 #. Type: select
 #. Description
@@ -186,15 +201,14 @@ msgstr "Välj den X-server du vill ska användas som standard."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:40
-#, fuzzy
 msgid ""
 "The X server is the hardware interface of the X Window System.  Its job is "
 "to communicate with video display and input devices, providing a foundation "
 "for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"Flera X-serverar kan vara tillgängliga; vilken som är standard väljs via den "
-"symboliska länken /etc/X11/X. Vissa X-servrar fungerar eventuellt inte med "
-"just ditt grafikkort."
+"X-Servern är hårdvarugränssnittet i X-Window System.  Dess jobb är att "
+"kommunicera med grafiken och inmatningsenheterna och ge en grundsten för den "
+"valda grafiska användargränssnittet (GUI)."
 
 #. Type: select
 #. Description
@@ -204,12 +218,15 @@ msgid ""
 "X symbolic link.  Some X servers may not work with your particular graphics "
 "hardware."
 msgstr ""
+"Ett flertal X-servrar kan finnas tillgängliga och standard väljs via en "
+"symbolisk länk, /etc/X11/X.  Några X-servrar kanske inte fungerar med din "
+"särskilda grafikhårdvara."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
 msgid "Write default Files section to configuration file?"
-msgstr ""
+msgstr "Skriv ner standard filsektion till konfigurationsfilen?"
 
 #. Type: boolean
 #. Description
@@ -219,6 +236,10 @@ msgid ""
 "where to find server modules, the RGB color database, and font files.  This "
 "option is for advanced users.  In most cases, you should enable it."
 msgstr ""
+"Files-sektionen i X-serverns konfigurationsfil talar om för X-server vad den "
+"ska hitta servermoduler, databasen för RGB-färger och typsnitt.  Denna "
+"inställningar är för avancerade användare.  I de flesta fall kan du aktivera "
+"den."
 
 #. Type: boolean
 #. Description
@@ -229,12 +250,17 @@ msgid ""
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
+"Stäng av denna funktion om du vill skriva din egna \"Files\"-sektion i X.Org-"
+"serverns konfigurationsfil.  Du kanske vill göra detta om du behöver ta bort "
+"referenser till den lokala typsnittsservern, lägga till en referens till en "
+"annan typsnittsserver eller arrangera om standarduppsättningen av sökvägar "
+"för lokala typsnitt."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr ""
+msgstr "Välj X.Org-servermoduler som ska laddas in som standard."
 
 #. Type: multiselect
 #. Description
@@ -244,6 +270,9 @@ msgid ""
 "the X server loads by default.  This option is for advanced users.  In most "
 "cases, all of these modules should be enabled."
 msgstr ""
+"Det är möjligt att ändra (eller tömma helt) listan över moduler som X-"
+"servern laddar in som standard.  Denna funktion är för avancerade "
+"användare.  I de flesta fall bör alla dessa moduler aktiveras."
 
 #. Type: multiselect
 #. Description
@@ -276,6 +305,8 @@ msgid ""
 "The dbe module enables the double-buffering extension in the server, and is "
 "useful for animation and video operations."
 msgstr ""
+"Modulen dbe aktiverar den dubbel-buffrande utökningen i servern och är "
+"användbar för animationer och videofunktionalitet."
 
 #. Type: multiselect
 #. Description
@@ -286,12 +317,17 @@ msgid ""
 "The record module implements the RECORD extension, commonly used in server "
 "testing."
 msgstr ""
+"Modulen extmod aktiverar många traditionella och vanligt förkommande "
+"utökningar, såsom delade fönster, delat minne, byte av videoläge, DGA och "
+"Xv.  Modulen record implementerar RECORD-utökningen, normalt använt i tester "
+"av servern."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
 msgstr ""
+"bitmap, freetype, speedo, type1, och xtt-moduler är alla typsnittsrastrerare."
 
 #. Type: multiselect
 #. Description
@@ -300,6 +336,7 @@ msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
 msgstr ""
+"För mer information om dessa moduler, läs gärna dokumentationen från X.Org."
 
 #. Type: multiselect
 #. Description
@@ -310,18 +347,20 @@ msgid ""
 "written to the X server configuration file -- and add their own Modules "
 "section to the file manually."
 msgstr ""
+"Om du är osäker vad du ska göra, lämna alla moduler aktiverade.  Avancerade "
+"användare kanske vill stänga av alla moduler -- i så fall kommer inte "
+"Modules-sektion att skrivas till X-servers konfigurationsfil -- och lägga "
+"till deras egna Modules-sektion till filen manuellt."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Flera potentiella drivrutiner för XFree86-servern till din hårdvara."
+msgstr "Flera möjliga X-servrar för din hårdvara."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different drivers are required "
 "to support the various devices.  It is thus not possible to automatically "
@@ -331,19 +370,20 @@ msgid ""
 msgstr ""
 "Flera grafikkort har upptäckts, och olika drivrutiner krävs för att stödja "
 "de olika enheterna. Det är därför ej möjligt att automatiskt välja en "
-"drivrutin som ska användas som standard."
+"standard X.Org-serverdrivrutin.  Konfigurera den enhet som ska fungera som "
+"din dators primära \"huvud\", detta är generellt det grafikkort och skärm "
+"som datorn visar på när den först startas upp."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "At the present time, only a single-headed setup is supported by debconf; "
 "however, the X server configuration files can be edited to support a multi-"
 "head configuration."
 msgstr ""
-"I nuläget stödjs endast enskärmskonfigurationer av debconf, men X serverns "
-"konfigurationsfiler kan redigeras för att stödja en flerskärmskonfiguration."
+"I nuläget stöds endast enskärmskonfigurationer av Debconf, men X serverns "
+"konfigurationsfiler kan redigeras för att stöda en flerskärmskonfiguration."
 
 #. Type: string
 #. Description
@@ -374,16 +414,12 @@ msgstr "Välj den önskade X server drivrutinen."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:126
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
 msgstr ""
-"Med valet \"enkel\" behöver du endast känna till skärmens fysiska storlek; "
-"detta kommer att ställa in konfigurationen till lämpliga värden för en "
-"typisk CRT av denna storlek, men detta alternativ är ej optimalt för CRTs av "
-"hög kvalitet. Användare av LCD-skärmar ska inte välja detta alternativ "
-"eftersom sådana skärmar är konfigurerade för en speciell upplösning."
+"För det grafiska användargränssnittet i X Window System ska operera korrekt "
+"är det nödvändigt att välja en videokortsdrivrutin för X-servern."
 
 #. Type: select
 #. Description
@@ -392,12 +428,14 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
+"Drivrutiner är normalt namngivna för grafikkortet eller tillverkaren av "
+"chipset, eller för en specifik modell eller familj av chipsets."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:135
 msgid "Use kernel framebuffer device interface?"
-msgstr ""
+msgstr "Använd gränssnitt från kärnans framebufferenhet?"
 
 #. Type: boolean
 #. Description
@@ -407,6 +445,9 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
+"Hellre än att kommunicera direkt med videohårdvaran kan X-server "
+"konfigureras att göra några operationer såsom byta videoläge via kärnans "
+"framebuffer-drivrutin."
 
 #. Type: boolean
 #. Description
@@ -416,12 +457,15 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
+"I teorin, antingen eller borde fungera men i praktiken kan det ibland göra "
+"det och ibland inte det.  Aktivera denna är en säkert val men känn dig fri "
+"att stänga av den om den verkar skapa problem."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Please enter the video card's bus identifier."
-msgstr ""
+msgstr "Ange videokortets bussidenifiering."
 
 #. Type: string
 #. Description
@@ -431,12 +475,15 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
+"Användare av PowerPC-maskiner och användare av andra datorer med multipla "
+"grafikenheter bör specificera BusID för grafikkortet i ett accepterat buss-"
+"specifikt format."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Examples:"
-msgstr ""
+msgstr "Exempel:"
 
 #. Type: string
 #. Description
@@ -446,6 +493,9 @@ msgid ""
 " PCI:0:16:0\n"
 " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
 msgstr ""
+" ISA:1\n"
+" PCI:0:16:0\n"
+" SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
 
 #. Type: string
 #. Description
@@ -455,6 +505,9 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
+"För användare av flerskärmsuppsättningar kommer denna inställning att "
+"konfigurera bara en av de skärmarna.  Ytterligare konfiguration måste göras "
+"manuellt i X-serverns konfigurationsfil, /etc/X11/xorg.conf."
 
 #. Type: string
 #. Description
@@ -471,57 +524,58 @@ msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
 msgstr ""
+"Om möjligt har denna fråga redan blivit besvarad åt dig och du bör acceptera "
+"standardvalet eller inte, om du vet att det inte fungerar."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "Please enter a bus identifier in the proper format."
-msgstr ""
+msgstr "Ange en busidentifikation i ett korrekt format."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "The BusID entered was not in a recognized format."
-msgstr ""
+msgstr "Det BusID som angavs är inte i ett format som kändes igen."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid "Enter the amount of memory (in kB) to be used by your video card."
-msgstr "Ange mängden minne som ska användas av ditt grafikkort."
+msgstr "Ange mängden minne (i kB) som ska användas av ditt grafikkort."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid ""
 "Typically, the amount of dedicated memory your video card has is "
 "autodetected by the X server, but some integrated video chips (such as the "
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
-"Vanligtvis kan mängen minne som ditt grafikkort har automatiskt kännas av, "
-"men vissa integrerade grafikchip (såsom Intels i810) har lite eller inget "
-"eget minne, och använder istället datorns vanliga minne till sina behov."
+"Vanligtvis kan mängen av dedikerat minne som ditt grafikkort har bli "
+"automatiskt detekterat, men vissa integrerade grafikchip (såsom Intels i810) "
+"har lite eller inget eget grafikminne, och lånar istället datorns vanliga "
+"minne till sina behov."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid ""
 "It is perfectly acceptable to leave this parameter blank; only if your video "
 "card lacks RAM, or if the X server has trouble autodetecting the amount, is "
 "it necessary to specify the amount of video RAM."
 msgstr ""
-"Det är fullt acceptabelt att lämna detta värde tomt; vanligtvis krävs det "
-"inte."
+"Det är fullt acceptabelt att lämna denna parameter tom men bara om ditt "
+"grafikkort saknar RAM eller om X-servern har problem att autodetektera "
+"mängden, är det nödvändigt att specificera mängden video-RAM."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "Please select the XKB rule set to use."
-msgstr ""
+msgstr "Välj XKB-regeluppsättning som ska användas."
 
 #. Type: string
 #. Description
@@ -530,6 +584,8 @@ msgid ""
 "For the X server to handle your keyboard correctly, an XKB rule set must be "
 "chosen."
 msgstr ""
+"För att din X-server ska hantera ditt tangentbord korrekt måste du välja en "
+"regeluppsättning för XKB."
 
 #. Type: string
 #. Description
@@ -538,6 +594,8 @@ msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
+"Användare av de flesta tangentbord bör välja \"xorg\".  Användare av Sun "
+"Type 4 och Type 5-tangentbord bör dock välja \"sun\"."
 
 #. Type: string
 #. Description
@@ -552,14 +610,13 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr ""
+msgstr "Om du inte vet vilken regeluppsättning du ska använda, ange \"xorg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid "Please select your keyboard model."
-msgstr "Välj din skärms bästa videoläge."
+msgstr "Välj din tangentbordsmodell."
 
 #. Type: string
 #. Description
@@ -568,6 +625,9 @@ msgid ""
 "For the X server to handle your keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
+"För att X-server ska hantera ditt tangentbord korret måste en "
+"tangentbordsmodell anges.  Tillgängliga modeller är beroende på vilken XKB-"
+"regeluppsättning som används."
 
 #. Type: string
 #. Description
@@ -577,6 +637,9 @@ msgid ""
 "keys, historically common in the United States.  It does not have the \"logo"
 "\" or \"menu\" keys."
 msgstr ""
+"Tangentbordstypen \"pc101\" är ett traditionellt IBM PC/XT tangentbord med "
+"101 tangenter, historiskt sett vanligt i USA.  Det har inte några \"logo\" "
+"eller \"menu\"-knappar."
 
 #. Type: string
 #. Description
@@ -586,6 +649,9 @@ msgid ""
 "keys are usually engraved with a \"logo\" symbol (there is typically a pair "
 "of these, between each set of control and alt keys), and a \"menu\" key."
 msgstr ""
+"\"pc104\"-tangentbordet är likt pc101-modellen med några extra tangenter.  "
+"Dessa tangenter är oftast märkta med en \"logo\"-symbol (det är normalt ett "
+"par av dessa, mellan varje Ctrl och Alt-tangent) och en \"menu\"-tangent."
 
 #. Type: string
 #. Description
@@ -597,6 +663,12 @@ msgid ""
 "symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
 "\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
 msgstr ""
+"\"pc102\" och \"pc105\"-modellerna är versioner av pc101 och pc104-"
+"tangentborden, normalt funna i Europa.  Om ditt tangentbord has en \"< >\"-"
+"tangent (en enda tangent märkt med både mindre än och större än-symboler) är "
+"det sannorlikt att du har en \"pc102\" eller \"pc105\"-modell, om du väljer "
+"\"pc101\" eller \"pc104\" instället, kommer din \"< >\"-tangent inte att "
+"fungera."
 
 #. Type: string
 #. Description
@@ -607,12 +679,16 @@ msgid ""
 "\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
 "input layer."
 msgstr ""
+"Modellen \"macintosh\" är för Macintosh-tangentbord där kärnan och "
+"konsollverktygen använder det nya inmatningslagret som använder Linux "
+"nyckelkoder, \"macintosh_old\" är för användare av Macintosh-tangentbord som "
+"inte använder det nya inmatningslagret."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr ""
+msgstr "Alla ovanstående modeller använder regeluppsättningen för \"xorg\""
 
 #. Type: string
 #. Description
@@ -622,6 +698,9 @@ msgid ""
 "respectively.  These models can only be used if the \"sun\" XKB rule set is "
 "in use."
 msgstr ""
+"\"type4\" och \"type5\"-modellerna är för Sun Type4 och Type5-tangentbord, "
+"respektive.  Dessa modeller kan bara användas om XKB-regeluppsättningen \"sun"
+"\" är satt att användas."
 
 #. Type: string
 #. Description
@@ -631,6 +710,9 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
+"Tangentbord på bärbara datorer har oftast inte så många knappar som "
+"fristående modeller, användare av bärbara datorer bör välja den "
+"tangentbordsmodell som är ungefär lik den ovan."
 
 #. Type: string
 #. Description
@@ -652,9 +734,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
-#, fuzzy
 msgid "Please select your keyboard layout."
-msgstr "Välj din skärms bästa videoläge."
+msgstr "Välj ditt tangentbordsarrangemang."
 
 #. Type: string
 #. Description
@@ -664,6 +745,9 @@ msgid ""
 "be entered.  Available layouts depend on which XKB rule set and keyboard "
 "model were previously selected."
 msgstr ""
+"För att X-servern ska hantera ditt tangentbord korrekt måste ett "
+"tangentbordsarrangemang anges.  Tillgängliga arrangemang är berorende på "
+"vilken XKB-regeluppsättning och tangentbordsmodell som tidigare valts."
 
 #. Type: string
 #. Description
@@ -682,13 +766,15 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
+"Användare av U.S English-tangentbord bör ange \"us\".  Användare av "
+"tangentbord från andra länder bör generellt ange deras landskod (enligt ISO "
+"3166).  Till exempel, Frankrike använder \"fr\" och Sverige använder \"sv\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
-#, fuzzy
 msgid "Please select your keyboard variant."
-msgstr "Välj vilket färgdjup i bitar per pixel som ska användas som standard."
+msgstr "Välj din tangentbordsvariant."
 
 #. Type: string
 #. Description
@@ -698,6 +784,9 @@ msgid ""
 "may be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
+"För att X-servern ska hantera ditt tangentbord som du önskar kan en "
+"tangentbordsvariant anges.  Tillgängliga varianter är beroende på vilken XKB-"
+"regeluppsättning, modell och arrangemang som tidigare valts."
 
 #. Type: string
 #. Description
@@ -707,6 +796,9 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
+"Många tangentbordsarrangemang stöder en funktion för att hantera \"döda\" "
+"knappar såsom icke-slags accenttecken och diaereses som normala slag "
+"tangenter och om detta är det önskade uppträdanden, ange \"nodeadkeys\"."
 
 #. Type: string
 #. Description
@@ -724,13 +816,13 @@ msgstr ""
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
+"Användare av U.S English-tangentbord ska generellt lämna detta fält blankt."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:275
-#, fuzzy
 msgid "Please select your keyboard options."
-msgstr "Välj vilket färgdjup i bitar per pixel som ska användas som standard."
+msgstr "Välj dina tangentbordsinställningar."
 
 #. Type: string
 #. Description
@@ -740,6 +832,10 @@ msgid ""
 "be entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
+"För att X-servern ska hantera ditt tangentbord som du önskar kan "
+"tangentbordinställningar anges.  Tillgängliga inställningar är beroende på "
+"vilken XKB-regeluppsättning som tidigare valdes.  Inte alla inställningar "
+"kommer att fungera med alla tangentbordsmodeller och arrangemang."
 
 #. Type: string
 #. Description
@@ -749,6 +845,9 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
+"Till exempel, om du önskar att Caps Lock-tangenten ska uppföra sig som en "
+"extra Control-tangent, kan du ange \"ctrl:nocaps\", om du vill byta Caps "
+"Lock och vänstra Control-tangenten kan du ange \"ctrl:swapcaps\"."
 
 #. Type: string
 #. Description
@@ -760,6 +859,11 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
+"Ett annat exempel är när några personer önskar ha Meta-tangenter "
+"tillgängliga på deras tangentbord's Alt-tangenter (detta är standard) medans "
+"vissa personer önskar ha Meta-tangenterna på Windows- eller \"logo\"-"
+"tangenter istället.  Om du önskar att använda dina Windows eller logo-"
+"tangenter som Meta-tangenter kan du ange \"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -770,6 +874,10 @@ msgid ""
 "like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
+"Du kan kombinera inställningar genom att separera dom med ett komma-tecken, "
+"till exempel om du önskar att Caps Lock-tangenten ska uppföra sig som en "
+"extra Control-tangent och du vill att din Windows eller logo-tangent ska "
+"vara en Meta-tangent kan du ange \"ctrl:nocaps,altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -784,12 +892,13 @@ msgstr ""
 #: ../xserver-xorg.templates:275
 msgid "If you don't know what options to use, leave this entry blank."
 msgstr ""
+"Om du inte vet vilka inställningar som ska användas, lämna då detta blankt."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:303
 msgid "Attempt mouse device autodetection?"
-msgstr ""
+msgstr "Försöka autodetektera musenheten?"
 
 #. Type: boolean
 #. Description
@@ -802,6 +911,12 @@ msgid ""
 "the computer's power, connect the mouse, turn the computer back on, and "
 "reboot.  If you wish to select a mouse type manually, decline this option."
 msgstr ""
+"Om du har en mus kopplad till datorn kan ett försök att detektera den göras, "
+"det kan hjälpa att röra musen medans detekteringen görs (programmet gpm bör "
+"inte köras samtidigt).  Om du vill koppla in en PS/2 eller bus/inport-mus "
+"till din dator bör du stänga av systemet, stänga av strömmen till datorn, "
+"koppla in musen, koppla på strömmen igen och starta upp systemet.  Om du "
+"önskar att välja en mus manuellt, tacka då nej till detta."
 
 #. Type: boolean
 #. Description
@@ -812,6 +927,10 @@ msgid ""
 "autodetection succeeds, further debconf questions about your mouse will be "
 "pre-answered."
 msgstr ""
+"Om du accepterar detta och autodetekteringen misslyckas kommer du få denna "
+"fråga igen.  Du kan försöka med autodetektering så många gånger du önskar.  "
+"Om autodetekteringen lyckas kommer senare Debconf-frågor om din mus att vara "
+"svarade på."
 
 #. Type: select
 #. Description
@@ -822,20 +941,14 @@ msgstr "Välj en musport."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:319
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of your mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
-"Det är nödvändigt att avgöra vilken port (anslutningstyp) din mus använder. "
-"Seriella portar använder D-formade anslutningar med 9 eller 25 pinnar (DB-9 "
-"eller DB-25); musanslutningen är hona (har hål) och datoranslutningen är "
-"hane (har pinnar), PS/2 portar är små runda anslutningar (DIN) med 6 pinnar; "
-"musanslutningen är hane och anslutningen på datorn är hona. Alternativt har "
-"du en USBmus (relativt ny), en bus/inport-mus (väldigt gammal), eller så "
-"använder du programmet gpm som en upprepare (\"repeater\"). Om du måste "
-"ansluta eller avlägsna enheter från din dator, vänligen stäng av datorn."
+"För att X Window System's grafiska användargränssnitt ska fungera korrekt "
+"måste vissa egenskaper av din mus (eller andra pek-enheter, såsom trackball) "
+"kännas till."
 
 #. Type: select
 #. Description
@@ -851,6 +964,14 @@ msgid ""
 "inport devices from your computer, please do so with the computer's power "
 "off."
 msgstr ""
+"Det är nödvändigt att bestämma vilken port (anslutningstyp) din mus "
+"använder. Seriellportar använder en D-formad kontakt med 9 eller 25 pinnar "
+"(så kallad DB-9 eller DB-25), muskontakten är hona (har hål) och datorns "
+"kontakt är en hane (har pinnar).  PS/2-portar är små runda kontakter (DIN) "
+"med 6 pinnar, muskontakten är hane och på datorns sida, hona.  Du kan "
+"alternativt ha en USB-mus, en bus/inport (väldigt gammal) mus eller använda "
+"programmet gpm som en förlängning.  Om du behöver koppla in eller ta bort en "
+"PS/2 eller bus/inport enheter från din dator, gör då så med datorn avstängd."
 
 #. Type: select
 #. Description
@@ -867,7 +988,6 @@ msgstr "Emulera 3 knappars mus?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:342
-#, fuzzy
 msgid ""
 "Most programs in the X Window System expect your mouse to have 3 buttons "
 "(left, right, and middle).  Mice with only 2 buttons can emulate the "
@@ -877,7 +997,7 @@ msgstr ""
 "De flesta program i X Window Systemet förväntar att din mus har tre knappar "
 "(vänster, höger och mitt). Möss med endast två knappar kan emulera närvaron "
 "av en mittenknapp genom att tolka samtidiga klickningar eller dragningar av "
-"vänster och högerknappen som om mittenknappen klickades."
+"vänster och högerknappen som om mittenknappen klickades eller flyttades."
 
 #. Type: boolean
 #. Description
@@ -886,6 +1006,8 @@ msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
 msgstr ""
+"Denna funktion kan också användas av möss med 3 eller fler knappar, "
+"mittenknappen kommer att fortsätta fungera som normalt."
 
 #. Type: boolean
 #. Description
@@ -895,12 +1017,15 @@ msgid ""
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
 "\") are not yet supported with this configuration tool."
 msgstr ""
+"Notera att musknappar som har mer är fem (räknat rullhjulet som två knappar, "
+"en för \"upp\" och en för \"ned\" och ett tredje om hjulet \"klickas\") "
+"stöds ännu inte med detta konfigurationsverktyg."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:358
 msgid "Attempt monitor autodetection?"
-msgstr ""
+msgstr "Försöka att autodetektera din skärm?"
 
 #. Type: boolean
 #. Description
@@ -912,6 +1037,11 @@ msgid ""
 "same dialect of this protocol, further debconf questions about your monitor "
 "will be pre-answered."
 msgstr ""
+"Många skärmar (inkluderat LCD) och grafikkort stöder ett "
+"kommunikationsprotokoll som tillåter att skärmens tekniska egenskaper "
+"skickas tillbaka till datorn.  Om din skärm och grafikkort pratar samma "
+"språk av detta protokoll kan senare frågor från Debconf om din skärm redan "
+"vara förvalda."
 
 #. Type: boolean
 #. Description
@@ -919,6 +1049,8 @@ msgstr ""
 msgid ""
 "If autodetection fails, you will be asked for information about your monitor."
 msgstr ""
+"Om autodetektering misslyckas kommer du bli frågad efter information om din "
+"skärm."
 
 #. Type: select
 #. Description
@@ -929,16 +1061,12 @@ msgstr "Ange en metod att använda för att välja din skärms karakteristika."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of your monitor must be known."
 msgstr ""
-"Med valet \"enkel\" behöver du endast känna till skärmens fysiska storlek; "
-"detta kommer att ställa in konfigurationen till lämpliga värden för en "
-"typisk CRT av denna storlek, men detta alternativ är ej optimalt för CRTs av "
-"hög kvalitet. Användare av LCD-skärmar ska inte välja detta alternativ "
-"eftersom sådana skärmar är konfigurerade för en speciell upplösning."
+"För det grafiska användargränssnittet i X ska operera korrekt måste vissa "
+"egenskaper om din skärm kännas till."
 
 #. Type: select
 #. Description
@@ -956,14 +1084,14 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
-#, fuzzy
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know your monitor is capable of)."
 msgstr ""
-"\"Expert\" valet låter dig specifiera din monitors horizontella synk och "
-"vertikala uppdateringstolerans direkt."
+"\"Medium\"-valet kommer att presentera en lista för dig med upplösningar och "
+"uppdateringsfrekvenser, såsom \"800x600 @ 85Hz\", du bör välja det bästa "
+"läget du önskar använda (och som du vet att din skärm klarar av)."
 
 #. Type: select
 #. Description
@@ -972,6 +1100,8 @@ msgid ""
 "The \"advanced\" option will let you specify your monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
+"Inställningen \"advanced\" låter dig specificera den horisontala "
+"synkfrekvensen och vertikala uppdateringstoleranser direkt för din skärm."
 
 #. Type: select
 #. Choices
@@ -992,11 +1122,9 @@ msgstr "Välj den storlek som din skärm har."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
-#, fuzzy
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
-"LCD-skärmar eller högkvalitets CRT-skärmar kan klara av att använda den "
-"nästa högre storleken efter dess egentliga storlek."
+"Högkvalitativa CRT-skärmar kan använda sig av näst högsta storlekskategorin."
 
 #. Type: select
 #. Description
@@ -1007,7 +1135,6 @@ msgstr "Välj din skärms bästa videoläge."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:396
-#, fuzzy
 msgid ""
 "Choose the \"best\" resolution and refresh rate you believe your monitor "
 "capable of.  Larger resolutions and refresh rates are better.  If you use a "
@@ -1018,9 +1145,11 @@ msgid ""
 "LCD."
 msgstr ""
 "Välj den \"bästa\" upplösningen och uppdateringsfrekvensen som du tror din "
-"skärm är klarar av. Högre upplösningar och uppdateringsfrekvenser är bättre. "
-"Det är helt tillåtet att välja ett \"sämre\" videoläge än din minitors bästa "
-"om du vill."
+"skärm klarar av.  Högre upplösningar och uppdateringsfrekvenser är bättre.  "
+"Det är helt tillåtet att välja ett \"sämre\" videoläge än din skärms bästa "
+"om du så vill.  Användare av LCD-skärmar kan också göra detta men bara om "
+"både grafikchipset och drivrutinen stöder detta, om du är osäker, använd "
+"grafikläget som rekommenderas av tillverkaren av din LCD-skärm."
 
 #. Type: string
 #. Description
@@ -1043,9 +1172,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
-#, fuzzy
 msgid "Write monitor sync ranges to configuration file?"
-msgstr "Byt ut den befintliga konfigurationsfilen för X-serverns start?"
+msgstr "Skriva monitorns synkintervall till konfigurationsfilen?"
 
 #. Type: boolean
 #. Description
@@ -1055,11 +1183,13 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
+"Synkroniseringsintervallerna för skärmen bör autodetekteras av X-servern i "
+"de flesta fall, men inbland behöver den lite tips.  Denna funktion är för "
+"avancerade användare och bör lämnas med standardvärdet valt."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:420
-#, fuzzy
 msgid "Enter your monitor's horizontal sync range."
 msgstr "Ange din skärms horizontella synkintervall."
 
@@ -1142,7 +1272,6 @@ msgstr "Välj vilket färgdjup i bitar per pixel som ska användas som standard."
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:454
-#, fuzzy
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1150,7 +1279,7 @@ msgid ""
 "acceleration only for certain depths.  Consult your video card manual for "
 "more information."
 msgstr ""
-"Vanligtvis är 24-bitars färger önskvärt, men på grafikkort med begränsad "
+"Vanligtvis är 24-bitars färgdjup önskvärt, men på grafikkort med begränsad "
 "mängd \"framebuffer\"-minne kan högre upplösningar nås på bekostnad av "
 "färgdjupet. Dessutom stödjer en del grafikkort endast 3D acceleration för "
 "vissa färgdjup. Konsultera manualen till ditt grafikkort för mer information."
@@ -1163,43 +1292,45 @@ msgid ""
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits.)"
 msgstr ""
+"(Så kallad \"32-bit color\" är faktiskt 24 bitars färginformation plus 8 "
+"bitar av alfa-kanaler eller enkla zero padding, X Window System kan hantera "
+"båda.  Om du vill ha båda, välj 24 bitar.)"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "Please enter a value for the entry."
-msgstr ""
+msgstr "Ange ett värde för argumentet."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "A null entry is not permitted."
-msgstr ""
+msgstr "Ett noll argument är inte tillåtet."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Please enter a value without double-quotes."
-msgstr ""
+msgstr "Ange ett värde utan citat-tecken."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr ""
+msgstr "Citattecken (\") är inte tillåtna i det angivna värdet."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
-#, fuzzy
 msgid "Please enter only a numeric value."
-msgstr "Ange en komma-avskiljd lista av intervall eller värden."
+msgstr "Vänligen ange bara ett numeriskt värde."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Characters other than digits are not allowed in the entry."
-msgstr ""
+msgstr "Andra tecken än siffror är inte tillåtna."
 
 #. Type: boolean
 #. Description
@@ -1225,25 +1356,68 @@ msgid ""
 "Decline it if you want to keep your current layout."
 msgstr ""
 
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "Aktivera rullhändelser fråm mushjulet?"
+#~ msgid "Migrate XKB configuration directory?"
+#~ msgstr "Migrera XKB konfigurationsmapp?"
 
-#, fuzzy
 #~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ "The directory where configuration information (including keyboard data) "
+#~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
+#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
-#~ "Händelser från en mus med hjul kan tolkas som tryckningar från "
-#~ "ytterligare knappar (knapp 4 och 5). Vissa X applikationer tolkar "
-#~ "händelser från knapp 4 och 5 som rulla-upp och rulla-nerhändelser, vilket "
-#~ "ger mushjulet dess tänkta effekt. Detta är ett beteende som styrs på "
-#~ "programnivå, och behöver nödvändigtvis inte alltid fungera. Dessutom kan "
-#~ "exotiska möss med fler än tre knappar i kombination med ett hjul uppträda "
-#~ "oväntat om detta alternativ aktiveras."
+#~ "Mappen där konfigurationen (inkluderat tangentbordsdata) för X KEYBOARD "
+#~ "utökningen (XKB) är lagrad har ändrats från /usr/X11R6/lib/X11/xkb till /"
+#~ "etc/X11/xkb."
+
+#~ msgid ""
+#~ "Your system is using the old location, and some programs, such as those "
+#~ "from old or unofficial Debian packages, may continue to install files "
+#~ "there."
+#~ msgstr ""
+#~ "Ditt system använder den gamla platsen och några program såsom de från "
+#~ "gamla eller icke-officiella Debianpaket kan fortfarande installera filer "
+#~ "där."
+
+#~ msgid ""
+#~ "Would you like the XKB configuration files on the system to be "
+#~ "automatically migrated from the old location to the new one?  Any "
+#~ "existing files in the new location that have the same name will be backed "
+#~ "up and replaced by the files from the old location.  A symbolic link from "
+#~ "the old location to the new one will be created to prevent legacy "
+#~ "applications from breaking."
+#~ msgstr ""
+#~ "Vill du att XKB-konfigurationsfilerna på system ska automatiskt migreras "
+#~ "från den gamla platsen till den nya?  Alla existerande filer i den nya "
+#~ "lagringsplatsen som har samma namn kommer att säkerhetskopieras och bytas "
+#~ "ut av filer från den gamla platsen.  En symbolisk länk från den gamla "
+#~ "platsen till den nya kommer att skapas för att förhindra applikationer "
+#~ "att sluta fungera."
+
+#~ msgid "Migrate Xt application defaults directory?"
+#~ msgstr "Migrera Xt-applikationers standardmapp?"
+
+#~ msgid ""
+#~ "The directory where application defaults for X Window System client "
+#~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
+#~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
+#~ msgstr ""
+#~ "Mappen där X Window Systems klientprogram baserade på X Toolkit "
+#~ "Intrinsics (Xt) lagras som standard har ändrats från /usr/X11R6/lib/X11/"
+#~ "app-defaults till /etc/X11/app-defaults."
+
+#~ msgid ""
+#~ "Would you like the app-defaults files on the system to be automatically "
+#~ "migrated from the old location to the new one?  Any existing files in the "
+#~ "new location that have the same name will be backed up and replaced by "
+#~ "the files from the old location.  A symbolic link from the old location "
+#~ "to the new one will be created to prevent legacy applications from "
+#~ "breaking."
+#~ msgstr ""
+#~ "Vill du att filerna för app-defaults på systemet ska automatiskt migreras "
+#~ "från den gamla platsen till den nya?  Alla existerande filer i den nya "
+#~ "lagringsplatsen som har samma namn kommer att säkerhetskopieras och "
+#~ "utbytta mot filer från den gamla platsen.  En symbolisk länk från den "
+#~ "gamla platsen till den nya kommer att skapas för att förhindra problem "
+#~ "med applikationer."
 
 #~ msgid "Select the desired default display manager."
 #~ msgstr "Välj vilken skärmhanterare du vill använda."
@@ -1274,6 +1448,322 @@ msgstr ""
 #~ "hantera olika servrar. För att uppnå detta, konfigurera skärmhanterarnas "
 #~ "initskript i /etc/init.d, och stäng av kollen efter standard "
 #~ "skärmhanteraren.)"
+
+#~ msgid "Do you wish to stop the xdm daemon?"
+#~ msgstr "Vill du stoppa xdm-daemonen?"
+
+#~ msgid ""
+#~ "The X display manager (xdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session. If xdm is stopped now, any X sessions it manages will be "
+#~ "terminated. Otherwise you may leave xdm running, and the new version will "
+#~ "take effect the next time the daemon is restarted."
+#~ msgstr ""
+#~ "X Display Manager (xdm) daemonen är normalt stoppad vid paketuppgradering "
+#~ "och borttagning men det verkar som om den hanterar åtminstone en körande "
+#~ "X-session. Om xdm är stoppad nu kommer de X-sessioner den hanterar att "
+#~ "avslutas. Men du kan lämna xdm körande och den nya versionen kommer att "
+#~ "bli aktiv nästa gång daemonen startas om."
+
+#~ msgid "experimental version of X.Org packages"
+#~ msgstr "experimentiell version av X.Org-paketen"
+
+#~ msgid ""
+#~ "You are using an experimental version of X.Org packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Du använder en experimentiell version av X.Org-paketen för Debian.  "
+#~ "Vänligen skicka inte in buggrapporter med Debian's "
+#~ "buggrapporteringsverktyg mot denna version av paketen eftersom de inte "
+#~ "har blivit utgivna till Debian's utgåva ännu."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Om du upplever problem med dessa paket eller vill skicka in patchar, "
+#~ "skicka e-post till Debian X e-postlistan.  Du kan läsa mer om denna e-"
+#~ "postlista på webben:\n"
+#~ "  http://lists.debian.org/debian-x/"
+
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Om du inte vill köra experimentiella X-paket behöver du göra två saker:\n"
+#~ "  1) Se till att du inte har experimentella paketrepositories i\n"
+#~ "     din fil /etc/apt/sources.list;\n"
+#~ "  2) Instruera apt att nedgradera X.Org till en lämplig utgiven version;\n"
+#~ "     du kan göra detta genom att lägga till namnet på paketsviten till "
+#~ "paketnamnet\n"
+#~ "     med \"apt-get\" -- till exempel:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    eller\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    Du kan behöva att specificera nedgraderingar för flera paket."
+
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  They range from -20 "
+#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
+#~ "(extremely low priority).  The default nice value for ordinary processes "
+#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
+#~ "default for a machine that has duties other than interacting with the "
+#~ "console user (such as a web server)."
+#~ msgstr ""
+#~ "När man använder operativsystemets kärna med en speciell "
+#~ "schemaläggningsstrategi är det känt att X-serverns prestanda ökar om den "
+#~ "körs med en högre prioritet än normalt. En process prioritet är känd som "
+#~ "dess \"nice\"-värde. Prioriteten sträcker sig från -20 (extremt hög "
+#~ "prioritet, eller \"not nice\" mot andra processer) till 19 (extremt låg "
+#~ "prioritet). Standardvärdet för vanliga processer är 0. -10 är ett bra "
+#~ "standardvärde för enanvändarsystem; 0 är ett bra värde för datorer som "
+#~ "även gör andra saker än att interagera med konsollanvändaren (till "
+#~ "exempel är webserver)."
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Ovanstående är inte sant om Linux kärnan 2.6 (inte heller för 2.5-serien "
+#~ "efter \"0(1) scheduler\" infördes); på sådana system bör nice-värdet för "
+#~ "X-server sättas till 0."
+
+#~ msgid ""
+#~ "The glx module enables software OpenGL rendering.  The dri module enables "
+#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+#~ "that support for DRI must also exist in the kernel, the video card, and "
+#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
+#~ "operations using DRI to work.  Otherwise, the server falls back to "
+#~ "software rendering."
+#~ msgstr ""
+#~ "Modulen glx aktiverar mjukvarurendering av OpenGL.  dri-modulen aktiverar "
+#~ "stöd i X-servern för Direct Rendering Infrastructure (DRI). Notera att "
+#~ "stöd för DRI måste också finnas i kärnan, grafikkortet och den "
+#~ "installerade versionen av Mesa-biblioteken för hårdvaruaccelererande 3D-"
+#~ "operationer med DRI att fungera.  Om inte kommer servern att falla "
+#~ "tillbaka på mjukvarurendering."
+
+#~ msgid ""
+#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+#~ "Display Channel, respectively.  These modules are used to query monitor "
+#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
+#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
+#~ "int10 as well."
+#~ msgstr ""
+#~ "Modulerna vbe och ddc aktiverar stöd för VESA BIOS-utökningar och Data "
+#~ "Display Channel, respektive.  Dessa moduler används för att fråga skärmen "
+#~ "vad den klarar av via grafikkortet.  Modulen int10 är en real-mode x86-"
+#~ "emulator som används för att mjukstarta sekundära VGA-kort.  Notera att "
+#~ "vbe-modulen är beroende av int10-modulen så om du önskar aktivera vbe, "
+#~ "aktivera då även int10."
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
+#~ msgstr ""
+#~ "X-serverns konfigurationsfil associerar ditt grafikkort med ett namn som "
+#~ "du kan ange. Detta är vanligtvis märket på grafikkortet följt av "
+#~ "modellnamnet, ex. \"3Dfx Voodoo3\" eller \"ATI Rage Fury Maxx\"."
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "Användare av SGI Indigo2 XL-maskiner eller maskiner med andra bussar som "
+#~ "ännu inte har fullt stöd, bör specificera \"1\" här  (Det är inte "
+#~ "garanterat att det kommer att fungera.)"
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
+#~ "device, and function numbers in hexadecimal, not decimal."
+#~ msgstr ""
+#~ "Du kanske önskar använda kommandot \"lspci\" för att bestämma bussplatsen "
+#~ "för ditt PCI eller AGP-grafikkort.  Tänk på att lspci rapporterar bussen, "
+#~ "enhet och funktionsnumret i hexadecimalt, inte decimalt."
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "Användare av maskiner andra än PowerPC eller SGI Indigo2 XL med bara ett "
+#~ "grafikkort bör lämna detta blankt."
+
+#~ msgid ""
+#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
+#~ msgstr ""
+#~ "Avancerade användare kan använda vilken definierad regeluppsättning för "
+#~ "XKB.  Om xlibs-paketet har packats upp, se mappen /etc/X11/xkb/rules för "
+#~ "tillgängliga regeluppsättningar."
+
+#~ msgid ""
+#~ "Advanced users can use any model defined by the selected XKB rule set.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets."
+#~ msgstr ""
+#~ "Avancerade användare kan använda vilken modell som helst som är "
+#~ "definierad av den valda XKB-regeluppsättningen.  Om xlibs-paketet har "
+#~ "packats upp, ta en titt i mappen /etc/X11/xkb/rules för tillgängliga "
+#~ "regeluppsättningar."
+
+#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
+#~ msgstr "Användare med U.S English-tangentbord ska allmänt ange \"pc104\""
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "Avancerade användare kan använda vilket arrangemang som helst som stöds "
+#~ "av den valda XKB-regeluppsättningen.  Om xlibx-paketet har packats upp, "
+#~ "ta en titt i mappen /etc/X11/xkb/rules för tillgängliga "
+#~ "regeluppsättningar och mappen /etc/X11/xkb/symbols för tillgängliga "
+#~ "arrangemang."
+
+#~ msgid ""
+#~ "Advanced users can use any variant supported by the selected XKB layout.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
+#~ "available variants."
+#~ msgstr ""
+#~ "Avancerade användare kan använda vilken variant som helst som stöds av "
+#~ "den valda XKB-regeluppsättningen.  Om xlibs-paketet har packats upp, ta "
+#~ "en titt i mappen /etc/X11/xkb/symbols för den fil som gäller för det "
+#~ "valda arrangemanget för tillgängliga varianter."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "Avancerade användare kan använda vilka inställningar som helst som är "
+#~ "kompatibla med den valda XKB-modellen, arrangemanget och varianten.  Om "
+#~ "xlibs-paketet har packats upp, ta en titt i mappen /etc/X11/xkb/symbols "
+#~ "för tillgängliga inställningsfiler, vilka bara definierar delar av "
+#~ "tangentbordsöversättningarna.  (Till exempel, /etc/X11/xkb/symbols/ctrl.)"
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Aktivera rullhändelser fråm mushjulet?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Händelser från en mus med hjul kan tolkas som tryckningar från "
+#~ "ytterligare knappar (knapparna 4 och 5).  Vissa X applikationer tolkar "
+#~ "händelser från knapp 4 och 5 som rulla-upp och rulla-ner händelser, "
+#~ "vilket ger mushjulet dess tilltänkta effekt. Detta är ett beteende som "
+#~ "styrs på applikationsnivå, och behöver nödvändigtvis inte alltid fungera. "
+#~ "Dessutom kan exotiska möss med fler än tre knappar i kombination med ett "
+#~ "hjul uppträda oväntat om detta alternativ aktiveras."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr ""
+#~ "Aktivering av denna funktion är oskadlig om din mus inte har ett rullhjul."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Om du har ett grafikkort från NVidia vill du kanske vägra denna funktion "
+#~ "eftersom dessa kort har dåligt stöd för DDC-protokollet så att försök att "
+#~ "använda det kan resultera i att systemet låser sig."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Är din monitor en LCD-monitor?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Om din skärm är en Liquid Crystal Display (LCD) som är normalt med de "
+#~ "flesta bärbara datorer, bör du välja detta."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "Användare av traditionella Cathode Ray Tube (CRT)-skärmar bör inte sätta "
+#~ "detta värde."
+
+#~ msgid ""
+#~ "For the \"simple\" option, you need only know the monitor's physical "
+#~ "size; this will set some configuration values appropriate for a typical "
+#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
+#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
+#~ "are configured for a particular resolution.)"
+#~ msgstr ""
+#~ "För valet \"simple\" kommer du att behöva veta din skärm's fysiska "
+#~ "storlek, detta kommer att sätta några konfigurationsvärden som passar för "
+#~ "en typisk CRT-skärm för liknande storlek men kan vara mindre optimal för "
+#~ "högkvalitativa CRT-skärmar.  (Denna funktion är avstängd för användare av "
+#~ "LCD-skärmar eftersom sådana skärmar konfigureras för en specifik "
+#~ "upplösning.)"
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Notera att viss gammal ATI-hårdvara såsom Mach8 (VGA Wonder), Mach32 och "
+#~ "tidiga Mach64 (\"GX\") chipset har inte stöd för färgdjup högre än 8 "
+#~ "bitar."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Skriva standard DRI-sektion till konfigurationsfilen?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "DRI-sektionen av X-serverns konfigurationsfil bestämmer rättigheterna för "
+#~ "DRI-enheten.  Denna inställning är för avancerade användare.  I de flesta "
+#~ "fall bör du aktivera den."
+
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Stäng av denna funktion om du vill skriva din egna \"DRI\"-sektion i X."
+#~ "Org-servern konfigurationsfil.  Du kanske vill göra detta om du vill "
+#~ "ändra tillgångsrättigheterna till DRI-porten."
+
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr ""
+#~ "Modulen v4l aktiverar stöd för gränssnittet mot Video4Linux i kärnan."
 
 #~ msgid "Manage X server wrapper configuration file with debconf?"
 #~ msgstr "Hantera konfigurationsfilen för X-serverns start med debconf?"

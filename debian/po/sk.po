@@ -1,23 +1,20 @@
 # debconf templates for xorg-x11 package
-# Galician translation
-#
-# $Id: gl.po 1080 2006-01-14 02:15:39Z ender $
+# Slovak translation
+# $Id: sk.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
 # Branden Robinson, 2000-2004
-# Jacobo Tarrio, 2001, 2006
-#
-# This file is distributed under the same license as the xorg-x11 package.
-# Please see debian/copyright.
+# Miroslav Kure <kurem@debian.cz>, 2004
+# Peter Mann <Peter.Mann@tuke.sk>, 2005
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2006-01-13 11:55+0100\n"
-"Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"PO-Revision-Date: 2005-09-27 06:44+0200\n"
+"Last-Translator: Peter Mann <Peter.Mann@tuke.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,13 +23,13 @@ msgstr ""
 #. Choices
 #: ../x11-common.templates:3
 msgid "Root Only, Console Users Only, Anybody"
-msgstr "Só o administrador, Só os usuarios da consola, Todos"
+msgstr "Len root, Len konzoloví používatelia, Ktokoľvek"
 
 #. Type: select
 #. Description
 #: ../x11-common.templates:5
 msgid "Select what type of user has permission to start the X server."
-msgstr "Escolla que tipo de usuario ten permiso para iniciar o servidor X."
+msgstr "Zvoľte typ používateľov, ktorí môžu spustiť X server."
 
 #. Type: select
 #. Description
@@ -45,19 +42,18 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
-"Como o servidor X se executa con privilexios de superusuario, pode non ser "
-"unha boa idea permitir que calquera usuario o inicie, por motivos de "
-"seguridade. Por outro lado, pode ser aínda unha peor idea executar programas "
-"cliente X de propósito xeral coma administrador, que é o que podería ocorrer "
-"se só root pode iniciar o servidor X. Un bo compromiso consiste en permitir "
-"que o servidor X o inicien só os usuarios que traballen nunha consola "
-"virtual."
+"Pretože X server je spustený s právami superpoužívateľa, nie je z hľadiska "
+"bezpečnosti veľmi rozumné dať možnosť jeho spustenia používateľom. Na druhej "
+"strane ešte horšie je spustenie všeobecného X klienta pod rootom, čo sa "
+"stane vtedy, ak povolíte spustenie X servera iba rootovi. Rozumným "
+"kompromisom je teda povolenie spustenia X servera iba používateľom "
+"prihláseným na virtuánej konzole."
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
 msgid "Enter the desired nice value for the X server to use."
-msgstr "Introduza o nivel de amabilidade para o servidor X."
+msgstr "Zadajte hodnotu 'nice', s ktorou sa má spúšťať X server."
 
 #. Type: string
 #. Description
@@ -72,13 +68,13 @@ msgid ""
 "default nice value for ordinary processes is 0, and this is also the "
 "recommend value for the X server."
 msgstr ""
-"Tense advertido que o rendemento do servidor X mellora se se executa cunha "
-"prioridade superior á normal; a prioridade dun proceso coñécese coma a súa "
-"amabilidade (valor \"nice\"). Pode ter valores entre -20 (prioridade moi "
-"alta, ou \"pouco amable\" con outros procesos) e 19 (prioridade moi baixa). "
-"A amabilidade normal é 0. -10 é un bo valor para unha estación de traballo; "
-"0 é un bo valor para unha máquina que fai outras cousas que interactuar co "
-"usuario da consola (coma un servidor web)."
+"Je známe, že pri použití jadra operačného systému s určitou plánovacou "
+"stratégiou, sa výkon X servera zlepší, ak je spustený s vyššou prioritou ako "
+"štandartnou. Priorita procesu je známa ako hodnota 'nice'. Môže mať hodnoty "
+"od -20 (veľmi vysoká priorita) až do 19 (veľmi nízka priorita). Štandartná "
+"hodnota nice obyčajného procesu je 0. Pre jednopoužívateľskú stanicu je "
+"rozumná hodnota -10, pre počítač, ktorý má aj iné povinnosti (napr. web "
+"server), je odporúčaná hodnota 0."
 
 #. Type: string
 #. Description
@@ -88,21 +84,21 @@ msgid ""
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
-"Non se recomendan os valores fóra do rango -10 a 0. Se é negativo de máis, o "
-"servidor X ha interferir con tarefas importantes do sistema. Se é positivo "
-"de máis, o servidor X ha ir moi lento."
+"Neodporúčajú sa hodnoty mimo rozsahu -10..0. Príliš záporná hodnota bude "
+"ovplyvňovať dôležité systémové úlohy, príliš kladná hodnota spôsobí pomalosť "
+"a lenivosť X servera."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:35
 msgid "Please enter an integer between -20 and 19."
-msgstr "Introduza un número enteiro entre -20 e 19."
+msgstr "Zadajte celé číslo medzi -20 a 19."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
 msgid "Attempt to autodetect video hardware?"
-msgstr "¿Tentar autodetectar o hardware de vídeo?"
+msgstr "Pokúsiť sa o rozpoznanie grafického hardvéru?"
 
 #. Type: boolean
 #. Description
@@ -114,11 +110,11 @@ msgid ""
 "or driver module.  If autodetection succeeds, further debconf questions "
 "about your video hardware will be pre-answered."
 msgstr ""
-"Acepte esta opción se quere tentar autodetectar o servidor X e módulo "
-"controlador recomendados para a súa tarxeta de vídeo. Se a autodetección "
-"falla, háselle pedir que especifique o servidor X e/ou módulo controlador "
-"que desexa. Se a autodetección ten éxito, respóstanse automaticamente as "
-"posteriores preguntas de debconf sobre o seu hardware de vídeo."
+"Akceptujte túto voľbu, ak chcete ponechať rozpoznanie odporúčaného X servera "
+"a ovládača pre vašu grafickú kartu na inštalačnom programe. Ak rozpoznanie "
+"zlyhá, X server a/alebo ovládača budete musieť zvoliť manuálne. Ak bude "
+"rozpoznanie úspešné, všetky ďalšie otázky o vašom grafickom hardvéri sa "
+"vyplnia zistenými hodnotami."
 
 #. Type: boolean
 #. Description
@@ -128,15 +124,14 @@ msgid ""
 "this option.  You will not be asked to select the X server if there is only "
 "one available."
 msgstr ""
-"Se prefire escoller vostede mesmo o servidor X e módulo controlador, rexeite "
-"esta opción. Non se lle ha pedir que escolla o servidor X se só hai un "
-"dispoñible."
+"Zamietnite túto voľbu, ak si chcete X server zvoliť manuálne. (Ak by bol k "
+"dispozícii iba jeden X server, otázka sa nezobrazí.)"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
 msgid "No X server known for your video hardware."
-msgstr "Non se coñece un servidor X para o seu hardware de vídeo."
+msgstr "Vašej grafickej karte nevyhovuje žiaden X server."
 
 #. Type: note
 #. Description
@@ -148,18 +143,16 @@ msgid ""
 "information in discover's hardware database, or it could be that your video "
 "hardware is simply not supported by any available X servers."
 msgstr ""
-"Ou non ten hardware de vídeo instalado nesta máquina (¿só ten consola por "
-"porto serie?) ou o programa \"discover\" non puido determinar que servidor X "
-"é axeitado para o seu hardware de vídeo. Isto pode estar causado por "
-"información incompleta na base de datos de hardware de discover, ou podería "
-"ser que o seu hardware de vídeo non estea soportado por ningún servidor X "
-"dispoñible."
+"Buď v tomto počítači nie je grafická karta (iba sériová konzola?), alebo "
+"program \"discover\" nevedel určiť zodpovedajúcí X server pre váš hardvér. "
+"Môžu to mať na svedomí dve veci. Buď sú údaje v databáze discoveru neúplné, "
+"alebo grafická karta nie je podporovaná žiadnym dostupným X serverom."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:26
 msgid "Multiple potential default X servers for your hardware."
-msgstr "Varios servidores X potenciais para o seu hardware."
+msgstr "Viac možných predvolených X serverov pre váš hardvér."
 
 #. Type: note
 #. Description
@@ -171,18 +164,16 @@ msgid ""
 "will serve as your computer's \"primary head\"; this is generally the video "
 "card and monitor to which the computer displays when it first boots."
 msgstr ""
-"Detectáronse varias tarxetas de vídeo, e son precisos varios servidores X "
-"para que soporten os distintos dispositivos. Polo tanto, non é posible "
-"escoller automaticamente un servidor X por defecto. Configure o dispositivo "
-"que ha servir coma \"consola principal\" do seu ordenador; adoita ser a "
-"tarxeta de vídeo e monitor no que se amosan as cousas do ordenador cando se "
-"inicia."
+"Bolo nájdených viac grafických kariet, takže je pre nich potrebných viac "
+"rôznych X serverov. Zvoľte zariadenie, ktoré bude slúžiť ako \"primárne\"; "
+"zvyčajne je to grafická karta a monitor, na ktorom sa zobrazujú správy pri "
+"spúšťaní systému."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:40
 msgid "Select the desired default X server."
-msgstr "Escolla o servidor X por defecto que desexe."
+msgstr "Zvoľte si predvolený X server."
 
 #. Type: select
 #. Description
@@ -192,9 +183,9 @@ msgid ""
 "to communicate with video display and input devices, providing a foundation "
 "for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"O servidor X é a interface co hardware do sistema X Window. O seu traballo é "
-"comunicarse cos dispositivos de pantalla e entrada para que funcione a "
-"interface gráfica de usuario (GUI) que escolla."
+"X server je hardvérové rozhranie X Window Systému. Jeho úlohou je "
+"komunikácia s grafickou kartou a vstupnými zariadeniami, čím poskytuje "
+"základ pre zvolené grafické používateľské rozhranie (GUI)."
 
 #. Type: select
 #. Description
@@ -204,15 +195,15 @@ msgid ""
 "X symbolic link.  Some X servers may not work with your particular graphics "
 "hardware."
 msgstr ""
-"Hai varios servidores X dispoñibles; o servidor por defecto selecciónase coa "
-"ligazón simbólica /etc/X11/X . Algúns servidores X poderían non funcionar co "
-"seu hardware gráfico."
+"K dispozícii môže byť viacero X serverov; štandartné sa zvolí pomocou "
+"symbolického odkazu /etc/X11/X. Niektoré X servery nemusia fungovať s vašou "
+"konkrétnou grafickou kartou."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
 msgid "Write default Files section to configuration file?"
-msgstr "¿Gravar a sección Files por defecto no ficheiro de configuración?"
+msgstr "Zapísať do konfiguračného súboru štandartnú časť Files?"
 
 #. Type: boolean
 #. Description
@@ -222,10 +213,9 @@ msgid ""
 "where to find server modules, the RGB color database, and font files.  This "
 "option is for advanced users.  In most cases, you should enable it."
 msgstr ""
-"A sección Files do ficheiro de configuración do servidor X dille ao servidor "
-"X onde atopar os módulos do servidor, a base de datos de cores RGB, e os "
-"ficheiros de tipos de letra. Esta opción é para usuarios avanzados. Nos máis "
-"casos debería activala."
+"Časť Files konfiguračného súboru vraví X serveru, kde nájde jednotlivé "
+"moduly, databázu farieb a súbory s písmami. Táto voľba je pre skúsených "
+"používateľov. Vo väčšine prípadov by ste ju mali povoliť."
 
 #. Type: boolean
 #. Description
@@ -236,18 +226,16 @@ msgid ""
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
-"Desactive esta opción se quere escribir a súa propia sección \"Files\" no "
-"ficheiro de configuración do servidor de X.Org. Pode ter que facelo se quere "
-"eliminar a referencia ao servidor de tipos de letras local, engadir unha "
-"referencia a outro servidor de tipos de letras ou reordear a lista de rutas "
-"de tipos de letras."
+"Zamietnite túto možnosť, ak si chcete do konfiguračného súboru X.Org napísať "
+"vlastnú časť \"Files\" (napr. ak chcete odstrániť odkaz na lokálny font "
+"server, pridať iný font server, alebo zmeniť poradie ciest pre lokálne "
+"súbory s písmami)."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr ""
-"Escolla os módulos do servidor de X.Org que se deberían cargar por defecto."
+msgstr "Zvoľte moduly X.Org servera, ktoré sa majú štandartne načítavať."
 
 #. Type: multiselect
 #. Description
@@ -257,13 +245,14 @@ msgid ""
 "the X server loads by default.  This option is for advanced users.  In most "
 "cases, all of these modules should be enabled."
 msgstr ""
-"É posible persoalizar (ou omitir completamente) a lista de módulos que o "
-"servidor X carga por defecto. Esta opción é para usuarios avanzados. Nos "
-"máis casos, deberían activarse tódolos módulos."
+"Tu môžete upraviť (alebo úplne vynechať) zoznam modulov, ktoré má X server "
+"načítavať pri svojom spustení. Táto voľba je pre skúsených používateľov. Vo "
+"väčšine prípadov by ste mali povoliť všetky moduly."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
+#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -272,10 +261,16 @@ msgid ""
 "operations using DRI to work.  Otherwise, the server falls back to software "
 "rendering."
 msgstr ""
+"Modul glx sprístupní softvérové OpenGL. Modul dri povolí v X serveri podporu "
+"DRI (Direct Rendering Infrastructure). Nezabudnite, že podporu pre DRI musí "
+"obsahovať aj jadro, grafická karta a nainštalovaná verzia knižníc Mesa (pre "
+"hardvérovú 3D akceleráciu). V opačnom prípade sa núdzovo použije softvérové "
+"vykresľovanie."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
+#, fuzzy
 msgid ""
 "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
 "Display Channel, respectively.  These modules are used to query monitor "
@@ -284,6 +279,11 @@ msgid ""
 "module depends on the int10 module, so if you wish to enable vbe, enable "
 "int10 as well."
 msgstr ""
+"Moduly vbe a ddc povolia podporu pre VESA BIOS Extensions a Data Display "
+"Channel. Tieto moduly slúžia na zistenie vlastností monitora cez grafickú "
+"kartu. Modul int10 je emulátor reálneho módu x86, ktorý sa používa na "
+"zavedenie sekundárnej VGA karty. Nezabudnite, že modul vbe závisí na module "
+"int10, takže pri zvolení tohto modulu nesmiete zabudnúť na modul int10."
 
 #. Type: multiselect
 #. Description
@@ -292,8 +292,8 @@ msgid ""
 "The dbe module enables the double-buffering extension in the server, and is "
 "useful for animation and video operations."
 msgstr ""
-"O módulo dbe activa a extensión de dobre buffer, e é útil para animacións e "
-"operacións de vídeo."
+"Modul dbe povolí rozšírenie pre dvojitú vyrovnávaciu pamäť, ktoré server "
+"využije pre animáciu a operácie s videom."
 
 #. Type: multiselect
 #. Description
@@ -304,16 +304,15 @@ msgid ""
 "The record module implements the RECORD extension, commonly used in server "
 "testing."
 msgstr ""
-"O módulo extmod activa varias extensións tradicionais e moi usadas, coma "
-"fiestras con forma, memoria compartida, cambio de modo de vídeo, DGA e Xv. O "
-"módulo record implementa a extensión RECORD, que se adoita empregar nas "
-"probas de servidores."
+"Modul extmod povolí množstvo tradičných a často využívaných rozšírení, ako "
+"sú tvarované okná, zdieľaná pamäť, prepínanie video režimov, DGA a Xv. Modul "
+"record implementuje rozšírenie RECORD, často používané pri testovaní servera."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-msgstr "Os módulos bitmap, freetype e type1 serven para debuxar letras."
+msgstr "Moduly bitmap, freetype a type1 slúžia na rastrovanie fontov."
 
 #. Type: multiselect
 #. Description
@@ -321,9 +320,7 @@ msgstr "Os módulos bitmap, freetype e type1 serven para debuxar letras."
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
-msgstr ""
-"Para obter máis información sobre estes módulos, consulte a documentación de "
-"X.Org."
+msgstr "Viac informácií o týchto moduloch nájdete v dokumentácii X.Org."
 
 #. Type: multiselect
 #. Description
@@ -334,16 +331,16 @@ msgid ""
 "written to the X server configuration file -- and add their own Modules "
 "section to the file manually."
 msgstr ""
-"Se non está seguro do que facer, active tódolos módulos. Os usuarios "
-"avanzados poden querer desactivar tódolos módulos -- nese caso non se ha "
-"gravar unha sección Modules no ficheiro de configuración do servidor X -- e "
-"engadir a súa propia sección Modules ao ficheiro manualmente."
+"Ak si nie ste istí, ponechajte zapnuté všetky moduly. Skúsenejší "
+"používatelia môžu zakázať všetky moduly -- v tom prípade sa do "
+"konfiguračného súuboru nezapíše žiadna časť Modules -- môžu si ju vytvoriť "
+"manuálne."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Varios controladores do servidor X.Org potenciais para o seu hardware."
+msgstr "Viac možných predvolených ovládačov X.Org servera pre váš hardvér."
 
 #. Type: note
 #. Description
@@ -355,12 +352,11 @@ msgid ""
 "serve as your computer's \"primary head\"; this is generally the video card "
 "and monitor to which the computer displays when it first boots."
 msgstr ""
-"Detectáronse varias tarxetas de vídeo, e son precisos varios controladores "
-"para que soporten os distintos dispositivos. Polo tanto, non é posible "
-"escoller automaticamente un controlador por defecto do servidor X. Configure "
-"o dispositivo que ha servir coma \"consola principal\" do seu ordenador; "
-"adoita ser a tarxeta de vídeo e monitor no que se amosan as cousas do "
-"ordenador cando se inicia."
+"Bolo nájdených viac grafických kariet, ktoré potrebujú niekoľko rôznych "
+"ovládačov. Predvolený ovládač X.Org sa preto nedá zvoliť automaticky. Zvoľte "
+"si teda zariadenie, ktoré bude slúžiť ako \"primárne\"; zvyčajne je to "
+"grafická karta a monitor, na ktorom sa zobrazují správy pri spustení "
+"počítača."
 
 #. Type: note
 #. Description
@@ -370,15 +366,15 @@ msgid ""
 "however, the X server configuration files can be edited to support a multi-"
 "head configuration."
 msgstr ""
-"Actualmente, debconf só soporta configuracións cun só monitor. Nembargantes, "
-"pódense editar os ficheiros de configuración do servidor X para soportar "
-"unha configuración con varios monitores."
+"Debconf momentálne podporuje iba jeden monitor, no podporu viacerých "
+"monitorov môžete pridať neskôr manuálnou úpravou konfiguračného súboru X "
+"servera."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
 msgid "Enter an identifier for your video card."
-msgstr "Introduza un identificador para a súa tarxeta de vídeo."
+msgstr "Zadajte identifikátor vašej grafickej karty."
 
 #. Type: string
 #. Description
@@ -390,15 +386,15 @@ msgid ""
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
-"O ficheiro de ocnfiguración do servidor X asocia a tarxeta de video cun nome "
-"que pode proporcionar. Adoita se-la marca seguida do modelo, por exemplo, "
-"\"3Dfx Voodoo3\", ou \"ATI Rage Fury Maxx\"."
+"Konfiguračný súbor X servera priradí zadané meno grafickej karte. Zvyčajne "
+"sa používa názov výrobcu alebo značky, ktoré je nasledované modelom, napr. "
+"\"3Dfx Voodoo3\" alebo \"ATI Rage Fury Maxx\"."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:126
 msgid "Select the desired X server driver."
-msgstr "Escolla o controlador do servidor X que desexe."
+msgstr "Zvoľte ovládač X servera."
 
 #. Type: select
 #. Description
@@ -407,9 +403,8 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
 msgstr ""
-"Para que a interface gráfica de usuario do sistema X Window funcione "
-"correctamente, é necesario escoller un controlador da tarxeta de vídeo para "
-"o servidor X."
+"Pre správnu funkciu grafického rozhrania X Window System je potrebné zvoliť "
+"ovládač grafickej karty."
 
 #. Type: select
 #. Description
@@ -418,14 +413,14 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
-"Os controladores adoitan ter o nome do fabricante da tarxeta de vídeo ou "
-"chipset, ou o dun modelo ou familia de chipsets determinado."
+"Ovládače sa zvyknú nazývať podľa výrobcu čipovej sady, rodiny čipových sád, "
+"alebo podľa konkrétneho modelu."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:135
 msgid "Use kernel framebuffer device interface?"
-msgstr "¿Empregar a interface de dispositivo framebuffer do núcleo?"
+msgstr "Použiť rozhranie framebuffera v jadre?"
 
 #. Type: boolean
 #. Description
@@ -435,9 +430,9 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
-"Pódese configurar o servidor X para que, no canto de se comunicar "
-"directamente co hardware de vídeo, realice algunhas operacións (coma o "
-"cambio de modo de vídeo), mediante o controlador de framebuffer do núcleo."
+"X server sa môže nastaviť tak, aby nevykonával niektoré operácie priamo na "
+"zariadení (napr. prepínanie video režimov), ale cez ovládač framebuffera v "
+"jadre."
 
 #. Type: boolean
 #. Description
@@ -447,15 +442,14 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
-"En teoría os dous sistemas debían funcionar, pero na práctica adoita "
-"funcionar un pero non o outro. Activar esta opción é o máis seguro, pero "
-"pode desactivala se semella que causa problemas."
+"Teoreticky by mali fungovať oba prístupy, ale v praxi občas jeden funguje a "
+"druhý nie. Skúste túto voľbu povoliť, ináč ju pri problémoch zase vypnete."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Please enter the video card's bus identifier."
-msgstr "Introduza o identificador de bus da tarxeta de vídeo."
+msgstr "Zadajte identifikátor grafickej karty na zbernici."
 
 #. Type: string
 #. Description
@@ -465,15 +459,15 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
-"Os usuarios de máquinas PowerPC e de calquera ordenador con varios "
-"dispositivos de vídeo deberían especificar o ID de bus da tarxeta de vídeo "
-"nun formato específico do bus aceptado."
+"Používatelia počítačov PowerPC a používatelia ľubovoľných počítačov s "
+"viacerými grafickými kartami by mali zadať BusID grafickej karty vo formáte "
+"bežnom pre danú zbernicu."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Examples:"
-msgstr "Exemplos:"
+msgstr "Príklady:"
 
 #. Type: string
 #. Description
@@ -495,17 +489,20 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"Para os usuarios de configuracións con varios monitores, esta opción só ha "
-"configurar un dos monitores. Se quere configurar o resto ha ter que o facer "
-"a man no ficheiro de configuración do servidor X, /etc/X11/xorg.conf."
+"Pre používateľov s viacerými monitormi nastaví táto voľba iba jeden z nich. "
+"Zvyšné budete musieť nastaviť manuálne v súbore /etc/X11/XFConfig-4."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
+#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
+"Pre zistenie umiestnenia PCI alebo AGP grafickej karty môžete použiť príkaz "
+"\"lspci\". Nezabudnite, že lspci zobrazuje čísla zberníc, zariadení a "
+"funkcií v šestnástkovej (nie v desiatkovej) sústave."
 
 #. Type: string
 #. Description
@@ -514,27 +511,26 @@ msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
 msgstr ""
-"Se foi posible, esta pregunta xa se respostou automaticamente, e vostede "
-"debería aceptar a resposta por defecto a menos que saiba que non funciona."
+"Ak to bolo možné, tak je už odpoveď na túto otázku nastavená. Ak neviete, čo "
+"robíte, tak by ste mali použiť ponúknutú hodnotu."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "Please enter a bus identifier in the proper format."
-msgstr "Introduza un identificador de bus no formato axeitado."
+msgstr "Zadajte identifikátor zbernice v správnom tvare."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "The BusID entered was not in a recognized format."
-msgstr "O ID de bus que introduciu non está nun formato recoñecido."
+msgstr "Zadaný BusID nie je v žiadnom rozpoznateľnom formáte."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "Enter the amount of memory (in kB) to be used by your video card."
-msgstr ""
-"Introduza a cantidade de memoria (en kB) que emprega a súa tarxeta de vídeo."
+msgstr "Zadajte množstvo pamäte (v kB) pre vašu grafickú kartu."
 
 #. Type: string
 #. Description
@@ -545,10 +541,10 @@ msgid ""
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
-"Normalmente o servidor X autodetecta a cantidade de memoria adicada que ten "
-"a súa tarxeta de vídeo, pero algúns chips de vídeo integrados (coma o Intel "
-"i810) teñen pouca ou ningunha memoria propia, senón que toman emprestada "
-"memoria principal do sistema para as súas necesidades."
+"Väčšinou sa dá veľkosť pamäte na grafickej karte rozpoznať automaticky X "
+"serverom, ale niektoré integrované grafické čipy (ako napr. Intel i810) majú "
+"malú, alebo dokonca žiadnu pamäť a požičiavajú si ju z hlavnej operačnej "
+"pamäte."
 
 #. Type: string
 #. Description
@@ -558,15 +554,14 @@ msgid ""
 "card lacks RAM, or if the X server has trouble autodetecting the amount, is "
 "it necessary to specify the amount of video RAM."
 msgstr ""
-"É perfectamente aceptable deixar este parámetro en branco; só é necesario "
-"especificar a cantidade de RAM de vídeo se falla RAM na súa tarxeta de vídeo "
-"ou se o servidor X ten problemas autodetectando a cantidade."
+"Kľudne nechajte tento parameter prázdny. Zadať sa musí iba vtedy, ak nemá "
+"grafická karta vlastnú pamäť alebo X server nevie rozpoznať jej veľkosť."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "Please select the XKB rule set to use."
-msgstr "Escolla o conxunto de regras de XKB a empregar."
+msgstr "Zadajte množinu XKB pravidiel, ktorá sa má použiť."
 
 #. Type: string
 #. Description
@@ -575,8 +570,7 @@ msgid ""
 "For the X server to handle your keyboard correctly, an XKB rule set must be "
 "chosen."
 msgstr ""
-"Para que o seu servidor X xestione correctamente o teclado debe escollerse "
-"un conxunto de regras de XKB."
+"Pre správnu funkciu vašej klávesnice je nutné zvoliť množinu XKB pravidiel."
 
 #. Type: string
 #. Description
@@ -585,30 +579,33 @@ msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Os usuarios da maioría dos teclados deberían introducir \"xorg\". Os "
-"usuarios de teclados Sun Type 4 e Type 5, nembargantes, deberían introducir "
-"\"sun\"."
+"Väčšina používateľov by mala zadať \"xorg\". Používatelia klávesníc Sun Type "
+"4 a Type 5 by mali zadať \"sun\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
+#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
+"Skúsení používatelia môžu použiť ľubovoľnú definovanú množinu XKB pravidiel. "
+"Ak je už balík xlibs rozbalený, všetky dostupné pravidlá nájdete v adresári /"
+"etc/X11/xkb/rules"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr "Se non sabe que conxunto de regras empregar, introduza \"xorg\"."
+msgstr "Ak neviete, akú množinu pravidiel máte zadať, použijte \"xorg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "Please select your keyboard model."
-msgstr "Escolla o seu modelo de teclado."
+msgstr "Zvoľte model vašej klávesnice."
 
 #. Type: string
 #. Description
@@ -617,9 +614,9 @@ msgid ""
 "For the X server to handle your keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
-"Para que o servidor X xestione correctamente o teclado, debería introducir "
-"un modelo. Os modelos dispoñibles dependen do conxunto de regras XKB que se "
-"estea a empregar."
+"Aby X server pracoval správne s vašou klávesnicou, musíte zadať model "
+"klávesnice. Dostupné modely klávesníc závisia na tom, aké XKB pravidlá ste "
+"vybrali."
 
 #. Type: string
 #. Description
@@ -629,9 +626,8 @@ msgid ""
 "keys, historically common in the United States.  It does not have the \"logo"
 "\" or \"menu\" keys."
 msgstr ""
-"O teclado \"pc101\" é un teclado tradicional de estilo IBM PC/AT con 101 "
-"teclas, historicamente habitual nos Estados Unidos. Non ten as teclas \"logo"
-"\" nin \"menú\"."
+"Klávesnica \"pc101\" je tradičná klávesnice typu IBM PC/AT, ktorá má 101 "
+"kláves a je historicky veľmi rozšírená. Nemá klávesy \"logo\" ani \"menu\"."
 
 #. Type: string
 #. Description
@@ -641,10 +637,9 @@ msgid ""
 "keys are usually engraved with a \"logo\" symbol (there is typically a pair "
 "of these, between each set of control and alt keys), and a \"menu\" key."
 msgstr ""
-"O teclado \"pc104\" é coma o modelo pc101, con teclas adicionais. Esas "
-"teclas adoitan ter gravado un símbolo \"logo\" (adoita haber dúas, unha "
-"entre cada conxunto de teclas Control e Alt), e tamén hai unha tecla \"menu"
-"\"."
+"Klávesnica \"pc104\" je podobná modelu pc101, ale má naviac tri klávesy. "
+"Obvykle sú to dva klávesy so symbolmi \"logo\" a kláves \"menu\", ktoré sú "
+"umiestnenie medzi klávesmi Control a Alt."
 
 #. Type: string
 #. Description
@@ -656,10 +651,10 @@ msgid ""
 "symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
 "\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
 msgstr ""
-"Os modelos \"pc102\" e \"pc105\" son versións dos teclados pc101 e pc104, "
-"respectivamente, que se adoitan atopar en Europa. Se o seu teclado ten unha "
-"tecla \"< >\", seguramente teña un modelo \"pc102\" ou \"pc105\"; se escolle "
-"\"pc101\" ou \"pc104\" no seu canto, a súa tecla \"< >\" pode non funcionar."
+"Modely \"pc102\" a \"pc105\" sú verzie klávesníc pc101 a pc104 často "
+"používané v Európe. Tieto klávesnice väčšinou spoznáte podľa klávesu \"< >"
+"\" (na jednom klávese sú uvedené oba symboly zároveň). Ak si zvolíte model "
+"\"pc101\" alebo \"pc104\", kláves \"< >\" nemusí fungovať."
 
 #. Type: string
 #. Description
@@ -670,16 +665,16 @@ msgid ""
 "\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
 "input layer."
 msgstr ""
-"O modelo \"macintosh\" é para teclados Macintosh para os que o núcleo e as "
-"ferramentas da consola empregan a nova capa de entrada con códigos de "
-"teclado Linux; \"macintosh_old\" é para usuarios de teclado Macintosh que "
-"non empregan a nova capa de entrada."
+"Model \"macintosh\" je pre Macintosh klávesnice, kde jadro a konzolové "
+"nástroje používajú novú vstupnú vrstvu, ktorá používa linuxové kódy "
+"klávesov; \"macintosh_old\" je pre používateľov klávesnic Macintosh, ktorí "
+"nepoužívajú novú vstupnú vrstvu."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Tódolos modelos de enriba empregan o conxunto de regras \"xorg\"."
+msgstr "Všetky doposiaľ uvedené modely používajú množinu pravidiel \"xorg\"."
 
 #. Type: string
 #. Description
@@ -689,9 +684,8 @@ msgid ""
 "respectively.  These models can only be used if the \"sun\" XKB rule set is "
 "in use."
 msgstr ""
-"Os modelos \"type4\" e \"type5\" son para teclados Sun Type4 e Type5, "
-"respectivamente. Estes modelos só se poden empregar se se emprega o conxunto "
-"de regras XKB \"sun\"."
+"Modely \"type4\" a \"type5\" zodpovedajú klávesniciam Sun Type4 a Type5. "
+"Môžete ich použíť len s XKB pravidlami \"sun\"."
 
 #. Type: string
 #. Description
@@ -701,32 +695,37 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
-"Os teclados de ordenador portátil adoitan non ter tantas teclas coma os "
-"teclados normais; os usuarios de portátil deberían escoller o modelo de "
-"teclado máis semellante aos de enriba."
+"Klávesnice prenosných počítačov väčšinou nemajú toľko klávesov ako modely "
+"klávesníc pre stolné počítače. Používatelia prenosných počítačov by mali "
+"zvoliť čo najpodobnejší model."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
+#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
+"Skúsenejší používatelia môžu použiť ľubovoľný model definovaný zvolenou "
+"množinou XKB pravidiel. Ak je už balík xlibs rozbalený, všetky dostupné "
+"pravidlá nájdete v adresári /etc/X11/xkb/rules"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
+#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
-msgstr ""
+msgstr "Používatelia anglickej US klávesnice by väčšinou mali zadať \"pc104\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
 msgid "Please select your keyboard layout."
-msgstr "Escolla a súa disposición de teclado."
+msgstr "Zadajte rozloženie klávesnice."
 
 #. Type: string
 #. Description
@@ -736,18 +735,22 @@ msgid ""
 "be entered.  Available layouts depend on which XKB rule set and keyboard "
 "model were previously selected."
 msgstr ""
-"Para que o servidor X xestione correctamente o seu teclado debe introducir "
-"unha disposición de teclado. As disposicións dispoñibles dependen do "
-"conxunto de regras XKB e modelo de teclado que escollera."
+"Aby X server správne spolupracoval s vašou klávesnicou, musíte zvoliť jej "
+"rozloženie. Dostupné rozloženia závisia na tom, aké XKB pravidlá a aký model "
+"klávesnice ste vybrali."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
+#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
+"Skúsenejší používatelia môžu použiť ľubovoľný model definovaný zvolenou "
+"množinou XKB pravidiel. Ak je už balík xlibs rozbalený, všetky dostupné "
+"pravidlá nájdete v adresári /etc/X11/xkb/rules"
 
 #. Type: string
 #. Description
@@ -757,16 +760,15 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"Os usuarios de teclados españois deberían introducir \"es\". Os usuarios de "
-"teclados adaptados para outros países deberían introducir, normalmente, o "
-"seu código de país ISO 3166. Por exemplo, os EE.UU. empregan \"us\", "
-"Portugal \"pt\" e Alemaña emprega \"de\"."
+"Používatelia anglickej US klávesnice by mali zadať \"us\". Používatelia "
+"iných klávesníc by mali zadať kód svojej krajiny podľe ISO 3166. Napr. "
+"Slovenská republika používa \"sk\", Česká republika \"cz\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
 msgid "Please select your keyboard variant."
-msgstr "Escolla a súa variante de teclado."
+msgstr "Zadajte variant vašej klávesnice."
 
 #. Type: string
 #. Description
@@ -776,9 +778,9 @@ msgid ""
 "may be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
-"Para que o servidor X xestione o teclado como vostede quere, pódese "
-"introducir unha variante de teclado. As variantes dispoñibles dependen do "
-"conxunto de regras XKB, modelo e disposición de teclado seleccionados."
+"Aby X server spolupracoval s klávesnicou podľa vašich predstáv, môžete zadať "
+"variant klávesnice. Dostupné varianty závisia na tom, aké XKB pravidlá, "
+"model a rozloženie klávesnice ste si vybrali."
 
 #. Type: string
 #. Description
@@ -788,33 +790,39 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
-"Moitas disposicións de teclado soportan unha opción para tratar as teclas "
-"\"mortas\", coma as marcas de acentos e diéreses, coma teclas normais. Se "
-"ese é o comportamento que prefire, introduza \"nodeadkeys\"."
+"Mnoho rozložení klávesníc vie zmeniť správanie sa \"mŕtvych\" klávesov "
+"(mäkčeň a dĺžeň), aby fungovali ako zvyšné klávesy (kurzor posunú ďalej). Ak "
+"je to požadované správanie, zadajte \"nodeadkeys\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
+#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
 "directory for the file corresponding to your selected layout for available "
 "variants."
 msgstr ""
+"Skúsenejší používatelia môžu použiť ľubovoľný variant podporovaný zvolenými "
+"XKB pravidlami. Pokud již byl rozbalen balík xlibs, naleznete dostupné "
+"varianty v adresáři /etc/X11/xkb/symbols v souboru odpovídajícímu vybranému "
+"rozložení.pravidlami. Ak je už balík xlibs rozbalený, v adresári /etc/X11/"
+"xkb/symbols nájdete súbor zodpovedajúci zvolenému rozloženiu s dostupnými "
+"variantmi."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Os usuarios de teclados españois normalmente deberían deixar isto en branco."
+msgstr "Používatelia anglickej US klávesnice by mali toto pole nechať prázdne."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "Please select your keyboard options."
-msgstr "Escolla as súas opcións de teclado."
+msgstr "Zadajte voľby pre vašu klávesnicu."
 
 #. Type: string
 #. Description
@@ -824,10 +832,9 @@ msgid ""
 "be entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
-"Para que o servidor X xestione o teclado como desexa, pódense introducir "
-"opcións de teclado. As opcións dispoñibles dependen do conxunto de regras "
-"XKB seleccionado. Non tódalas opcións funcionan con tódolos modelos e "
-"disposicións de teclado."
+"Aby X server spolupracoval s vašou klávesnicou podľa očakávania, môžete pre "
+"klávesnicu zadať voľby. Dostupné voľby závisia na výbere XKB pravidiel. Nie "
+"všetky voľby dobre fungujú s každým modelom klávesnice a typom rozloženia."
 
 #. Type: string
 #. Description
@@ -837,10 +844,9 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
-"Por exemplo, se quere que a tecla \"Bloq Mayús\" funcione coma unha tecla "
-"Control adicional, pode introducir \"ctrl:nocaps\"; se quere intercambiar a "
-"tecla \"Bloq Mayús\" e Control da esquerda, pode introducir \"ctrl:swapcaps"
-"\"."
+"Napríklad ak chcete, aby sa kláves Caps Lock správal ako ďalší kláves "
+"Control, môžete zadať \"ctrl:nocaps\". Ak zadáte \"ctrl:swapcaps\", prehodí "
+"sa význam klávesov Caps Lock a ľavý Control."
 
 #. Type: string
 #. Description
@@ -852,10 +858,10 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
-"Outro exemplo: algunha xente prefire ter as teclas Meta dispoñibles nas "
-"teclas Alt do seu teclado (opción por defecto), mentres que outros prefiren "
-"ter as teclas Meta nas teclas Windows ou \"logo\". Se prefire empregar as "
-"teclas Windows ou logo coma teclas Meta, pode introducir \"altwin:meta_win\"."
+"Ďalším príkladom môže byť fakt, že niektorí ľudia preferujú kláves Meta na "
+"svojom klávese Alt (štandartné nastavenie), iní ho majú radšej na klávese "
+"Windows alebo \"logo\". Ak patríte do druhej skupiny, použijte \"altwin:"
+"meta_win\"."
 
 #. Type: string
 #. Description
@@ -866,10 +872,10 @@ msgid ""
 "like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
-"Pode combinar opcións separándoas cunha coma; por exemplo, se quere que a "
-"tecla \"Bloq Mayús\" funcione coma unha tecla Control adicional e tamén "
-"quere empregar as súas teclas Windows ou logo coma teclas Meta, pode "
-"introducir \"ctrl:nocaps,altwin:meta_win\"."
+"Jednotlivé voľby môžete kombinovať, stačí ich oddeliť čiarkou. Napríklad "
+"nastavenie, aby sa kláves Caps Lock správal ako ďalší Control a aby sa "
+"Windows alebo logo klávesy správali ako klávesy Meta, môžete zadať \"ctrl:"
+"nocaps,altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -883,13 +889,13 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "If you don't know what options to use, leave this entry blank."
-msgstr "Se non sabe que opcións empregar, deixe esta entrada en branco."
+msgstr "Ak neviete, aké voľby použiť, nechajte toto pole prázdne."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:303
 msgid "Attempt mouse device autodetection?"
-msgstr "¿Tentar a autodetección dos dispositivos de rato?"
+msgstr "Pokúsiť sa o rozpoznanie myši?"
 
 #. Type: boolean
 #. Description
@@ -902,11 +908,12 @@ msgid ""
 "the computer's power, connect the mouse, turn the computer back on, and "
 "reboot.  If you wish to select a mouse type manually, decline this option."
 msgstr ""
-"Se ten un rato conectado ao ordenador, pódese tentar detectalo. Pode axudar "
-"se se move o rato mentres se tenta a detección (non debería estar a "
-"funcionar o programa gpm). Se quere conectar un rato PS/2 ou de bus, debería "
-"apagar o ordenador, conectar o rato, e volver acender o ordenador. Se quere "
-"seleccionar un tipo de rato manualmente, rexeite esta opción."
+"Ak máte k počítaču pripojenú myš, môžete jej rozpoznanie nechať na systém. "
+"Rozpoznaniu môžete pomôcť pohybovaním myši (tiež by nemal byť spustený "
+"program gpm). Ak chcete k počítaču pripojiť sériovú, zbernicovú alebo PS/2 "
+"myš, mali by ste vypnúť systém, odpojiť napájanie, pripojiť myš, zapnúť "
+"počítač a reštartovať. Zamietnite túto možnosť, ak chcete zadať typ myši "
+"manuálne."
 
 #. Type: boolean
 #. Description
@@ -917,16 +924,15 @@ msgid ""
 "autodetection succeeds, further debconf questions about your mouse will be "
 "pre-answered."
 msgstr ""
-"Se acepta esta opción e falla a autodetección, háselle volver facer esta "
-"pregunta. Pode tentar a autodetección tantas veces como queira. Se a "
-"autodetección ten éxito, hanse respostar automaticamente as demais preguntas "
-"sobre o seu rato."
+"Ak prijmete túto možnosť a rozpoznanie zlyhá, táto otázka sa zopakuje. "
+"(Rozpoznávanie môžete skúšať koľkokrát chcete.) Ak rozpoznanie skončí "
+"úspešne, ďalšie otázky budú mať prednastavené zistené hodnoty."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:319
 msgid "Please choose your mouse port."
-msgstr "Escolla o porto do rato."
+msgstr "Zadajte port vašej myši."
 
 #. Type: select
 #. Description
@@ -936,9 +942,9 @@ msgid ""
 "certain characteristics of your mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
-"Para que a interface gráfica do sistema X Window funcione correctamente, é "
-"necesario coñecer algunhas características do seu rato (ou de outro "
-"dispositivo de punteiro, coma un trackball)."
+"Pre správnu funkciu grafického rozhrania X Window System je nutné poznať "
+"vlastnosti pripojenej myši (alebo iného ukazovacieho zariadenia, akým je "
+"napr. trackball)."
 
 #. Type: select
 #. Description
@@ -954,26 +960,25 @@ msgid ""
 "inport devices from your computer, please do so with the computer's power "
 "off."
 msgstr ""
-"É preciso determinar o porto (tipo de conexión) que emprega o seu rato. Os "
-"portos serie empregan conectores con forma de D e de 9 a 25 patas (DB-9 ou "
-"DB-25); o conector do rato é femia (ten buratos) e o conector do ordenador é "
-"macho (ten patas). Os portos PS/2 son conectores redondos pequenos (DIN) con "
-"6 patas; o conector do rato é macho e o lado do ordenador é femia. Tamén "
-"pode ter un rato USB, un rato de bus (moi antigo) ou pode estar a empregar o "
-"programa gpm coma repetidor. Se ten que conectar ou desconectar ratos PS/2 "
-"ou bus do seu ordenador, fágao co ordenador apagado."
+"Najprv je nutné určiť port, ktorým je myš pripojená k počítaču. Sériové "
+"porty používajú konektory s 9 alebo 25 vývodmi (DB-9 alebo DB-25) typu "
+"samec, konektor na myši je typu samica. Porty PS/2 sú malé okrúhle konektory "
+"(DIN) so 6 vývodmi typu samica, konektor myši je typu samec. Ďalej môžete "
+"použiť USB myš, zbernicovú (veľmi starú) myš alebo program gpm ako opakovač. "
+"Ak potrebujete pripojiť alebo odpojiť PS/2 alebo zbernicové zariadenie, "
+"počítač musíte vypnúť."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:337
 msgid "Please choose the entry that best describes your mouse."
-msgstr "Escolla a entrada que describa mellor o seu rato."
+msgstr "Zvoľte položku, ktorá najlepšie popisuje vašu myš."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:342
 msgid "Emulate 3 button mouse?"
-msgstr "¿Emular un rato de 3 botóns?"
+msgstr "Emulovať trojtlačidlovú myš?"
 
 #. Type: boolean
 #. Description
@@ -984,10 +989,9 @@ msgid ""
 "presence of a middle button by treating simultaneous clicks or drags of the "
 "left and right buttons as middle button events."
 msgstr ""
-"Moitos programas do sistema X Window esperan que o seu rato teña 3 botóns "
-"(esquerdo, dereito e central). Os ratos con só 2 botóns poden emular a "
-"presencia dun botón central facendo que ao premer os dous botóns ao mesmo "
-"tempo se trate coma un botón central."
+"Väčšina programov v X Window Systéme predpokladá, že myš má tri tlačidlá "
+"(ľavé, prostredné a pravé). Myš s dvoma tlačidlami môže emulovať prostredné "
+"tlačidlo súbežným stlačením oboch tlačidiel."
 
 #. Type: boolean
 #. Description
@@ -996,8 +1000,8 @@ msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
 msgstr ""
-"Esta opción tamén se pode empregar con ratos de 3 botóns ou máis; o botón do "
-"medio ha seguir a funcionar normalmente."
+"Táto voľba bude fungovať aj na troj- a viac-tlačidlových myšiach; prostredné "
+"tlačidlo bude normálne fungovať."
 
 #. Type: boolean
 #. Description
@@ -1007,15 +1011,15 @@ msgid ""
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
 "\") are not yet supported with this configuration tool."
 msgstr ""
-"Teña en conta que os botóns por riba do quinto (contando unha roda coma dous "
-"botóns, un para subir e outro para baixar, e un terceiro para os clics ca "
-"roda) non teñen soporte nesta ferramenta de configuración."
+"Tento konfiguračný nástroj nepodporuje viac ako päť tlačidiel (vrátane "
+"kolieska, ktoré sa počíta za dve - jedno \"nahor\" a jedno \"nadol\", pričom "
+"tretím je \"klik\" kolieska)."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:358
 msgid "Attempt monitor autodetection?"
-msgstr "¿Tentar a autodetección do monitor?"
+msgstr "Pokúsiť sa o rozpoznanie monitora?"
 
 #. Type: boolean
 #. Description
@@ -1027,11 +1031,10 @@ msgid ""
 "same dialect of this protocol, further debconf questions about your monitor "
 "will be pre-answered."
 msgstr ""
-"Moitos monitores (incluíndo LCDs) e tarxetas de vídeo soportan un protocolo "
-"de comunicacións que permiten comunicarlle ao ordenador as características "
-"técnicas do monitor. Se o seu monitor e tarxeta de vídeo falan o mesmo "
-"dialecto deste protocolo, hanse respostar automaticamente as outras "
-"preguntas sobre o seu monitor."
+"Mnoho monitorov (vrátane LCD) a grafických kariet podporuje komunikačný "
+"protokol, pomocou ktorého môže počítač zistiť technické parametre monitora. "
+"Ak váš monitor aj grafická karta nájdu spoločnú reč, nasledovní otázky sa "
+"vyplnia zistenými hodnotami."
 
 #. Type: boolean
 #. Description
@@ -1039,13 +1042,14 @@ msgstr ""
 msgid ""
 "If autodetection fails, you will be asked for information about your monitor."
 msgstr ""
-"Se falla a autodetección háselle pedir información sobre o seu monitor."
+"Ak zlyhá automatické rozpoznanie, údaje o monitore budete musieť zadať "
+"manuálne."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
 msgid "Please choose a method for selecting your monitor characteristics."
-msgstr "Escolla un método para seleccionar as características do seu monitor."
+msgstr "Zadajte spôsob voľby vlastností monitora."
 
 #. Type: select
 #. Description
@@ -1054,8 +1058,8 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of your monitor must be known."
 msgstr ""
-"Para que a interface gráfica do sistema X Window funcione correctamente, "
-"deben coñecerse algunhas características do seu monitor."
+"Pre správnu funkčnosť grafického rozhrania X Window System je nutné poznať "
+"niektoré vlastnosti pripojeného monitora."
 
 #. Type: select
 #. Description
@@ -1066,11 +1070,11 @@ msgid ""
 "this will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
-"Para a opción \"simple\", só é preciso coñece-lo tamaño físico do monitor; "
-"isto ha estabrecer algúns valores de configuración apropiados para un "
-"monitor CRT dese tamaño, pero pode non ser óptimo para CRTs de alta "
-"calidade. (Esta opción está desactivada para usuarios de paneis LCD, porque "
-"esas pantallas están configuradas para unha resolución determinada)."
+"Pri voľbe \"simple\" vám stačí vedieť iba fyzickú veľkosť monitora. Tým sa "
+"nastavia štandartné hodnoty pre typický CRT monitor tejto veľkosti, ktoré "
+"však nemusia vyhovovať veľmi kvalitným monitorom. (Táto voľba je nedostupná "
+"pre používateľov s LCD, pretože tieto obrazovky sa nastavujú pre konkrétne "
+"rozlíšenie.)"
 
 #. Type: select
 #. Description
@@ -1080,9 +1084,9 @@ msgid ""
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know your monitor is capable of)."
 msgstr ""
-"A opción \"media\" halle presentar unha lista de resolucións e velocidades "
-"de refresco, coma \"800x600 @ 85 Hz\"; debería escoller o mellor modo que "
-"quere empregar (e que saiba que o monitor pode presentar)."
+"Možnosť \"medium\" vám ponúkne zoznam rozlíšení a obnovovacích frekvencií, "
+"napr. \"800x600 @ 85Hz\". Mali by ste si vybrať najlepší režim, ktorý budete "
+"používať a ktorý zvládne váš monitor."
 
 #. Type: select
 #. Description
@@ -1091,8 +1095,8 @@ msgid ""
 "The \"advanced\" option will let you specify your monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
-"A opción \"avanzada\" halle permitir especificar directamente as tolerancias "
-"de sincronía horizontal e refresco vertical do seu monitor."
+"Voľba \"advanced\" vás nechá priamo zadať rozsah horizontálnej a vertikálnej "
+"frekvencie monitora."
 
 #. Type: select
 #. Choices
@@ -1101,28 +1105,27 @@ msgid ""
 "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
 "inches (480-510 mm), 21 inches (530 mm) or more"
 msgstr ""
-"Ata 14 polgadas (355 mm), 15 polgadas (380 mm), 17 polgadas (430 mm), 19-20 "
-"polgadas (480-510 mm), 21 polgadas (530 mm) ou máis"
+"Do 14 palcov (355 mm), 15 palcov (380 mm), 17 palcov (430 mm), 19-20 palcov "
+"(480-510 mm), 21 palcov (530 mm) alebo viac"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
 msgid "Please choose your approximate monitor size."
-msgstr "Escolla o tamaño aproximado do seu monitor."
+msgstr "Zadajte približnú veľkosť monitora."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
-"Os CRTs de alta calidade poderían funcionar coma un monitor da seguinte "
-"categoría de tamaños."
+"Veľmi kvalitné monitory vedia pracovať aj s nastavením z vyššej kategórie."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:396
 msgid "Please select your monitor's best video mode."
-msgstr "Escolla o mellor modo de vídeo do seu monitor."
+msgstr "Zadajte čo najlepší režim vášho monitora."
 
 #. Type: select
 #. Description
@@ -1136,19 +1139,16 @@ msgid ""
 "it; if in doubt, use the video mode recommended by the manufacturer of your "
 "LCD."
 msgstr ""
-"Escolla a \"mellor\" resolución e velocidade de refresco que crea que pode "
-"dar o seu monitor. É mellor unha maior resolución e velocidade de refresco. "
-"Se emprega un monitor CRT, é perfectamente aceptable escoller un modo de "
-"vídeo \"peor\" que o máximo do seu monitor, se quere. Os usuarios de "
-"pantallas LCD tamén poden facelo, pero só se o chipset de vídeo e o "
-"controlador o soportan; se non sabe, empregue o modo de vídeo recomendado "
-"polo fabricante da súa pantalla."
+"Zvoľte \"najlepšie\" rozlíšenie a obnovovaciu frekvenciu, ktoré by mal "
+"zvládnuť váš monitor. Lepšie sú väčšie rozlíšenia a obnovovacie frekvencie. "
+"Samozrejme, že si môžete zvoliť aj \"horší\" video režim. Používatelia s LCD "
+"by mali zvoliť režim odporúčaný výrobcom monitora."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:406
 msgid "Enter an identifier for your monitor."
-msgstr "Introduza un identificador para o seu monitor."
+msgstr "Zadajte identifikátor vášho monitora."
 
 #. Type: string
 #. Description
@@ -1158,16 +1158,15 @@ msgid ""
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
-"O ficheiro de configuración do servidor X asocia o seu monitor cun nome que "
-"pode fornecer. Adoita ser a marca seguida polo modelo, por exemplo: \"Sony "
-"E200\" ou \"Dell E770s\"."
+"Konfiguračný súbor X servera priradí monitor k zadanému identifikátoru. "
+"Zvyčajne sa používa názov výrobcu alebo značky, ktoré je nasledované "
+"modelom, napr. \"Eizo F56\" alebo \"Benq FP767\"."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
 msgid "Write monitor sync ranges to configuration file?"
-msgstr ""
-"¿Gravar os rangos de sincronía do monitor no ficheiro de configuración?"
+msgstr "Zapísať do konfiguračného súboru frekvenčný rozsah monitora?"
 
 #. Type: boolean
 #. Description
@@ -1177,15 +1176,15 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
-"Os rangos de sincronía do monitor deberían ser autodetectados polo servidor "
-"X na maioría dos csaso, pero ás veces precisa de axuda. Esta opción é para "
-"usuarios avanzados, e debería deixarse no valor por defecto."
+"Frekvenčné rozsahy monitora by sa mali automaticky rozpoznať X serverom, no "
+"niekedy mu treba pomôcť. Táto voľba je pre skúsenejších používateľov a mala "
+"by byť ponechaná jej predvolená hodnota."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:420
 msgid "Enter your monitor's horizontal sync range."
-msgstr "Introduza o rango de sincronía horizontal do seu monitor."
+msgstr "Zadajte horizontálnu frekvenciu vášho monitora."
 
 #. Type: string
 #. Description
@@ -1196,17 +1195,16 @@ msgid ""
 "CRT's).  This information should be available in your monitor's manual.  "
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
-"Introduza unha lista de valores discretos separados por comas (para "
-"pantallas de frecuencia fixa) ou unha parella de valores separados por un "
-"guión (tódolos CRTs modernos). Esta información debería estar dispoñible no "
-"manual do seu monitor. Os valores inferiores a 30 ou superiores a 130 son "
-"extremadamente raros."
+"Zadajte buď zoznam hodnôt oddelených čiarkou (pre monitory s pevnou "
+"frekvenciou), alebo rozsah hodnôt - dve čísla oddelené pomlčkou (všetky "
+"moderné CRT monitory). Tieto informácie nájdete v manuále k monitoru. "
+"Hodnoty menšie ako 30 a vyššie ako 130 sú veľmi zriedkavé."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:428
 msgid "Enter your monitor's vertical refresh range."
-msgstr "Introduza o rango de refresco vertical do seu monitor."
+msgstr "Zadajte vertikálnu frekvenciu vášho monitora."
 
 #. Type: string
 #. Description
@@ -1217,17 +1215,16 @@ msgid ""
 "CRT's).  This information should be available in your monitor's manual.  "
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
-"Introduza unha lista de valores discretos separados por comas (para "
-"pantallas de frecuencia fixa) ou unha parella de valores separados por un "
-"guión (tódolos CRTs modernos). Esta información debería estar dispoñible no "
-"manual do seu monitor. Os valores inferiores a 50 ou superiores a 160 son "
-"extremadamente raros."
+"Zadajte buď zoznam hodnôt oddelených čiarkou (pre monitory s pevnou "
+"frekvenciou), alebo rozsah hodnôt - dve čísla oddelené pomlčkou (všetky "
+"moderné CRT monitory). Tieto informácie nájdete v manuále k monitoru. "
+"Hodnoty menšie ako 50 a vyššie ako 160 sú veľmi zriedkavé."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:436
 msgid "Please enter a comma-separated list of ranges or values."
-msgstr "Introduza unha lista separada por comas de rangos ou valores."
+msgstr "Zadajte zoznam hodnôt alebo rozsahov oddelený čiarkami."
 
 #. Type: note
 #. Description
@@ -1236,14 +1233,14 @@ msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
 msgstr ""
-"A sintaxe válida é unha lista de valores discretos separados por comas ou "
-"unha parella de valores separados por un guión."
+"Platná syntax je čiarkami oddelený zoznam diskrétnych hodnôt, alebo pár "
+"hodnôt oddelený pomlčkou."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:444
 msgid "Select the video modes you would like the X server to use."
-msgstr "Escolla os modos de vídeo que quere que empregue o servidor X."
+msgstr "Zvoľte grafické režimy, ktoré môže používať X server."
 
 #. Type: multiselect
 #. Description
@@ -1254,16 +1251,16 @@ msgid ""
 "all of them is effectively the same as removing none, since in both cases "
 "the X server will attempt to use the highest possible resolution."
 msgstr ""
-"Se hai algunhas resolucións que non quere que empregue o servidor X incluso "
-"se o hardware as pode facer, elimíneas da lista de embaixo. Eliminalas todas "
-"é o mesmo que non eliminar ningunha, xa que nos dous casos o servidor X ha "
-"tentar empregar a resolución máis alta posible."
+"Ak sa tu nachádzjú rozlíšenia, ktoré X server nemá používať aj naprike tomu, "
+"že by ich zvládol, odstráňte ich zo zoznamu. Odstránenie všetkých je však to "
+"isté ako neodstránenie žiadneho, pretože v oboch prípadoch sa X server bude "
+"snažiť použiť najvyššie možné rozlíšenie."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:454
 msgid "Please select your desired default color depth in bits."
-msgstr "Escolla a profundidade de cor desexada en bits."
+msgstr "Zadajte požadovanú farebnú hĺbku v bitoch."
 
 #. Type: select
 #. Description
@@ -1275,11 +1272,10 @@ msgid ""
 "acceleration only for certain depths.  Consult your video card manual for "
 "more information."
 msgstr ""
-"Normalmente é preferible a cor de 24 bits, pero en tarxetas gráficas con "
-"cantidades limitadas de memoria pódense conseguir resolucións máis elevadas "
-"reducindo a profundidade de cor. Tamén, algunhas tarxetas só soportan "
-"aceleración 3D hardware nalgunhas profundidades de cor determinadas. "
-"Consulte o manual da súa tarxeta de vídeo para obter máis información."
+"Väčšinou sa používa 24 bitová hĺbka, ale na grafických kartách s obmedzenou "
+"pamäťou môžete znížením počtu farieb získať vyššie rozlíšenie. Takisto "
+"niektoré karty podporujú 3D akceleráciu len v určitých hĺbkach. Viac "
+"informácií nájdete v manuáli k vašej grafickej karte."
 
 #. Type: select
 #. Description
@@ -1289,52 +1285,52 @@ msgid ""
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits.)"
 msgstr ""
-"A chamada \"cor de 32 bits\" consiste realmente en 24 bits de información de "
-"cor máis 8 bits de canle alfa ou simple recheo; o sistema X Window pode "
-"tratar cos dous. Se quere algún, escolla 24 bits.)"
+"(Takzvané \"32 bitové farby\" sú v skutočnosti 24 bitové plus 8 bitov alfa "
+"kanál alebo jednoducho zarovnané nulami. X Window System zvláda oba "
+"možnosti. V oboch prípadoch však zvoľte 24 bitov.)"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "Please enter a value for the entry."
-msgstr "Introduza un valor."
+msgstr "Prosím, zadajte hodnotu položky."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "A null entry is not permitted."
-msgstr "Non se permite unha entrada nula."
+msgstr "Nie je dovolená prázdna položka."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Please enter a value without double-quotes."
-msgstr "Introduza un valor sen comiñas dobres."
+msgstr "Prosím, zadajte hodnotu bez úvodzoviek."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Non se permiten caracteres de comiñas dobres no valor de entrada."
+msgstr "V hodnote položky nie sú dovolené úvodzovky (\")."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Please enter only a numeric value."
-msgstr "Introduza só un valor numérico."
+msgstr "Prosím, zadajte iba číselnú hodnotu."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Characters other than digits are not allowed in the entry."
-msgstr "Non se permiten caracteres distintos a díxitos."
+msgstr "V položke nie sú dovolené iné znaky ako číslice."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
 #, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Escolla o mellor modo de video do monitor."
+msgstr "Zadajte rozloženie klávesnice."
 
 #. Type: boolean
 #. Description
@@ -1354,25 +1350,23 @@ msgid ""
 msgstr ""
 
 #~ msgid "Migrate XKB configuration directory?"
-#~ msgstr "¿Migrar o directorio de configuración de XKB?"
+#~ msgstr "Preniesť adresár s nastavením XKB?"
 
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
 #~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
-#~ "O directorio no que se armacena a información de configuración (que "
-#~ "inclúe os datos do teclado) para a extensión X KEYBOARD (XKB) cambiou de /"
-#~ "usr/X11R6/lib/X11/xkb a /etc/X11/xkb ."
+#~ "Adresár, v ktorom je uložené nastavenie X KEYBOARD Extension (XKB), sa "
+#~ "presunul z /usr/X11R6/lib/X11/xkb do /etc/X11/xkb."
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
 #~ "from old or unofficial Debian packages, may continue to install files "
 #~ "there."
 #~ msgstr ""
-#~ "O seu sistema está a empregar a localización antiga, e algúns programas, "
-#~ "entre eles paquetes Debian antigos ou non oficiais, poden seguir a "
-#~ "instalar ficheiros alí."
+#~ "Váš systém používa staré umiestnenie a niektoré programy, napr. "
+#~ "neoficiálne alebo staré balíky, tam môžu naďalej inštalovať súbory."
 
 #~ msgid ""
 #~ "Would you like the XKB configuration files on the system to be "
@@ -1382,23 +1376,23 @@ msgstr ""
 #~ "the old location to the new one will be created to prevent legacy "
 #~ "applications from breaking."
 #~ msgstr ""
-#~ "¿Quere migrar automaticamente os ficheiros XKB do sistema da antiga "
-#~ "localización á nova? Calquera ficheiro que xa exista na nova localización "
-#~ "hase copiar e substituír por un ficheiro da antiga localización. Hase "
-#~ "crear unha ligazón simbólica da antiga localización á nova para que as "
-#~ "aplicacións antigas non rompan."
+#~ "Chcete presunúť nastavenie XKB zo starého umiestnenia na nové miesto? "
+#~ "Prípadné súbory v novom adresári, ktoré by mali rovnaké názvy ako súbory "
+#~ "v pôvodnom umiestnení, budú zazálohované a nahradené súbormi zo starého "
+#~ "umiestnenia. Aby sme zabránili narušeniu starších aplikácií, vytvorí sa "
+#~ "symbolický odkaz z pôvodného umiestnenia do nového adresára."
 
 #~ msgid "Migrate Xt application defaults directory?"
-#~ msgstr "¿Migrar o directorio de opcións por defecto de aplicacións Xt?"
+#~ msgstr "Preniesť adresár s predvoleným nastavením Xt?"
 
 #~ msgid ""
 #~ "The directory where application defaults for X Window System client "
 #~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
 #~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
 #~ msgstr ""
-#~ "O directorio no que se gardan as opcións por defecto para os programas "
-#~ "cliente de X Window baseados en X Toolkit Intrinsics (Xt) cambiouse de /"
-#~ "usr/X11R6/lib/X11/app-defaults a /etc/X11/app-defaults ."
+#~ "Adresár, v ktorom sú uložené implicitné hodnoty aplikácií X Window "
+#~ "Systému využívajúcich X Toolkit Intrinsics (Xt), sa presunul z /usr/X11R6/"
+#~ "lib/X11/app-defaults do /etc/X11/app-defaults."
 
 #~ msgid ""
 #~ "Would you like the app-defaults files on the system to be automatically "
@@ -1408,30 +1402,31 @@ msgstr ""
 #~ "to the new one will be created to prevent legacy applications from "
 #~ "breaking."
 #~ msgstr ""
-#~ "¿Quere migrar automaticamente os ficheiros app-defaults do sistema da "
-#~ "antiga localización á nova? Calquera ficheiro que xa exista na nova "
-#~ "localización hase copiar e substituír por un ficheiro da antiga "
-#~ "localización. Hase crear unha ligazón simbólica da antiga localización á "
-#~ "nova para que as aplicacións antigas non rompan."
+#~ "Chcete presunúť tieto súbory s predvoleným nastavením zo starého "
+#~ "umiestnenia na nové miesto? Prípadné súbory v novom adresári, ktoré by "
+#~ "mali rovnaké názvy ako súbory v pôvodnom umiestnení, budú zazálohované a "
+#~ "nahradené súbormi zo starého umiestnenia. Aby sme zabránili narušeniu "
+#~ "starších aplikácií, vytvorí sa symbolický odkaz z pôvodného umiestnenia "
+#~ "do nového adresára."
 
 #~ msgid "Select the desired default display manager."
-#~ msgstr "Escolla o xestor de pantalla por defecto que desexe."
+#~ msgstr "Zvoľte predvoleného správcu obrazovky."
 
 #~ msgid ""
 #~ "A display manager is a program that provides graphical login capabilities "
 #~ "for the X Window System."
 #~ msgstr ""
-#~ "Un xestor de pantalla é un programa que fornece capacidades de inicio de "
-#~ "sesión gráfico para o sistema X Window."
+#~ "Správca obrazovky je program, ktorý ponúka grafické prihlásenie do "
+#~ "systému X Window."
 
 #~ msgid ""
 #~ "Only one display manager can manage a given X server, but multiple "
 #~ "display manager packages are installed.  Please select which display "
 #~ "manager should run by default."
 #~ msgstr ""
-#~ "Só un xestor de pantalla pode xestionar un servidor X determinado, pero "
-#~ "hai varios paquetes de xestores de pantalla instalados. Escolla o que se "
-#~ "debería executar por defecto."
+#~ "Máte nainštalovaných viac správcov obrazovky, ale iba jeden môže "
+#~ "obsluhovať daný X server. Zvoľte si správcu, ktorý sa bude štandartne "
+#~ "spúšťať."
 
 #~ msgid ""
 #~ "(Multiple display managers can run simultaneously if they are configured "
@@ -1439,13 +1434,13 @@ msgstr ""
 #~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
 #~ "disable the check for a default display manager.)"
 #~ msgstr ""
-#~ "(Pódense executar varios xestores de pantalla ao mesmo tempo se se "
-#~ "configuran para xestionar servidores distintos; para facelo, configure os "
-#~ "xestores de pantalla, edite os seus scripts de inicio de /etc/init.d e "
-#~ "desactive a comprobación do xestor de pantalla por defecto)."
+#~ "(Súbežne môže byť spustených viac správcov obrazovky, ale iba v prípade "
+#~ "viacero rozdielnych serverov. Pre dosiahnutie takéhoto nastavenia ich "
+#~ "musíte správne nastaviť, upraviť ich spúšťacie skripty v /etc/init.d a "
+#~ "zakázať kontrolu štandartného správcu obrazovky.)"
 
 #~ msgid "Do you wish to stop the xdm daemon?"
-#~ msgstr "¿Quere deter o daemon de xdm?"
+#~ msgstr "Chcete zastaviť správcu obrazovky xdm?"
 
 #~ msgid ""
 #~ "The X display manager (xdm) daemon is typically stopped on package "
@@ -1454,14 +1449,14 @@ msgstr ""
 #~ "terminated. Otherwise you may leave xdm running, and the new version will "
 #~ "take effect the next time the daemon is restarted."
 #~ msgstr ""
-#~ "Normalmente adóitase deter o daemon do xestor de pantalla de X (xdm) ao "
-#~ "actualizar ou eliminar o paquete, pero semella que está a xestionar "
-#~ "alomenos unha sesión X en execución. Se se detén xdm agora, hase cortar "
-#~ "calquera sesión X que xestione. Se non, pode deixar xdm a se executar, e "
-#~ "a nova versión ha tomar efecto a próxima vez que reinicie o daemon."
+#~ "Správca obrazovky xdm (X display manager) sa zvykne zastaviť pri "
+#~ "aktualizácii alebo odstraňovaní balíka, lenže teraz to vyzerá tak, že má "
+#~ "na starosti aspoň jedno ďalšie sedenie. Ak by sa teraz xdm zastavil, "
+#~ "všetky ním ovládané sedenia by sa ukončili. V opačnom prípade môžete "
+#~ "nechať xdm spustený, pričom nová verzia sa spustí pri ďalšom reštarte xdm."
 
 #~ msgid "experimental version of X.Org packages"
-#~ msgstr "versión experimental dos paquetes de X.Org"
+#~ msgstr "experimentálna verzia balíkov X.Org"
 
 #~ msgid ""
 #~ "You are using an experimental version of X.Org packages for Debian.  "
@@ -1469,10 +1464,9 @@ msgstr ""
 #~ "version of the packages, since they have not been released to the Debian "
 #~ "distribution yet."
 #~ msgstr ""
-#~ "Está a empregar unha versión experimental dos paquetes de X.Org para "
-#~ "Debian. Non informe no Sistema de Seguemento de Fallos de Debian de "
-#~ "fallos nesta versión dos paquetes, xa que aínda non se publicaron en "
-#~ "Debian."
+#~ "Teraz používate experimentálnu verziu balíkov X.Org pre Debian. Nehláste, "
+#~ "prosím, chyby v tejto verzii balíkov do BTS (Bug Tracking System), "
+#~ "pretože ešte nie sú súčasťou distribúcie."
 
 #~ msgid ""
 #~ "If you experience problems with these packages or would like to submit "
@@ -1480,9 +1474,9 @@ msgstr ""
 #~ "more about this mailing list on the World Wide Web:\n"
 #~ "  http://lists.debian.org/debian-x/"
 #~ msgstr ""
-#~ "Se ten problemas con estes paquetes ou quere enviar parches, envíe unha "
-#~ "mensaxe á lista de correo Debian X. Pode ler máis información sobre esta "
-#~ "lista de correo na web:\n"
+#~ "Ak zaznamenáte chybu v týchto balíkoch alebo chcete poslať nejaké opravy, "
+#~ "píšte, prosím, do poštovej diskusnej skupiny Debian X. Viac si o tejto "
+#~ "disksunej skupine môžete prečítať na:\n"
 #~ "  http://lists.debian.org/debian-x/"
 
 #~ msgid ""
@@ -1499,140 +1493,42 @@ msgstr ""
 #~ "       apt-get install x11-common/stable\n"
 #~ "    You may need to specify downgrades for several packages."
 #~ msgstr ""
-#~ "Se non quere executar paquetes X experimentais, ten que facer dúas "
-#~ "cousas:\n"
-#~ "  1) Asegúrese de que non ten repositorios de paquetes experimentais no "
-#~ "seu\n"
-#~ "     ficheiro /etc/apt/sources.list;\n"
-#~ "  2) Dígalle a apt que desactualice X.Org a unha versión publicada "
-#~ "axeitada;\n"
-#~ "     pode facelo engadindo o nome dun conxunto de paquetes ao nome do "
-#~ "paquete\n"
-#~ "     con \"apt-get\" -- por exemplo:\n"
-#~ "       apt-get install x11-common/unstable\n"
-#~ "     ou\n"
-#~ "       apt-get install x11-common/stable\n"
-#~ "     Pode ter que especificar desactualizacións para varios paquetes."
-
-#~ msgid ""
-#~ "When using operating system kernels with a particular scheduling "
-#~ "strategy, it has been widely noted that the X server's performance "
-#~ "improves when it is run at a higher process priority than the default; a "
-#~ "process's priority is known as its \"nice\" value.  They range from -20 "
-#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
-#~ "(extremely low priority).  The default nice value for ordinary processes "
-#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
-#~ "default for a machine that has duties other than interacting with the "
-#~ "console user (such as a web server)."
-#~ msgstr ""
-#~ "Cando se empregan núcleos de sistemas operativos cunha estratexia de "
-#~ "planificación determinada, tense observado en moitas partes que o "
-#~ "rendemento do servidor X mellora cando se executa cunha prioridade maior "
-#~ "á prioridade por defecto. A prioridade dun proceso coñécese coma o seu "
-#~ "nivel de amabilidade. Este nivel pode ir de -20 (prioridade moi alta, ou "
-#~ "\"non amable\" con outros procesos) a 19 (prioridade moi baixa). O valor "
-#~ "de amabilidade por defecto para os procesos normais é 0. -10 é un bo "
-#~ "valor por defecto para unha estación de traballo para un só usuario; 0 é "
-#~ "un bo valor para unha máquina que fai cousas distintas de interactuar co "
-#~ "usuario da consola (coma un servidor web)."
+#~ "Ak nechcete používať experimentálne balíky X, musíte zabezpečiť dve "
+#~ "veci:\n"
+#~ "  1) Uistite sa, že v súbore /etc/apt/sources.list nemáte uvedené\n"
+#~ "     zdroje pre experimentálne balíky;\n"
+#~ "  2) Použijte apt na zníženie verzie X.Org na zodpovedajúcu uvoľnenú\n"
+#~ "     verziu. Dosiahnete to napr. pridaním sady za názov balíka:\n"
+#~ "     Napríklad:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "     alebo\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "     Možno budete musieť takýmto spôsobom znížiť verziu viacerých balíkov."
 
 #~ msgid ""
 #~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
 #~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
 #~ "value of the X server should be set to 0."
 #~ msgstr ""
-#~ "O que se explica enriba non é certo con Linux versión 2.6 (ou 2.5 despois "
-#~ "de que se incluira o planificador \"O(1)\"); neses sistemas, o valor de "
-#~ "amabilidade do servidor X debería ser 0."
-
-#~ msgid ""
-#~ "The glx module enables software OpenGL rendering.  The dri module enables "
-#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
-#~ "that support for DRI must also exist in the kernel, the video card, and "
-#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
-#~ "operations using DRI to work.  Otherwise, the server falls back to "
-#~ "software rendering."
-#~ msgstr ""
-#~ "O módulo glx activa o debuxado OpenGL por software. O módulo dri activa o "
-#~ "soporte no servidor X para Direct Rendering Infrastructure (DRI). Teña en "
-#~ "conta que tamén ten que existir soporte para DRI no núcleo, na tarxeta de "
-#~ "vídeo e na versión instalada das bibliotecas Mesa para que funcionen as "
-#~ "operacións 3D aceleradas por hardware mediante DRI. Se non, o servidor "
-#~ "emprega debuxado por software."
-
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "Os módulos vbe e dcc activan o soporte de VESA BIOS Extensions e Data "
-#~ "Display Channel, respectivamente. Estes módulos empréganse para obter as "
-#~ "capacidades do monitor mediante a tarxeta de vídeo. O módulo int10 é un "
-#~ "emulador de x86 en modo real que se emprega para iniciar as tarxetas VGA "
-#~ "secundarias. Teña en conta que o módulo vbe depende do módulo int10, así "
-#~ "que se quere activar vbe ten que activar tamén int10."
-
-#~ msgid ""
-#~ "The X server configuration file associates your video card with a name "
-#~ "that you may provide.  This is usually the vendor or brand name followed "
-#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
-#~ msgstr ""
-#~ "O ficheiro de configuración do servidor X asocia a súa tarxeta de vídeo "
-#~ "cun nome que pode fornecer. Adoita ser a marca seguida polo modelo; por "
-#~ "exemplo: \"3Dfx Voodoo3\" ou \"ATI Rage Fury Maxx\"."
+#~ "Predchádzajúce tvrdenie neplatí v linuxových jadrách verzie 2.6 (ani v "
+#~ "2.5 po zahrnutí plánovača O(1)). Na týchto systémoch by mal mať X server "
+#~ "hodnotu nice = 0."
 
 #~ msgid ""
 #~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
 #~ "fully supported, should specify simply \"1\" here.  (This is not "
 #~ "guaranteed to work.)"
 #~ msgstr ""
-#~ "Os usuarios de máquinas SGI Indigo2 XL, ou de máquinas con buses non "
-#~ "soportados totalmente, deberían especificar só \"1\" aquí. (Non se "
-#~ "garante que funcione)."
-
-#~ msgid ""
-#~ "You may wish to use the \"lspci\" command to determine the bus location "
-#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
-#~ "device, and function numbers in hexadecimal, not decimal."
-#~ msgstr ""
-#~ "Se cadra teña que empregar a orde \"lspci\" para determinar a "
-#~ "localización no bus da súa tarxeta de vídeo PCI ou AGP. Teña en conta que "
-#~ "lspci dá os números de bus, dispositivo e función en hexadecimal, non en "
-#~ "decimal."
+#~ "Používatelia strojov SGI Indigo2 XL, alebo používatelia iných počítačov s "
+#~ "málo podporovanými zbernicami by tu mali zadať \"1\". (Hoci to nemusí "
+#~ "fungovať.)"
 
 #~ msgid ""
 #~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
 #~ "video card should leave this entry blank."
 #~ msgstr ""
-#~ "Os usuarios de máquinas distintas de PowerPC ou SGI Indigo2 XL cunha soa "
-#~ "tarxeta de vídoe deberían deixar esta entrada en branco."
-
-#~ msgid ""
-#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
-#~ "rule sets."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera conxunto de regras XKB "
-#~ "definido. Se se desempaquetou o paquete xlibs, pode ver os conxuntos de "
-#~ "regras dispoñibles no directorio /etc/X11/xkb/rules ."
-
-#~ msgid ""
-#~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera modelo definido polo "
-#~ "conxunto de regras XKB seleccionado. Se se desempaquetou o paquete xlibs, "
-#~ "pode buscar os conxuntos de regras dispoñibles no directorio /etc/X11/xkb/"
-#~ "rules ."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr ""
-#~ "Os usuarios de teclados españois normalmente deberían introducir \"pc105"
-#~ "\"."
+#~ "Používatelia s počítačmi inými ako PowerPC alebo SGI Indigo2 XL, ktorí "
+#~ "majú iba jednu grafickú kartu, by mali nechať toto pole prázdne."
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
@@ -1640,21 +1536,10 @@ msgstr ""
 #~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
 #~ "for available layouts."
 #~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera disposición soportada polo "
-#~ "conxunto de regras XKB seleccionado. Se se desempaquetou o paquete xlibs, "
-#~ "consulte o directorio /etc/X11/xkb/rules para ver os conxuntos de regras "
-#~ "dispoñibles, e o directorio /etc/X11/xkb/symbols para ver as disposicións."
-
-#~ msgid ""
-#~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
-#~ "directory for the file corresponding to your selected layout for "
-#~ "available variants."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera variante soportada pola "
-#~ "disposición XKB seleccionada. Se se desempaquetou o paquete xlibs, "
-#~ "consulte o diretorio /etc/X11/xkb/symbols para consultar as variantes "
-#~ "dispoñibles no ficheiro correspondente á súa disposición seleccionada."
+#~ "Skúsenejší používatelia môžu použiť ľubovoľné rozloženie podporované XKB "
+#~ "pravidlami. Ak je už balík xlibs rozbalený, v adresári /etc/X11/xkb/rules "
+#~ "nájdete všetky dostupné pravidlá a v adresári /etc/X11/xkb/symbols "
+#~ "nájdete dostupné rozloženia."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
@@ -1663,14 +1548,13 @@ msgstr ""
 #~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
 #~ "ctrl.)"
 #~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera opción compatible co "
-#~ "modelo, disposición e variante XKB seleccionados. Se se desempaquetou o "
-#~ "paquete xlibs, pode consultar os ficheiros de opcións dispoñibles no "
-#~ "directorio /etc/X11/xkb/symbols, que só definen traducións parciais de "
-#~ "teclado. (Por exemplo, /etc/X11/xkb/symbols/ctrl)."
+#~ "Skúsenejší používatelia môžu použiť ľubovoľnú voľbu kompatibilnú so "
+#~ "zvoleným XKB modelom, rozložením a variantom. Ak je už rozbalený balík "
+#~ "xlibs, pozrite sa na súbory v adresári /etc/X11/xkb/symbols, ktoré určujú "
+#~ "čiastočné preklady klávesov (napr. /etc/X11/xkb/symbols/ctrl)."
 
 #~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "¿Activar os eventos de desprazamento da roda do rato?"
+#~ msgstr "Povoliť rolovacie udalosti z kolieska myši?"
 
 #~ msgid ""
 #~ "Events from a wheeled mouse's wheel can be treated as clicks of "
@@ -1680,105 +1564,69 @@ msgstr ""
 #~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
 #~ "wheel may behave in an unexpected fashion if this option is set."
 #~ msgstr ""
-#~ "Os eventos da roda dun rato con roda pódense tratar coma clics de botóns "
-#~ "adicionais (botóns 4 e 5). Algunhas aplicacións X tratan os botóns 4 e 5 "
-#~ "coma eventos de desprazamento arriba e abaixo, o que fai que a roda do "
-#~ "rato funcione como se espera. Nembargantes, este comportamento depende da "
-#~ "aplicación, e pode non funcionar sempre. Tamén, os ratos exóticos con "
-#~ "máis de 3 botóns ademáis dunha roda poden funcionar dun xeito inesperado "
-#~ "se se activa esta opción."
+#~ "Udalosti z kolieska myši sa berú ako kliknutie ďalších tlačidiel (4. a "
+#~ "5.). Niektoré X aplikácie chápu tlačidlá 4 a 5 ako udalosti roluj-nahor a "
+#~ "roluj-nadol, takže koliesko funguje podľa očakávania. Toto správanie však "
+#~ "nemusí fungovať stále podľa našich predstáv. Takisto niektoré exotické "
+#~ "myši s viacerými ako troma tlačidlami sa môžu správať neočakávane pri "
+#~ "tejto voľbe."
 
 #~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr ""
-#~ "Activar esta opción non causa problemas se o seu rato non ten unha roda."
+#~ msgstr "Zapnutie tejto voľby je neškodné, aj keby vaša myš nemala koliesko."
 
 #~ msgid ""
 #~ "If you have an NVidia video card, you may want to decline this option, as "
 #~ "these cards' support for the DDC protocol is often so poor that attempts "
 #~ "to use it can result in system lockups."
 #~ msgstr ""
-#~ "Se ten unha tarxeta de vídeo NVidia é mellor que rexeite esta opción, xa "
-#~ "que o soporte do protocolo DDC destas tarxetas adoita ser tan malo que ao "
-#~ "tentar usalo queda bloqueado o sistema."
+#~ "Ak máte grafickú kartu NVidia, radšej túto možnosť zamietnite. Tieto "
+#~ "karty totiž implementujú DDC protokol tak slabo, že pri pokuse o jeho "
+#~ "použitie sa môže dokonca zablokovať systém."
 
 #~ msgid "Is your monitor an LCD device?"
-#~ msgstr "¿O seu monitor é un dispositivo LCD?"
+#~ msgstr "Je váš monitor LCD zariadením?"
 
 #~ msgid ""
 #~ "If your monitor is a liquid-crystal display (which is the case with "
 #~ "almost all laptops), you should set this option."
 #~ msgstr ""
-#~ "Se o seu monitor é unha pantalla de cristal líquido (o que adoita ser o "
-#~ "caso con case tódolos portátiles), debería activar esta opción."
+#~ "Ak máte monitor typu LCD (čo má drvivá väčšina prenosných počítačov), "
+#~ "mali by ste odpovedať kladne."
 
 #~ msgid ""
 #~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
 #~ "option."
-#~ msgstr ""
-#~ "Os usuarios de monitores tradicionais de tubo de raios catódicos (CRT) "
-#~ "non deberían activar esta opción."
-
-#~ msgid ""
-#~ "For the \"simple\" option, you need only know the monitor's physical "
-#~ "size; this will set some configuration values appropriate for a typical "
-#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
-#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
-#~ "are configured for a particular resolution.)"
-#~ msgstr ""
-#~ "Para a opción \"simple\" só precisa de saber o tamaño físico do monitor; "
-#~ "con isto hanse estabrecer algúns valores de configuración axeitados para "
-#~ "un monitor CRT do tamaño correspondente, pero pode non ser óptimo para "
-#~ "CRTs de alta calidade. (Esta opción está desactivada para os usuarios de "
-#~ "panel LCD, xa que esas pantallas están configuradas para unha resolución "
-#~ "determinada)."
+#~ msgstr "Používatelia klasických monitorov (CRT) by mali odpovedať záporne."
 
 #~ msgid ""
 #~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
 #~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
 #~ "unsupported."
 #~ msgstr ""
-#~ "Teña en conta que nalgún hardware ATI antigo, coma os chipsets Mach8 (VGA "
-#~ "Wonder), Mach32 e os primeiros Mach64 (\"GX\"), non se soportan "
-#~ "profundidades superiores a 8."
+#~ "Na niektorých starých kartách od ATI s čipovými sadami Mach8 (VGA "
+#~ "Wonder), Mach32 a Mach64 (\"GX\") nie sú podporované hĺbky väčšie ako 8 "
+#~ "bitov."
 
 #~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "¿Gravar a sección DRI por defecto no ficheiro de configuración?"
+#~ msgstr "Zapísať do konfiguračného súboru štandartnú časť DRI?"
 
 #~ msgid ""
 #~ "The DRI section of the X server configuration file determines the "
 #~ "permissions of the DRI device.  This option is for advanced users.  In "
 #~ "most cases, you should enable it."
 #~ msgstr ""
-#~ "A sección DRI do ficheiro de configuración do servidor X determina os "
-#~ "permisos do dispositivo DRI. Esta opción é para usuarios avanzados. Na "
-#~ "maioría dos casos debería activala."
+#~ "Časť DRI v konfiguračnom súbore X servera určuje práva DRI zariadení. "
+#~ "Táto voľba je pre skúsenejších používateľov. Vo väčšine prípadov by ste "
+#~ "mali túto voľbu povoliť."
 
 #~ msgid ""
 #~ "Disable this option if you want to write your own \"DRI\" section into "
 #~ "the X.Org server configuration file.  You may wish to do this if you want "
 #~ "to change the access privileges to the DRI port."
 #~ msgstr ""
-#~ "Desactive esta opción se quere gravar a súa propia sección \"DRI\" no "
-#~ "ficheiro de configuración do servidor X.Org. Pode querer facelo se quere "
-#~ "cambiar os privilexios de acceso ao porto DRI."
+#~ "Zamietnite túto možnosť, ak chcete do konfiguračného súboru X.Org zapísať "
+#~ "vlastnú časť \"DRI\" (napr. ak chcete zmeniť práva pre prístup k DRI "
+#~ "portu)"
 
-#~ msgid "Replace symbolic link to default X server?"
-#~ msgstr "¿Substituí-la ligazón simbólica ao servidor X por defecto?"
-
-#~ msgid ""
-#~ "The symbolic link /etc/X11/X already exists; this means that a default X "
-#~ "server has already been selected.  You may be prompted by debconf to "
-#~ "select your default X server, but any change will not take effect unless "
-#~ "this symbolic link is overwritten.  If you do elect to replace the "
-#~ "symbolic link, the change in default X server will take effect the next "
-#~ "time the X server is started."
-#~ msgstr ""
-#~ "A ligazón simbólica /etc/X11/X xa existe; isto significa que xa se "
-#~ "escolleu un servidor X por defecto. Poida que debconf lle pida que "
-#~ "escolla o servidor X por defecto, pero os cambios non han ter efecto ata "
-#~ "que se sobrescriba a ligazón simbólica. Se escolle cambia-la ligazón "
-#~ "simbólica, o cambio do servidor X por defecto ha ter efecto a próxima vez "
-#~ "que se inicie."
-
-#~ msgid "-10"
-#~ msgstr "-10"
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr "Modul v4l umožňuje podporu pre rozhranie jadra Video4Linux."

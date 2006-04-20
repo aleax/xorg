@@ -1,38 +1,55 @@
+# translation of xserver-xorg_debian_po_ro.po to Romanian
 # debconf templates for xorg-x11 package
-# Galician translation
 #
-# $Id: gl.po 1080 2006-01-14 02:15:39Z ender $
+# $Id: pothead.in 189 2005-06-11 00:04:27Z branden $
 #
-# Copyrights:
-# Branden Robinson, 2000-2004
-# Jacobo Tarrio, 2001, 2006
+# Copyright:
+# Branden Robinson, 2000--2004
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf is available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+# Eddy Petrişor <eddy.petrisor@gmail.com>, 2005.
+# Ruşeţ Zeno <rzeno@cwazy.co.uk>, 2005.
+# Eddy Petrisor <eddy.petrisor@gmail.com>, 2005.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: xorg-x11\n"
+"Project-Id-Version: xserver-xorg_debian_po_ro\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2006-01-13 11:55+0100\n"
-"Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"PO-Revision-Date: 2005-11-13 18:24+0200\n"
+"Last-Translator: Eddy Petrişor <eddy.petrisor@gmail.com>\n"
+"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms: nplurals=3;plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1))\n"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:3
 msgid "Root Only, Console Users Only, Anybody"
-msgstr "Só o administrador, Só os usuarios da consola, Todos"
+msgstr "Doar root, Doar utilizatorii de consolă, Oricine"
 
 #. Type: select
 #. Description
 #: ../x11-common.templates:5
 msgid "Select what type of user has permission to start the X server."
-msgstr "Escolla que tipo de usuario ten permiso para iniciar o servidor X."
+msgstr "Selectaţi ce tipuri de utilizatori au dreptul să pornească serverul X."
 
 #. Type: select
 #. Description
@@ -45,20 +62,21 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
-"Como o servidor X se executa con privilexios de superusuario, pode non ser "
-"unha boa idea permitir que calquera usuario o inicie, por motivos de "
-"seguridade. Por outro lado, pode ser aínda unha peor idea executar programas "
-"cliente X de propósito xeral coma administrador, que é o que podería ocorrer "
-"se só root pode iniciar o servidor X. Un bo compromiso consiste en permitir "
-"que o servidor X o inicien só os usuarios que traballen nunha consola "
-"virtual."
+"Deoarece serverul X rulează cu privilegii de superutilizator, nu este "
+"probabil înţelept să i se permită oricărui utilizator să-l pornească, din "
+"motive de securitate. Pe de altă parte, este şi mai puţin înţelept să se "
+"ruleze clienţii X de uz general ca şi root, lucru probabil dacă se permite "
+"doar ca root să pornească serverul X. Un bun compromis este permiterea "
+"pornirii pentru utilizatorii autentificaţi la una din consolele virtuale."
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
 msgid "Enter the desired nice value for the X server to use."
-msgstr "Introduza o nivel de amabilidade para o servidor X."
+msgstr "Introduceţi valoarea nice pe care doriţi să o folosească serverul X."
 
+#  Hmm, oare cum s-ar putea traduce mai bine nice?
+#  E bine să fie tradus? Dacă nu, atunci faza cu bădăran nu are sens.
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
@@ -72,13 +90,17 @@ msgid ""
 "default nice value for ordinary processes is 0, and this is also the "
 "recommend value for the X server."
 msgstr ""
-"Tense advertido que o rendemento do servidor X mellora se se executa cunha "
-"prioridade superior á normal; a prioridade dun proceso coñécese coma a súa "
-"amabilidade (valor \"nice\"). Pode ter valores entre -20 (prioridade moi "
-"alta, ou \"pouco amable\" con outros procesos) e 19 (prioridade moi baixa). "
-"A amabilidade normal é 0. -10 é un bo valor para unha estación de traballo; "
-"0 é un bo valor para unha máquina que fai outras cousas que interactuar co "
-"usuario da consola (coma un servidor web)."
+"S-a observat pe scară largă că, atunci când se folosesc nuclee de sisteme de "
+"operare cu o anumită strategie de programare, performanţele serverului X se "
+"îmbunătăţesc atunci când este rulat la o prioritate mai mare decât cea "
+"implicită; prioritatea unui proces este cunoscută sub numele de valoarea sa "
+"\"nice\". Ea poate lua valori între -20 (prioritate extrem de ridicată, sau "
+"bădăran cu celelalte procese) până la 19 (prioritate extrem de scăzută). "
+"Valoarea implicită nice pentru procesele obişnuite este 0. -10 este o "
+"valoare implicită bună pentru o staţie de lucru pentru un singur utilizator; "
+"0 este o valoare implicită bună pentru o maşină care are şi alte sarcini "
+"decât să interacţioneze cu utilizatorul la consolă (cum ar fi un server de "
+"web)."
 
 #. Type: string
 #. Description
@@ -88,21 +110,21 @@ msgid ""
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
-"Non se recomendan os valores fóra do rango -10 a 0. Se é negativo de máis, o "
-"servidor X ha interferir con tarefas importantes do sistema. Se é positivo "
-"de máis, o servidor X ha ir moi lento."
+"Valorile din afara plajei -10, 0 nu sunt recomandate; prea negativ, serverul "
+"X va interfera cu sarcini importante ale sistemului. Prea pozitiv, serverul "
+"X se va mişca greu şi nu va fi prompt."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:35
 msgid "Please enter an integer between -20 and 19."
-msgstr "Introduza un número enteiro entre -20 e 19."
+msgstr "Sunteţi rugat/rugată să introduceţi un întreg între -20 şi 19."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
 msgid "Attempt to autodetect video hardware?"
-msgstr "¿Tentar autodetectar o hardware de vídeo?"
+msgstr "Se încearcă autodetectarea echipamentului video?"
 
 #. Type: boolean
 #. Description
@@ -114,11 +136,11 @@ msgid ""
 "or driver module.  If autodetection succeeds, further debconf questions "
 "about your video hardware will be pre-answered."
 msgstr ""
-"Acepte esta opción se quere tentar autodetectar o servidor X e módulo "
-"controlador recomendados para a súa tarxeta de vídeo. Se a autodetección "
-"falla, háselle pedir que especifique o servidor X e/ou módulo controlador "
-"que desexa. Se a autodetección ten éxito, respóstanse automaticamente as "
-"posteriores preguntas de debconf sobre o seu hardware de vídeo."
+"Acceptaţi acestă opţiune dacă doriţi să încercaţi să detectaţi automat "
+"serverul X recomandat şi modulul de nucleu pentru placa dvs. video. Dacă "
+"detecţia automată eşuează, veţi fi pus să precizaţi serverul X dorit şi "
+"modulul de nucleu dorit. Dacă detecţia reuşeşte, viitoarele întrebări "
+"debconf despre componentele video vor avea răspuns automat."
 
 #. Type: boolean
 #. Description
@@ -128,15 +150,15 @@ msgid ""
 "this option.  You will not be asked to select the X server if there is only "
 "one available."
 msgstr ""
-"Se prefire escoller vostede mesmo o servidor X e módulo controlador, rexeite "
-"esta opción. Non se lle ha pedir que escolla o servidor X se só hai un "
-"dispoñible."
+"Dacă preferaţi să selectaţi serverul X şi modulul de nucleu, refuzaţi acestă "
+"opţiune. Nu veţi fi întrebat să selectaţi serverul X dacă este disponibil "
+"doar unul."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
 msgid "No X server known for your video hardware."
-msgstr "Non se coñece un servidor X para o seu hardware de vídeo."
+msgstr "Nu se cunoaşte nici un server X pentru echipamentul dvs. video."
 
 #. Type: note
 #. Description
@@ -148,18 +170,18 @@ msgid ""
 "information in discover's hardware database, or it could be that your video "
 "hardware is simply not supported by any available X servers."
 msgstr ""
-"Ou non ten hardware de vídeo instalado nesta máquina (¿só ten consola por "
-"porto serie?) ou o programa \"discover\" non puido determinar que servidor X "
-"é axeitado para o seu hardware de vídeo. Isto pode estar causado por "
-"información incompleta na base de datos de hardware de discover, ou podería "
-"ser que o seu hardware de vídeo non estea soportado por ningún servidor X "
-"dispoñible."
+"Fie nu aveţi nici un fel de componente video pe această maşină (doar consolă "
+"serială?), fie programul \"discover\" nu a fost capabil să determine care "
+"server X este potrivit pentru componentele dvs. video. Acesta poate fi "
+"datorită informaţiilor incomplete în baza de date a lui discover, ori din "
+"pricina componentelor video ale dvs. care nu sunt suportate de nici unul din "
+"serverele X disponibile."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:26
 msgid "Multiple potential default X servers for your hardware."
-msgstr "Varios servidores X potenciais para o seu hardware."
+msgstr "Multiple servere X potenţial implicite pentru echipamentele dvs."
 
 #. Type: note
 #. Description
@@ -171,18 +193,18 @@ msgid ""
 "will serve as your computer's \"primary head\"; this is generally the video "
 "card and monitor to which the computer displays when it first boots."
 msgstr ""
-"Detectáronse varias tarxetas de vídeo, e son precisos varios servidores X "
-"para que soporten os distintos dispositivos. Polo tanto, non é posible "
-"escoller automaticamente un servidor X por defecto. Configure o dispositivo "
-"que ha servir coma \"consola principal\" do seu ordenador; adoita ser a "
-"tarxeta de vídeo e monitor no que se amosan as cousas do ordenador cando se "
-"inicia."
+"Au fost detectate mai multe plăci video şi servere X diferite sunt necesare "
+"pentru a suporta diversele componente. De aceea, nu este posibilă selectarea "
+"automată a serverului X implicit. Vă rugăm să configuraţi dispozitivul care "
+"va servi drept ieşirea video principală a calculatorului dvs.; acesta este, "
+"în general, placa video şi monitorul pe care calculatorul afişează atunci "
+"când porneşte."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:40
 msgid "Select the desired default X server."
-msgstr "Escolla o servidor X por defecto que desexe."
+msgstr "Selectaţi serverul X implicit dorit."
 
 #. Type: select
 #. Description
@@ -192,9 +214,10 @@ msgid ""
 "to communicate with video display and input devices, providing a foundation "
 "for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"O servidor X é a interface co hardware do sistema X Window. O seu traballo é "
-"comunicarse cos dispositivos de pantalla e entrada para que funcione a "
-"interface gráfica de usuario (GUI) que escolla."
+"Serverul X este interfaţa sistemului X ferestre cu componentele "
+"calculatorului . Scopul său este să comunice cu afişajul video şi "
+"dispozitivele de intrare, oferind o fundaţie pentru Interfaţa grafică "
+"utilizator (GUI) aleasă."
 
 #. Type: select
 #. Description
@@ -204,15 +227,15 @@ msgid ""
 "X symbolic link.  Some X servers may not work with your particular graphics "
 "hardware."
 msgstr ""
-"Hai varios servidores X dispoñibles; o servidor por defecto selecciónase coa "
-"ligazón simbólica /etc/X11/X . Algúns servidores X poderían non funcionar co "
-"seu hardware gráfico."
+"Mai multe servere X pot fi disponibile; cel implicit este selectat via "
+"legătura simbolică /etc/X11/X. Este posibil ca unele servere X să nu "
+"funcţioneze cu componentele grafice ale dvs."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
 msgid "Write default Files section to configuration file?"
-msgstr "¿Gravar a sección Files por defecto no ficheiro de configuración?"
+msgstr "Se scrie secţiunea implicită Fişiere în fişierul de configurare?"
 
 #. Type: boolean
 #. Description
@@ -222,10 +245,10 @@ msgid ""
 "where to find server modules, the RGB color database, and font files.  This "
 "option is for advanced users.  In most cases, you should enable it."
 msgstr ""
-"A sección Files do ficheiro de configuración do servidor X dille ao servidor "
-"X onde atopar os módulos do servidor, a base de datos de cores RGB, e os "
-"ficheiros de tipos de letra. Esta opción é para usuarios avanzados. Nos máis "
-"casos debería activala."
+"Secţiunea Fişiere a fişierului de configurare a serverului X indică "
+"serverului X unde să găsească modulele de server, baza de date cu culori RGB "
+"şi fişierele de fonturi. Această opţiune este pentru utilizatorii avansaţi. "
+"În cele mai multe cazuri, ar trebui să o activaţi."
 
 #. Type: boolean
 #. Description
@@ -236,18 +259,17 @@ msgid ""
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
-"Desactive esta opción se quere escribir a súa propia sección \"Files\" no "
-"ficheiro de configuración do servidor de X.Org. Pode ter que facelo se quere "
-"eliminar a referencia ao servidor de tipos de letras local, engadir unha "
-"referencia a outro servidor de tipos de letras ou reordear a lista de rutas "
-"de tipos de letras."
+"Dezactivaţi această opţiune dacă doriţi să scrieţi propria dvs. secţiune "
+"\"Fişere\" în fişierul de configurare al serverului X.Org. Aţi putea dori "
+"acest lucru dacă trebuie să îndepărtaţi referinţa la serverul de fonturi "
+"local, să adăugaţi o referinţă la un alt server de fonturi sau să rearanjaţi "
+"setul implicit de căi către fonturi."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr ""
-"Escolla os módulos do servidor de X.Org que se deberían cargar por defecto."
+msgstr "Selectaţi modulele serverului X.Org care vor fi încărcate implicit."
 
 #. Type: multiselect
 #. Description
@@ -257,13 +279,15 @@ msgid ""
 "the X server loads by default.  This option is for advanced users.  In most "
 "cases, all of these modules should be enabled."
 msgstr ""
-"É posible persoalizar (ou omitir completamente) a lista de módulos que o "
-"servidor X carga por defecto. Esta opción é para usuarios avanzados. Nos "
-"máis casos, deberían activarse tódolos módulos."
+"Este posibil să particularizaţi (sau să omiteţi complet) lista de module pe "
+"care le încarcă serverul X în mod implicit. Această operaţie este pentru "
+"utilizatori avansaţi. În cele mai multe cazuri, toate aceste module ar "
+"trebui activate."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
+#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -272,10 +296,17 @@ msgid ""
 "operations using DRI to work.  Otherwise, the server falls back to software "
 "rendering."
 msgstr ""
+"Modulul glx activează softul de randare OpenGL. Modulul dri activează "
+"suportul pentru Direct Rendering Infrastructure (DRI) în serverul X. Ţineţi "
+"cont că suportul pentru DRI trebuie, de asemenea, să existe în nucleu, placa "
+"video şi versiunea instalată a bibliotecii Mesa pentru ca operaţiile de "
+"accelerare hardware 3D care folosesc DRI să funcţioneze. Altfel serverul "
+"eşuează la randarea soft."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
+#, fuzzy
 msgid ""
 "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
 "Display Channel, respectively.  These modules are used to query monitor "
@@ -284,6 +315,13 @@ msgid ""
 "module depends on the int10 module, so if you wish to enable vbe, enable "
 "int10 as well."
 msgstr ""
+"Modulele vbe şi ddc activează suportul pentru extensia BIOS VESA şi "
+"respectiv Data Display Channel. Aceste module sunt folosite pentru "
+"interogarea monitorului asupra capabilităţilor sale prin intermediul placii "
+"video. Modulul int10 este un emulator în mod real x86 care este utilizat la "
+"pornirea soft a plăcilor VGA secundare. Ţineţi cont că modulul vbe depinde "
+"de modulul int10, astfel că dacă doriţi să activaţi vbe trebuie de asemenea "
+"să activaţi int10."
 
 #. Type: multiselect
 #. Description
@@ -292,9 +330,10 @@ msgid ""
 "The dbe module enables the double-buffering extension in the server, and is "
 "useful for animation and video operations."
 msgstr ""
-"O módulo dbe activa a extensión de dobre buffer, e é útil para animacións e "
-"operacións de vídeo."
+"Modulul dbe activează extensia de tampon dublu din server şi este utilă "
+"pentru animaţie şi operaţii video."
 
+# aici nu sunt sigur dacă '"commonly" used extensions' are sensul de uzuale sau comune şi nici de traducerea lui "shaped" ca 'împachetat', modifici tu Eddy.
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
@@ -304,16 +343,16 @@ msgid ""
 "The record module implements the RECORD extension, commonly used in server "
 "testing."
 msgstr ""
-"O módulo extmod activa varias extensións tradicionais e moi usadas, coma "
-"fiestras con forma, memoria compartida, cambio de modo de vídeo, DGA e Xv. O "
-"módulo record implementa a extensión RECORD, que se adoita empregar nas "
-"probas de servidores."
+"Modulul extmod activează multe extensii tradiţionale şi uzuale, cum sunt "
+"ferestrele modelate, memoria partajată, comutarea modului video, DGA şi Xv. "
+"Modulul record implmentează extensia RECORD, uzual folosită la testarea "
+"serverului."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-msgstr "Os módulos bitmap, freetype e type1 serven para debuxar letras."
+msgstr "Modulele bitmap, freetype, type1 şi xtt sunt toate fonturi raster."
 
 #. Type: multiselect
 #. Description
@@ -322,8 +361,8 @@ msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
 msgstr ""
-"Para obter máis información sobre estes módulos, consulte a documentación de "
-"X.Org."
+"Pentru mai multe informaţii referitoare la aceste module, sunteţi rugat/"
+"rugată să consultaţi documentaţia X.Org."
 
 #. Type: multiselect
 #. Description
@@ -334,16 +373,18 @@ msgid ""
 "written to the X server configuration file -- and add their own Modules "
 "section to the file manually."
 msgstr ""
-"Se non está seguro do que facer, active tódolos módulos. Os usuarios "
-"avanzados poden querer desactivar tódolos módulos -- nese caso non se ha "
-"gravar unha sección Modules no ficheiro de configuración do servidor X -- e "
-"engadir a súa propia sección Modules ao ficheiro manualmente."
+"Dacă sunteţi nehotărât ce să faceţi, lăsaţi toate modulele activate. "
+"Utilizatorii avansaţi vor dori să dezactiveze toate modulele -- caz în care "
+"nici o secţiune Modules nu va fi scrisă în fişierul de configurare a "
+"serverului X -- şi să adauge manual propria secţiune Modules în fişier."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Varios controladores do servidor X.Org potenciais para o seu hardware."
+msgstr ""
+"Potenţial mai multe module de nucleu implicite ale serverul X.Org pentru "
+"componentele dvs."
 
 #. Type: note
 #. Description
@@ -355,13 +396,14 @@ msgid ""
 "serve as your computer's \"primary head\"; this is generally the video card "
 "and monitor to which the computer displays when it first boots."
 msgstr ""
-"Detectáronse varias tarxetas de vídeo, e son precisos varios controladores "
-"para que soporten os distintos dispositivos. Polo tanto, non é posible "
-"escoller automaticamente un controlador por defecto do servidor X. Configure "
-"o dispositivo que ha servir coma \"consola principal\" do seu ordenador; "
-"adoita ser a tarxeta de vídeo e monitor no que se amosan as cousas do "
-"ordenador cando se inicia."
+"Mai multe plăci video au fost detectate, şi diferite module de nucleu sunt "
+"necesare ca suport pentru dispozitive variate. Astfel nu este posibilă "
+"selecţia automată a unui modul de nucleu implicit pentru serverul X.Org. Vă "
+"rugăm configuraţi dispozitivul care va servi ca ieşire video principală "
+"(\"primary head\") a calculatorului dvs.; acesta este în general placa video "
+"şi monitorul pe care calculatorul le foloseşte la pornire."
 
+# single-headed, multi-head n-am nici cea mai mică idee cum s-ar putea traduce.
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
@@ -370,15 +412,15 @@ msgid ""
 "however, the X server configuration files can be edited to support a multi-"
 "head configuration."
 msgstr ""
-"Actualmente, debconf só soporta configuracións cun só monitor. Nembargantes, "
-"pódense editar os ficheiros de configuración do servidor X para soportar "
-"unha configuración con varios monitores."
+"Momentan, doar confiurarea pentru o ieşire video este suportată de debconf; "
+"totuşi, fişierul de configurare al serverului X poate fi editat să suporte "
+"configuraţia cu mai multe ieşiri video (\"multi-head\")."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
 msgid "Enter an identifier for your video card."
-msgstr "Introduza un identificador para a súa tarxeta de vídeo."
+msgstr "Introduceţi un identificator pentru placa dvs. video."
 
 #. Type: string
 #. Description
@@ -390,15 +432,16 @@ msgid ""
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
-"O ficheiro de ocnfiguración do servidor X asocia a tarxeta de video cun nome "
-"que pode proporcionar. Adoita se-la marca seguida do modelo, por exemplo, "
-"\"3Dfx Voodoo3\", ou \"ATI Rage Fury Maxx\"."
+"Fişierul de configurare al serverului dvs. X asociază plăcii video cu un "
+"nume pe care trebuie să-l furnizaţi. Acesta este de obicei numele "
+"vânzătorului sau marca urmată de numele modelului, de exemplu \"3Dfx Voodoo3"
+"\" sau \"ATI Rage Fury Maxx\"."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:126
 msgid "Select the desired X server driver."
-msgstr "Escolla o controlador do servidor X que desexe."
+msgstr "Selectaţi modulul de nucleu dorit pentru serverul X."
 
 #. Type: select
 #. Description
@@ -407,9 +450,9 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
 msgstr ""
-"Para que a interface gráfica de usuario do sistema X Window funcione "
-"correctamente, é necesario escoller un controlador da tarxeta de vídeo para "
-"o servidor X."
+"Pentru ca interfaţa utilizator a sistemului grafic X Windows să funcţioneze "
+"corect este necesar să selectaţi un modul de nucleu pentru placa video a "
+"serverului X."
 
 #. Type: select
 #. Description
@@ -418,14 +461,14 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
-"Os controladores adoitan ter o nome do fabricante da tarxeta de vídeo ou "
-"chipset, ou o dun modelo ou familia de chipsets determinado."
+"Modulele de nucleu sunt în general numite după placa video sau cipsetul "
+"producătorului, sau pentru un model specific sau o familie de cipseturi."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:135
 msgid "Use kernel framebuffer device interface?"
-msgstr "¿Empregar a interface de dispositivo framebuffer do núcleo?"
+msgstr "Se foloseşte interfaţa de tampon de cadre din nucleu?"
 
 #. Type: boolean
 #. Description
@@ -435,9 +478,9 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
-"Pódese configurar o servidor X para que, no canto de se comunicar "
-"directamente co hardware de vídeo, realice algunhas operacións (coma o "
-"cambio de modo de vídeo), mediante o controlador de framebuffer do núcleo."
+"Prioritar comunicării cu componentele video, serverul X poate fi configurat "
+"să execute câteva operaţii, de exemplu, comutarea modului video, prin "
+"modulul \"tampon de cadre\" al nucleului (framebuffer)."
 
 #. Type: boolean
 #. Description
@@ -447,15 +490,16 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
-"En teoría os dous sistemas debían funcionar, pero na práctica adoita "
-"funcionar un pero non o outro. Activar esta opción é o máis seguro, pero "
-"pode desactivala se semella que causa problemas."
+"În teorie, oricare abordare ar putea să funcţioneze dar, în practică, câte "
+"odată una merge şi celaltă nu. Activarea acestei opţiuni e cel mai sigur "
+"pariu, dar simţiţi-vă liberi să o dezactivaţi dacă pare să vă cauzeze "
+"probleme."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Please enter the video card's bus identifier."
-msgstr "Introduza o identificador de bus da tarxeta de vídeo."
+msgstr "Vă rugăm introduceţi identificatorul magistralei plăcii video."
 
 #. Type: string
 #. Description
@@ -465,15 +509,15 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
-"Os usuarios de máquinas PowerPC e de calquera ordenador con varios "
-"dispositivos de vídeo deberían especificar o ID de bus da tarxeta de vídeo "
-"nun formato específico do bus aceptado."
+"Utilizatorii de maşini PowerPC, şi utilizatorii calculatoarelor cu mai multe "
+"dispozitive video, trebuie să specifice BusID-ul plăcii video într-un format "
+"acceptat specific magistralei."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Examples:"
-msgstr "Exemplos:"
+msgstr "Exemple:"
 
 #. Type: string
 #. Description
@@ -487,6 +531,7 @@ msgstr ""
 " PCI:0:16:0\n"
 " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
 
+# aceaşi problemă, multi-head şi heads.
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
@@ -495,17 +540,23 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"Para os usuarios de configuracións con varios monitores, esta opción só ha "
-"configurar un dos monitores. Se quere configurar o resto ha ter que o facer "
-"a man no ficheiro de configuración do servidor X, /etc/X11/xorg.conf."
+"Pentru utilizatorii de calculatoare cu ieşiri video multiple active, această "
+"opţiune va configura doar una dintre dispozitivele video. Configurarea "
+"celorlalte trebuie făcută manual în fişierul de configurare al serverului "
+"X, /etc/X11/XF86Config-4."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
+#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
+"S-ar putea să doriţi să folosiţi comanda \"lspci\" pentru determinarea "
+"locaţiei pe magistrală a plăcii dvs. video, PCI sau AGP. Reţineţi că lspci "
+"raportează magistrala, dispozitivul şi numerele funcţiilor în hexazecimal, "
+"nu zecimal."
 
 #. Type: string
 #. Description
@@ -514,27 +565,32 @@ msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
 msgstr ""
-"Se foi posible, esta pregunta xa se respostou automaticamente, e vostede "
-"debería aceptar a resposta por defecto a menos que saiba que non funciona."
+"Când a fost posibil, la această întrebare s-a răspuns anterior şi ar trebui "
+"să acceptaţi valoarea implicită cu excepţia cazului în care ştiţi că nu a "
+"funcţionat."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "Please enter a bus identifier in the proper format."
-msgstr "Introduza un identificador de bus no formato axeitado."
+msgstr ""
+"Vă rugăm introduceţi un identificator de magistrală (bus) în formatul "
+"potrivit."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
 msgid "The BusID entered was not in a recognized format."
-msgstr "O ID de bus que introduciu non está nun formato recoñecido."
+msgstr ""
+"Identificatorul de magistrală introdus nu a fost într-un format recunoscut."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "Enter the amount of memory (in kB) to be used by your video card."
 msgstr ""
-"Introduza a cantidade de memoria (en kB) que emprega a súa tarxeta de vídeo."
+"Introduceţi cantitatea de memorie (în kO) de folosit de către placa dvs. "
+"video."
 
 #. Type: string
 #. Description
@@ -545,10 +601,10 @@ msgid ""
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
-"Normalmente o servidor X autodetecta a cantidade de memoria adicada que ten "
-"a súa tarxeta de vídeo, pero algúns chips de vídeo integrados (coma o Intel "
-"i810) teñen pouca ou ningunha memoria propia, senón que toman emprestada "
-"memoria principal do sistema para as súas necesidades."
+"Tipic o parte din memoria dedicată plăcii dvs. video este autodetectată de "
+"serverul X, dar câteva cipuri video (ca \"Intel i810\") au puţină sau deloc "
+"memorie proprie, împrumutând din memoria principală a sistemului după "
+"necesităţi."
 
 #. Type: string
 #. Description
@@ -558,15 +614,15 @@ msgid ""
 "card lacks RAM, or if the X server has trouble autodetecting the amount, is "
 "it necessary to specify the amount of video RAM."
 msgstr ""
-"É perfectamente aceptable deixar este parámetro en branco; só é necesario "
-"especificar a cantidade de RAM de vídeo se falla RAM na súa tarxeta de vídeo "
-"ou se o servidor X ten problemas autodetectando a cantidade."
+"Este perfect acceptabil să lăsaţi acest parametru necompletat; doar dacă "
+"placa dvs. video blochează RAM, sau dacă serverul X are probleme la "
+"detectarea mărimii, este necesar să specificaţi cantităţii de RAM video."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "Please select the XKB rule set to use."
-msgstr "Escolla o conxunto de regras de XKB a empregar."
+msgstr "Vă rugăm selectaţi setul de reguli al XKB care vor fi folosite."
 
 #. Type: string
 #. Description
@@ -575,8 +631,8 @@ msgid ""
 "For the X server to handle your keyboard correctly, an XKB rule set must be "
 "chosen."
 msgstr ""
-"Para que o seu servidor X xestione correctamente o teclado debe escollerse "
-"un conxunto de regras de XKB."
+"Pentru ca serverul X să manipuleze corect tastatura dvs., trebuie ales un "
+"set de reguli XKB."
 
 #. Type: string
 #. Description
@@ -585,30 +641,34 @@ msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Os usuarios da maioría dos teclados deberían introducir \"xorg\". Os "
-"usuarios de teclados Sun Type 4 e Type 5, nembargantes, deberían introducir "
+"Utilizatorii majorităţii tastaturilor ar trebui să introducă \"xorg\". "
+"Utilizatorii tastaturilor Sun tip 4 şi tip 5, oricum, ar trebui să introducă "
 "\"sun\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
+#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
+"Utilizatorii avansat,i pot utiliza orice set de reguli XKB definit. Dacă "
+"pachetul xlibs a fost despachetat, vedeţi directorul /etc/X11/xlb/rules "
+"pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr "Se non sabe que conxunto de regras empregar, introduza \"xorg\"."
+msgstr "Dacă nu ştiţi ce set de reguli să folosiţi, introduceţi \"xorg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "Please select your keyboard model."
-msgstr "Escolla o seu modelo de teclado."
+msgstr "Vă rugăm să selectaţi modelul de tastatură."
 
 #. Type: string
 #. Description
@@ -617,9 +677,9 @@ msgid ""
 "For the X server to handle your keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
-"Para que o servidor X xestione correctamente o teclado, debería introducir "
-"un modelo. Os modelos dispoñibles dependen do conxunto de regras XKB que se "
-"estea a empregar."
+"Pentru ca serverul X să manipuleze corect tastatura dvs., trebuie să "
+"introduceţi un model de tastatură. Modelele disponibile depind de setul de "
+"reguli XKB utilizat."
 
 #. Type: string
 #. Description
@@ -629,9 +689,8 @@ msgid ""
 "keys, historically common in the United States.  It does not have the \"logo"
 "\" or \"menu\" keys."
 msgstr ""
-"O teclado \"pc101\" é un teclado tradicional de estilo IBM PC/AT con 101 "
-"teclas, historicamente habitual nos Estados Unidos. Non ten as teclas \"logo"
-"\" nin \"menú\"."
+"Tastatura \"pc101\" este o tastatură în stilul tradiţional IBM PC/AT cu 101 "
+"taste, istoric comună în Statele Unite. Nu au tastele \"logo\" şi \"meniu\"."
 
 #. Type: string
 #. Description
@@ -641,10 +700,9 @@ msgid ""
 "keys are usually engraved with a \"logo\" symbol (there is typically a pair "
 "of these, between each set of control and alt keys), and a \"menu\" key."
 msgstr ""
-"O teclado \"pc104\" é coma o modelo pc101, con teclas adicionais. Esas "
-"teclas adoitan ter gravado un símbolo \"logo\" (adoita haber dúas, unha "
-"entre cada conxunto de teclas Control e Alt), e tamén hai unha tecla \"menu"
-"\"."
+"Tastaturile \"pc104\" sunt la fel ca modelul pc101, cu taste suplimentare. "
+"Aceste taste sunt de obicei gravate cu un simbol \"logo\" ( tipic sunt o "
+"pereche între fiecare set de taste control şi alt), şi o tastă \"meniu\"."
 
 #. Type: string
 #. Description
@@ -656,10 +714,11 @@ msgid ""
 "symbols), you likely have a \"pc102\" or \"pc105\" model; if you choose "
 "\"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
 msgstr ""
-"Os modelos \"pc102\" e \"pc105\" son versións dos teclados pc101 e pc104, "
-"respectivamente, que se adoitan atopar en Europa. Se o seu teclado ten unha "
-"tecla \"< >\", seguramente teña un modelo \"pc102\" ou \"pc105\"; se escolle "
-"\"pc101\" ou \"pc104\" no seu canto, a súa tecla \"< >\" pode non funcionar."
+"Modelele \"pc102\" şi \"pc105\" sunt versiuni ale tastaturilor pc101 şi "
+"pc104, respectiv, des întâlnite în Europa. Dacă tastatura are o tastă \"< >"
+"\" ( o singură tastă gravată cu ambele simboluri mai-mic şi mai-mare), aveţi "
+"un model \"pc102\" sau \"pc105\"; dacă alegeţi \"pc101\" sau \"pc104\" în "
+"loc, tasta \"< >\" s-ar putea să nu funcţioneze."
 
 #. Type: string
 #. Description
@@ -670,16 +729,16 @@ msgid ""
 "\"macintosh_old\" is for Macintosh keyboard users who are not using the new "
 "input layer."
 msgstr ""
-"O modelo \"macintosh\" é para teclados Macintosh para os que o núcleo e as "
-"ferramentas da consola empregan a nova capa de entrada con códigos de "
-"teclado Linux; \"macintosh_old\" é para usuarios de teclado Macintosh que "
-"non empregan a nova capa de entrada."
+"Modelul \"macintosh\" este pentru tastaturile Macintosh unde nucleul şi "
+"uneltele consolei folosesc formatul de intrare nou care utilizează coduri de "
+"taste Linux; \"machintosh_old\" este pentru utilizatorii tastaturii "
+"Macintosh care nu foloseşte formatul nou de intrare."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Tódolos modelos de enriba empregan o conxunto de regras \"xorg\"."
+msgstr "Toate modelele următoare folosesc setul de reguli \"xorg\"."
 
 #. Type: string
 #. Description
@@ -689,9 +748,9 @@ msgid ""
 "respectively.  These models can only be used if the \"sun\" XKB rule set is "
 "in use."
 msgstr ""
-"Os modelos \"type4\" e \"type5\" son para teclados Sun Type4 e Type5, "
-"respectivamente. Estes modelos só se poden empregar se se emprega o conxunto "
-"de regras XKB \"sun\"."
+"Modelele \"type4\" şi \"type5\" sunt pentru tastaturile Sun Type4 şi "
+"respectiv Type5. Aceste modele pot fi folosite dacă este folosit setul de "
+"reguli XKB \"sun\"."
 
 #. Type: string
 #. Description
@@ -701,32 +760,39 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
-"Os teclados de ordenador portátil adoitan non ter tantas teclas coma os "
-"teclados normais; os usuarios de portátil deberían escoller o modelo de "
-"teclado máis semellante aos de enriba."
+"Tastaturile laptopurilor de obicei nu au atâtea taste ca cele modelele "
+"staţionare; utilizatorii de laptop trebuie să selecteze modelul de tastatură "
+"cel mai apropiat din cele care urmează."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
+#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
+"Utilizatorii avansaţi pot folosi orice model definit prin selecţia setului "
+"de reguli XKB. Dacă pachetul xlibs este despachetat, vedeţi directorul /etc/"
+"X11/xkb/rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
+#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
+"Utilizatorii de tastaturi U.S. English trebuie în general să introducă "
+"\"pc104\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
 msgid "Please select your keyboard layout."
-msgstr "Escolla a súa disposición de teclado."
+msgstr "Vă rugăm selectaţi formatul tastaturii dvs.."
 
 #. Type: string
 #. Description
@@ -736,18 +802,22 @@ msgid ""
 "be entered.  Available layouts depend on which XKB rule set and keyboard "
 "model were previously selected."
 msgstr ""
-"Para que o servidor X xestione correctamente o seu teclado debe introducir "
-"unha disposición de teclado. As disposicións dispoñibles dependen do "
-"conxunto de regras XKB e modelo de teclado que escollera."
+"Pentru ca serverul X să poată manipula corect tastatura dvs., trebuie să "
+"introduceţi un format de tastatură. Formatele disponibile depind de setul de "
+"reguli XKB şi modelul de tastatura selectate anterior."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
+#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
+"Utilizatorii avansaţi pot folosi orice model definit prin selecţia setului "
+"de reguli XKB. Dacă pachetul xlibs este despachetat, vedeţi directorul /etc/"
+"X11/xkb/rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
@@ -757,16 +827,16 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"Os usuarios de teclados españois deberían introducir \"es\". Os usuarios de "
-"teclados adaptados para outros países deberían introducir, normalmente, o "
-"seu código de país ISO 3166. Por exemplo, os EE.UU. empregan \"us\", "
-"Portugal \"pt\" e Alemaña emprega \"de\"."
+"Utilizatorii tastaturilor U.S. English trebuie să introducă \"us\". "
+"Utilizatorii tastaturilor localizate pentru alte ţări trebuie în general să "
+"introducă codul ţări conform ISO 3166. De exemplu, Franţa foloseşte \"fr\" "
+"şi Germania \"de\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
 msgid "Please select your keyboard variant."
-msgstr "Escolla a súa variante de teclado."
+msgstr "Vă rugăm selectaţi varianta tastaturii dvs.."
 
 #. Type: string
 #. Description
@@ -776,10 +846,11 @@ msgid ""
 "may be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
-"Para que o servidor X xestione o teclado como vostede quere, pódese "
-"introducir unha variante de teclado. As variantes dispoñibles dependen do "
-"conxunto de regras XKB, modelo e disposición de teclado seleccionados."
+"Pentru ca serverul X să poată manipula tastatura cum doriţi trebuie să "
+"introduceţi o variantă de tastatură. Variantele disponibile depind de setul "
+"de reguli XKB, modelul şi formatul anterior selectat."
 
+# netraduse: non-spacing accent marks şi diaereses
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
@@ -788,19 +859,25 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
-"Moitas disposicións de teclado soportan unha opción para tratar as teclas "
-"\"mortas\", coma as marcas de acentos e diéreses, coma teclas normais. Se "
-"ese é o comportamento que prefire, introduza \"nodeadkeys\"."
+"Multe formate de tastatură suportă o opţiune care tratează tastele \"moarte"
+"\" - accent fară spaţiere şi semnul de difong - ca taste cu spaţiere "
+"normală, şi dacă acesta este comportamentul preferat, introduceţi "
+"\"nodeadkeys\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
+#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
 "directory for the file corresponding to your selected layout for available "
 "variants."
 msgstr ""
+"Utilizatorii avansaţi pot utiliza orice variantă suportată prin selecţia "
+"formatului XKB. Dacă pachetul xlibs este despachetat, vedeţi directorul /etc/"
+"X11/xkb/symbols, fişierul corespunzătoar formatului selectat de dvs. pentru "
+"variantele disponibile."
 
 #. Type: string
 #. Description
@@ -808,13 +885,14 @@ msgstr ""
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
-"Os usuarios de teclados españois normalmente deberían deixar isto en branco."
+"Utilizatorii tastaturilor U.S. English ar trebui în general să lase această "
+"intrare necompletată."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "Please select your keyboard options."
-msgstr "Escolla as súas opcións de teclado."
+msgstr "Vă rugăm selectaţi opţiunile tastaturii dvs.."
 
 #. Type: string
 #. Description
@@ -824,10 +902,10 @@ msgid ""
 "be entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
-"Para que o servidor X xestione o teclado como desexa, pódense introducir "
-"opcións de teclado. As opcións dispoñibles dependen do conxunto de regras "
-"XKB seleccionado. Non tódalas opcións funcionan con tódolos modelos e "
-"disposicións de teclado."
+"Pentru ca severul X să manipuleze tastatura cum doriţi, trebuie să "
+"introduceţi opţiunile pentru tastatură. Opţiunile disponibile depind de "
+"setul de reguli XKB selectat anterior. Nu toate opţiunile vor funcţiona cu "
+"orice model şi format de tastatură."
 
 #. Type: string
 #. Description
@@ -837,10 +915,10 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
-"Por exemplo, se quere que a tecla \"Bloq Mayús\" funcione coma unha tecla "
-"Control adicional, pode introducir \"ctrl:nocaps\"; se quere intercambiar a "
-"tecla \"Bloq Mayús\" e Control da esquerda, pode introducir \"ctrl:swapcaps"
-"\"."
+"De exemplu, dacă doriţi ca tasta Caps Lock să se comporte ca o tasta Control "
+"suplimentară, trebuie să introduceţi \"ctrl:nocaps\"; dacă doriţi să "
+"schimbaţi între ele tastele Caps Lock şi Control stânga, trebuie să "
+"introduceţi \"ctrl:swapcaps\"."
 
 #. Type: string
 #. Description
@@ -852,10 +930,11 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
-"Outro exemplo: algunha xente prefire ter as teclas Meta dispoñibles nas "
-"teclas Alt do seu teclado (opción por defecto), mentres que outros prefiren "
-"ter as teclas Meta nas teclas Windows ou \"logo\". Se prefire empregar as "
-"teclas Windows ou logo coma teclas Meta, pode introducir \"altwin:meta_win\"."
+"Ca un alt exemplu, unii oameni preferă să aibe tastele Meta disponibile ca "
+"taste Alt (aceasta este implicit), în timp ce alţi oameni preferă tastele "
+"Meta în locul tastelor Windows sau \"logo\". Dacă preferaţi să folosiţi "
+"tastele Windows sau logo ca taste Meta, trebuie să introduceţi \"altwin: "
+"meta_win\"."
 
 #. Type: string
 #. Description
@@ -866,10 +945,10 @@ msgid ""
 "like to use your Windows or logo keys as Meta keys, you may enter \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
-"Pode combinar opcións separándoas cunha coma; por exemplo, se quere que a "
-"tecla \"Bloq Mayús\" funcione coma unha tecla Control adicional e tamén "
-"quere empregar as súas teclas Windows ou logo coma teclas Meta, pode "
-"introducir \"ctrl:nocaps,altwin:meta_win\"."
+"Puteţi combina opţiunile separându-le cu virgulă; de exemplu dacă doriţi ca "
+"tasta Caps Lock ca tastă suplimentară Control şi preferaţi să folosiţi "
+"tastele Windows sau logo ca taste Meta, puteţi introduce \"ctrl:nocaps,"
+"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -883,13 +962,14 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:275
 msgid "If you don't know what options to use, leave this entry blank."
-msgstr "Se non sabe que opcións empregar, deixe esta entrada en branco."
+msgstr ""
+"Dacă nu ştiţi ce opţiune să folosiţi, lăsaţi această intrare necompletată."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:303
 msgid "Attempt mouse device autodetection?"
-msgstr "¿Tentar a autodetección dos dispositivos de rato?"
+msgstr "Se încearcă autodetectarea mausului?"
 
 #. Type: boolean
 #. Description
@@ -902,11 +982,12 @@ msgid ""
 "the computer's power, connect the mouse, turn the computer back on, and "
 "reboot.  If you wish to select a mouse type manually, decline this option."
 msgstr ""
-"Se ten un rato conectado ao ordenador, pódese tentar detectalo. Pode axudar "
-"se se move o rato mentres se tenta a detección (non debería estar a "
-"funcionar o programa gpm). Se quere conectar un rato PS/2 ou de bus, debería "
-"apagar o ordenador, conectar o rato, e volver acender o ordenador. Se quere "
-"seleccionar un tipo de rato manualmente, rexeite esta opción."
+"Dacă aveţi un maus ataşat la calculator, poate fi încercată detecţia lui; ar "
+"putea ajuta mişcarea mausului când se încearcă detecţia (de asemenea, "
+"programul gpm nu ar trebui să ruleze). Dacă doriţi ataşarea unui maus PS/2 "
+"sau bus/inport la calculator, trebuie să opriţi sistemul, alimentarea "
+"acestuia, să conectaţi mausul, să porniţi calculatorul şi să-l reporniţi. "
+"Dacă doriţi să selectaţi manual tipul mausului, refuzaţi această opţiune."
 
 #. Type: boolean
 #. Description
@@ -917,16 +998,16 @@ msgid ""
 "autodetection succeeds, further debconf questions about your mouse will be "
 "pre-answered."
 msgstr ""
-"Se acepta esta opción e falla a autodetección, háselle volver facer esta "
-"pregunta. Pode tentar a autodetección tantas veces como queira. Se a "
-"autodetección ten éxito, hanse respostar automaticamente as demais preguntas "
-"sobre o seu rato."
+"Dacă acceptaţi această opţiune şi autodetecţia eşuează, veţi fi întrebat din "
+"nou acelaşi lucru. Puteţi repeta autodetecţia de câte ori doriţi. Dacă "
+"autodetecţia reuşeşte, orice întrebări debconf ulterioare despre mausul dvs. "
+"vor ţine cont de asta."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:319
 msgid "Please choose your mouse port."
-msgstr "Escolla o porto do rato."
+msgstr "Vă rugăm alegeţi portul pentru maus."
 
 #. Type: select
 #. Description
@@ -936,9 +1017,9 @@ msgid ""
 "certain characteristics of your mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
-"Para que a interface gráfica do sistema X Window funcione correctamente, é "
-"necesario coñecer algunhas características do seu rato (ou de outro "
-"dispositivo de punteiro, coma un trackball)."
+"Pentru ca interfaţa utilizator a sistemului grafic X Window să funcţioneze "
+"corect  trebuie cunoscute câteva caracteristici ale mausului dvs. (sau altor "
+"dispozitive cursor, ca trackball)."
 
 #. Type: select
 #. Description
@@ -954,26 +1035,27 @@ msgid ""
 "inport devices from your computer, please do so with the computer's power "
 "off."
 msgstr ""
-"É preciso determinar o porto (tipo de conexión) que emprega o seu rato. Os "
-"portos serie empregan conectores con forma de D e de 9 a 25 patas (DB-9 ou "
-"DB-25); o conector do rato é femia (ten buratos) e o conector do ordenador é "
-"macho (ten patas). Os portos PS/2 son conectores redondos pequenos (DIN) con "
-"6 patas; o conector do rato é macho e o lado do ordenador é femia. Tamén "
-"pode ter un rato USB, un rato de bus (moi antigo) ou pode estar a empregar o "
-"programa gpm coma repetidor. Se ten que conectar ou desconectar ratos PS/2 "
-"ou bus do seu ordenador, fágao co ordenador apagado."
+"Este necesară determinarea portului ( tipul conexiunii) folosit de mausul "
+"dvs. Porturile seriale folosesc conectori de tip D cu 9 sau 25 de pini "
+"(supranumite DB-9 sau DB-25); conectorul mausului este de tip mamă (are "
+"găuri) şi conectorul calculatorului este de tip tată (are pini). Porturile "
+"PS/2 au conectoare mici rotunde (DIN) cu 6 pini; conectorul mausului este de "
+"tip male iar al calculatorului de tip mamă. Alternativ puteţi avea un mause "
+"USB, un maus bus/inport (foarte vechi) sau puteţi folosi programul gpm ca "
+"repetor. Dacă aveţi nevoie să ataşaţi sau să detaşaţi un dispozitiv PS/2 sau "
+"bus/inport de la calculator, faceţi asta vă rugăm cu alimentarea oprită."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:337
 msgid "Please choose the entry that best describes your mouse."
-msgstr "Escolla a entrada que describa mellor o seu rato."
+msgstr "Vă rugăm alegeţi intrarea care descrie cel mai bine mausul dvs.."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:342
 msgid "Emulate 3 button mouse?"
-msgstr "¿Emular un rato de 3 botóns?"
+msgstr "Se emulează un maus cu 3 butoane?"
 
 #. Type: boolean
 #. Description
@@ -984,10 +1066,11 @@ msgid ""
 "presence of a middle button by treating simultaneous clicks or drags of the "
 "left and right buttons as middle button events."
 msgstr ""
-"Moitos programas do sistema X Window esperan que o seu rato teña 3 botóns "
-"(esquerdo, dereito e central). Os ratos con só 2 botóns poden emular a "
-"presencia dun botón central facendo que ao premer os dous botóns ao mesmo "
-"tempo se trate coma un botón central."
+"Majoritatea programelor în sistemul X Window se aşteaptă să aveţi un maus cu "
+"3 butoane (stânga, dreapta şi mijloc). Mausul cu doar două butoane poate "
+"simula prezenţa butonului din mijloc tratând clicurile sau tragerile "
+"simultane cu ambele butoane, stângul şi dreptul, ca evenimente ale butonului "
+"din mijloc."
 
 #. Type: boolean
 #. Description
@@ -996,8 +1079,8 @@ msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
 msgstr ""
-"Esta opción tamén se pode empregar con ratos de 3 botóns ou máis; o botón do "
-"medio ha seguir a funcionar normalmente."
+"Această opţiune poate fi de asemenea folosită şi la mausul cu 3 sau mai "
+"multe butoane; butonul din mijloc va continua să funcţioneze normal."
 
 #. Type: boolean
 #. Description
@@ -1007,15 +1090,16 @@ msgid ""
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
 "\") are not yet supported with this configuration tool."
 msgstr ""
-"Teña en conta que os botóns por riba do quinto (contando unha roda coma dous "
-"botóns, un para subir e outro para baixar, e un terceiro para os clics ca "
-"roda) non teñen soporte nesta ferramenta de configuración."
+"Ţineţi cont că butoanele mausului şase, şapte, ş.a.m.d. (considerând rotiţa "
+"de derulare ca două butoane, una pentru fiecare \"sus\" şi \"jos\", şi un al "
+"treilea dacă rotiţa are funcţionalitate de clic) nu sunt încă suportate cu "
+"această unealtă de configurare."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:358
 msgid "Attempt monitor autodetection?"
-msgstr "¿Tentar a autodetección do monitor?"
+msgstr "Se încercă autodetectarea monitorului?"
 
 #. Type: boolean
 #. Description
@@ -1027,11 +1111,11 @@ msgid ""
 "same dialect of this protocol, further debconf questions about your monitor "
 "will be pre-answered."
 msgstr ""
-"Moitos monitores (incluíndo LCDs) e tarxetas de vídeo soportan un protocolo "
-"de comunicacións que permiten comunicarlle ao ordenador as características "
-"técnicas do monitor. Se o seu monitor e tarxeta de vídeo falan o mesmo "
-"dialecto deste protocolo, hanse respostar automaticamente as outras "
-"preguntas sobre o seu monitor."
+"Multe monitoare (inclusiv cele LCD) şi plăci video suportă un protocol de "
+"comunicaţie care permite caracteristicilor tehnice ale monitoarelor să fie "
+"retransmise înapoi la calculator. Dacă monitorul sau placa video folosesc "
+"acelaşi dialect al acestui protocol, întrebările ulterioarea ale debconf "
+"legate de monitorul dvs. vor ţine cont de aceasta."
 
 #. Type: boolean
 #. Description
@@ -1039,13 +1123,15 @@ msgstr ""
 msgid ""
 "If autodetection fails, you will be asked for information about your monitor."
 msgstr ""
-"Se falla a autodetección háselle pedir información sobre o seu monitor."
+"Dacă autodetecţia eşuează, vi se vor cere informaţii despre monitorul dvs.."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
 msgid "Please choose a method for selecting your monitor characteristics."
-msgstr "Escolla un método para seleccionar as características do seu monitor."
+msgstr ""
+"Vă rugăm să alegeţi o metodă de selecţie a caracteristicilor monitorului "
+"dvs.."
 
 #. Type: select
 #. Description
@@ -1054,8 +1140,8 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of your monitor must be known."
 msgstr ""
-"Para que a interface gráfica do sistema X Window funcione correctamente, "
-"deben coñecerse algunhas características do seu monitor."
+"Pentru ca interfaţa utilizator a sistemului grafic X Windows să funcţioneze "
+"corect trebuie cunoscute câteva caracteristica ale monitorului dvs."
 
 #. Type: select
 #. Description
@@ -1066,11 +1152,12 @@ msgid ""
 "this will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
-"Para a opción \"simple\", só é preciso coñece-lo tamaño físico do monitor; "
-"isto ha estabrecer algúns valores de configuración apropiados para un "
-"monitor CRT dese tamaño, pero pode non ser óptimo para CRTs de alta "
-"calidade. (Esta opción está desactivada para usuarios de paneis LCD, porque "
-"esas pantallas están configuradas para unha resolución determinada)."
+"Pentru opţiunea \"simplu\" aveţi nevoie doar să ştiţi dimensiunea fizică a "
+"monitorului; aceasta va activa câteva valori de configurare apropiate pentru "
+"un CRT tipic de dimensiunea corespunzătoare, dar poate fi suboptimală pentru "
+"CRT-urile de înaltă calitate. (Această opţiune este dezactivată pentru "
+"utilizatorii de panouri LCD, atât timp cât astfel de afişaje sunt "
+"configurate pentru o rezoluţie particulară.)"
 
 #. Type: select
 #. Description
@@ -1080,9 +1167,10 @@ msgid ""
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know your monitor is capable of)."
 msgstr ""
-"A opción \"media\" halle presentar unha lista de resolucións e velocidades "
-"de refresco, coma \"800x600 @ 85 Hz\"; debería escoller o mellor modo que "
-"quere empregar (e que saiba que o monitor pode presentar)."
+"Opţiunea \"mediu\" vă va prezenta o listă de rezoluţii şi rate de "
+"reîmprospătare, ca \"800x600 @ 85Hz\"; trebuie să alegeţi cel mai bun mod pe "
+"care doriţi să-l folosiţi (şi atunci ştiţi de ce este capabil monitorul "
+"dvs.)."
 
 #. Type: select
 #. Description
@@ -1091,8 +1179,9 @@ msgid ""
 "The \"advanced\" option will let you specify your monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
-"A opción \"avanzada\" halle permitir especificar directamente as tolerancias "
-"de sincronía horizontal e refresco vertical do seu monitor."
+"Opţiunea \"avansat\" vă permite să specificaţi direct toleranţele de "
+"reîmprospătare ale sincronizării pe orizontală şi pe verticală ale "
+"monitorului dvs."
 
 #. Type: select
 #. Choices
@@ -1101,29 +1190,30 @@ msgid ""
 "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
 "inches (480-510 mm), 21 inches (530 mm) or more"
 msgstr ""
-"Ata 14 polgadas (355 mm), 15 polgadas (380 mm), 17 polgadas (430 mm), 19-20 "
-"polgadas (480-510 mm), 21 polgadas (530 mm) ou máis"
+"Până la 14 ţoli (355 mm), 15 ţoli (380 mm), 17 ţoli (430 mm), 19-20 ţoli "
+"(480-510 mm), 21 ţoli (530 mm) sau mai mult"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
 msgid "Please choose your approximate monitor size."
-msgstr "Escolla o tamaño aproximado do seu monitor."
+msgstr "Vă rugăm să alegeţi dimensiunea aproximativă a monitorului dvs.."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:389
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
-"Os CRTs de alta calidade poderían funcionar coma un monitor da seguinte "
-"categoría de tamaños."
+"CRT-urile de înaltă calitate pot fi capabile să utilizeze imediat următoarea "
+"categorie de dimensiune."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:396
 msgid "Please select your monitor's best video mode."
-msgstr "Escolla o mellor modo de vídeo do seu monitor."
+msgstr "Vă rugăm selectaţi cel mai bun mod video al monitorului dvs.."
 
+# am senzaţia de inconsecvenţă, mă refer la traducerea lui best şi worse, nu ştiu dacă mesajul ăsta nu apare în conjuncţie cu altele în care Alegeţi "x" nu l-am tradus( atunci şi acum cred ca nu trebuie traduse deaarce sunt elemente care nu sunt localizabile), verifici tu te rog.
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:396
@@ -1136,19 +1226,19 @@ msgid ""
 "it; if in doubt, use the video mode recommended by the manufacturer of your "
 "LCD."
 msgstr ""
-"Escolla a \"mellor\" resolución e velocidade de refresco que crea que pode "
-"dar o seu monitor. É mellor unha maior resolución e velocidade de refresco. "
-"Se emprega un monitor CRT, é perfectamente aceptable escoller un modo de "
-"vídeo \"peor\" que o máximo do seu monitor, se quere. Os usuarios de "
-"pantallas LCD tamén poden facelo, pero só se o chipset de vídeo e o "
-"controlador o soportan; se non sabe, empregue o modo de vídeo recomendado "
-"polo fabricante da súa pantalla."
+"Alegeţi \"cea mai bună\" rezoluţie şi rată de reîmprospătare de care credeţi "
+"că e capabil monitorul dvs.. Rezoluţiile şi ratele de reîmprospătare mari "
+"sunt mai bune. Dacă folosiţi un monitor CRT, este perfect acceptabil să "
+"selectaţi un mod video \"mai slab\" decât cel mai bun de care este capabil "
+"monitorul dvs.. Utilizatorii afişajelor LCD pot de asemenea face asta, dar "
+"doar dacă cipsetul video şi modulul de nucleu suportă asta; dacă aveţi "
+"dubii, folosiţi modul video recomandat de producătorul afişajului LCD."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:406
 msgid "Enter an identifier for your monitor."
-msgstr "Introduza un identificador para o seu monitor."
+msgstr "Introduceţi un identificator pentru monitorul dvs."
 
 #. Type: string
 #. Description
@@ -1158,16 +1248,17 @@ msgid ""
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
-"O ficheiro de configuración do servidor X asocia o seu monitor cun nome que "
-"pode fornecer. Adoita ser a marca seguida polo modelo, por exemplo: \"Sony "
-"E200\" ou \"Dell E770s\"."
+"Fişierul de configurare al serverului dvs. X asociază monitorul cu un nume "
+"pe care dvs. îl furnizaţi. Acesta este uzual vânzătorul sau marca folosită "
+"de numele modelului, de exemplu \"Sony E200\" sau \"Dell E770s\"."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
 msgid "Write monitor sync ranges to configuration file?"
 msgstr ""
-"¿Gravar os rangos de sincronía do monitor no ficheiro de configuración?"
+"Se scriu intervalele de sincronizare ale monitorului în fişierul de "
+"configurare?"
 
 #. Type: boolean
 #. Description
@@ -1177,15 +1268,15 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
-"Os rangos de sincronía do monitor deberían ser autodetectados polo servidor "
-"X na maioría dos csaso, pero ás veces precisa de axuda. Esta opción é para "
-"usuarios avanzados, e debería deixarse no valor por defecto."
+"Plaja de sincronizare a monitorului trebuie autodetectată de serverul X în "
+"majoritatea cazurilor, dar câte o dată are nevoie de indicii. Această "
+"opţiune este pentru utilizatorii avansaţi, şi trebuie lăsată cum e implicit."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:420
 msgid "Enter your monitor's horizontal sync range."
-msgstr "Introduza o rango de sincronía horizontal do seu monitor."
+msgstr "Introduceţi intervalul de sincronizare orizontală al monitorului dvs."
 
 #. Type: string
 #. Description
@@ -1196,17 +1287,17 @@ msgid ""
 "CRT's).  This information should be available in your monitor's manual.  "
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
-"Introduza unha lista de valores discretos separados por comas (para "
-"pantallas de frecuencia fixa) ou unha parella de valores separados por un "
-"guión (tódolos CRTs modernos). Esta información debería estar dispoñible no "
-"manual do seu monitor. Os valores inferiores a 30 ou superiores a 130 son "
-"extremadamente raros."
+"Vă rugăm introduceţi o listă de valori discrete separată prin virgule "
+"(pentru frecvenţele fixe ale afişajului), sau o pereche de valori separate "
+"printr-o liniuţă (toate dispozitivele CRT moderne). Această informaţie "
+"trebuie să fie disponibilă în manualul monitorului dvs.. Valorile mai mici "
+"decât 30 sau mai mari decât 130 sunt extrem de rare."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:428
 msgid "Enter your monitor's vertical refresh range."
-msgstr "Introduza o rango de refresco vertical do seu monitor."
+msgstr "Introduceţi intervalul de reîmprospătare verticală al monitorului dvs."
 
 #. Type: string
 #. Description
@@ -1217,17 +1308,18 @@ msgid ""
 "CRT's).  This information should be available in your monitor's manual.  "
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
-"Introduza unha lista de valores discretos separados por comas (para "
-"pantallas de frecuencia fixa) ou unha parella de valores separados por un "
-"guión (tódolos CRTs modernos). Esta información debería estar dispoñible no "
-"manual do seu monitor. Os valores inferiores a 50 ou superiores a 160 son "
-"extremadamente raros."
+"Vă rugăm introduceţi o listă de valori discrete separată prin virgule "
+"(pentru frecvenţele fixe ale afişajului), sau o pereche de valori separate "
+"printr-o liniuţă (toate CRT-urile moderne). Această informaţie trebuie să "
+"fie disponibilă în manualul monitorului dvs.. Valorile mai mici decât 50 sau "
+"mai mari decât 160 sunt extrem de rare."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:436
 msgid "Please enter a comma-separated list of ranges or values."
-msgstr "Introduza unha lista separada por comas de rangos ou valores."
+msgstr ""
+"Vă rugăm introduceţi o listă de domenii sau valori separate prin virgule."
 
 #. Type: note
 #. Description
@@ -1236,14 +1328,14 @@ msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
 msgstr ""
-"A sintaxe válida é unha lista de valores discretos separados por comas ou "
-"unha parella de valores separados por un guión."
+"Sintaxa validă este o listă de valori discrete, separate prin virgule sau o "
+"pereche de valori separate printr-o cratimă."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:444
 msgid "Select the video modes you would like the X server to use."
-msgstr "Escolla os modos de vídeo que quere que empregue o servidor X."
+msgstr "Selectaţi modurile video pe care doriţi să le folosească serverul X."
 
 #. Type: multiselect
 #. Description
@@ -1254,16 +1346,18 @@ msgid ""
 "all of them is effectively the same as removing none, since in both cases "
 "the X server will attempt to use the highest possible resolution."
 msgstr ""
-"Se hai algunhas resolucións que non quere que empregue o servidor X incluso "
-"se o hardware as pode facer, elimíneas da lista de embaixo. Eliminalas todas "
-"é o mesmo que non eliminar ningunha, xa que nos dous casos o servidor X ha "
-"tentar empregar a resolución máis alta posible."
+"Dacă sunt câteva rezoluţii pe care nu doriţi ca serverul X să le folosească "
+"chiar dacă componentele dvs. sunt capabile, eliminaţi-le din lista "
+"alăturată. Eliminarea tuturor este efectiv acelaşi lucru cu neeliminarea "
+"nici unuia, în ambele cazuri serverul X va încerca să folosească cea mai "
+"înaltă rezoluţie posibilă."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:454
 msgid "Please select your desired default color depth in bits."
-msgstr "Escolla a profundidade de cor desexada en bits."
+msgstr ""
+"Vă rugăm selectaţi adâncimea de culoare pe care o doriţi implicit, în biţi."
 
 #. Type: select
 #. Description
@@ -1275,11 +1369,11 @@ msgid ""
 "acceleration only for certain depths.  Consult your video card manual for "
 "more information."
 msgstr ""
-"Normalmente é preferible a cor de 24 bits, pero en tarxetas gráficas con "
-"cantidades limitadas de memoria pódense conseguir resolucións máis elevadas "
-"reducindo a profundidade de cor. Tamén, algunhas tarxetas só soportan "
-"aceleración 3D hardware nalgunhas profundidades de cor determinadas. "
-"Consulte o manual da súa tarxeta de vídeo para obter máis información."
+"De obicei se doreşte 24 de biţi de culoare, dar, pe plăci grafice cu "
+"cantităţi limitate de memorie de tampon de cadre, se pot atinge rezoluţii "
+"mai mari în detrimentul adâncimii de culoare. De asemenea, unele plăci "
+"suportă accelerare 3D hardware doar pentru anumite adâncimi. Consultaţi-vă "
+"manualul plăcii dumneavoastră pentru mai multe informaţii."
 
 #. Type: select
 #. Description
@@ -1289,52 +1383,55 @@ msgid ""
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits.)"
 msgstr ""
-"A chamada \"cor de 32 bits\" consiste realmente en 24 bits de información de "
-"cor máis 8 bits de canle alfa ou simple recheo; o sistema X Window pode "
-"tratar cos dous. Se quere algún, escolla 24 bits.)"
+"(Aşa-numiţii \"32 de biţi de culoare\" sunt de fapt 24 de biţi de informaţii "
+"de culoare plus 8 biţi de canal alfa sau o simplă completare cu 0; Sistemul "
+"de ferestre X poate să se descurce cu ambele. Dacă doriţi vre-unul, "
+"selectaţi 24 de biţi.)"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "Please enter a value for the entry."
-msgstr "Introduza un valor."
+msgstr "Vă rugăm introduceţi o valoare pentru intrare."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:466
 msgid "A null entry is not permitted."
-msgstr "Non se permite unha entrada nula."
+msgstr "Nu este permisă o valoare nulă."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Please enter a value without double-quotes."
-msgstr "Introduza un valor sen comiñas dobres."
+msgstr "Vă rugăm introduceţi o valoare neîncadrată între ghilimele."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:471
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Non se permiten caracteres de comiñas dobres no valor de entrada."
+msgstr ""
+"Încadrarea între caracterele ghilimele (\") nu este permisă în valoarea "
+"introdusă."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Please enter only a numeric value."
-msgstr "Introduza só un valor numérico."
+msgstr "Vă rugăm introduceţi o valoare numerică."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:476
 msgid "Characters other than digits are not allowed in the entry."
-msgstr "Non se permiten caracteres distintos a díxitos."
+msgstr "Nu sunt permise alte caractere decât cifre."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
 #, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Escolla o mellor modo de video do monitor."
+msgstr "Vă rugăm selectaţi formatul tastaturii dvs.."
 
 #. Type: boolean
 #. Description
@@ -1354,25 +1451,25 @@ msgid ""
 msgstr ""
 
 #~ msgid "Migrate XKB configuration directory?"
-#~ msgstr "¿Migrar o directorio de configuración de XKB?"
+#~ msgstr "Se migrează directorul de configurare XKB?"
 
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
 #~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
-#~ "O directorio no que se armacena a información de configuración (que "
-#~ "inclúe os datos do teclado) para a extensión X KEYBOARD (XKB) cambiou de /"
-#~ "usr/X11R6/lib/X11/xkb a /etc/X11/xkb ."
+#~ "Directorul unde informaţiile de configurare (inclusiv datele despre "
+#~ "tastatură) pentru Extensia de tastatură X (XKB) sunt stocate s-a schimbat "
+#~ "din /usr/X11R6/lib/X11/xkb în /etc/X11/xkb."
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
 #~ "from old or unofficial Debian packages, may continue to install files "
 #~ "there."
 #~ msgstr ""
-#~ "O seu sistema está a empregar a localización antiga, e algúns programas, "
-#~ "entre eles paquetes Debian antigos ou non oficiais, poden seguir a "
-#~ "instalar ficheiros alí."
+#~ "Sistemul dvs. foloseşte locaţia veche, iar unele programe, ca acelea din "
+#~ "pachete vechi sau neoficiale, ar putea să continue să instaleze fişiere "
+#~ "acolo."
 
 #~ msgid ""
 #~ "Would you like the XKB configuration files on the system to be "
@@ -1382,23 +1479,23 @@ msgstr ""
 #~ "the old location to the new one will be created to prevent legacy "
 #~ "applications from breaking."
 #~ msgstr ""
-#~ "¿Quere migrar automaticamente os ficheiros XKB do sistema da antiga "
-#~ "localización á nova? Calquera ficheiro que xa exista na nova localización "
-#~ "hase copiar e substituír por un ficheiro da antiga localización. Hase "
-#~ "crear unha ligazón simbólica da antiga localización á nova para que as "
-#~ "aplicacións antigas non rompan."
+#~ "Doriţi ca fişierele de configurare XKB din sistem să fie migrate automat "
+#~ "din vechiul loc în cel nou? Orice fişier existent, din noul loc, care are "
+#~ "acelaşi nume i se va face o copie de siguranţă şi va fi înlocuit de "
+#~ "fişiere din vechiul loc. O legătură simbolică din locul vechi către cel "
+#~ "nou va fi creat pentru a preveni deteriorarea aplicaţiilor vechi."
 
 #~ msgid "Migrate Xt application defaults directory?"
-#~ msgstr "¿Migrar o directorio de opcións por defecto de aplicacións Xt?"
+#~ msgstr "Se migrează directorul de valori implicite pentru aplicaţii Xt?"
 
 #~ msgid ""
 #~ "The directory where application defaults for X Window System client "
 #~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
 #~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
 #~ msgstr ""
-#~ "O directorio no que se gardan as opcións por defecto para os programas "
-#~ "cliente de X Window baseados en X Toolkit Intrinsics (Xt) cambiouse de /"
-#~ "usr/X11R6/lib/X11/app-defaults a /etc/X11/app-defaults ."
+#~ "Directorul unde sunt stocate valorile implicite pentru programele client "
+#~ "pentru Sistemul de ferestre X bazate pe Setul de unelte intrinseci X (Xt) "
+#~ "s-a schimbat din /usr/X11R6/lib/X11/app-defaults în /etc/X11/app-defaults."
 
 #~ msgid ""
 #~ "Would you like the app-defaults files on the system to be automatically "
@@ -1408,30 +1505,30 @@ msgstr ""
 #~ "to the new one will be created to prevent legacy applications from "
 #~ "breaking."
 #~ msgstr ""
-#~ "¿Quere migrar automaticamente os ficheiros app-defaults do sistema da "
-#~ "antiga localización á nova? Calquera ficheiro que xa exista na nova "
-#~ "localización hase copiar e substituír por un ficheiro da antiga "
-#~ "localización. Hase crear unha ligazón simbólica da antiga localización á "
-#~ "nova para que as aplicacións antigas non rompan."
+#~ "Doriţi ca fişierele app-defaults din sistem să fie migrate automat din "
+#~ "vechiul loc în cel nou? Orice fişier existent, din noul loc, care are "
+#~ "acelaşi nume i se va face o copie de siguranţă şi va fi înlocuit de "
+#~ "fişiere din vechiul loc. O legătură simbolică din locul vechi către cel "
+#~ "nou va fi creat pentru a preveni deteriorarea aplicaţiilor vechi."
 
 #~ msgid "Select the desired default display manager."
-#~ msgstr "Escolla o xestor de pantalla por defecto que desexe."
+#~ msgstr "Selectaţi managerul de ecran implicit dorit."
 
 #~ msgid ""
 #~ "A display manager is a program that provides graphical login capabilities "
 #~ "for the X Window System."
 #~ msgstr ""
-#~ "Un xestor de pantalla é un programa que fornece capacidades de inicio de "
-#~ "sesión gráfico para o sistema X Window."
+#~ "Un manager de ecran este un program care oferă facilitatea de "
+#~ "autentificare grafică sistemului de ferestre X."
 
 #~ msgid ""
 #~ "Only one display manager can manage a given X server, but multiple "
 #~ "display manager packages are installed.  Please select which display "
 #~ "manager should run by default."
 #~ msgstr ""
-#~ "Só un xestor de pantalla pode xestionar un servidor X determinado, pero "
-#~ "hai varios paquetes de xestores de pantalla instalados. Escolla o que se "
-#~ "debería executar por defecto."
+#~ "Doar un singur manager de ecran poate guverna un anumit server X, dar mai "
+#~ "mulţi manageri de ecran sunt instalaţi. Sunteţi rugat să selectaţi "
+#~ "managerul care ar trebui să pornească în mod implicit."
 
 #~ msgid ""
 #~ "(Multiple display managers can run simultaneously if they are configured "
@@ -1439,13 +1536,14 @@ msgstr ""
 #~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
 #~ "disable the check for a default display manager.)"
 #~ msgstr ""
-#~ "(Pódense executar varios xestores de pantalla ao mesmo tempo se se "
-#~ "configuran para xestionar servidores distintos; para facelo, configure os "
-#~ "xestores de pantalla, edite os seus scripts de inicio de /etc/init.d e "
-#~ "desactive a comprobación do xestor de pantalla por defecto)."
+#~ "(Mai mulţi manageri de ecran pot rula simultan dacă sunt configuraţi să "
+#~ "guverneze servere diferite; pentru a obţine acest lucru, configuraţi "
+#~ "managerii de ecran corespunzător, editaţi fiecare dintre script-urile lor "
+#~ "de iniţializare din /etc/init.d şi dezactivaţi testul de manager de ecran "
+#~ "implicit.)"
 
 #~ msgid "Do you wish to stop the xdm daemon?"
-#~ msgstr "¿Quere deter o daemon de xdm?"
+#~ msgstr "Doriţi să opriţi demonul xdm?"
 
 #~ msgid ""
 #~ "The X display manager (xdm) daemon is typically stopped on package "
@@ -1454,14 +1552,14 @@ msgstr ""
 #~ "terminated. Otherwise you may leave xdm running, and the new version will "
 #~ "take effect the next time the daemon is restarted."
 #~ msgstr ""
-#~ "Normalmente adóitase deter o daemon do xestor de pantalla de X (xdm) ao "
-#~ "actualizar ou eliminar o paquete, pero semella que está a xestionar "
-#~ "alomenos unha sesión X en execución. Se se detén xdm agora, hase cortar "
-#~ "calquera sesión X que xestione. Se non, pode deixar xdm a se executar, e "
-#~ "a nova versión ha tomar efecto a próxima vez que reinicie o daemon."
+#~ "Demonul X de management al ecranului (xdm) este, în mod obişnuit oprit la "
+#~ "înnoirea sau ştergerea pachetului, dar se pare că acesta guvernează cel "
+#~ "puţin o sesiune X care rulează acum. Dacă xdm este oprit acum, orice "
+#~ "sesiune guvernată de el va fi terminată. Altfel, îl puteţi lăsa pe xdm să "
+#~ "ruleze şi noua versiune va avea efect la următoarea repornire a demonului."
 
 #~ msgid "experimental version of X.Org packages"
-#~ msgstr "versión experimental dos paquetes de X.Org"
+#~ msgstr "versiune experimentală a pachetelor X.Org"
 
 #~ msgid ""
 #~ "You are using an experimental version of X.Org packages for Debian.  "
@@ -1469,10 +1567,11 @@ msgstr ""
 #~ "version of the packages, since they have not been released to the Debian "
 #~ "distribution yet."
 #~ msgstr ""
-#~ "Está a empregar unha versión experimental dos paquetes de X.Org para "
-#~ "Debian. Non informe no Sistema de Seguemento de Fallos de Debian de "
-#~ "fallos nesta versión dos paquetes, xa que aínda non se publicaron en "
-#~ "Debian."
+#~ "Folosiţi o versiune experimentală a pachetelor X.Org pentru Debian. "
+#~ "Sunteţi rugat/rugată să nu trimiteţi defectele de programare prin "
+#~ "intermediul Sistemului de urmărire a defectelor Debian (Debian Bug "
+#~ "Tracking System) în legătură cu această versiune a pachetelor, deoarece "
+#~ "nu au fost lansate încă în distribuţia Debian."
 
 #~ msgid ""
 #~ "If you experience problems with these packages or would like to submit "
@@ -1480,9 +1579,9 @@ msgstr ""
 #~ "more about this mailing list on the World Wide Web:\n"
 #~ "  http://lists.debian.org/debian-x/"
 #~ msgstr ""
-#~ "Se ten problemas con estes paquetes ou quere enviar parches, envíe unha "
-#~ "mensaxe á lista de correo Debian X. Pode ler máis información sobre esta "
-#~ "lista de correo na web:\n"
+#~ "Dacă aveţi probleme cu aceste pachete sau doriţi să trimiteţi rezolvări "
+#~ "ale lor, trimiteţi mesaje către lista Debian X. Puteţi citi mai multe "
+#~ "despre această listă de mesaje pe internet:\n"
 #~ "  http://lists.debian.org/debian-x/"
 
 #~ msgid ""
@@ -1499,140 +1598,45 @@ msgstr ""
 #~ "       apt-get install x11-common/stable\n"
 #~ "    You may need to specify downgrades for several packages."
 #~ msgstr ""
-#~ "Se non quere executar paquetes X experimentais, ten que facer dúas "
-#~ "cousas:\n"
-#~ "  1) Asegúrese de que non ten repositorios de paquetes experimentais no "
-#~ "seu\n"
-#~ "     ficheiro /etc/apt/sources.list;\n"
-#~ "  2) Dígalle a apt que desactualice X.Org a unha versión publicada "
-#~ "axeitada;\n"
-#~ "     pode facelo engadindo o nome dun conxunto de paquetes ao nome do "
-#~ "paquete\n"
-#~ "     con \"apt-get\" -- por exemplo:\n"
-#~ "       apt-get install x11-common/unstable\n"
-#~ "     ou\n"
-#~ "       apt-get install x11-common/stable\n"
-#~ "     Pode ter que especificar desactualizacións para varios paquetes."
-
-#~ msgid ""
-#~ "When using operating system kernels with a particular scheduling "
-#~ "strategy, it has been widely noted that the X server's performance "
-#~ "improves when it is run at a higher process priority than the default; a "
-#~ "process's priority is known as its \"nice\" value.  They range from -20 "
-#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
-#~ "(extremely low priority).  The default nice value for ordinary processes "
-#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
-#~ "default for a machine that has duties other than interacting with the "
-#~ "console user (such as a web server)."
-#~ msgstr ""
-#~ "Cando se empregan núcleos de sistemas operativos cunha estratexia de "
-#~ "planificación determinada, tense observado en moitas partes que o "
-#~ "rendemento do servidor X mellora cando se executa cunha prioridade maior "
-#~ "á prioridade por defecto. A prioridade dun proceso coñécese coma o seu "
-#~ "nivel de amabilidade. Este nivel pode ir de -20 (prioridade moi alta, ou "
-#~ "\"non amable\" con outros procesos) a 19 (prioridade moi baixa). O valor "
-#~ "de amabilidade por defecto para os procesos normais é 0. -10 é un bo "
-#~ "valor por defecto para unha estación de traballo para un só usuario; 0 é "
-#~ "un bo valor para unha máquina que fai cousas distintas de interactuar co "
-#~ "usuario da consola (coma un servidor web)."
+#~ "Dacă nu doriţi să rulaţi pachetele experimentale X, trebuie să faceţi "
+#~ "două lucruri:\n"
+#~ "  1) Să vă asiguraţi că nu aveţi depozite de pachete exprimentale în "
+#~ "fişierul\n"
+#~ "     dvs. /etc/apt/sources.list;\n"
+#~ "  2) Spuneţi-i lui apt să învechească X.Org prin o versiune lansată \n"
+#~ "     potrivită; puteţi face acest lucru prin adăugarea la sfârşitul \n"
+#~ "     numelui pachetului un nume de suită de pachete cu \"apt-get\".\n"
+#~ "     De exemplu:\n"
+#~ "         apt-get install x-common/unstable\n"
+#~ "       sau\n"
+#~ "         apt-get install x11-common/stable\n"
+#~ "     Este posibil să trebuiască să specificaţi învechiri pentru unele "
+#~ "pachete."
 
 #~ msgid ""
 #~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
 #~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
 #~ "value of the X server should be set to 0."
 #~ msgstr ""
-#~ "O que se explica enriba non é certo con Linux versión 2.6 (ou 2.5 despois "
-#~ "de que se incluira o planificador \"O(1)\"); neses sistemas, o valor de "
-#~ "amabilidade do servidor X debería ser 0."
-
-#~ msgid ""
-#~ "The glx module enables software OpenGL rendering.  The dri module enables "
-#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
-#~ "that support for DRI must also exist in the kernel, the video card, and "
-#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
-#~ "operations using DRI to work.  Otherwise, the server falls back to "
-#~ "software rendering."
-#~ msgstr ""
-#~ "O módulo glx activa o debuxado OpenGL por software. O módulo dri activa o "
-#~ "soporte no servidor X para Direct Rendering Infrastructure (DRI). Teña en "
-#~ "conta que tamén ten que existir soporte para DRI no núcleo, na tarxeta de "
-#~ "vídeo e na versión instalada das bibliotecas Mesa para que funcionen as "
-#~ "operacións 3D aceleradas por hardware mediante DRI. Se non, o servidor "
-#~ "emprega debuxado por software."
-
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "Os módulos vbe e dcc activan o soporte de VESA BIOS Extensions e Data "
-#~ "Display Channel, respectivamente. Estes módulos empréganse para obter as "
-#~ "capacidades do monitor mediante a tarxeta de vídeo. O módulo int10 é un "
-#~ "emulador de x86 en modo real que se emprega para iniciar as tarxetas VGA "
-#~ "secundarias. Teña en conta que o módulo vbe depende do módulo int10, así "
-#~ "que se quere activar vbe ten que activar tamén int10."
-
-#~ msgid ""
-#~ "The X server configuration file associates your video card with a name "
-#~ "that you may provide.  This is usually the vendor or brand name followed "
-#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
-#~ msgstr ""
-#~ "O ficheiro de configuración do servidor X asocia a súa tarxeta de vídeo "
-#~ "cun nome que pode fornecer. Adoita ser a marca seguida polo modelo; por "
-#~ "exemplo: \"3Dfx Voodoo3\" ou \"ATI Rage Fury Maxx\"."
+#~ "Cele de sus nu sunt adevărate pentru nucleul  Linux începând cu versiunea "
+#~ "2.6 (nici pentru seria 2.5, după introducerea \"O(1) scheduler\"); pe "
+#~ "asemenea sisteme, valoarea nice a serverului X ar trebui ajustată la 0."
 
 #~ msgid ""
 #~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
 #~ "fully supported, should specify simply \"1\" here.  (This is not "
 #~ "guaranteed to work.)"
 #~ msgstr ""
-#~ "Os usuarios de máquinas SGI Indigo2 XL, ou de máquinas con buses non "
-#~ "soportados totalmente, deberían especificar só \"1\" aquí. (Non se "
-#~ "garante que funcione)."
-
-#~ msgid ""
-#~ "You may wish to use the \"lspci\" command to determine the bus location "
-#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
-#~ "device, and function numbers in hexadecimal, not decimal."
-#~ msgstr ""
-#~ "Se cadra teña que empregar a orde \"lspci\" para determinar a "
-#~ "localización no bus da súa tarxeta de vídeo PCI ou AGP. Teña en conta que "
-#~ "lspci dá os números de bus, dispositivo e función en hexadecimal, non en "
-#~ "decimal."
+#~ "\"Utilizatorii maşinilor SGI Indigo2 XL, sau a altor maşini cu magistrale "
+#~ "nesuportate complet trebuie să specifice \"1\" aici. (Asta nu e garantat "
+#~ "că funcţionează.)"
 
 #~ msgid ""
 #~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
 #~ "video card should leave this entry blank."
 #~ msgstr ""
-#~ "Os usuarios de máquinas distintas de PowerPC ou SGI Indigo2 XL cunha soa "
-#~ "tarxeta de vídoe deberían deixar esta entrada en branco."
-
-#~ msgid ""
-#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
-#~ "rule sets."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera conxunto de regras XKB "
-#~ "definido. Se se desempaquetou o paquete xlibs, pode ver os conxuntos de "
-#~ "regras dispoñibles no directorio /etc/X11/xkb/rules ."
-
-#~ msgid ""
-#~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera modelo definido polo "
-#~ "conxunto de regras XKB seleccionado. Se se desempaquetou o paquete xlibs, "
-#~ "pode buscar os conxuntos de regras dispoñibles no directorio /etc/X11/xkb/"
-#~ "rules ."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr ""
-#~ "Os usuarios de teclados españois normalmente deberían introducir \"pc105"
-#~ "\"."
+#~ "Utilizatorii maşinilor altele decât PowerPC sau SGI Indigo2 XL cu o "
+#~ "singură placă video trebuie să lase necompletată această intrare."
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
@@ -1640,21 +1644,10 @@ msgstr ""
 #~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
 #~ "for available layouts."
 #~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera disposición soportada polo "
-#~ "conxunto de regras XKB seleccionado. Se se desempaquetou o paquete xlibs, "
-#~ "consulte o directorio /etc/X11/xkb/rules para ver os conxuntos de regras "
-#~ "dispoñibles, e o directorio /etc/X11/xkb/symbols para ver as disposicións."
-
-#~ msgid ""
-#~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
-#~ "directory for the file corresponding to your selected layout for "
-#~ "available variants."
-#~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera variante soportada pola "
-#~ "disposición XKB seleccionada. Se se desempaquetou o paquete xlibs, "
-#~ "consulte o diretorio /etc/X11/xkb/symbols para consultar as variantes "
-#~ "dispoñibles no ficheiro correspondente á súa disposición seleccionada."
+#~ "Utilizatorii avansaţi pot folosi orice format suportat de setul de reguli "
+#~ "XKB selectat. Dacă pachetul xlibs a fost despachetat, vedeţi directorul /"
+#~ "etc/X11/xkb/rules pentru seturile de reguli disponibile, şi directorul /"
+#~ "etc/X11/xkb/symbols pentru formatele disponibile."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
@@ -1663,14 +1656,13 @@ msgstr ""
 #~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
 #~ "ctrl.)"
 #~ msgstr ""
-#~ "Os usuarios avanzados poden empregar calquera opción compatible co "
-#~ "modelo, disposición e variante XKB seleccionados. Se se desempaquetou o "
-#~ "paquete xlibs, pode consultar os ficheiros de opcións dispoñibles no "
-#~ "directorio /etc/X11/xkb/symbols, que só definen traducións parciais de "
-#~ "teclado. (Por exemplo, /etc/X11/xkb/symbols/ctrl)."
+#~ "Utilizatorii avansaţi pot folosi orice opţiune compatibilă cu modelul, "
+#~ "formatul şi varianta XKB selectată. Dacă pachetul xlibs este despachetat, "
+#~ "vedeţi în directorul /etc/X11/xkb/symbols fişierele cu opţiunile "
+#~ "disponibile. (De exemplu /etc/X11/xkb/symbols/ctrl.)"
 
 #~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "¿Activar os eventos de desprazamento da roda do rato?"
+#~ msgstr "Activaţi evenimentele de derulare ale rotiţei mausului?"
 
 #~ msgid ""
 #~ "Events from a wheeled mouse's wheel can be treated as clicks of "
@@ -1680,105 +1672,78 @@ msgstr ""
 #~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
 #~ "wheel may behave in an unexpected fashion if this option is set."
 #~ msgstr ""
-#~ "Os eventos da roda dun rato con roda pódense tratar coma clics de botóns "
-#~ "adicionais (botóns 4 e 5). Algunhas aplicacións X tratan os botóns 4 e 5 "
-#~ "coma eventos de desprazamento arriba e abaixo, o que fai que a roda do "
-#~ "rato funcione como se espera. Nembargantes, este comportamento depende da "
-#~ "aplicación, e pode non funcionar sempre. Tamén, os ratos exóticos con "
-#~ "máis de 3 botóns ademáis dunha roda poden funcionar dun xeito inesperado "
-#~ "se se activa esta opción."
+#~ "Evenimentele rotirii rotiţei mausului pot fi tratate ca clicuri ale "
+#~ "butoanelor adiţionale (butoanele 4 şi 5). Câteva aplicaţii X tratează "
+#~ "butoanele 4 şi 5 ca evenimente de derulare-sus şi derulare-jos, făcând "
+#~ "rotiţa mausului să funcţioneze cum vă aşteptaţi. Acesta este comportament "
+#~ "la nivel de aplicaţie oarecum, şi e posibil să nu funcţioneze "
+#~ "întotdeauna. De asemenea, un maus exotic cu mai mult de 3 butoane "
+#~ "suplimentare la o rotiţă se poate comporta într-o manieră neaşteptată "
+#~ "dacă această opţiune este activată."
 
 #~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
 #~ msgstr ""
-#~ "Activar esta opción non causa problemas se o seu rato non ten unha roda."
+#~ "Activarea acestei opţiuni este dăunătoare dacă mausul dvs. nu are rotiţă "
+#~ "de defilare."
 
 #~ msgid ""
 #~ "If you have an NVidia video card, you may want to decline this option, as "
 #~ "these cards' support for the DDC protocol is often so poor that attempts "
 #~ "to use it can result in system lockups."
 #~ msgstr ""
-#~ "Se ten unha tarxeta de vídeo NVidia é mellor que rexeite esta opción, xa "
-#~ "que o soporte do protocolo DDC destas tarxetas adoita ser tan malo que ao "
-#~ "tentar usalo queda bloqueado o sistema."
+#~ "Dacă aveţi o placă video NVidia, veţi dori să nu folosiţi această "
+#~ "opţiune, deoarece suportul acestor plăci pentru protocolul DDC este "
+#~ "adesea atât de sărac încât încercarea de utilizarea poate conduce la "
+#~ "blocarea sistemului."
 
 #~ msgid "Is your monitor an LCD device?"
-#~ msgstr "¿O seu monitor é un dispositivo LCD?"
+#~ msgstr "Monitorul dvs. este un dispozitiv LCD?"
 
 #~ msgid ""
 #~ "If your monitor is a liquid-crystal display (which is the case with "
 #~ "almost all laptops), you should set this option."
 #~ msgstr ""
-#~ "Se o seu monitor é unha pantalla de cristal líquido (o que adoita ser o "
-#~ "caso con case tódolos portátiles), debería activar esta opción."
+#~ "Dacă monitorul dvs. are un afişaj cu cristale lichide (cum este cazul la "
+#~ "majoritatea laptopurilor), trebuie să activaţi această opţiune."
 
 #~ msgid ""
 #~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
 #~ "option."
 #~ msgstr ""
-#~ "Os usuarios de monitores tradicionais de tubo de raios catódicos (CRT) "
-#~ "non deberían activar esta opción."
-
-#~ msgid ""
-#~ "For the \"simple\" option, you need only know the monitor's physical "
-#~ "size; this will set some configuration values appropriate for a typical "
-#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
-#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
-#~ "are configured for a particular resolution.)"
-#~ msgstr ""
-#~ "Para a opción \"simple\" só precisa de saber o tamaño físico do monitor; "
-#~ "con isto hanse estabrecer algúns valores de configuración axeitados para "
-#~ "un monitor CRT do tamaño correspondente, pero pode non ser óptimo para "
-#~ "CRTs de alta calidade. (Esta opción está desactivada para os usuarios de "
-#~ "panel LCD, xa que esas pantallas están configuradas para unha resolución "
-#~ "determinada)."
+#~ "Utilizatorii monitoarelor tradiţionale cu tub catodic (CRT) nu ar trebui "
+#~ "să activeze această opţiune."
 
 #~ msgid ""
 #~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
 #~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
 #~ "unsupported."
 #~ msgstr ""
-#~ "Teña en conta que nalgún hardware ATI antigo, coma os chipsets Mach8 (VGA "
-#~ "Wonder), Mach32 e os primeiros Mach64 (\"GX\"), non se soportan "
-#~ "profundidades superiores a 8."
+#~ "Reţineţi că la câteva componente video ATI vechi, precum Mach8 (VGA "
+#~ "Wonder), Mach32, şi recentul Mach64 (\"GX\"), o adâncime de culoare mai "
+#~ "mare de 8 nu e suportată."
 
 #~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "¿Gravar a sección DRI por defecto no ficheiro de configuración?"
+#~ msgstr "Se scrie secţiunea DRI în fişierul de configurare?"
 
 #~ msgid ""
 #~ "The DRI section of the X server configuration file determines the "
 #~ "permissions of the DRI device.  This option is for advanced users.  In "
 #~ "most cases, you should enable it."
 #~ msgstr ""
-#~ "A sección DRI do ficheiro de configuración do servidor X determina os "
-#~ "permisos do dispositivo DRI. Esta opción é para usuarios avanzados. Na "
-#~ "maioría dos casos debería activala."
+#~ "Secţiunea DRI a fişierului de configurare al serverului X determină "
+#~ "permisiunile dispozitivului DRI. Acestă opţiune este pentru utilizatorii "
+#~ "avansaţi. În cele mai multe cazuri ar trebui activată."
 
 #~ msgid ""
 #~ "Disable this option if you want to write your own \"DRI\" section into "
 #~ "the X.Org server configuration file.  You may wish to do this if you want "
 #~ "to change the access privileges to the DRI port."
 #~ msgstr ""
-#~ "Desactive esta opción se quere gravar a súa propia sección \"DRI\" no "
-#~ "ficheiro de configuración do servidor X.Org. Pode querer facelo se quere "
-#~ "cambiar os privilexios de acceso ao porto DRI."
+#~ "Dezactivaţi această opţiune dacă doriţi să vă scrieţi propria dvs. "
+#~ "secţiune \"DRI\" în fişierul de configurare X.Org. Probabil că veţi dori "
+#~ "să faceţi acest lucru dacă vreţi să schimbaţi privilegiile de acces la "
+#~ "portul DRI."
 
-#~ msgid "Replace symbolic link to default X server?"
-#~ msgstr "¿Substituí-la ligazón simbólica ao servidor X por defecto?"
-
-#~ msgid ""
-#~ "The symbolic link /etc/X11/X already exists; this means that a default X "
-#~ "server has already been selected.  You may be prompted by debconf to "
-#~ "select your default X server, but any change will not take effect unless "
-#~ "this symbolic link is overwritten.  If you do elect to replace the "
-#~ "symbolic link, the change in default X server will take effect the next "
-#~ "time the X server is started."
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
 #~ msgstr ""
-#~ "A ligazón simbólica /etc/X11/X xa existe; isto significa que xa se "
-#~ "escolleu un servidor X por defecto. Poida que debconf lle pida que "
-#~ "escolla o servidor X por defecto, pero os cambios non han ter efecto ata "
-#~ "que se sobrescriba a ligazón simbólica. Se escolle cambia-la ligazón "
-#~ "simbólica, o cambio do servidor X por defecto ha ter efecto a próxima vez "
-#~ "que se inicie."
-
-#~ msgid "-10"
-#~ msgstr "-10"
+#~ "Modulul v4l activează suportul pentru interfaţa Video4Linux a nucleului."

@@ -1,16 +1,16 @@
-# debconf templates for xfree86 package
+# debconf templates for xorg-x11 package
 # Italian translation
 #
-# $Id: it.po 1763M 2004-10-11 07:13:17Z (local) $
+# $Id: it.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
-# Branden Robinson, 2000--2004
+# Branden Robinson, 2000-2004
 # Matteo Dell'Amico, 2002
 # Emanuele Aina, 2002
-# Danilo Piazzalunga, 2004
 # Luca Monducci, 2004
+# Danilo Piazzalunga, 2004-2005
 #
-# This file is distributed under the same license as the xfree86 package.
+# This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
 #    Translators, if you are not familiar with the PO format, gettext
@@ -27,11 +27,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfree86 4.3.0.dfsg.1\n"
+"Project-Id-Version: xorg-x11 6.8.2.dfsg.1-10\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2004-09-05 18:34+0200\n"
-"Last-Translator: Danilo Piazzalunga <danilopiazza@libero.it>\n"
+"PO-Revision-Date: 2005-11-28 12:21+0100\n"
+"Last-Translator: Danilo Piazzalunga <danilopiazza@gmail.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -247,7 +247,6 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
-#, fuzzy
 msgid ""
 "Disable this option if you want to write your own \"Files\" section into the "
 "X.Org server configuration file.  You may wish to do this if you need to "
@@ -255,7 +254,7 @@ msgid ""
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
 "Disabilitare questa opzione se si vuole scrivere una propria sezione «Files» "
-"nel file di configurazione del server XFree86. Si potrebbe voler fare questo "
+"nel file di configurazione del server X.Org. Si potrebbe voler fare questo "
 "se si deve rimuovere il riferimento al font server locale, aggiungere un "
 "riferimento ad un font server diverso oppure modificare i percorsi "
 "predefiniti per i tipi di carattere locali."
@@ -263,9 +262,8 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr "Scegliere i moduli del server XFree86 da caricare automaticamente."
+msgstr "Scegliere i moduli del server X.Org da caricare automaticamente."
 
 #. Type: multiselect
 #. Description
@@ -344,28 +342,22 @@ msgstr ""
 # NdT: FIXME: Come tradurre «font rasterizer»?
 # Un font rasterizer è il sistema usato per disegnare i font, cioè traduce la
 # forma del font per la rappresentazione a video.
-# NEW-TRANSLATION
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-msgstr ""
-"I moduli bitmap, freetype, speedo, type1, e xtt sono tutti dei font "
-"rasterizer."
+msgstr "I moduli bitmap, freetype, e type1 sono tutti dei font rasterizer."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
 msgstr ""
-"Per altre informazioni su questi moduli, consultare la documentazione di "
-"XFree86."
+"Per altre informazioni su questi moduli, consultare la documentazione di X."
+"Org."
 
-# NEW-TRANSLATION
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
@@ -383,16 +375,14 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for your hardware."
 msgstr ""
-"È possibile utilizzare più di un driver del server XFree86 con l'hardware "
+"È possibile utilizzare più di un driver del server X.Org con l'hardware "
 "trovato."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different drivers are required "
 "to support the various devices.  It is thus not possible to automatically "
@@ -402,7 +392,7 @@ msgid ""
 msgstr ""
 "Sono state identificate diverse schede video e sono necessari diversi driver "
 "per supportare le varie schede. Per questo non è possibile selezionare "
-"automaticamente un driver del server XFree86 predefinito. Scegliere il "
+"automaticamente un driver predefinito del server X.Org. Scegliere il "
 "dispositivo che funzionerà come monitor primario del computer; generalmente "
 "si tratta della scheda video e del monitor su cui il computer dirige "
 "l'output all'avvio."
@@ -514,14 +504,12 @@ msgstr ""
 "multipli devono specificare il BusID della scheda video in uno specifico "
 "formato, diverso a seconda del tipo di bus."
 
-# NEW-TRANSLATION
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
 msgid "Examples:"
 msgstr "Esempi:"
 
-# NEW-TRANSLATION
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
@@ -537,7 +525,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -545,7 +532,7 @@ msgid ""
 msgstr ""
 "Se si sta usando un sistema con più monitor, questa opzione ne configurerà "
 "solo uno. Sarà necessario modificare manualmente il file di configurazione "
-"dei server X, /etc/X11/XF86Config-4."
+"dei server X, /etc/X11/xorg.conf."
 
 #. Type: string
 #. Description
@@ -575,7 +562,6 @@ msgstr ""
 msgid "Please enter a bus identifier in the proper format."
 msgstr "Inserire un identificatore per il bus nel formato appropriato."
 
-# NEW-TRANSLATION
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:169
@@ -634,13 +620,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"La scelta adatta alla maggior parte delle tastiere è «xfree86»; per le "
-"tastiere Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
+"La scelta adatta alla maggior parte delle tastiere è «xorg»; per le tastiere "
+"Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
 
 #. Type: string
 #. Description
@@ -658,9 +643,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid "If you don't know what rule set to use, enter \"xorg\"."
-msgstr "Se ci si trova in dubbio, scegliere «xfree86»."
+msgstr "Se ci si trova in dubbio, scegliere «xorg»."
 
 #. Type: string
 #. Description
@@ -702,7 +686,6 @@ msgstr ""
 "ultimi solitamente hanno un simbolo «logo» (tipicamente ce ne sono due, tra "
 "ciascuna coppia di tasti control ed alt) e un simbolo «menu»."
 
-# NEW-TRANSLATION
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
@@ -736,9 +719,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Tutti i modelli sopra menzionati usano le regole «xfree86»."
+msgstr "Tutti i modelli sopra menzionati usano le regole «xorg»."
 
 #. Type: string
 #. Description
@@ -988,7 +970,6 @@ msgstr ""
 "riavviare. Se si vuole selezionare il tipo di mouse manualmente, rifiutare "
 "questa opzione."
 
-# NEW-TRANSLATION
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:303
@@ -1071,7 +1052,6 @@ msgstr ""
 "possono emulare la presenza di un tasto centrale trattando click simultanei "
 "o trascinamenti dei tasti sinistro e destro come eventi del tasto centrale."
 
-# NEW-TRANSLATION
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:342
@@ -1082,7 +1062,6 @@ msgstr ""
 "Questa opzione può essere usata anche con mouse con 3 o più tasti; il tasto "
 "centrale continuerà a funzionare normalmente."
 
-# NEW-TRANSLATION
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:342
@@ -1251,9 +1230,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
-#, fuzzy
 msgid "Write monitor sync ranges to configuration file?"
-msgstr "Scrivere una sezione «DRI» predefinita nel file di configurazione?"
+msgstr "Scrivere la gamma di frequenze del monitor nel file di configurazione?"
 
 #. Type: boolean
 #. Description
@@ -1263,6 +1241,10 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
+"Nella maggior parte dei casi, la gamma di frequenze di sincronizzazione del "
+"monitor viene rilevata automaticamente dal server X; talvolta però è "
+"necessario inserirla manualmente. Questa opzione è per gli utenti esperti e "
+"generalmente si dovrebbe lasciare il valore predefinito."
 
 #. Type: string
 #. Description
@@ -1363,7 +1345,6 @@ msgstr ""
 "schede permettono l'accelerazione 3D hardware solo per alcune profondità. "
 "Consultare il manuale della scheda video per ulteriori informazioni."
 
-# NEW-TRANSLATION
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:454
@@ -1435,200 +1416,6 @@ msgid ""
 "Accept this option if you want the keyboard layout to be redetected.  "
 "Decline it if you want to keep your current layout."
 msgstr ""
-
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "Abilitare gli eventi di scrolling dalla rotella del mouse?"
-
-#~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
-#~ msgstr ""
-#~ "Gli eventi dalla rotella di un mouse che ne è dotato possono essere "
-#~ "trattati come click di tasti addizionali (tasti 4 e 5). Alcune "
-#~ "applicazioni X trattano i tasti 4 e 5 come eventi scroll-up e scroll-"
-#~ "down, facendo funzionare come previsto la rotella del mouse. Questo è "
-#~ "comunque un comportamento a livello di applicazione, e potrebbe non "
-#~ "funzionare sempre. Inoltre, i mouse esotici con più di 3 tasti oltre alla "
-#~ "rotella potrebbero funzionare in maniera inaspettata se questa opzione è "
-#~ "abilitata."
-
-#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr ""
-#~ "Abilitare questa opzione non crea problemi se il mouse è sprovvisto di "
-#~ "rotella."
-
-# NEW-TRANSLATION
-#~ msgid ""
-#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
-#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
-#~ "value of the X server should be set to 0."
-#~ msgstr ""
-#~ "Quanto detto sopra non si applica ai kernel Linux della serie 2.6 (né a "
-#~ "quelli della serie 2.5 successivi all'inclusione dello «scheduler O(1)»); "
-#~ "su tali sistemi il valore di nice del server X andrebbe impostato a 0."
-
-# NEW-TRANSLATION
-#~ msgid ""
-#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
-#~ "fully supported, should specify simply \"1\" here.  (This is not "
-#~ "guaranteed to work.)"
-#~ msgstr ""
-#~ "Gli utenti di macchine SGI Indigo2 XL, o di macchine con altri tipi di "
-#~ "bus non ancora completamente supportati, dovrebbero semplicemente "
-#~ "specificare «1» (anche se non è garantito che funzioni)."
-
-#~ msgid ""
-#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
-#~ "video card should leave this entry blank."
-#~ msgstr ""
-#~ "La scelta migliore per tutte le macchine con una sola scheda video "
-#~ "(tranne per PowerPC o SGI Indigo2 XL) è lasciare vuoto questo campo."
-
-#~ msgid "Is your monitor an LCD device?"
-#~ msgstr "Il monitor è un dispositivo LCD?"
-
-#~ msgid ""
-#~ "If your monitor is a liquid-crystal display (which is the case with "
-#~ "almost all laptops), you should set this option."
-#~ msgstr ""
-#~ "Se il monitor è un display a cristalli liquidi (come succede per quasi "
-#~ "tutti i portatili), si dovrebbe abilitare questa opzione."
-
-#~ msgid ""
-#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
-#~ "option."
-#~ msgstr ""
-#~ "Gli utenti di monitor con tubo catodico (CRT) non dovrebbero abilitare "
-#~ "questa opzione."
-
-#~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "Scrivere una sezione «DRI» predefinita nel file di configurazione?"
-
-#~ msgid ""
-#~ "The DRI section of the X server configuration file determines the "
-#~ "permissions of the DRI device.  This option is for advanced users.  In "
-#~ "most cases, you should enable it."
-#~ msgstr ""
-#~ "La sezione DRI del file di configurazione del server X determina i "
-#~ "permessi del dispositivi DRI. Questa opzione è per gli utenti esperti. "
-#~ "Nella maggior parte dei casi, si dovrebbe abilitarla."
-
-#, fuzzy
-#~ msgid ""
-#~ "Disable this option if you want to write your own \"DRI\" section into "
-#~ "the X.Org server configuration file.  You may wish to do this if you want "
-#~ "to change the access privileges to the DRI port."
-#~ msgstr ""
-#~ "Disabilitare questa opzione se si vuole scrivere la propria sezione «DRI» "
-#~ "nel file di configurazione del server di XFree86. Si potrebbe voler fare "
-#~ "questo per cambiare i privilegi di accesso alla porta DRI."
-
-#~ msgid ""
-#~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
-#~ msgstr ""
-#~ "Gli utenti esperti possono scegliere qualsiasi layout supportato dal set "
-#~ "di regole XKB selezionato. Se il pacchetto xlibs è già stato estratto, "
-#~ "consultare la directory /etc/X11/xkb/rules per le regole disponibili e la "
-#~ "directory /etc/X11/xkb/symbols per i layout disponibili."
-
-#~ msgid ""
-#~ "Advanced users can use any options compatible with the selected XKB "
-#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
-#~ msgstr ""
-#~ "Gli utenti esperti possono usare qualsiasi opzione compatibile con il "
-#~ "modello XKB selezionato, layout e variante. Se il pacchetto xlibs è già "
-#~ "stato estratto, consultare nella directory /etc/X11/xkb/symbols i file di "
-#~ "opzioni disponibili, che definiscono solamente traduzioni parziali di "
-#~ "tastiera (per esempio, /etc/X11/xkb/symbols/ctrl)."
-
-#~ msgid ""
-#~ "If you have an NVidia video card, you may want to decline this option, as "
-#~ "these cards' support for the DDC protocol is often so poor that attempts "
-#~ "to use it can result in system lockups."
-#~ msgstr ""
-#~ "Se si ha una scheda grafica NVidia, si potrebbe voler rifiutare questa "
-#~ "opzione, dato che il supporto per il protocollo DDC di queste schede è "
-#~ "spesso così scadente che i tentativi di usarlo possono avere l'effetto di "
-#~ "bloccare il sistema."
-
-#~ msgid ""
-#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
-#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
-#~ "unsupported."
-#~ msgstr ""
-#~ "Attenzione che su qualche vecchio hardware ATI, come i chipset Mach8 (VGA "
-#~ "Wonder), Mach32 e i primi Mach64 («GX»), le profondità di colore "
-#~ "superiori a 8 bit non sono supportate."
-
-# NEW-TRANSLATION
-#~ msgid "experimental version of XFree86 packages"
-#~ msgstr "Versione sperimentale dei pacchetti di XFree86"
-
-# NEW-TRANSLATION
-#~ msgid ""
-#~ "You are using an experimental version of XFree86 packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Si sta usando una versione sperimentale dei pacchetti XFree86 per Debian. "
-#~ "Si prega di non inviare, tramite il sistema Debian di tracciamento dei "
-#~ "bug, segnalazioni riguardo a questa versione dei pacchetti, dal momento "
-#~ "che non sono stati ancora inclusi nella distribuzione Debian."
-
-# NEW-TRANSLATION
-#~ msgid ""
-#~ "If you experience problems with these packages or would like to submit "
-#~ "patches, please send mail to the Debian X mailing list.  You can read "
-#~ "more about this mailing list on the World Wide Web:\n"
-#~ "  http://lists.debian.org/debian-x/"
-#~ msgstr ""
-#~ "Se si verificano problemi nell'utilizzo di questi pacchetti o si desidera "
-#~ "inviare delle patch, scrivere alla lista «Debian X». Per saperne di più, "
-#~ "consultare:\n"
-#~ "  http://lists.debian.org/debian-x/"
-
-# NEW-TRANSLATION
-#, fuzzy
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
-#~ "version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install xfree86-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install xfree86-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Se non si desidera usare le versioni sperimentali dei pacchetti X, è "
-#~ "posibile:\n"
-#~ "  1) Assicurarsi di non aver incluso le sorgenti dei pacchetti\n"
-#~ "     sperimentali in /etc/apt/sources.list;\n"
-#~ "  2) Fare in modo che apt riporti XFree86 ad una versione già "
-#~ "rilasciata;\n"
-#~ "     con «apt-get», è sufficiente specificare la distribuzione dopo il "
-#~ "nome\n"
-#~ "     del pacchetto. Ad esempio:\n"
-#~ "       apt-get install xorg-common/unstable\n"
-#~ "     oppure\n"
-#~ "       apt-get install xorg-common/stable\n"
-#~ "     Potrebbe essere necessario riportare a versioni precedenti più "
-#~ "pacchetti."
 
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "Spostare la directory di configurazione di XKB?"
@@ -1715,8 +1502,6 @@ msgstr ""
 #~ "Solo un display manager può gestire un dato server X, ma sono installati "
 #~ "più pacchetti di display manager. Scegliere quale display manager usare."
 
-# NdT: L'originale è tra parentesi, ma si tratta di un uso scorretto della
-# punteggiatura (specialmente in italiano).
 #~ msgid ""
 #~ "(Multiple display managers can run simultaneously if they are configured "
 #~ "to manage different servers; to achieve this, configure the display "
@@ -1729,11 +1514,9 @@ msgstr ""
 #~ "dei loro script di avvio in /etc/init.d e disabilitare il controllo per "
 #~ "un display manager predefinito."
 
-# NEW-TRANSLATION
 #~ msgid "Do you wish to stop the xdm daemon?"
 #~ msgstr "Arrestare il demone xdm?"
 
-# NEW-TRANSLATION
 #~ msgid ""
 #~ "The X display manager (xdm) daemon is typically stopped on package "
 #~ "upgrade and removal, but it appears to be managing at least one running X "
@@ -1747,3 +1530,357 @@ msgstr ""
 #~ "anche tutte le sessioni di X che gestisce verranno terminate. In "
 #~ "alternativa, si può lasciare xdm attivo: la nuova versione sarà usata a "
 #~ "partire dal prossimo avvio del demone."
+
+#~ msgid "experimental version of X.Org packages"
+#~ msgstr "Versione sperimentale dei pacchetti X.Org"
+
+#~ msgid ""
+#~ "You are using an experimental version of X.Org packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Si sta usando una versione sperimentale dei pacchetti X.Org per Debian. "
+#~ "Si prega di non inviare, tramite il sistema Debian di tracciamento dei "
+#~ "bug, segnalazioni riguardo a questa versione dei pacchetti, dal momento "
+#~ "che non sono stati ancora inclusi nella distribuzione Debian."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Se si verificano problemi nell'utilizzo di questi pacchetti o si desidera "
+#~ "inviare delle patch, scrivere alla lista «Debian X». Per saperne di più, "
+#~ "consultare:\n"
+#~ "  http://lists.debian.org/debian-x/"
+
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Se non si desidera usare le versioni sperimentali dei pacchetti X, è "
+#~ "posibile:\n"
+#~ "  1) Assicurarsi di non aver incluso le sorgenti dei pacchetti\n"
+#~ "     sperimentali in /etc/apt/sources.list;\n"
+#~ "  2) Fare in modo che apt riporti X.Org ad una versione già rilasciata;\n"
+#~ "     con «apt-get», è sufficiente specificare la distribuzione dopo il "
+#~ "nome\n"
+#~ "     del pacchetto. Ad esempio:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "     oppure\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "     Potrebbe essere necessario riportare a versioni precedenti più di "
+#~ "un\n"
+#~ "     pacchetto."
+
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  They range from -20 "
+#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
+#~ "(extremely low priority).  The default nice value for ordinary processes "
+#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
+#~ "default for a machine that has duties other than interacting with the "
+#~ "console user (such as a web server)."
+#~ msgstr ""
+#~ "È stato spesso notato che le prestazioni del server X migliorano se "
+#~ "questo viene eseguito ad una priorità di processo più alta di quella "
+#~ "predefinita; la priorità di un processo è conosciuta come il valore di "
+#~ "«nice», che varia tra -20 (priorità estremamente alta, che penalizza gli "
+#~ "altri processi) e 19 (priorità estremamente bassa). Il valore di nice "
+#~ "predefinito per i processi ordinari è 0. -10 è una buona scelta per una "
+#~ "workstation con un unico utente, mentre 0 è un valore adatto per una "
+#~ "macchina che ha altri compiti oltre ad interagire con l'utente alla "
+#~ "console (come un server web)."
+
+#~ msgid ""
+#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
+#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
+#~ "value of the X server should be set to 0."
+#~ msgstr ""
+#~ "Quanto detto sopra non si applica ai kernel Linux della serie 2.6 (né a "
+#~ "quelli della serie 2.5 successivi all'inclusione dello «scheduler O(1)»); "
+#~ "su tali sistemi il valore di nice del server X andrebbe impostato a 0."
+
+#~ msgid ""
+#~ "The glx module enables software OpenGL rendering.  The dri module enables "
+#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+#~ "that support for DRI must also exist in the kernel, the video card, and "
+#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
+#~ "operations using DRI to work.  Otherwise, the server falls back to "
+#~ "software rendering."
+#~ msgstr ""
+#~ "Il modulo glx abilita il rendering OpenGL via software. Il modulo dri "
+#~ "abilita il supporto nel server X per il Direct Rendering Infrastructure "
+#~ "(DRI). Per fare in modo che le operazioni 3D con accelerazione hardware "
+#~ "tramite DRI funzionino, il supporto per il DRI deve essere presente anche "
+#~ "nel kernel, nella scheda video e nella versione installata delle librerie "
+#~ "Mesa. In caso contrario, il server utilizzerà il rendering via software."
+
+#~ msgid ""
+#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+#~ "Display Channel, respectively.  These modules are used to query monitor "
+#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
+#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
+#~ "int10 as well."
+#~ msgstr ""
+#~ "I moduli vbe e ddc abilitano rispettivamente il supporto per le "
+#~ "estensioni BIOS VESA e per il Data Display Channel. Questi moduli vengono "
+#~ "usati per richiedere le possibilità del monitor attraverso la scheda "
+#~ "video. Il modulo int10 è un emulatore x86 in modalità reale che viene "
+#~ "usato per effettuare il soft boot di schede VGA secondarie. Notare che il "
+#~ "modulo vbe dipende dal modulo int10: è necessario quindi abilitare anche "
+#~ "quest'ultimo se si vuole abilitare il vbe."
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
+#~ msgstr ""
+#~ "Si può associare nel file di configurazione del server X un nome alla "
+#~ "scheda video. Tipicamente viene scelto il produttore o la marca seguiti "
+#~ "dal nome del modello (per esempio, «3DFX Voodoo3» o «ATI Rage Fury Maxx»)."
+
+#~ msgid ""
+#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
+#~ "fully supported, should specify simply \"1\" here.  (This is not "
+#~ "guaranteed to work.)"
+#~ msgstr ""
+#~ "Gli utenti di macchine SGI Indigo2 XL, o di macchine con altri tipi di "
+#~ "bus non ancora completamente supportati, dovrebbero semplicemente "
+#~ "specificare «1» (anche se non è garantito che funzioni)."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
+#~ "device, and function numbers in hexadecimal, not decimal."
+#~ msgstr ""
+#~ "Si può usare il comando «lspci» per determinare la collocazione sul bus "
+#~ "della scheda video PCI o AGP. Si tenga presente che lspci restituisce "
+#~ "numeri di bus, device e funzione in formato esadecimale e non decimale."
+
+#~ msgid ""
+#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
+#~ "video card should leave this entry blank."
+#~ msgstr ""
+#~ "La scelta migliore per tutte le macchine con una sola scheda video "
+#~ "(tranne per PowerPC o SGI Indigo2 XL) è lasciare vuoto questo campo."
+
+#~ msgid ""
+#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
+#~ msgstr ""
+#~ "Gli utenti esperti possono usare qualsiasi set di regole XKB. Se il "
+#~ "pacchetto xlibs è già stato estratto, consultare la directory /etc/X11/"
+#~ "xkb/rules per le regole disponibili."
+
+#~ msgid ""
+#~ "Advanced users can use any model defined by the selected XKB rule set.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets."
+#~ msgstr ""
+#~ "Gli utenti esperti possono usare un qualsiasi modello definito dal set di "
+#~ "regole XKB. Se il pacchetto xlibs è già stato estratto, consultare la "
+#~ "directory /etc/X11/xkb/rules per le regole disponibili."
+
+#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
+#~ msgstr "Per le tastiere italiane, la scelta adatta è generalmente «pc105»."
+
+#~ msgid ""
+#~ "Advanced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
+#~ msgstr ""
+#~ "Gli utenti esperti possono scegliere qualsiasi layout supportato dal set "
+#~ "di regole XKB selezionato. Se il pacchetto xlibs è già stato estratto, "
+#~ "consultare la directory /etc/X11/xkb/rules per le regole disponibili e la "
+#~ "directory /etc/X11/xkb/symbols per i layout disponibili."
+
+#~ msgid ""
+#~ "Advanced users can use any variant supported by the selected XKB layout.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
+#~ "available variants."
+#~ msgstr ""
+#~ "Gli utenti esperti possono usare qualsiasi variante supportata dal loro "
+#~ "layout XKB. Se il pacchetto xlibs è già stato estratto, consultare il "
+#~ "file che corrisponde al layout selezionato nella directory /etc/X11/xkb/"
+#~ "symbols per le varianti disponibili."
+
+#~ msgid ""
+#~ "Advanced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
+#~ msgstr ""
+#~ "Gli utenti esperti possono usare qualsiasi opzione compatibile con il "
+#~ "modello XKB selezionato, layout e variante. Se il pacchetto xlibs è già "
+#~ "stato estratto, consultare nella directory /etc/X11/xkb/symbols i file di "
+#~ "opzioni disponibili, che definiscono solamente traduzioni parziali di "
+#~ "tastiera (per esempio, /etc/X11/xkb/symbols/ctrl)."
+
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Abilitare gli eventi di scrolling dalla rotella del mouse?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Gli eventi dalla rotella di un mouse che ne è dotato possono essere "
+#~ "trattati come click di tasti addizionali (tasti 4 e 5). Alcune "
+#~ "applicazioni X trattano i tasti 4 e 5 come eventi scroll-up e scroll-"
+#~ "down, facendo funzionare come previsto la rotella del mouse. Questo è "
+#~ "comunque un comportamento a livello di applicazione, e potrebbe non "
+#~ "funzionare sempre. Inoltre, i mouse esotici con più di 3 tasti oltre alla "
+#~ "rotella potrebbero funzionare in maniera inaspettata se questa opzione è "
+#~ "abilitata."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr ""
+#~ "Abilitare questa opzione non crea problemi se il mouse è sprovvisto di "
+#~ "rotella."
+
+#~ msgid ""
+#~ "If you have an NVidia video card, you may want to decline this option, as "
+#~ "these cards' support for the DDC protocol is often so poor that attempts "
+#~ "to use it can result in system lockups."
+#~ msgstr ""
+#~ "Se si ha una scheda grafica NVidia, si potrebbe voler rifiutare questa "
+#~ "opzione, dato che il supporto per il protocollo DDC di queste schede è "
+#~ "spesso così scadente che i tentativi di usarlo possono avere l'effetto di "
+#~ "bloccare il sistema."
+
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Il monitor è un dispositivo LCD?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Se il monitor è un display a cristalli liquidi (come succede per quasi "
+#~ "tutti i portatili), si dovrebbe abilitare questa opzione."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "Gli utenti di monitor con tubo catodico (CRT) non dovrebbero abilitare "
+#~ "questa opzione."
+
+#~ msgid ""
+#~ "For the \"simple\" option, you need only know the monitor's physical "
+#~ "size; this will set some configuration values appropriate for a typical "
+#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
+#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
+#~ "are configured for a particular resolution.)"
+#~ msgstr ""
+#~ "Per l'opzione «simple», è necessario solo sapere la dimensione fisica del "
+#~ "monitor; questo abiliterà alcuni valori di configurazione appropriati per "
+#~ "un CRT tipico della dimensione corrispondente, ma può non essere ottimale "
+#~ "per CRT di alta qualità (questa opzione è disabilitata per gli utenti di "
+#~ "pannelli LCD, perché quei display sono configurati per una particolare "
+#~ "risoluzione)."
+
+#~ msgid ""
+#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
+#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
+#~ "unsupported."
+#~ msgstr ""
+#~ "Attenzione che su qualche vecchio hardware ATI, come i chipset Mach8 (VGA "
+#~ "Wonder), Mach32 e i primi Mach64 («GX»), le profondità di colore "
+#~ "superiori a 8 bit non sono supportate."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Scrivere una sezione «DRI» predefinita nel file di configurazione?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "La sezione DRI del file di configurazione del server X determina i "
+#~ "permessi del dispositivi DRI. Questa opzione è per gli utenti esperti. "
+#~ "Nella maggior parte dei casi, si dovrebbe abilitarla."
+
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Disabilitare questa opzione se si vuole scrivere la propria sezione «DRI» "
+#~ "nel file di configurazione del server X.Org. Si potrebbe voler fare "
+#~ "questo per cambiare i privilegi di accesso alla porta DRI."
+
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr ""
+#~ "Il modulo v4l abilita il supporto per l'interfaccia del kernel "
+#~ "Video4Linux."
+
+# NEW-TRANSLATION
+#~ msgid "experimental version of XFree86 packages"
+#~ msgstr "Versione sperimentale dei pacchetti di XFree86"
+
+# NEW-TRANSLATION
+#~ msgid ""
+#~ "You are using an experimental version of XFree86 packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Si sta usando una versione sperimentale dei pacchetti XFree86 per Debian. "
+#~ "Si prega di non inviare, tramite il sistema Debian di tracciamento dei "
+#~ "bug, segnalazioni riguardo a questa versione dei pacchetti, dal momento "
+#~ "che non sono stati ancora inclusi nella distribuzione Debian."
+
+# NEW-TRANSLATION
+#, fuzzy
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
+#~ "version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install xfree86-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install xfree86-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Se non si desidera usare le versioni sperimentali dei pacchetti X, è "
+#~ "posibile:\n"
+#~ "  1) Assicurarsi di non aver incluso le sorgenti dei pacchetti\n"
+#~ "     sperimentali in /etc/apt/sources.list;\n"
+#~ "  2) Fare in modo che apt riporti XFree86 ad una versione già "
+#~ "rilasciata;\n"
+#~ "     con «apt-get», è sufficiente specificare la distribuzione dopo il "
+#~ "nome\n"
+#~ "     del pacchetto. Ad esempio:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "     oppure\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "     Potrebbe essere necessario riportare a versioni precedenti più "
+#~ "pacchetti."

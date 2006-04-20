@@ -1,14 +1,13 @@
-# debconf templates for xfree86 package
+# translation of tr.po to Turkish
+# debconf templates for xorg-x11 package
 # Turkish translation
 #
-# $Id: tr.po 1763M 2004-10-11 07:13:18Z (local) $
+# $Id: tr.po 1061 2006-01-11 10:19:43Z ender $
 #
 # Copyrights:
-# Branden Robinson, 2000--2004
-# Osman Yüksel <yuxel@sonsuzdongu.com>, 2004
-# Recai Oktas <roktas@omu.edu.tr>, 2004
+# Branden Robinson, 2000-2004
 #
-# This file is distributed under the same license as the xfree86 package.
+# This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
 #    Translators, if you are not familiar with the PO format, gettext
@@ -22,18 +21,21 @@
 #         or http://www.debian.org/intl/l10n/po-debconf/README-trans
 #
 #    Developers do not need to manually edit POT or PO files.
+# Osman Yüksel <yuxel@sonsuzdongu.com>, 2004, 2006.
+# Recai Oktaş <roktas@debian.org>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xserver-xorg\n"
+"Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2004-06-26 16:54+0300\n"
+"PO-Revision-Date: 2006-01-11 04:57+0200\n"
 "Last-Translator: Osman Yüksel <yuxel@sonsuzdongu.com>\n"
-"Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #. Type: select
 #. Choices
@@ -58,18 +60,17 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
-"X sunucusu süper-kullanıcı haklarıyla çalıştırıldığından, herhangi bir "
-"kullanıcının sunucuyu başlatmasına izin vermek, güvenlik gerekçeleriyle "
+"X sunucusu süper-kullanıcı haklarıyla çalıştırıldığından herhangi bir "
+"kullanıcının sunucuyu başlatmasına izin vermek güvenlik gerekçeleriyle "
 "tavsiye edilmez.  Öte yandan X uygulamalarını root olarak çalıştırmak daha "
-"da yanlış  olacaktır.  Uygun bir seçim, X sunucusunu sadece sanal konsollara "
+"da yanlış  olacaktır.  Makul bir seçim, X sunucusunu sadece sanal konsollara "
 "giriş yapmış kullanıcılar tarafından kullanılacak şekilde ayarlamaktır."
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
 msgid "Enter the desired nice value for the X server to use."
-msgstr ""
-"X sunucusunun kullanmasını istediğiniz öncelik değerini (\"nice\") girin."
+msgstr "X sunucusunun kullanmasını istediğiniz öncelik değerini (nice) girin."
 
 #. Type: string
 #. Description
@@ -111,7 +112,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:35
 msgid "Please enter an integer between -20 and 19."
-msgstr "Lütfen -20 ve 19 arasında bir tamsayı girin."
+msgstr "Lütfen -20 ve 19 arasında bir tam sayı girin."
 
 #. Type: boolean
 #. Description
@@ -144,7 +145,7 @@ msgid ""
 "one available."
 msgstr ""
 "Eğer X sunucusu ve modüllerini kendiniz seçmek isterseniz bu seçeneği "
-"onaylamayın.  Eğer uygun durumda olan sadece bir X sunucusu varsa, seçim "
+"onaylamayın.  Eğer uygun durumda olan sadece bir X sunucusu varsa seçim "
 "yapmaya gerek olmayacaktır."
 
 #. Type: note
@@ -217,7 +218,7 @@ msgid ""
 "hardware."
 msgstr ""
 "Birden fazla X sunucusu mevcut olabilir.  Öntanımlı sunucu /etc/X11/X "
-"sembolik bağı tarafından belirlenir.  Bazı X sunucuları, grafik "
+"simgesel bağı tarafından belirlenir.  Bazı X sunucuları, grafik "
 "donanımınızla çalışmayabilir."
 
 #. Type: boolean
@@ -242,25 +243,23 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:52
-#, fuzzy
 msgid ""
 "Disable this option if you want to write your own \"Files\" section into the "
 "X.Org server configuration file.  You may wish to do this if you need to "
 "remove the reference to the local font server, add a reference to a "
 "different font server, or rearrange the default set of local font paths."
 msgstr ""
-"Eğer XFree86 sunucu yapılandırma dosyasına \"Files\" bölümünü kendiniz "
-"yazmak istiyorsanız bu seçeneği etkisizleştirebilirsiniz.  Eğer yerel "
-"yazıtipi sunucusunu kullanmak istemiyorsanız; başka bir yazıtipi sunucusuna "
-"yönlendirmek veya yerel yazıtipi yollarını yeniden düzenlemek istiyorsanız "
-"böyle yapmayı tercih edebilirsiniz."
+"Eğer X.Org sunucu yapılandırma dosyasına \"Files\" bölümünü kendiniz yazmak "
+"istiyorsanız bu seçeneği etkisizleştirebilirsiniz.  Eğer yerel yazıtipi "
+"sunucusunu kullanmak istemiyorsanız veya başka bir yazıtipi sunucusuna "
+"yönlendirme yapmak istiyorsanız veya yerel yazıtipi yollarını yeniden "
+"düzenlemek istiyorsanız böyle yapmayı tercih edebilirsiniz."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "Select the X.Org server modules that should be loaded by default."
-msgstr "Öntanımlı olarak yüklenecek XFree86 sunucu modüllerini seçin."
+msgstr "Öntanımlı olarak yüklenecek X.Org sunucu modüllerini seçin."
 
 #. Type: multiselect
 #. Description
@@ -338,22 +337,20 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
 msgstr ""
-"\"bitmap\", \"freetype\", \"speedo\", \"type1\" ve \"xtt\" modüllerinin "
-"hepsi birer yazıtipi işlemcisidir."
+"\"bitmap\", \"freetype\" ve \"type1\" modüllerinin hepsi birer yazıtipi "
+"işlemcisidir."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
 msgstr ""
-"Bu modüller hakkında daha fazla bilgi edinmek için lütfen XFree86 "
-"belgelerini inceleyin."
+"Bu modüller hakkında daha fazla bilgi edinmek için lütfen X.Org belgelerini "
+"inceleyin."
 
 #. Type: multiselect
 #. Description
@@ -364,22 +361,20 @@ msgid ""
 "written to the X server configuration file -- and add their own Modules "
 "section to the file manually."
 msgstr ""
-"Eğer ne yapmanız gerektiğinden emin değilseniz, tüm modülleri "
-"etkinleştirilmiş halde bırakın.  İleri seviye kullanıcılar, kendi seçtikleri "
-"modülleri daha sonra elle X yapılandırma dosyasının \"Modules\" bölümüne "
-"eklemek için tüm modülleri etkisizleştirebilirler."
+"Eğer ne yapmanız gerektiğine emin değilseniz tüm modülleri etkinleştirilmiş "
+"halde bırakın.  İleri seviye kullanıcılar, kendi seçtikleri modülleri daha "
+"sonra elle X yapılandırma dosyasının \"Modules\" bölümüne eklemek için tüm "
+"modülleri etkisizleştirebilirler."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for your hardware."
-msgstr "Donanımınıza uygun olası XFree86 sunucu sürücüleri."
+msgstr "Donanımınıza uygun olası X.Org sunucu sürücüleri."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:105
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different drivers are required "
 "to support the various devices.  It is thus not possible to automatically "
@@ -388,8 +383,8 @@ msgid ""
 "and monitor to which the computer displays when it first boots."
 msgstr ""
 "Birden fazla ekran kartı tespit edildi.  Farklı aygıtların desteklenmesi "
-"için değişik sürücülerin kullanılması gerekecek.  Bu yüzden öntanımlı "
-"XFree86 sürücüsünü otomatik seçmek mümkün değil.  Lütfen bilgisayarınızda "
+"için değişik sürücülerin kullanılması gerekecek.  Bu yüzden öntanımlı X.Org "
+"sunucu sürücüsünü otomatik seçmek mümkün değil.  Lütfen bilgisayarınızda "
 "\"birincil ekran kartı\" olarak hizmet edecek aygıtı yapılandırın.  Bu "
 "genelde bilgisayar ilk açıldığında gösterilen ekran kartı ve monitördür."
 
@@ -449,7 +444,7 @@ msgid ""
 "for a specific model or family of chipsets."
 msgstr ""
 "Sürücüler genelde, ekran kartı adı, yonga seti, özel bir model veya bir "
-"yonga ailesi olarak adlandırılır."
+"yonga ailesiyle adlandırılır."
 
 #. Type: boolean
 #. Description
@@ -520,15 +515,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"Çok-çıkışlı ekran kartı kullanan kullanıcılar için, bu seçenek sadece "
-"çıkışlardan bir tanesini yapılandıracaktır.  Diğer ayarlar /etc/X11/"
-"XF86Config-4'de bulunan X sunucu yapılandırma dosyasında elle yapılmalıdır."
+"Çok çıkışlı ekran kartı kullanan kullanıcılar için, bu seçenek sadece "
+"çıkışlardan bir tanesini yapılandıracaktır.  Diğer ayarlar /etc/X11/xorg."
+"conf X sunucu yapılandırma dosyasında elle yapılmalıdır."
 
 #. Type: string
 #. Description
@@ -593,8 +587,9 @@ msgid ""
 "card lacks RAM, or if the X server has trouble autodetecting the amount, is "
 "it necessary to specify the amount of video RAM."
 msgstr ""
-"Eğer ekran kartınızın RAM'ı yetersiz veya X sunucusu ekran bellek miktarını "
-"otomatik olarak tanımakta sorun çıkarıyorsa bu parametreyi boş bırakın."
+"Eğer ekran kartınızın belleği yetersiz veya X sunucusu ekran bellek "
+"miktarını otomatik olarak tanımakta sorun çıkarıyorsa bu parametreyi boş "
+"bırakın."
 
 #. Type: string
 #. Description
@@ -614,12 +609,11 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Çoğu kullanıcı bu alana \"xfree86\" girmelidir.  Sun Tip 4 ve Tip 5 klavye "
+"Çoğu kullanıcı bu alana \"xorg\" girmelidir.  Sun Tip 4 ve Tip 5 klavye "
 "kullanıcıları ise \"sun\" girmelidir."
 
 #. Type: string
@@ -638,10 +632,9 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid "If you don't know what rule set to use, enter \"xorg\"."
 msgstr ""
-"Eğer hangi kural kümesini kullanacağınızı bilmiyorsanız \"xfree86\" girin."
+"Eğer hangi kural kümesini kullanacağınızı bilmiyorsanız \"xorg\" girin."
 
 #. Type: string
 #. Description
@@ -668,7 +661,7 @@ msgid ""
 "\" or \"menu\" keys."
 msgstr ""
 "\"pc101\" klavye, genelde Birleşik Devletler'de kullanılan, geleneksel 101 "
-"tuşlu IBM PC/AT stili klavyedir.  \"logo\" veya  \"menu\" tuşları yoktur."
+"tuşlu IBM PC/AT stili klavyedir.  \"logo\" veya  \"menü\" tuşları yoktur."
 
 #. Type: string
 #. Description
@@ -679,9 +672,9 @@ msgid ""
 "of these, between each set of control and alt keys), and a \"menu\" key."
 msgstr ""
 "\"pc104\" klavye, pc101 klavye tipine benzeyen, fakat ek tuşların bulunduğu "
-"klavye tipidir.  Bu ek tuşlar genellikle, üzerinde bir \"logo\" sembolünün "
+"klavye tipidir.  Bu ek tuşlar genellikle, üzerinde bir \"logo\" simgesinin "
 "olduğu tuş (control ve alt tuşları arasında bunlardan birer çift vardır) ve "
-"\"menu\" tuşundan oluşur."
+"\"menü\" tuşundan oluşur."
 
 #. Type: string
 #. Description
@@ -717,9 +710,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid "All of the above models use the \"xorg\" rule set."
-msgstr "Üstteki tüm modeller \"xfree86\" kural kümesini kullanır."
+msgstr "Üstteki tüm modeller \"xorg\" kural kümesini kullanır."
 
 #. Type: string
 #. Description
@@ -740,9 +732,9 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
-"Dizüstü klavyelerinde, normal klavyelerdeki çoğu tuş yoktur.  Dizüstü "
-"bilgisayar kullanıcıları klavye modellerini yukarıdakilerden en yakın olana "
-"ayarlamalıdır."
+"Dizüstü bilgisayar klavyelerinde, normal klavyelerdeki çoğu tuş yoktur.  "
+"Dizüstü bilgisayar kullanıcıları klavye modellerini yukarıdakilerden en "
+"yakın olana ayarlamalıdır."
 
 #. Type: string
 #. Description
@@ -804,7 +796,7 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"U.S İngilizce klavye kullanıcıları \"us\" girebilirler.  Diğer ülkelere özel "
+"ABD İngilizce klavye kullanıcıları \"us\" girebilirler.  Diğer ülkelere özel "
 "yerelleştirilmiş klavye kullananlar, ülkelerine ait ISO 3166 kodunu "
 "girmelidirler.  Örnek: Türk kullanıcılar için \"tr\", Alman kullanıcılar "
 "için \"de\"."
@@ -836,8 +828,8 @@ msgid ""
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
 "Çoğu klavye düzeni \"ölü\" tuşların aksan ve telaffuz imleri (diaeresis) "
-"gibi davranmasını destekler.  Eğer bu tercih edilen davranış ise \"nodeadkeys"
-"\" girin."
+"gibi davranmasını destekler.  Eğer bu tercih edilen bir davranış ise bu "
+"alana \"nodeadkeys\" girin."
 
 #. Type: string
 #. Description
@@ -918,7 +910,7 @@ msgid ""
 "nocaps,altwin:meta_win\"."
 msgstr ""
 "Seçenekleri araya virgül koyarak birleştirebilirsiniz.  Örneğin; Caps Lock "
-"tuşunun Control tuşu gibi davranmasını ve, Windows veya logo tuşlarını Meta "
+"tuşunun Control tuşu gibi davranmasını ve Windows veya logo tuşlarını Meta "
 "tuşlar olarak kullanılmasını istiyorsanız \"ctrl:nocaps,altwin:meta_win\" "
 "girin."
 
@@ -935,7 +927,7 @@ msgstr ""
 #: ../xserver-xorg.templates:275
 msgid "If you don't know what options to use, leave this entry blank."
 msgstr ""
-"Eğer hangi seçenekleri kullanmanız gerektiğini bilmiyorsanız, bu alanı boş "
+"Eğer hangi seçenekleri kullanmanız gerektiğini bilmiyorsanız bu alanı boş "
 "bırakın."
 
 #. Type: boolean
@@ -958,7 +950,7 @@ msgstr ""
 "Eğer bilgisayarınıza takılı bir fare var ise, bu otomatik olarak "
 "algılanabilir.  Algılama denemesinde fareyi hareket ettirmeniz algılamaya "
 "yardımcı olabilir (deneme sırasında gpm programı da çalışmıyor olmalıdır).  "
-"Eğer bilgisayarınıza bir PS/2 veya seri bağlantılı fare takmak isterseniz; "
+"Eğer bilgisayarınıza bir PS/2 veya seri bağlantılı fare takmak isterseniz "
 "bilgisayarınızı kapatın, fareyi takın ve bilgisayarınızı yeniden açın.  Eğer "
 "fare tipi seçimini elle yapmak isterseniz bu seçeneğin uygulanmasını "
 "onaylamayın."
@@ -1016,7 +1008,7 @@ msgstr ""
 "tarafındaki ise dişidir.  Alternatif olarak USB fare, seri bağlantılı fare "
 "(çok eski) veya tekrarlayıcı olarak gpm programını kullanıyor "
 "olabilirsiniz.  Eğer bir PS/2 veya seri bağlantılı fare takmak veya çıkarmak "
-"isterseniz, lütfen bu işlemi bilgisayar kapalıyken yapın."
+"isterseniz lütfen bu işlemi bilgisayar kapalıyken yapın."
 
 #. Type: select
 #. Description
@@ -1028,7 +1020,7 @@ msgstr "Lütfen farenizi tanımlayan en iyi girdiyi seçin."
 #. Description
 #: ../xserver-xorg.templates:342
 msgid "Emulate 3 button mouse?"
-msgstr "3 tuş emülasyonu kullanılsın mı?"
+msgstr "3 tuş öykünümü (emulasyon) kullanılsın mı?"
 
 #. Type: boolean
 #. Description
@@ -1083,7 +1075,7 @@ msgid ""
 msgstr ""
 "Çoğu monitör (LCD monitörler dahil) ve ekran kartı, monitörün teknik "
 "özelliklerinin bilgisayara iletilmesi için bir haberleşme protokolü sunar.  "
-"Eğer monitörünüz ve ekran kartınız böyle bir protokol ile konuşuyorsa, "
+"Eğer monitörünüz ve ekran kartınız böyle bir protokol ile konuşuyorsa "
 "gelecek debconf soruları önceden cevaplanmış olacaktır."
 
 #. Type: boolean
@@ -1092,7 +1084,7 @@ msgstr ""
 msgid ""
 "If autodetection fails, you will be asked for information about your monitor."
 msgstr ""
-"Eğer otomatik algılama başarısız olursa, monitörünüzün hakkında bilgi "
+"Eğer otomatik algılama başarısız olursa monitörünüzün hakkında bilgi "
 "toplamak için size bir dizi soru sorulacaktır."
 
 #. Type: select
@@ -1135,7 +1127,7 @@ msgid ""
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know your monitor is capable of)."
 msgstr ""
-"\"medium\" seçeneğiyle, \"800x600 @ 85Hz\" gibi çözünürlük ve tazeleme "
+"\"medium\" seçeneğiyle \"800x600 @ 85Hz\" gibi çözünürlük ve tazeleme "
 "oranlarından oluşan bir liste görüntülenecektir.  Bu listede sizin için en "
 "iyi olan ve monitörünüz tarafından da desteklenen seçeneği seçmelisiniz."
 
@@ -1176,7 +1168,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:396
 msgid "Please select your monitor's best video mode."
-msgstr "Lütfen monitörünüze ait en iyi ekran kipini seçin."
+msgstr "Lütfen monitörünüze ilişkin en iyi ekran kipini seçin."
 
 #. Type: select
 #. Description
@@ -1192,9 +1184,9 @@ msgid ""
 msgstr ""
 "Monitörünüz için \"en iyi\" çözünürlük ve tazeleme oranını seçin.  Yüksek "
 "çözünürlük ve tazeleme oranları daha iyidir.  Eğer bir CRT monitör "
-"kullanıyorsanız, monitörünüz için en iyi olan yerine \"daha kötü\" bir ekran "
+"kullanıyorsanız monitörünüz için en iyi olan yerine \"daha kötü\" bir ekran "
 "kipi seçme hakkına da sahipsiniz.  LCD monitör kullanıcıları da böyle "
-"yapabilir, ancak ekran yonga seti ve sürücüsü bunu desteklemelidir.  Emin "
+"yapabilir; ancak ekran yonga seti ve sürücüsü bunu desteklemelidir.  Emin "
 "değilseniz LCD monitörünüzün üreticisi tarafından önerilen ekran kipini "
 "seçin."
 
@@ -1219,9 +1211,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:413
-#, fuzzy
 msgid "Write monitor sync ranges to configuration file?"
-msgstr "Yapılandırma dosyasına öntanımlı \"DRI\" bölümü yazılsın mı?"
+msgstr "Monitör tazeleme oranları yapılandırma dosyasına yazılsın mı?"
 
 #. Type: boolean
 #. Description
@@ -1231,6 +1222,9 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for advanced "
 "users, and should be left at its default."
 msgstr ""
+"Genelde monitör tazeleme oranları X sunucusu tarafından otomatik olarak "
+"tespit edilir; ancak bazen ufak bir ayar gerekebilir.  Bu seçenek gelişmiş "
+"kullanıcılar içindir ve olduğu gibi bırakılmalıdır."
 
 #. Type: string
 #. Description
@@ -1248,7 +1242,7 @@ msgid ""
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
 "Lütfen ayrık frekans değerlerini virgülle ayrılmış şekilde (sabit frekanslı "
-"ekranlar için), veya (tüm modern CRT'ler için) değer çiftlerini tire ile "
+"ekranlar için) veya (tüm modern CRT'ler için) değer çiftlerini tire ile "
 "ayrılmış şekilde girin.  Bu bilgi monitörünüzün kitapçığında bulunmalıdır.  "
 "30'un altı ve 130'un üstü değerler çok nadiren kullanılır."
 
@@ -1268,7 +1262,7 @@ msgid ""
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
 "Lütfen ayrık frekans değerlerini virgülle ayrılmış şekilde (sabit frekanslı "
-"ekranlar için), veya (tüm modern CRT'ler için) değer çiftlerini tire ile "
+"ekranlar için) veya (tüm modern CRT'ler için) değer çiftlerini tire ile "
 "ayrılmış şekilde girin.  Bu bilgi monitörünüzün kitapçığında bulunmalıdır.  "
 "50'nin altı ve 160'ın üstü değerler çok nadiren kullanılır."
 
@@ -1305,7 +1299,7 @@ msgid ""
 msgstr ""
 "Eğer X sunucusu tarafından kullanılmamasını istediğiniz bazı çözünürlükler "
 "var ise bunları aşağıdaki listeden kaldırın.  Hepsini kaldırmanız hiç birini "
-"kaldırmamanız demektir, bu durumda X sunucusu olası en yüksek çözünürlüğü "
+"kaldırmamanız demektir; bu durumda X sunucusu olası en yüksek çözünürlüğü "
 "kullanacaktır."
 
 #. Type: select
@@ -1339,7 +1333,7 @@ msgid ""
 "both.  If you want either, select 24 bits.)"
 msgstr ""
 "(\"32-bit renk\" denilen şey aslında 24 bit renk ve buna ek olarak 8 bitlik "
-"alfa kanalı veya basitçe sıfırlardan oluşmaktadır.  X Window Sistemi her "
+"alfa kanalı veya basitçe sıfırlardan oluşmaktadır.  X Window System her "
 "ikisini de idare edebilir.  İkisini de kullanmak isterseniz, 24 bit'i seçin.)"
 
 #. Type: note
@@ -1402,37 +1396,232 @@ msgid ""
 "Decline it if you want to keep your current layout."
 msgstr ""
 
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "Fare tekerleği işlevsel hale getirilsin mi?"
+#~ msgid "Migrate XKB configuration directory?"
+#~ msgstr "XKB yapılandırma dizini taşınsın mı?"
 
 #~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ "The directory where configuration information (including keyboard data) "
+#~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
+#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
-#~ "Tekerlekli farelerin tekerlek hareketleri ek tuş (4. ve 5. tuş) işlevini "
-#~ "görür.  Bazı X uygulamaları 4. ve 5. tuşu yukarı ve aşağı kaydırma "
-#~ "(scroll-up, scroll-down) işlemleri için kullanır.  Bu uygulamaya bağlıdır "
-#~ "ve her zaman çalışmayabilir.  Ayrıca eğer bu özelliği ayarlarsanız, 3'den "
-#~ "fazla tuşlu ve tekerlekli farelerin bu tuşları beklenmedik şekilde "
-#~ "davranabilir."
+#~ "Klavye verileri dahil, X Klavye Eklentisi (XKB) bilgilerinin "
+#~ "kaydedildiği /usr/X11R6/lib/X11/xkb dizini /etc/X11/xkb olarak "
+#~ "değiştirildi."
 
-#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgid ""
+#~ "Your system is using the old location, and some programs, such as those "
+#~ "from old or unofficial Debian packages, may continue to install files "
+#~ "there."
 #~ msgstr ""
-#~ "Eğer tekerlekli bir fareniz yoksa bu seçeneği etkinleştirmenizde bir "
-#~ "sakınca yoktur."
+#~ "Sisteminiz eski bölümü kullanıyor.  Eski veya gayri resmi Debian "
+#~ "paketlerindeki programlar bu bölüme kurulum yapmaya devam edebilir."
+
+#~ msgid ""
+#~ "Would you like the XKB configuration files on the system to be "
+#~ "automatically migrated from the old location to the new one?  Any "
+#~ "existing files in the new location that have the same name will be backed "
+#~ "up and replaced by the files from the old location.  A symbolic link from "
+#~ "the old location to the new one will be created to prevent legacy "
+#~ "applications from breaking."
+#~ msgstr ""
+#~ "Sisteminizdeki XKB yapılandırma dosyalarının eski yerinden yeni bölüme "
+#~ "taşınmasını istiyor musunuz?  Yeni bölümdeki mevcut dosyalar yedeklenecek "
+#~ "ve eski bölümdeki dosyalarla değiştirilecektir.  Eski bölümden yeni "
+#~ "bölüme bir simgesel bağ oluşturulmasının sebebi uygulama uyumsuzluklarını "
+#~ "önlemektir."
+
+#~ msgid "Migrate Xt application defaults directory?"
+#~ msgstr "Xt uygulama öntanımlıları dizini taşınsın mı?"
+
+#~ msgid ""
+#~ "The directory where application defaults for X Window System client "
+#~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
+#~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
+#~ msgstr ""
+#~ "X Araç Takımı(Xt) tabanlı X Pencere Sistemi istemci programlarının "
+#~ "öntanımlı ayarlarının kaydedildiği /usr/X11R6/lib/X11/app-defaults "
+#~ "dizini /etc/X11/app-defaults olarak değiştirildi."
+
+#~ msgid ""
+#~ "Would you like the app-defaults files on the system to be automatically "
+#~ "migrated from the old location to the new one?  Any existing files in the "
+#~ "new location that have the same name will be backed up and replaced by "
+#~ "the files from the old location.  A symbolic link from the old location "
+#~ "to the new one will be created to prevent legacy applications from "
+#~ "breaking."
+#~ msgstr ""
+#~ "Uygulama öntanım dosyalarının, otomatik olarak, eski yerlerinden yeni "
+#~ "bölüme taşınmasını ister misiniz?  Yeni bölümdeki mevcut dosyalar "
+#~ "yedeklenecek ve eski bölümdeki dosyalarla değiştirilecektir.  Eski "
+#~ "bölümden yeni bölüme bir simgesel bağ oluşturulmasının sebebi "
+#~ "uygulamaların uyuşmazlığını önlemektir."
+
+#~ msgid "Select the desired default display manager."
+#~ msgstr "Kullanmak istediğiniz öntanımlı ekran yöneticisini seçin."
+
+#~ msgid ""
+#~ "A display manager is a program that provides graphical login capabilities "
+#~ "for the X Window System."
+#~ msgstr ""
+#~ "Ekran yöneticisi, X Window Sistemi'ne grafik arayüz ile giriş yapmayı "
+#~ "sağlar."
+
+#~ msgid ""
+#~ "Only one display manager can manage a given X server, but multiple "
+#~ "display manager packages are installed.  Please select which display "
+#~ "manager should run by default."
+#~ msgstr ""
+#~ "Sadece bir ekran yöneticisi verilen X sunucusunu yönetebilir; ancak "
+#~ "birden fazla ekran yöneticisi kurulu durumda.  Lütfen öntanımlı olarak "
+#~ "çalıştırmak istediğiniz ekran yöneticisini seçin."
+
+#~ msgid ""
+#~ "(Multiple display managers can run simultaneously if they are configured "
+#~ "to manage different servers; to achieve this, configure the display "
+#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
+#~ "disable the check for a default display manager.)"
+#~ msgstr ""
+#~ "(Eğer farklı sunucuları çalıştırmak için ayarlanırsa birden fazla ekran "
+#~ "yöneticisi kullanılabilir.  Bunun için /etc/init.d içindeki ilgili "
+#~ "betikleri değiştirin ve öntanımlı ekran yöneticisini denetleyen işlevleri "
+#~ "devre dışı bırakın.)"
+
+#~ msgid "Do you wish to stop the xdm daemon?"
+#~ msgstr "xdm servisini durdurmak istiyor musunuz?"
+
+#~ msgid ""
+#~ "The X display manager (xdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session. If xdm is stopped now, any X sessions it manages will be "
+#~ "terminated. Otherwise you may leave xdm running, and the new version will "
+#~ "take effect the next time the daemon is restarted."
+#~ msgstr ""
+#~ "X ekran yöneticisi (xdm) servisi, paket güncelleme ve kaldırma sırasında "
+#~ "genellikle durdurulur.  Fakat öyle görünüyor ki xdm, çalışan (en az) bir "
+#~ "X oturumunu yönetiyor.  Eğer xdm şimdi durdurulursa yönetilen X "
+#~ "oturumları da sonlandırılacaktır.  Böyle yapmak yerine xdm'i çalışır "
+#~ "vaziyette bırakabilirsiniz.  Yeni sürüm, xdm servisinin bir sonraki "
+#~ "çalıştırılışında etkin olacaktır."
+
+#~ msgid "experimental version of X.Org packages"
+#~ msgstr "X.Org paketleri deneysel (experimental) sürümü"
+
+#~ msgid ""
+#~ "You are using an experimental version of X.Org packages for Debian.  "
+#~ "Please do not file bugs with the Debian Bug Tracking System against this "
+#~ "version of the packages, since they have not been released to the Debian "
+#~ "distribution yet."
+#~ msgstr ""
+#~ "Debian için X.Org paketlerinin deneysel sürümünü kullanıyorsunuz.  Bu "
+#~ "paketler Debian dağıtımına henüz girmediğinden lütfen Debian Hata "
+#~ "Bildirim Sistemine bu paket sürümleri hakkında hata bildirimleri yapmayın."
+
+#~ msgid ""
+#~ "If you experience problems with these packages or would like to submit "
+#~ "patches, please send mail to the Debian X mailing list.  You can read "
+#~ "more about this mailing list on the World Wide Web:\n"
+#~ "  http://lists.debian.org/debian-x/"
+#~ msgstr ""
+#~ "Eğer bu paketlerle sorunlar yaşarsanız veya bir yama göndermek isterseniz "
+#~ "Debian X eposta listesine bir ileti gönderin.  Aşağıdaki bağı kullanarak "
+#~ "bu liste hakkında daha fazla bilgi alabilirsiniz:\n"
+#~ "  http://lists.debian.org/debian-x/ "
+
+#~ msgid ""
+#~ "If you do not want to be running experimental X packages, you need to do "
+#~ "two things:\n"
+#~ "  1) Ensure that you do not have experimental package repositiories in\n"
+#~ "     your /etc/apt/sources.list file;\n"
+#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
+#~ "     you can do this by appending a package suite name to the package "
+#~ "name\n"
+#~ "     with \"apt-get\" -- for example:\n"
+#~ "       apt-get install x11-common/unstable\n"
+#~ "    or\n"
+#~ "       apt-get install x11-common/stable\n"
+#~ "    You may need to specify downgrades for several packages."
+#~ msgstr ""
+#~ "Eğer deneysel X paketlerini kullanmak istemiyorsanız yapmanız gereken iki "
+#~ "şey var:\n"
+#~ "  1) /etc/apt/sources.list dosyasında deneysel paket depolarının\n"
+#~ "     tanımlanmadığından emin olun.\n"
+#~ "  2) apt'ın, X.ORg paketlerini, eski sürümler ile değiştirmesini\n"
+#~ "     sağlayın.  Bu amaçla \"apt-get\" komut satırında paket\n"
+#~ "     ismine bir dağıtım ismi ekleyebilirsiniz -- örneğin:\n"
+#~ "       apt-get install xorg-common/unstable\n"
+#~ "     veya\n"
+#~ "       apt-get install xorg-common/stable\n"
+#~ "     Bu sürüm alçaltma işlemini birçok paket için yapmanız gerekebilir."
+
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  They range from -20 "
+#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
+#~ "(extremely low priority).  The default nice value for ordinary processes "
+#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
+#~ "default for a machine that has duties other than interacting with the "
+#~ "console user (such as a web server)."
+#~ msgstr ""
+#~ "Belirli bir zamanlama (scheduling) stratejisi kullanan işletim sistemi "
+#~ "çekirdeklerinde X sunucusunun öntanımlı değerden daha yüksek bir "
+#~ "öncelikte (bu öncelik \"nice\" değeri olarak da bilinir) çalışması "
+#~ "halinde performansın arttığı gözlenmiştir.  \"nice\" değeri -20 (en "
+#~ "yüksek öncelik veya diğer işlemlere göre \"not nice\") ile 19 değerleri "
+#~ "(en düşük öncelik) arasında olabilir.  Sıradan süreçler için öntanımlı "
+#~ "\"nice\" değeri 0'dır.  Tek kullanıcılı bir iş istasyonu için -10 uygun "
+#~ "bir değerdir.  Diğer konsol kullanıcıları tarafından pek kullanılmayan "
+#~ "bir makine için (ör. web sunucusu) 0 uygun bir değerdir."
 
 #~ msgid ""
 #~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
 #~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
 #~ "value of the X server should be set to 0."
 #~ msgstr ""
-#~ "Yukarıdaki açıklamalar Linux kernel 2.6 (veya \"O(1) zamanlayıcı\" içeren "
-#~ "2.5 serisi) için doğru değildir.  Bu sistemlerde X sunucusunun öncelik "
-#~ "değeri 0 olarak ayarlanmıştır."
+#~ "Yukarıdaki açıklamalar Linux çekirdel 2.6 (veya \"O(1) zamanlayıcı\" "
+#~ "içeren 2.5 serisi) için doğru değildir.  Bu sistemlerde X sunucusunun "
+#~ "öncelik değeri 0 olarak ayarlanmıştır."
+
+#~ msgid ""
+#~ "The glx module enables software OpenGL rendering.  The dri module enables "
+#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
+#~ "that support for DRI must also exist in the kernel, the video card, and "
+#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
+#~ "operations using DRI to work.  Otherwise, the server falls back to "
+#~ "software rendering."
+#~ msgstr ""
+#~ "\"glx\" modülü OpenGL yazılım modelleme (rendering) içindir.  \"dri\" "
+#~ "modülü X sunucusuna Doğrudan Modelleme Alt yapısı (DRI) desteğini "
+#~ "kazandırır.  DRI desteğinin çekirdek, ekran kartı ve DRI'nin donanım "
+#~ "hızlandırmalı 3B işlemler yapmasını sağlayan Mesa kitaplıklarının kurulu "
+#~ "sürümleri tarafından da desteklenmesi gerektiğini unutmayın.  Aksi "
+#~ "takdirde sunucu yazılım modellemeye geri dönecektir."
+
+#~ msgid ""
+#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
+#~ "Display Channel, respectively.  These modules are used to query monitor "
+#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
+#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
+#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
+#~ "int10 as well."
+#~ msgstr ""
+#~ "\"vbe\" ve \"ddc\" modülleri sırasıyla, VESA BIOS Uzantıları ve Veri "
+#~ "Görüntüleme Kanalı (DDC) desteklerini etkinleştirir.  Bu modüller ekran "
+#~ "kartı ile monitör özelliklerini sorgular.  \"int10\" modülü, ikincil VGA "
+#~ "kartlarını etkinleştiren bir gerçek-kip x86 emülatörüdür.  \"vbe\" "
+#~ "modülünün \"int10\" modülüne bağımlı olduğunu ve \"vbe\" modülünü "
+#~ "etkinleştirmek istediğinizde \"int10\" modülünü de etkinleştirmeniz "
+#~ "gerektiğini unutmayın."
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
+#~ msgstr ""
+#~ "X sunucu yapılandırma dosyası, ekran kartınızı sizin belirleyeceğiniz bir "
+#~ "isme göre tanımlar.  Bu genelde, üretici firma veya marka adını takip "
+#~ "eden model adıdır; ör. \"3Dfx Voodoo3\" veya \"ATI Rage Fury Maxx\"."
 
 #~ msgid ""
 #~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
@@ -1444,50 +1633,42 @@ msgstr ""
 #~ "göreceği konusunda garanti verilemez.)"
 
 #~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
+#~ "device, and function numbers in hexadecimal, not decimal."
+#~ msgstr ""
+#~ "PCI veya AGP kartınızın veriyolunu tespit etmek için \"lspci\" komutunu "
+#~ "kullanabilirsiniz.  lspci'ın; veriyolunu, aygıtı ve işlev numarasını "
+#~ "ondalık sayılar yerine onaltılık biçimde bildirdiğini unutmayın."
+
+#~ msgid ""
 #~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
 #~ "video card should leave this entry blank."
 #~ msgstr ""
 #~ "Sadece bir ekran kartına sahip PowerPC veya SGI Indigo2 XL dışında bir "
 #~ "makine kullanan kullanıcılar, bu alanı boş bırakmalıdır."
 
-#~ msgid "Is your monitor an LCD device?"
-#~ msgstr "Monitörünüz bir LCD aygıtı mı?"
+#~ msgid ""
+#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
+#~ msgstr ""
+#~ "İleri seviye kullanıcılar, mevcut herhangi bir XKB kural kümesini "
+#~ "kullanabilir.  Eğer xlibs paketi kurulmuşsa mevcut kural kümelerini /etc/"
+#~ "X11/xkb/rules dizininde görebilirsiniz."
 
 #~ msgid ""
-#~ "If your monitor is a liquid-crystal display (which is the case with "
-#~ "almost all laptops), you should set this option."
+#~ "Advanced users can use any model defined by the selected XKB rule set.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets."
 #~ msgstr ""
-#~ "Eğer monitörünüz bir sıvı-kristal görüntü birimi (LCD, çoğu dizüstü "
-#~ "bilgisayarda kullanılır) ise bu seçeneği seçmelisiniz."
+#~ "İleri seviye kullanıcılar seçili XKB kural setine göre tanımlı herhangi "
+#~ "bir modeli seçebilir.  Eğer xlibs paketi kurulu ise mevcut kural "
+#~ "kümelerini /etc/X11/xkb/rules dizininde bulabilirsiniz."
 
-#~ msgid ""
-#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
-#~ "option."
+#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
 #~ msgstr ""
-#~ "Geleneksel katot-ışınlı tüp (CRT) monitörü kullananlar bu seçeneği "
-#~ "seçmemelidir."
-
-#~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "Yapılandırma dosyasına öntanımlı \"DRI\" bölümü yazılsın mı?"
-
-#~ msgid ""
-#~ "The DRI section of the X server configuration file determines the "
-#~ "permissions of the DRI device.  This option is for advanced users.  In "
-#~ "most cases, you should enable it."
-#~ msgstr ""
-#~ "X sunucu yapılandırma dosyasının DRI bölümü, DRI aygıt izinlerini "
-#~ "belirler. Bu seçenek ileri seviye kullanıcılar içindir.  Çoğu durumda, "
-#~ "bunu etkinleştirmelisiniz."
-
-#, fuzzy
-#~ msgid ""
-#~ "Disable this option if you want to write your own \"DRI\" section into "
-#~ "the X.Org server configuration file.  You may wish to do this if you want "
-#~ "to change the access privileges to the DRI port."
-#~ msgstr ""
-#~ "Eğer \"DRI\" bölümünü XFree86 sunucu yapılandırma dosyasına kendiniz "
-#~ "yazmak istiyorsanız bu seçeneği iptal edin.  DRI portunun erişim "
-#~ "haklarını değiştirmek için bunu yapmak isteyebilirsiniz."
+#~ "ABD İngilizce klavye kullanıcıları genel olarak \"pc104\" girmelidir."
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
@@ -1496,9 +1677,19 @@ msgstr ""
 #~ "for available layouts."
 #~ msgstr ""
 #~ "İleri seviye kullanıcılar seçili XKB kural setince desteklenen herhangi "
-#~ "bir düzeni seçebilir.  Eğer xlibs paketi kurulu ise, mevcut kural "
-#~ "kümeleri için /etc/X11/xkb/rules dizinine, mevcut düzenler için de /etc/"
-#~ "X11/xkb/symbols dizinine bakabilirsiniz."
+#~ "bir düzeni seçebilir.  Eğer xlibs paketi kurulu ise mevcut kural kümeleri "
+#~ "için /etc/X11/xkb/rules dizinine, mevcut düzenler için de /etc/X11/xkb/"
+#~ "symbols dizinine bakabilirsiniz."
+
+#~ msgid ""
+#~ "Advanced users can use any variant supported by the selected XKB layout.  "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
+#~ "available variants."
+#~ msgstr ""
+#~ "İleri seviye kullanıcılar XKB kural setince desteklenen herhangi bir alt "
+#~ "türü seçebilir.  Eğer xlibs paketi kurulu ise, seçili düzen için mevcut "
+#~ "alt türleri /etc/X11/xkb/symbols dizininde görebilirsiniz."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
@@ -1513,6 +1704,29 @@ msgstr ""
 #~ "çevirilerinin bulunduğu mevcut seçenek dosyalarını görebilirsiniz (/etc/"
 #~ "X11/xkb/symbols/ctrl gibi)."
 
+#~ msgid "Enable scroll events from mouse wheel?"
+#~ msgstr "Fare tekerleği işlevsel hale getirilsin mi?"
+
+#~ msgid ""
+#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
+#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
+#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
+#~ "as expected. This is application-level behavior however, and may not "
+#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
+#~ "wheel may behave in an unexpected fashion if this option is set."
+#~ msgstr ""
+#~ "Tekerlekli farelerin tekerlek hareketleri ek tuş (4. ve 5. tuş) işlevini "
+#~ "görür.  Bazı X uygulamaları 4. ve 5. tuşu yukarı ve aşağı kaydırma "
+#~ "(scroll-up, scroll-down) işlemleri için kullanır.  Bu uygulamaya bağlıdır "
+#~ "ve her zaman çalışmayabilir.  Ayrıca eğer bu özelliği ayarlarsanız 3'den "
+#~ "fazla tuşlu ve tekerlekli farelerin bu tuşları beklenmedik şekilde "
+#~ "davranabilir."
+
+#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
+#~ msgstr ""
+#~ "Eğer tekerlekli bir fareniz yoksa bu seçeneği etkinleştirmenizde bir "
+#~ "sakınca yoktur."
+
 #~ msgid ""
 #~ "If you have an NVidia video card, you may want to decline this option, as "
 #~ "these cards' support for the DDC protocol is often so poor that attempts "
@@ -1522,6 +1736,36 @@ msgstr ""
 #~ "istemeyebilirsiniz.  Bu kartların DDC desteği çok kötüdür ve sistemin "
 #~ "çakılmasına sebep olabilir."
 
+#~ msgid "Is your monitor an LCD device?"
+#~ msgstr "Monitörünüz bir LCD aygıtı mı?"
+
+#~ msgid ""
+#~ "If your monitor is a liquid-crystal display (which is the case with "
+#~ "almost all laptops), you should set this option."
+#~ msgstr ""
+#~ "Eğer monitörünüz bir sıvı-kristal görüntü birimi (LCD: çoğu dizüstü "
+#~ "bilgisayarda kullanılır) ise bu seçeneği seçmelisiniz."
+
+#~ msgid ""
+#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
+#~ "option."
+#~ msgstr ""
+#~ "Geleneksel katot-ışınlı tüp (CRT) monitörü kullananlar bu seçeneği "
+#~ "seçmemelidir."
+
+#~ msgid ""
+#~ "For the \"simple\" option, you need only know the monitor's physical "
+#~ "size; this will set some configuration values appropriate for a typical "
+#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
+#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
+#~ "are configured for a particular resolution.)"
+#~ msgstr ""
+#~ "\"simple\" seçeneği için sadece monitörün fiziksel boyutunu bilmeniz "
+#~ "yeterlidir.  Bu seçenek tipik CRT monitörlere göre yapılandırma "
+#~ "değerlerini belirleyecektir.  (Bu seçenek LCD panel kullanıcıları için "
+#~ "etkin değildir.  Çünkü bu aygıtlar belirli bir çözünürlük için "
+#~ "yapılandırılmıştır.)"
+
 #~ msgid ""
 #~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
 #~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
@@ -1530,6 +1774,27 @@ msgstr ""
 #~ "Mach8 (VGA Wonder), Mach32 ve eski Mach64 (\"GX\") yonga seti gibi eski "
 #~ "ATI donanımlarında 8'den yüksek renk derinliklerinin desteklenmediğini "
 #~ "unutmayın."
+
+#~ msgid "Write default DRI section to configuration file?"
+#~ msgstr "Yapılandırma dosyasına öntanımlı \"DRI\" bölümü yazılsın mı?"
+
+#~ msgid ""
+#~ "The DRI section of the X server configuration file determines the "
+#~ "permissions of the DRI device.  This option is for advanced users.  In "
+#~ "most cases, you should enable it."
+#~ msgstr ""
+#~ "X sunucu yapılandırma dosyasının DRI bölümü, DRI aygıt izinlerini "
+#~ "belirler. Bu seçenek ileri seviye kullanıcılar içindir.  Çoğu durumda, "
+#~ "bunu etkinleştirmelisiniz."
+
+#~ msgid ""
+#~ "Disable this option if you want to write your own \"DRI\" section into "
+#~ "the X.Org server configuration file.  You may wish to do this if you want "
+#~ "to change the access privileges to the DRI port."
+#~ msgstr ""
+#~ "Eğer \"DRI\" bölümünü X Org sunucu yapılandırma dosyasına kendiniz yazmak "
+#~ "istiyorsanız bu seçeneği iptal edin.  DRI portunun erişim haklarını "
+#~ "değiştirmek için bunu yapmak isteyebilirsiniz."
 
 #~ msgid "experimental version of XFree86 packages"
 #~ msgstr "XFree86 paketleri deneysel (experimental) sürümü"
@@ -1544,17 +1809,6 @@ msgstr ""
 #~ "paketler Debian dağıtımına henüz girmediğinden, lütfen Debian Hata "
 #~ "Bildirim Sistemine bu paket sürümleri hakkında hata bildirimleri "
 #~ "göndermeyin."
-
-#~ msgid ""
-#~ "If you experience problems with these packages or would like to submit "
-#~ "patches, please send mail to the Debian X mailing list.  You can read "
-#~ "more about this mailing list on the World Wide Web:\n"
-#~ "  http://lists.debian.org/debian-x/"
-#~ msgstr ""
-#~ "Eğer bu paketlerle sorunlar yaşarsanız veya bir yama göndermek isterseniz "
-#~ "Debian X mail listesine bir ileti gönderin.  Aşağıdaki bağı kullanarak bu "
-#~ "liste hakkında daha fazla bilgi alabilirsiniz:\n"
-#~ "  http://lists.debian.org/debian-x/ "
 
 #, fuzzy
 #~ msgid ""
@@ -1583,50 +1837,3 @@ msgstr ""
 #~ "     veya\n"
 #~ "       apt-get install xorg-common/stable\n"
 #~ "     Bu sürüm alçaltma işlemini birçok paket için yapmanız gerekebilir."
-
-#~ msgid "Select the desired default display manager."
-#~ msgstr "Kullanmak istediğiniz öntanımlı ekran yöneticisini seçin."
-
-#~ msgid ""
-#~ "A display manager is a program that provides graphical login capabilities "
-#~ "for the X Window System."
-#~ msgstr ""
-#~ "Ekran yöneticisi, X Window Sistemi'ne grafik arayüz ile giriş yapmayı "
-#~ "sağlar."
-
-#~ msgid ""
-#~ "Only one display manager can manage a given X server, but multiple "
-#~ "display manager packages are installed.  Please select which display "
-#~ "manager should run by default."
-#~ msgstr ""
-#~ "Sadece bir ekran yöneticisi verilen X sunucusunu yönetebilir, ancak "
-#~ "birden fazla ekran yöneticisi kurulu durumda.  Lütfen, öntanımlı olarak "
-#~ "çalıştırmak istediğiniz ekran yöneticisini seçin."
-
-#~ msgid ""
-#~ "(Multiple display managers can run simultaneously if they are configured "
-#~ "to manage different servers; to achieve this, configure the display "
-#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
-#~ "disable the check for a default display manager.)"
-#~ msgstr ""
-#~ "(Eğer farklı sunucuları çalıştırmak için ayarlanırsa birden fazla ekran "
-#~ "yöneticisi kullanılabilir.  Bunun için /etc/init.d içindeki ilgili "
-#~ "betikleri değiştirin ve öntanımlı ekran yöneticisini denetleyen işlevleri "
-#~ "devre dışı bırakın.)"
-
-#~ msgid "Do you wish to stop the xdm daemon?"
-#~ msgstr "xdm servisini durdurmak istiyor musunuz?"
-
-#~ msgid ""
-#~ "The X display manager (xdm) daemon is typically stopped on package "
-#~ "upgrade and removal, but it appears to be managing at least one running X "
-#~ "session. If xdm is stopped now, any X sessions it manages will be "
-#~ "terminated. Otherwise you may leave xdm running, and the new version will "
-#~ "take effect the next time the daemon is restarted."
-#~ msgstr ""
-#~ "X ekran yöneticisi (xdm) servisi, paket güncelleme ve kaldırma sırasında "
-#~ "genellikle durdurulur.  Fakat öyle görünüyorki xdm, çalışan (en az) bir X "
-#~ "oturumunu yönetiyor.  Eğer xdm şimdi durdurulursa, yönetilen X oturumları "
-#~ "da sonlandırılacaktır.  Böyle yapmak yerine xdm'i çalışır vaziyette "
-#~ "bırakabilirsiniz.  Yeni sürüm, xdm servisinin bir sonraki "
-#~ "çalıştırılışında etkin olacaktır."
