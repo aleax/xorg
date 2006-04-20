@@ -1,11 +1,11 @@
-# debconf templates for xorg-x11 package
+# debconf templates for xorg package
 # Czech translation
 #
-# $Id: cs.po 1042 2006-01-09 07:55:08Z ender $
+# $Id: cs.po 490 2005-08-03 09:59:07Z ender $
 #
 # Copyrights:
 # Branden Robinson, 2000-2004
-# Miroslav Kure <kurem@debian.cz>, 2004
+# Miroslav Kure <kurem@debian.cz>, 2004-2006
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: ubuntu-devel@lists.ubuntu.com\n"
 "POT-Creation-Date: 2006-01-18 08:45+1100\n"
-"PO-Revision-Date: 2005-09-10 18:42+0200\n"
+"PO-Revision-Date: 2006-04-13 21:33+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,6 @@ msgstr "Zadejte hodnotu 'nice', se kterou má X server běžet."
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -87,9 +86,8 @@ msgstr ""
 "strategií, se výkon X serveru zlepší, pokud je spuštěn s vyšší prioritou, "
 "než standardní. Priorita procesu je známá jako hodnota 'nice'. Může nabývat "
 "hodnot od -20 (velmi vysoká priorita) až po 19 (velmi nízká priorita). "
-"Standardní hodnota nice obyčejného procesu je 0. Pro jednouživatelskou "
-"stanici je rozumná hodnota -10, pro počítač, který má i jiné povinnosti "
-"(např. webový server), je doporučená hodnota 0."
+"Standardní hodnota nice obyčejného procesu je 0, což je doporučená hodnota "
+"i pro X server."
 
 #. Type: string
 #. Description
@@ -265,7 +263,6 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -274,11 +271,11 @@ msgid ""
 "operations using DRI to work.  Otherwise, the server falls back to software "
 "rendering."
 msgstr ""
-"Moduly GLCore a glx zpřístupní softwarové OpenGL, modul dri povolí podporu "
-"DRI (Direct Rendering Infrastructure). Nezapomeňte, že podporu pro DRI musí "
-"obsahovat také jádro, grafická karta a instalovaná verze Mesa knihoven (pro "
-"3D akceleraci). Pokud tomu tak není, server nouzově použije softwarové "
-"vykreslování."
+"Modul glx zpřístupní softwarové OpenGL, modul dri povolí podporu DRI (Direct "
+"Rendering Infrastructure). Nezapomeňte, že podporu pro DRI musí obsahovat "
+"také jádro, grafická karta a instalovaná verze knihoven Mesa (pro "
+"hardwarovou 3D akceleraci). Pokud tomu tak není, server nouzově použije "
+"softwarové vykreslování."
 
 #. Type: multiselect
 #. Description
@@ -294,8 +291,8 @@ msgstr ""
 "Moduly vbe a ddc povolí podporu pro VESA BIOS Extensions resp. Data Display "
 "Channel. Tyto moduly slouží pro zjištění vlastností monitoru skrze grafickou "
 "kartu. Modul int10 je emulátor reálného módu x86, který se používá pro "
-"zavedení sekundární VGA karty. Pamatujte, že modul vbe závisí na modulu "
-"int10, takže při výběru modulu vbe veberte i modul int10."
+"zavedení sekundárních VGA karet. Pamatujte, že modul vbe závisí na modulu "
+"int10, takže při povolení vbe povolte také int10."
 
 #. Type: multiselect
 #. Description
@@ -389,7 +386,6 @@ msgstr "Zadejte identifikátor své grafické karty."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
-#, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -398,7 +394,8 @@ msgid ""
 msgstr ""
 "Konfigurační soubor X serveru spáruje grafickou kartu se jménem, které zde "
 "zadáte. Obvykle se používá jméno výrobce nebo značky následované názvem "
-"modelu, třeba \"3Dfx Voodoo3\" nebo \"ATI Rage Fury Maxx\"."
+"modelu, třeba \"Intel i915\", \"ATI RADEON X800\" nebo \"NVIDIA GeForce "
+"6600\"."
 
 #. Type: select
 #. Description
@@ -505,14 +502,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"Pro určení umístění grafické karty PCI nebo AGP můžete použít příkaz \"lspci"
-"\". Pamatujete, že lspcci vypisuje čísla sběrnic, zařízení a funkcí v "
-"šestnáctkové (ne v desítkové) soustavě."
+"Pro určení umístění grafické karty typu PCI, AGP nebo PCI-Express můžete "
+"použít příkaz \"lspci -X\"."
 
 #. Type: string
 #. Description
@@ -596,15 +591,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
 "Pokročilí uživatelé mohou použít libovolnou definovanou množinu XKB "
-"pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /etc/X11/xkb/rules "
-"naleznete všechna dostupná pravidla."
+"pravidel. Pokud již byl rozbalen balík xkeyboard-config, naleznete všechna "
+"dostupná pravidla v adresáři /etc/X11/xkb/rules."
 
 #. Type: string
 #. Description
@@ -711,24 +705,24 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
 "Pokročilí uživatelé mohou použít libovolný model definovaný zvolenou "
-"množinou XKB pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /etc/"
-"X11/xkb/rules naleznete všechna dostupná pravidla."
+"množinou XKB pravidel. Pokud již byl rozbalen balík xkeyboard-config, "
+"naleznete všechna dostupná pravidla v adresáři /etc/X11/xkb/rules."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
-msgstr "Uživatelé anglické US klávesnice by měli většinou zadat \"pc104\"."
+msgstr ""
+"Uživatelé anglické US klávesnice by měli většinou zadat \"pc104\". Ostatním "
+"se obvykle doporučuje \"pc105\"."
 
 #. Type: string
 #. Description
@@ -744,22 +738,21 @@ msgid ""
 "be entered.  Available layouts depend on which XKB rule set and keyboard "
 "model were previously selected."
 msgstr ""
-"Aby X server pracoval správně s vaší klávesnicí, musíte zadat rozložení "
+"Aby X server pracoval s vaší klávesnicí správně, musíte zadat rozložení "
 "kláves. Dostupná rozložení závisí na tom, jaká jste vybrali XKB pravidla a "
 "model klávesnice."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
-#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"Pokročilí uživatelé mohou použít libovolný model definovaný zvolenou "
-"množinou XKB pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /etc/"
-"X11/xkb/rules naleznete všechna dostupná pravidla."
+"Pokročilí uživatelé mohou použít libovolné rozložení podporované zvolenou "
+"množinou XKB pravidel. Pokud již byl rozbalen balík xkeyboard-config, "
+"naleznete všechna dostupná pravidla v adresáři /etc/X11/xkb/rules."
 
 #. Type: string
 #. Description
@@ -806,17 +799,16 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
-#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
 "directory for the file corresponding to your selected layout for available "
 "variants."
 msgstr ""
-"Pokročilí uživatelé mohou použít libovolnou variantu podporovanou zvolenými "
-"pravidly XKB. Pokud již byl rozbalen balík xlibs, naleznete dostupné "
-"varianty v adresáři /etc/X11/xkb/symbols v souboru odpovídajícímu vybranému "
-"rozložení."
+"Pokročilí uživatelé mohou použít libovolnou variantu podporovanou zvoleným "
+"rozložením XKB. Pokud již byl rozbalen balík xkeyboard-config, naleznete "
+"dostupné varianty v adresáři /etc/X11/xkb/symbols v souboru odpovídajícímu "
+"vybranému rozložení."
 
 #. Type: string
 #. Description
@@ -890,6 +882,8 @@ msgid ""
 "Advanced users can use any options compatible with the selected XKB model, "
 "layout and variant."
 msgstr ""
+"Pokročilí uživatelé mohou použít libovolné volby kompatibilní se "
+"zvoleným XKB modelem, rozložením a variantou."
 
 #. Type: string
 #. Description
@@ -1068,7 +1062,6 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
-#, fuzzy
 msgid ""
 "For the \"simple\" option, you need only know the monitor's physical size; "
 "this will set some configuration values appropriate for a typical CRT of the "
@@ -1076,9 +1069,7 @@ msgid ""
 msgstr ""
 "Pro volbu \"simple\" vám stačí znát pouze fyzickou velikost monitoru. Tím se "
 "nastaví standardní hodnoty pro typický CRT monitor této velikosti, které ale "
-"nemusí vyhovovat vysoce kvalitním monitorům. (Tato volba je nedostupná pro "
-"uživatele s LCD, protože tyto obrazovky se konfigurují pro konkrétní "
-"rozlišení.)"
+"nemusí vyhovovat vysoce kvalitním monitorům."
 
 #. Type: select
 #. Description
@@ -1332,9 +1323,8 @@ msgstr "Znaky odlišné od číslic nejsou v položce povoleny."
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
-#, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Zadejte rozložení klávesnice."
+msgstr "Automaticky rozpoznat rozložení klávesnice?"
 
 #. Type: boolean
 #. Description
@@ -1344,6 +1334,8 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"Základní výběr klávesového rozložení v systému Xorg je založen na kombinaci "
+"jazyka a rozložení klávesnice, které jste zvolili při instalaci Debianu."
 
 #. Type: boolean
 #. Description
@@ -1352,6 +1344,8 @@ msgid ""
 "Accept this option if you want the keyboard layout to be redetected.  "
 "Decline it if you want to keep your current layout."
 msgstr ""
+"Pokud chcete znovu rozpoznat klávesové rozložení, přijměte. Jestliže chcete "
+"ponechat stávající nastavení, zamítněte."
 
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "Přenést adresář s nastavením XKB?"
@@ -1508,25 +1502,6 @@ msgstr ""
 #~ "     Možná takto budete muset degradovat více balíků."
 
 #~ msgid ""
-#~ "When using operating system kernels with a particular scheduling "
-#~ "strategy, it has been widely noted that the X server's performance "
-#~ "improves when it is run at a higher process priority than the default; a "
-#~ "process's priority is known as its \"nice\" value.  They range from -20 "
-#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
-#~ "(extremely low priority).  The default nice value for ordinary processes "
-#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
-#~ "default for a machine that has duties other than interacting with the "
-#~ "console user (such as a web server)."
-#~ msgstr ""
-#~ "Je známo, že při použití jádra operačního systému s určitou plánovací "
-#~ "strategií, se výkon X serveru zlepší, pokud je spuštěn s vyšší prioritou, "
-#~ "než standardní. Priorita procesu je známá jako hodnota 'nice'. Může "
-#~ "nabývat hodnot od -20 (velmi vysoká priorita) až po 19 (velmi nízká "
-#~ "priorita). Standardní hodnota nice obyčejného procesu je 0. Pro "
-#~ "jednouživatelskou stanici je rozumná hodnota -10, pro počítač, který má i "
-#~ "jiné povinnosti (např. webový server), je doporučená hodnota 0."
-
-#~ msgid ""
 #~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
 #~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
 #~ "value of the X server should be set to 0."
@@ -1535,42 +1510,8 @@ msgstr ""
 #~ "zahrnutí plánovače O(1)). Na těchto systémech by měl mít X server hodnotu "
 #~ "nice = 0."
 
-#~ msgid ""
-#~ "The glx module enables software OpenGL rendering.  The dri module enables "
-#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
-#~ "that support for DRI must also exist in the kernel, the video card, and "
-#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
-#~ "operations using DRI to work.  Otherwise, the server falls back to "
-#~ "software rendering."
-#~ msgstr ""
-#~ "Modul glx zpřístupní softwarové OpenGL, modul dri povolí podporu DRI "
-#~ "(Direct Rendering Infrastructure). Nezapomeňte, že podporu pro DRI musí "
-#~ "obsahovat také jádro, grafická karta a instalovaná verze Mesa knihoven "
-#~ "(pro 3D akceleraci). Pokud tomu tak není, server nouzově použije "
-#~ "softwarové vykreslování."
-
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "Moduly vbe a ddc povolí podporu pro VESA BIOS Extensions resp. Data "
-#~ "Display Channel. Tyto moduly slouží pro zjištění vlastností monitoru "
-#~ "skrze grafickou kartu. Modul int10 je emulátor reálného módu x86, který "
-#~ "se používá pro zavedení sekundárních VGA karet. Pamatujte, že modul vbe "
-#~ "závisí na modulu int10, takže při výběru modulu vbe vyberte i modul int10."
-
-#~ msgid ""
-#~ "The X server configuration file associates your video card with a name "
-#~ "that you may provide.  This is usually the vendor or brand name followed "
-#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
-#~ msgstr ""
-#~ "Konfigurační soubor X serveru spáruje grafickou kartu se jménem, které "
-#~ "zde zadáte. Obvykle se používá jméno výrobce nebo značky následované "
-#~ "názvem modelu, třeba \"3Dfx Voodoo3\" nebo \"ATI Rage Fury Maxx\"."
+#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
+#~ msgstr "Modul v4l povolí podporu pro rozhraní jádra nazvané Video4Linux."
 
 #~ msgid ""
 #~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
@@ -1582,41 +1523,11 @@ msgstr ""
 #~ "že to bude fungovat.)"
 
 #~ msgid ""
-#~ "You may wish to use the \"lspci\" command to determine the bus location "
-#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
-#~ "device, and function numbers in hexadecimal, not decimal."
-#~ msgstr ""
-#~ "Pro určení umístění grafické karty PCI nebo AGP můžete použít příkaz "
-#~ "\"lspci\". Pamatujete, že lspci vypisuje čísla sběrnic, zařízení a funkcí "
-#~ "v šestnáctkové (ne v desítkové) soustavě."
-
-#~ msgid ""
 #~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
 #~ "video card should leave this entry blank."
 #~ msgstr ""
 #~ "Uživatelé, kteří mají pouze jednu grafickou kartu a daný počítač není "
 #~ "PowerPC nebo SGI Indigo2, by měli toto pole ponechat prázdné."
-
-#~ msgid ""
-#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
-#~ "rule sets."
-#~ msgstr ""
-#~ "Pokročilí uživatelé mohou použít libovolnou definovanou množinu XKB "
-#~ "pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /etc/X11/xkb/"
-#~ "rules naleznete všechna dostupná pravidla."
-
-#~ msgid ""
-#~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets."
-#~ msgstr ""
-#~ "Pokročilí uživatelé mohou použít libovolný model definovaný zvolenou "
-#~ "množinou XKB pravidel. Pokud již byl rozbalen balík xlibs, v adresáři /"
-#~ "etc/X11/xkb/rules naleznete všechna dostupná pravidla."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr "Uživatelé anglické US klávesnice by měli většinou zadat \"pc104\"."
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
@@ -1628,17 +1539,6 @@ msgstr ""
 #~ "XKB. Pokud již byl rozbalen balík xlibs, v adresáři /etc/X11/xkb/rules "
 #~ "naleznete všechna dostupná pravidla a v adresáři /etc/X11/xkb/symbols "
 #~ "dostupná rozložení."
-
-#~ msgid ""
-#~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
-#~ "directory for the file corresponding to your selected layout for "
-#~ "available variants."
-#~ msgstr ""
-#~ "Pokročilí uživatelé mohou použít libovolnou variantu podporovanou "
-#~ "zvolenými pravidly XKB. Pokud již byl rozbalen balík xlibs, naleznete "
-#~ "dostupné varianty v adresáři /etc/X11/xkb/symbols v souboru "
-#~ "odpovídajícímu vybranému rozložení."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
@@ -1697,19 +1597,6 @@ msgstr ""
 #~ msgstr "Uživatelé klasických monitorů (CRT) by měli odpovědět záporně."
 
 #~ msgid ""
-#~ "For the \"simple\" option, you need only know the monitor's physical "
-#~ "size; this will set some configuration values appropriate for a typical "
-#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
-#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
-#~ "are configured for a particular resolution.)"
-#~ msgstr ""
-#~ "Pro volbu \"simple\" vám stačí znát pouze fyzickou velikost monitoru. Tím "
-#~ "se nastaví standardní hodnoty pro typický CRT monitor této velikosti, "
-#~ "které ale nemusí vyhovovat vysoce kvalitním monitorům. (Tato volba je "
-#~ "nedostupná pro uživatele s LCD, protože tyto obrazovky se konfigurují pro "
-#~ "konkrétní rozlišení.)"
-
-#~ msgid ""
 #~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
 #~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
 #~ "unsupported."
@@ -1738,9 +1625,6 @@ msgstr ""
 #~ "\" (například pokud chcete změnit práva pro přístup k DRI portu), tuto "
 #~ "možnost zamítněte."
 
-#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
-#~ msgstr "Modul v4l povolí podporu pro rozhraní jádra nazvané Video4Linux."
-
 #~ msgid ""
 #~ "(where each nn is a decimal number referring to the card's bus, device, "
 #~ "and function number, respectively)."
@@ -1763,43 +1647,3 @@ msgstr ""
 #~ "Kde \"typsběrnice\" je pro grafické karty PCI a AGP \"PCI\", a ostatní "
 #~ "položky jsou desítkové (ne šestnáckové) hodnoty. Příklad správného "
 #~ "vstupu: \"PCI:0:16:0\" (bez uvozovek)."
-
-#~ msgid "experimental version of XFree86 packages"
-#~ msgstr "experimentální verze balíků XFree86"
-
-#~ msgid ""
-#~ "You are using an experimental version of XFree86 packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Právě používáte experimentální verzi balíků XFree86 pro Debian. Prosíme "
-#~ "nehlašte do BTS (Bug Tracking System) chyby proti této verzi balíků, "
-#~ "protože ještě nejsou součástí distribuce."
-
-#, fuzzy
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
-#~ "version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install xfree86-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install xfree86-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Pokud nechcete používat experimentální balíky X, musíte zajistit dvě "
-#~ "věci:\n"
-#~ "  1) Ujistěte se, že v souboru /etc/apt/sources.list nemáte uvedené\n"
-#~ "     zdroje pro experimentální balíky.\n"
-#~ "  2) Řekněte aptu, aby degradoval XFree86 na odpovídající uvolněnou\n"
-#~ "     verzi. Dosáhnete toho například přidáním sady za jméno balíku:\n"
-#~ "       apt-get install xorg-common/unstable\n"
-#~ "     nebo\n"
-#~ "       apt-get install xorg-common/stable\n"
-#~ "     Možná takdo budete muset degradovat více balíků."
