@@ -17,10 +17,16 @@ xorg (1:7.0.15) UNRELEASED; urgency=low
     - Update Romanian translation (Eddy Petrisor).
 
   [ Steve Langasek ]
-  * Add pmud-utils (<= 0.10-9) to the conflicts list for x11-common; 
+  * Add pmud-utils (<= 0.10-9) to the conflicts list for x11-common;
     missed earlier because the package only exists on !i386
   * Also conflict with wmnet 1.0.5-12, which is still shipping
     /usr/X11R6/bin; thanks to Roger Leigh.  Closes: #364007.
+  * Increment the conflict with xfs-xtt, because -6 existed in the
+    archive even if it wasn't released with sarge.  Closes: #364056.
+  * Add additional conflicts for xnest (<= 6.9.0.dfsg.1-6), xterm (<<
+    208-1), and xmh (<= 6.8.2.dfsg.1-4); these packages all depended on
+    a package that x11-common already conflicted with, but that's only
+    enough to force deconfiguration, not removal.
 
  -- Steve Langasek <vorlon@debian.org>  Thu, 20 Apr 2006 15:53:58 -0700
 
