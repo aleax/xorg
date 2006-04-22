@@ -23,10 +23,11 @@ xorg (1:7.0.15) UNRELEASED; urgency=low
     /usr/X11R6/bin; thanks to Roger Leigh.  Closes: #364007.
   * Increment the conflict with xfs-xtt, because -6 existed in the
     archive even if it wasn't released with sarge.  Closes: #364056.
-  * Add additional conflicts for xnest (<= 6.9.0.dfsg.1-6), xterm (<<
-    208-1), and xmh (<= 6.8.2.dfsg.1-4); these packages all depended on
-    a package that x11-common already conflicted with, but that's only
-    enough to force deconfiguration, not removal.
+  * Add additional conflicts for xnest (<= 6.9.0.dfsg.1-6)
+    (closes: #364210), xterm (<< 208-1), and xmh (<= 6.8.2.dfsg.1-4); 
+    these packages all depended on a package that x11-common already
+    conflicted with, but that's only enough to force deconfiguration, not
+    removal.
   
   [ ISHIKAWA Mutsumi ]
   * Debconf translations:
