@@ -76,7 +76,6 @@ msgstr "Idatzi X zerbitzariak erabiltzea nahi duzun balio zuzena."
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -86,14 +85,13 @@ msgid ""
 "default nice value for ordinary processes is 0, and this is also the "
 "recommend value for the X server."
 msgstr ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  They range from -20 (extremely high priority, "
-"or \"not nice\" to other processes) to 19 (extremely low priority).  The "
-"default nice value for ordinary processes is 0.  -10 is a good default for a "
-"single-user workstation; 0 is a good default for a machine that has duties "
-"other than interacting with the console user (such as a web server)."
+"Programaketa berezi bat duen sistema eragile kernel bat erabiltzean, "
+"Kontutan izan behar da X zerbitzariaren performantzia hobetzen dela "
+"lehenetsirikoa baino prozesu lehentasun handiagoa ezartzen; prozesu "
+"lehentasuna balio \"zuzena\" bezala ezagutzen da.  Hau -02 (lehentasun "
+"handiena edo \"ez egokia\" beste prozesuentrat) et 19 (lehentasun oso "
+"txikia) tartean egon behar da.  Prozesu arruntentzat lehentsiriko "
+"lehentasuna 0 da, hau izaten ere X zerbitzariarentzat balio gomendatua."
 
 #. Type: string
 #. Description
@@ -275,7 +273,6 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -284,7 +281,7 @@ msgid ""
 "operations using DRI to work.  Otherwise, the server falls back to software "
 "rendering."
 msgstr ""
-"glx moduluak OpenGL errenderizazioa gaitzen du.  Dri moduluak X zerbitzarian "
+"Glx moduluak OpenGL errenderizazioa gaitzen du.  Dri moduluak X zerbitzarian "
 "\"Direct Rendering Infraestructure (DRI)\" onarpena gaitzen du. Kontutan "
 "izan DRI onarpena kernelean ere gaiturik egon behar dela, bideo txartela eta "
 "instalaturiko hardware-azeleraturiko MESA liburutegiek DRI erabiltzen dute "
@@ -293,7 +290,6 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
 "Display Channel, respectively.  These modules are used to query monitor "
@@ -303,8 +299,8 @@ msgid ""
 "int10 as well."
 msgstr ""
 "vbe eta ddc moduluek VESA BIOS luzapenak eta \"Data Display Channel\" "
-"onarpoenak gaitzen dituzte.  Modulu hauek bideo txartelaren bidez monitore "
-"gaitasunak atzemateko erabiltzen dira. int10 modulua  bigarren VGA txartelak "
+"onarpenak gaitzen dituzte.  Modulu hauek bideo txartelaren bidez monitore "
+"gaitasunak atzemateko erabiltzen dira. int10 modulua bigarren VGA txartelak "
 "soft bidez abiarazteko erabiltzen den modu-errealeko x86 emuladorea da.  "
 "Kontutan izan vbe moduluak intl10 moduluaren beharra duela, beraz vbe gaitu "
 "nai ezkero, intl10 gaitu behar duzu ere."
@@ -406,7 +402,6 @@ msgstr "Idatzi zure bideo txartelarentzat identifikatzaile bat."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
-#, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -415,7 +410,8 @@ msgid ""
 msgstr ""
 "X zerbitzari konfigurazioak zure bideo txartela zuk emandako izenarekin "
 "lotuko du.  Normalean saltzailearen edo egilearen izena modelo izenez "
-"jarraitua izango da, adib,  \"3Dfx Voodoo3\" edo \"ATI Rage Fury Maxx\"."
+"jarraitua izango da, adib, \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
+"6600\"."
 
 #. Type: select
 #. Description
@@ -523,14 +519,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"\"lspci\" komandoa erabili beharko zenuke zure PXI edo AGP txartelaren bus "
-"kokapena atzemateko.  Gogoan izan lspci-k bus-a aurkitzen duen lekua, gailua "
-"eta funtzio zenbakiak hamaseitarretan, ez hamartarretan."
+"\"lspci\" komandoa erabili beharko zenuke zure PXI, PCI-Express edo AGP "
+"bideo txartelaren bus kokapena atzemateko. "
 
 #. Type: string
 #. Description
@@ -616,15 +610,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyborad-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
 "Erabiltzaile aurreratuek ezarritako edozen XKB arau bilduma erabil "
-"dezakete.   xlibs paketea despaketaturik izan bada, begiratu /etc/X11/xkb/"
-"rules direktorioa aukeran dauden arau bildumak ikusteko."
+"dezakete.  xkeyborad-config paketea despaketaturik izan bada, begiratu "
+"/etc/X11/xkb/ rules direktorioa aukeran dauden arau bildumak ikusteko."
 
 #. Type: string
 #. Description
@@ -735,25 +728,24 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
 "Erabiltzaile aurreratuek XKB arau bildumak ezarritako edozein teklatu modelo "
-"erabili dezakte.  xlibs paketea despaketaturik izan bada, begiratu /etc/X11/"
+"erabili dezakte.  xkeyborad-config paketea despaketaturik izan bada, begiratu /etc/X11/"
 "xkb/rules direktorioa aukeran dauden arau bildumak ikusteko."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"E.B Ingeles teklatu erabiltzaileak normalean \"pc104\" aukeratu beharko dute."
+"E.B Ingeles teklatu erabiltzaileak normalean \"pc104\" aukeratu behar dute. "
+"teklatu gehienen erabiltzaileek \"pc105\" aukeratu behar dute."
 
 #. Type: string
 #. Description
@@ -776,15 +768,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
-#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
 "Erabiltzaile aurreratuek XKB arau bildumak ezarritako edozein teklatu modelo "
-"erabili dezakte.  xlibs paketea despaketaturik izan bada, begiratu /etc/X11/"
-"xkb/rules direktorioa aukeran dauden arau bildumak ikusteko."
+"erabili dezakte.  xkeyboard-config paketea despaketaturik izan bada, begiratu "
+"/etc/X11/xkb/rules direktorioa aukeran dauden arau bildumak ikusteko."
 
 #. Type: string
 #. Description
@@ -832,7 +823,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
-#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
@@ -840,8 +830,8 @@ msgid ""
 "variants."
 msgstr ""
 "Erabiltzaile aurreratuek XKB arau bildumak onarturiko edozein aldagaierabili "
-"dezakte.  xlibs paketea despaketaturik izan bada, /etc/X11/xkb/rules/symbols "
-"direktorioa begiratu aukeran dauden aldagaiak ikusteko."
+"dezakte.  xkeyboard-config paketea despaketaturik izan bada, /etc/X11/xkb/"
+"rules/symbols direktorioa begiratu aukeran dauden aldagaiak ikusteko."
 
 #. Type: string
 #. Description
@@ -920,6 +910,8 @@ msgid ""
 "Advanced users can use any options compatible with the selected XKB model, "
 "layout and variant."
 msgstr ""
+"Erbiltzaile aurreratuek XKB modelo, ingurune eta aldagiarekin bateragarri diren "
+"edozein aukera erabil dezakete"
 
 #. Type: string
 #. Description
@@ -1104,7 +1096,6 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
-#, fuzzy
 msgid ""
 "For the \"simple\" option, you need only know the monitor's physical size; "
 "this will set some configuration values appropriate for a typical CRT of the "
@@ -1113,9 +1104,7 @@ msgstr ""
 "\"sinple\" aukeran monitorearentamaina fisikoa bakarrik eskatuko zaizu; "
 "honek tamaina horretako CRT monitore batentzako balio aproposak ezarriko "
 "ditu, baina egokiena baina baxuagoa izan daiteke kalitate handiko CRT "
-"monitore bat baduzu.  (Aukera hau ezgaiturik dago LCD monitore "
-"erabiltzaileentzat, pantaila hauek erresoluzio jakin batentzat "
-"konfiguraturik egoten bait dira)"
+"monitore bat baduzu. "
 
 #. Type: select
 #. Description
@@ -1377,9 +1366,8 @@ msgstr "Zenbakiak ez diren karaktererik ez da onartzen sarrera honetan"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
-#, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Mesedez hautatu zure teklatu ingurunea."
+msgstr "Atzeman teklatu ingurunea."
 
 #. Type: boolean
 #. Description
@@ -1389,6 +1377,9 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"Xorg zerbitzariaren lehenetsiriko treklatu ingurune ezarpena hizkuntza "
+"eta instalatzailean aukeratutako teklatu ingurunearen elkartzean oinarrituko "
+"da."
 
 #. Type: boolean
 #. Description
@@ -1397,6 +1388,8 @@ msgid ""
 "Accept this option if you want the keyboard layout to be redetected.  "
 "Decline it if you want to keep your current layout."
 msgstr ""
+"Aukera hau onartu teklatu ingurunera berriz atzematea nahi baduzu.  "
+"Alde batetara utzu ingurunea mantendu nahi baduzu."
 
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "XKB konfigurazio direktorioa mugitu?"
