@@ -10,4 +10,8 @@ xserver-xorg (1:7.0.15) unstable; urgency=low
     Your old xorg.conf is backed up before this is done so you can revert
     any changes we make automatically.
 
+    Note that there is a bug in the script that allows for duplicate font
+    paths entries after migration. While these should be harmless, you may
+    want to clean them out if they do occur in your xorg.conf.
+
   -- David Nusinow <dnusinow@debian.org>  Mon, 24 Apr 2006 22:39:08 -0400

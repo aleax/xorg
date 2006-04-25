@@ -819,19 +819,42 @@ if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.14" ]; then
     # I'm going to get in so much shit for this...
     warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
       cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
-    # Dump obsolete modules
-    sed -i -e '/^.*Load.*glcore.*$/d' -e '/^.*Load.*speedo.*$/d' $XORGCONFIG
-    # Change font paths for the fonts xorg-x11 used to ship
-    sed -i -e 's/usr\/lib\/X11\/fonts\/misc/usr\/share\/fonts\/X11\/misc/g' $XORGCONFIG
-    sed -i -e 's/usr\/lib\/X11\/fonts\/cyrillic/usr\/share\/fonts\/X11\/cyrillic/g' $XORGCONFIG
-    sed -i -e 's/usr\/lib\/X11\/fonts\/100dpi/usr\/share\/fonts\/X11\/100dpi/g' $XORGCONFIG
-    sed -i -e 's/usr\/lib\/X11\/fonts\/75dpi/usr\/share\/fonts\/X11\/75dpi/g' $XORGCONFIG
-    sed -i -e 's/usr\/lib\/X11\/fonts\/Type1/usr\/share\/fonts\/X11\/Type1/g' $XORGCONFIG
-    sed -i -e 's/usr\/lib\/X11\/fonts\/CID/usr\/share\/fonts\/X11\/CID/g' $XORGCONFIG
-    # Delete the module path
-    sed -i -e '/^.*ModulePath.*$/d' $XORGCONFIG 
-    # Delete the rgb path
-    sed -i -e '/^.*RgbPath.*$/d' $XORGCONFIG 
+    sed -e'
+	# Dump obsolete modules
+	/^[[:space:]]*Section[[:space:]]\+"Module"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
+		/^[[:space:]]*Load[[:space:]]\+"GLcore"[[:space:]]*$/d
+		/^[[:space:]]*Load[[:space:]]\+"speedo"[[:space:]]*$/d
+	}
+	/^[[:space:]]*Section[[:space:]]\+"Files"[[:space:]]*$/,/*[[:space:]]*EndSection[[:space:]]*$/ {
+		# Delete the module path
+		/^[[:space:]]*ModulePath[[:space:]]\+/d
+		# Delete the rgb path
+		/^[[:space:]]*RgbPath[[:space:]]\+/d
+		# Change font paths for the fonts xorg-x11 used to ship
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/misc"[[:space:]]*$/d
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/cyrillic"[[:space:]]*$/d
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/100dpi"[[:space:]]*$/d
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/75dpi"[[:space:]]*$/d
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Type1"[[:space:]]*$/d
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/CID"[[:space:]]*$/d
+		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Speedo"[[:space:]]*$/d
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/misc"[[:space:]]*$/i\
+	FontPath	"/usr/share/fonts/X11/misc"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/cyrillic"[[:space:]]*$/i\
+	FontPath	"/usr/share/fonts/X11/cyrillic"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/100dpi"[[:space:]]*$/i\
+	FontPath	"/usr/share/fonts/X11/100dpi"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/75dpi"[[:space:]]*$/i\
+	FontPath	"/usr/share/fonts/X11/75dpi"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/Type1"[[:space:]]*$/i\
+	FontPath	"/usr/share/fonts/X11/Type1"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/i\
+	FontPath	"/usr/share/fonts/X11/CID"
+	}
+	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
+	chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
+	chmod --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
+	mv ${XORGCONFIG}.madwizard-new $XORGCONFIG
   fi
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
