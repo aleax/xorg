@@ -26,10 +26,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xorg-x11 6.8.2.dfsg.1-4\n"
+"Project-Id-Version: xorg 7.0.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-25 00:52+0200\n"
-"PO-Revision-Date: 2005-07-28 18:21+0100\n"
+"PO-Revision-Date: 2006-04-25 13:21+0200\n"
 "Last-Translator: David Martínez Moreno <ender@debian.org>\n"
 "Language-Team: ES <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -89,16 +88,15 @@ msgid ""
 "default nice value for ordinary processes is 0, and this is also the "
 "recommend value for the X server."
 msgstr ""
-"Está ampliamente demostrado que el rendimiento del servidor X mejora si se "
-"está ejecutando con una prioridad mayor que la predeterminada; la prioridad "
-"de un proceso se conoce como su valor de «nice». Éste puede variar desde -20 "
-"(una prioridad extremadamente alta, o «not nice» (nada amable) con el resto "
-"de procesos) hasta 19 (una prioridad extremadamente baja). El valor por "
-"defecto de «nice» para los procesos ordinarios es 0. Por tanto, -10 es un "
-"buen valor por defecto para una estación de trabajo monousuario, y 0 es n "
-"buen valor por defecto para una máquina que tenga otras tareas además de "
-"tener que interactuar con el usuario de consola (como por ejemplo, un "
-"servidor web)."
+"Cuando se usan núcleos del sistema operativo configurados con una estrategia "
+"particular de planificación de procesos, está ampliamente demostrado que el "
+"rendimiento del servidor X mejora si se ejecuta con una prioridad mayor que "
+"la predeterminada; la prioridad de un proceso se conoce como su valor de "
+"«nice». Éste puede variar desde -20 (una prioridad extremadamente alta, o "
+"«not nice» (nada amable) con el resto de procesos) hasta 19 (una prioridad "
+"extremadamente baja). El valor por defecto de «nice» para los procesos "
+"ordinarios es 0, y este valor es un buen valor predeterminado para el "
+"servidor de X."
 
 #. Type: string
 #. Description
@@ -285,7 +283,6 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The glx module enables support for OpenGL rendering.  The dri module enables "
 "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
@@ -294,18 +291,17 @@ msgid ""
 "operations using DRI to work.  Otherwise, the server falls back to software "
 "rendering."
 msgstr ""
-"Los módulos GLCore y glx activan el renderizado OpenGL por software. El "
-"módulo dri activa el soporte en el servidor X de la Infraestructura de "
-"Renderizado Directo (en inglés, Direct Rendering Infrastructure, DRI). Tenga "
-"en cuenta que para que las operaciones de 3D aceleradas por hardware que "
-"usen DRI funcionen, el soporte DRI también ha de existir en el núcleo, en la "
-"tarjeta de vídeo y en la versión instalada de las bibliotecas Mesa. De otra "
-"forma, el servidor simplemente usa renderizado por software."
+"El módulo glx activa el soporte de renderizado OpenGL. El módulo dri activa "
+"el soporte en el servidor X de la Infraestructura de Renderizado Directo (en "
+"inglés, Direct Rendering Infrastructure, DRI). Tenga en cuenta que para que "
+"las operaciones de 3D aceleradas por hardware que usen DRI funcionen, el "
+"soporte DRI también ha de existir en el núcleo, en la tarjeta de vídeo y en "
+"la versión instalada de las bibliotecas Mesa. De otra forma, el servidor "
+"simplemente usa renderizado por software."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:66
-#, fuzzy
 msgid ""
 "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
 "Display Channel, respectively.  These modules are used to query monitor "
@@ -314,13 +310,13 @@ msgid ""
 "module depends on the int10 module, so if you wish to enable vbe, enable "
 "int10 as well."
 msgstr ""
-"Los módulos vbe y ddc activan el soporte para las extensiones de BIOS VESA "
-"(VESA BIOS Extensions) y Data Display Channel, respectivamente. Estos "
-"módulos se usan para consultar las capacidades del monitor a través de la "
-"tarjeta de vídeo. El módulo int10 es un emulador de x86 en modo real usado "
-"para iniciar en modo soft tarjetas VGA secundarias. Observe que el módulo "
-"vbe depende del módulo int10, así que si desea activar vbe debe activar "
-"int10 al mismo tiempo."
+"Los módulos vbe y ddc activan el soporte para las extensiones de BIOS VESA y "
+"para Data Display Channel, respectivamente. Estos módulos se usan para "
+"consultar las capacidades del monitor a través de la tarjeta de vídeo. El "
+"módulo int10 es un emulador de x86 en modo real usado para iniciar en "
+"caliente («softboot») tarjetas VGA secundarias. Sepa que el módulo vbe "
+"depende del módulo int10, así que si desea activar vbe, debe activar int10 "
+"así mismo."
 
 #. Type: multiselect
 #. Description
@@ -423,7 +419,6 @@ msgstr "Introduza un identificador para su tarjeta de vídeo."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:118
-#, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -432,8 +427,8 @@ msgid ""
 msgstr ""
 "El fichero de configuración del servidor X asocia su tarjeta de vídeo con un "
 "nombre que usted puede proporcionar. Éste es normalmente la marca o el "
-"nombre del vendedor seguido del nombre del modelo, p. ej.: «3Dfx Voodoo3» o "
-"«ATI Rage Fury Maxx»."
+"nombre del vendedor seguido del nombre del modelo, p. ej.: «Intel i915», "
+"«RATI Radeon X800» o «NVIDIA GeForce 6600»."
 
 #. Type: select
 #. Description
@@ -546,14 +541,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:146
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"Puede que quiera usar la orden «lspci» para determinar la localización en el "
-"bus de su tarjeta de vídeo PCI o AGP. Tenga en mente que lspci devuelve el "
-"bus, dispositivo y números de función en hexadecimal, no en decimal."
+"Puede que quiera usar la orden «lspci -X» para determinar la localización en "
+"el bus de su tarjeta de vídeo PCI, AGP o PCI-Express."
 
 #. Type: string
 #. Description
@@ -645,15 +638,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:186
-#, fuzzy
 msgid ""
 "Advanced users can use any defined XKB rule set.  If the xkeyboard-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
 "Los usuarios avanzados pueden usar cualquier conjunto de reglas XKB "
-"definido. Si el paquete xlibs ha sido desempaquetado, vea en el directorio /"
-"etc/X11/xkb/rules los conjuntos de reglas disponibles."
+"definido. Si el paquete xkeyboard-config se ha desempaquetado, vea en el "
+"directorio /etc/X11/xkb/rules los conjuntos de reglas disponibles."
 
 #. Type: string
 #. Description
@@ -765,26 +757,25 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Advanced users can use any model defined by the selected XKB rule set.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
 "Los usuarios avanzados pueden usar cualquier modelo definido por el conjunto "
-"de reglas XKB que hayan seleccionado. Si el paquete xlibs ha sido "
+"de reglas XKB que hayan seleccionado. Si el paquete xkeyboard-config se ha "
 "desempaquetado, vea en el directorio /etc/X11/xkb/rules los conjuntos de "
 "reglas disponibles."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:201
-#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"Los usuarios de teclados Americanos o ingleses deberían introducir «pc104». "
+"Los usuarios de teclados estadounidenses deberían introducir «pc104», y los "
+"usuarios de prácticamente el resto de teclados deberían usar «pc105»."
 
 #. Type: string
 #. Description
@@ -807,14 +798,13 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:242
-#, fuzzy
 msgid ""
 "Advanced users can use any layout supported by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
 "Los usuarios avanzados pueden usar cualquier modelo definido por el conjunto "
-"de reglas XKB que hayan seleccionado. Si el paquete xlibs ha sido "
+"de reglas XKB que hayan seleccionado. Si el paquete xkeyboard-config se ha "
 "desempaquetado, vea en el directorio /etc/X11/xkb/rules los conjuntos de "
 "reglas disponibles."
 
@@ -826,10 +816,10 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"Los usuarios de teclados ingleses de EE. UU. deberían escoger «us». Los "
-"usuarios de teclados preparados para otros países deberían en general "
-"introducir su código de país ISO 3166. Por ejemplo, Francia utiliza «fr», y "
-"España utiliza «es»."
+"Los usuarios de teclados estadounidenses deberían escoger «us». Los usuarios "
+"de teclados preparados para otros países deberían en general introducir su "
+"código de país ISO 3166. Por ejemplo, Francia utiliza «fr», y España utiliza "
+"«es»."
 
 #. Type: string
 #. Description
@@ -866,7 +856,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:257
-#, fuzzy
 msgid ""
 "Advanced users can use any variant supported by the selected XKB layout.  If "
 "the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols "
@@ -874,7 +863,7 @@ msgid ""
 "variants."
 msgstr ""
 "Los usuarios avanzados pueden usar cualquier variante para la que ofrezca "
-"soporte el diseño de XKB escogido. Si el paquete de xlibs ha sido "
+"soporte el diseño de XKB escogido. Si el paquete de xkeyboard-config se ha "
 "desempaquetado, puede ver las variantes disponibles en el fichero que "
 "corresponde al diseño que ha seleccionado, y que puede encontrar en el "
 "directorio /etc/X11/xkb/symbols."
@@ -885,8 +874,8 @@ msgstr ""
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
-"Los usuarios de teclados ingleses de EE. UU. deberían en general dejar este "
-"campo en blanco."
+"Los usuarios de teclados americanos deberían en general dejar este campo en "
+"blanco."
 
 #. Type: string
 #. Description
@@ -1147,7 +1136,6 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:370
-#, fuzzy
 msgid ""
 "For the \"simple\" option, you need only know the monitor's physical size; "
 "this will set some configuration values appropriate for a typical CRT of the "
@@ -1156,9 +1144,7 @@ msgstr ""
 "Para la opción «simple», sólo necesita saber el tamaño físico del monitor; "
 "con eso se darán algunos valores de configuración apropiados para un monitor "
 "CRT típico del tamaño correspondiente, pero pueden no ser los óptimos para "
-"monitores CRT de buena calidad. (Esta opción está desactivada para usuarios "
-"de pantallas LCD, ya que tales pantallas están configuradas para una "
-"resolución en particular)."
+"monitores CRT de buena calidad."
 
 #. Type: select
 #. Description
@@ -1428,9 +1414,8 @@ msgstr "En esta entrada no se permiten caracteres que no sean números."
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:482
-#, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Por favor, seleccione el diseño de su teclado."
+msgstr "¿Se debe autodetectar el diseño de su teclado?"
 
 #. Type: boolean
 #. Description
@@ -1440,6 +1425,9 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"La selección del diseño predeterminado de teclado para el servidor Xorg "
+"estará basado en una combinación del idioma y el diseño de teclado "
+"seleccionados en el instalador."
 
 #. Type: boolean
 #. Description
@@ -1448,6 +1436,8 @@ msgid ""
 "Accept this option if you want the keyboard layout to be redetected.  "
 "Decline it if you want to keep your current layout."
 msgstr ""
+"Use esta opción si quiere que se detecte de nuevo el diseño de teclado. No "
+"lo haga si quiere mantener su diseño actual."
 
 #~ msgid "Migrate XKB configuration directory?"
 #~ msgstr "¿Quiere migrar el directorio de configuración de XKB?"
@@ -1715,67 +1705,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Los usuarios de máquinas que no sean PowerPC o SGI Indigo2 XL y que "
 #~ "tengan una sola tarjeta de vídeo deberían dejar este campo en blanco."
-
-#~ msgid ""
-#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
-#~ "rule sets."
-#~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier conjunto de reglas XKB "
-#~ "definido. Si el paquete xlibs ha sido desempaquetado, vea en el "
-#~ "directorio /etc/X11/xkb/rules los conjuntos de reglas disponibles."
-
-#~ msgid ""
-#~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets."
-#~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier modelo definido por el "
-#~ "conjunto de reglas XKB que hayan seleccionado. Si el paquete xlibs ha "
-#~ "sido desempaquetado, vea en el directorio /etc/X11/xkb/rules los "
-#~ "conjuntos de reglas disponibles."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr ""
-#~ "Los usuarios de teclados Americanos o ingleses deberían introducir "
-#~ "«pc104». "
-
-#~ msgid ""
-#~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
-#~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier diseño para el que el "
-#~ "conjunto de reglas XKB que hayan escogido tenga soporte. Vea en el "
-#~ "directorio /etc/X11/xkb/rules los conjuntos de reglas disponibles, y en "
-#~ "el directorio /etc/X11/xkb/symbols los diseños disponibles."
-
-#~ msgid ""
-#~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
-#~ "directory for the file corresponding to your selected layout for "
-#~ "available variants."
-#~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier variante para la que ofrezca "
-#~ "soporte el diseño de XKB escogido. Si el paquete de xlibs ha sido "
-#~ "desempaquetado, puede ver las variantes disponibles en el fichero que "
-#~ "corresponde al diseño que ha seleccionado, y que puede encontrar en el "
-#~ "directorio /etc/X11/xkb/symbols."
-
-#~ msgid ""
-#~ "Advanced users can use any options compatible with the selected XKB "
-#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
-#~ msgstr ""
-#~ "Los usuarios avanzados pueden usar cualquier opción compatible con el "
-#~ "modelo, diseño y variante XKB seleccionados. Si el paquete xlibs ha sido "
-#~ "desempaqueteado, consulte los ficheros de opciones disponibles en el "
-#~ "directorio /etc/X11/xkb/symbols, en los que se definen sólamente "
-#~ "traducciones parciales de teclado (por ejemplo, /etc/X11/xkb/symbols/"
-#~ "ctrl)."
 
 #~ msgid "Enable scroll events from mouse wheel?"
 #~ msgstr "¿Activar eventos de desplazamiento con la rueda del ratón?"
