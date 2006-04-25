@@ -837,7 +837,7 @@ if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.14" ]; then
 		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/75dpi"[[:space:]]*$/d
 		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Type1"[[:space:]]*$/d
 		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/CID"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Speedo"[[:space:]]*$/d
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Speedo"[[:space:]]*$/d
 		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/misc"[[:space:]]*$/i\
 	FontPath	"/usr/share/fonts/X11/misc"
 		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/cyrillic"[[:space:]]*$/i\
