@@ -817,8 +817,8 @@ if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.14" ]; then
     rm -f "$NEW_XORGCONFIG"
   else
     # I'm going to get in so much shit for this...
-    warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $XORGCONFIG.old. If we screw something up, restore using this file."
-    cp $XORGCONFIG $XORGCONFIG.old
+    warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
+      cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
     # Dump obsolete modules
     sed -i -e '/^.*Load.*glcore.*$/d' -e '/^.*Load.*speedo.*$/d' $XORGCONFIG
     # Change font paths for the fonts xorg-x11 used to ship
