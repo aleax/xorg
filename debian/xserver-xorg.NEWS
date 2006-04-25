@@ -1,0 +1,13 @@
+xserver-xorg (1:7.0.15) unstable; urgency=low
+
+  * As of this release, we now begin actively modifying customized
+    xorg.conf's. We now do the following:
+    + Remove lines to load the glcore and speedo modules
+    + Update the font paths for misc, cyrillic, Type1, 100dpi, and 75dpi fonts
+      to be /usr/share/fonts/X11 rather than /usr/lib/X11/fonts
+    + Remove the ModulePath and RgbPath directives if present
+
+    Your old xorg.conf is backed up before this is done so you can revert
+    any changes we make automatically.
+
+  -- David Nusinow <dnusinow@debian.org>  Mon, 24 Apr 2006 22:39:08 -0400

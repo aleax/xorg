@@ -779,7 +779,7 @@ else
 fi
 
 # here's a novel concept: DON'T TOUCH THE CONFIG ON UPGRADES
-if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.11" ]; then
+if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.14" ]; then
   # compare the current and stored checksums; if they do not match, assume
   # that's the way the user wants it.  if we're reconfiguring, overwrite
   # it regardless and back it up.
@@ -816,7 +816,22 @@ if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.11" ]; then
     fi
     rm -f "$NEW_XORGCONFIG"
   else
-    warn "not updating $XORGCONFIG; file has been customized"
+    # I'm going to get in so much shit for this...
+    warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $XORGCONFIG.old. If we screw something up, restore using this file."
+    cp $XORGCONFIG $XORGCONFIG.old
+    # Dump obsolete modules
+    sed -i -e '/^.*Load.*glcore.*$/d' -e '/^.*Load.*speedo.*$/d' $XORGCONFIG
+    # Change font paths for the fonts xorg-x11 used to ship
+    sed -i -e 's/usr\/lib\/X11\/fonts\/misc/usr\/share\/fonts\/X11\/misc/g' $XORGCONFIG
+    sed -i -e 's/usr\/lib\/X11\/fonts\/cyrillic/usr\/share\/fonts\/X11\/cyrillic/g' $XORGCONFIG
+    sed -i -e 's/usr\/lib\/X11\/fonts\/100dpi/usr\/share\/fonts\/X11\/100dpi/g' $XORGCONFIG
+    sed -i -e 's/usr\/lib\/X11\/fonts\/75dpi/usr\/share\/fonts\/X11\/75dpi/g' $XORGCONFIG
+    sed -i -e 's/usr\/lib\/X11\/fonts\/Type1/usr\/share\/fonts\/X11\/Type1/g' $XORGCONFIG
+    sed -i -e 's/usr\/lib\/X11\/fonts\/CID/usr\/share\/fonts\/X11\/CID/g' $XORGCONFIG
+    # Delete the module path
+    sed -i -e '/^.*ModulePath.*$/d' $XORGCONFIG 
+    # Delete the rgb path
+    sed -i -e '/^.*RgbPath.*$/d' $XORGCONFIG 
   fi
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
