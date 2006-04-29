@@ -817,8 +817,8 @@ if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.14" ]; then
     rm -f "$NEW_XORGCONFIG"
   else
     # I'm going to get in so much shit for this...
+    BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
     warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
-      BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
       cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
     sed -e'
 	# Dump obsolete modules
