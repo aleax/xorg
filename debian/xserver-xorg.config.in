@@ -460,7 +460,7 @@ fi
 # migrate from old select-type templates
 for TEMPLATE in xserver-xorg/config/inputdevice/mouse/emulate3buttons \
                 xserver-xorg/config/inputdevice/mouse/zaxismapping; do
-  db_get "$TEMPLATE"
+  db_get "$TEMPLATE" || continue
   if [ "$RET" = "Yes" ]; then
     db_set $TEMPLATE "true"
   elif [ "$RET" = "No" ]; then

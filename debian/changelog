@@ -2,8 +2,12 @@ xorg (1:7.0.16) UNRELEASED; urgency=low
 
   * Define the backup config file name before we tell people where we're
     backing up :-) Thanks Frans Pop and Flavio Stanchin. (closes: 365278)
+  * Prevent the xserver-xorg config from failing during migration of
+    zaxismapping and emulate3buttons questions when they don't exist. Thanks
+    Rodney Gordon II, Adam Borowski. Thanks to Steven Brown for a fix. 
+    (closes: #365282)
 
- -- David Nusinow <dnusinow@debian.org>  Sat, 29 Apr 2006 13:25:24 -0400
+ -- David Nusinow <dnusinow@debian.org>  Sat, 29 Apr 2006 15:44:42 -0400
 
 xorg (1:7.0.15) unstable; urgency=low
   
