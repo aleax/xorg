@@ -458,14 +458,19 @@ if [ -n "$FIRSTINST" ] && [ -z "$RECONFIGURE" ] && [ -n "$XF86TEMPLATELIST" ]; t
 fi
 
 # migrate from old select-type templates
-for TEMPLATE in xserver-xorg/config/inputdevice/mouse/emulate3buttons \
-                xserver-xorg/config/inputdevice/mouse/zaxismapping; do
+for TEMPLATE in xserver-xorg/config/inputdevice/mouse/emulate3buttons ; do
   db_get "$TEMPLATE" || continue
   if [ "$RET" = "Yes" ]; then
     db_set $TEMPLATE "true"
   elif [ "$RET" = "No" ]; then
     db_set $TEMPLATE "false"
   fi
+done
+
+# Delete obsolete templates
+for TEMPLATE in xserver-xorg/config/inputdevice/mouse/zaxismapping; do
+  db_get "$TEMPLATE" || continue
+  db_unregister "$TEMPLATE"
 done
 
 # migrate from "expert" to "advanced"
