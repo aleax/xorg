@@ -783,7 +783,7 @@ else
 fi
 
 # here's a novel concept: DON'T TOUCH THE CONFIG ON UPGRADES
-if [ -z "$UPGRADE" ] || [ dpkg --compare-versions "$2" le "1:7.0.14" ]; then
+if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
   # compare the current and stored checksums; if they do not match, assume
   # that's the way the user wants it.  if we're reconfiguring, overwrite
   # it regardless and back it up.
