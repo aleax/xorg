@@ -59,15 +59,15 @@ fi
 
 # only mess with config file it exists; otherwise, assume that's the way the
 # user wants it, but only if upgrading
-if [ -e "$XWRAPPER_CONFIG" ] || [ -z "$UPGRADE" ]; then
+if [ -e "$XWRAPPER_CONFIG" ] || [ -n "$2" ]; then
   # similarly, check for the existence of the checksum file; if it doesn't
   # exist, assume that's the way the user wants it, but only if upgrading
-  if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ] || [ -z "$UPGRADE" ]; then
+  if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ] || [ -n "$2" ]; then
     # next, compare the current and stored checksums; if they do not match,
     # assume that's the way the user wants it ... upgrading etc
     if [ "$(md5sum "$XWRAPPER_CONFIG" 2>/dev/null)" = \
          "$(cat "$XWRAPPER_CONFIG_CHECKSUM" 2>/dev/null)" ] || \
-       [ -z "$UPGRADE" ]; then
+       [ -n "$2" ]; then
       # they match; prepare a new version of the config file
       ALLOWED_USERS=
       if db_get x11-common/xwrapper/actual_allowed_users; then
