@@ -117,7 +117,7 @@ else
 fi
 
 # Clean up my idiocy
-if [ -z "$UPGRADE" ] && [ dpkg --compare-versions "$2" eq "1:7.0.16" ]; then
+if dpkg --compare-versions "$2" eq "1:7.0.16"; then
   if [ -e "/etc/X11/Xsession.xfree86" ] && [ ! -e "/etc/X11/Xsession" ]; then
     mv "/etc/X11/Xsession.xfree86" "/etc/X11/Xsession"
   fi
