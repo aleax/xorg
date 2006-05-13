@@ -2,48 +2,50 @@ Template: xserver-xorg/autodetect_video_card
 Type: boolean
 Default: true
 _Description: Attempt to autodetect video hardware?
- Accept this option if you would like to attempt to autodetect the recommended
- X server and driver module for your video card.  If autodetection fails, you
+ You should choose this option if you would like to attempt to autodetect the recommended
+ X server and driver module for your video card.  If the autodetection fails, you
  will be asked to specify the desired X server and/or driver module.  If
- autodetection succeeds, further debconf questions about your video hardware
+ it succeeds, further configuration questions about your video hardware
  will be pre-answered.
  .
- If you would rather select the X server and driver module yourself, decline
+ If you would rather select the X server and driver module yourself, do not choose
  this option.  You will not be asked to select the X server if there is only
  one available.
 
 Template: shared/no_known_x-server
 Type: note
-_Description: No X server known for your video hardware.
- Either you have no video hardware installed on this machine (serial console
- only?), or the "discover" program was unable to determine which X server is
- appropriate for your video hardware.  This could be due to incomplete
- information in discover's hardware database, or it could be that your video
- hardware is simply not supported by any available X servers.
+_Description: No X server known for your video hardware
+ There is either no video hardware installed on this machine (e.g. serial console
+ only), or the "discover" program was unable to determine which X server is
+ appropriate for the video hardware.  This could be due to incomplete
+ information in discover's hardware database, or because your video
+ hardware is not supported by the available X servers.
 
 Template: shared/multiple_possible_x-servers
 Type: note
-_Description: Multiple potential default X servers for your hardware.
+_Description: Multiple potential default X servers for your hardware
  Multiple video cards have been detected, and different X servers are required
  to support the various devices.  It is thus not possible to automatically
- select a default X server.  Please configure the device that will serve as
- your computer's "primary head"; this is generally the video card and monitor
- to which the computer displays when it first boots.
+ select a default X server.
  .
- At the present time, only a single-headed setup is supported by debconf;
- however, the X server configuration files can be edited to support a
+ Please configure the device that will serve as
+ this computer's "primary head"; this is generally the video card and monitor
+ used for display when the computer is booted up.
+ .
+ The configuration process currently only supports single-headed setups;
+ however, the X server configuration files can be edited later to support a
  multi-head configuration.
 
 Template: shared/default-x-server
 Type: select
 Choices: ${choices}
-_Description: Select the desired default X server.
- The X server is the hardware interface of the X Window System.  Its job is to
- communicate with video display and input devices, providing a foundation for
+_Description: Desired default X server:
+ The X server is the hardware interface of the X Window System.  It
+ communicates with the video display and input devices, providing a foundation for
  the chosen Graphical User Interface (GUI).
  .
  Several X servers may be available; the default is selected via the
- /etc/X11/X symbolic link.  Some X servers may not work with your particular
+ /etc/X11/X symbolic link.  Some X servers may not work with some particular
  graphics hardware.
 
 Template: xserver-xorg/config/write_files_section
@@ -52,10 +54,10 @@ Default: true
 _Description: Write default Files section to configuration file?
  The Files section of the X server configuration file tells the X server where
  to find server modules, the RGB color database, and font files.  This option
- is for advanced users.  In most cases, you should enable it.
+ is recommended to experienced users only.  In most cases, it should be enabled.
  .
- Disable this option if you want to write your own "Files" section into the
- X.Org server configuration file.  You may wish to do this if you need to
+ Disable this option if you want to maintain a custom "Files" section into the
+ X.Org server configuration file.  This may be needed to
  remove the reference to the local font server, add a reference to a different
  font server, or rearrange the default set of local font paths.
 
@@ -63,59 +65,51 @@ Template: xserver-xorg/config/modules
 Type: multiselect
 Choices: bitmap, dbe, ddc, dri, extmod, freetype, glx, int10, record, type1, v4l, vbe
 Default: bitmap, dbe, ddc, dri, extmod, freetype, glx, int10, record, type1, vbe
-_Description: Select the X.Org server modules that should be loaded by default.
- It is possible to customize (or completely omit) the list of modules that the
- X server loads by default.  This option is for advanced users.  In most
+_Description: X.Org server modules that should be loaded by default:
+ This option is recommended to experienced users only.  In most
  cases, all of these modules should be enabled.
  .
- The glx module enables support for OpenGL rendering.  The dri module enables
- support in the X server for Direct Rendering Infrastructure (DRI).  Note that
- support for DRI must also exist in the kernel, the video card, and the
- installed version of the Mesa libraries for hardware-accelerated 3D
- operations using DRI to work.  Otherwise, the server falls back to software
- rendering.
- .
- The vbe and ddc modules enable support for VESA BIOS Extensions and Data
- Display Channel, respectively.  These modules are used to query monitor
- capabilties via the video card.  The int10 module is a real-mode x86 emulator
- that is used to softboot secondary VGA cards.  Note that the vbe module
- depends on the int10 module, so if you wish to enable vbe, enable int10 as
- well.
- .
- The dbe module enables the double-buffering extension in the server, and is
- useful for animation and video operations.
- .
- The extmod module enables many traditional and commonly used extensions, such
- as shaped windows, shared memory, video mode switching, DGA, and Xv.  The
- record module implements the RECORD extension, commonly used in server
- testing.
- .
- The bitmap, freetype, and type1 modules are all font rasterizers.
+  - glx   : support for OpenGL rendering;
+  - dri   : support in the X server for DRI (Direct Rendering Infrastructure);
+  - vbe   : support for VESA BIOS Extensions. Allows to query
+            the monitor capabilities via the video card;
+  - ddc   : support for Data Display Channel, respectively. Allows to query
+            the monitor capabilties via the video card;
+  - int10 : real-mode x86 emulator used to softboot secondary VGA cards.
+            Should be enabled if vbe is enabled;
+  - dbe   : enables the double-buffering extension in the server.
+            Useful for animation and video operations;
+  - extmod: enables many traditional and commonly used extensions, such as
+            shaped windows, shared memory, video mode switching, DGA, and Xv;
+  - record: implements the RECORD extension, often used in server testing;
+  - bitmap: font rasterizer (so are freetype, and type1 modules).
  .
  For further information about these modules, please consult the X.Org
  documentation.
- .
- If you unsure what to do, leave all of the modules enabled.  Advanced users
- may wish to disable all modules -- in which case no Modules section will be
- written to the X server configuration file -- and add their own Modules
- section to the file manually.
 
 Template: xserver-xorg/multiple_possible_x-drivers
 Type: note
-_Description: Multiple potential default X.Org server drivers for your hardware.
+_Description: Multiple potential default X.Org server drivers for the hardware
+ Multiple video cards have been detected, and different X servers are required
+ to support the various devices.  It is thus not possible to automatically
+ select a default X server.  Please configure the device that will serve as
+ this computer's "primary head"; this is generally the video card and monitor
+ used for display when the computer is booted up.
  Multiple video cards have been detected, and different drivers are required
  to support the various devices.  It is thus not possible to automatically
- select a default X.Org server driver.  Please configure the device that
- will serve as your computer's "primary head"; this is generally the video
- card and monitor to which the computer displays when it first boots.
+ select a default X.Org server driver.
  .
- At the present time, only a single-headed setup is supported by debconf;
- however, the X server configuration files can be edited to support a
+ Please configure the device that will serve as
+ this computer's "primary head"; this is generally the video card and monitor
+ used for display when the computer is booted up.
+ .
+ The configuration process currently only supports single-headed setups;
+ however, the X server configuration files can be edited later to support a
  multi-head configuration.
 
 Template: xserver-xorg/config/device/identifier
 Type: string
-_Description: Enter an identifier for your video card.
+_Description: Identifier for your video card:
  The X server configuration file associates your video card with a name that
  you may provide.  This is usually the vendor or brand name followed by the
  model name, e.g., "Intel i915", "ATI RADEON X800", or "NVIDIA GeForce 6600".
@@ -123,7 +117,7 @@ _Description: Enter an identifier for your video card.
 Template: xserver-xorg/config/device/driver
 Type: select
 Choices: ${choices}
-_Description: Select the desired X server driver.
+_Description: X server driver:
  For the X Window System graphical user interface to operate correctly, it is
  necessary to select a video card driver for the X server.
  .
@@ -143,7 +137,8 @@ _Description: Use kernel framebuffer device interface?
 
 Template: xserver-xorg/config/device/bus_id
 Type: string
-_Description: Please enter the video card's bus identifier.
+#flag:!translate:4
+_Description: Video card's bus identifier:
  Users of PowerPC machines, and users of any computer with multiple video
  devices, should specify the BusID of the video card in an accepted
  bus-specific format.
@@ -166,71 +161,59 @@ _Description: Please enter the video card's bus identifier.
 
 Template: xserver-xorg/config/device/bus_id_error
 Type: note
-_Description: Please enter a bus identifier in the proper format.
- The BusID entered was not in a recognized format.
+_Description: Incorrect format for the bus identifier
 
 Template: xserver-xorg/config/device/video_ram
 Type: string
-_Description: Enter the amount of memory (in kB) to be used by your video card.
- Typically, the amount of dedicated memory your video card has is autodetected
+_Description: Amount of memory (kB) to be used by the video card:
+ Typically, the amount of dedicated memory used by the video card is autodetected
  by the X server, but some integrated video chips (such as the Intel i810)
  have little or no video memory of their own, and instead borrow main system
  memory for their needs.
  .
- It is perfectly acceptable to leave this parameter blank; only if your video
- card lacks RAM, or if the X server has trouble autodetecting the amount, is
- it necessary to specify the amount of video RAM.
+ This parameter should usually be left blank and specified only if the video
+ card lacks RAM, or if the X server has trouble autodetecting the RAM size.
 
 Template: xserver-xorg/config/inputdevice/keyboard/rules
 Type: string
-_Description: Please select the XKB rule set to use.
- For the X server to handle your keyboard correctly, an XKB rule set must be
+_Description: XKB rule set to use:
+ For the X server to handle the keyboard correctly, an XKB rule set must be
  chosen.
  .
  Users of most keyboards should enter "xorg".  Users of Sun Type 4 and Type
  5 keyboards, however, should enter "sun".
  .
- Advanced users can use any defined XKB rule set.  If the xkeyboard-config
+ Experienced users can use any defined XKB rule set.  If the xkeyboard-config
  package has been unpacked, see the /etc/X11/xkb/rules directory for
  available rule sets.
  .
- If you don't know what rule set to use, enter "xorg".
+ When in doubt, this value should be set to "xorg".
 
 Template: xserver-xorg/config/inputdevice/keyboard/model
 Type: string
-_Description: Please select your keyboard model.
- For the X server to handle your keyboard correctly, a keyboard model must be
+_Description: Keyboard model:
+ For the X server to handle the keyboard correctly, a keyboard model must be
  entered.  Available models depend on which XKB rule set is in use.
  .
- The "pc101" keyboard is a traditional IBM PC/AT style keyboard with 101 keys,
- historically common in the United States.  It does not have the "logo" or
- "menu" keys.
- .
- The "pc104" keyboard is like the pc101 model, with additional keys.  These
- keys are usually engraved with a "logo" symbol (there is typically a pair of
- these, between each set of control and alt keys), and a "menu" key.
- .
- The "pc102" and "pc105" models are versions of the pc101 and pc104 keyboards,
- respectively, often found in Europe.  If your keyboard has a "< >" key (a
- single key engraved with both the less-than and greater-than symbols), you
- likely have a "pc102" or "pc105" model; if you choose "pc101" or "pc104"
- instead, your "< >" key might not work.
- .
- The "macintosh" model is for Macintosh keyboards where the kernel and console
- tools use the new input layer which uses Linux keycodes; "macintosh_old" is
- for Macintosh keyboard users who are not using the new input layer.
- .
- All of the above models use the "xorg" rule set.
- .
- The "type4" and "type5" models are for Sun Type4 and Type5 keyboards,
- respectively.  These models can only be used if the "sun" XKB rule set is in
- use.
+  With the "xorg" rule set:
+  - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in
+           the United States.  Has no "logo" or "menu" keys;
+  - pc104: similar to pc101 model, with additional keys, usually engraved
+           with a "logo" symbol and a "menu" symbol;
+  - pc102: similar to pc101 and often found in Europe. Includes a "< >" key;
+  - pc105: similar to pc104 and often found in Europe. Includes a "< >" key;
+  - macintosh: Macintosh keyboards using the new input layer with Linux
+               keycodes;
+  - macintosh_old: Macintosh keyboards not using the new input layer.
+  With the "sun" rule set:
+  - type4: Sun Type4 keyboards;
+  - type5: Sun Type4 keyboards.
  .
  Laptop keyboards often do not have as many keys as standalone models; laptop
  users should select the keyboard model most closely approximated by the
  above.
  .
- Advanced users can use any model defined by the selected XKB rule set.  If
+ Experienced users can use any model defined by the selected XKB rule set.  If
  the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules
  directory for available rule sets.
  .
@@ -239,12 +222,12 @@ _Description: Please select your keyboard model.
 
 Template: xserver-xorg/config/inputdevice/keyboard/layout
 Type: string
-_Description: Please select your keyboard layout.
- For the X server to handle your keyboard correctly, a keyboard layout must be
+_Description: Keyboard layout:
+ For the X server to handle the keyboard correctly, a keyboard layout must be
  entered.  Available layouts depend on which XKB rule set and keyboard model
  were previously selected.
  .
- Advanced users can use any layout supported by the selected XKB rule set.  If
+ Experienced users can use any layout supported by the selected XKB rule set.  If
  the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/rules
  directory for available rule sets.
  .
@@ -254,8 +237,8 @@ _Description: Please select your keyboard layout.
 
 Template: xserver-xorg/config/inputdevice/keyboard/variant
 Type: string
-_Description: Please select your keyboard variant.
- For the X server to handle your keyboard as you desire, a keyboard variant
+_Description: Keyboard variant:
+ For the X server to handle the keyboard as desired, a keyboard variant
  may be entered.  Available variants depend on which XKB rule set, model, and
  layout were previously selected.
  .
@@ -263,7 +246,7 @@ _Description: Please select your keyboard variant.
  non-spacing accent marks and diaereses as normal spacing keys, and if this is
  the preferred behavior, enter "nodeadkeys".
  .
- Advanced users can use any variant supported by the selected XKB layout.  If
+ Experienced users can use any variant supported by the selected XKB layout.  If
  the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/symbols
  directory for the file corresponding to your selected layout for available
  variants.
@@ -272,8 +255,8 @@ _Description: Please select your keyboard variant.
 
 Template: xserver-xorg/config/inputdevice/keyboard/options
 Type: string
-_Description: Please select your keyboard options.
- For the X server to handle your keyboard as you desire, keyboard options may
+_Description: Keyboard options:
+ For the X server to handle the keyboard as desired, keyboard options may
  be entered.  Available options depend on which XKB rule set was previously
  selected.  Not all options will work with every keyboard model and layout.
  .
@@ -287,46 +270,44 @@ _Description: Please select your keyboard options.
  prefer to use your Windows or logo keys as Meta keys, you may enter
  "altwin:meta_win".
  .
- You can combine options by separating them with a comma; for example, if you
- wish the Caps Lock key to behave as an additional Control key and you would
- like to use your Windows or logo keys as Meta keys, you may enter
+ You can combine options by separating them with a comma, for instance
  "ctrl:nocaps,altwin:meta_win".
  .
- Advanced users can use any options compatible with the selected XKB model,
+ Experienced users can use any options compatible with the selected XKB model,
  layout and variant.
  .
- If you don't know what options to use, leave this entry blank.
+ When in doubt, this value should be left blank.
 
 Template: xserver-xorg/autodetect_mouse
 Type: boolean
 Default: true
 _Description: Attempt mouse device autodetection?
- If you have a mouse attached to the computer, an attempt to detect it can be
- made; it may help to move the mouse while detection is attempted (also, the
- gpm program should not be running).  If you would like to attach a PS/2 or
- bus/inport mouse to your computer, you should shut down the system, turn off
- the computer's power, connect the mouse, turn the computer back on, and
- reboot.  If you wish to select a mouse type manually, decline this option.
+ If a mouse is attached to the computer, autodetection can be attempted;
+ it may help to move the mouse while detection is attempted (the
+ gpm program should be stopped if it is used).  Plugging  a PS/2 or
+ bus/inport mouse now requires rebooting.
  .
- If you accept this option and autodetection fails, you will be asked this
- question again.  You may attempt autodetection as many times as desired.  If
- autodetection succeeds, further debconf questions about your mouse will be
+ Do not choose this option if you wish to select a mouse type manually.
+ .
+ If you choose it and autodetection fails, you will be asked this
+ question again.  Autodetection can be attempted as many times as desired.  If
+ it succeeds, further configuration questions about the mouse will be
  pre-answered.
 
 Template: xserver-xorg/config/inputdevice/mouse/port
 Type: select
 Choices: ${choices}
-_Description: Please choose your mouse port.
+_Description: Mouse port:
  For the X Window System graphical user interface to operate correctly,
- certain characteristics of your mouse (or other pointing device, such as a
+ certain characteristics of the mouse (or other pointing device, such as a
  trackball) must be known.
  .
- It is necessary to determine which port (connection type) your mouse uses.
+ It is necessary to determine which port (connection type) is used by the mouse.
  Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 or
  DB-25); the mouse connector is female (has holes) and the computer connector
  is male (has pins).  PS/2 ports are small round connectors (DIN) with 6 pins;
  the mouse connector is male and the computer side female.  You may
- alternatively have a USB mouse, a bus/inport (very old) mouse, or be using
+ alternatively use a USB mouse, a bus/inport (very old) mouse, or be using
  the gpm program as a repeater.  If you need to attach or remove PS/2 or
  bus/inport devices from your computer, please do so with the computer's power
  off.
@@ -334,13 +315,13 @@ _Description: Please choose your mouse port.
 Template: xserver-xorg/config/inputdevice/mouse/protocol
 Type: select
 Choices: ${choices}
-_Description: Please choose the entry that best describes your mouse.
+_Description: Mouse protocol:
 
 Template: xserver-xorg/config/inputdevice/mouse/emulate3buttons
 Type: boolean
 Default: true
 _Description: Emulate 3 button mouse?
- Most programs in the X Window System expect your mouse to have 3 buttons
+ Most programs in the X Window System expect the mouse to have 3 buttons
  (left, right, and middle).  Mice with only 2 buttons can emulate the presence
  of a middle button by treating simultaneous clicks or drags of the left and
  right buttons as middle button events.
@@ -358,82 +339,82 @@ Default: true
 _Description: Attempt monitor autodetection?
  Many monitors (including LCD's) and video cards support a communication
  protocol that allows the monitor's technical characteristics to be
- communicated back to the computer.  If your monitor and video card speak the
- same dialect of this protocol, further debconf questions about your monitor
+ communicated back to the computer.  If the monitor and video card support
+ this protocol, further configuration questions about the monitor
  will be pre-answered.
  .
- If autodetection fails, you will be asked for information about your monitor.
+ If autodetection fails, you will be asked for information about the monitor.
 
 Template: xserver-xorg/config/monitor/selection-method
 Type: select
 Choices: ${choices}
-_Description: Please choose a method for selecting your monitor characteristics.
+_Description: Method for selecting the monitor characteristics:
  For the X Window System graphical user interface to operate correctly,
- certain characteristics of your monitor must be known.
+ certain characteristics of the monitor must be known.
  .
- For the "simple" option, you need only know the monitor's physical size; this
+ The "simple" option will prompt about the monitor's physical size; this
  will set some configuration values appropriate for a typical CRT of the
  corresponding size, but may be suboptimal for high-quality CRT's.
  .
  The "medium" option will present you with a list of resolutions and refresh
  rates, such as "800x600 @ 85Hz"; you should choose the best mode you wish to
- use (and that you know your monitor is capable of).
+ use (and that you know the monitor is capable of).
  .
- The "advanced" option will let you specify your monitor's horizontal sync and
+ The "advanced" option will let you specify the monitor's horizontal sync and
  vertical refresh tolerances directly.
 
 Template: xserver-xorg/config/monitor/screen-size
 Type: select
 _Choices: Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 inches (480-510 mm), 21 inches (530 mm) or more
 Default: 17 inches (430 mm)
-_Description: Please choose your approximate monitor size.
+_Description: Approximate monitor size:
  High-quality CRT's may be able to use the next highest size category.
 
 Template: xserver-xorg/config/monitor/mode-list
 Type: select
 Choices: 640x480 @ 60Hz, 640x480 @ 72Hz, 800x600 @ 60Hz, 800x600 @ 72Hz, 800x600 @ 85Hz, 832x624 @ 75Hz, 1024x768 @ 60Hz, 1024x768 @ 70Hz, 1024x768 @ 75Hz, 1152x768 @ 54.8Hz, 1152x768 @ 60Hz, 1152x864 @ 75Hz, 1280x960 @ 60Hz, 1280x960 @ 85Hz, 1280x1024 @ 60Hz, 1400x1050 @ 60Hz, 1400x1050 @ 75Hz, 1440x900 @ 100Hz, 1600x1024 @ 60Hz, 1600x1200 @ 60Hz, 1600x1200 @ 75Hz, 1600x1200 @ 85Hz, 1680x1050 @ 75Hz, 1792x1344 @ 60Hz, 1792x1344 @ 75Hz, 1856x1392 @ 60Hz, 1856x1392 @ 75Hz, 1920x1200 @ 60Hz, 1920x1200 @ 75 Hz, 1920x1440 @ 60Hz, 1920x1440 @ 75Hz, 1920x1440 @ 85Hz, 2048x1536 @ 60Hz, 2048x1536 @ 75Hz, 2048x1536 @ 85Hz
 Default: 1024x768 @ 60Hz
-_Description: Please select your monitor's best video mode.
- Choose the "best" resolution and refresh rate you believe your monitor
- capable of.  Larger resolutions and refresh rates are better.  If you use a
+_Description: Monitor's best video mode:
+ Choose the "best" resolution and refresh rate the monitor is
+ capable of.  Larger resolutions and refresh rates are better.  With a
  CRT monitor, it is perfectly acceptable to select a "worse" video mode than
- your monitor's best if you wish.  Users of LCD displays may also be able to
+ the monitor's best if you wish.  Users of LCD displays may also be able to
  do this, but only if both the video chipset and the driver support it; if in
  doubt, use the video mode recommended by the manufacturer of your LCD.
 
 Template: xserver-xorg/config/monitor/identifier
 Type: string
-_Description: Enter an identifier for your monitor.
- The X server configuration file associates your monitor with a name that you
+_Description: Identifier for the monitor:
+ The X server configuration file associates the monitor with a name that you
  may provide.  This is usually the vendor or brand name followed by the model
  name, e.g., "Sony E200" or "Dell E770s".
 
 Template: xserver-xorg/config/monitor/use_sync_ranges
 Type: boolean
-_Description: Write monitor sync ranges to configuration file?
+_Description: Write monitor sync ranges to the configuration file?
  The monitor synchronization ranges should be autodetected by the X server in
- most cases, but sometimes it needs hinting.  This option is for advanced users,
+ most cases, but sometimes it needs hinting.  This option is for experienced users,
  and should be left at its default.
 
 Template: xserver-xorg/config/monitor/horiz-sync
 Type: string
-_Description: Enter your monitor's horizontal sync range.
+_Description: Monitor's horizontal sync range:
  Please enter either a comma-separated list of discrete values (for
  fixed-frequency displays), or a pair of values separated by a dash (all
- modern CRT's).  This information should be available in your monitor's
+ modern CRT's).  This information should be available in the monitor's
  manual.  Values lower than 30 or higher than 130 are extremely rare.
 
 Template: xserver-xorg/config/monitor/vert-refresh
 Type: string
-_Description: Enter your monitor's vertical refresh range.
+_Description: Monitor's vertical refresh range:
  Please enter either a comma-separated list of discrete values (for
  fixed-frequency displays), or a pair of values separated by a dash (all
- modern CRT's).  This information should be available in your monitor's
+ modern CRT's).  This information should be available in the monitor's
  manual.  Values lower than 50 or higher than 160 are extremely rare.
 
 Template: xserver-xorg/config/monitor/range_input_error
 Type: note
-_Description: Please enter a comma-separated list of ranges or values.
+_Description: Incorrect values entered
  The valid syntax is a comma-separated list of discrete values, or a pair of
  values separated by a dash.
 
@@ -441,39 +422,38 @@ Template: xserver-xorg/config/display/modes
 Type: multiselect
 Choices: 1920x1440, 1920x1200, 1856x1392, 1792x1344, 1680x1050, 1600x1200, 1440x900, 1400x1050, 1280x1024, 1280x960, 1280x854, 1280x800, 1280x768, 1200x800, 1152x864, 1152x768, 1024x768, 800x600, 640x480
 Default: 1024x768, 800x600, 640x480
-_Description: Select the video modes you would like the X server to use.
- If there are some resolutions you would not like the X server to use even if
- your hardware is capable of them, remove them from the list below.  Removing
- all of them is effectively the same as removing none, since in both cases the
+_Description: Video modes to be used by the X server:
+ Please keep only the resolutions you would like the X server to use.  Removing
+ all of them is the same as removing none, since in both cases the
  X server will attempt to use the highest possible resolution.
 
 Template: xserver-xorg/config/display/default_depth
 Type: select
 Choices: 1, 4, 8, 15, 16, 24
 Default: 24
-_Description: Please select your desired default color depth in bits.
+_Description: Desired default color depth in bits:
  Usually 24-bit color is desirable, but on graphics cards with limited amounts
  of framebuffer memory, higher resolutions may be achieved at the expense of
  higher color depth.  Also, some cards support hardware 3D acceleration only
  for certain depths.  Consult your video card manual for more information.
  .
- (So-called "32-bit color" is actually 24 bits of color information plus 8
+ So-called "32-bit color" is actually 24 bits of color information plus 8
  bits of alpha channel or simple zero padding; the X Window System can handle
- both.  If you want either, select 24 bits.)
+ both.  If you want either, select 24 bits.
 
 Template: xserver-xorg/config/null_string_error
 Type: note
-_Description: Please enter a value for the entry.
- A null entry is not permitted.
+_Description: Empty value
+ A null entry is not permitted for this value.
 
 Template: xserver-xorg/config/doublequote_in_string_error
 Type: note
-_Description: Please enter a value without double-quotes.
+_Description: Invalid double-quote characters
  Double-quote (") characters are not permitted in the entry value.
 
 Template: xserver-xorg/config/nonnumeric_string_error
 Type: note
-_Description: Please enter only a numeric value.
+_Description: Numerical value needed
  Characters other than digits are not allowed in the entry.
 
 Template: xserver-xorg/autodetect_keyboard
@@ -483,5 +463,5 @@ _Description: Autodetect keyboard layout?
  The default keyboard layout selection for the Xorg server will be based on a
  combination of the language and the keyboard layout selected in the installer.
  .
- Accept this option if you want the keyboard layout to be redetected.  Decline
- it if you want to keep your current layout.
+ Choose this option if you want the keyboard layout to be redetected.  Do not
+ choose it if you want to keep your current layout.
