@@ -34,3 +34,13 @@ Template: x11-common/xwrapper/nice_value/error
 Type: note
 _Description: Incorrect nice value
  Please enter an integer between -20 and 19.
+
+Template: x11-common/upgrade_issues
+Type: note
+_Description: Major possible upgrade issues
+ Some users have reported that upon upgrade to the current package set,
+ their xserver package was no longer installed. Because there is no easy
+ way around this problem, you should be sure to check that the xserver-xorg
+ package is installed after upgrade. If it is not installed and you require
+ it, it is recommended that you install the xorg package to make sure you
+ have a fully functional X setup.
