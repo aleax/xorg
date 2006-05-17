@@ -1,3 +1,1242 @@
+xorg-x11 (6.9.0.dfsg.1-6) unstable; urgency=high
+
+  * Disable new evdev driver patches to prevent FTBFS on mipsen.  Thanks 
+    Ryan Murray. (closes: #360540)
+
+ -- David Nusinow <dnusinow@debian.org>  Mon,  3 Apr 2006 07:18:50 -0400
+
+xorg-x11 (6.9.0.dfsg.1-5) unstable; urgency=high
+
+  [ David Martínez Moreno ]
+  * hurd/800_gnu_config.diff: Fix for local socket creation in the Hurd:
+    sockets are BSD4.4-like (closes: #348011).
+
+  [ David Nusinow ]
+  * Remove resize from xutils description. This program has been moved to the
+    xterm package as of Xorg 6.9 and xterm 208-3.
+  * Remove general/020_acpi_event_loop_fix.diff. This patch is the incorrect
+    fix, since the server should not be usurping the acpi file interface from
+    acpid when acpid is transiently restarted. We need a better fix.
+    (reopens: #345537) (closes: #347680)
+  * Add Zephenia E. Hull's rewritten evdev driver which should provide the
+    missing features removed from our Debian-specific implementation of the
+    protocol in the mouse driver. See its manpage for details, as well as
+    upstream bug https://bugs.freedesktop.org/show_bug.cgi?id=5696. Note that
+    as a result of this patch I've removed general/021_evdev_manpage.diff
+    which is now obsolete and rolled in to general/033_evdev_rewrite.diff.
+    This also adds patch general/034_evdev_xkb.diff as well. (closes: #350389)
+  * Remove rgb.txt stuff from x11-common.preinst. This is causing the file to
+    be deleted.
+  * Add general/029_enable_truetype_font_hinting.diff. Thanks to Eugene Konev
+    for seeing that this one got through. (closes: #340001)
+  * Add general/036_geteuid_security.diff for upstream security fix. Patch by
+    Daniel Stone. See upstream bug #6213.
+
+  [ Denis Barbier ]
+  * Update debian/xserver-xorg.config.in to reflect changes in XKB layouts.
+    Better handling of Turkish layouts, by Recai Oktaş. (closes: #348027)
+  * Rewrite pt_BR.UTF-8/Compose to include en_US.UTF-8/Compose so that
+    this file can be easily maintained.  Replace <dead_acute>+<C> to match
+    the definition from iso8859-1/Compose.  Thanks Rafael Ávila de Espíndola
+    (closes: #296599)
+  * Remove ko/Compose, as requested by Korean users.  Thanks Changwoo Ryu
+    (closes: #89703)
+  * Add extra compose sequences for euro sign in iso8859-15/Compose.
+    Thanks Bas Zoetekouw  (closes: #127609)
+
+  [ Eugene Konev ]
+  * Correct the ru_RU.UTF-8 locale alias. This adds
+    general/011b_ru_RU_UTF-8_XLC_LOCALE.diff (closes: #330144)
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 19 Mar 2006 23:03:55 -0500
+
+xorg-x11 (6.9.0.dfsg.1-4) unstable; urgency=low
+
+  [ David Martínez Moreno ]
+  * GNU/KFreeBSD changes (closes: #331517, #338290):
+    - Updated freebsd/001_gnu-kbsd.diff in order to fix FTBFS.
+    - Added freebsd/003_gnu-kbsd_sock_un.diff for fixing some non-portable
+      code.
+    - Updated MANIFEST.kfreebsd-i386.in.
+    - Modified xlibmesa-dri.install and xserver-xorg.install.kfreebsd-i386.
+    - Dropped debian/xdmx.install.kfreebsd-i386, as its content is the same
+      as in generic debian/xdmx.install.
+  * Updated Turkish translation. Thanks, Recai Oktaş and Osman Yüksel
+    (closes: #347494, #334568).
+  * Updated Japanese translation. Thanks, Kenshi Muto (closes: #347498).
+  * Updated Galician translation. Thanks, Jacobo Tarrio (closes: #347889).
+  * Fixed Compose key for LC_CTYPE=cs_CZ.UTF-8 (closes: #347531).
+
+  [ David Nusinow ]
+  * MANIFEST updates for mips and mipsel over evdev manpage that was added for
+    last upload
+  * unset DH_OPTIONS for dh_installinit during binary-indep and binary-arch
+    targets. There's some bug in dh_installinit that was causing it to ignore
+    all the .init scripts when -s or -i was used in it alongside --noscripts
+    (closes: #347705)
+  * Add general/024_xterm_bindir.diff to deal with xterm's move to /usr/bin.
+    Thanks Oliver Chief O'Cordes. (closes: #348091)
+
+  [ Denis Barbier ]
+  * Add general/086_enable_ca_variants.diff so that variants of the ca
+    layout can be selected.  Thanks Felix-Antoine Bourbonnais
+    (closes: #347496)
+  * Add general/013_xkb_drop_rules_xorg_duplicates.diff to remove duplicate
+    definitions from /etc/X11/xkb/rules/xorg, and update
+    general/091_xkb_implement_compose:caps.diff
+  * Add general/087_xkb_ralt_switch_multikey.diff to enable again the
+    lv3:ralt_switch_multikey option.  Thanks Klaus Ethgen  (closes: #345409)
+  * Set Caps type in general/091_xkb_implement_compose:caps.diff
+    (closes: #345796)
+
+ -- David Nusinow <dnusinow@debian.org>  Sat, 14 Jan 2006 17:49:29 -0500
+
+xorg-x11 (6.9.0.dfsg.1-3) unstable; urgency=low
+
+  [ Denis Barbier ]
+  * Add general/094_xkb_fix_dead_diaresis.diff to replace dead_diaresis
+    by dead_diaeresis in German layout.  Thanks Mario 'BitKoenig' Holbe
+    (closes: #291853)
+
+  [ David Nusinow ]
+  * MANIFEST updates
+    + arm
+    + hppa
+    + mips
+    + mipsel. Thanks Ryan Murray. (closes: #347246)
+    + minor s390 (mir-specific stuff)
+  * Update xbase-clients description to account for libdps removal
+  * We no longer build or ship x-window-system-dev. This is in line with
+    killing xlibs-dev. Currently only three packages in Debian build-depend on
+    this package, so we'll target them in the same effort as getting rid of
+    xlibs-dev.
+  * Add general/018_mesa_debug_fglrx.diff. The default mesa build was
+    generating symbols which were interfering with the use of the fglrx
+    drivers for some people. Thanks infernix. (closes: #274862)
+  * Hurd patch and MANIFEST updates. Thanks Samuel Thibault and Michael Banck.
+    (closes: #346500)
+  * Add general/020_acpi_event_loop_fix.diff. This corrects a problem when the
+    acpid is shut down while server is running. Thanks Mattia Dongili.
+    (closes: #345537)
+  * Raise mouse detection question to high priority when mdetect isn't
+    present. This will help out LiveCD's. Thanks Robert Millan and Daniel
+    Stone. (closes: #333921)
+  * Remove our custom support for evdev in favor of upstream's version
+    (closes: #325807, #322253, #346460, #346461)
+    + Remove general/054_lnx_evdev_mouse.diff, general/053_lnx_evdev.diff, and
+      general/055_lnx_evdev_keyboard.diff
+    + Adjust xserver-xorg.templates to include and load the evdev module by
+      default
+    + Document in NEWS file how to get evdev support working. Thanks to Ian
+      Wienand for instructions.
+    + Add general/021_evdev_manpage.diff taken from
+      https://bugs.freedesktop.org/show_bug.cgi?id=968. This will at least
+      document the driver better.
+  * Remove some cruft leftover from libdps in debian/rules
+  * Corrent NEWS version number from last upload. Thanks Sven Koch.
+    (closes: #347265)
+  * When generating shlibdeps for libx11, unset DH_OPTIONS so that the -p
+    switch actually takes effect and we don't generate the wrong shlibdeps for
+    every package. This should allow libraries from xorg-x11 to properly
+    depend on libx11-6. Thanks Daniel Kobras, Eugene Konev, and Russ Allbery.
+    (closes: #347228)
+
+ -- David Nusinow <dnusinow@debian.org>  Mon,  9 Jan 2006 20:16:32 -0500
+
+xorg-x11 (6.9.0.dfsg.1-2) unstable; urgency=low
+
+  [ David Nusinow ]
+  * MANIFEST updates
+    + s390. Thanks Bastian Blank. (closes: #345328)
+    + ppc. Thanks Paul TBBle Hampson. (closes: #343693)
+    + sparc
+    + ia64
+    + amd64. Thanks Kurt Roeckx. (closes: #343822)
+    + alpha
+    + m68k
+  * Add HURD patches. Thanks Michael Banck. (closes: #345285)
+  * Remove extra space in debian/905_debian_xdm.diff that caused a failure to
+    properly create xdm-config. Thanks Alex Romosan. (closes: #345406)
+  * Add general/015_startx_dummy_fix.diff to fix missing $ in startx.
+    Thanks Daniel 'NebuchadnezzaR' Dehennin. (closes: #345446)
+  * Move all the xkb stuff that was mistakenly put in to xlibs-data to xlibs
+    where it belongs. Sorry everyone. (closes: #345387)
+    + Make xlibs conflict and replace xlibs-data (= 6.9.0.dfsg.1-1) to prevent
+      upgrade errors
+  * Document upstream breakage with xkb in NEWS file. Recommend that people
+    change from xlibs to xkb-data if they have further problems once xlibs and
+    xlibs-data are both ad 6.9.0.dfsg.1-2. (closes: #345436)
+  * Remove general/097_mouse_zaxis_mapping_pushes_up_buttons.diff which is now
+    obsolete. Thanks Christopher Martin. (closes: #343728)
+  * Add general/016_czech_include_location.diff which is a fix the path to the
+    czech symbol rules. This Fd.o bug #5077. Thanks Matej Cepl.
+    (closes: #345893)
+  * Remove obsolete warning about cpp in the xbase-clients description. Thanks
+    Adrian Bunk. (closes: #345578)
+  * Update general/000_stolen_from_linuxwacom_wacom_driver.diff to bring
+    driver to 0.6.8. Also remove obsolete hunk from
+    freebsd/002_gnu-kbsd_wacom.diff. (closes: #333496)
+  * Translation Updates:
+    + Italian thanks to Danilo Piazzalunga. (closes: #345789)
+
+  [ David Martínez Moreno ]
+  * Added -n in order to avoid newline in xdm script (closes: #310000).
+  * While at it, removed another extra space in debian/905_debian_xdm.diff.
+  * Hide a string in the xserver-xorg debconf templates.  Thanks, Christian
+    Perrier (closes: #345609).  While at it, added whitespace that made all
+    the translations gain 1 fuzzy string.
+
+ -- David Nusinow <dnusinow@debian.org>  Wed,  4 Jan 2006 22:29:29 -0500
+
+xorg-x11 (6.9.0.dfsg.1-1) unstable; urgency=low
+
+  * Update to 6.9 final
+    + remove obsolete patch debian/993_debian_no_pclcomp.diff as pclcomp has
+      also been removed upstream for non-freeness
+    + Remove pclcomp from prune/non-free
+    + MANIFEST Updates
+      - amd64 Thanks to Ari Pollak and others (closes: #343693, #343822)
+  * Remove obsolete patch general/033_radeon_fix_for_no_accel.diff
+  * Fix xserver-xorg config script to properly output resolutions other than
+    640x480. Thanks Colin Watson. (closes: #344785, #328259)
+  * Allow xserver-xorg maintainer script to be used in locales other than C.
+    Thanks Denis Barbier. (closes: #343602)
+  * Translation updates
+    + Swedish. Thanks Daniel Nylander. (closes: #333833)
+    + Greek. Thanks Konstantinos Margaritis. (closes: #344590)
+
+ -- David Nusinow <dnusinow@debian.org>  Wed, 28 Dec 2005 21:32:21 -0500
+
+xorg-x11 (6.8.99.903.dfsg.1-1) experimental; urgency=low
+
+  * Update to 6.9 RC3
+  * Remove obsolete patch alpha/202_alpha_typedef_card32.diff
+  * Remove xdpr from xbase-clients to allow xprint to install. Thanks Martin
+    Michlmayer.
+  * Move various libxvmc shlibs from the -dev package to the normal lib
+    package where they belong.
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 13 Dec 2005 01:14:13 -0500
+
+xorg-x11 (6.8.99.902.dfsg.1-1) experimental; urgency=low
+
+  * Add alpha/202_alpha_typedef_card32.diff to correct FTBFS. Thanks to Julien
+    Cristau.
+  * Remove @ embedded in multiline shell in patch target of debian/rules
+  * Port to 6.9 RC2
+    + Remove the following obsolete patches
+      - patches/general/016_ICE_subprotocol_reply_fix.diff
+    + Port the following patches
+      - general/002_xdm_fixes.diff (mostly remove whitespace-only changes)
+      - debian/904_debian_xinitrc.diff
+      - debian/905_debian_xdm.diff
+    + Manifest updates:
+      - i386
+      - amd64. Thanks to Ari Pollak.
+  * Remove replaces and conflicts in xdmx package that were for internal
+    testing. Thanks to Steve Langasek and Daniel Stone.
+  * Have xserver-xorg conflict with nvidia-glx less than or equal to
+    1.0.7174-4. Thanks Steve Langasek.
+  * Have x-window-system-core alternately depend on the mesa packages. Thanks
+    Xavier Bestel.
+  * Prune pclcomp from our programs, as it is non-free. Thanks Daniel Stone.
+    + Add debian/993_no_pclcomp.diff to cope with this
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 14 Nov 2005 14:18:10 -0500
+
+xorg-x11 (6.8.2.dfsg.1-11+SVN) unstable; urgency=low
+
+  [ David Martínez Moreno ]
+  * general/033_radeon_fix_for_no_accel.diff: A bug into one of ati driver's
+    sources (radeon_video.c) causes Xorg server to crash when using it with
+    option "NoAccel", due to erroneous dereferencing of uninitialized pointer.
+    Thanks, Riccardo Brigo (closes: #341351).
+  * debian/control: Rephrased the description in x11-common package. Thanks,
+    Denis Barbier.
+
+  [ David Nusinow ]
+  * Remove non-modified /etc/X11/rgb.txt on x11-common's preinst, not
+    postinst. The recommendation to remove it in postinst was for obsolete
+    conffiles, but this file is not obsolete, and removing it in the postinst
+    will cause the new version to be deleted. Removing it in the preinst
+    should solve this issue, although it will cause issues if the upgrade
+    fails and if the user has modified the file. (closes: #343389)
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 15 Dec 2005 14:42:21 -0500
+
+xorg-x11 (6.8.2.dfsg.1-11) unstable; urgency=low
+
+  [ David Nusinow ]
+  * Only try and remove the xserver-xorg init script if we're actually
+    xserver-xorg, not xserver-xorg-dbg. Thanks Steve Langasek and Ryan Murray.
+  * Change ls to /bin/ls in Xsession to prevent login problems if ls is
+    locally aliased to ls --color=auto. Thanks January Weiner,  David
+    Vernazobres. (closes: #340443, #337650)
+  * Add general/032_fix_matrox_display.diff to fix corruption on some cards.
+    Thanks Julien Wajsberg. (closes: #320328)
+  * In xserver-xorg config, only update symlink to X server if it is in fact a
+    symlink and is not already pointing to where it's supposed to go. This
+    avoids problems on thin clients. Thanks Petter Reinholdtsen,
+    (closes: #336748)
+  * Fix binary server target to not choke on Xorg.1 manpage install. Thanks
+    Bill Allombert. (closes: #334740)
+  * Only reset autodetection questions on first install or reconfigure, and
+    then only in the configure portion of the package install.
+    (closes: #332369, #332637, #334340).
+
+  [ Christian Perrier ]
+  * Updated Russian translation (ru.po). Thanks, Yuri Kozlov!
+    (closes: #337057).
+  * Added Romanian translation (ro.po). Thanks, Eddy Petrisor!
+    (closes: #338547).
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 29 Nov 2005 00:20:26 -0500
+
+xorg-x11 (6.8.99.901.dfsg.1-2) experimental; urgency=low
+
+  * MANIFEST updates
+    + alpha thanks to Julien Cristau.
+    + ia64 thanks to Dagfinn Ilmari Mannsåker
+    + powerpc thanks to Sven Luther.
+    + sparc thanks to Julien Cristau
+  * Make dh_strip not lose debugging symbols. Thanks Eugene Konev.
+    (closes: #336282)
+  * Fix general/091_xkb_implement_compose:caps.diff. Thanks Eugene Konev.
+    (closes: #335048)
+
+ -- David Nusinow <dnusinow@debian.org>  Sat, 29 Oct 2005 18:37:00 -0400
+
+xorg-x11 (6.8.2.dfsg.1-10) unstable; urgency=low
+
+  * Really fix x11-common.preinst "eq" test by using "=" instead.
+    (Closes: #334345).
+  * Add debian/992_debian_allow_build_from_svn.diff to ignore .svn directories
+    rather than CVS ones, thereby letting people build straight from our SVN
+    without failing MANIFEST check. Thanks Will Dyson and Frans Pop.
+
+ -- David Nusinow <dnusinow@debian.org>  Sat, 29 Oct 2005 16:53:20 -0400
+
+xorg-x11 (6.8.99.901.dfsg.1-1) experimental; urgency=low
+
+  * Update to 6.9RC1
+    + Remove obsolete patches
+      - debian/990_ubuntu_accept_enabled_for_extensions.diff
+      - ia64/452_ia64_smart_pci_rom_probe.diff
+      - sparc/102_sparc_pci_fix.diff
+      - sparc/100_sparc_4m_hw_mult_fix.diff
+      - freebsd/003_gnu-kbsd_sessreg.diff
+      - general/000_backport_from_author_xterm.diff
+      - general/050_fix_lnx_io_kbd_rate_fix.diff
+      - general/075_elographics_improve_manpage.diff
+      - general/099z_xkb_level3_ralt_switch.diff
+      - general/099y_xkb_fix_rules_xfree86.diff
+      - general/099t_xkb_remove_hidden_attributes.diff
+      - general/069_ati_r128_fix_ugly_warning.diff
+      - general/024_ati_r128_and_radeon_enable_build_without_vgahw.diff
+      - general/076_xfree86_server_fix_aout_loader_include.diff
+      - general/015_vesa_ifdef_afb_calls.diff
+      - general/070_fbdevhw_device_node_warnings.diff
+      - general/047_mga_manpage_updates.diff
+      - general/089_xkb_fix_symbols_pc_lt.diff
+      - general/087_xkb_no_altgr_wanted_with_dvorak.diff
+      - general/040_extend_netmouse_support.diff
+      - general/099n_fbdev_driver_message_improvements.diff
+      - general/099zz_xkb_hr_fixes.diff
+      - general/025f_XPutImage_manpage_macros_fix.diff
+      - general/025_XStandards_manpage_typo.diff
+      - general/099o_xkb_a4tech_kb21.diff
+      - general/011_SECURITY_makedepend_safer.diff
+      - general/088_xkb_only_one_default_variant_gb.diff
+      - general/099j_xkb_new_layouts.diff
+      - general/029_only_open_proc_bus_pci_devices_once.diff
+      - general/018_fix_mesa_build_issues.diff
+      - general/002a_xterm_no_overstrike_bold_fonts.diff
+      - general/021_riscpc_ioport_fix.diff
+      - general/020_add_sigusr2_signal_handler.diff
+
+  * MANIFEST updates for the following
+    + amd64 (Thanks Ari Pollak)
+    + hppa (Thanks Kyle McMartin)
+    + powerpc (Thanks Sven Luther)
+    + sparc (Thanks Julien Cristau)
+  * Change NONDBG_PACKAGES to correctly remove packages we don't need to send
+    to dh_strip
+  * Remove obsolete "| xlibs (> 4.1.0)" from various shlibs packaging files
+  * Allow patch target to succeed if there simply are no patches available
+  * Ship XlibConf.h in libx11-dev. This will allow non-imake packages to build
+    against X, including Xrender
+  * Add support for preseeding fontserver. Thanks Petter Reinholdtsen.
+    (closes: #323262)
+  * Fix typo in xserver-xorg.init. (closes: #327514)
+  * Have xserver-xorg-dbg depend on xserver-xorg, since we no longer ship a
+    full xserver in the -dbg package.
+  * Don't ship all of xserver-xorg's configuration scripts with
+    xserver-xorg-dbg. This was an accidental holdover from the old statically
+    linked binary in the pre-6.9 series. (closes: #327465)
+  * Update the description of xserver-xorg-dbg to reflect the change from a
+    statically linked server to only shipping the debugging symbols in that
+    package.
+  * Add sparc/105_ffb_dac_typedef_bool.diff to prevent FTBFS in sunffb driver.
+    Thanks Julien Cristau.
+  * Add libxvmc1-install and libxvmc-dev.install for hppa, powerpc, and sparc
+  * Add xlibmesa-dri.install for hppa
+  * Fix chooser path in xdm-config. This will fix querying xdm with -indirect.
+    Thanks Eugene Konev.
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 20 Oct 2005 14:24:23 -0400
+
+xorg-x11 (6.8.99.900.dfsg.1-0pre1) experimental; urgency=low
+
+  [ David Nusinow ]
+  * Remove xterm references. Upstream is no longer shipping it in the monolith
+    and we've been planning to move to Thomas Dickey's releases as our
+    canonical upstream anyway.
+  * libdps is dead upstream. Remove all traces of it from our builds
+  * Radically change the way we build xserver-xorg-dbg. We no longer
+    separately build a static version, but instead build a normal modular
+    version and don't strip it.
+    + Modify general/003_linux.cf_and_xfree86.cf.diff to build libdl modules
+      by default
+    + xserver-xorg-dbg now conflicts, replaces, and provides xserver-xorg
+  * Change the way we handle library -dbg packages. Now rather than build
+    and ship unstripped versions, use dh_strip to store the debugging symbols
+    in the -dbg packages.
+    + Add build dependency on binutils (>= 2.14.90.0.7) because dh_strip
+      requires it to use  --dbg-package option, which we now use and love
+    + Remove obsolete packaging files for -dbg packages
+  * Temporarily delete freebsd/001_gnu-kbsd.diff until it can be
+    forward-ported, because it's late and I'm tired :-p
+  * Remove obsolete by upstream patches:
+    + general/0000_backport_from_upstream.diff
+    + general/000_stolen_from_HEAD_i810.diff
+    + general/000_stolen_from_HEAD_savage.diff
+    + general/000_stolen_from_HEAD_Xfuncproto.diff
+    + general/000_stolen_from_unichrome.sf.net.diff
+    + general/000_stolen_from_drm.diff
+    + general/000_stolen_from_Mesa_6.2_branch.diff
+    + general/000_stolen_from_Mesa_6.2_branch_vb_cull.diff
+    + general/000k_Xvfb_re-enable_backing_store.diff
+    + general/013_novtswitch.diff
+    + general/018_sharevts_option.diff
+    + general/024d_radeon_fix_gcc4_build.diff
+    + general/025b_xkb_README_typos.diff
+    + general/063_fix_weak_deps.diff
+    + general/072_Xserver_fb_convert_RGB_to_BGR.diff
+    + general/080_pci_isolate_device_feature.diff
+    + general/086_fix_SEGV_in_ximcp.diff
+    + general/092_Xserver_sunffb_xaa_extension.diff
+    + general/094_gbk_compound_text_transformation_fix.diff
+    + general/099za_fix_XOrgManDefs.diff
+    + alpha/202_alpha_elfloader_support_R_ALPHA_SREL32.diff
+    + alpha/203_alpha_elfloader_support_R_ALPHA_BRSGP.diff
+    + debian/915_disable_i915_debugging.diff
+    + debian/991_ubuntu_gcc_flags.diff
+  * Forward-port the following:
+    + general/001_kernel_version_in_banner.diff
+    + general/003_linux.cf_and_xfree86.cf.diff
+    + Disable gamma DRI driver, as it is broken upstream
+    + general/008_fix_xgetpw_macro.diff
+    + general/011a_recognize_glibc_2.3.2_locale_names.diff
+    + general/020_add_sigusr2_signal_handler.diff
+    + general/021_riscpc_ioport_fix.diff
+    + general/024_ati_r128_and_radeon_enable_build_without_vgahw.diff
+    + general/028_loader_speed_hack.diff
+    + general/053_lnx_evdev.diff
+    + general/058_support_external_Xcursor_Xft_Xrender_libs.diff
+    + general/062_make_libGL_PIC_compliant.diff
+    + general/089_xkb_fix_symbols_pc_lt.diff
+    + general/097_mouse_zaxis_mapping_pushes_up_buttons.diff
+    + general/099e_xorgconf_manpage_overhaul.diff
+    + general/099l_xkb_cymotion_master_and_ibm_space_saver.diff
+    + arm/315_arm_is_not_x86_and_has_no_vga.diff
+    + hurd/800_gnu_config.diff
+    + debian/905_debian_xdm.diff adds trailing whitespace
+    + debian/908_debian_exclude_non-free_fonts_and_docs.diff
+  * Update 000_stolen_from_linuxwacom_wacom_driver.diff to have version 0.6.8
+    of xf86Wacom.c to get the patch to apply
+  * Add new patches:
+    + general/018_fix_mesa_build_issues.diff to fix FTBFS
+  * Tighten up debian/rules to allow more flexibility
+    + Test things in prepare and patch targets so they don't fail when we've
+      interrupted a build for some reason and we attempt to re-run them
+    + Typofix to allow dpkg-buildpackage -nc to work
+  * We no longer build or ship xlibs-dev
+  * Update build-dependency versions on render-dev and libxrender-dev
+
+ -- David Nusinow <dnusinow@debian.org>  Thu,  8 Sep 2005 12:04:56 -0400
+
+xorg-x11 (6.8.2.dfsg.1-8+SVN) unstable; urgency=low
+
+  * debian/changelog: Changed references at bottom to xfree86-common to
+    x11-common, referring old changelogs.
+  * debian/control: Removed *a lot* (4 KB) of old legacy stuff like Conflicts:
+    with packages that are not in stable, some even in oldstable, or others even
+    from before.
+
+  [ David Nusinow ]
+  * Back out change from last revision that reset all debconf questions with
+    "autodetect" in their name no matter what. This is unnecessary and only
+    lead to annoyances. (closes: #332336)
+  * Add missing '-' before 'eq' in x11-common.preinst.in. Thanks Matthias
+    Heinz. (closes: #332341)
+  * Add transitional xserver-xfree86 package that merely depends on
+    xserver-xorg. Make all conflicts with xserver-xfree86 be on
+    pre-6.8.2.dfsg.1-1 packages. Thanks Adrian Davey. (closes: #332414)
+
+ -- David Nusinow <dnusinow@debian.org>  Thu,  6 Oct 2005 20:40:25 -0400
+
+xorg-x11 (6.8.2.dfsg.1-8) unstable; urgency=low
+
+  [ Denis Barbier ]
+  * Modify setxkbmap and xkbcomp to look for XKB files in $XKBPATH if this
+    environment variable is set.  This allows installing both xlibs and
+    xkeyboard-config at the same time, so that xkeyboard-config can install
+    its files under /etc/X11/xkb-data until all packages depending on xlibs
+    are fixed (closes: #324768).
+
+  [ Christian Perrier ]
+  * Updated Basque translation (eu.po). Thanks, Piarres Beobide!
+    (closes: #327409).
+  * Updated Portuguese translation (pt.po). Thanks, Miguel Figueiredo!
+    (closes: #328878).
+
+  [ David Nusinow ]
+  * Added various hurd-i386 patches. Thanks, Michael Banck.
+    + hurd/806_gnuLib_update.diff (closes: #295472)
+    + hurd/804_maxhostnamelen.diff (closes: #325204)
+    + hurd/805_via_nodri.patch (closes: #325243)
+    + hurd/808_i810_nodri.diff (closes: #325882)
+    + updated hurd/800_gnu_config.diff (closes: #327740)
+    + updated MANIFEST and install files for HURD (closes: #327745)
+  * Force xserver-xfree86 to transition to xserver-xorg. Do this by having
+    xserver-common conflict with xserver-xfree86, and having xserver-xorg not
+    provide xserver-xfree86 any more. Thanks Adrian Bunk. (Closes: #318425)
+  * Add a new flag to dexconf to allow the user to specify the name of the
+    file used in comments. This can be used to prevent it from referring to
+    xorg.conf.dpkg-new. Thanks Mike O'Connor. (Closes: #319323)
+  * Add freebsd/003_gnu-kbsd_sessreg.diff to allow GNU/kFreeBSD to use GNU
+    UTMP. Thanks Robert Millan. (Closes: #325615)
+  * Have x11-common preinst check for xfree86-common conffile modification. If
+    there are no modifications, remove them so that dpkg doesn't prompt the
+    user due to the package name change. Thanks Steve Langasek and Andreas
+    Metzler. (closes: #318688)
+  * No longer refer to the removed Xsetup script in xdm.options.5. Thanks
+    Bastian Kleineidam. (closes: #324887)
+  * Update general/055_lnx_evdev_keyboard.diff to properly use the "less
+    greater bar"-key (EV_KEY_102ND) on a pc102 keyboards. Thanks Pär
+    Andersson. (closes: #322253)
+  * Don't choke when the user doesn't select a video mode. This fix also
+    involves a patch to substitute the default resolutions list in both
+    the xserver-xorg.preinst and .postinst files using part of
+    debian/rules. Thanks Robert Millan. (closes: #322902, #330304)
+  * Don't reset all xserver-xorg debconf templates when "dpkg-reconfigure
+    xserver-xorg" is called. (closes: #320241, #318634)
+    + Reset values for templates that are affected by autodetection only when
+      the user actually opts for autodetection. This allows autodetection to
+      actually work. Thanks Daniel Stone.
+    + Ensure that all templates containing the name "autodetect" are reset in
+      the auto_answer function
+  * Provide extra insurance for autodetecting drivers on installation. Also
+    update driver default lists for amd64 and i386. (closes: #320634)
+  * Have packages built specifically for etch be counted as official builds.
+  * Have xserver-xorg remove its /etc/rcS.d link in its postinst by calling
+    update-rc.d. Thanks Lars Wirzenius.  (closes: #330588)
+
+  [ Branden Robinson ]
+  * Change xserver-xorg and xserver-xorg-dbg's recommendation of "discover1"
+    to "discover | discover1".  These packages' configure scripts detect both
+    utilities, and use whichever one is found, so there's no reason to compel
+    users to have discover1 in particular installed (as aptitude does, since
+    it treats recommends like depends by default). (closes: #322659)
+
+  [ David Martínez Moreno ]
+  * Added Slovak translation (sk.po). Thanks, Peter Mann (closes: #330272).
+  * Updated Czech translation (cs.po). Thanks, Miroslav Kure (closes:
+    #327506).
+
+ -- David Nusinow <dnusinow@debian.org>  Tue,  4 Oct 2005 22:24:17 -0400
+
+xorg-x11 (6.8.2.dfsg.1-7) unstable; urgency=high
+
+  [ Branden Robinson ]
+  * Add patch #000k: Fix VSW5 (and therefore LSB 3.0) test failures by
+    re-enabling backing store in the Xvfb X server.  The test harness relies
+    on the existence of backing store in the virtual X server it uses to run
+    tests in.
+  * Fix shell-lib.sh to ensure that the function
+    replace_conffile_with_symlink_rollback() actually exists.
+
+  [ David Nusinow ]
+  * Fix for CAN-2005-2495. See also freedesktop bug #594. Disallows pixmaps
+    greater than the allocation limit. This is incorporated in to
+    general/0000_backport_from_upstream.diff.
+  * Add Build-Depends on linux-kernel-headers to (>= 2.6.13+0rc3-1.1) so that
+    people do not get FTBFSes due to Bug#320515. The previous build-conflict
+    was not enough to ensure that the necessary version of l-k-h was
+    installed, causing an FTBFS. This does not apply to non-linux arches.
+  * In debian/rules, change STAMP_DIR target to use STAMP_DIR/stampdir. Have
+    targets that depended on this also change accordingly. This should allow
+    dpkg-buildpackage -nc to work. Thanks Jeremy Shaw.
+    + Also add -f to ln command in genscripts to allow -nc to work
+
+ -- David Nusinow <dnusinow@debian.org>  Wed,  7 Sep 2005 16:17:18 -0400
+
+xorg-x11 (6.8.2.dfsg.1-6) unstable; urgency=low
+
+  [ Branden Robinson ]
+  * Increment versioning of build-conflict with linux-kernel-headers to (<<
+    2.6.13+0rc3-1.1) so that people do not get FTBFSes due to Bug#320515.
+
+  * Overhaul debian/rules file and debian/scripts directory.
+    + In the debugging X server build, change the branding string from
+      "(static)" to "(non-modularized)", so people won't assume the X server
+      is intended to be e.g., statically linked against libc (but for some
+      reason isn't).
+    + Add a new Makefile variable, SERVER_WRAPPER_OPT, to control the
+      optimization level of the X server wrapper.  DEB_BUILD_OPTIONS
+      determines its value.
+    + Stop including debian/scripts/vars* files in favor of performing
+      architecture-dependent variable assignments directly in the rules file.
+      The include mechanism was used for dbs's sake, and is now overkill for
+      what we need it for.
+    + Rewrite comments documenting usage of targets with stamp files.
+    + Declare phony targets and stampdir_targets adjacent to the target
+      definitions themselves so they are less likely to get out of sync.
+    + Make $(STAMP_DIR) itself a real target.
+    + Make the "patch", "unpatch", and "patch-audit" rules run more quietly.
+    + Wrap some long lines (> 80 columns).  Some couldn't be wrapped without
+      making them even uglier.
+    + Add targets for the text versions of the Debian X and XTerm FAQs and for
+      the X server wrapper.  Stop building them inside the $(STAMP_DIR)/build
+      target, and instead have $(STAMP_DIR)/build depend on them.
+    + Move targets that exist only for the convience of package maintainers
+      (i.e., which are never invoked via dpkg-buildpackage) to the end of the
+      file.
+    + Make shell usage style consistent.
+    + Use the shell's redirection operator to create empty files instead of
+      fooling with "touch" (or, God forbid, useless uses of cat).
+    + Ensure that there are comments documenting just about everything.
+    + Whitespace police: use hard tabs *only* for indenting target definitions
+      (once, so Make will pull its head out).  All other indentation is done
+      with spaces.
+
+  * Drop unneeded scripts:
+    - debian/setperms is now unused.
+    - debian/scripts/getglibcversion hasn't been used by anything in a long
+      time.
+    - debian/scripts/up-scripts hasn't been used since we switched from dbs to
+      quilt.
+    - debian/scripts/vars* are now unused.
+
+  * Update package maintainers' documentation in debian/README.
+    + Refer to the package as "X.Org X11" to identify it as the monolithic
+      release.
+    + Expand caveat section for new architecture porters.
+    + Break document into sections and give them titles.
+    + Document many more of debian/rules's targets by summarizing the
+      documentation within debian/rules itself.
+    + Copyedit documentation of quilt usage.
+    + Add documentation of debian/po directory.
+    + Update discussion of debian/patches directory.
+    + Condense discussion of MANIFEST and debhelper install files into a new
+      section, "Architecture-specific binary package payloads".
+    + Direct people's attention to the existence of certain convenience
+      scripts in debian/scripts that make some mundane tasks easier.
+
+  [ David Nusinow ]
+  * Add missing libfs-dev depends. Thanks Guillem Jover (Closes: #321641)
+  * Update debconf translations
+    + French. Thanks Christian Perrier (Closes: #323633)
+    + Vietnamese. Thanks Clytie Siddall (Closes: #324227)
+    + Portuguese. Thanks Eduardo Silva and Miguel Figueiredo (Closes: #324782)
+
+  [ David Martínez Moreno ]
+  * Fixed some macros in XPutImage.3x, that left trailing characters in the
+    lines above the insertions (closes: #323210).
+  * Added 000_stolen_from_HEAD_savage.diff, that includes the backport of
+    savage driver from HEAD X.Org CVS as of 03/08/05 (closes: #320468). Also
+    commented out 099f_savage_driver_disable_randr_on_rotation, as I think it
+    is no longer necessary.
+  * Cut down 0000_backport_from_upstream by *300 KB!* due to wrong inclusion
+    of three .orig files from drivers/ati/ subdirectory.
+  * debian/control:
+    - libxaw7-dev should depend on libxp-dev. Thanks, Daniel Schepler (closes:
+      #324562).
+    - libxaw8-dev should depend on libxp-dev. Thanks, Matej Vela (closes:
+      #324275).
+    - libxres-dev should depend on libxres1 and x-dev. Thanks, Michael Olbrich
+      (closes: #324474).
+    - Add in xserver-xorg{,-dbg} a conflict on xlibs (<< 6.8.2.dfsg.1-5) and
+      added recommends xlibs; if /etc/X11/xkb/rules/xorg.lst does if not
+      exist, people lose XKB on reboot. Thanks, James Ballantine and Daniel
+      Stone (closes: #325509).
+    - Removed old sh3 and sh4 architectures. There were no packages for those
+      in years.
+  * patches/general/000_stolen_from_unichrome.sf.net.diff: Fixed a
+    cut-and-paste error when checking mode->Flags for sync polarity in
+    via_mode.c.
+  * Updated debconf translations:
+    - Brazilian portuguese, thanks to André Luís Lopes (closes: #325150).
+    - Danish, thanks to Claus Hindsgaul (closes: #325583).
+  * debian/shell-lib.sh: It seems that a copy-paste type slipped in
+    6.8.2.dfsg.1-5, and the function replace_conffile_with_symlink_rollback
+    was not really included. xlibs upgrades from sarge were affected. Fixed
+    (closes: #322920, #323954).
+
+ -- David Nusinow <dnusinow@debian.org>  Wed, 31 Aug 2005 08:57:21 -0400
+
+xorg-x11 (6.8.2.dfsg.1-5) unstable; urgency=low
+
+  [ David Nusinow ]
+  * Incorporate ELF loader patch for alpha. Thanks Steve Langasek.
+    Closes: #319298
+  * Make xlibs-dev depend on all the packages for libraries that were split
+    out from xlibs-static-dev. We need to kill xlibs-dev eventually, but
+    there's no point in doing it piecemeal. Closes: #318692
+  * Re-enable failure on manifest check fail
+  * Deal with Speedo fonts removal
+    - Document in NEWS.Debian
+    - Remove mention of speedo from templates.pot and update. Sorry
+      translators!
+  * Edit various Debian files for XFree86 -> X.Org branding changes
+  * Remove general/033_no_html.diff
+  * Fix reference to XF86Config-4 in xserver-xorg.templates
+  * Add general/031_disable_libXft1.diff to stop building libXft1, since we
+    don't ship it anyway.
+  * Ship extramodes file in xserver-xorg examples
+  * Allow xfree86-common package to purge cleanly by adding a '-f' to
+    update-rc.d call in postrm. Thanks Enrico Zinni.
+  * Add xserver-xorg.init script that will allow people (intended for
+    LiveCD's) to generate an xorg.conf on the fly at bootup. Thanks Petter
+    Reinholdtsen
+  * Add "| debconf-2.0" to all package depends that depend on debconf so as
+    to unblock installation of cdebconf
+  * Backport i810 Driver from CVS Head. Thanks Jean-Christophe Dubacq
+    - Update general/000_stolen_from_HEAD_i810.diff
+    - Add general/000_stolen_from_HEAD_Xfuncproto.diff
+  * Apply various GNU/kFreeBSD updates. Thanks Robert Millan and Aurelien
+    Jarno. Closes: #318934
+    - Remove all the old GNU/kFreeBSD support files
+    - Update 099s to only include SELinux support if we're building for
+      linux
+      + Also update Build-Depends to not require selinux for hurd and
+        GNU/kFreeBSD
+    - Allow xlibmesa-dri and friends, as well as xdmx and xserver-xorg to
+      build on kfreebsd-i386
+    - Add fixes to xserver-wrapper.c for major and minor numbers for VT's
+      on non-linux platforms
+    - Miscellaneous fixes to xserver-xorg.config.in
+    - Update MANIFEST and various .install files
+    - Add megapatch freebsd/001 and Wacom fixes in freebsd/002
+
+  [ Eugene Konev ]
+  * Do not impose selinux on the whole world out there: move selinux
+    specific changes from config/cf/Imake.tmpl to programs/xdm/Imakefile,
+    as xdm is the only program affected by this patch. Closes: #319121
+  * Change prune target of debian/rules to use file lists in debian/prune
+  * Add dependency on libxss1 to libxss-dev. Thanks Russ Allbery.
+    Closes: #318629
+  * Re-enable building HTML docs
+    - Remove patch general/057_X11.tmpl_warning_fix.diff to allow this
+  * Introduce replace_conffile_with_symlink_{prepare,commit,rollback}
+    functions to debian/shell-lib.sh. Switch handling of symlinks to
+    them.
+  * Add link from /etc/X11/xkb/rules/xorg.lst to
+    /etc/X11/xkb/rules/xfree86.lst in xlibs.links. Add it to symlink
+    handling.
+  * Add /etc/X11/xkb/rules/xfree86.xml symlink to symlink handling.
+  * Check old version of package in postrm in case of abort-install or
+    abort-upgrade so we do not remove new config in the case of failed
+    install/upgrade from not so old version.
+
+  [ Julien Cristau ]
+  * Clean up FAQ to refer to X.Org instead of XFree86. Closes: #319407
+
+  [ David Martínez Moreno ]
+  * Include upstream X.Org changelog in x11-common documents.
+  * Remove various references to XFree86 and its trappings.
+  * Remove obsolete XF86Config.7 manpage.
+  * Minor updates to Hurd files.
+  * Various fixes to xserver-xorg.templates.
+    - Typo fix.
+    - Don't add load GLcore module, which is ignored by the server anyway.
+    - Remove extraneous reference to the now removed Speedo fonts.
+    - Remove references to xtt in the description of the modules.
+  * patches/general/000_stolen_from_unichrome.sf.net.diff: Added high
+    resolution modes for KM400, patch by Luc Verhagen (closes: #318348).
+  * Typos kindly submitted by A Costa:
+    - Fixed typo in XStandards manpage (closes: #320545).
+    - Fixed typo in Xsession manpage (closes: #320546).
+    - Fixed typo in dexconf manpage (closes: #306689).
+    - Fixed typo in bitmap manpage (closes: #306706).
+    - Fixed typo in xedit manpage (closes: #306707).
+    - Fixed typo in xvinfo manpage (closes: #306709).
+  * Added patches/general/general/025b_xkb_README_typos.diff: Fixed
+    typos in XKB's README.config. Thanks, Daniel Hulme and Adrian von Bidder
+    (closes: #315555, #321946).
+  * Updated Spanish translation.
+  * Updated French translation. Thanks, Christian Perrier (closes:
+    #319448).
+  * Updated Brazilian Portuguese translation. Thanks, André Luís Lopes
+    (closes: #320469).
+  * Added Simplified Chinese translation (zh_CN.po). Thanks, Carlos Z.F.
+    Liu! (closes: #320657).
+  * Added Basque translation (eu.po). Thanks, Pi. (closes: #320792).
+  * Added more GNU/kFreeBSD fixes, for xserver-xorg.config.in, in order to
+    obtain the list of mouse devices dynamically.
+  * Fixed reference to migrated items in xserver.xorg.config.in. Thanks,
+    Joey Hess (closes: #318276).
+  * patches/general/030_libvgahw_gcc4_volatile_fix.diff: Disabled by now in
+    order to test if the gcc 4.0.1-3 workaround is enough.
+
+  [ Eugene Konev and David Nusinow ]
+  * Switch from dbs to quilt.
+    - Document how to use the system in debian/README
+    - Re-organize patches in to subdirectories
+  * Drop xmh.
+    - Add general/022_disable_xmh.diff to not build it
+    - Remove xmh from MANIFEST files and xlibs-data.installs
+
+  [ Branden Robinson ]
+  * Document the function of the "v4l" X server module in the
+    xserver-xorg/config/modules debconf template, and enable it by default.
+    (Closes: #135768)
+  * Remove versioned dependency expression from libxaw8's shlibs file, as
+    there was never an earlier version of the package in existence to depend
+    on.
+
+  [ Denis Barbier ]
+  * Minor cleanup of XKB related patches.
+    - Remove us(intl) from patch #099j_xkb_new_layouts, this variant
+      has been included upstream.
+    - Fix patch #099t_xkb_remove_hidden_attributes, it applies against
+      symbols/pc/us and not symbols/us.
+    - Update patch #099z_xkb_level3_ralt_switch to also replace
+      level3(ralt_switch_multikey) by level3(ralt_switch) in new layouts.
+  * Add general/088_xkb_only_one_default_variant_gb.diff to remove the
+    'default' attribute of gb(intl), there must be only one default
+    variant per layout.
+  * Do not set Right Alt to AltGr with dvorak layout: this layout has
+    only two levels, so people prefer to have a 2nd Alt key rather
+    than a useless AltGr.  Thanks Adam C Powell IV.  Closes: #258399
+
+ -- David Nusinow <dnusinow@debian.org>  Wed, 10 Aug 2005 01:09:06 -0400
+
+xorg-x11 (6.8.2.dfsg.1-4) unstable; urgency=low
+
+  Changes by David Nusinow:
+
+     - Remove README.DGA from xserver-xorg.docs.m68k, mips, mipsel, and arm to
+       fix FTBFS.
+     - Resolve MANIFEST.mips to fix FTBFS
+     - Add missing docs to xserver-xorg.docs.mipsel
+     - Incorporate patch from HEAD to include more radeon PCI ID's. Thanks
+       Harald Welte. Closes: #318948
+     - Make the build not fail on MANIFEST check. If there are discrepancies,
+       I'd rather have a mostly complete X package than a failure on some
+       arches. The failure diff will still be spit out, allowing us to fix the
+       problems.
+
+  Changes by Eugene Konev:
+
+     - Update 030_libvgahw_gcc4_volatile_fix.diff to include a complete fix.
+       Closes: #318218
+
+  Changes by David Martínez Moreno
+
+     - Fix xlibmesa-dri.bug.script to attach correct log files
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 18 Jul 2005 09:34:07 -0400
+
+xorg-x11 (6.8.2.dfsg.1-3) unstable; urgency=low
+
+  Changes by David Nusinow:
+
+     - Change reference to xlibglu1-xorg-dbg to libglu1-xorg-dbg in
+       debian/rules (thanks Steve Langasek)
+     - Update MANIFEST.in, and missing items to be installed for alpha, arm,
+       and m68k
+     - Fix incorrect C++ ABI transition. libglu1-xorg is implemented in C++
+       but only exports a C ABI, so transitioning it is unnecessary. The
+       package now provides both libglu1 and libglu1c2. Thanks to Marcelo
+       Magallon and Steve Langasek.
+     - Refer to correct config file in xserver-xorg.bug.script (thanks David
+       Martínez Moreno)
+     - Add 030_libvgahw_gcc4_volatile_fix.diff to work around libvgahw.a gcc4
+       breakages. Thanks David Martínez Moreno and Paul Hampson.
+       Closes: #318218, #318231, #318271, #318405, #318430
+     - dexconf fix for 3 button mouse emulation. Thanks David Martínez Moreno;
+       Closes: #318092
+     - Turn on SELinux support in xdm. Thanks Manoj Srivastava; Closes: #317024
+       - Add libselinux1-dev to Build-Depends
+     - Update Danish debconf translations. Thanks to Claus Hindsgaul;
+       Closes: #318227
+     - Update Czech debconf translations. Thanks to Miroslav Kure;
+       Closes: #318323
+     - Update Portuguese (Brazilian) debconf translations. Thanks to Andre
+       Luis Lopes; Closes: #318635
+     - Update German debconf translations. Thanks to Alwin Meschede;
+       Closes: #318721
+
+   * Changes by Daniel Stone:
+     - Fix S/390 build by bringing MANIFEST and *.install.s390 files up to
+       date.
+     - Let Xdmx build on S/390 as well.  Move xdmx.install.* files to
+       xdmx.install, since they were identical for each architecture.
+     - Bring MANIFEST.mips{,el}.in up to date.
+     - Bring xserver-xorg.install.{alpha,mips{,el}} up to date.
+     - Fix mysterious breakage in the SPARC build by fixing its MANIFEST good
+       and proper.
+     - Drop libstdc++6-dev dependency entirely, since build-essential will
+       bring that in.  Also drop libc6-dev dependency. Closes: #318353
+
+  Changes by Eugene Konev:
+
+     - Add patch 002a_xterm_no_overstrike_bold_fonts.diff to fix xterm bold
+       fonts ugliness; Closes: #318162
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 12 Jul 2005 16:52:39 -0400
+
+xorg-x11 (6.8.2.dfsg.1-2) unstable; urgency=low
+
+  Changes by David Nusinow:
+
+     - Change x-window-system to depend on xprint
+       - Change 009 patch to refer to xprint instead of xprt-xprintorg
+
+     - Run debian/rules update-po to update translation templates
+
+     - Drop versioned dependency on libstdc++
+
+     - Update debian/NEWS with a few things
+
+     - Update xlibs-static-dev package description with libXprint* libs (thanks
+       Nathanael Nerode)
+
+     - Add 104_sparc_no_mv8_flag.diff to fix a build problem on sparc (thanks
+       Julien Cristau)
+
+  Changes by Daniel Stone:
+
+     - Fix FTBFS by only forcing BuildXprintLib building when we're not
+       BuildingServersOnly (i.e. only in the normal build, not in -dbg).
+     - Change NOT_BUILDING_XFREE86_X_SERVER to _XORG_ in vars.s390 (fixes FTBFS
+       also).
+     - Add 000_stolen_from_drm.diff from Ubuntu, with annotations, which fixes
+       FTBFS when using linux-libc-headers.
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 11 Jul 2005 20:47:31 -0400
+
+xorg-x11 (6.8.2.dfsg.1-1) unstable; urgency=low
+
+  Changes by David Nusinow:
+
+    - Add missing comma to Build-Depends in debian/control. Thanks to Eugene
+      Konev for catching this!
+
+    - Change x-common to x11-common in order to reflect that this package
+      provides symlinks named x11
+
+   - Add -f to update-rc.d call in xfree86-common.postinst.in to get rid of
+      error during configure stage. Thanks to Norbert Tretowski for providing
+      the fix.
+
+   - Disable acceleration on C&T 69000 by default but allow it to be overrided
+     by config file. Thanks to Dan Christensen and Nathanael Nerode;
+     Closes: #315315
+
+   - Remove svn comments from debian/local xpm pixmaps to unbreak xdm. Thanks
+     to Eugene Konev.
+
+   - Disable xprt. Thanks to Eugene Konev!
+     - Change x-window-system to depend on xprt-xprintorg (thanks to Drew
+       Parsons); Closes: #300974
+
+   - Change debian/po/POTFILES.in to use x11-common templates, not
+     xorg-common.templates. Thanks to Eugene Konev
+
+   - Pull the following from Ubuntu Breezy patches to allow gcc4 builds
+     - 024d_radeon_fix_gcc4_build.diff (to which I incorporated a one-line fix
+       from the 024a_radeon_benh_fixes.diff patch)
+     - 991_ubuntu_gcc_flags.diff
+
+    - Package name changes for the C++ ABI transition: (Thanks to Eugene Konev,
+      Steve Langasek, and Daniel Stone)
+      - xlibmesa-glu renamed to libglu1-xorg; Provides: changed to
+        libglu1c2, libglu1c2 added to the Conflicts: and Replaces:
+      - libglu1-xorg shlibs changed to libglu1-xorg | libglu1c2
+      - xlibmesa-glu-dbg renamed to libglu1-xorg-dbg; xlibmesa-glu-dbg
+        added to Conflicts: and Replaces:
+      - xlibmesa-glu-dev renamed to libglu1-xorg-dev; depend on
+        libglu1-xorg instead of xlibmesa-glu, of course, and add
+        xlibmesa-glu-dev to the Conflicts/Replaces/Provides
+      - Update x-window-system-core to depend on libglu1-xorg instead of
+        xlibmesa-glu
+      - Update x-window-system-dev to depend on libglu1-xorg-{dev,dbg}
+        instead of xlibmesa-glu-{dev,dbg}
+      - Drop the xlibmesa3, xlibmesa3-dbg, and xlibmesa-dev transition
+        packages; these existed for the woody->sarge transition, and they
+        can't possibly provide a proper transition for anything that
+        relies on the C++ ABI, so better to get rid of them altogether
+      - Rename all xlibmesa-glu package files accordingly
+
+    - Remove libglu1-xorg-dev's dependency on "libstdc++5-3.3-dev |
+      libstdc++-dev": this doesn't actually ensure that the correct C++
+      headers are installed, and it's no longer the correct libstdc++
+      version anyway.
+
+    - Add patch 915_disable_i915_debugging.diff, to disable non-x86 debug
+      statements for this chip. Thanks to Aaron M. Ucko
+
+    - Patch Audit
+      - 0000_backport_from_upstream.diff updated
+        - Thomas Winischhofer's post-6.8.2 fixes to MiscPassMessage();
+          Closes: #285807
+      - 000_backport_from_author_xterm.diff ported (Nathanael Nerode)
+        - Closes: #297430, #296592, #298551
+      - 002_xdm_fixes.diff updated (Eugene Konev)
+      - 003b_xfs_fixes.diff ported (Eugene Konev, Nathanael Nerode)
+      - 005_rgb.txt_in_etc_X11.diff updated (Nathanael Nerode)
+      - 008_fix_xgetpw_macro.diff updated (Eugene Konev)
+      - 011_SECURITY_makedepend_safer.diff (Nathanael Nerode)
+      - 011a_recognize_glibc_2.3.2_locale_names.diff (Nathanael Nerode)
+      - 013a_xkb_symbols_euro_support.diff added (Eugene Konev)
+      - 019_iso8859-15_Compose_fix.diff updated (Eugene Konev)
+      - 043_ati_r128_update_chip_identification.diff added (Nathanael Nerode)
+      - 047_mga_manpage_updates.diff updated
+      - 055_lnx_evdev_keyboard.diff updated
+      - 067_fix_X11_and_xdm_build_problems.diff ported (Eugene Konev)
+      - 089_xkb_fix_symbols_pc_lt.diff got ID tags back
+      - 093_xkb_fix_macintosh_problems.diff got macintosh equal key fix ported
+      - 099e_xorgconf_manpage_overhaul.diff ported
+      - 099h_mesa_tdfx_load_right_glide_library.diff patched to use
+          libglide_h3/5 as used in unstable packages.
+      - 099q_tdfx_improve_mode_rejection_diagnostics.diff added
+      - 099q_xkb_tr_fix_eacute.diff removed
+      - 099r_xlsfonts_do_not_spew_usage_on_connection_error.diff added
+      - 099s_selinux_support.diff ported
+      - 099s_xkb_tr_fix_eacute.diff added
+      - 099t_xkb_remove_hidden_attributes.diff ported
+      - 099u_mkdirhier_rewrite.diff ported (Eugene Konev, Nathanael Nerode)
+      - 099v_fontserver_fix_SEGV.diff ported
+      - 099x_xdm_support_logfile_rotation.diff ported
+      - 250_m68k_build_scanpci.diff updated
+      - 304_arm_Xlib.h_kludge_around_ARM_ABI_brain_damage.diff ported
+      - 910_debian_Xserver_RTFF.diff updated
+      - 913_debian_remove_code_ref_to_object_code_files.diff ported
+        - patch to xc/programs/Xserver/hw/xfree86/drivers/rendition/vboard.c
+          re-added to comply with post-sarge SC
+
+ -- David Nusinow <dnusinow@debian.org>  Fri, 24 Jun 2005 10:24:48 -0400
+
+xorg-x11 (6.8.2.dfsg.1-0pre1v1) experimental; urgency=low
+
+  Changes by David Nusinow:
+
+    - Updated packaging to be based off Ubuntu hoary packaging
+      - Merge changelog from Ubuntu hoary package to this changelog
+      - Change instances of "Ubuntu" to "Debian" in control file
+      - Add Daniel Stone to list of Debian package authors in copyright for
+        his work on this package. Update branding in general in this file.
+      - Update shell-lib.sh to merge changes from current xfree tree
+      - Change twm manpage to be set to twm.1x rather than twm.1, as in the
+        xfree packaging
+      - Re-brand XFree86 to X.Org in README
+      - Re-add usr/X11R6/lib/X11/fonts/encodings/large/jisx0208.1983-0.enc.gz
+        to xfonts-base.install
+      - Merge xfree tree xfree86-common.init in to xorg-common.init
+        - Comment out lsb stuff for now, since Debian can't guarantee it.
+          Replace logging with echo's like in xfree script.
+      - Re-add Branden's copyright to xfs.init
+      - Merge changes from xfree tree in to xserver-common.config.in
+      - Merge changes from xfree tree to scripts directory:
+        - manifest-install-reconcile
+        - validate-posix-sh
+      - Merge changes from xfree86 tree to local directory:
+        - dexconf
+        - dexconf.1
+        - FAQ.xhtml
+          - Fix a freedesktop.org reference to X.Org
+        - xterm.faq.html
+        - xvfb-run
+        - xdm/Xstartup
+        - Xsession.d/30xorg-common_xresources
+        - xdm.init
+        - xdm.logrotate
+        - xdm.README.Debian
+
+    - Re-add jisx0208.1983-0.enc.gz to MANIFEST.all's list of font encodings
+      until I know more about why it was removed.
+
+    - Re-add the following to MANIFEST.[arch] and xdm.install
+      - etc/X11/xdm/Xreset
+
+    - Re-enable various modules for xlibmesa-dri-dbg.install
+      - i810 and tdfx for amd64 . Apparently these were supposed to be
+        re-enabled according to the changelog
+      - i830 and ffb for i386
+      - ffb, i810, and i830 for ia64
+    - Re-enable various modules for xlibmesa-dri.install
+      - i810 for amd64
+      - ffb and i830 for i386
+      - ffb, i810, and i830 for ia64
+
+    - Handle xlibs-static package split
+      - Add libxvmc-dev.install.hurd-i386 file which removes
+        usr/X11R6/lib/libI810XvMC.a. Removing
+        xlibs-static-dev.install.hurd-386.
+      - Add libxxf86vm-dev.install.s390 file which removes manpages. Removing
+        xlibs-static-dev.install.s390.
+      - Removing xlibs-static-pic-install.[hurd-i386,netbsd-i386,s390] as the
+        files which they specifically removed in the past don't appear to be
+        shipped any more.
+
+    - Merge and edit control file to refer to XSF
+
+    - Fixes in local
+      - Spelling fix in dexconf.1
+      - Spelling fix and merge updates in to FAQ.xhtml
+      - Merge update to lxterm, uxterm.1, xdm.options.5, XF86Config.7,
+        xfs.options.5, Xsession.5, Xsession.options.5, Xwrapper.config.5
+      - Re-added Xreset script in local/xdm
+
+    - Branding edit and merges to debian/rules
+
+    - Patch Audit
+      - Edited 0000_backport_from_upstream.diff
+        - Removed redundant patches that are also in 000_stolen_from_HEAD.diff
+      - Edited 000_stolen_from_HEAD.diff
+        - Re-diffed Xpm's create.c fix to get it to apply properly
+      - Edited 002_xdm_fixes.diff, 003_linux.cf_and_xfree86.cf.diff, and
+        068_fix_InstallAppDefFiles_screwage.diff to allow them to apply
+        properly with no fuzz
+
+  * Update FAQ to refer to X.Org instead of freedesktop.org where appropriate.
+    (Closes: #309811)
+
+  * Change xorg-common to x-common
+
+  * Update lsb-base version requirement to 3.0-1
+
+  Changes by Branden Robinson:
+
+  * Initial release, based upon upstream CVS tag XORG-6_8_2.  See
+    debian/copyright for details of material removed due to overlap with
+    existing Debian packaging or license terms that fail to satisfy the DFSG.
+
+  * Explain build-dependencies and build-conflicts in debian/control comments.
+
+  * Update build-dependencies relative to xfree86 4.3.0.dfsg.1-12:
+    + List upstream build dependencies on commands first, followed by
+      upstream build depenencies on library headers, and then Debian packaging
+      infrastructure dependencies.
+    + Remove no-longer needed build dependencies on libfontconfig1-dev (header
+      files not used), libpaperg (superseded by libpaper1, and depended upon
+      by tetex-bin nowadays), linux-kernel-headers (depended on by
+      build-essential package libc6-dev), bzip2 and dbs (new organization of
+      source package will not require these).
+
+  * Backport fixes from upstream CVS trunk:
+    + Shut up (tons of) Imake warnings on Debian systems by testing for
+      variable being defined before testing its value.  (Presumably the
+      fallback definition of NothingOutsideProjectRoot in Imake.tmpl was
+      intended to prevent this, but it apparently is not in effect yet
+      when linux.cf is parsed.)
+    + Fix CAN-2005-0605: scan.c in the Xpm library may allow attackers to
+      execute arbitrary code via a negative bitmap_unit value that leads
+      to a buffer overflow. (see Debian #298939)
+
+  * Update debian/copyright to correctly document source package name, origin
+    of .orig.tar.gz file, and credit David Nusinow as a package author.
+    Restore removal of credits to Stephen Early, Mark Eichin, and ISHIKAWA
+    Mutsumi as package authors.  Alter Debian "fallback" copyright notice to
+    credit copyright from changes in 1996 to Stephen Early, in 1997 to Mark
+    Eichin, and for the years since to Branden Robinson.  In the U.S., a
+    written instrument is required to transfer copyright, and to the best of
+    my knowledge, none of Stephen, Mark, or myself ever signed such an
+    instrument.  Remove anti-publicity clause from Debian fallback copyright
+    notice as it's not part of the original MIT/X11 license from the 1980s and
+    has no force under U.S. copyright law (asserting copyright in something,
+    even Free Software, doesn't waive a person's publicity rights anyway).
+    Remove duplicate Debian copyright notice for Software in the Public
+    Interest, Inc.  Merge change from Debian xfree86 SVN to stop identifying
+    the Compugraphic and Adobe fonts from the Xprint server as non-DFSG-free;
+    the files have been removed from the upstream archive for another reason,
+    namely the existence of the xprint package.
+
+  * Place Ubuntu package changelog entries in changelog.Ubuntu (as they do not
+    actually reflect package release history as a Debian user would see it).
+    Ship this changelog in /usr/share/doc/xorg-common.
+
+  * Add debian/scripts/missing-keyword-sniffer, which identifies plain text
+    files in the source package that are missing Subversion Id keywords or the
+    corresponding property.
+
+  * Rework source package to consist of an unpacked source tree, instead of
+    shipping a .tar.gz inside the .orig.tar.gz.
+    + Add debian/scripts/up-scripts (called automatically by dbs's "setup"
+      target), which copies the source tree into build-tree using hardlinks.
+    + Update debian/setperms to ensure that up-scripts is executable.
+    + Update debian/vars to stop defining SOURCE_DIR variable.
+    + Put debian/scripts in PATH and export it from debian/rules, so that dbs
+      can find up-scripts.
+    + Update target dependencies in debian/rules from "$(patched)" to "setup",
+      so that we can be sure up-scripts is run.
+
+  * Make .orig.tar.gz preparation less opaque.
+    + Add prune-upstream-tree and make-orig-tar-gz phony targets to
+      debian/rules.  (Note that these are not intended for ordinary package
+      builds, and have to be manually invoked.)
+    + Remove outdated and now-obsolete file debian/scripts/prune-non-free.
+    + Add $(SOURCE_NAME) and $(UPSTREAM_VERSION) variables to debian/rules.
+
+  * Update paths to files containg sourceless firmware in debian/copyright.
+
+  * Grab patches from upstream CVS HEAD:
+    - Add radeon(4x) manpage updates documenting VGAAccess, ReverseDDC, and
+      LVDSProbePLL options.  (Benjamin Herrenschmidt)
+      <URL: https://bugs.freedesktop.org/show_bug.cgi?id=2064 >.
+    - Add VGAAccess option to r128 driver, based on Benjamin Herrenscmidts's
+      radeon patch.  r128 should now work on PowerPCs without "UseFBDev".  To
+      use this on PowerPC, make sure you set "UseFBDev" to "false".
+      (Alex Deucher)
+      <URL: https://bugs.freedesktop.org/show_bug.cgi?id=2089 >.
+
+  * Document DFSG-non-freeness of PolyglotMan ("rman") in debian/copyright.
+
+  * Update patch #058 to give Xcomposite, Xdamage, Xevie, and Xfixes their own
+    copies of the config-subst script, instead of hard-coding a within-tree
+    path to the copy in the Xcursor library.  (I don't know what the point of
+    directing these Imakefiles over to Xcursor's copy was -- there were
+    already four identical copies of config-subst in X.Org 6.8.2 anyway, so
+    this decision didn't help matters much. :) ) Update the Imakefiles to look
+    for config-subst in the current working directory instead of ../Xcursor.
+    Convert local includes to system includes in the GLU library and X server
+    so that the RENDER protocol headers can actually be found.  Define
+    RenderDefines if either BuildRender or HaveRenderLibrary is true, not just
+    BuildRender.  Only specify render.h and renderproto.h as targets and
+    install renderproto.h as part of the SDK if we're building the extension
+    and *don't* have the extension library in the build environment.  Update
+    MANIFEST.*.in files to reflect the fact that render.h and renderproto.h
+    are no longer installed.
+
+  * Stop removing the debian/local/xlibmesa-drm-source directory in
+    debian/rules's clean target, as nothing creates it, and nothing has since
+    xfree86 4.3.0-0pre1v3.
+
+  * Add build-dependency on render-dev (>> 1:0.9), since several files
+    directly #include render.h and renderproto.h.  Version dependency since
+    symbols new to renderext 0.9 are used.  Document dependency in detail in
+    debian/control comments.
+
+  * Update patch #908 to stop attempting to install the sourceless microcode
+    files associated with the rendition driver, which are not part of the
+    source package (see debian/copyright).  Correct
+    debian/MANIFEST.{alpha,amd64,hurd-i386,i386,ia64,sparc}.in to reflect the
+    absence of these files.  (Other architectures do not build the rendition
+    driver.)  Thanks to Jesus Climent for spotting this problem.
+
+ -- David Nusinow <dnusinow@debian.org>  Wed, 22 Jun 2005 11:24:38 -0400
 xorg (6.8.2-77) breezy; urgency=low
 
   * Silence update-rc.d in xorg-common postrm.
