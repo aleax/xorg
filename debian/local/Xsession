@@ -118,9 +118,11 @@ rm -f "$WRITE_TEST"
 # other
 SESSIONFILES=$(run_parts $SYSSESSIONDIR)
 if [ -n "$SESSIONFILES" ]; then
+  set +e
   for SESSIONFILE in $SESSIONFILES; do
     . $SESSIONFILE
   done
+  set -e
 fi
 
 exit 0
