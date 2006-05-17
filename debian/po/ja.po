@@ -29,8 +29,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.0.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-16 16:06-0500\n"
-"PO-Revision-Date: 2006-04-19 15:03+0900\n"
+"POT-Creation-Date: 2006-05-17 07:04-0500\n"
+"PO-Revision-Date: 2006-05-17 13:30+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org> and ISHIKAWA Mutsumi "
 "<ishikawa@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -48,7 +48,7 @@ msgstr "Root のみ, コンソールユーザのみ, だれでも"
 #. Description
 #: ../x11-common.templates:5
 msgid "Users allowed to start the X server:"
-msgstr ""
+msgstr "X サーバの起動を許可するユーザ:"
 
 #. Type: select
 #. Description
@@ -70,14 +70,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid "Nice value for the X server:"
-msgstr "使用する X サーバに見合う nice 値を入力して下さい。"
+msgstr "X サーバの nice 値:"
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -88,10 +86,10 @@ msgid ""
 "also the recommend value for the X server."
 msgstr ""
 "特別なスケジューリング戦略を持つオペレーティングシステムカーネルを使っている"
-"場合、\"nice\" 値として知られているプロセスの優先度をデフォルトより高い値に設"
+"場合、「nice」値として知られているプロセスの優先度をデフォルトより高い値に設"
 "定することで、X サーバのパフォーマンスが向上することは広く知られています。"
-"\"nice\" 値の範囲は -20 (非常に高い優先度、もしくはほかのプロセスにとって「よ"
-"くない (\"not nice\" な)」優先度) から 19 まで (非常に低い優先度)  です。通常"
+"「nice」値の範囲は -20 (非常に高い優先度、もしくはほかのプロセスにとって「よ"
+"くない (『not nice』な)」優先度) から 19 まで (非常に低い優先度)  です。通常"
 "のプロセスに対するデフォルトの nice 値は 0 であり、これは X サーバでの推奨値"
 "でもあります。"
 
@@ -111,7 +109,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:35
 msgid "Incorrect nice value"
-msgstr ""
+msgstr "無効な nice 値です"
 
 #. Type: note
 #. Description
@@ -123,7 +121,7 @@ msgstr "-20 〜 19 の間の整数を入力して下さい。"
 #. Description
 #: ../x11-common.templates:40
 msgid "Major possible upgrade issues"
-msgstr ""
+msgstr "アップグレードに関する問題の主な可能性"
 
 #. Type: note
 #. Description
@@ -136,6 +134,12 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
+"複数のユーザが、彼らの X サーバパッケージがもうインストールされていない現在の"
+"パッケージセットへのアップグレードについて報告しています。この問題に対する簡"
+"単な方法はないため、xserver-xorg パッケージがアップグレード後にインストールさ"
+"れているかどうかよく確認すべきです。もしこれがインストールされておらず、かつ"
+"必要なのであれば、完全に機能する X セットアップを保有していることを確認するた"
+"めに、xorg パッケージをインストールすることをお勧めします。"
 
 #. Type: boolean
 #. Description
@@ -146,7 +150,6 @@ msgstr "ビデオハードウェアを自動認識させますか?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
-#, fuzzy
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -155,35 +158,31 @@ msgid ""
 "your video hardware will be pre-answered."
 msgstr ""
 "あなたのビデオカードに対して、自動的にお奨めの X サーバ・ドライバモジュールを"
-"検出させたければ、「はい」と答えてください。自動検出に失敗すると、使いたい X "
+"検出させたければ、「はい」と答えて下さい。自動検出に失敗すると、使いたい X "
 "サーバと (または) ドライバモジュールを手動で入力することになります。自動検出"
-"が成功すれば、ビデオハードウェアに関する debconf の以降の質問は、自動的に回答"
-"されます。"
+"が成功すれば、以降のビデオハードウェア設定の質問は、自動的に回答されます。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
-#, fuzzy
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
 "is only one available."
 msgstr ""
 "X サーバとドライバモジュールをあなた自身で選びたいのであれば、この選択肢では"
-"「いいえ」を選んでください。もし利用できる X サーバが 1 つだけであれば X サー"
-"バの選択は尋ねられません。"
+"「いいえ」を選んで下さい。もし利用できる X サーバが 1 つだけであれば X サーバ"
+"の選択は尋ねられません。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
-#, fuzzy
 msgid "No X server known for your video hardware"
-msgstr "あなたのビデオハードウェアに対応する X サーバがわかりませんでした。"
+msgstr "あなたのビデオハードウェアに対応する X サーバがわかりませんでした"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
-#, fuzzy
 msgid ""
 "There is either no video hardware installed on this machine (e.g. serial "
 "console only), or the \"discover\" program was unable to determine which X "
@@ -200,21 +199,18 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:26
-#, fuzzy
 msgid "Multiple potential default X servers for your hardware"
-msgstr "あなたのハードウェアにはデフォルト X サーバの候補が複数あります。"
+msgstr "あなたのハードウェアにはデフォルト X サーバの候補が複数あります"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:42
-#, fuzzy
 msgid "Desired default X server:"
-msgstr "利用したいデフォルト X サーバを選択します。"
+msgstr "利用したいデフォルト X サーバ:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:42
-#, fuzzy
 msgid ""
 "The X server is the hardware interface of the X Window System.  It "
 "communicates with the video display and input devices, providing a "
@@ -227,15 +223,14 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:42
-#, fuzzy
 msgid ""
 "Several X servers may be available; the default is selected via the /etc/X11/"
 "X symbolic link.  Some X servers may not work with some particular graphics "
 "hardware."
 msgstr ""
 "いくつかの X サーバを利用できます。デフォルトはシンボリックリンク /etc/X11/X "
-"によって選択されます。あなたの使っているグラフィックハードウェアでは動作しな"
-"い X サーバもあるかもしれません。"
+"によって選択されます。いくつかの特別なグラフィックハードウェアでは動作しない "
+"X サーバもあるかもしれません。"
 
 #. Type: boolean
 #. Description
@@ -246,7 +241,6 @@ msgstr "設定ファイルにデフォルトの Files セクションを書き�
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:54
-#, fuzzy
 msgid ""
 "The Files section of the X server configuration file tells the X server "
 "where to find server modules, the RGB color database, and font files.  This "
@@ -254,30 +248,29 @@ msgid ""
 "be enabled."
 msgstr ""
 "X サーバ設定ファイルの Files セクションは、X サーバがサーバモジュール・RGB 色"
-"データベース・フォントファイルを探す場所を指定します。このオプショ ンは熟練"
-"ユーザのためのものです。多くの場合、ここで「はい」と答えるべきです。"
+"データベース・フォントファイルを探す場所を指定します。このオプションは熟練"
+"ユーザのためだけのものです。たいていは、ここで「はい」と答えるべきです。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:54
 #, fuzzy
 msgid ""
-"Disable this option if you want to maintain a custom \"Files\" section into "
-"the X.Org server configuration file.  This may be needed to remove the "
-"reference to the local font server, add a reference to a different font "
-"server, or rearrange the default set of local font paths."
+"Disable this option if you want to maintain a custom Files section into the "
+"X.Org server configuration file.  This may be needed to remove the reference "
+"to the local font server, add a reference to a different font server, or "
+"rearrange the default set of local font paths."
 msgstr ""
-"X.org サーバ設定ファイルの \"Files\" セクションを自分で書きたい場合、ここで"
-"「いいえ」と答えて下さい。ローカルのフォントサーバを参照しなくしたり、別の"
-"フォントサーバを参照するようにしたり、ローカルのフォントパスを作りかえたりし"
-"たい場合は「いいえ」と答えます。"
+"X.Org サーバ設定ファイルの「Files」セクションを自分で書きたい場合、ここで「い"
+"いえ」と答えて下さい。ローカルのフォントサーバを参照しなくしたり、別のフォン"
+"トサーバを参照するようにしたり、ローカルのフォントパスを作り変えたりしたい場"
+"合は「いいえ」と答えます。"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:68
-#, fuzzy
 msgid "X.Org server modules that should be loaded by default:"
-msgstr "デフォルトでロードされる X.Org サーバモジュールを選んで下さい。"
+msgstr "デフォルトでロードされる X.Org サーバモジュール:"
 
 #. Type: multiselect
 #. Description
@@ -286,6 +279,8 @@ msgid ""
 "This option is recommended to experienced users only.  In most cases, all of "
 "these modules should be enabled."
 msgstr ""
+"この選択肢は熟練ユーザにのみ推奨されます。たいていの場合、これらのモジュール"
+"すべてを有効にすべきです。"
 
 #. Type: multiselect
 #. Description
@@ -308,6 +303,21 @@ msgid ""
 " - record: implements the RECORD extension, often used in server testing;\n"
 " - bitmap: font rasterizer (so are freetype, and type1 modules)."
 msgstr ""
+" - glx   : OpenGL 描画のサポート。\n"
+" - dri   : DRI (Direct Rendering Infrastructure) の X サーバでのサポート。\n"
+" - vbe   : VESA BIOS Extensions のサポート。ビデオカード経由でモニタの\n"
+"           能力の問い合わせを許可する。\n"
+" - ddc   : 個々の Data Display Channel のサポート。ビデオカード経由で\n"
+"           モニタの能力の問い合わせを許可する。\n"
+" - int10 : セカンダリ VGA カードのソフトブートに使われるリアルモード x86\n"
+"           エミュレータ。vbe が有効なときにはこれも有効にする。\n"
+" - dbe   : サーバのダブルバッファリング拡張を有効にする。アニメーションや\n"
+"           ビデオ操作に役に立つ。\n"
+" - extmod: shaped window、共有メモリ、ビデオモード切り替え、DGA、Xv といっ"
+"た\n"
+"           伝統的で共通に使われる多くの拡張を有効にする。\n"
+" - record: サーバの実験でよく使われている RECORD 拡張を有効にする。\n"
+" - bitmap: フォントラスタライザ (freetype および type1 モジュール)。"
 
 #. Type: multiselect
 #. Description
@@ -322,15 +332,14 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:92
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr ""
-"あなたのハードウェアでは複数のデフォルト X.Org サーバドライバ候補があります。"
+"あなたのハードウェア向けに、複数のデフォルト X.Org サーバドライバ候補がありま"
+"す"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:92
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -338,9 +347,7 @@ msgid ""
 msgstr ""
 "複数のビデオカードが検出され、それらのデバイスをサポートするために異なる X "
 "サーバが必要とされています。したがって、自動的にデフォルト X サーバを選択する"
-"ことは不可能です。あなたのコンピュータの「プライマリヘッド」 (これは通常、コ"
-"ンピュータが最初のブート時に表示するのに使うビデオカードとモニタです) として"
-"使いたいデバイスを設定して下さい。"
+"ことは不可能です。"
 
 #. Type: note
 #. Description
@@ -350,26 +357,27 @@ msgid ""
 "\"; this is generally the video card and monitor used for display when the "
 "computer is booted up."
 msgstr ""
+"このコンピュータの「プライマリヘッド」として提供するデバイスを設定して下さ"
+"い。これは一般に、コンピュータのブート時に表示するのに使うビデオカードおよび"
+"モニタです。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:92
-#, fuzzy
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
 "multi-head configuration."
 msgstr ""
-"現在のところ、debconf ではシングルヘッド (1 つのビデオカード) のセットアップ"
-"だけがサポートされています。ただし、X サーバの設定ファイルを編集すればマルチ"
-"ヘッドの設定もできます。"
+"設定処理ではシングルヘッド (1 つのビデオカード) のセットアップだけがサポート"
+"されています。ただし、マルチヘッド設定をサポートするよう、後で X サーバの設定"
+"ファイルを編集することもできます。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:107
-#, fuzzy
 msgid "Identifier for your video card:"
-msgstr "あなたのビデオカードの識別子を入力して下さい。"
+msgstr "あなたのビデオカードの識別子:"
 
 #. Type: string
 #. Description
@@ -381,14 +389,14 @@ msgid ""
 "6600\"."
 msgstr ""
 "X サーバの設定ファイルはあなたのビデオカードを指定の名前と関連付けます。これ"
-"は通常、ベンダ名かブランド名のあとにモデル名が付きます。たとえば「Intel "
-"i915」、「ATI RADEON X800」「NVIDIA GeForce 6600」などです。"
+"は通常、ベンダ名かブランド名のあとにモデル名が付きます。例えば「Intel i915」"
+"「ATI RADEON X800」「NVIDIA GeForce 6600」などです。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:115
 msgid "X server driver:"
-msgstr ""
+msgstr "X サーバドライバ:"
 
 #. Type: select
 #. Description
@@ -408,7 +416,7 @@ msgid ""
 "for a specific model or family of chipsets."
 msgstr ""
 "ドライバは通常、ビデオカードやチップセットの製造元や、特定のモデルやチップ"
-"セットのファミリの名前がつけられています。"
+"セットのファミリの名前が付けられています。"
 
 #. Type: boolean
 #. Description
@@ -443,9 +451,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:136
-#, fuzzy
 msgid "Video card's bus identifier:"
-msgstr "ビデオカードのバス識別子を入力して下さい"
+msgstr "ビデオカードのバス識別子:"
 
 #. Type: string
 #. Description
@@ -483,8 +490,8 @@ msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"\"lspci -X\" コマンドを使って、PCI、AGP、あるいは PCI-Express ビデオカードの"
-"バスの位置を決めたいかもしれません。"
+"「lspci -X」コマンドを使って、PCI、AGP、あるいは PCI-Express ビデオカードのバ"
+"スの位置を決めたいかもしれません。"
 
 #. Type: string
 #. Description
@@ -493,26 +500,24 @@ msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
 msgstr ""
-"可能なら、この質問は自動的に返答され、もしそれがうまくいかないと前もって分"
+"可能なら、この質問は自動的に返答され、もしそれがうまくいかないと前もってわ"
 "かっている場合以外はそのデフォルトを受け入れるべきです。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:159
 msgid "Incorrect format for the bus identifier"
-msgstr ""
+msgstr "バス識別子として無効なフォーマットです"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:163
-#, fuzzy
 msgid "Amount of memory (kB) to be used by the video card:"
-msgstr "あなたのビデオカードが利用するメモリ量 (kB 単位で) を入力して下さい。"
+msgstr "ビデオカードが利用するメモリ量 (kB 単位):"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:163
-#, fuzzy
 msgid ""
 "Typically, the amount of dedicated memory used by the video card is "
 "autodetected by the X server, but some integrated video chips (such as the "
@@ -520,33 +525,30 @@ msgid ""
 "main system memory for their needs."
 msgstr ""
 "一般的に、あなたのビデオカードが持っている専用メモリの量は X サーバによって自"
-"動検出されますが、統合化されたビデオチップ (Intel i810 など) などでは自分自身"
-"のビデオメモリをほんのわずかしか (あるいはまったく) 持っておらず、メインシス"
-"テムメモリから必要な分を代用します。"
+"動検出されますが、いくつかの統合化されたビデオチップ (Intel i810 など) などで"
+"は自分自身のビデオメモリをほんのわずかしか (あるいはまったく) 持っておらず、"
+"メインシステムメモリから必要な分を代用します。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:163
-#, fuzzy
 msgid ""
 "This parameter should usually be left blank and specified only if the video "
 "card lacks RAM, or if the X server has trouble autodetecting the RAM size."
 msgstr ""
-"このパラメータは空にしておいてもまったく問題ありません。あなたのビデ オカード"
-"にメモリがないか、または X サーバが自動的にメモリの量を検出するのに失敗した場"
-"合にのみ、メモリの量を指定する必要があります。"
+"このパラメータは通常、空にしておいて問題ありません。ビデオカードにメモリがな"
+"いか、または X サーバが自動的にメモリの量を検出するのに失敗した場合にのみ、指"
+"定して下さい。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid "XKB rule set to use:"
-msgstr "XKB ルールセットを選んで下さい。"
+msgstr "利用する XKB ルールセット:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -567,13 +569,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkeyboard-config "
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
-"熟練ユーザは、好きな定義された XKB ルールセットを選ぶことができます。 "
+"熟練ユーザは、定義された XKB ルールセットをどれでも選ぶことができます。 "
 "xkeyboard-config パッケージが展開済みであるなら、利用可能なルールセット名につ"
 "いて /etc/X11/xkb/rules ディレクトリを参照して下さい。"
 
@@ -581,24 +582,23 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr ""
+msgstr "よくわからなければ、この値を「xorg」に設定すべきです。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
 msgid "Keyboard model:"
-msgstr ""
+msgstr "キーボードモデル:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
 "X サーバがキーボードを正しく扱うために、キーボードモデルを入力する必要があり"
-"ます。利用可能なモデルは XKB ルールセットに依存します。"
+"ます。利用可能なモデルは どの XKB ルールセットが使えるかに依存します。"
 
 #. Type: string
 #. Description
@@ -620,6 +620,19 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
+" 「xorg」ルールセットでは:\n"
+" - pc101: 米国で一般的な、101 のキーを持つ伝統的な IBM PC/AT スタイル\n"
+"          キーボード。「ロゴ」および「メニュー」キーはなし。\n"
+" - pc104: pc101 モデルに類似し、通常「ロゴ」記号および「メニュー」記号\n"
+"          の刻印のある追加キーを持つ。\n"
+" - pc102: pc101 に類似し、欧州でよく見かけられる。「< >」キーを備える。\n"
+" - pc105: pc104 に類似し、欧州でよく見かけられる。「< >」キーを備える。\n"
+" - macintosh: Linux キーコードの新しい入力レイヤを使っている Macintosh\n"
+"              キーボード。\n"
+" - macintosh_old: 新しい入力レイヤを使っていない Macintosh キーボード。\n"
+" 「sun」ルールセットでは:\n"
+" - type4: Sun タイプ 4 キーボード。\n"
+" - type5: Sun タイプ 4 キーボード。"
 
 #. Type: string
 #. Description
@@ -636,7 +649,6 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
-#, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
@@ -659,27 +671,24 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:220
-#, fuzzy
 msgid "Keyboard layout:"
-msgstr "キーボードレイアウトを自動検出しますか?"
+msgstr "キーボードレイアウト:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:220
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
 "were previously selected."
 msgstr ""
 "X サーバがキーボードを正しく扱うために、キーボードレイアウトを入力する必要が"
-"あります。利用できるレイアウトは、選択した XKB ルールセットと キーボードモデ"
-"ルに依存します。"
+"あります。利用できるレイアウトは、いままで選択してきた XKB ルールセットと "
+"キーボードモデルに依存します。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:220
-#, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkeyboard-config package has been unpacked, see the /etc/X11/"
@@ -687,7 +696,7 @@ msgid ""
 msgstr ""
 "熟練ユーザは、選んだ XKB ルールセットによって定義された、好きなモデルを選ぶこ"
 "とができます。xkeyboard-config パッケージを展開済みであるなら、利用可能なルー"
-"ルセットについて /etc/X11/xkb/rules ディレクトリを参照してください。"
+"ルセットについて /etc/X11/xkb/rules ディレクトリを参照して下さい。"
 
 #. Type: string
 #. Description
@@ -698,19 +707,18 @@ msgid ""
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
 "米国の英語キーボードのユーザは「us」と入力します。日本の JIS キーボ ードの"
-"ユーザは「jp」と入力します。他国のキーボードは、ISO 3166 国コ ードで入力して"
-"下さい。例えばフランスは「fr」、ドイツは「de」です。"
+"ユーザは「jp」と入力します。他国のキーボードは、ISO 3166 国コードで入力して下"
+"さい。例えばフランスは「fr」、ドイツは「de」です。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
 msgid "Keyboard variant:"
-msgstr ""
+msgstr "キーボードバリアント:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -728,14 +736,13 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
-"多くのキーボードレイアウトが、文字幅を持たないアクセント記号などの \"dead\" "
+"多くのキーボードレイアウトが、文字幅を持たないアクセント記号などの「dead」"
 "キーを文字幅を持つ通常の文字として扱うオプションをサポートしています。もしこ"
 "の動作が好ましいなら、「nodeadkeys」と入力して下さい。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
-#, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
@@ -745,7 +752,7 @@ msgstr ""
 "熟練ユーザは、選択した XKB レイアウトによってサポートされる好きなバリアントを"
 "選択できます。xkeyboard-config パッケージを展開済みであるなら、利用可能なバリ"
 "アントで選択したレイアウトに相当するファイルについて、/etc/X11/xkb/symbols "
-"ディレクトリを参照してください。"
+"ディレクトリを参照して下さい。"
 
 #. Type: string
 #. Description
@@ -758,12 +765,11 @@ msgstr "米国の英語キーボードのユーザは、一般的に空欄にし
 #. Description
 #: ../xserver-xorg.templates:253
 msgid "Keyboard options:"
-msgstr ""
+msgstr "キーボードオプション:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:253
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -771,8 +777,8 @@ msgid ""
 msgstr ""
 "X サーバがキーボードを正しく扱うために、キーボードオプションを入力しなければ"
 "ならない場合があります。利用可能なオプションは、以前に入力した XKB ルールセッ"
-"トに依存します。全てのオプションが全てのモデルやレイアウトで利用できるとは限"
-"りません。"
+"トに依存します。全てのオプションが全てのキーボードモデルやレイアウトで利用で"
+"きるとは限りません。"
 
 #. Type: string
 #. Description
@@ -798,7 +804,7 @@ msgid ""
 msgstr ""
 "別の例として、ある人々は Meta キーを彼らのキーボードの Alt キー (これはデフォ"
 "ルト) として利用できるようにすることを望み、ほかの人々は Windows あるいは "
-"「ロゴ」 キーを代わりに利用できることを望んだとします。 Windows あるいはロゴ"
+"「ロゴ」キーを代わりに利用できることを望んだとします。Windows あるいはロゴ"
 "キーを Meta キーとして使いたいのであれば、「altwin:meta_win」と入力します。"
 
 #. Type: string
@@ -808,23 +814,24 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
+"例えば「ctrl:nocaps,altwin:meta_win」のようにカンマで区切って、オプションを組"
+"み合わせることができます。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:253
-#, fuzzy
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
-"熟練ユーザは、選択された XKB モデル、レイアウト、バリアントと互換性のあるすべ"
-"てのオプションを利用できます。"
+"熟練ユーザは、選択された XKB モデル、レイアウト、バリアントと互換性のある全て"
+"のオプションを利用できます。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:253
 msgid "When in doubt, this value should be left blank."
-msgstr ""
+msgstr "よくわからなければ、この値は空のままにしておくべきです。"
 
 #. Type: boolean
 #. Description
@@ -841,17 +848,21 @@ msgid ""
 "should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
 "requires rebooting."
 msgstr ""
+"マウスがコンピュータに接続されているのであれば、自動検出が試行されます。検出"
+"試行中にマウスを動かすと役立つことがあります (gpm プログラムを使っている場合"
+"は停止して下さい)。PS/2 あるいはバス/インポートマウスを今接続した場合は、再起"
+"動が必要です。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:279
 msgid "Do not choose this option if you wish to select a mouse type manually."
 msgstr ""
+"マウス形式を手動で選択したい場合には、この選択肢に「いいえ」と答えて下さい。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:279
-#, fuzzy
 msgid ""
 "If you choose it and autodetection fails, you will be asked this question "
 "again.  Autodetection can be attempted as many times as desired.  If it "
@@ -859,19 +870,18 @@ msgid ""
 "answered."
 msgstr ""
 "ここで「はい」と答えたけれども自動検出に失敗した場合、この質問が再び出てきま"
-"す。マウスの自動検出は何度でも好きなだけ試みることができます。自動検出が成功"
-"したら、マウスに関する debconf の質問が自動的に回答されます。"
+"す。自動検出は何度でも好きなだけ試みることができます。自動検出に成功したら、"
+"マウスに関する以降の設定質問が自動的に回答されます。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:295
 msgid "Mouse port:"
-msgstr ""
+msgstr "マウスポート:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:295
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the mouse (or other pointing device, such as a "
@@ -884,7 +894,6 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:295
-#, fuzzy
 msgid ""
 "It is necessary to determine which port (connection type) is used by the "
 "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
@@ -910,7 +919,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:313
 msgid "Mouse protocol:"
-msgstr ""
+msgstr "マウスプロトコル:"
 
 #. Type: boolean
 #. Description
@@ -921,7 +930,6 @@ msgstr "3 ボタンマウスのエミュレートを行いますか?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:318
-#, fuzzy
 msgid ""
 "Most programs in the X Window System expect the mouse to have 3 buttons "
 "(left, right, and middle).  Mice with only 2 buttons can emulate the "
@@ -953,7 +961,7 @@ msgid ""
 msgstr ""
 "5 つを超えるマウスボタン (スクロールホイールは「上」と「下」の 2 つのボタンと"
 "して計上され、3 つ目はホイールの「クリック」です) はまだこの設定ツールではサ"
-"ポートされていないことに注意してください。"
+"ポートされていないことに注意して下さい。"
 
 #. Type: boolean
 #. Description
@@ -964,7 +972,6 @@ msgstr "モニタの自動認識を試みますか?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:334
-#, fuzzy
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -972,30 +979,27 @@ msgid ""
 "this protocol, further configuration questions about the monitor will be pre-"
 "answered."
 msgstr ""
-"多くのモニタ (LCD を含む) とビデオカードは、通信しあって、モニタの特性情報を"
-"コンピュータに通知することができます。もしモニタとビデオカードがこのプロトコ"
-"ルの同じ方言をしゃべる場合、モニタに関する debconf の質問が自動的に回答されま"
-"す。"
+"多くのモニタ (LCD を含む) とビデオカードは、モニタの技術特性をコンピュータに"
+"通知する通信プロトコルをサポートしています。もしモニタとビデオカードがこのプ"
+"ロトコルをサポートしているのであれば、モニタに関する以降の設定質問が自動的に"
+"回答されます。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:334
-#, fuzzy
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
-msgstr "自動検出に失敗すれば、モニタに関する情報があなたに質問されます。"
+msgstr "自動検出に失敗すると、モニタに関する情報を尋ねられます。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid "Method for selecting the monitor characteristics:"
-msgstr "あなたのモニタの特性を選ぶ方法を選択して下さい。"
+msgstr "モニタ特性を選択する方法:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -1006,39 +1010,36 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
-"オプション「simple」では、あなたはモニタの物理サイズを知っているだけで済みま"
-"す。これはサイズに一致する典型的な CRT で適切ないくつかの設定値を設定します"
-"が、ハイクオリティな CRT では最適値ではないでしょう。"
+"オプション「simple」では、あなたはモニタの物理サイズを尋ねられます。これはサ"
+"イズに一致する典型的な CRT で適切ないくつかの設定値を設定しますが、ハイクオリ"
+"ティな CRT では最適値とは言えないでしょう。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know the monitor is capable of)."
 msgstr ""
-"オプション「medium」では、あなたに「800x600 @85Hz」のような解像度とリフレッ"
-"シュレートの一覧が示されます。あなたは使いたいと思う (かつあなたのモニタが受"
-"容可能であるとわかっている) 最適のモードを選べます。"
+"オプション「medium」では、「800x600 @85Hz」のような解像度とリフレッシュレート"
+"の一覧が提示されます。あなたは使いたいと思う (かつあなたのモニタが受容可能で"
+"あるとわかっている) 最適のモードを選べます。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
-"オプション「advanced」では、あなたのモニタの水平同期と垂直リフレッシュ耐性を"
-"直接指定します。"
+"オプション「advanced」では、モニタの水平同期と垂直リフレッシュ耐性を直接指定"
+"します。"
 
 #. Type: select
 #. Choices
@@ -1053,9 +1054,8 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:365
-#, fuzzy
 msgid "Approximate monitor size:"
-msgstr "あなたのモニタサイズに近いものを選んで下さい。"
+msgstr "あなたのモニタサイズに近似のもの:"
 
 #. Type: select
 #. Description
@@ -1066,14 +1066,12 @@ msgstr "高品質の CRT では、2 番目に大きなサイズを使うこと�
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:372
-#, fuzzy
 msgid "Monitor's best video mode:"
-msgstr "あなたのモニタに最適なビデオモードを選択して下さい。"
+msgstr "モニタに最適なビデオモード:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:372
-#, fuzzy
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -1082,44 +1080,40 @@ msgid ""
 "only if both the video chipset and the driver support it; if in doubt, use "
 "the video mode recommended by the manufacturer of your LCD."
 msgstr ""
-"あなたのモニタが受容可能と思われる「最適な」解像度とリフレッシュレートを選び"
-"ます。解像度とリフレッシュレートが大きいほどよいでしょう。もし CRT モニタを"
-"使っているなら、最適より「悪い」ビデオモードを選択してもまったくかまいませ"
+"あなたのモニタが受容可能と思われる「最適な」解像度とリフレッシュレートを選ん"
+"で下さい。解像度とリフレッシュレートが大きいほどよいでしょう。もし CRT モニタ"
+"を使っているなら、最適より「悪い」ビデオモードを選択してもまったく構いませ"
 "ん。LCD ディスプレイを使っている場合も、そのようにしても構いませんが、ビデオ"
-"チップセットとドライバの両方がそれをサポートしている必要があります。もし分か"
-"らなければ、LCD の製造元が推奨するビデオモードを使ってください。"
+"チップセットとドライバの両方がそれをサポートしている必要があります。よくわか"
+"らなければ、LCD の製造元が推奨するビデオモードを使って下さい。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:382
-#, fuzzy
 msgid "Identifier for the monitor:"
-msgstr "あなたのモニタの識別子を入力して下さい。"
+msgstr "モニタの識別子:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:382
-#, fuzzy
 msgid ""
 "The X server configuration file associates the monitor with a name that you "
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
-"X サーバの設定ファイルはあなたのモニタを指定の名前と関連付けます。これは通"
-"常、ベンダ名かブランド名のあとにモデル名が付きます。たとえば「Sony E200」や"
-"「Dell E770s」などです。"
+"X サーバの設定ファイルはモニタを指定の名前と関連付けます。これは通常、ベンダ"
+"名かブランド名のあとにモデル名が付きます。例えば「Sony E200」や「Dell E770s」"
+"などです。"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:389
-#, fuzzy
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "設定ファイルにモニタ同期範囲を書き込みますか?"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:389
-#, fuzzy
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -1132,14 +1126,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:396
-#, fuzzy
 msgid "Monitor's horizontal sync range:"
-msgstr "あなたのモニタの水平同期の幅を入力して下さい。"
+msgstr "モニタの水平同期の範囲:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:396
-#, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1148,20 +1140,18 @@ msgid ""
 msgstr ""
 "とびとびの特定の値をコンマで区切ったリスト (固定周波数のディスプレイ用) ある"
 "いはダッシュで区切った一対の値 (すべての最近の CRT 用) のどちらか、あるいは両"
-"方で入力して下さい。この情報はあなたのモニタのマニュアルで得られるはずです。"
-"30 以下の値や 130 以上の値はきわめてまれです。"
+"方で入力して下さい。この情報はモニタのマニュアルで得られるはずです。30 以下の"
+"値や 130 以上の値はきわめてまれです。"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:404
-#, fuzzy
 msgid "Monitor's vertical refresh range:"
-msgstr "あなたのモニタの垂直リフレッシュの範囲を入力して下さい。"
+msgstr "モニタの垂直リフレッシュの範囲:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:404
-#, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1170,14 +1160,14 @@ msgid ""
 msgstr ""
 "とびとびの特定の値をコンマで区切ったリスト (固定周波数のディスプレイ用) ある"
 "いはダッシュで区切った一対の値 (すべての最近の CRT 用) のどちらか、あるいは両"
-"方で入力して下さい。この情報はあなたのモニタのマニュアルで得られるはずです。 "
-"50 以下の値や 160 以上の値はきわめてまれです。"
+"方で入力して下さい。この情報はモニタのマニュアルで得られるはずです。 50 以下"
+"の値や 160 以上の値はきわめてまれです。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:412
 msgid "Incorrect values entered"
-msgstr ""
+msgstr "無効な値が入力されました"
 
 #. Type: note
 #. Description
@@ -1193,28 +1183,25 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:420
 msgid "Video modes to be used by the X server:"
-msgstr ""
+msgstr "X サーバによって利用されるビデオモード:"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:420
-#, fuzzy
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
 "Removing all of them is the same as removing none, since in both cases the X "
 "server will attempt to use the highest possible resolution."
 msgstr ""
-"もし(ハードウェアが許す場合でも) X サーバでは使いたくないような解像度がある場"
-"合は、次のリストからそれらを除去します。全部削除しようとすると全然削除しない"
-"のと実質的に同じことになってしまいます。これらの両方のいずれでも、X サーバは"
-"最も高い解像度を利用しようとするからです。"
+"X サーバで使いたい解像度のみを残して下さい。全部削除しようとすると全然削除し"
+"ないのと実質的に同じことになってしまいます。というのも、これらの両方のいずれ"
+"でも、X サーバは最も高い解像度を利用しようとするからです。"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:429
-#, fuzzy
 msgid "Desired default color depth in bits:"
-msgstr "使いたいデフォルトの色深度のビットを選択して下さい。"
+msgstr "使いたいデフォルトの色深度のビット数:"
 
 #. Type: select
 #. Description
@@ -1235,34 +1222,32 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:429
-#, fuzzy
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits."
 msgstr ""
-"(よく言われる「32 ビットカラー」は実は 24 ビットの色情報と 8 ビットのアルファ"
+"よく言われる「32 ビットカラー」は実は 24 ビットの色情報と 8 ビットのアルファ"
 "チャネル (または単純な 0 埋め) です。X Window System は両方とも操作できます。"
-"もしどちらかを望むのであれば、24 ビットを選択して下さい。)"
+"もしどちらかを望むのであれば、24 ビットを選択して下さい。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:441
 msgid "Empty value"
-msgstr ""
+msgstr "空の値"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:441
-#, fuzzy
 msgid "A null entry is not permitted for this value."
-msgstr "空欄のままにしないで、何かを入力しないといけません。"
+msgstr "この値では空の値は許されていません。"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:446
 msgid "Invalid double-quote characters"
-msgstr ""
+msgstr "無効な二重引用符文字"
 
 #. Type: note
 #. Description
@@ -1274,7 +1259,7 @@ msgstr "ここでは二重引用符 (\") の使用はできません。"
 #. Description
 #: ../xserver-xorg.templates:451
 msgid "Numerical value needed"
-msgstr ""
+msgstr "数値が必要です"
 
 #. Type: note
 #. Description
@@ -1302,15 +1287,13 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:457
-#, fuzzy
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
-"キーボードレイアウトを再検出させたいときには、この選択肢で「はい」と答えてく"
-"ださい。現在のレイアウトを保持したいのであれば「いいえ」と答えてください。"
+"キーボードレイアウトを再検出させたいときには、この選択肢で「はい」と答えて下"
+"さい。現在のレイアウトを保持したいのであれば「いいえ」と答えて下さい。"
 
-#, fuzzy
 #~ msgid ""
 #~ "Multiple video cards have been detected, and different X servers are "
 #~ "required to support the various devices.  It is thus not possible to "
@@ -1321,233 +1304,6 @@ msgstr ""
 #~ msgstr ""
 #~ "複数のビデオカードが検出され、それらのデバイスをサポートするために異なる "
 #~ "X サーバが必要とされています。したがって、自動的にデフォルト X サーバを選"
-#~ "択することは不可能です。あなたのコンピュータの「プライマリヘッド」 (これは"
-#~ "通常、コンピュータが最初のブート時に表示するのに使うビデオカードとモニタで"
+#~ "択することは不可能です。このコンピュータの「プライマリヘッド」 (これは通"
+#~ "常、コンピュータが最初のブート時に表示するのに使うビデオカードとモニタで"
 #~ "す) として使いたいデバイスを設定して下さい。"
-
-#~ msgid "Select what type of user has permission to start the X server."
-#~ msgstr "どのタイプのユーザに X サーバを起動する権限を与えるか選んで下さい。"
-
-#~ msgid ""
-#~ "It is possible to customize (or completely omit) the list of modules that "
-#~ "the X server loads by default.  This option is for advanced users.  In "
-#~ "most cases, all of these modules should be enabled."
-#~ msgstr ""
-#~ "X サーバがデフォルトで読み込むモジュールのリストをカスタマイズ (あるいは完"
-#~ "全に削除) できます。このオプションは熟練ユーザのためのものです。多くの場"
-#~ "合、これらすべてのモジュールを有効にすべきです。"
-
-#~ msgid ""
-#~ "The glx module enables support for OpenGL rendering.  The dri module "
-#~ "enables support in the X server for Direct Rendering Infrastructure "
-#~ "(DRI).  Note that support for DRI must also exist in the kernel, the "
-#~ "video card, and the installed version of the Mesa libraries for hardware-"
-#~ "accelerated 3D operations using DRI to work.  Otherwise, the server falls "
-#~ "back to software rendering."
-#~ msgstr ""
-#~ "glx モジュールは、OpenGL レンダリングのサポートを可能にします。dri モ"
-#~ "ジュールは X サーバによる Direct Rendering Infrastructure (DRI) のサポート"
-#~ "を可能にします。DRI を用いた 3D 操作のハードウェアアクセラレーションを動作"
-#~ "させるには、DRI のサポートがカーネル、ビデオカードおよび現在インストールさ"
-#~ "れている Mesa ライブラリのすべてにおいても必要です。この条件が満たされなけ"
-#~ "れば、サーバはソフトウェアによるレンダリングを用います。"
-
-# nakano has looked until this line.
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilties via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "vbe および ddc モジュールは VESA BIOS 拡張とデータディスプレイチャネルのサ"
-#~ "ポートをそれぞれ有効にします。これらのモジュールは、ビデオカード経由でモニ"
-#~ "タの能力を問い合わせるのに使われます。int10 モジュールはリアル モード x86 "
-#~ "エミュレータで、2 番目の VGA カードをソフトブートするのに使われます。vbe "
-#~ "モジュールは int10 モジュールに依存しているので、vbe を有効にするときには "
-#~ "int10 もやはり有効にする必要があることに注意して下さい。"
-
-#~ msgid ""
-#~ "The dbe module enables the double-buffering extension in the server, and "
-#~ "is useful for animation and video operations."
-#~ msgstr ""
-#~ "dbe モジュールはサーバのダブルバッファリング拡張を可能にします。アニメー"
-#~ "ションやビデオ操作に便利です。"
-
-#~ msgid ""
-#~ "The extmod module enables many traditional and commonly used extensions, "
-#~ "such as shaped windows, shared memory, video mode switching, DGA, and "
-#~ "Xv.  The record module implements the RECORD extension, commonly used in "
-#~ "server testing."
-#~ msgstr ""
-#~ "extmod モジュールは、shaped window、共有メモリ、ビデオモード切り替え、"
-#~ "DGA、Xv といった伝統的で広く用いられている拡張をサポートします。recode モ"
-#~ "ジュールは、サーバ試験に一般的に使われている RECORD 拡張を実装しています。"
-
-#~ msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-#~ msgstr ""
-#~ "bitmap、freetype、type1 の各モジュールはすべてフォントラスタライザです。"
-
-#~ msgid ""
-#~ "If you unsure what to do, leave all of the modules enabled.  Advanced "
-#~ "users may wish to disable all modules -- in which case no Modules section "
-#~ "will be written to the X server configuration file -- and add their own "
-#~ "Modules section to the file manually."
-#~ msgstr ""
-#~ "どうしたらよいか不確かなときには、すべてのモジュールを有効にしたままにして"
-#~ "おきます。熟練ユーザはすべてのモジュールを無効にし (この場合、Modules セク"
-#~ "ションは X サーバ設定ファイルに書き込まれません) 、自身の Modules セクショ"
-#~ "ンをファイルに手動で書き込むことができます。"
-
-#~ msgid ""
-#~ "Multiple video cards have been detected, and different drivers are "
-#~ "required to support the various devices.  It is thus not possible to "
-#~ "automatically select a default X.Org server driver.  Please configure the "
-#~ "device that will serve as your computer's \"primary head\"; this is "
-#~ "generally the video card and monitor to which the computer displays when "
-#~ "it first boots."
-#~ msgstr ""
-#~ "複数のビデオカードが検出され、さまざまなデバイスをサポートするために異なる"
-#~ "ドライバが必要とされています。したがって、自動的にデフォルトの X.Org サー"
-#~ "バドライバを選択することは不可能です。あなたのコンピュータの「プライマリ"
-#~ "ヘッド」(これは通常、コンピュータが最初のブート時に表示するのに使うビデオ"
-#~ "カードとモニタです) として使いたいデバイスを設定して下さい。"
-
-#~ msgid "Select the desired X server driver."
-#~ msgstr "利用したい X サーバドライバを選択します。"
-
-#~ msgid ""
-#~ " ISA:1\n"
-#~ " PCI:0:16:0\n"
-#~ " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
-#~ msgstr ""
-#~ "ISA:1\n"
-#~ "PCI:0:16:0\n"
-#~ "SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
-
-#~ msgid "Please enter a bus identifier in the proper format."
-#~ msgstr "バス ID を正しい書式で入力して下さい。"
-
-#~ msgid "The BusID entered was not in a recognized format."
-#~ msgstr "入力されたバス ID は認められる書式ではありません。"
-
-#~ msgid "If you don't know what rule set to use, enter \"xorg\"."
-#~ msgstr "どう答えてよいか分からないときは、「xorg」と入力して下さい。"
-
-#~ msgid "Please select your keyboard model."
-#~ msgstr "キーボードモデルを選んで下さい。"
-
-#~ msgid ""
-#~ "The \"pc101\" keyboard is a traditional IBM PC/AT style keyboard with 101 "
-#~ "keys, historically common in the United States.  It does not have the "
-#~ "\"logo\" or \"menu\" keys."
-#~ msgstr ""
-#~ "「pc101」は、101 個のキーを持つ、伝統的な IBM PC/AT スタイルのキーボード"
-#~ "で、米国で広く使われています。このキーボードには「(Windows) ロゴ」や「メ"
-#~ "ニュー」といったキーがありません。"
-
-#~ msgid ""
-#~ "The \"pc104\" keyboard is like the pc101 model, with additional keys.  "
-#~ "These keys are usually engraved with a \"logo\" symbol (there is "
-#~ "typically a pair of these, between each set of control and alt keys), and "
-#~ "a \"menu\" key."
-#~ msgstr ""
-#~ "「pc104」キーボードは pc101 に似ていますが、いくつか追加のキーがあります。"
-#~ "左右の control と alt キーの間にそれぞれ「(Windows) ロゴ」キーがあり、「メ"
-#~ "ニュー」キーもあります。"
-
-#~ msgid ""
-#~ "The \"pc102\" and \"pc105\" models are versions of the pc101 and pc104 "
-#~ "keyboards, respectively, often found in Europe.  If your keyboard has a "
-#~ "\"< >\" key (a single key engraved with both the less-than and greater-"
-#~ "than symbols), you likely have a \"pc102\" or \"pc105\" model; if you "
-#~ "choose \"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
-#~ msgstr ""
-#~ "「pc102」と「pc105」は、pc101 と pc104 の変種で、ヨーロッパでしばしば見ら"
-#~ "れます。「< >」キー (1 つのキーに < と > の両方の形が刻まれているもの) の"
-#~ "あるキーボードであるときにはおそらく、「pc102」か「pc105」モデルでしょう。"
-#~ "「pc101」または「pc104」を代わりに選んでしまうと、「< >」キーは動作しませ"
-#~ "ん。"
-
-#~ msgid ""
-#~ "The \"macintosh\" model is for Macintosh keyboards where the kernel and "
-#~ "console tools use the new input layer which uses Linux keycodes; "
-#~ "\"macintosh_old\" is for Macintosh keyboard users who are not using the "
-#~ "new input layer."
-#~ msgstr ""
-#~ "「macintosh」は Macintosh のキーボードで、カーネルと console tools は "
-#~ "Linux キーコードを使う新しい入力レイヤーを使います。「macintosh_old」は、"
-#~ "その新しい入力レイヤーを使わない Macintosh キーボードです。"
-
-#~ msgid "All of the above models use the \"xorg\" rule set."
-#~ msgstr "上記のすべてのモデルは「xorg」ルールセットを使います。"
-
-#~ msgid ""
-#~ "The \"type4\" and \"type5\" models are for Sun Type4 and Type5 keyboards, "
-#~ "respectively.  These models can only be used if the \"sun\" XKB rule set "
-#~ "is in use."
-#~ msgstr ""
-#~ "「type4」と「type5」モデルは、Sun の Type4 と Type5 キーボードのためのもの"
-#~ "です。これらのモデルは XKB ルールセットに「sun」を用いている場合のみ使うこ"
-#~ "とがきます。"
-
-#~ msgid "Please select your keyboard layout."
-#~ msgstr "キーボードレイアウトを選んで下さい。"
-
-#~ msgid "Please select your keyboard variant."
-#~ msgstr "キーボードバリアントを入力して下さい。"
-
-#~ msgid "Please select your keyboard options."
-#~ msgstr "キーボードオプションを入力して下さい。"
-
-#~ msgid ""
-#~ "You can combine options by separating them with a comma; for example, if "
-#~ "you wish the Caps Lock key to behave as an additional Control key and you "
-#~ "would like to use your Windows or logo keys as Meta keys, you may enter "
-#~ "\"ctrl:nocaps,altwin:meta_win\"."
-#~ msgstr ""
-#~ "例えば、Caps Lock キーが Control キーとして働いてほしい場合、「ctrl:"
-#~ "nocaps」と入力します。Caps Lock と左 Control を交換したい場合、「ctrl:"
-#~ "swapcaps」と入力します。"
-
-#~ msgid "If you don't know what options to use, leave this entry blank."
-#~ msgstr ""
-#~ "どのオプションを使ってよいか分からなければ、空欄のままにして下さい。"
-
-#~ msgid ""
-#~ "If you have a mouse attached to the computer, an attempt to detect it can "
-#~ "be made; it may help to move the mouse while detection is attempted "
-#~ "(also, the gpm program should not be running).  If you would like to "
-#~ "attach a PS/2 or bus/inport mouse to your computer, you should shut down "
-#~ "the system, turn off the computer's power, connect the mouse, turn the "
-#~ "computer back on, and reboot.  If you wish to select a mouse type "
-#~ "manually, decline this option."
-#~ msgstr ""
-#~ "もしコンピュータにマウスがつながっていれば、それの自動検出を試みることがで"
-#~ "きます。検出作業中にマウスを動かすと、マウスの自動検出を助けます (gpm は走"
-#~ "らせないで下さい)。PS/2 や バス/inport マウスを接続すると きは、システムを"
-#~ "シャットダウンして、コンピュータの電源を切り、マウスを接続し、コンピュータ"
-#~ "の電源を入れ、リブートして下さい。マウスの種類を手動で入力したい場合、ここ"
-#~ "で「いいえ」と答えて下さい。"
-
-#~ msgid "Please choose your mouse port."
-#~ msgstr "あなたのマウスポートを選択して下さい。"
-
-#~ msgid "Please choose the entry that best describes your mouse."
-#~ msgstr "あなたのマウスに最適の説明があるエントリを選択して下さい。"
-
-#~ msgid "Please enter a comma-separated list of ranges or values."
-#~ msgstr "コンマで区切られた範囲のリストあるいは値を入力して下さい。"
-
-#~ msgid "Select the video modes you would like the X server to use."
-#~ msgstr "X サーバで利用したいビデオモードを選択して下さい。"
-
-#~ msgid "Please enter a value for the entry."
-#~ msgstr "何かを入力して下さい。"
-
-#~ msgid "Please enter a value without double-quotes."
-#~ msgstr "二重引用符を使わないで下さい。"
-
-#~ msgid "Please enter only a numeric value."
-#~ msgstr "数値を入力して下さい。"
