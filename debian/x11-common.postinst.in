@@ -50,12 +50,6 @@ if ! [ -L "/usr/bin/X11" ] && [ -d "/usr/bin/X11" ]; then
   fi
 fi
 
-if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
-  rmdir "/usr/X11R6/bin" || die "Could not remove /usr/X11R6/bin. Is not yet empty. Please remove any items still in the directory. You can move them back after the install has completed successfully."
-fi
-if ! [ -e "/usr/X11R6/bin" ]; then
-  ln -s /usr/bin /usr/X11R6/bin || die "Could not link /usr/bin to /usr/X11R6/bin"
-fi
 
 # only mess with config file it exists; otherwise, assume that's the way the
 # user wants it, but only if upgrading

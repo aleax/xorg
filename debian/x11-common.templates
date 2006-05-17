@@ -44,3 +44,17 @@ _Description: Major possible upgrade issues
  package is installed after upgrade. If it is not installed and you require
  it, it is recommended that you install the xorg package to make sure you
  have a fully functional X setup.
+
+Template: x11-common/x11r6_bin_not_empty
+Type: note
+_Description: Can Not Remove /usr/X11R6/bin Directory
+ This upgrade requires that the /usr/X11R6/bin directory be removed and
+ replaced with a symlink. An attempt was made to do so, but it failed, most
+ likely because the directory is not yet empty. You must move the files
+ that are currently in the directory out of the way so that the
+ installation can complete. If you like, you may move them back after the
+ symlink is in place.
+
+ This package installation will now fail and exit so that you can do this.
+ Please re-run your upgrade procedure after you have cleaned out the
+ directory.

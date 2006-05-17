@@ -44,6 +44,17 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
     rm /usr/X11R6/lib/X11/fonts
   fi
 
+  # We need to remove /usr/X11R6/bin so we can replace it with a symlink
+  if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
+    rmdir "/usr/X11R6/bin" 
+    if [ "$?" ne 0 ]; then
+      run db_fset x11-common/x11r6_bin_not_empty seen false
+      run db_input critical x11-common/x11r6_bin_not_empty
+      run db_go
+      exit 1
+    fi
+  fi
+
   # migration hilarity
   if [ -n "$FIRSTINST" ]; then
     for i in allowed_users actual_allowed_users nice_value; do

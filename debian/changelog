@@ -22,8 +22,15 @@ xorg (1:7.0.19) UNRELEASED; urgency=low
   * Recover old changelog entries from the 6.8 and 6.9 era and put in to
     changelog.Debian.old. Install this file in the x11-common package. Thanks
     Kevin B. McCarty. (closes: #364087)
+  * Make several improvements to the code that makes /usr/X11R6/bin a symlink
+    + Move the logic to perform the switch to the x11-common preinst
+    + If the rmdir command fails, use debconf to inform the user
+    + Use debhelper's normal methods to create the symlink, so that the
+      packaging infrastructure is aware of it
+    Thanks to Eduard Bloch, Steve Langasek, Daniel Stone, and Vincent Lefevre
+    for helping hammer this out. (closes: #362885, #363699)
 
- -- David Nusinow <dnusinow@debian.org>  Tue, 16 May 2006 22:34:32 -0400
+ -- David Nusinow <dnusinow@debian.org>  Tue, 16 May 2006 22:59:24 -0400
 
 xorg (1:7.0.18) unstable; urgency=low
 
