@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-05-17 07:04-0500\n"
-"PO-Revision-Date: 2006-02-12 03:37+0100\n"
+"PO-Revision-Date: 2006-05-18 06:11+0100\n"
 "Last-Translator: SZERVÑC Attila <sas@321.hu>\n"
 "Language-Team: hu\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "Csak rendszergazda, Csak konzol felhasználók, Bárki"
 #. Description
 #: ../x11-common.templates:5
 msgid "Users allowed to start the X server:"
-msgstr ""
+msgstr "Az X kiszolgáló indítására jogosult felhasználók:"
 
 #. Type: select
 #. Description
@@ -45,9 +45,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../x11-common.templates:20
-#, fuzzy
 msgid "Nice value for the X server:"
-msgstr "Az X kiszolgáló kívánt nice értékének megadása."
+msgstr "Az X kiszolgáló nice értéke:"
 
 #. Type: string
 #. Description
@@ -78,7 +77,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:35
 msgid "Incorrect nice value"
-msgstr ""
+msgstr "Hibás nice érték"
 
 #. Type: note
 #. Description
@@ -90,7 +89,7 @@ msgstr "Most egy -20 és 19 közti egészet kell megadni."
 #. Description
 #: ../x11-common.templates:40
 msgid "Major possible upgrade issues"
-msgstr ""
+msgstr "Fontos frissítési figyelmeztetés"
 
 #. Type: note
 #. Description
@@ -103,6 +102,11 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
+"Az Xorg-ra való áttéréskor egyes felhasználóknál előfordulhat, hogy X "
+"kiszolgáló nélkül maradnak. Ezt nem lehet biztosan kikerülni, ezért az "
+"frissítés után győződj meg arról, hogy a xserver-xorg csomag telepítve van. "
+"Ha hiányzik, például az xorg csomag telepítésével biztosítható, hogy egy "
+"teljesen működő X telepítés legyen."
 
 #. Type: boolean
 #. Description
@@ -113,7 +117,6 @@ msgstr "Megpróbáljam felismerni a videó eszközt?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
-#, fuzzy
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -121,33 +124,31 @@ msgid ""
 "or driver module.  If it succeeds, further configuration questions about "
 "your video hardware will be pre-answered."
 msgstr ""
-"Általában érdemes ezt megpróbálni. Ha a felismerés sikerül, a videó eszközre "
-"vonatkozó további debconf kérdések előre megválaszolásra kerülnek. Ha nem, "
-"lehetőség lesz a választásra."
+"Válaszd e lehetőséget, ha szeretnéd a videókártya meghajtójának és ajánlott "
+"X kiszolgálójának felismerését megpróbálni. Ha nem sikerül, lehetőség lesz a "
+"kívánt X kiszolgáló és/vagy meghajtó modul megadására. Ha sikerül, a videó "
+"eszközre vonatkozó további kérdések előre megválaszolásra kerülnek."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:4
-#, fuzzy
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
 "is only one available."
 msgstr ""
-"Ez a lehetőség mellőzhető. Az X kiszolgálót nem kell kiválasztani, ha csak "
-"egy elérhető."
+"Az X kiszolgáló és meghajtó modul kézi kiválasztása esetén e lehetőség "
+"mellőzhető. Az X kiszolgálót nem kell kiválasztani, ha csak egy elérhető."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
-#, fuzzy
 msgid "No X server known for your video hardware"
-msgstr "Nincs ismert X kiszolgáló e videó eszközhöz."
+msgstr "Nincs ismert X kiszolgáló e videó eszközhöz"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:17
-#, fuzzy
 msgid ""
 "There is either no video hardware installed on this machine (e.g. serial "
 "console only), or the \"discover\" program was unable to determine which X "
@@ -163,34 +164,30 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:26
-#, fuzzy
 msgid "Multiple potential default X servers for your hardware"
-msgstr "Több lehetséges alap X kiszolgáló is elérhető."
+msgstr "Több lehetséges alap X kiszolgáló is elérhető e gépen"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:42
-#, fuzzy
 msgid "Desired default X server:"
-msgstr "A kívánt alap X kiszolgáló kiválasztása."
+msgstr "A kívánt alap X kiszolgáló:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:42
-#, fuzzy
 msgid ""
 "The X server is the hardware interface of the X Window System.  It "
 "communicates with the video display and input devices, providing a "
 "foundation for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"Az X kiszolgáló az X Window System eszközcsatolója. Feladata a videó "
-"kijelzők és beviteli eszközökkel való kommunikációval a Grafikus "
-"felhasználói felület (GUI) alapjainak biztosítása."
+"Az X kiszolgáló az X Window System eszközcsatolója. A videó kijelzővel és "
+"beviteli eszközökkel társalog, a Grafikus felhasználói felület (GUI) "
+"alapjait nyújtva."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:42
-#, fuzzy
 msgid ""
 "Several X servers may be available; the default is selected via the /etc/X11/"
 "X symbolic link.  Some X servers may not work with some particular graphics "
@@ -208,7 +205,6 @@ msgstr "Az alap \"Files\" szakasz beírása a beállító fájlba?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:54
-#, fuzzy
 msgid ""
 "The Files section of the X server configuration file tells the X server "
 "where to find server modules, the RGB color database, and font files.  This "
@@ -216,13 +212,12 @@ msgid ""
 "be enabled."
 msgstr ""
 "Az X kiszolgáló beállító fájl Files szakasza megadja az X kiszolgálónak a "
-"modulok helyét, az RGB szín adatbázist és betűfájlokat. E lehetőség haladó "
-"felhasználóknak van. Általában beírjuk."
+"modulok helyét, az RGB szín adatbázist és betűfájlokat. E lehetőség csak "
+"haladó felhasználóknak ajánlott. Általában beírjuk."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:54
-#, fuzzy
 msgid ""
 "Disable this option if you want to maintain a custom Files section into the "
 "X.Org server configuration file.  This may be needed to remove the reference "
@@ -230,15 +225,15 @@ msgid ""
 "rearrange the default set of local font paths."
 msgstr ""
 "Saját \"Files\" szakasz írásakor az X.Org kiszolgáló beállító fájljába "
-"elvethető e lehetőség. Ez a betűkészletek elérésének eltérő módjainál "
-"érdekes. (Például helyi kiszolgáló helyett távoli, vagy más útvonal.)"
+"elvethető e lehetőség. Ez szükséges lehet a helyi betű kiszolgáló "
+"hivatkozások eltávolításakor, más betű kiszolgáló hivatkozás hozzáadásakor, "
+"vagy a helyi betű útvonalak alap készletének átrendezésekor."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:68
-#, fuzzy
 msgid "X.Org server modules that should be loaded by default:"
-msgstr "Az alapértelmezetten betöltendő X.Org modulok kiválasztása."
+msgstr "Az alapértelmezetten betöltendő X.Org kiszolgáló modulok:"
 
 #. Type: multiselect
 #. Description
@@ -247,6 +242,8 @@ msgid ""
 "This option is recommended to experienced users only.  In most cases, all of "
 "these modules should be enabled."
 msgstr ""
+"E lehetőség csak haladó felhasználóknak ajánlott. Általában e modulok mind "
+"be vannak kapcsolva."
 
 #. Type: multiselect
 #. Description
@@ -269,6 +266,21 @@ msgid ""
 " - record: implements the RECORD extension, often used in server testing;\n"
 " - bitmap: font rasterizer (so are freetype, and type1 modules)."
 msgstr ""
+" - glx   : OpenGL támogatás;\n"
+" - dri   : az X kiszolgáló DRI (Direct Rendering Infrastructure) "
+"támogatása;\n"
+" - vbe   : VESA BIOS Extensions támogatása . Lekérheti\n"
+"           a monitor képességeit a videókártyán át;\n"
+" - ddc   : Data Display Channel támogatás, egyenként. Lekérheti\n"
+"           a monitor képességeit a videókártyán át;\n"
+" - int10 : valós idejű x86 emulátor másodlagos VGA kártya softboot-jára.\n"
+"           vbe-vel együtt használható;\n"
+" - dbe   : a kiszolgáló dupla-puffer bővítése bekapcsolása .\n"
+"           Animációhoz és videó műveletekhez hasznos;\n"
+" - extmod: hagymányos és általánosan használt bővítmények, például\n"
+"           formázott ablakok, osztott memória, videómód váltás, DGA, és Xv;\n"
+" - record: RECORD bővítés megvalósítása, gyakran használt tesztelésre;\n"
+" - bitmap: font rasterizer (so are freetype, and type1 modules)."
 
 #. Type: multiselect
 #. Description
@@ -281,23 +293,19 @@ msgstr "További információk az X.Org dokumentációban."
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:92
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "Több lehetséges X.Org kiszolgáló meghajtó van az eszközhöz."
+msgstr "Több lehetséges alap X.Org kiszolgáló meghajtó van az eszközhöz"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:92
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
 "automatically select a default X server."
 msgstr ""
 "Több videókártyát is érzékeltem, melyek eltérő X kiszolgálókat igényelnek. "
-"Most be kell állítani azt az eszközt, mely a gép \"elsődleges fej\"-eként "
-"szolgál; ez általában az a videókártya és monitor, melyre a gép az "
-"induláskor ír."
+"Kézzel kell majd kiválasztani az alapértelmezett X kiszolgálót."
 
 #. Type: note
 #. Description
@@ -307,45 +315,45 @@ msgid ""
 "\"; this is generally the video card and monitor used for display when the "
 "computer is booted up."
 msgstr ""
+"Állítsd be e gép \"elsődleges fej\"-eként használt eszközt; ez általában a "
+"gép indulások megjelenítésre használ videó kártya és monitor."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:92
-#, fuzzy
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
 "multi-head configuration."
 msgstr ""
-"A debconf jelenleg csak egy-fejes telepítést támogat, de az X kiszolgáló "
-"beállító fájl szerkeszthető a több-fejes összeállítás támogatására."
+"A beállítási folyamat jelenleg csak egy-fejes telepítést támogat, de az X "
+"kiszolgáló beállító fájlok szerkeszthetők később a több-fejes összeállítás "
+"támogatására."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:107
-#, fuzzy
 msgid "Identifier for your video card:"
-msgstr "Videókártya-azonosító megadása"
+msgstr "Videókártya azonosítása:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:107
-#, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
-"Az X kiszolgáló beállító fájl a videókártyát egy tetszőleges névvel köti "
+"Az X kiszolgáló beállító fájl a videókártyát egy általad adott névvel köti "
 "össze. Ez általában a gyártó vagy márkanév, melyet a modell név követ, pl.: "
-"\"3Dfx Voodoo3\" vagy \"ATI Rage Fury Maxx\"."
+"\"Intel i915\", \"ATI RADEON X800\", vagy \"NVIDIA GeForce 6600\"."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:115
 msgid "X server driver:"
-msgstr ""
+msgstr "X kiszolgáló meghajtó:"
 
 #. Type: select
 #. Description
@@ -399,9 +407,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:136
-#, fuzzy
 msgid "Video card's bus identifier:"
-msgstr "Most kell megadni a videókártya busz azonosítóját."
+msgstr "Videókártya busz azonosító:"
 
 #. Type: string
 #. Description
@@ -435,14 +442,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:136
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"Az \"lspci\" parancs segít meghatározni a PCI vagy AGP videókártya busz "
-"helyét. Jó tudni, hogy az lspci a buszt, eszközt és funkciószámokat "
-"hexadecimális és nem decimális formában közli."
+"Az \"lspci -X\" parancs segít meghatározni a PCI, AGP vagy PCI-X videókártya "
+"busz helyét."
 
 #. Type: string
 #. Description
@@ -458,13 +463,13 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:159
 msgid "Incorrect format for the bus identifier"
-msgstr ""
+msgstr "Rossz busz azonosító formátum"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:163
 msgid "Amount of memory (kB) to be used by the video card:"
-msgstr ""
+msgstr "A videókártya által használt memória (kB)"
 
 #. Type: string
 #. Description
@@ -475,36 +480,35 @@ msgid ""
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
+"A videókártya által használt dedikált memóriát az X kiszolgáló általában "
+"felismeri, de pár integrált csipnek (például i810) nincs, vagy kevés a saját "
+"memóriája, így a fő rendszermemóriát használják."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:163
-#, fuzzy
 msgid ""
 "This parameter should usually be left blank and specified only if the video "
 "card lacks RAM, or if the X server has trouble autodetecting the RAM size."
 msgstr ""
-"Csak akkor kell megadni a video RAM mennyiségét, ha a videókártya RAM-"
-"szegény vagy az X kiszolgáló nem tudta érzékelni azt. Egyébként teljességgel "
-"üresen hagyható e paraméter."
+"E paraméter általában üres, csak akkor jó megadni, ha a videókártya RAM "
+"nélküli, vagy az X kiszolgáló nem tudja felismerni a RAM méretét."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "XKB rule set to use:"
-msgstr ""
+msgstr "A használni kívánt XKB szabályrendszer:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
 msgstr ""
-"Az X kiszolgáló helyes billentyűzet kezeléséhez egy billentyűzet modellt "
-"kell megadni. Az elérhető modellek a választott XKB szabály készlettől "
-"függenek."
+"Az X kiszolgáló helyes billentyűzet kezeléséhez egy XKB szabály készletet "
+"kell megadni."
 
 #. Type: string
 #. Description
@@ -524,23 +528,25 @@ msgid ""
 "package has been unpacked, see the /etc/X11/xkb/rules directory for "
 "available rule sets."
 msgstr ""
+"A tapasztalt felhasználók bármilyen megadott XKB szabályrendszert "
+"használhatnak. Ha az xkeyboard-config csomag már kicsomagolt, lásd a /etc/"
+"X11/xkb/rules könyvtárat az elérhető szabályrendszerekért."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
 msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr ""
+msgstr "Kétség esetén ez az érték legyen \"xorg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
 msgid "Keyboard model:"
-msgstr ""
+msgstr "Billentyűzet modell:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -569,6 +575,23 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
+" Az \"xorg\" szabálykészlettel:\n"
+" - pc101: hagyományos IBM PC/AT stílusú 101 gombos billentyűzet, az\n"
+"          USA-ban szokásos.  Nincs \"logó\" vagy \"menü\" billentyű;\n"
+" - pc104: a pc101-hez hasonló modell, további billentyűkkel, általában "
+"bevésett\n"
+"          \"logó\" és \"menü\" jellel;\n"
+" - pc102: hasonló a pc101-hez és Európában szokásos. \"< >\" billentyűt "
+"tartalmaz;\n"
+" - pc105: hasonló a pc104-hez és Európában szoksásos. \"< >\" billentyűt "
+"tartalmaz;\n"
+" - macintosh: az új Linux beviteli réteget használó macintosh "
+"billentyűzetek\n"
+" - macintosh_old: az új beviteli réteget nem használó macintosh "
+"billentyűzetek.\n"
+" A \"sun\" szabálykészlettel:\n"
+" - type4: Sun Type4 billentyűzetek;\n"
+" - type5: Sun Type4 billentyűzetek."
 
 #. Type: string
 #. Description
@@ -590,36 +613,37 @@ msgid ""
 "If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
+"A tapasztalt felhasználók bármely, a választott XKB szabályrendszer által "
+"megadott modellt választhatják. Ha az xkeyboard-config csomag már "
+"kicsomagolt, lásd a /etc/X11/xkb/rules könyvtárat az elérhető "
+"szabályrendszerekért."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
-#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"A U.S. angol billentyűzetek felhasználóinak általában a \"pc104\"-et kell "
-"megadnia."
+"A U.S. angol billentyűzetek felhasználóinak általában a \"pc104\"-et, más "
+"billentyűzetek felhasználóinak általában a \"pc105\"-öt kell megadnia."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:220
-#, fuzzy
 msgid "Keyboard layout:"
-msgstr "Billentyűzetkiosztás választása."
+msgstr "Billentyűkiosztás:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:220
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
 "were previously selected."
 msgstr ""
-"Az X kiszolgáló helyes billentyűzet kezeléséhez egy billentyűzetkiosztást "
-"kell megadni. Az elérhető kiosztások függenek a kiválasztott XKB "
+"Az X kiszolgáló helyes billentyűzet kezeléséhez egy billentyűkiosztást kell "
+"megadni. Az elérhető kiosztások függenek a kiválasztott XKB "
 "szabálykészlettől és billentyűzet modelltől."
 
 #. Type: string
@@ -630,6 +654,10 @@ msgid ""
 "set.  If the xkeyboard-config package has been unpacked, see the /etc/X11/"
 "xkb/rules directory for available rule sets."
 msgstr ""
+"A tapasztalt felhasználók bármely, a választott XKB szabályrendszer által "
+"támogatott kiosztást választhatják. Ha az xkeyboard-config csomag már "
+"kicsomagolt, lásd a /etc/X11/xkb/rules könyvtárat az elérhető "
+"szabályrendszerekért."
 
 #. Type: string
 #. Description
@@ -648,20 +676,19 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:235
 msgid "Keyboard variant:"
-msgstr ""
+msgstr "Billentyűzet változat:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
-"Az X kiszolgáló helyes billentyűzet kezeléséhez egy billentyűzetkiosztást "
-"kell megadni. Az elérhető kiosztások függenek a kiválasztott XKB "
-"szabálykészlettől és billentyűzet modelltől."
+"Az X kiszolgáló billentyűzet kezeléséhez egy billentyűzet változat is "
+"megadható. Az elérhető véltozatok függenek a kiválasztott XKB "
+"szabálykészlettől, modelltől és kiosztástól."
 
 #. Type: string
 #. Description
@@ -671,6 +698,9 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
+"Számos billentyűzet kiosztás támogatja az ún. \"dead\" (halott) billentyűk "
+"kezelését, mint nem-ritkító ékezetek és diarézisek, ez esetben add meg a "
+"\"nodeadkeys\"-t."
 
 #. Type: string
 #. Description
@@ -681,32 +711,35 @@ msgid ""
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
+"Tapasztalt felhasználók a váalsztott XKB kiosztás által támogatott bármely "
+"változatot használhatják. Ha az xkeyboard-config csomag már kicsomagolt, "
+"lásd a /etc/X11/xkb/symbols könyvtár a választott kiosztásnak megfelelő "
+"fájlját az elérhető változatokért."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
+msgstr "A U.S. angol billentyűzetek felhasználói általában üresen hagyhatják."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:253
 msgid "Keyboard options:"
-msgstr ""
+msgstr "Billentyűzet opciók:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:253
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
-"Az X kiszolgáló helyes billentyűzet kezeléséhez egy billentyűzetkiosztást "
-"kell megadni. Az elérhető kiosztások függenek a kiválasztott XKB "
-"szabálykészlettől és billentyűzet modelltől."
+"Az X kiszolgáló billentyűzet kezeléséhez egy billentyűzet opció is "
+"megadható. Az elérhető opciók függenek a kiválasztott XKB szabálykészlettől. "
+"Nem minden opció működik minden billentyűzet modellel és kiosztással."
 
 #. Type: string
 #. Description
@@ -716,6 +749,9 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
+"Például ha azt akarod, hogy a Caps Lock is Control legyen add meg ezt: "
+"\"ctrl:nocaps\"; ha fel akarod cserélni a Caps Lock és bal Control "
+"billentyűt: \"ctrl:swapcaps\"."
 
 #. Type: string
 #. Description
@@ -727,6 +763,9 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
+"Egy másik példa: egyesek a Meta billentyűt az Alt billentyűre akarják (ez az "
+"alap), mások a \"logó\" billentyűre (amit általában csak win billentyűnek "
+"hívunk). Ez utóbbit megadhatod így: \"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -735,6 +774,8 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
+"A lehetőségeket vesszővel sorolhatod fel, például: \"ctrl:nocaps,altwin:"
+"meta_win\"."
 
 #. Type: string
 #. Description
@@ -743,12 +784,14 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
+"A tapasztalt felhasználók a választott XKB modell, kiosztás és válotzatnak "
+"megfelelő bármely lehetőségeket megadhatják."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:253
 msgid "When in doubt, this value should be left blank."
-msgstr ""
+msgstr "Ha még nem döntöttél, üresen hagyhatod ezt az értéket."
 
 #. Type: boolean
 #. Description
@@ -765,17 +808,20 @@ msgid ""
 "should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
 "requires rebooting."
 msgstr ""
+"Ha van a gépre egér csatlakoztatva, megkísérelhető a felismerése; segíthet a "
+"mozgatása a felismerési kísérlet közben (a gpm program nem futhat ilyenkor). "
+"PS/2 vagy busz/bejövő_port típusú egér ez utáni csatlakoztatása újraindítást "
+"igényel."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:279
 msgid "Do not choose this option if you wish to select a mouse type manually."
-msgstr ""
+msgstr "Hagyd ki e lehetőséget, ha az egér típusát kézzel akarod kiválasztani."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:279
-#, fuzzy
 msgid ""
 "If you choose it and autodetection fails, you will be asked this question "
 "again.  Autodetection can be attempted as many times as desired.  If it "
@@ -783,26 +829,25 @@ msgid ""
 "answered."
 msgstr ""
 "Ha a felismerés nem sikerült, e kérdést újra felteszem. Akárhányszor meg "
-"lehet próbálni. Ha sikerül, a debconf egérre vonatkozó további kérdései "
-"előre megválaszolásra kerülnek."
+"lehet próbálni. Ha sikerül, az egér további beállító kérdései előre "
+"megválaszolásra kerülnek."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:295
 msgid "Mouse port:"
-msgstr ""
+msgstr "Egér port:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:295
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
 "Az X Window System grafikus felhasználói felületének helyes működéséhez ezen "
-"egér (vagy más mutató eszköz) egyes tulajdonságait meg kell ismerni."
+"egér (vagy más mutató eszköz) egyes tulajdonságait ismerni kell."
 
 #. Type: select
 #. Description
@@ -818,18 +863,26 @@ msgid ""
 "or bus/inport devices from your computer, please do so with the computer's "
 "power off."
 msgstr ""
+"Meg kell adni, mely portot (kapcsolat típust) használja az egér. A soros "
+"portok 9 vagy 25 tűs D alakú csatlakozókat használnak (DB-9 vagy DB-25); az "
+"egér dugóján lyukak vannak, a gépen lévő megfelelő aljzaton tűk. A PS/2 "
+"portok kis, kerek csatlakozók (DIN) 6 tűvel; itt az egéren dugóján vannak a "
+"tűk. USB egeret is használhatsz, busz/bejövő_port (nagyon régi) egeret, és "
+"használhatod a gpm programot is ripíterként. Ha most kell csatlakoztatnod "
+"vagy eltávolítanod PS/2 vagy busz/bejövő_port eszközöket, ezt a gép "
+"kikapcsolt állapotában tedd."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:313
 msgid "Mouse protocol:"
-msgstr ""
+msgstr "Egér protokoll:"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:318
 msgid "Emulate 3 button mouse?"
-msgstr ""
+msgstr "Fusson 3 gombos egér emuláció?"
 
 #. Type: boolean
 #. Description
@@ -840,6 +893,10 @@ msgid ""
 "presence of a middle button by treating simultaneous clicks or drags of the "
 "left and right buttons as middle button events."
 msgstr ""
+"Az X Window System képességeit kihasználó legtöbb program olyan egérrel tud "
+"a legtöbbet, melynek 3 gombja van (bal, jobb és közép). Emulálható, hogy a "
+"középső egérgomb műveletei a 2 szélső egyidejű felhasználásával is "
+"működjenek. Ez főleg a 2 gombos egereknél hasznos."
 
 #. Type: boolean
 #. Description
@@ -848,6 +905,8 @@ msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
 msgstr ""
+"E lehetőség a 3 vagy több gombos egerekkel is működik; de az adott gomb "
+"önmagában is megy."
 
 #. Type: boolean
 #. Description
@@ -857,6 +916,8 @@ msgid ""
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
 "\") are not yet supported with this configuration tool."
 msgstr ""
+"Az ötnél több gombos egereket (ideértve a görgő háromnak számítását, \"fel"
+"\", \"le\" és \"kattintás\") e beállító eszköz még nem támogatja."
 
 #. Type: boolean
 #. Description
@@ -867,7 +928,6 @@ msgstr "Megpróbáljam automatikusan felismerni a monitort?"
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:334
-#, fuzzy
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -876,29 +936,25 @@ msgid ""
 "answered."
 msgstr ""
 "Sok monitor (a laposak is) és videókártya támogat egy nyelvet, mellyel a "
-"monitor képességei kinyerhetők. Ha ez a monitor és videókártya ugyanazt a "
-"nyelvjárást beszéli, a monitorra vonatkozó további debconf kérdések előre "
-"megválaszolásra kerülnek."
+"monitor képességei kinyerhetők. H e monitor és videókártya támogatja ezt, a "
+"monitor további beállító kérdéseei előre megválaszolásra kerülnek."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:334
-#, fuzzy
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
-msgstr "Ha a felismerés meghiúsul, az adatokat kézzel meg lehet majd adni."
+msgstr "Ha a felismerés meghiúsul, a monitor adatai megadhatók lesznek."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid "Method for selecting the monitor characteristics:"
-msgstr "Monitor karakterisztikája kiválasztásának módja."
+msgstr "Monitor karakterisztikája kiválasztásának módja:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -909,21 +965,18 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
-"A \"simple\" lehetőséggel csak a monitor képátlójának fizikai méretét kell "
-"tudni; ez az adott méretnek megfelelő tipikus értékeket fogja beállítani, de "
-"ez messze elmaradhat az optimálistól jó minőségű CRT-k esetén. (E lehetőség "
-"nem áll az LCD felhasználóknak, mivel ezek felbontása rugalmatlan.)"
+"A \"simple\" lehetőség csak a monitor fizikai méretét kérdezi; ez az adott "
+"méretnek megfelelő tipikus értékeket fogja beállítani, de ez messze "
+"elmaradhat az optimálistól jó minőségű CRT-k esetén."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -936,7 +989,6 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:346
-#, fuzzy
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -957,9 +1009,8 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:365
-#, fuzzy
 msgid "Approximate monitor size:"
-msgstr "Monitor körülbelüli képátlójának megadása"
+msgstr "Körülbelüli monitor méret:"
 
 #. Type: select
 #. Description
@@ -971,14 +1022,12 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:372
-#, fuzzy
 msgid "Monitor's best video mode:"
-msgstr "Monitor legjobb videó módjának kiválasztása."
+msgstr "Monitor legjobb videó módja:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:372
-#, fuzzy
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -987,45 +1036,40 @@ msgid ""
 "only if both the video chipset and the driver support it; if in doubt, use "
 "the video mode recommended by the manufacturer of your LCD."
 msgstr ""
-"A monitorról feltételezett vagy le- illetve, elolvasott legjobb felbontást "
-"is frissítési sebességet kell megadni. A nagyobb felbontások és frissítési "
-"sebességek jobbak. CRT monitorosok \"a legrosszabbat\" is választhatják, ha "
-"nincs adat arról, mit bírnak az eszközök, és később át is állíthatják. Az "
-"LCD-felhasználók is megtehetik ezt, de csak ha a videó csipkészlet és a "
-"meghajtó is támogatja; kétség esetén a gyártó által ajánlott videó módot "
-"kell használni."
+"Válaszd a monitor \"legjobb\" felbontását és frissítési sebességét. A "
+"nagyobb felbontások és frissítési sebességek jobbak. CRT monitorosok a "
+"\"legrosszabbat\" is választhatják, ha nincs adat arról, mit bírnak az "
+"eszközök, és később át is állíthatják. Az LCD-felhasználók is megtehetik "
+"ezt, de csak ha a videó csipkészlet és a meghajtó is támogatja; kétség "
+"esetén a gyártó által ajánlott videó módot kell használni."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:382
-#, fuzzy
 msgid "Identifier for the monitor:"
-msgstr "Monitorazonosító megadása"
+msgstr "Monitor azonosítója:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:382
-#, fuzzy
 msgid ""
 "The X server configuration file associates the monitor with a name that you "
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
-"Az X kiszolgáló beállító fájl e monitort egy tetszőleges névvel társítja. Ez "
-"általában a gyártó vagy márka neve, mely után a modell név következik, "
+"Az X kiszolgáló beállító fájl e monitort egy általad adott névvel társítja. "
+"Ez általában a gyártó vagy márka neve, mely után a modell név következik, "
 "például \"Sony E200\" vagy \"Dell E770s\"."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:389
-#, fuzzy
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Monitor szinkron határainak beállító fájlba írása?"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:389
-#, fuzzy
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -1038,14 +1082,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:396
-#, fuzzy
 msgid "Monitor's horizontal sync range:"
-msgstr "Monitor vízszintes szinkron határainak megadása."
+msgstr "Monitor vízszintes szinkron határainak:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:396
-#, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1053,21 +1095,19 @@ msgid ""
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
 "Rögzített frekvenciájú kijelzőknél vesszőkkel elválasztott diszkrét "
-"értékeket, modern CRT-k esetén egy kötőjellel elválasztott érték-párt kell "
-"megadni. Ezek az információk elérhetők a monitor kézikönyvéből. A 30-nál "
+"értékeket, modern CRT-k esetén kötőjellel elválasztott érték-párt kell "
+"megadni. Ezek az információk elérhetők a monitor kézikönyvében. A 30-nál "
 "alacsonyabb és 130-nál magasabb értékek rendkívül ritkák."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:404
-#, fuzzy
 msgid "Monitor's vertical refresh range:"
-msgstr "Monitor függőleges frissítési határainak megadása."
+msgstr "Monitor függőleges frissítési határai:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:404
-#, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1075,15 +1115,15 @@ msgid ""
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
 "Rögzített frekvenciájú kijelzőknél vesszőkkel elválasztott diszkrét "
-"értékeket, modern CRT-k esetén egy kötőjellel elválasztott érték-párt kell "
-"megadni. Ezek az információk elérhetők a monitor kézikönyvéből. A 50-nél "
+"értékeket, modern CRT-k esetén kötőjellel elválasztott érték-párt kell "
+"megadni. Ezek az információk elérhetők a monitor kézikönyvében. A 50-nél "
 "alacsonyabb és 160-nál magasabb értékek rendkívül ritkák."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:412
 msgid "Incorrect values entered"
-msgstr ""
+msgstr "Rossz bevitt adatok"
 
 #. Type: note
 #. Description
@@ -1099,27 +1139,26 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:420
 msgid "Video modes to be used by the X server:"
-msgstr ""
+msgstr "Az X kiszolgáló által használt videómódok:"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:420
-#, fuzzy
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
 "Removing all of them is the same as removing none, since in both cases the X "
 "server will attempt to use the highest possible resolution."
 msgstr ""
-"A lista által felkínált, de nem kívánt videómódok eltávolíthatók. Valamennyi "
-"eltávolítása ugyanaz, mint minden meghagyása, mivel az X kiszolgáló mindkét "
-"esetben a legmagasabb lehetséges felbontást próbálja használni."
+"A lista által felkínált, de nem kívánt felbontások eltávolíthatók. "
+"Valamennyi eltávolítása ugyanaz, mint minden meghagyása, mivel az X "
+"kiszolgáló mindkét esetben a legmagasabb lehetséges felbontást próbálja "
+"használni."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:429
-#, fuzzy
 msgid "Desired default color depth in bits:"
-msgstr "A kívánt alap színmélység kiválasztása bitekben."
+msgstr "A kívánt alap színmélység kiválasztása bitekben:"
 
 #. Type: select
 #. Description
@@ -1139,33 +1178,32 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:429
-#, fuzzy
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits."
 msgstr ""
-"(AZ úgynevezett \"32-bites szín\" valójában 24 bites színinformáció és 8 "
-"bites alfa csatorna vagy egyszerű 0 kitöltés; az X Window System mindkettőt "
-"kezeli. Ezekre is a 24 bitet kell kiválsztani.)"
+"Az ún. \"32-bites szín\" valójában 24 bites színinformáció és 8 bites alfa "
+"csatorna vagy egyszerű 0 kitöltés; az X Window System mindkettőt kezeli. "
+"Ezekre is a 24 bitet kell kiválasztani."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:441
 msgid "Empty value"
-msgstr ""
+msgstr "Üres érték"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:441
 msgid "A null entry is not permitted for this value."
-msgstr ""
+msgstr "Üres bemenet nem lehet ez az érték."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:446
 msgid "Invalid double-quote characters"
-msgstr ""
+msgstr "Érvénytelen dupla idézőjelek"
 
 #. Type: note
 #. Description
@@ -1177,7 +1215,7 @@ msgstr "Az idézőjel (\") karakterek nem használhatók az értékadásnál."
 #. Description
 #: ../xserver-xorg.templates:451
 msgid "Numerical value needed"
-msgstr ""
+msgstr "Számszerű érték szükséges"
 
 #. Type: note
 #. Description
@@ -1188,9 +1226,8 @@ msgstr "Csak számjegyek adhatók meg ebben a mezőben."
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:457
-#, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Billentyűzetkiosztás választása."
+msgstr "Billentyűkiosztás automatikus érzékelése?"
 
 #. Type: boolean
 #. Description
@@ -1200,6 +1237,8 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"Az Xorg kiszolgáló alap billentyűzet kiosztás választása a telepítőben "
+"választott nyelv és billentyűzet kiosztáson alapul majd."
 
 #. Type: boolean
 #. Description
@@ -1208,6 +1247,8 @@ msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
+"Válaszd e lehetőséget a billentyűzet kiosztás újra felismeréséhez. Ne tedd, "
+"ha megtartod a mostanit."
 
 #, fuzzy
 #~ msgid ""
