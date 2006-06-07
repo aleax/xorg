@@ -11,17 +11,18 @@ xorg (1:7.0.21) UNRELEASED; urgency=low
   * Conflict with guitar, which also ships an empty /usr/X11R6/bin.
   * Bump conflict with xorg 6.9 packages to (<< 7.0), thanks to amd64
     binNMUs. :/  Closes: #370215.
+  * Fix bad shell in the x11-common.preinst.
 
   [ David Nusinow ]
   * Add conflicts on some old woody stuff, including xftp, xext, xpaste, and
     ghostview. Thanks Carl Miller and Roger Leigh. (closes: #362915, #370088)
-  
+
   [ Josh Triplett ]
   * Add conflicts on the old non-free package xv, no longer in Debian,
     which broke upgrading on at least one system.
   * Remove duplicated dependency on libx11-dev from xorg-dev.
 
- -- David Nusinow <dnusinow@debian.org>  Sun,  4 Jun 2006 15:20:19 -0400
+ -- Steve Langasek <vorlon@debian.org>  Tue,  6 Jun 2006 17:58:47 -0700
 
 xorg (1:7.0.20) unstable; urgency=low
 
