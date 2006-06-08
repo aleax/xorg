@@ -105,12 +105,12 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
 
       rmdir /var/lib/xfree86 2>/dev/null || true
     fi
+  fi
 
-    # place config files under management if they do *not* already exist
-    if ! [ -e "$XWRAPPER_CONFIG" ]; then
-      touch "$XWRAPPER_CONFIG"
-      md5sum "$XWRAPPER_CONFIG" > "$XWRAPPER_CONFIG_CHECKSUM"
-    fi
+  # place config files under management if they do *not* already exist
+  if ! [ -e "$XWRAPPER_CONFIG" ]; then
+    touch "$XWRAPPER_CONFIG"
+    md5sum "$XWRAPPER_CONFIG" > "$XWRAPPER_CONFIG_CHECKSUM"
   fi
 fi
 
