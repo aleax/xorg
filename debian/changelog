@@ -16,13 +16,16 @@ xorg (1:7.0.21) UNRELEASED; urgency=low
   [ David Nusinow ]
   * Add conflicts on some old woody stuff, including xftp, xext, xpaste, and
     ghostview. Thanks Carl Miller and Roger Leigh. (closes: #362915, #370088)
+  * Revert Xrapper.config modification during x11-common postinst to 6.9
+    behavior. We now only if the file exists and the md5sum is not altered, we
+    no longer only do this on upgrades This should unbreak fresh installs.
 
   [ Josh Triplett ]
   * Add conflicts on the old non-free package xv, no longer in Debian,
     which broke upgrading on at least one system.
   * Remove duplicated dependency on libx11-dev from xorg-dev.
 
- -- Steve Langasek <vorlon@debian.org>  Tue,  6 Jun 2006 17:58:47 -0700
+ -- David Nusinow <dnusinow@debian.org>  Wed,  7 Jun 2006 23:08:28 -0400
 
 xorg (1:7.0.20) unstable; urgency=low
 

@@ -52,11 +52,11 @@ fi
 
 
 # only mess with config file it exists; otherwise, assume that's the way the
-# user wants it, but only if upgrading
-if [ -e "$XWRAPPER_CONFIG" ] || [ -n "$2" ]; then
+# user wants it
+if [ -e "$XWRAPPER_CONFIG" ]; then
   # similarly, check for the existence of the checksum file; if it doesn't
-  # exist, assume that's the way the user wants it, but only if upgrading
-  if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ] || [ -n "$2" ]; then
+  # exist, assume that's the way the user wants it
+  if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ]; then
     # next, compare the current and stored checksums; if they do not match,
     # assume that's the way the user wants it ... upgrading etc
     if [ "$(md5sum "$XWRAPPER_CONFIG" 2>/dev/null)" = \
