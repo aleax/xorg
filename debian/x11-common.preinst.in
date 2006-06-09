@@ -22,6 +22,17 @@ XWRAPPER_CONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_CHECKSUM_BASE"
 #INCLUDE_SHELL_LIB#
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
+
+  # We need to remove /usr/X11R6/bin so we can replace it with a symlink
+  if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
+    if ! rmdir "/usr/X11R6/bin"; then
+      run db_fset x11-common/x11r6_bin_not_empty seen false
+      run db_input critical x11-common/x11r6_bin_not_empty
+      run db_go
+      exit 1
+    fi
+  fi
+
   # create the configuration files' main and auxiliary directories if they
   # don't exist
   for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
@@ -42,16 +53,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   # install properly even if they haven't transitioned
   if [ -L "/usr/X11R6/lib/X11/fonts" ]; then
     rm /usr/X11R6/lib/X11/fonts
-  fi
-
-  # We need to remove /usr/X11R6/bin so we can replace it with a symlink
-  if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
-    if ! rmdir "/usr/X11R6/bin"; then
-      run db_fset x11-common/x11r6_bin_not_empty seen false
-      run db_input critical x11-common/x11r6_bin_not_empty
-      run db_go
-      exit 1
-    fi
   fi
 
   # migration hilarity

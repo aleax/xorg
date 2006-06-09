@@ -5,8 +5,10 @@ xorg (1:7.0.22) UNRELEASED; urgency=low
   * Make sure grepping for smoking guns in x11-common.postinst (or anywhere
     else that the find_culprits shell function is used) no longer dies due to
     a grep not returning anything. Thanks Joey Hess. (closes: #371152)
+  * During x11-common preinst, handle /usr/X11R6/bin before anything else to
+    try and prevent serious problems during error unwind
 
- -- David Nusinow <dnusinow@debian.org>  Thu,  8 Jun 2006 22:39:31 -0400
+ -- David Nusinow <dnusinow@debian.org>  Fri,  9 Jun 2006 00:23:28 -0400
 
 xorg (1:7.0.21) unstable; urgency=low
 
