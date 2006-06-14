@@ -27,8 +27,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-17 07:04-0500\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2006-06-14 21:41+0200\n"
 "PO-Revision-Date: 2005-10-14 00:19+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -137,6 +137,32 @@ msgid ""
 "installed after upgrade. If it is not installed and you require it, it is "
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid "Cannot remove /usr/X11R6/bin directory"
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid ""
+"This upgrade requires that the /usr/X11R6/bin directory be removed and "
+"replaced with a symlink. An attempt was made to do so, but it failed, most "
+"likely because the directory is not yet empty. You must move the files that "
+"are currently in the directory out of the way so that the installation can "
+"complete. If you like, you may move them back after the symlink is in place."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid ""
+"This package installation will now fail and exit so that you can do this. "
+"Please re-run your upgrade procedure after you have cleaned out the "
+"directory."
 msgstr ""
 
 #. Type: boolean
@@ -570,13 +596,13 @@ msgstr ""
 #: ../xserver-xorg.templates:174
 #, fuzzy
 msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkeyboard-config "
-"package has been unpacked, see the /etc/X11/xkb/rules directory for "
-"available rule sets."
+"Experienced users can use any defined XKB rule set.  If the xkb-data package "
+"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
+"rule sets."
 msgstr ""
 "Avancerade användare kan använda vilken definierad regeluppsättning för "
-"XKB.  Om xlibs-paketet har packats upp, se mappen /etc/X11/xkb/rules för "
-"tillgängliga regeluppsättningar."
+"XKB.  Om xlibs-paketet har packats upp, se mappen /usr/share/X11/xkb/rules "
+"för tillgängliga regeluppsättningar."
 
 #. Type: string
 #. Description
@@ -641,12 +667,13 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
-"rules directory for available rule sets."
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
+"directory for available rule sets."
 msgstr ""
 "Avancerade användare kan använda vilken modell som helst som är definierad "
 "av den valda XKB-regeluppsättningen.  Om xlibs-paketet har packats upp, ta "
-"en titt i mappen /etc/X11/xkb/rules för tillgängliga regeluppsättningar."
+"en titt i mappen /usr/share/X11/xkb/rules för tillgängliga "
+"regeluppsättningar."
 
 #. Type: string
 #. Description
@@ -682,12 +709,13 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkeyboard-config package has been unpacked, see the /etc/X11/"
-"xkb/rules directory for available rule sets."
+"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
+"rules directory for available rule sets."
 msgstr ""
 "Avancerade användare kan använda vilken modell som helst som är definierad "
 "av den valda XKB-regeluppsättningen.  Om xlibs-paketet har packats upp, ta "
-"en titt i mappen /etc/X11/xkb/rules för tillgängliga regeluppsättningar."
+"en titt i mappen /usr/share/X11/xkb/rules för tillgängliga "
+"regeluppsättningar."
 
 #. Type: string
 #. Description
@@ -738,13 +766,13 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
 "Avancerade användare kan använda vilken variant som helst som stöds av den "
 "valda XKB-regeluppsättningen.  Om xlibs-paketet har packats upp, ta en titt "
-"i mappen /etc/X11/xkb/symbols för den fil som gäller för det valda "
+"i mappen /usr/share/X11/xkb/symbols för den fil som gäller för det valda "
 "arrangemanget för tillgängliga varianter."
 
 #. Type: string
@@ -1535,11 +1563,11 @@ msgstr ""
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
-#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
+#~ "X11R6/lib/X11/xkb to /usr/share/X11/xkb."
 #~ msgstr ""
 #~ "Mappen där konfigurationen (inkluderat tangentbordsdata) för X KEYBOARD "
 #~ "utökningen (XKB) är lagrad har ändrats från /usr/X11R6/lib/X11/xkb till /"
-#~ "etc/X11/xkb."
+#~ "usr/share/X11/xkb."
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
@@ -1788,28 +1816,29 @@ msgstr ""
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
+#~ "set.  If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
+#~ "rules directory for available rule sets, and the /usr/share/X11/xkb/"
+#~ "symbols directory for available layouts."
 #~ msgstr ""
 #~ "Avancerade användare kan använda vilket arrangemang som helst som stöds "
 #~ "av den valda XKB-regeluppsättningen.  Om xlibx-paketet har packats upp, "
-#~ "ta en titt i mappen /etc/X11/xkb/rules för tillgängliga "
-#~ "regeluppsättningar och mappen /etc/X11/xkb/symbols för tillgängliga "
+#~ "ta en titt i mappen /usr/share/X11/xkb/rules för tillgängliga "
+#~ "regeluppsättningar och mappen /usr/share/X11/xkb/symbols för tillgängliga "
 #~ "arrangemang."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
 #~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
+#~ "the /usr/share/X11/xkb/symbols directory available options files, which "
+#~ "define only partial keyboard translations.  (For example, /usr/share/X11/"
+#~ "xkb/symbols/ctrl.)"
 #~ msgstr ""
 #~ "Avancerade användare kan använda vilka inställningar som helst som är "
 #~ "kompatibla med den valda XKB-modellen, arrangemanget och varianten.  Om "
-#~ "xlibs-paketet har packats upp, ta en titt i mappen /etc/X11/xkb/symbols "
-#~ "för tillgängliga inställningsfiler, vilka bara definierar delar av "
-#~ "tangentbordsöversättningarna.  (Till exempel, /etc/X11/xkb/symbols/ctrl.)"
+#~ "xlibs-paketet har packats upp, ta en titt i mappen /usr/share/X11/xkb/"
+#~ "symbols för tillgängliga inställningsfiler, vilka bara definierar delar "
+#~ "av tangentbordsöversättningarna.  (Till exempel, /usr/share/X11/xkb/"
+#~ "symbols/ctrl.)"
 
 #~ msgid "Enable scroll events from mouse wheel?"
 #~ msgstr "Aktivera rullhändelser fråm mushjulet?"

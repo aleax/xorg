@@ -26,8 +26,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-17 07:04-0500\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2006-06-14 21:41+0200\n"
 "PO-Revision-Date: 2005-08-04 21:57-0500\n"
 "Last-Translator: Ming Hua <minghua@rice.edu>\n"
 "Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
@@ -129,6 +129,32 @@ msgid ""
 "installed after upgrade. If it is not installed and you require it, it is "
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid "Cannot remove /usr/X11R6/bin directory"
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid ""
+"This upgrade requires that the /usr/X11R6/bin directory be removed and "
+"replaced with a symlink. An attempt was made to do so, but it failed, most "
+"likely because the directory is not yet empty. You must move the files that "
+"are currently in the directory out of the way so that the installation can "
+"complete. If you like, you may move them back after the symlink is in place."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid ""
+"This package installation will now fail and exit so that you can do this. "
+"Please re-run your upgrade procedure after you have cleaned out the "
+"directory."
 msgstr ""
 
 #. Type: boolean
@@ -543,12 +569,12 @@ msgstr ""
 #: ../xserver-xorg.templates:174
 #, fuzzy
 msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkeyboard-config "
-"package has been unpacked, see the /etc/X11/xkb/rules directory for "
-"available rule sets."
+"Experienced users can use any defined XKB rule set.  If the xkb-data package "
+"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
+"rule sets."
 msgstr ""
 "高级用户可以使用任何已定义的 XKB 规则集。如果 xlibs 软件包已被解包，请到 /"
-"etc/X11/xkb/rules 目录下查找可用的规则集。"
+"usr/share/X11/xkb/rules 目录下查找可用的规则集。"
 
 #. Type: string
 #. Description
@@ -611,11 +637,11 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
-"rules directory for available rule sets."
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
+"directory for available rule sets."
 msgstr ""
 "高级用户可以使用任何由被选 XKB 规则集所定义的键盘型号。如果 xlibs 软件包已被"
-"解包，请到 /etc/X11/xkb/rules 目录下查找可用的规则集。"
+"解包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
 
 #. Type: string
 #. Description
@@ -651,11 +677,11 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkeyboard-config package has been unpacked, see the /etc/X11/"
-"xkb/rules directory for available rule sets."
+"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
+"rules directory for available rule sets."
 msgstr ""
 "高级用户可以使用任何由被选 XKB 规则集所定义的键盘型号。如果 xlibs 软件包已被"
-"解包，请到 /etc/X11/xkb/rules 目录下查找可用的规则集。"
+"解包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
 
 #. Type: string
 #. Description
@@ -703,12 +729,13 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
 "高级用户可以使用任何由被选 XKB 布局所支持的变种(variant)。如果 xlibs 软件包已"
-"被解包，请到 /etc/X11/xkb/symbols 目录下查找对应于您所选布局的可用变种。"
+"被解包，请到 /usr/share/X11/xkb/symbols 目录下查找对应于您所选布局的可用变"
+"种。"
 
 #. Type: string
 #. Description
@@ -1473,10 +1500,10 @@ msgstr ""
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
-#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
+#~ "X11R6/lib/X11/xkb to /usr/share/X11/xkb."
 #~ msgstr ""
 #~ "存放 X KEYBOARD Extension (XKB) 的配置信息(包括键盘数据)的目录已经从 /usr/"
-#~ "X11R6/lib/X11/xkb 切换到了 /etc/X11/xkb。"
+#~ "X11R6/lib/X11/xkb 切换到了 /usr/share/X11/xkb。"
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
@@ -1633,24 +1660,25 @@ msgstr ""
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
+#~ "set.  If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
+#~ "rules directory for available rule sets, and the /usr/share/X11/xkb/"
+#~ "symbols directory for available layouts."
 #~ msgstr ""
 #~ "高级用户可以使用任何由被选 XKB 规则集所支持键盘布局。如果 xlibs 软件包已被"
-#~ "解包，请到 /etc/X11/xkb/rules 目录下查找可用的规则集，并到 /etc/X11/xkb/"
-#~ "symbols 目录下查找可用的布局。"
+#~ "解包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集，并到 /usr/"
+#~ "share/X11/xkb/symbols 目录下查找可用的布局。"
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
 #~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
+#~ "the /usr/share/X11/xkb/symbols directory available options files, which "
+#~ "define only partial keyboard translations.  (For example, /usr/share/X11/"
+#~ "xkb/symbols/ctrl.)"
 #~ msgstr ""
 #~ "高级用户可以使用任何与被选 XKB 型号、布局和变种(variant)相兼容的选项。如"
-#~ "果 xlibs 软件包已被解包，请到 /etc/X11/xkb/symbols 目录下查找可用的选项文"
-#~ "件，其中仅定义了部分键盘转义。(例如：/etc/X11/xkb/symbols/ctrl。)"
+#~ "果 xlibs 软件包已被解包，请到 /usr/share/X11/xkb/symbols 目录下查找可用的"
+#~ "选项文件，其中仅定义了部分键盘转义。(例如：/usr/share/X11/xkb/symbols/"
+#~ "ctrl。)"
 
 #~ msgid "Enable scroll events from mouse wheel?"
 #~ msgstr "启用来自鼠标滚轮的滚动事件信号吗？"

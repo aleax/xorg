@@ -28,8 +28,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po_ro\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-17 07:04-0500\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2006-06-14 21:41+0200\n"
 "PO-Revision-Date: 2006-04-20 21:56+0300\n"
 "Last-Translator: Eddy Petrisor <eddy_petrisor@yahoo.com>\n"
 "Language-Team: Romanian <Romanian>\n"
@@ -141,6 +141,32 @@ msgid ""
 "installed after upgrade. If it is not installed and you require it, it is "
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid "Cannot remove /usr/X11R6/bin directory"
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid ""
+"This upgrade requires that the /usr/X11R6/bin directory be removed and "
+"replaced with a symlink. An attempt was made to do so, but it failed, most "
+"likely because the directory is not yet empty. You must move the files that "
+"are currently in the directory out of the way so that the installation can "
+"complete. If you like, you may move them back after the symlink is in place."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:50
+msgid ""
+"This package installation will now fail and exit so that you can do this. "
+"Please re-run your upgrade procedure after you have cleaned out the "
+"directory."
 msgstr ""
 
 #. Type: boolean
@@ -592,13 +618,13 @@ msgstr ""
 #: ../xserver-xorg.templates:174
 #, fuzzy
 msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkeyboard-config "
-"package has been unpacked, see the /etc/X11/xkb/rules directory for "
-"available rule sets."
+"Experienced users can use any defined XKB rule set.  If the xkb-data package "
+"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
+"rule sets."
 msgstr ""
 "Utilizatorii avansaţi pot utiliza orice set de reguli XKB definit. Dacă "
-"pachetul xkeyboard-config a fost despachetat, a se vedea directorul /etc/X11/"
-"xlb/rules pentru seturile de reguli disponibile."
+"pachetul xkb-data a fost despachetat, a se vedea directorul /etc/X11/xlb/"
+"rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
@@ -663,12 +689,12 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
-"rules directory for available rule sets."
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
+"directory for available rule sets."
 msgstr ""
 "Utilizatorii avansaţi pot folosi orice model definit prin selecţia setului "
-"de reguli XKB. Dacă pachetul xkeyboard-config este despachetat, a se vedea "
-"directorul /etc/X11/xkb/rules pentru seturile de reguli disponibile."
+"de reguli XKB. Dacă pachetul xkb-data este despachetat, a se vedea "
+"directorul /usr/share/X11/xkb/rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
@@ -707,12 +733,12 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkeyboard-config package has been unpacked, see the /etc/X11/"
-"xkb/rules directory for available rule sets."
+"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
+"rules directory for available rule sets."
 msgstr ""
 "Utilizatorii avansaţi pot folosi orice model definit prin selecţia setului "
-"de reguli XKB. Dacă pachetul xkeyboard-config este despachetat, a se vedea "
-"directorul /etc/X11/xkb/rules pentru seturile de reguli disponibile."
+"de reguli XKB. Dacă pachetul xkb-data este despachetat, a se vedea "
+"directorul /usr/share/X11/xkb/rules pentru seturile de reguli disponibile."
 
 #. Type: string
 #. Description
@@ -766,13 +792,13 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkeyboard-config package has been unpacked, see the /etc/X11/xkb/"
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
 "Utilizatorii avansaţi pot utiliza orice variantă suportată prin selecţia "
-"aranjamentului XKB. Dacă pachetul xkeyboard-config este despachetat, a se "
-"vedea directorul /etc/X11/xkb/symbols, fişierul corespunzător aranjamentului "
+"aranjamentului XKB. Dacă pachetul xkb-data este despachetat, a se vedea "
+"directorul /usr/share/X11/xkb/symbols, fişierul corespunzător aranjamentului "
 "selectat de dvs. pentru variantele disponibile."
 
 #. Type: string
@@ -1630,11 +1656,11 @@ msgstr ""
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
-#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
+#~ "X11R6/lib/X11/xkb to /usr/share/X11/xkb."
 #~ msgstr ""
 #~ "Directorul unde informaţiile de configurare (inclusiv datele despre "
 #~ "tastatură) pentru Extensia de tastatură X (XKB) sunt stocate s-a schimbat "
-#~ "din /usr/X11R6/lib/X11/xkb în /etc/X11/xkb."
+#~ "din /usr/X11R6/lib/X11/xkb în /usr/share/X11/xkb."
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
@@ -1814,26 +1840,26 @@ msgstr ""
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
-#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
-#~ "for available layouts."
+#~ "set.  If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
+#~ "rules directory for available rule sets, and the /usr/share/X11/xkb/"
+#~ "symbols directory for available layouts."
 #~ msgstr ""
 #~ "Utilizatorii avansaţi pot folosi orice format suportat de setul de reguli "
 #~ "XKB selectat. Dacă pachetul xlibs a fost despachetat, vedeţi directorul /"
-#~ "etc/X11/xkb/rules pentru seturile de reguli disponibile, şi directorul /"
-#~ "etc/X11/xkb/symbols pentru formatele disponibile."
+#~ "usr/share/X11/xkb/rules pentru seturile de reguli disponibile, şi "
+#~ "directorul /usr/share/X11/xkb/symbols pentru formatele disponibile."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
 #~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /etc/X11/xkb/symbols directory available options files, which define "
-#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
-#~ "ctrl.)"
+#~ "the /usr/share/X11/xkb/symbols directory available options files, which "
+#~ "define only partial keyboard translations.  (For example, /usr/share/X11/"
+#~ "xkb/symbols/ctrl.)"
 #~ msgstr ""
 #~ "Utilizatorii avansaţi pot folosi orice opţiune compatibilă cu modelul, "
 #~ "formatul şi varianta XKB selectată. Dacă pachetul xlibs este despachetat, "
-#~ "vedeţi în directorul /etc/X11/xkb/symbols fişierele cu opţiunile "
-#~ "disponibile. (De exemplu /etc/X11/xkb/symbols/ctrl.)"
+#~ "vedeţi în directorul /usr/share/X11/xkb/symbols fişierele cu opţiunile "
+#~ "disponibile. (De exemplu /usr/share/X11/xkb/symbols/ctrl.)"
 
 #~ msgid "Enable scroll events from mouse wheel?"
 #~ msgstr "Activaţi evenimentele de derulare ale rotiţei mausului?"
