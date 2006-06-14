@@ -41,6 +41,7 @@ include debian/scripts/vars.$(ARCH)
 clean: cleanscripts
 	dh_testdir
 	dh_clean stamp-* debian/local/X debian/po/pothead
+	-debconf-updatepo
 
 
 SCRIPTS=$(shell ls debian/*.config.in debian/*.postinst.in debian/*.postrm.in debian/*.preinst.in debian/*.prerm.in)
