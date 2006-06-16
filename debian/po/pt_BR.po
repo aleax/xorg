@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
 "POT-Creation-Date: 2006-06-14 21:41+0200\n"
-"PO-Revision-Date: 2006-05-20 16:50-0300\n"
+"PO-Revision-Date: 2006-06-15 23:52-0300\n"
 "Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:50
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr ""
+msgstr "Não foi possível remover o diretório /usr/X11R6/bin"
 
 #. Type: note
 #. Description
@@ -158,6 +158,13 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"Esta atualização requer que o diretório /usr/X11R6/bin seja removido e "
+"substituído por uma ligação simbólica. Uma tentativa de fazer esse "
+"procedimento foi feita, mas falhou, provavelmente devido ao diretório em "
+"questão não estar vazio. Você deve mover os arquivos que estão atualmente "
+"nesse diretório para outro local para que a instalação possa ser finalizada. "
+"Caso deseje, você poderá mover os arquivos de novo para o local de onde "
+"foram retirados após a ligação simbólica ter sido criada."
 
 #. Type: note
 #. Description
@@ -167,6 +174,9 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
+"A instalação deste pacote irá agora falhar e finalizar, de forma que você "
+"possa fazer isso. Por favorm execute o procedimento de atualização novamente "
+"após você ter o diretório em questão limpo."
 
 #. Type: boolean
 #. Description
@@ -609,13 +619,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:174
+#, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
 "Usuários avançados podem usar qualquer conjunto de regras XKB. Caso o pacote "
-"xkb-data tenha sido desempacotado, consulte o diretório /usr/share/X11/xkb/"
+"xkeyboard-config tenha sido desempacotado, consulte o diretório /etc/X11/xkb/"
 "rules para conhecer os conjuntos de regras disponíveis."
 
 #. Type: string
@@ -694,15 +705,16 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:189
+#, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
 "Usuários avançados podem usar qualquer modelo definido pelo conjunto de "
-"regras XKB selecionado. Caso o pacote xkb-data tenha sido desempacotado, "
-"consulte o diretório /usr/share/X11/xkb/rules para conhecer os conjuntos de "
-"regras disponíveis."
+"regras XKB selecionado. Caso o pacote xkeyboard-config tenha sido "
+"desempacotado, consulte o diretório /etc/X11/xkb/rules para conhecer os "
+"conjuntos de regras disponíveis."
 
 #. Type: string
 #. Description
@@ -735,15 +747,16 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:220
+#, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
 "Usuários avançados podem usar qualquer modelo suportado pelo conjunto de "
-"regras XKB selecionado. Caso o pacote xkb-data tenha sido desempacotado, "
-"consulte o diretório /usr/share/X11/xkb/rules para conhecer os conjuntos de "
-"regras disponíveis."
+"regras XKB selecionado. Caso o pacote xkeyboard-config tenha sido "
+"desempacotado, consulte o diretório /etc/X11/xkb/rules para conhecer os "
+"conjuntos de regras disponíveis."
 
 #. Type: string
 #. Description
@@ -791,6 +804,7 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
+#, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -798,9 +812,9 @@ msgid ""
 "available variants."
 msgstr ""
 "Usuários avançados podem usar qualquer variante suportada pelo layout XKB "
-"selecionado. Caso o pacote xkb-data tenha sido desempacotado, consulte o "
-"diretório /usr/share/X11/xkb/symbols para conhecer o arquivo correspondente "
-"ao seu layout selecionado para as variantes disponíveis."
+"selecionado. Caso o pacote xkeyboard-config tenha sido desempacotado, "
+"consulte o diretório /etc/X11/xkb/symbols para conhecer o arquivo "
+"correspondente ao seu layout selecionado para as variantes disponíveis."
 
 #. Type: string
 #. Description
@@ -1623,11 +1637,11 @@ msgstr ""
 #~ msgid ""
 #~ "The directory where configuration information (including keyboard data) "
 #~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
-#~ "X11R6/lib/X11/xkb to /usr/share/X11/xkb."
+#~ "X11R6/lib/X11/xkb to /etc/X11/xkb."
 #~ msgstr ""
 #~ "O diretório onde a informação de configuração (incluíndo dados de "
 #~ "teclado) para a Extensão X KEYBOARD (XKB) é armazenada foi mudado de /usr/"
-#~ "X11R6/lib/X11/xkb para /usr/share/X11/xkb."
+#~ "X11R6/lib/X11/xkb para /etc/X11/xkb."
 
 #~ msgid ""
 #~ "Your system is using the old location, and some programs, such as those "
@@ -1884,22 +1898,22 @@ msgstr ""
 
 #~ msgid ""
 #~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /usr/share/X11/xkb/rules directory for "
-#~ "available rule sets."
+#~ "has been unpacked, see the /etc/X11/xkb/rules directory for available "
+#~ "rule sets."
 #~ msgstr ""
 #~ "Usuários avançados podem usar qualquer conjunto de regras XKB definido. "
-#~ "Caso o pacote xlibs tenha sido desempacotado, consulte o diretório /usr/"
-#~ "share/X11/xkb/rules para conhecer os conjuntos de regras disponíveis."
+#~ "Caso o pacote xlibs tenha sido desempacotado, consulte o diretório /etc/"
+#~ "X11/xkb/rules para conhecer os conjuntos de regras disponíveis."
 
 #~ msgid ""
 #~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /usr/share/X11/xkb/rules "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
 #~ "directory for available rule sets."
 #~ msgstr ""
 #~ "Usuários avançados podem usar qualquer modelo definido pelo conjunto de "
 #~ "regras XKB selecionado. Caso o pacote xlibs tenha sido desempacotado, "
-#~ "consulte o diretório /usr/share/X11/xkb/rules para conhecer os conjuntos "
-#~ "de regras disponíveis."
+#~ "consulte o diretório /etc/X11/xkb/rules para conhecer os conjuntos de "
+#~ "regras disponíveis."
 
 #~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
 #~ msgstr ""
@@ -1907,40 +1921,39 @@ msgstr ""
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
-#~ "rules directory for available rule sets, and the /usr/share/X11/xkb/"
-#~ "symbols directory for available layouts."
+#~ "set.  If the xlibs package has been unpacked, see the /etc/X11/xkb/rules "
+#~ "directory for available rule sets, and the /etc/X11/xkb/symbols directory "
+#~ "for available layouts."
 #~ msgstr ""
 #~ "Usuários avançados podem usar qualquer layout suportado pelo conjunto de "
 #~ "regras XKB selecionado. Caso o pacote xlibs tenha sido desempacotado, "
-#~ "consulte o diretório /usr/share/X11/xkb/rules para conhecer os conjuntos "
-#~ "de regras disponíveis e o diretório /usr/share/X11/xkb/symbols para "
-#~ "conhecer os layouts disponíveis."
+#~ "consulte o diretório /etc/X11/xkb/rules para conhecer os conjuntos de "
+#~ "regras disponíveis e o diretório /etc/X11/xkb/symbols para conhecer os "
+#~ "layouts disponíveis."
 
 #~ msgid ""
 #~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
-#~ "symbols directory for the file corresponding to your selected layout for "
+#~ "If the xlibs package has been unpacked, see the /etc/X11/xkb/symbols "
+#~ "directory for the file corresponding to your selected layout for "
 #~ "available variants."
 #~ msgstr ""
 #~ "Usuários avançados podem usar qualquer variante suportada pelo layout XKB "
 #~ "selecionado. Caso o pacote xlibs tenha sido desempacotado, consulte o "
-#~ "diretório /usr/share/X11/xkb/symbols para conhecer o arquivo "
-#~ "correspondente ao seu layout selecionado para as variantes disponíveis."
+#~ "diretório /etc/X11/xkb/symbols para conhecer o arquivo correspondente ao "
+#~ "seu layout selecionado para as variantes disponíveis."
 
 #~ msgid ""
 #~ "Advanced users can use any options compatible with the selected XKB "
 #~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /usr/share/X11/xkb/symbols directory available options files, which "
-#~ "define only partial keyboard translations.  (For example, /usr/share/X11/"
-#~ "xkb/symbols/ctrl.)"
+#~ "the /etc/X11/xkb/symbols directory available options files, which define "
+#~ "only partial keyboard translations.  (For example, /etc/X11/xkb/symbols/"
+#~ "ctrl.)"
 #~ msgstr ""
 #~ "Usuários avançados podem usar qualquer opção compatível com o modelo XKB, "
 #~ "layout e variante selecionados. Caso o pacote xlibs tenha sido "
-#~ "desempacotado, consulte o diretório /usr/share/X11/xkb/symbols para "
-#~ "conhecer os arquivos de opções disponíveis, os quaus definem somente "
-#~ "traduções de teclado parciais. (Por exemplo, /usr/share/X11/xkb/symbols/"
-#~ "ctrl.)"
+#~ "desempacotado, consulte o diretório /etc/X11/xkb/symbols para conhecer os "
+#~ "arquivos de opções disponíveis, os quaus definem somente traduções de "
+#~ "teclado parciais. (Por exemplo, /etc/X11/xkb/symbols/ctrl.)"
 
 #~ msgid "Enable scroll events from mouse wheel?"
 #~ msgstr "Habilitar eventos de rolagem da roda do mouse ?"
