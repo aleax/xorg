@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po_ru\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
 "POT-Creation-Date: 2006-06-14 21:41+0200\n"
-"PO-Revision-Date: 2006-05-19 22:12+0300\n"
+"PO-Revision-Date: 2006-07-02 12:31+0300\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -147,7 +147,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:50
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr ""
+msgstr "Не удалось удалить каталог /usr/X11R6/bin"
 
 #. Type: note
 #. Description
@@ -159,6 +159,12 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"Для данного обновления требуется удаление каталога /usr/X11R6/bin "
+"и замена на символическую ссылку. Попытка сделать это не удалась, скорее "
+"всего из-за того, что этот каталог всё ещё не пустой. Вы должны переместить "
+"файлы из этого каталога для завершения установки. Если нужно, вы "
+"можете переместить их обратно, после того как будет создана символическая "
+"ссылка."
 
 #. Type: note
 #. Description
@@ -168,6 +174,8 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
+"Пока установка считается неудачной и прерывается, чтобы вы могли сделать это. "
+"После очистки каталога запустите процедуру обновления ещё раз."
 
 #. Type: boolean
 #. Description
@@ -788,8 +796,7 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:235
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
+msgid "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
 "Пользователям американских клавиатур (США) обычно следует оставить это поле "
 "пустым."
@@ -1023,10 +1030,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:334
-msgid ""
-"If autodetection fails, you will be asked for information about the monitor."
-msgstr ""
-"Если автоопределение не сработает, вам будут заданы вопросы о вашем мониторе."
+msgid "If autodetection fails, you will be asked for information about the monitor."
+msgstr "Если автоопределение не сработает, вам будут заданы вопросы о вашем мониторе."
 
 #. Type: select
 #. Description
@@ -1336,3 +1341,4 @@ msgid ""
 msgstr ""
 "Ответьте положительно, если хотите повторно определить раскладку клавиатуры. "
 "Ответьте отрицательно, если хотите сохранить имеющуюся раскладку."
+
