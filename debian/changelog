@@ -24,6 +24,11 @@ xorg (1:7.0.23) UNRELEASED; urgency=low
   [ Michel Dänzer ]
   * Add debian/scripts/vars.armeb, thanks Lennert Buytenhek. Closes: #367188
 
+  [ Jurij Smakov ]
+  * Remove xserver-xorg-video-{newport,tga} from XSERVER_XORG_VIDEO_DEPENDS
+    on sparc, since these drivers do not built on sparc (sparc is not in
+    the arch list). Thanks to Julien Cristau for pointing it out.
+
  -- Michel DÃ¤nzer <daenzer@debian.org>  Sun, 25 Jun 2006 13:29:40 +0200
 
 xorg (1:7.0.22) unstable; urgency=low
