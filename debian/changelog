@@ -21,13 +21,31 @@ xorg (1:7.0.23) UNRELEASED; urgency=low
     - Khmer (auk piseth). Closes: #375063
     - Dzongkha (Jurmey Rabgay).
 
-  [ Michel Dänzer ]
+  [ Michel Dänzer ] 
   * Add debian/scripts/vars.armeb, thanks Lennert Buytenhek. Closes: #367188
 
   [ Jurij Smakov ]
   * Remove xserver-xorg-video-{newport,tga} from XSERVER_XORG_VIDEO_DEPENDS
     on sparc, since these drivers do not built on sparc (sparc is not in
     the arch list). Thanks to Julien Cristau for pointing it out.
+  * Fix the currently broken sparc hardware detection in config and 
+    postinst scripts:
+    - introduce a new discover_sparc_video() function which uses prtconf
+      rather than discover to do the hardware detection. discover does not
+      support detection of devices attached to UPA and SBUS buses, common
+      on sparc, so it's pretty useless there.
+    - use this function on sparc by introducing the DISCOVER_PROG and
+      DISCOVER_FUNC variables, preserving the old behavior for all other
+      arches. Adjust the debugging messages appropriately.
+    - set the default sparc driver to 'sunffb'.
+    - set default keyboard rules for sparc to 'xorg' instead of obsolete
+      'sun'. The keyboard layer in 2.6 kernels have been unified across
+      all arches, so 'xorg' is the correct setting now.
+    - add 'cfb' and 'cfb32' to the list of modules loaded by default on
+      sparc, since the symbols provided by them are required by sunffb
+      driver. Closes: #352869, #377809
+    - set the default color depth to 8 for the 'cgsix' driver, as it's the
+      maximum depth supported by it.
 
  -- Michel DÃ¤nzer <daenzer@debian.org>  Sun, 25 Jun 2006 13:29:40 +0200
 

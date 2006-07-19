@@ -58,6 +58,85 @@ debug_report_status () {
   debug_echo "$1 exited with status $2"
 }
 
+discover_sparc_video () {
+  # Detect video cards on sparc by parsing prtconf output
+  prtconf -p -v | awk '
+  BEGIN {
+          display_node = 0; 
+          model = ""; 
+          name = ""; 
+  }
+  /Node/ {
+           if(display_node == 1) {
+             printf "model=\"%s\" name=\"%s\"\n", model, name
+             display_node = 0;
+           };
+           model = "";
+           name = ""
+  }
+  /device_type:/ {
+                   if(index($2, "display") != 0) {
+                     display_node = 1
+                   }
+  }
+  /model:/ { l=length($2); model = substr($2, 2, l-2) }
+  /name:/  { l=length($2); name = substr($2, 2, l-2) }
+  END{
+       if(display_node == 1) {
+         printf "model=\"%s\" name=\"%s\"\n", model, name
+       }; 
+  }' | \
+  while read line
+  do
+    eval "${line}"
+#   Match the name and the model to the driver.
+    test -z "${name}" && continue
+#   The model stored in the prom is usually not too
+#   informative, so that we need to provide some
+#   sensible human-readable card identification as well.
+    server='XFree86'
+    case "${name}" in
+      'cgsix' )
+        card='Sun CG6 framebuffer'
+        driver='suncg6' 
+	;;
+      'SUNW,sx' )
+        card='Sun CG14 framebuffer'
+        driver='suncg14'
+        ;;
+      'SUNW,leo' )
+        card='Sun LEO framebuffer'
+        driver='sunleo'
+        ;;
+      'SUNW,tcx' )
+        card='Sun TCX framebuffer' 
+        driver='suntcx'
+	;;
+      'SUNW,m64B' )
+        card='ATI Technologies 3D Rage Pro or similar'
+        driver='ati'
+        ;;
+      'SUNW,ffb' )
+        card='Sun Creator3D framebuffer or similar'
+        driver='sunffb'
+        ;;
+      'SUNW,afb' )
+        card='Sun Elite3D framebuffer or similar'
+        driver='sunffb'
+        ;;
+      * )
+        card='Unknown'
+        server='unknown'
+        driver='unknown'
+        ;;
+    esac
+    if [ -n "${model}" ]; then
+      card="${card} (${model})"
+    fi
+    echo -e "${card}\t${server}\t${driver}"
+  done
+}
+
 discover_video () {
   # wrapper for discover command that can distinguish Discover 1.x and 2.x
 
@@ -550,8 +629,18 @@ if ! expr "$OWNERS" : ".*,.*" > /dev/null 2>&1; then
 fi
 
 # collect information about installed video card(s), if possible
-if which discover > /dev/null 2>&1; then
-  DISCOVERED_VIDEO=$(discover_video)
+case "$ARCH" in
+  sparc)
+    DISCOVER_PROG='prtconf'
+    DISCOVER_FUNC='discover_sparc_video'
+    ;;
+  *)
+    DISCOVER_PROG='discover'
+    DISCOVER_FUNC='discover_video'
+    ;;
+esac
+if which $DISCOVER_PROG > /dev/null 2>&1; then
+  DISCOVERED_VIDEO=$($DISCOVER_FUNC)
   MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
   DISCOVERED_VIDEO=$(echo "$DISCOVERED_VIDEO" | head -n 1)
   if [ -n "$DISCOVERED_VIDEO" ]; then
@@ -573,7 +662,7 @@ fi
 # set a failsafe default answer for shared/default-x-server
 DEFAULT=$THIS_PACKAGE
 
-if which discover > /dev/null 2>&1; then
+if which $DISCOVER_PROG > /dev/null 2>&1; then
   if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     PRIORITY="medium"
     if [ -n "$RECONFIGURE" ]; then
@@ -621,7 +710,7 @@ if which discover > /dev/null 2>&1; then
     debug_echo "upgrading package; not running autodetection script"
   fi
 else
-  debug_echo "could not autodetect X server: discover not found"
+  debug_echo "could not autodetect X server: $DISCOVER_PROG not found"
 fi
 
 # now the default-x-server question may be asked
@@ -670,6 +759,9 @@ case "$ARCH" in
   amd64|hurd-i386|i386)
     DEFAULT_DRIVER=vesa
     ;;
+  sparc)
+    DEFAULT_DRIVER=sunffb
+    ;;
   *)
     DEFAULT_DRIVER=fbdev
     ;;
@@ -683,7 +775,7 @@ fi
 observe "available video driver list set to \"$DRIVER_LIST\""
 
 if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
-  if which discover >/dev/null 2>&1; then
+  if which $DISCOVER_PROG >/dev/null 2>&1; then
     if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
       if [ $NDRIVERS -eq 0 ]; then
         observe "could not autodetect X server driver: no video card" \
@@ -710,7 +802,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
       observe "user declined video card autodetection (driver)"
     fi
   else
-    observe "could not autodetect X server driver: discover not found"
+    observe "could not autodetect X server driver: $DISCOVER_PROG not found"
   fi
 
   db_subst xserver-xorg/config/device/driver choices "$DRIVER_LIST"
@@ -720,7 +812,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # card identifier; try to set a sensible default
   DEFAULT=
   if [ -n "$(echo $NDRIVERS)" ] && [ $NDRIVERS -eq 1 ] && [ $NCARDS -eq 1 ]; then
-    if which discover > /dev/null 2>&1; then
+    if which $DISCOVER_PROG > /dev/null 2>&1; then
       if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
         DEFAULT=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $1}')
       fi
@@ -985,11 +1077,7 @@ MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" x
 # these questions require input validation
 PRIORITY=medium
 
-if [ "$ARCH" = "sparc" ]; then
-  DEFAULT=sun
-else
-  DEFAULT=xorg
-fi
+DEFAULT=xorg
 MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/rules "$DEFAULT"
 
 if [ -z "$XKBMODEL" ]; then
@@ -1117,7 +1205,11 @@ if echo "$MODULES" | grep -q "GLcore"; then
   db_set xserver-xorg/config/modules "$MODULES"
 fi
 
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/modules "i2c, bitmap, ddc, dri, extmod, freetype, glx, int10, type1, vbe" || true
+DEFAULT_MODULES='i2c, bitmap, ddc, dri, extmod, freetype, glx, int10, type1, vbe'
+if [ "$ARCH" = 'sparc' ]; then
+  DEFAULT_MODULES="${DEFAULT_MODULES}, cfb, cfb32"
+fi
+auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/modules "${DEFAULT_MODULES}" || true
 db_go
 
 # files and dri sections
