@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2006-06-14 21:41+0200\n"
+"POT-Creation-Date: 2006-08-12 18:04+0200\n"
 "PO-Revision-Date: 2005-09-27 06:44+0200\n"
 "Last-Translator: Peter Mann <Peter.Mann@tuke.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -21,19 +21,19 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../x11-common.templates:3
+#: ../x11-common.templates:1001
 msgid "Root Only, Console Users Only, Anybody"
 msgstr "Len root, Len konzoloví používatelia, Ktokoľvek"
 
 #. Type: select
 #. Description
-#: ../x11-common.templates:5
+#: ../x11-common.templates:1002
 msgid "Users allowed to start the X server:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../x11-common.templates:5
+#: ../x11-common.templates:1002
 msgid ""
 "Because the X server runs with superuser privileges, it may be unwise to "
 "permit any user to start it, for security reasons.  On the other hand, it is "
@@ -51,14 +51,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../x11-common.templates:20
+#: ../x11-common.templates:3001
 #, fuzzy
 msgid "Nice value for the X server:"
 msgstr "Zadajte hodnotu 'nice', s ktorou sa má spúšťať X server."
 
 #. Type: string
 #. Description
-#: ../x11-common.templates:20
+#: ../x11-common.templates:3001
 #, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
@@ -79,7 +79,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../x11-common.templates:20
+#: ../x11-common.templates:3001
 msgid ""
 "Values outside the range of -10 to 0 are not recommended; too negative, and "
 "the X server will interfere with important system tasks.  Too positive, and "
@@ -91,25 +91,25 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:35
+#: ../x11-common.templates:4001
 msgid "Incorrect nice value"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:35
+#: ../x11-common.templates:4001
 msgid "Please enter an integer between -20 and 19."
 msgstr "Zadajte celé číslo medzi -20 a 19."
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:40
+#: ../x11-common.templates:5001
 msgid "Major possible upgrade issues"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:40
+#: ../x11-common.templates:5001
 msgid ""
 "Some users have reported that upon upgrade to the current package set, their "
 "xserver package was no longer installed. Because there is no easy way around "
@@ -121,13 +121,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:50
+#: ../x11-common.templates:6001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:50
+#: ../x11-common.templates:6001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -138,7 +138,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../x11-common.templates:50
+#: ../x11-common.templates:6001
 msgid ""
 "This package installation will now fail and exit so that you can do this. "
 "Please re-run your upgrade procedure after you have cleaned out the "
@@ -147,13 +147,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:4
+#: ../xserver-xorg.templates:1001
 msgid "Attempt to autodetect video hardware?"
 msgstr "Pokúsiť sa o rozpoznanie grafického hardvéru?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:4
+#: ../xserver-xorg.templates:1001
 #, fuzzy
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
@@ -170,7 +170,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:4
+#: ../xserver-xorg.templates:1001
 #, fuzzy
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
@@ -182,14 +182,14 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:17
+#: ../xserver-xorg.templates:2001
 #, fuzzy
 msgid "No X server known for your video hardware"
 msgstr "Vašej grafickej karte nevyhovuje žiaden X server."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:17
+#: ../xserver-xorg.templates:2001
 #, fuzzy
 msgid ""
 "There is either no video hardware installed on this machine (e.g. serial "
@@ -205,21 +205,63 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:26
+#: ../xserver-xorg.templates:3001
 #, fuzzy
 msgid "Multiple potential default X servers for your hardware"
 msgstr "Viac možných predvolených X serverov pre váš hardvér."
 
+#. Type: note
+#. Description
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:3001 ../xserver-xorg.templates:7001
+#, fuzzy
+msgid ""
+"Multiple video cards have been detected, and different X servers are "
+"required to support the various devices.  It is thus not possible to "
+"automatically select a default X server."
+msgstr ""
+"Bolo nájdených viac grafických kariet, takže je pre nich potrebných viac "
+"rôznych X serverov. Zvoľte zariadenie, ktoré bude slúžiť ako \"primárne\"; "
+"zvyčajne je to grafická karta a monitor, na ktorom sa zobrazujú správy pri "
+"spúšťaní systému."
+
+#. Type: note
+#. Description
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:3001 ../xserver-xorg.templates:7001
+msgid ""
+"Please configure the device that will serve as this computer's \"primary head"
+"\"; this is generally the video card and monitor used for display when the "
+"computer is booted up."
+msgstr ""
+
+#. Type: note
+#. Description
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:3001 ../xserver-xorg.templates:7001
+#, fuzzy
+msgid ""
+"The configuration process currently only supports single-headed setups; "
+"however, the X server configuration files can be edited later to support a "
+"multi-head configuration."
+msgstr ""
+"Debconf momentálne podporuje iba jeden monitor, no podporu viacerých "
+"monitorov môžete pridať neskôr manuálnou úpravou konfiguračného súboru X "
+"servera."
+
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:42
+#: ../xserver-xorg.templates:4001
 #, fuzzy
 msgid "Desired default X server:"
 msgstr "Zvoľte si predvolený X server."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:42
+#: ../xserver-xorg.templates:4001
 #, fuzzy
 msgid ""
 "The X server is the hardware interface of the X Window System.  It "
@@ -232,7 +274,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:42
+#: ../xserver-xorg.templates:4001
 #, fuzzy
 msgid ""
 "Several X servers may be available; the default is selected via the /etc/X11/"
@@ -245,13 +287,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:54
+#: ../xserver-xorg.templates:5001
 msgid "Write default Files section to configuration file?"
 msgstr "Zapísať do konfiguračného súboru štandartnú časť Files?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:54
+#: ../xserver-xorg.templates:5001
 #, fuzzy
 msgid ""
 "The Files section of the X server configuration file tells the X server "
@@ -265,7 +307,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:54
+#: ../xserver-xorg.templates:5001
 #, fuzzy
 msgid ""
 "Disable this option if you want to maintain a custom Files section into the "
@@ -280,14 +322,14 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:68
+#: ../xserver-xorg.templates:6001
 #, fuzzy
 msgid "X.Org server modules that should be loaded by default:"
 msgstr "Zvoľte moduly X.Org servera, ktoré sa majú štandartne načítavať."
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:68
+#: ../xserver-xorg.templates:6001
 msgid ""
 "This option is recommended to experienced users only.  In most cases, all of "
 "these modules should be enabled."
@@ -295,7 +337,7 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:68
+#: ../xserver-xorg.templates:6001
 msgid ""
 " - glx   : support for OpenGL rendering;\n"
 " - dri   : support in the X server for DRI (Direct Rendering "
@@ -317,7 +359,7 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:68
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
@@ -325,57 +367,21 @@ msgstr "Viac informácií o týchto moduloch nájdete v dokumentácii X.Org."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:92
+#: ../xserver-xorg.templates:7001
 #, fuzzy
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr "Viac možných predvolených ovládačov X.Org servera pre váš hardvér."
 
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:92
-#, fuzzy
-msgid ""
-"Multiple video cards have been detected, and different X servers are "
-"required to support the various devices.  It is thus not possible to "
-"automatically select a default X server."
-msgstr ""
-"Bolo nájdených viac grafických kariet, takže je pre nich potrebných viac "
-"rôznych X serverov. Zvoľte zariadenie, ktoré bude slúžiť ako \"primárne\"; "
-"zvyčajne je to grafická karta a monitor, na ktorom sa zobrazujú správy pri "
-"spúšťaní systému."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:92
-msgid ""
-"Please configure the device that will serve as this computer's \"primary head"
-"\"; this is generally the video card and monitor used for display when the "
-"computer is booted up."
-msgstr ""
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:92
-#, fuzzy
-msgid ""
-"The configuration process currently only supports single-headed setups; "
-"however, the X server configuration files can be edited later to support a "
-"multi-head configuration."
-msgstr ""
-"Debconf momentálne podporuje iba jeden monitor, no podporu viacerých "
-"monitorov môžete pridať neskôr manuálnou úpravou konfiguračného súboru X "
-"servera."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:107
+#: ../xserver-xorg.templates:8001
 #, fuzzy
 msgid "Identifier for your video card:"
 msgstr "Zadajte identifikátor vašej grafickej karty."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:107
+#: ../xserver-xorg.templates:8001
 #, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
@@ -389,13 +395,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:115
+#: ../xserver-xorg.templates:9001
 msgid "X server driver:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:115
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -405,7 +411,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:115
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -415,13 +421,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:124
+#: ../xserver-xorg.templates:10001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Použiť rozhranie framebuffera v jadre?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:124
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -433,7 +439,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:124
+#: ../xserver-xorg.templates:10001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -444,14 +450,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:136
+#: ../xserver-xorg.templates:11001
 #, fuzzy
 msgid "Video card's bus identifier:"
 msgstr "Zadajte identifikátor grafickej karty na zbernici."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:136
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -463,13 +469,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:136
+#: ../xserver-xorg.templates:11001
 msgid "Examples:"
 msgstr "Príklady:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:136
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -480,7 +486,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:136
+#: ../xserver-xorg.templates:11001
 #, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
@@ -492,7 +498,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:136
+#: ../xserver-xorg.templates:11001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -502,20 +508,20 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:159
+#: ../xserver-xorg.templates:12001
 msgid "Incorrect format for the bus identifier"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:163
+#: ../xserver-xorg.templates:13001
 #, fuzzy
 msgid "Amount of memory (kB) to be used by the video card:"
 msgstr "Zadajte množstvo pamäte (v kB) pre vašu grafickú kartu."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:163
+#: ../xserver-xorg.templates:13001
 #, fuzzy
 msgid ""
 "Typically, the amount of dedicated memory used by the video card is "
@@ -530,7 +536,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:163
+#: ../xserver-xorg.templates:13001
 #, fuzzy
 msgid ""
 "This parameter should usually be left blank and specified only if the video "
@@ -541,14 +547,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:174
+#: ../xserver-xorg.templates:14001
 #, fuzzy
 msgid "XKB rule set to use:"
 msgstr "Zadajte množinu XKB pravidiel, ktorá sa má použiť."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:174
+#: ../xserver-xorg.templates:14001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
@@ -558,7 +564,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:174
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -568,7 +574,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:174
+#: ../xserver-xorg.templates:14001
 #, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
@@ -581,19 +587,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:174
+#: ../xserver-xorg.templates:14001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:189
+#: ../xserver-xorg.templates:15001
 msgid "Keyboard model:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:189
+#: ../xserver-xorg.templates:15001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
@@ -605,7 +611,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:189
+#: ../xserver-xorg.templates:15001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -626,7 +632,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:189
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -638,7 +644,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:189
+#: ../xserver-xorg.templates:15001
 #, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
@@ -651,7 +657,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:189
+#: ../xserver-xorg.templates:15001
 #, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
@@ -660,14 +666,14 @@ msgstr "Používatelia anglickej US klávesnice by väčšinou mali zadať \"pc1
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:220
+#: ../xserver-xorg.templates:16001
 #, fuzzy
 msgid "Keyboard layout:"
 msgstr "Zadajte rozloženie klávesnice."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:220
+#: ../xserver-xorg.templates:16001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
@@ -680,7 +686,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:220
+#: ../xserver-xorg.templates:16001
 #, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
@@ -693,7 +699,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:220
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -705,13 +711,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:235
+#: ../xserver-xorg.templates:17001
 msgid "Keyboard variant:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:235
+#: ../xserver-xorg.templates:17001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
@@ -724,7 +730,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:235
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -736,7 +742,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:235
+#: ../xserver-xorg.templates:17001
 #, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
@@ -753,20 +759,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:235
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "Používatelia anglickej US klávesnice by mali toto pole nechať prázdne."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 msgid "Keyboard options:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
@@ -779,7 +785,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -791,7 +797,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -806,7 +812,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -814,7 +820,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -822,19 +828,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:253
+#: ../xserver-xorg.templates:18001
 msgid "When in doubt, this value should be left blank."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:279
+#: ../xserver-xorg.templates:19001
 msgid "Attempt mouse device autodetection?"
 msgstr "Pokúsiť sa o rozpoznanie myši?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:279
+#: ../xserver-xorg.templates:19001
 msgid ""
 "If a mouse is attached to the computer, autodetection can be attempted; it "
 "may help to move the mouse while detection is attempted (the gpm program "
@@ -844,13 +850,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:279
+#: ../xserver-xorg.templates:19001
 msgid "Do not choose this option if you wish to select a mouse type manually."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:279
+#: ../xserver-xorg.templates:19001
 #, fuzzy
 msgid ""
 "If you choose it and autodetection fails, you will be asked this question "
@@ -864,13 +870,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:295
+#: ../xserver-xorg.templates:20001
 msgid "Mouse port:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:295
+#: ../xserver-xorg.templates:20001
 #, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
@@ -883,7 +889,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:295
+#: ../xserver-xorg.templates:20001
 #, fuzzy
 msgid ""
 "It is necessary to determine which port (connection type) is used by the "
@@ -906,19 +912,19 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:313
+#: ../xserver-xorg.templates:21001
 msgid "Mouse protocol:"
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:318
+#: ../xserver-xorg.templates:22001
 msgid "Emulate 3 button mouse?"
 msgstr "Emulovať trojtlačidlovú myš?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:318
+#: ../xserver-xorg.templates:22001
 #, fuzzy
 msgid ""
 "Most programs in the X Window System expect the mouse to have 3 buttons "
@@ -932,7 +938,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:318
+#: ../xserver-xorg.templates:22001
 msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
@@ -942,7 +948,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:318
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Note that mouse buttons in excess of five (counting a scroll wheel as two "
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
@@ -954,13 +960,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:334
+#: ../xserver-xorg.templates:23001
 msgid "Attempt monitor autodetection?"
 msgstr "Pokúsiť sa o rozpoznanie monitora?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:334
+#: ../xserver-xorg.templates:23001
 #, fuzzy
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
@@ -976,7 +982,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:334
+#: ../xserver-xorg.templates:23001
 #, fuzzy
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
@@ -986,14 +992,14 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:346
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Zadajte spôsob voľby vlastností monitora."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:346
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
@@ -1004,7 +1010,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:346
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
@@ -1019,7 +1025,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:346
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
@@ -1032,7 +1038,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:346
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
@@ -1043,7 +1049,7 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:363
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
 "inches (480-510 mm), 21 inches (530 mm) or more"
@@ -1053,28 +1059,28 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:365
+#: ../xserver-xorg.templates:25002
 #, fuzzy
 msgid "Approximate monitor size:"
 msgstr "Zadajte približnú veľkosť monitora."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:365
+#: ../xserver-xorg.templates:25002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Veľmi kvalitné monitory vedia pracovať aj s nastavením z vyššej kategórie."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:372
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid "Monitor's best video mode:"
 msgstr "Zadajte čo najlepší režim vášho monitora."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:372
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
@@ -1091,14 +1097,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:382
+#: ../xserver-xorg.templates:27001
 #, fuzzy
 msgid "Identifier for the monitor:"
 msgstr "Zadajte identifikátor vášho monitora."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:382
+#: ../xserver-xorg.templates:27001
 #, fuzzy
 msgid ""
 "The X server configuration file associates the monitor with a name that you "
@@ -1111,14 +1117,14 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:389
+#: ../xserver-xorg.templates:28001
 #, fuzzy
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Zapísať do konfiguračného súboru frekvenčný rozsah monitora?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:389
+#: ../xserver-xorg.templates:28001
 #, fuzzy
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
@@ -1131,14 +1137,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:396
+#: ../xserver-xorg.templates:29001
 #, fuzzy
 msgid "Monitor's horizontal sync range:"
 msgstr "Zadajte horizontálnu frekvenciu vášho monitora."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:396
+#: ../xserver-xorg.templates:29001
 #, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
@@ -1153,14 +1159,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:404
+#: ../xserver-xorg.templates:30001
 #, fuzzy
 msgid "Monitor's vertical refresh range:"
 msgstr "Zadajte vertikálnu frekvenciu vášho monitora."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:404
+#: ../xserver-xorg.templates:30001
 #, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
@@ -1175,13 +1181,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:412
+#: ../xserver-xorg.templates:31001
 msgid "Incorrect values entered"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:412
+#: ../xserver-xorg.templates:31001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1191,13 +1197,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:420
+#: ../xserver-xorg.templates:32001
 msgid "Video modes to be used by the X server:"
 msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:420
+#: ../xserver-xorg.templates:32001
 #, fuzzy
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
@@ -1211,14 +1217,14 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:429
+#: ../xserver-xorg.templates:33001
 #, fuzzy
 msgid "Desired default color depth in bits:"
 msgstr "Zadajte požadovanú farebnú hĺbku v bitoch."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:429
+#: ../xserver-xorg.templates:33001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1233,7 +1239,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:429
+#: ../xserver-xorg.templates:33001
 #, fuzzy
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
@@ -1246,51 +1252,51 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:441
+#: ../xserver-xorg.templates:34001
 msgid "Empty value"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:441
+#: ../xserver-xorg.templates:34001
 #, fuzzy
 msgid "A null entry is not permitted for this value."
 msgstr "Nie je dovolená prázdna položka."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:446
+#: ../xserver-xorg.templates:35001
 msgid "Invalid double-quote characters"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:446
+#: ../xserver-xorg.templates:35001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "V hodnote položky nie sú dovolené úvodzovky (\")."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:451
+#: ../xserver-xorg.templates:36001
 msgid "Numerical value needed"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:451
+#: ../xserver-xorg.templates:36001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "V položke nie sú dovolené iné znaky ako číslice."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:457
+#: ../xserver-xorg.templates:37001
 #, fuzzy
 msgid "Autodetect keyboard layout?"
 msgstr "Zadajte rozloženie klávesnice."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:457
+#: ../xserver-xorg.templates:37001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1299,7 +1305,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:457
+#: ../xserver-xorg.templates:37001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
