@@ -391,10 +391,12 @@ xresprobeint() {
   fi
 
   db_metaget xserver-xorg/config/display/modes choices
-  DEFRESOLUTIONS="1920x1440 1920x1200 1856x1392 1792x1344 1680x1050 1600x1200 1440x900 1400x1050 1280x1024 1280x960 1280x854 1280x800 1280x768 1200x800 1152x864 1152x768 1024x768 800x600 640x480"
+  DEFRESOLUTIONS="$(echo @DEFAULT_DCRESOLUTIONS@ | sed -e 's/, / /g')"
   if [ -n "$RET" ]; then
     DCRESOLUTIONS="$RET"
     DCRESOLUTIONS="$(echo $DCRESOLUTIONS | sed -e 's/, / /g')"
+  else
+    DCRESOLUTIONS=$DEFRESOLUTIONS
   fi
   if [ -n "$RESOLUTIONS" ]; then
     DCRESOLUTIONS="$(for i in $DCRESOLUTIONS $DEFRESOLUTIONS $RESOLUTIONS; do echo $i; done | sort -t x -k1,1nr -k2,2nr -u)"
