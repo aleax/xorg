@@ -820,21 +820,8 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   fi
   if [ -z "$DEFAULT" ]; then
     # fall back to some language-specific generic text
-    case "${LC_ALL:-${LC_MESSAGES:-$LANG}}" in
-      ca_*) DEFAULT="Targeta de vídeo genèrica" ;;
-      da_*) DEFAULT="Standard Video Kort" ;;
-      de_*) DEFAULT="Standardgrafikkarte" ;;
-      es_*) DEFAULT="Tarjeta de vídeo genérica" ;;
-      fr_*) DEFAULT="Carte vidéo générique" ;;
-      gl_*) DEFAULT="Tarxeta de Video Xenérica" ;;
-      it_*) DEFAULT="Scheda video generica" ;;
-      # ja
-      # nl
-      pt_BR) DEFAULT="Placa de Vídeo Genérica" ;;
-      # ru
-      # sv
-      *) DEFAULT="Generic Video Card" ;;
-    esac
+    db_get xserver-xorg/config/device/default-identifier
+    DEFAULT=$RET
   fi
   # this question requires input validation
   MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/device/identifier "$DEFAULT"

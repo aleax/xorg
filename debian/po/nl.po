@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfree86\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2006-08-12 22:09+0200\n"
+"POT-Creation-Date: 2006-08-14 11:05+0200\n"
 "PO-Revision-Date: 2006-03-21 14:46+0100\n"
 "Last-Translator: Bart Cornelis <cobaco@linux.be>\n"
 "Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -436,15 +436,21 @@ msgstr ""
 "beeldkaart. Gewoonlijk gebruikt men hiervoor de fabrikantnaam gevolgt door "
 "de modelnaam (e.g. \"3Dfx Voodoo3\" of \"ATI Rage Fury Maxx\")."
 
-#. Type: select
+#. Type: text
 #. Description
 #: ../xserver-xorg.templates:9001
+msgid "Generic Video Card"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:10001
 msgid "X server driver:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -455,7 +461,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -465,13 +471,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:11001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Gebruik maken van de framebuffer-interface in de kernel?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -483,7 +489,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -495,14 +501,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:12001
 #, fuzzy
 msgid "Video card's bus identifier:"
 msgstr "Gelieve de bus-identifier van uw schermkaart op te geven."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -513,13 +519,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:12001
 msgid "Examples:"
 msgstr "Voorbeelden:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -531,7 +537,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:12001
 #, fuzzy
 msgid ""
 "You may wish to use the \"lspci -X\" command to determine the bus location "
@@ -543,7 +549,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -553,13 +559,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:13001
 msgid "Incorrect format for the bus identifier"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:14001
 #, fuzzy
 msgid "Amount of memory (kB) to be used by the video card:"
 msgstr ""
@@ -568,7 +574,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:14001
 #, fuzzy
 msgid ""
 "Typically, the amount of dedicated memory used by the video card is "
@@ -583,7 +589,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:14001
 #, fuzzy
 msgid ""
 "This parameter should usually be left blank and specified only if the video "
@@ -596,14 +602,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:15001
 #, fuzzy
 msgid "XKB rule set to use:"
 msgstr "Gelieve de te gebruiken XKB regels te selecteren."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:15001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
@@ -614,7 +620,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -624,7 +630,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:15001
 #, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
@@ -637,19 +643,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:15001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:16001
 msgid "Keyboard model:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:16001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
@@ -661,7 +667,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:16001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -682,7 +688,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -694,7 +700,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:16001
 #, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
@@ -707,7 +713,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:16001
 #, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
@@ -718,14 +724,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:17001
 #, fuzzy
 msgid "Keyboard layout:"
 msgstr "Gelieve uw toetsenbordindeling te selecteren."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:17001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
@@ -738,7 +744,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:17001
 #, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
@@ -751,7 +757,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -764,13 +770,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:18001
 msgid "Keyboard variant:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:18001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
@@ -783,7 +789,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -795,7 +801,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:18001
 #, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
@@ -809,7 +815,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -817,13 +823,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 msgid "Keyboard options:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 #, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
@@ -837,7 +843,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -850,7 +856,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -865,7 +871,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -873,7 +879,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -881,19 +887,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:19001
 msgid "When in doubt, this value should be left blank."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:20001
 msgid "Attempt mouse device autodetection?"
 msgstr "Automatische muisherkenning proberen?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "If a mouse is attached to the computer, autodetection can be attempted; it "
 "may help to move the mouse while detection is attempted (the gpm program "
@@ -903,13 +909,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:20001
 msgid "Do not choose this option if you wish to select a mouse type manually."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:20001
 #, fuzzy
 msgid ""
 "If you choose it and autodetection fails, you will be asked this question "
@@ -924,13 +930,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:21001
 msgid "Mouse port:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:21001
 #, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
@@ -943,7 +949,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:21001
 #, fuzzy
 msgid ""
 "It is necessary to determine which port (connection type) is used by the "
@@ -969,19 +975,19 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:22001
 msgid "Mouse protocol:"
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:23001
 msgid "Emulate 3 button mouse?"
 msgstr "3-knopsmuis emuleren?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:23001
 #, fuzzy
 msgid ""
 "Most programs in the X Window System expect the mouse to have 3 buttons "
@@ -996,7 +1002,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
@@ -1006,7 +1012,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "Note that mouse buttons in excess of five (counting a scroll wheel as two "
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
@@ -1018,13 +1024,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:24001
 msgid "Attempt monitor autodetection?"
 msgstr "Automatische beeldschermherkenning proberen?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
@@ -1041,7 +1047,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:24001
 #, fuzzy
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
@@ -1051,7 +1057,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:25001
 #, fuzzy
 msgid "Method for selecting the monitor characteristics:"
 msgstr ""
@@ -1060,7 +1066,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:25001
 #, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
@@ -1071,7 +1077,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:25001
 #, fuzzy
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
@@ -1086,7 +1092,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:25001
 #, fuzzy
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
@@ -1100,7 +1106,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:25001
 #, fuzzy
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
@@ -1112,49 +1118,49 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid "Up to 14 inches (355 mm)"
 msgstr "<=35"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid "15 inches (380 mm)"
 msgstr "5cm (14 inch)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid "17 inches (430 mm)"
 msgstr "38cm (15 inch)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid "19-20 inches (480-510 mm)"
 msgstr "43cm (17 inch)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:26001
 #, fuzzy
 msgid "21 inches (530 mm) or more"
 msgstr "48-51 cm (19-20 inch)"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25002
+#: ../xserver-xorg.templates:26002
 #, fuzzy
 msgid "Approximate monitor size:"
 msgstr "Gelieve de best bij uw beeldscherm passende grootte uit te kiezen."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25002
+#: ../xserver-xorg.templates:26002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Hoge-kwaliteit CRT-schermen zijn mogelijks in staat om de volgende grootte "
@@ -1162,14 +1168,14 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:27001
 #, fuzzy
 msgid "Monitor's best video mode:"
 msgstr "Gelieve de beste beeldmodus van uw beeldscherm te selecteren."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:27001
 #, fuzzy
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
@@ -1189,14 +1195,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:28001
 #, fuzzy
 msgid "Identifier for the monitor:"
 msgstr "Gelieve een naam voor uw beeldscherm in te voeren."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:28001
 #, fuzzy
 msgid ""
 "The X server configuration file associates the monitor with a name that you "
@@ -1209,14 +1215,14 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:29001
 #, fuzzy
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Het sync-bereik van de monitor naar configuratiebestand wegschrijven?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:29001
 #, fuzzy
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
@@ -1230,7 +1236,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:30001
 #, fuzzy
 msgid "Monitor's horizontal sync range:"
 msgstr ""
@@ -1239,7 +1245,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:30001
 #, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
@@ -1255,7 +1261,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 #, fuzzy
 msgid "Monitor's vertical refresh range:"
 msgstr ""
@@ -1264,7 +1270,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 #, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
@@ -1280,13 +1286,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid "Incorrect values entered"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1296,13 +1302,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid "Video modes to be used by the X server:"
 msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 #, fuzzy
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
@@ -1317,14 +1323,14 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 #, fuzzy
 msgid "Desired default color depth in bits:"
 msgstr "Selecteer het standaard aantal kleurdiepte-bits."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1340,7 +1346,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 #, fuzzy
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
@@ -1354,51 +1360,51 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid "Empty value"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 #, fuzzy
 msgid "A null entry is not permitted for this value."
 msgstr "Een lege waarde is hier niet toegelaten."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "Invalid double-quote characters"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Dubbele aanhalingstekens (\") zijn hier niet toegelaten."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Numerical value needed"
 msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Enkel cijfers zijn hier toegelaten."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 #, fuzzy
 msgid "Autodetect keyboard layout?"
 msgstr "Gelieve uw toetsenbordindeling te selecteren."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1407,7 +1413,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
