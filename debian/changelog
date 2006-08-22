@@ -1,5 +1,6 @@
 xorg (1:7.0.24) UNRELEASED; urgency=low
 
+  [ Denis Barbier ]
   * Translations of "Generic Video Card" were hardcoded into
     xserver-xorg.config, move them into debian/po/*.po files.
   * Modify debian/x11-common.dirs and debian/x11-common.install
@@ -18,7 +19,14 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
     - Basque (Piarres Beobide). Closes: #374032
     - Romanian (Eddy Petrisor). Closes: #383539
 
- -- Denis Barbier <barbier@debian.org>  Mon, 14 Aug 2006 11:08:00 +0200
+  [ David Nusinow ]
+  * Steal patch from Ubuntu by Fabio to unconditionally enable ZAxisMapping in
+    dexconf
+  * Update xsfbs with patch from ubuntu to support ARCHITECTURE, LAPTOP,
+    RECONFIGURE, FIRSTINST, and UPGRADE variables for use in the xserver-xorg
+    config scripting
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 21 Aug 2006 23:10:04 +0000
 
 xorg (1:7.0.23) unstable; urgency=low
 
