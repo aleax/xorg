@@ -29,9 +29,9 @@ msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
 "POT-Creation-Date: 2006-08-14 11:05+0200\n"
-"PO-Revision-Date: 2006-06-15 23:52-0300\n"
+"PO-Revision-Date: 2006-06-19 03:18-0300\n"
 "Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
-"Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
+"Language-Team: l10n portuguese <debian-l10n-portuguese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,19 +40,20 @@ msgstr ""
 #. Choices
 #: ../x11-common.templates:1001
 msgid "Root Only"
-msgstr "Somente Root"
+msgstr ""
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
+#, fuzzy
 msgid "Console Users Only"
-msgstr "Somente usuários de console"
+msgstr "Somente Root, Somente usuários de console, Qualquer um"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
 msgid "Anybody"
-msgstr "Qualquer um"
+msgstr ""
 
 #. Type: select
 #. Description
@@ -71,7 +72,7 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
-"Devido ao servidor X ser executado com previlégios de superusuário, pode não "
+"Devido ao servidor X ser executado com privilégios de superusuário, pode não "
 "ser muito sábio permitir que qualquer usuário o inicie, por questões de "
 "segurança. Por outro lado, é menos sábio ainda executar programas clientes X "
 "de propósito geral como root, que é o que pode acontecer se somente o root "
@@ -115,7 +116,7 @@ msgid ""
 msgstr ""
 "Valores fora da faixa de -10 até 0 não são recomendados; ao user valores "
 "muito negativos o servidor X irá interferir com tarefas importantes do "
-"sistema. Ao usar valores muito positivos o servidor X ficará lento é "
+"sistema. Ao usar valores muito positivos o servidor X ficará lento e "
 "demorará para responder."
 
 #. Type: note
@@ -148,7 +149,7 @@ msgid ""
 "functional X setup."
 msgstr ""
 "Alguns usuários relataram que após a atualização para o conjunto de pacotes "
-"atual, seus pacotes de servidor X não estava mais instalado. Devido a não "
+"atual, seus pacotes de servidor X não estavam mais instalados. Devido a não "
 "existir uma maneira fácil de contornar este problema, você deverá certificar-"
 "se de que o pacote xserver-xorg esteja instalado após a atualização. Caso o "
 "mesmo não esteja instalado, é recomendado que você instale o pacote xorg "
@@ -187,7 +188,7 @@ msgid ""
 "directory."
 msgstr ""
 "A instalação deste pacote irá agora falhar e finalizar, de forma que você "
-"possa fazer isso. Por favorm execute o procedimento de atualização novamente "
+"possa fazer isso. Por favor, execute o procedimento de atualização novamente "
 "após você ter o diretório em questão limpo."
 
 #. Type: boolean
@@ -208,7 +209,7 @@ msgid ""
 msgstr ""
 "Você deveria escolher esta opção caso você queira tentar a autodetecção do "
 "servidor X recomendado e o módulo do controlador para sua placa de vídeo. "
-"Caso a autodetecção falhe, lhe será solicitada a especificação do servidor X "
+"Caso a autodetecção falhe, lhe será solicitado a especificação do servidor X "
 "desejado e/ou o módulo do controlador. Caso a autodetecção tenha sucesso, "
 "questões futuras do debconf sobre seu hardware de vídeo serão pré-"
 "respondidas."
@@ -292,7 +293,7 @@ msgid ""
 "however, the X server configuration files can be edited later to support a "
 "multi-head configuration."
 msgstr ""
-"No momento, somente uma configuração de monitor único é suportada por este "
+"No momento, somente configurações de monitor único são suportada por este "
 "processo de configuração; porém, os arquivos de configuração do servidor X "
 "podem ser editados posteriormente para suportarem uma configuração com "
 "diversos monitores."
@@ -311,9 +312,9 @@ msgid ""
 "communicates with the video display and input devices, providing a "
 "foundation for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"O servidor X é a interface com o hardware do Sistema de Janelas X. Sua "
-"função é se comunicar com o display de vídeo e dispositivos de entrada, "
-"oferecendo a fundação para a Interface Gráfica do Usuário (GUI) escolhida."
+"O servidor X é a interface com o hardware do Sistema X Window. Sua função é "
+"se comunicar com o display de vídeo e dispositivos de entrada, oferecendo a "
+"fundação para a Interface Gráfica do Usuário (GUI) escolhida."
 
 #. Type: select
 #. Description
@@ -342,10 +343,10 @@ msgid ""
 "option is recommended to experienced users only.  In most cases, it should "
 "be enabled."
 msgstr ""
-"A seção FIles do arquivo de configuração do servidor X diz ao servidor X "
+"A seção Files do arquivo de configuração do servidor X diz ao servidor X "
 "onde encontrar módulos do servidor, a base de dados de cores RGB e arquivos "
 "de fontes. Esta opção é recomendada somente para usuários avançados. Na "
-"maioria dos casos, a mesma de ve ser habilitada."
+"maioria dos casos, a mesma deve ser habilitada."
 
 #. Type: boolean
 #. Description
@@ -400,25 +401,24 @@ msgid ""
 " - bitmap: font rasterizer (so are freetype, and type1 modules)."
 msgstr ""
 " - glx   : suporte para renderização OpenGL;\n"
-" - dri   : suporte na servidor X para DRI (Infraestrutura de\n"
+" - dri   : suporte no servidor X para DRI (Infraestrutura de\n"
 "           Renderização Direta);\n"
 " - vbe   : suporte para Extensões VESA BIOS. Permite pesquisar as\n"
 "           capacidades do monitor através da placa de vídeo;\n"
-" - ddc   : suporte para Canal de Exibição de Dados, "
-"respectivamente.            Permite pesquisar as capacidades do monitor "
-"através da\n"
-"           placa de vídeo;\n"
-" - int10 : Emulador x86 em modo real usado para fazer sofboot em \n"
-"           placas VGA secundárias. Deve ser habilitado caso vbe for\n"
+" - ddc   : suporte para Canal de Exibição de Dados, respectivamente.\n"
+"           Permite pesquisar as capacidades do monitor através da placa\n"
+"           de vídeo;\n"
+" - int10 : emulador x86 em modo real usado para fazer softboot em \n"
+"           placas VGA secundárias. Deve ser habilitado quando vbe for\n"
 "           habilitado;\n"
-" - dbe   : Hbilita a extensão de buferização dupla no servidor. Útil\n"
+" - dbe   : habilita a extensão de buferização dupla no servidor. Útil\n"
 "           para operações de animação e vídeo;\n"
-" - extmod: Habilita muitas extensões tradicionais e geralmente \n"
+" - extmod: habilita muitas extensões tradicionais e geralmente \n"
 "           utilizadas, como janelas modeladas, memória compartilhada, \n"
-"           DGA e Xv;\n"
-" - record: Implementa a extensão RECORD, geralmente utilizada em \n"
+"           modo de troca de vídeo, DGA e Xv;\n"
+" - record: implementa a extensão RECORD, geralmente utilizada em \n"
 "           testes do servidor;\n"
-" - bitmap: Desenhador de fontes (portanto são módulos freetype e type1)."
+" - bitmap: \"rasteriza\" fontes (portanto são módulos freetype e type1)."
 
 #. Type: multiselect
 #. Description
@@ -435,7 +435,7 @@ msgstr ""
 #: ../xserver-xorg.templates:7001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr ""
-"Diversos potenciais controladores do servidor X.Org padrões para o hardware"
+"Diversos potenciais controladores padrão do servidor X.Org para o hardware"
 
 #. Type: string
 #. Description
@@ -461,7 +461,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:9001
 msgid "Generic Video Card"
-msgstr "Placa de Vídeo Genérica"
+msgstr ""
 
 #. Type: select
 #. Description
@@ -476,7 +476,7 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
 msgstr ""
-"Para que a interface gráfica de usuário do Sistema de Janelas X funcione "
+"Para que a interface gráfica de usuário do Sistema X Window funcione "
 "corretamente, é necessário selecionar o controlador da placa de vídeo para o "
 "servidor X."
 
@@ -488,7 +488,7 @@ msgid ""
 "for a specific model or family of chipsets."
 msgstr ""
 "Os controladores são tipicamente nomeados como a placa de vídeo ou "
-"fabricante do chipset ou para um um modelo específico ou família de chipsets."
+"fabricante do chipset ou para um modelo específico ou família de chipsets."
 
 #. Type: boolean
 #. Description
@@ -518,7 +518,7 @@ msgid ""
 msgstr ""
 "Teoricamente, ambos os modos funcionarão, mas na prática, algumas vezes um "
 "funciona e outro não. Habilitar esta opção é seguro, mas sinta-se livre para "
-"desabiltá-la caso essa opção pareça causar problemas."
+"desabilitá-la caso essa opção pareça causar problemas."
 
 #. Type: string
 #. Description
@@ -565,7 +565,7 @@ msgid ""
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
 "Você pode desejar usar o comando \"lspci -X\" para determinar a localização "
-"no barramento de sua placa de vídeo PCI ou AGP."
+"no barramento de sua placa de vídeo PCI, AGP ou PCI-Express."
 
 #. Type: string
 #. Description
@@ -791,7 +791,7 @@ msgid ""
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
 "Usuários de teclados americanos devem informar \"us\". Usuários de teclados "
-"localizados para outros países deve geralmente informar seu código de país "
+"localizados para outros países devem geralmente informar seu código de país "
 "ISO 3166. Por exemplo, a França usa \"fr\", a Alemanha usa \"de\" e o Brasil "
 "usa \"br\"."
 
@@ -846,8 +846,7 @@ msgstr ""
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
-"Usuários de teclado americanos devem geralmente deixar esta entrada em "
-"branco."
+"Usuários de teclado americano devem geralmente deixar esta entrada em branco."
 
 #. Type: string
 #. Description
@@ -866,7 +865,7 @@ msgstr ""
 "Para que o servidor X gerencie seu teclado como você deseja, opções para seu "
 "teclado podem ser informadas. As opções disponíveis dependem de qual "
 "conjunto de regras XKB foi selecionado previamente. Nem todas as opções "
-"funcionarão como todos os modelos e layouts de teclados."
+"funcionarão com todos os modelos e layouts de teclados."
 
 #. Type: string
 #. Description
@@ -892,10 +891,10 @@ msgid ""
 "meta_win\"."
 msgstr ""
 "Como outro exemplo, algumas pessoas preferem ter as teclas Meta disponíveis "
-"em seus nas teclas Alt de seus teclados (este é o padrão). enquanto outras "
-"pessoas preferem ter as teclas Meta nas teclas Windows ou \"logo\". Caso "
-"você prefira usar suas teclas Windows ou logo como teclas Meta voc pode "
-"informar \"altwin:meta_win\"."
+"nas teclas Alt de seus teclados (este é o padrão), enquanto outras pessoas "
+"preferem ter as teclas Meta nas teclas Windows ou \"logo\". Caso você "
+"prefira usar suas teclas Windows ou logo como teclas Meta você pode informar "
+"\"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -979,7 +978,7 @@ msgid ""
 "certain characteristics of the mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
-"Para que a interface gráfica com o usuário do Sistema de Janelas X funcione "
+"Para que a interface gráfica com o usuário do Sistema X Window funcione "
 "corretamente, certas características de seu mouse (ou outro dispositivo de "
 "apontamento, como um trackball) devem ser conhecidas."
 
@@ -1001,9 +1000,9 @@ msgstr ""
 "seriais usam conectores em foram de D com 9 ou 25 pinos (também conhecidos "
 "como DB-9 ou DB-25); o conector do mouse é a ponta fêmea (possui buracos) e "
 "o conector do computador é a ponta macho (possui pinos). Portas PS/2 são "
-"pequenos conectores arrendondados (DIN) com 6 pinos; o conector do mouse é o "
+"pequenos conectores arrendondados (DIN) com 6 pinos; o conector do mouse é a "
 "ponta macho e o conector do lado do computador é a ponta fêmea. "
-"Alternativamente, você pode possuir um mouse USB, um mouse bus/import (muito "
+"Alternativamente, você pode possuir um mouse USB, um mouse bus/inport (muito "
 "antigo) ou estar com o programa gpm sendo executado como um repetidor. Caso "
 "você precise conectar ou remover dispositivos PS/2 ou bus/import de seu "
 "computador, por favor faça-o com o computador desligado."
@@ -1029,8 +1028,8 @@ msgid ""
 "presence of a middle button by treating simultaneous clicks or drags of the "
 "left and right buttons as middle button events."
 msgstr ""
-"A maioria dos programas no Sistema de Janelas X esperam que seu mouse possua "
-"3 botões (esquerdo, direito e o do meio). Mouses com somente 2 botões podem "
+"A maioria dos programas no Sistema X Window esperam que seu mouse possua 3 "
+"botões (esquerdo, direito e o do meio). Mouses com somente 2 botões podem "
 "emular a presença do botão do meio tratando cliques simultâneos ou arrastos "
 "do botão esquerdo e direito como eventos do botão do meio."
 
@@ -1053,7 +1052,7 @@ msgid ""
 "\") are not yet supported with this configuration tool."
 msgstr ""
 "Note que mais do que cinco botões do mouse (contando a roda de rolagem como "
-"dosi botões, um \"para cima\" e um \"para baixo\", e um terceiro caso a roda "
+"dois botões, um \"para cima\" e um \"para baixo\", e um terceiro caso a roda "
 "\"clique\") ainda não são suportados por esta ferramenta de configuração."
 
 #. Type: boolean
@@ -1100,7 +1099,7 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
 msgstr ""
-"Para que a interface gráfica com o usuário do Sistema de Janelas X funcione "
+"Para que a interface gráfica com o usuário do Sistema X Window funcione "
 "corretamente, certas características de seu monitor precisam ser conhecidas."
 
 #. Type: select
@@ -1141,30 +1140,26 @@ msgstr ""
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid "Up to 14 inches (355 mm)"
-msgstr "Acima de 14 polagadas (355 mm) 15 polegadas (380 mm)"
+msgstr ""
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid "15 inches (380 mm)"
-msgstr "17 polegadas (430 mm)"
+msgstr ""
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid "17 inches (430 mm)"
-msgstr "19-20 polegadas (480-510 mm)"
+msgstr ""
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid "19-20 inches (480-510 mm)"
-msgstr "21 polegadas (530 mm) ou maior"
+msgstr ""
 
 #. Type: select
 #. Choices
@@ -1263,7 +1258,7 @@ msgid ""
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
 "Por favor, informe uma lista separada por vírgulas de valores distintos "
-"(para displays de frequência fixa) ou um par de valores separados por um "
+"(para displays de freqüência fixa) ou um par de valores separados por um "
 "traço (-) (válido para todos os CRTs modernos). Esta informação deve estar "
 "disponível no manual de seu monitor. Valores inferiores a 30 ou superiores a "
 "130 são extremamente raros."
@@ -1284,8 +1279,8 @@ msgid ""
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
 "Por favor, informe uma lista separada por vírgulas de valores distintos "
-"(para displays de frequência fixa) ou um par de valores separados por um "
-"traço (-) (válido para todo os CRTs modernos). Esta informação deve estar "
+"(para displays de freqüência fixa) ou um par de valores separados por um "
+"traço (-) (válido para todos os CRTs modernos). Esta informação deve estar "
 "disponível no manual de seu monitor. Valores inferiores a 50 ou superiores a "
 "160 são extremamente raros."
 
@@ -1342,7 +1337,7 @@ msgid ""
 msgstr ""
 "Normalmente cor de 24 bits é desejável, mas em placas gráficas com "
 "quantidades limitadas de memória framebuffer, resoluções maiores podem ser "
-"atingidas ao detrimento de uma profundidade de cores maior. Adicionalmente, "
+"atingidas ao custo de uma profundidade de cores maior. Adicionalmente, "
 "algumas placas suportam aceleração 3D por hardware somente para certas "
 "profundidades. Consulte o manual de sua placa de vídeo para maiores "
 "informações."
@@ -1356,9 +1351,9 @@ msgid ""
 "both.  If you want either, select 24 bits."
 msgstr ""
 "As famosas \"cores de 32 bits\" são na verdade 24 bits de informações de "
-"cores mais 8 bits de canal alfa ou simples enchimentos de zeros; o Sistema "
-"de Janelas X pode gerenciar ambos os casos. Caso você queira ambos, escolha "
-"24 bits."
+"cores mais 8 bits de canal alfa ou simples enchimentos de zeros; o Sistema X "
+"Window pode gerenciar ambos os casos. Caso você queira ambos, escolha 24 "
+"bits."
 
 #. Type: note
 #. Description
@@ -1383,7 +1378,7 @@ msgstr "Caracteres de aspas duplas inválidos"
 #: ../xserver-xorg.templates:36001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr ""
-"Caracteres de aspas duplas (\") não são permitidas como valores de entrada."
+"Caracteres de aspas duplas (\") não são permitidos como valores de entrada."
 
 #. Type: note
 #. Description
@@ -1423,9 +1418,6 @@ msgid ""
 msgstr ""
 "Escolha esta opção caso você deseje que o layout de teclado seja detectado "
 "novamente. Não escolha esta opção caso você queira manter seu layout atual."
-
-#~ msgid "Root Only, Console Users Only, Anybody"
-#~ msgstr "Somente Root, Somente usuários de console, Qualquer um"
 
 #~ msgid ""
 #~ "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
