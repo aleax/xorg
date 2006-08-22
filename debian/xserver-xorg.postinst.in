@@ -744,6 +744,14 @@ if [ -L "$SERVER_SYMLINK" ] || ! [ -e "$SERVER_SYMLINK" ]; then
     rm /etc/X11/X
     ln -s $THIS_SERVER /etc/X11/X
   fi
+
+  # apparently on some broken upgrades the SERVER_SYMLINK_CHECKSUM has been 
+  # lost. If it does not exists, make sure to recreate it.
+
+  if [ ! -e "$SERVER_SYMLINK_CHECKSUM" ] && [ -L "$SERVER_SYMLINK" ]; then
+    readlink "$SERVER_SYMLINK" | md5sum > "$SERVER_SYMLINK_CHECKSUM"
+  fi
+
   # compare the current and stored checksums; if they do not match, assume
   # that's the way the user wants it.
   # why, why, why, why, why, why, why are we md5suming this? -daniels
