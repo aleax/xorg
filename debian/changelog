@@ -25,6 +25,7 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
   * Update xsfbs with patch from ubuntu to support ARCHITECTURE, LAPTOP,
     RECONFIGURE, FIRSTINST, and UPGRADE variables for use in the xserver-xorg
     config scripting
+    * Remove test for upgrade from xserver-xorg.postinst
   * Pull patch from Ubuntu to xserver-xorg postins to correctly update the
     config file on upgrades (closes: #375689)
   * Steal patch from Ubuntu to update non-latin keymaps by Colin Watson
@@ -33,7 +34,7 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
   * Steal patch from Ubuntu to recreate missing server symlink checksum that
     was lost on some upgrades. This patch by Fabio.
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 21 Aug 2006 23:39:50 +0000
+ -- David Nusinow <dnusinow@debian.org>  Mon, 21 Aug 2006 23:44:03 +0000
 
 xorg (1:7.0.23) unstable; urgency=low
 
