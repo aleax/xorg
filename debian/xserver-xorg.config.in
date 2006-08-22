@@ -826,6 +826,8 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # this question requires input validation
   MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/device/identifier "$DEFAULT"
 
+  DEVICE_IDENTIFIER="$DEFAULT"
+
   # BusID
   PRIORITY=low
   DEFAULT=
@@ -921,6 +923,23 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     fi
   else
     USE_FBDEV=false
+  fi
+
+  # it looks like Mac Mini need an extra kick. Make sure to give it to it.
+ 
+  if [ "$ARCH" = powerpc ] && [ "$USE_FBDEV" = "false" ]; then
+    # it looks like Mac Mini need an extra kick. Make sure to give it to it.
+    if [ -e /proc/cpuinfo ]; then
+      if [ -n "$(cat /proc/cpuinfo | grep "^machine.*PowerMac10,1")" ] && \
+         [ -n "$(cat /proc/cpuinfo | grep "^platform.*PowerMac")" ]; then
+        USE_FBDEV=true
+      fi
+    fi
+    # Make sure to force UseFBDev with Rage 128 or stuff will go bad in some
+    # old Macs.
+    if echo "$DEVICE_IDENTIFIER" | grep -q "Rage 128"; then
+      USE_FBDEV=true
+    fi
   fi
 
   if [ -n "$XORG_USE_FBDEV" ] && [ "$XORG_USE_FBDEV" = "no" ]; then
