@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
 "POT-Creation-Date: 2006-08-14 11:05+0200\n"
-"PO-Revision-Date: 2006-05-20 19:52+0200\n"
+"PO-Revision-Date: 2006-08-26 14:52+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -153,7 +153,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:6001
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr ""
+msgstr "Nelze odstranit adresář /usr/X11R6/bin"
 
 #. Type: note
 #. Description
@@ -165,6 +165,11 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"Tato aktualizace vyžaduje, aby byl adresář /usr/X11R6/bin odstraněn a "
+"nahrazen symbolickým odkazem. Skript se to pokusil provést automaticky, ale "
+"selhal (nejspíše proto, že adresář ještě není prázdný). Aby se mohla "
+"instalace dokončit, musíte přesunout soubory z adresáře někam mimo. Pokud "
+"budete chtít, můžete je po vytvoření symbolického odkazu vrátit zpět."
 
 #. Type: note
 #. Description
@@ -174,6 +179,8 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
+"Instalace tohoto balíku nyní skončí s chybou, abyste mohli provést potřebný "
+"zásah. Po vyčištění adresáře prosím znovu spusťte aktualizační proceduru."
 
 #. Type: boolean
 #. Description
@@ -1345,9 +1352,6 @@ msgstr ""
 "Pokud chcete znovu rozpoznat klávesové rozložení, přijměte. Jestliže chcete "
 "ponechat stávající nastavení, zamítněte."
 
-#~ msgid "Root Only, Console Users Only, Anybody"
-#~ msgstr "Pouze root, Pouze konzoloví uživatelé, Kdokoliv"
-
 #~ msgid ""
 #~ "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
 #~ "inches (480-510 mm), 21 inches (530 mm) or more"
@@ -1443,15 +1447,6 @@ msgstr ""
 
 #~ msgid "Select the desired X server driver."
 #~ msgstr "Vyberte ovladač X serveru."
-
-#~ msgid ""
-#~ " ISA:1\n"
-#~ " PCI:0:16:0\n"
-#~ " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
-#~ msgstr ""
-#~ " ISA:1\n"
-#~ " PCI:0:16:0\n"
-#~ " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
 
 #~ msgid "Please enter a bus identifier in the proper format."
 #~ msgstr "Zadejte identifikátor ve správném tvaru."
