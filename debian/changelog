@@ -12,6 +12,8 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
     patch sent to #330304 had been broken when updated to 7.0.
   * Add support for Catalan keyboard. Thanks Robert Millan
     (closes: #346269)
+  * Fix Japanese keyboard configuration in xserver-xorg.config.
+    Thanks Kenshi Muto (closes: #385392)
   * Debconf translations updates
     - Dzongkha (Tenzin Dendup). Closes: #382959, #383111
     - Khmer (Khoem Sokhem). Closes: #375063
@@ -28,7 +30,7 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
     RECONFIGURE, FIRSTINST, and UPGRADE variables for use in the xserver-xorg
     config scripting
     * Remove test for upgrade from xserver-xorg.postinst
-  * Pull patch from Ubuntu to xserver-xorg postins to correctly update the
+  * Pull patch from Ubuntu to xserver-xorg postinst to correctly update the
     config file on upgrades (closes: #375689)
   * Steal patch from Ubuntu to update non-latin keymaps by Colin Watson
   * Steal patch from Ubuntu for xserver-xorg.config to help with the Mac mini
