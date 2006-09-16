@@ -7,6 +7,8 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
   [ Denis Barbier ]
   * Translations of "Generic Video Card" were hardcoded into
     xserver-xorg.config, move them into debian/po/*.po files.
+    Same for "Generic Monitor" translations which were
+    hardcoded into xserver-xorg.postinst.  Closes: #387698
   * Modify debian/x11-common.dirs and debian/x11-common.install
     so that this package can be compiled from an SVN checkout
     without .svn files being shipped in /etc/X11/Xsession.d.

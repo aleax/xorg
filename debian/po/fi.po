@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer xserver-xorg\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-16 09:07+0200\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2006-09-16 11:21+0200\n"
 "PO-Revision-Date: 2006-09-14 06:24+0300\n"
 "Last-Translator: Tapio Lehtonen <tale@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -1167,9 +1167,16 @@ msgstr ""
 "tavallisesti valmistajan tai merkin nimi jonka jälkeen tulee mallinimi, "
 "esim. \"Sony E200\" tai \"Dell E770s\"."
 
-#. Type: boolean
+#. Type: text
 #. Description
 #: ../xserver-xorg.templates:29001
+#, fuzzy
+msgid "Generic Monitor"
+msgstr "Lajityypillinen näytönohjain"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:30001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
 "Kirjoitetaanko näytön vaaka- ja pystypoikkeutustaajuusalueet "
@@ -1177,7 +1184,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -1190,13 +1197,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 msgid "Monitor's horizontal sync range:"
 msgstr "Näytön vaakapoikkeutustaajuusalue:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1210,13 +1217,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid "Monitor's vertical refresh range:"
 msgstr "Näytön pystypoikkeutustaajuusalue:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1230,13 +1237,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid "Incorrect values entered"
 msgstr "Annetut arvot olivat väärin"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1246,13 +1253,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid "Video modes to be used by the X server:"
 msgstr "Näyttötilat joita X-palvelimen halutaan käyttävän:"
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
 "Removing all of them is the same as removing none, since in both cases the X "
@@ -1264,13 +1271,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid "Desired default color depth in bits:"
 msgstr "Haluttu oletus värisyvyydelle bitteinä:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1286,7 +1293,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1298,49 +1305,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "Empty value"
 msgstr "Tyhjä arvo"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "A null entry is not permitted for this value."
 msgstr "Tämä arvo ei saa olla tyhjä."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Invalid double-quote characters"
 msgstr "Ei saa kirjoittaa lainausmerkkejä"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Lainausmerkit (\") eivät ole sallittuja arvossa."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid "Numerical value needed"
 msgstr "Tarvitaan numero"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Arvossa saa olla vain numeromerkkejä."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid "Autodetect keyboard layout?"
 msgstr "Tunnistetaanko näppäinasettelu automaattisesti?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1351,7 +1358,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."

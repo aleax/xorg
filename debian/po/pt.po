@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-16 09:07+0200\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2006-09-16 11:21+0200\n"
 "PO-Revision-Date: 2005-09-03 14:58+0100\n"
 "Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team: Portuguese <traduz@debianPT.org>\n"
@@ -1208,16 +1208,23 @@ msgstr ""
 "que você pode fornecer.  Este é normalmente o nome do fabricante ou da marca "
 "seguido pelo nome do modelo, e.g., \"Sony E200\" ou \"Dell E770s\"."
 
-#. Type: boolean
+#. Type: text
 #. Description
 #: ../xserver-xorg.templates:29001
+#, fuzzy
+msgid "Generic Monitor"
+msgstr "Placa Gráfica Genérica"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:30001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
 "Escrever as gamas de sincronização do monitor no ficheiro de configuração?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -1230,13 +1237,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 msgid "Monitor's horizontal sync range:"
 msgstr "Gama de frequências de sincronização horizontal do monitor:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1251,13 +1258,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid "Monitor's vertical refresh range:"
 msgstr "Gama de frequência de actualização vertical do monitor:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1271,13 +1278,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid "Incorrect values entered"
 msgstr "Foram introduzidos valores incorrectos"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1287,13 +1294,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid "Video modes to be used by the X server:"
 msgstr "Modos gráficos a serem utilizados pelo servidor de X:"
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
 "Removing all of them is the same as removing none, since in both cases the X "
@@ -1306,13 +1313,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid "Desired default color depth in bits:"
 msgstr "Nível de cor em bits, por omissão, desejado:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1328,7 +1335,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1340,49 +1347,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "Empty value"
 msgstr "Valor vazio"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "A null entry is not permitted for this value."
 msgstr "Não é permitida uma entrada nula para este valor."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Invalid double-quote characters"
 msgstr "Os caracteres aspas duplas são inválidos"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Não são permitidos caracteres de aspas duplas (\") no valor da opção."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid "Numerical value needed"
 msgstr "É necessário um valor numérico"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Não são permitidos outros caracteres que não dígitos na opção."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid "Autodetect keyboard layout?"
 msgstr "Detectar automaticamente a disposição do teclado?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1394,7 +1401,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."

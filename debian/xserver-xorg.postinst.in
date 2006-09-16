@@ -335,17 +335,9 @@ xresprobeint() {
 
   # Set a sane monitor id default if probe fails
   if [ -z "$MONITOR_IDENTIFIER" ]; then
-    case "${LC_ALL:-${LC_MESSAGES:-$LANG}}" in
-      ca_*) DEFAULT="Monitor genèric" ;;
-      da_*) DEFAULT="Standard Skærm" ;;
-      de_*) DEFAULT="Standardbildschirm" ;;
-      es_*) DEFAULT="Monitor genérico" ;;
-      fr_*) DEFAULT="Écran générique";;
-      it_*) DEFAULT="Monitor Generico" ;;
-      pt_BR) DEFAULT="Monitor Genérico" ;;
-      *) DEFAULT="Generic Monitor" ;;
-    esac
-    MONITOR_IDENTIFIER="$DEFAULT"
+    # fall back to some language-specific generic text
+    db_get xserver-xorg/config/monitor/default-identifier
+    MONITOR_IDENTIFIER=$RET
   fi
   db_set xserver-xorg/config/monitor/identifier "$MONITOR_IDENTIFIER"
   MAY_BE_NULL="" validate_string_db_input low xserver-xorg/config/monitor/identifier || true

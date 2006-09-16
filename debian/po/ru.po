@@ -28,8 +28,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po_ru\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-16 09:07+0200\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2006-09-16 11:21+0200\n"
 "PO-Revision-Date: 2006-07-02 12:31+0300\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -1199,15 +1199,21 @@ msgstr ""
 "Обычно задают название фирмы-изготовителя и модель монитора, например \"Sony "
 "E200\" или \"Dell E770s\"."
 
-#. Type: boolean
+#. Type: text
 #. Description
 #: ../xserver-xorg.templates:29001
+msgid "Generic Monitor"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:30001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Записать в файл настройки интервалы частот синхронизации монитора?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -1219,13 +1225,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 msgid "Monitor's horizontal sync range:"
 msgstr "Интервал горизонтальных частот синхронизации монитора:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1239,13 +1245,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid "Monitor's vertical refresh range:"
 msgstr "Интервал частот регенерации:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1259,13 +1265,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid "Incorrect values entered"
 msgstr "Введены некорректные значения"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:33001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1275,13 +1281,13 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid "Video modes to be used by the X server:"
 msgstr "Видеорежимы X сервера:"
 
 #. Type: multiselect
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:34001
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
 "Removing all of them is the same as removing none, since in both cases the X "
@@ -1293,13 +1299,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid "Desired default color depth in bits:"
 msgstr "Желаемая глубина цвета в битах:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1315,7 +1321,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1327,49 +1333,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "Empty value"
 msgstr "Пустое значение"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:36001
 msgid "A null entry is not permitted for this value."
 msgstr "Для этого поля пустое значение не допускается."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Invalid double-quote characters"
 msgstr "Недопустимые символы кавычек"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:37001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Символы кавычек (\") в поле ввода не допускаются."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid "Numerical value needed"
 msgstr "Требуется числовое значение"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:38001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "В поле нельзя вводить никаких символов кроме цифр."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid "Autodetect keyboard layout?"
 msgstr "Определить раскладку клавиатуры автоматически?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1380,7 +1386,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
