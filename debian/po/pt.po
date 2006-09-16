@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po\n"
-"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2006-08-14 11:05+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-16 09:07+0200\n"
 "PO-Revision-Date: 2005-09-03 14:58+0100\n"
 "Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team: Portuguese <traduz@debianPT.org>\n"
@@ -136,9 +136,9 @@ msgstr ""
 "Alguns utilizadores relataram que com a actualização para o conjunto de "
 "pacotes actuais, o seu pacote xserver deixou de estar instalado. Como não "
 "existe nenhuma forma fácil de contornar este problema, assegure-se que "
-"verifica se o pacote xserver-xorg está instalado após a actualização. Se "
-"não estiver instalado e necessitar dele, é recomendado que instale o pacote "
-"xorg para ter a certeza que tem uma instalação do X completamente funcional."
+"verifica se o pacote xserver-xorg está instalado após a actualização. Se não "
+"estiver instalado e necessitar dele, é recomendado que instale o pacote xorg "
+"para ter a certeza que tem uma instalação do X completamente funcional."
 
 #. Type: note
 #. Description
@@ -228,16 +228,17 @@ msgid ""
 msgstr ""
 "Ou não existe nenhum hardware de vídeo instalado nesta máquina (e.g. apenas "
 "consola série), ou o programa \"discover\" foi incapaz de determinar qual é "
-"o servidor de X apropriado para o hardware de vídeo.  Isto pode ser devido "
-"a informação incompleta na base de dados de hardware do \"discover\", ou "
-"porque o seu hardware de vídeo não é suportado por nenhum dos servidores "
-"de X disponíveis."
+"o servidor de X apropriado para o hardware de vídeo.  Isto pode ser devido a "
+"informação incompleta na base de dados de hardware do \"discover\", ou "
+"porque o seu hardware de vídeo não é suportado por nenhum dos servidores de "
+"X disponíveis."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:3001
 msgid "Multiple potential default X servers for your hardware"
-msgstr "Existem vários servidores potenciais de X por omissão para o seu hardware."
+msgstr ""
+"Existem vários servidores potenciais de X por omissão para o seu hardware."
 
 #. Type: note
 #. Description
@@ -277,9 +278,9 @@ msgid ""
 "however, the X server configuration files can be edited later to support a "
 "multi-head configuration."
 msgstr ""
-"Actualmente o processo de configuração suporta apenas configurações "
-"\"single-head\"; no entanto, os ficheiros de configuração do servidor X podem "
-"ser posteriormente editados para suportar uma configuração \"multi-head\"."
+"Actualmente o processo de configuração suporta apenas configurações \"single-"
+"head\"; no entanto, os ficheiros de configuração do servidor X podem ser "
+"posteriormente editados para suportar uma configuração \"multi-head\"."
 
 #. Type: select
 #. Description
@@ -359,8 +360,8 @@ msgid ""
 "This option is recommended to experienced users only.  In most cases, all of "
 "these modules should be enabled."
 msgstr ""
-"Esta opção é recomendada apenas para utilizadores avançados.  Na maioria "
-"dos casos, todos este módulos serão activados."
+"Esta opção é recomendada apenas para utilizadores avançados.  Na maioria dos "
+"casos, todos este módulos serão activados."
 
 #. Type: multiselect
 #. Description
@@ -383,7 +384,7 @@ msgid ""
 " - record: implements the RECORD extension, often used in server testing;\n"
 " - bitmap: font rasterizer (so are freetype, and type1 modules)."
 msgstr ""
-" - glx	  : suporte para render OpenGL;\n"
+" - glx\t  : suporte para render OpenGL;\n"
 " - dri   : suporte para DRI (Direct Rendering Infrastructure) no servidor de "
 "X;\n"
 " - vbe   : suporte para extenções VESA BIOS. Permite questionar as\n"
@@ -394,8 +395,10 @@ msgstr ""
 "         placas VGA secundárias;\n"
 " - dbe   : habilitar a extensão de duplo-buffer no servidor.\n"
 "           Útil para operações de animação e de video;\n"
-" - extmod: habilitar muitas extensões tradicionais e normalmente utilizadas,\n"
-"           tais como janelas com formas, memória partilhada, mudança de modo\n"
+" - extmod: habilitar muitas extensões tradicionais e normalmente "
+"utilizadas,\n"
+"           tais como janelas com formas, memória partilhada, mudança de "
+"modo\n"
 "           gráfico, DGA, e Xv;\n"
 " - record: implementa a extensão RECORD, muitas vezes utilizada em testes\n"
 "           ao servidor;\n"
@@ -415,7 +418,8 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:7001
 msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "Vários drivers potenciais do servidor X.Org por omissão para o seu hardware"
+msgstr ""
+"Vários drivers potenciais do servidor X.Org por omissão para o seu hardware"
 
 #. Type: string
 #. Description
@@ -457,8 +461,8 @@ msgid ""
 "necessary to select a video card driver for the X server."
 msgstr ""
 "Para a interface gráfica de utilizador do X Window System funcionar "
-"correctamente, é necessário seleccionar um driver da placa gráfica para "
-"o servidor de X."
+"correctamente, é necessário seleccionar um driver da placa gráfica para o "
+"servidor de X."
 
 #. Type: select
 #. Description
@@ -467,8 +471,8 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
-"Os drivers normalmente têm o nome do fabricante da placa gráfica ou "
-"chipset, ou o nome de um modelo ou uma família de chipsets específicos."
+"Os drivers normalmente têm o nome do fabricante da placa gráfica ou chipset, "
+"ou o nome de um modelo ou uma família de chipsets específicos."
 
 #. Type: boolean
 #. Description
@@ -532,9 +536,10 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"Para utilizadores com configurações \"multi-head\", esta opção irá configurar "
-"apenas um dos \"heads\".  A configuração posterior terá de ser feita "
-"manualmente no ficheiro de configuração do servidor de X, /etc/X11/xorg.conf."
+"Para utilizadores com configurações \"multi-head\", esta opção irá "
+"configurar apenas um dos \"heads\".  A configuração posterior terá de ser "
+"feita manualmente no ficheiro de configuração do servidor de X, /etc/X11/"
+"xorg.conf."
 
 #. Type: string
 #. Description
@@ -543,8 +548,8 @@ msgid ""
 "You may wish to use the \"lspci -n\" command to determine the bus location "
 "of your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"Pode querer utilizar o comando \"lspci -n\" para determinar a localização "
-"do bus da sua placa gráfica PCI, AGP, ou PCI-Express."
+"Pode querer utilizar o comando \"lspci -n\" para determinar a localização do "
+"bus da sua placa gráfica PCI, AGP, ou PCI-Express."
 
 #. Type: string
 #. Description
@@ -618,8 +623,8 @@ msgid ""
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
 "Os utilizadores da maioria dos teclados devem introduzir \"xorg\".  Os "
-"utilizadores de teclados Sun Type 4 e Type 5 deverão, no entanto, "
-"introduzir \"sun\"."
+"utilizadores de teclados Sun Type 4 e Type 5 deverão, no entanto, introduzir "
+"\"sun\"."
 
 #. Type: string
 #. Description
@@ -630,8 +635,8 @@ msgid ""
 "rule sets."
 msgstr ""
 "Os utilizadores avançados podem utilizar qualquer conjunto de regras XKB "
-"definidas.  Se o pacote xkb-data tiver sido desempacotado, veja o directório "
-"/usr/share/X11/xkb/rules para os conjuntos de regras disponíveis."
+"definidas.  Se o pacote xkb-data tiver sido desempacotado, veja o "
+"directório /usr/share/X11/xkb/rules para os conjuntos de regras disponíveis."
 
 #. Type: string
 #. Description
@@ -687,7 +692,8 @@ msgstr ""
 "          tecla \"< >\";\n"
 " - macintosh: os teclados Macintosh que utilizam a nova camada de entrada\n"
 "              com códigos de teclas Linux\n"
-" - macintosh_old: teclados Macintosh que não utilizam a nova camada de entrada.\n"
+" - macintosh_old: teclados Macintosh que não utilizam a nova camada de "
+"entrada.\n"
 " Com o conjunto de regras \"sun\":\n"
 " - type4: teclados Sun Type4;\n"
 " - type5: teclados Sun Type5."
@@ -724,9 +730,9 @@ msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"Os utilizadores de teclados Português de Portugal normalmente devem introduzir "
-"\"pc105\".  Os utilizadores da maioria dos outros teclados devem introduzir "
-"\"pc104\"."
+"Os utilizadores de teclados Português de Portugal normalmente devem "
+"introduzir \"pc105\".  Os utilizadores da maioria dos outros teclados devem "
+"introduzir \"pc104\"."
 
 #. Type: string
 #. Description
@@ -755,10 +761,10 @@ msgid ""
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"Os utilizadores avançados podem utilizar qualquer modelo definido pelo conjunto "
-"de regras XKB seleccionado.  Se o pacote xkb-data tiver sido desempacotado, "
-"veja o directório /usr/share/X11/xkb/rules para os conjuntos de regras "
-"disponíveis."
+"Os utilizadores avançados podem utilizar qualquer modelo definido pelo "
+"conjunto de regras XKB seleccionado.  Se o pacote xkb-data tiver sido "
+"desempacotado, veja o directório /usr/share/X11/xkb/rules para os conjuntos "
+"de regras disponíveis."
 
 #. Type: string
 #. Description
@@ -770,8 +776,8 @@ msgid ""
 msgstr ""
 "Os utilizadores de teclados Português de Portugal devem introduzir \"pt\".  "
 "Os utilizadores de teclados localizados para outros países devem geralmente "
-"introduzir o código ISO 3166 do seu país.  E.g., a França utiliza \"fr\" e "
-"a Alemanha utiliza \"de\"."
+"introduzir o código ISO 3166 do seu país.  E.g., a França utiliza \"fr\" e a "
+"Alemanha utiliza \"de\"."
 
 #. Type: string
 #. Description
@@ -882,8 +888,8 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
-"Pode combinar opções separando-as com uma vírgula, por exemplo:"
-"\"ctrl:nocaps,altwin:meta_win\"."
+"Pode combinar opções separando-as com uma vírgula, por exemplo:\"ctrl:nocaps,"
+"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -956,8 +962,8 @@ msgid ""
 "trackball) must be known."
 msgstr ""
 "Para a interface gráfica de utilizador do X Window System funcionar "
-"correctamente, algumas características do seu rato (ou outro dispositivo "
-"de apontamento, como um \"trackball\") têm de ser conhecidas."
+"correctamente, algumas características do seu rato (ou outro dispositivo de "
+"apontamento, como um \"trackball\") têm de ser conhecidas."
 
 #. Type: select
 #. Description
@@ -1005,8 +1011,8 @@ msgid ""
 "left and right buttons as middle button events."
 msgstr ""
 "A maioria dos programas do X Window System espera que o seu rato tenha 3 "
-"botões (esquerdo, direito, e ao meio).  Os ratos com apenas 2 botões "
-"podem emular a existência de um botão ao meio, tratando os cliques ou "
+"botões (esquerdo, direito, e ao meio).  Os ratos com apenas 2 botões podem "
+"emular a existência de um botão ao meio, tratando os cliques ou "
 "arrastamentos dos botões esquerdo e direito em simultâneo como eventos do "
 "botão ao meio."
 
@@ -1176,12 +1182,13 @@ msgid ""
 "only if both the video chipset and the driver support it; if in doubt, use "
 "the video mode recommended by the manufacturer of your LCD."
 msgstr ""
-"Escolha a \"melhor\" resolução e taxa de actualização que o monitor é capaz.  "
-"Resoluções e taxas de actualização maiores são melhores.  Com um monitor CRT, "
-"é perfeitamente aceitável escolher um modo gráfico \"pior\" que o melhor do "
-"monitor, se assim o desejar.  Utilizadores de ecrãs LCD podem também fazer "
-"isto, mas apenas se o chipset de vídeo e o driver o suportarem; em caso de "
-"dúvida, utilize o modo de vídeo recomendado pelo fabricante do seu LCD."
+"Escolha a \"melhor\" resolução e taxa de actualização que o monitor é "
+"capaz.  Resoluções e taxas de actualização maiores são melhores.  Com um "
+"monitor CRT, é perfeitamente aceitável escolher um modo gráfico \"pior\" que "
+"o melhor do monitor, se assim o desejar.  Utilizadores de ecrãs LCD podem "
+"também fazer isto, mas apenas se o chipset de vídeo e o driver o suportarem; "
+"em caso de dúvida, utilize o modo de vídeo recomendado pelo fabricante do "
+"seu LCD."
 
 #. Type: string
 #. Description
@@ -1198,14 +1205,15 @@ msgid ""
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
 "O ficheiro de configuração do servidor X associa o seu monitor com um nome "
-"que você pode fornecer.  Este é normalmente o nome do fabricante ou da "
-"marca seguido pelo nome do modelo, e.g., \"Sony E200\" ou \"Dell E770s\"."
+"que você pode fornecer.  Este é normalmente o nome do fabricante ou da marca "
+"seguido pelo nome do modelo, e.g., \"Sony E200\" ou \"Dell E770s\"."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:29001
 msgid "Write monitor sync ranges to the configuration file?"
-msgstr "Escrever as gamas de sincronização do monitor no ficheiro de configuração?"
+msgstr ""
+"Escrever as gamas de sincronização do monitor no ficheiro de configuração?"
 
 #. Type: boolean
 #. Description
@@ -1259,8 +1267,7 @@ msgstr ""
 "Por favor introduza uma lista de valores discretos separados por vírgulas "
 "(para ecrãs de frequência fixa), ou um par de valores separado por um traço "
 "(todos os CRTs modernos).  Esta informação deve estar disponível no manual "
-"do monitor.  Valores abaixo de 50 ou superiores a 160 são extremamente "
-"raros."
+"do monitor.  Valores abaixo de 50 ou superiores a 160 são extremamente raros."
 
 #. Type: note
 #. Description
@@ -1959,4 +1966,3 @@ msgstr ""
 #~ msgid "The v4l module enables support for the Video4Linux kernel interface."
 #~ msgstr ""
 #~ "O módulo v4l activa o suporte para a interface de kernel Video4Linux."
-
