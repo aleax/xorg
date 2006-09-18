@@ -2,7 +2,7 @@ Source: xorg
 Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>
+Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>, Drew Parsons <dparsons@debian.org>
 Standards-Version: 3.7.2.0
 Build-Depends: dpkg (>= 1.7.0), po-debconf, debhelper (>= 4.1.16)
 
@@ -29,7 +29,7 @@ Architecture: all
 Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
 Replaces: xserver-common
 Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
-Depends: xserver-xorg-core, xserver-xorg-video-all | xserver-xorg-video, xserver-xorg-input-all | xserver-xorg-input, debconf, xkb-data | xkb-data-legacy, xbase-clients
+Depends: xserver-xorg-core, xserver-xorg-video-all | xserver-xorg-video-1.0, xserver-xorg-input-all | xserver-xorg-input, debconf, xkb-data | xkb-data-legacy, xbase-clients
 Recommends: laptop-detect, xresprobe, mdetect, discover1 | discover
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
@@ -88,7 +88,7 @@ Description: the X.Org X Window System development libraries
  (with and without PIC symbols included) are supplied by the packages
  depended on by this metapackage.
  .
- Note that this is a convinience package for users and is not a package for
+ Note that this is a convenience package for users and is not a package for
  Debian developers to have their package depend on.
 
 Package: xlibs-data

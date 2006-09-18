@@ -1,9 +1,9 @@
-xorg (1:7.0.24) UNRELEASED; urgency=low
+xorg (1:7.1.0-1) UNRELEASED; urgency=low
 
   [ Christian Perrier ]
   * Fix lspci command line recommendation in templates
     Fix translations accordingly. Closes: #387563
-  
+
   [ Denis Barbier ]
   * Translations of "Generic Video Card" were hardcoded into
     xserver-xorg.config, move them into debian/po/*.po files.
@@ -41,7 +41,7 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
   * Update xsfbs with patch from ubuntu to support ARCHITECTURE, LAPTOP,
     RECONFIGURE, FIRSTINST, and UPGRADE variables for use in the xserver-xorg
     config scripting
-    * Remove test for upgrade from xserver-xorg.postinst
+  * Remove test for upgrade from xserver-xorg.postinst
   * Pull patch from Ubuntu to xserver-xorg postinst to correctly update the
     config file on upgrades (closes: #375689)
   * Steal patch from Ubuntu to update non-latin keymaps by Colin Watson
@@ -53,7 +53,19 @@ xorg (1:7.0.24) UNRELEASED; urgency=low
   [ David Martínez Moreno ]
   * Update Spanish debconf translation.
 
- -- David Martínez Moreno <ender@debian.org>  Sun, 10 Sep 2006 01:21:16 +0200
+  [ Drew Parsons ]
+  * Sync experimental version to unstable for X11R7.1 transition.
+  * Use dh_installman to install man pages. Closes: #368316, #375391, #376764.
+
+ -- Drew Parsons <dparsons@debian.org>  Mon, 18 Sep 2006 22:00:54 +1000
+
+xorg (1:7.1.0~1) experimental; urgency=low
+
+  [ Drew Parsons ]
+  * Tighten dependencies between X11R7.1 server and video drivers.
+    xserver-xorg Depends: xserver-xorg-video-all | xserver-xorg-video-1.0.
+
+ -- Drew Parsons <dparsons@debian.org>  Fri, 25 Aug 2006 20:23:25 +1000
 
 xorg (1:7.0.23) unstable; urgency=low
 
