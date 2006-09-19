@@ -1,6 +1,6 @@
 #!/bin/sh
 # Debian xserver-xorg package configuration script
-# Copyright 2000-2004 Branden Robinson.
+# Copyright 2000-2004, 2006 Branden Robinson.
 # Copyright 2004-2005 Canonical Ltd.
 # Authors: Branden Robinson, Fabio Massimo Di Nitto, Daniel Stone.
 # Licensed under the GNU General Public License, version 2.  See the file
@@ -152,13 +152,21 @@ discover_video () {
       SERVER_FILE=$(tempfile)
       DRIVER_FILE=$(tempfile)
 
+      # Munge the source package version into the upstream version so we can
+      # tell Discover what to look for.  Discover's data is based on the
+      # upstream version number, not the Debian package's, so strip the Debian
+      # revision and the (ugh!) epoch.  Note: do *not* do greedy matching.
+      # Also, parameter expansions aren't nestable.  No respect, I tell ya.
+      _JUNK=${SOURCE_VERSION%-*}
+      UPSTREAM_VERSION=${_JUNK#*:}
+
       CMD="discover --type-summary display"
       eval $CMD >>$VENDOR_MODEL_FILE || debug_report_status "$CMD" "$?"
       CMD="discover --data-path=xfree86/server/name \
-                    --data-version=${SOURCE_VERSION%-*} display"
+                    --data-version=$UPSTREAM_VERSION display"
       eval $CMD >>$SERVER_FILE || debug_report_status "$CMD" "$?"
       CMD="discover --data-path=xfree86/server/device/driver \
-                    --data-version=${SOURCE_VERSION%-*} display"
+                    --data-version=$UPSTREAM_VERSION display"
       eval $CMD >>$DRIVER_FILE || debug_report_status "$CMD" "$?"
 
       DISCOVERED_VIDEO=$(paste $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE)

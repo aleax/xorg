@@ -57,7 +57,16 @@ xorg (1:7.1.0-1) UNRELEASED; urgency=low
   * Sync experimental version to unstable for X11R7.1 transition.
   * Use dh_installman to install man pages. Closes: #368316, #375391, #376764.
 
- -- Drew Parsons <dparsons@debian.org>  Mon, 18 Sep 2006 22:00:54 +1000
+  [ Branden Robinson ]
+  * In the config script, munge the source package version into the upstream
+    version so we can tell Discover what to look for.  Discover's data is
+    based on the upstream version number, not the Debian package's, so strip
+    the Debian revision and the (ugh!) epoch.  The introduction of the epoch
+    caused the config script to start passing Discover a data version that
+    wouldn't match anything, because the epoch is not part of the upstream
+    version number.  Thanks to Thomas Lange for diagnosing this bug!
+
+ -- Branden Robinson <branden@debian.org>  Tue, 19 Sep 2006 12:03:25 -0400
 
 xorg (1:7.1.0~1) experimental; urgency=low
 
