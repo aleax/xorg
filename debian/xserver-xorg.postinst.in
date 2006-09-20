@@ -413,38 +413,28 @@ xresprobeint() {
       # if we are here we did not detect the frequencies, but we have the resolution.
       # get the highest resolution.
       db_get xserver-xorg/config/display/modes || debug_echo "db_get xserver-xorg/config/display/modes"
-      if [ -z "$RET" ]; then
-        _ok=""
-        while [ ! "$ok" ]; do
-          db_input $PRIORITY xserver-xorg/config/display/modes || debug_echo "db_input $PRIORITY xserver-xorg/config/display/modes"
-          if [ $? -eq 30 ]; then
-            _ok="yes"
-          else
-            db_go || true
-            db_get xserver-xorg/config/display/modes
-            if [ "$RET" ]; then
-              _ok="yes"
-            fi
-          fi
-        done
+      if [ -n "$RET" ]; then
+        # Only do this if the user selects at least one mode to write to the 
+        # conf file. If not, then the section won't be written by dexconf
+        # and the server will pick the highest mode it can figure out
+        MAXRES="$(echo $RET | sed -e 's/,//g')"
+        MAXRES="$(for i in $MAXRES; do echo $i; done | sort -t x -k1,1nr -k2,2nr -u | head -n 1)"
+        # set a sane default for mode-list
+        MAXRES="$MAXRES @ 60Hz"
+        db_set xserver-xorg/config/monitor/mode-list "$MAXRES"
+        # apparently all the known resolution/horiz-sync combinantion have a ratio that
+        # can go from 19 to 21. Only one exception was 18. We can safely assume a ratio of 20
+        # for default setup. DDC should do the rest.
+        HMAX=$(echo "$MAXRES" | cut -d "x" -f 1)
+        HMAX=$(expr "$HMAX" / 20)
+        # set sane defaults as fallback, in case there is no mode-list match otherwise we
+        # prefer a well known match.
+        HORIZ_SYNC="28-$HMAX"
+        VERT_REFRESH="43-60"
+        db_set xserver-xorg/config/monitor/horiz-sync "$HORIZ_SYNC"
+        db_set xserver-xorg/config/monitor/vert-refresh "$VERT_REFRESH"
+        db_set xserver-xorg/config/monitor/selection-method "Advanced"
       fi
-      MAXRES="$(echo $RET | sed -e 's/,//g')"
-      MAXRES="$(for i in $MAXRES; do echo $i; done | sort -t x -k1,1nr -k2,2nr -u | head -n 1)"
-      # set a sane default for mode-list
-      MAXRES="$MAXRES @ 60Hz"
-      db_set xserver-xorg/config/monitor/mode-list "$MAXRES"
-      # apparently all the known resolution/horiz-sync combinantion have a ratio that
-      # can go from 19 to 21. Only one exception was 18. We can safely assume a ratio of 20
-      # for default setup. DDC should do the rest.
-      HMAX=$(echo "$MAXRES" | cut -d "x" -f 1)
-      HMAX=$(expr "$HMAX" / 20)
-      # set sane defaults as fallback, in case there is no mode-list match otherwise we
-      # prefer a well known match.
-      HORIZ_SYNC="28-$HMAX"
-      VERT_REFRESH="43-60"
-      db_set xserver-xorg/config/monitor/horiz-sync "$HORIZ_SYNC"
-      db_set xserver-xorg/config/monitor/vert-refresh "$VERT_REFRESH"
-      db_set xserver-xorg/config/monitor/selection-method "Advanced"
     fi
   fi
 

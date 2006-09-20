@@ -47,6 +47,12 @@ xorg (1:7.1.0-1) UNRELEASED; urgency=low
     by Fabio.
   * Steal patch from Ubuntu to recreate missing server symlink checksum that
     was lost on some upgrades. This patch by Fabio.
+  * Don't force people to select resolution modes. Previously, if none were
+    selected, a loop would be entered until some were. This turned out to be
+    buggy, but it should not be in place anyway. I've removed the loop, so
+    that if the user selects no modes, dexconf won't write the section to
+    xorg.conf and the server will be left to its own nefarious devices. Thanks
+    Robert Millan. (closes: #384285)
 
   [ David Martínez Moreno ]
   * Update Spanish debconf translation.
@@ -64,7 +70,7 @@ xorg (1:7.1.0-1) UNRELEASED; urgency=low
     wouldn't match anything, because the epoch is not part of the upstream
     version number.  Thanks to Thomas Lange for diagnosing this bug!
 
- -- David Nusinow <dnusinow@debian.org>  Tue, 19 Sep 2006 20:32:55 -0400
+ -- David Nusinow <dnusinow@debian.org>  Tue, 19 Sep 2006 21:49:20 -0400
 
 xorg (1:7.1.0~1) experimental; urgency=low
 
