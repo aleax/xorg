@@ -8,6 +8,12 @@ xorg (1:7.1.0-2) UNRELEASED; urgency=low
   * Add Conflicts: with xserver-xfree86-dbg for the /usr/X11R6/bin
     transition.  Thanks to Bill Allombert for testing.  Closes: #388633.
 
+  [ Denis Barbier ]
+  * Fix handling of "Generic Video Card" and "Generic Monitor" strings
+    in xserver-xorg.{config,postinst}, previous changes were buggy and
+    these scripts could enter an endless loop.
+    Closes: #389506  Thanks Joshua Kwan.
+
  -- Steve Langasek <vorlon@debian.org>  Thu, 21 Sep 2006 15:05:29 -0700
 
 xorg (1:7.1.0-1) unstable; urgency=low

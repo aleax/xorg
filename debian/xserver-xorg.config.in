@@ -828,7 +828,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   fi
   if [ -z "$DEFAULT" ]; then
     # fall back to some language-specific generic text
-    db_get xserver-xorg/config/device/default-identifier
+    db_metaget xserver-xorg/config/device/default-identifier Description
     DEFAULT=$RET
   fi
   # this question requires input validation

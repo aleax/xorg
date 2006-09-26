@@ -336,7 +336,7 @@ xresprobeint() {
   # Set a sane monitor id default if probe fails
   if [ -z "$MONITOR_IDENTIFIER" ]; then
     # fall back to some language-specific generic text
-    db_get xserver-xorg/config/monitor/default-identifier
+    db_metaget xserver-xorg/config/monitor/default-identifier Description
     MONITOR_IDENTIFIER=$RET
   fi
   db_set xserver-xorg/config/monitor/identifier "$MONITOR_IDENTIFIER"
