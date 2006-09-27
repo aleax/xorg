@@ -988,7 +988,7 @@ if [ -n "$DOKBDETECT" ]; then
 
   db_get debian-installer/keymap || debug_report_status "db_get debian-installer/keymap"
   DI_KEYMAP="${RET##mac-usb-}"
-  DI_KEYMAP="${DI_KEYMAP##-latin1}"
+  DI_KEYMAP="${DI_KEYMAP%%-latin1}"
 
   case "$DI_KEYMAP" in
     be2) XMAP="be";;
