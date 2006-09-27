@@ -55,7 +55,7 @@ validate_string_db_input () {
   SAFE="$RET"
   set +e
   while :; do
-    db_input "$PRIORITY" "$TEMPLATE" || debug_echo "v_s_d_i/db_input $PRIORITY $TEMPLATE"
+    db_input "$PRIORITY" "$TEMPLATE"
     # is the question going to be asked?
     if [ $? -eq 30 ]; then
       break # no; bail out of validation loop

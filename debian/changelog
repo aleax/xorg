@@ -12,9 +12,10 @@ xorg (1:7.1.0-2) UNRELEASED; urgency=low
 
   [ Denis Barbier ]
   * Fix handling of "Generic Video Card" and "Generic Monitor" strings
-    in xserver-xorg.{config,postinst}, previous changes were buggy and
-    these scripts could enter an endless loop.
+    in xserver-xorg.{config,postinst}, previous changes were buggy.
     Closes: #389506  Thanks Joshua Kwan.
+  * Fix xserver-xorg.postinst, it could hang.
+    Closes: #388568  Thanks Bas Wijnen.
 
  -- Steve Langasek <vorlon@debian.org>  Thu, 21 Sep 2006 15:05:29 -0700
 
