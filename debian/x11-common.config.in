@@ -157,7 +157,7 @@ done
 set -e
 
 if [ "$1" = "configure" ] && dpkg --compare-versions "$2" lt "1:7.0.11"; then
-      run db_input critical x11-common/upgrade_issues
+      run db_input medium x11-common/upgrade_issues
       run db_go
 fi
 

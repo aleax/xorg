@@ -35,8 +35,12 @@ xorg (1:7.1.0-2) UNRELEASED; urgency=low
     Thanks to Joey Hess for the solution.
   * Bump server abi version to 7.1.0, not that we're doing anything with it
     yet
+  * Lower the upgrade_issues warning call to priority medium. We already have
+    the xserver-xfree86 dummy package that depends on xserver-xorg, so apt and
+    aptitude should do the correct thing in most cases in theory. Cross your
+    fingers folks. Thanks to the d-i team and Steve Langasek. Closes: #372077
 
- -- David Nusinow <dnusinow@debian.org>  Tue,  3 Oct 2006 22:55:13 -0400
+ -- David Nusinow <dnusinow@debian.org>  Tue,  3 Oct 2006 23:22:43 -0400
 
 xorg (1:7.1.0-1) unstable; urgency=low
 
