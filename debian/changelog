@@ -27,7 +27,16 @@ xorg (1:7.1.0-2) UNRELEASED; urgency=low
   * In xserver-xorg.config, map sg-latin1 console keymap to 'ch(de)'.
     Closes: #386191  Thanks Tormod Volden.
 
- -- Steve Langasek <vorlon@debian.org>  Thu, 21 Sep 2006 15:05:29 -0700
+  [ David Nusinow ]
+  * Incorporate the entire old xserver-xorg.config script in to the
+    postinst script. This is hideously dirty, but it should allow the script
+    to properly expect discover and xresprobe to be installed without having
+    gross hacks in tasksel just for this task. We'll junk all this for etch+1.
+    Thanks to Joey Hess for the solution.
+  * Bump server abi version to 7.1.0, not that we're doing anything with it
+    yet
+
+ -- David Nusinow <dnusinow@debian.org>  Tue,  3 Oct 2006 22:55:13 -0400
 
 xorg (1:7.1.0-1) unstable; urgency=low
 

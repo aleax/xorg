@@ -182,6 +182,7 @@ validate_monitor_frequency_db_input () {
 }
 
 CONFIG_DIR="/etc/X11"
+CONFIG_AUX_DIR=/var/lib/x11
 SERVER_SYMLINK="$CONFIG_DIR/X"
 XF86CONFIG="$CONFIG_DIR/XF86Config-4"
 XORGCONFIG="$CONFIG_DIR/xorg.conf"
@@ -194,6 +195,1199 @@ XF86CONFIG_ROSTER="$CONFIG_AUX_DIR/${XF86CONFIG##*/}.roster"
 XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.roster"
 THIS_SERVER=/usr/bin/Xorg
 
+NCARDS=0
+NSERVERS=0
+NDRIVERS=0
+MULTIHEAD=
+
+# get machine architecture
+ARCH=$(dpkg --print-installation-architecture)
+
+debug_echo () {
+  # Syntax: debug_echo message ...
+  if [ -n "$DEBUG_XORG_DEBCONF" ] || [ "$DEBCONF_DEBUG" = "user" ] \
+    || [ "$DEBCONF_DEBUG" = '.*' ]; then
+    DEBUG_XORG_PACKAGE=yes observe "$*"
+  fi
+}
+
+debug_report_status () {
+  # Syntax: debug_report_status command exit_status
+  debug_echo "$1 exited with status $2"
+}
+
+discover_sparc_video () {
+  # Detect video cards on sparc by parsing prtconf output
+  prtconf -p -v | awk '
+  BEGIN {
+          display_node = 0; 
+          model = ""; 
+          name = ""; 
+  }
+  /Node/ {
+           if(display_node == 1) {
+             printf "model=\"%s\" name=\"%s\"\n", model, name
+             display_node = 0;
+           };
+           model = "";
+           name = ""
+  }
+  /device_type:/ {
+                   if(index($2, "display") != 0) {
+                     display_node = 1
+                   }
+  }
+  /model:/ { l=length($2); model = substr($2, 2, l-2) }
+  /name:/  { l=length($2); name = substr($2, 2, l-2) }
+  END{
+       if(display_node == 1) {
+         printf "model=\"%s\" name=\"%s\"\n", model, name
+       }; 
+  }' | \
+  while read line
+  do
+    eval "${line}"
+#   Match the name and the model to the driver.
+    test -z "${name}" && continue
+#   The model stored in the prom is usually not too
+#   informative, so that we need to provide some
+#   sensible human-readable card identification as well.
+    server='XFree86'
+    case "${name}" in
+      'cgsix' )
+        card='Sun CG6 framebuffer'
+        driver='suncg6' 
+	;;
+      'SUNW,sx' )
+        card='Sun CG14 framebuffer'
+        driver='suncg14'
+        ;;
+      'SUNW,leo' )
+        card='Sun LEO framebuffer'
+        driver='sunleo'
+        ;;
+      'SUNW,tcx' )
+        card='Sun TCX framebuffer' 
+        driver='suntcx'
+	;;
+      'SUNW,m64B' )
+        card='ATI Technologies 3D Rage Pro or similar'
+        driver='ati'
+        ;;
+      'SUNW,ffb' )
+        card='Sun Creator3D framebuffer or similar'
+        driver='sunffb'
+        ;;
+      'SUNW,afb' )
+        card='Sun Elite3D framebuffer or similar'
+        driver='sunffb'
+        ;;
+      * )
+        card='Unknown'
+        server='unknown'
+        driver='unknown'
+        ;;
+    esac
+    if [ -n "${model}" ]; then
+      card="${card} (${model})"
+    fi
+    echo -e "${card}\t${server}\t${driver}"
+  done
+}
+
+discover_video () {
+  # wrapper for discover command that can distinguish Discover 1.x and 2.x
+
+  # Ugh, Discover 1.x didn't exit with nonzero status if given an unrecongized option!
+  # Double ugh!  Discover is crashy.  People blame X when it crashes (but then,
+  # people blame X when *anything* crashes).
+  DISCOVER_ERRORFILE=$(tempfile)
+  if DISCOVER_TEST=$(discover --version 2>>"$DISCOVER_ERRORFILE"); then
+    if expr "$DISCOVER_TEST" : 'discover 2.*' > /dev/null 2>&1; then
+      # Discover 2.x
+      # XXX: this is sort of nasty
+      VENDOR_MODEL_FILE=$(tempfile)
+      SERVER_FILE=$(tempfile)
+      DRIVER_FILE=$(tempfile)
+
+      # Munge the source package version into the upstream version so we can
+      # tell Discover what to look for.  Discover's data is based on the
+      # upstream version number, not the Debian package's, so strip the Debian
+      # revision and the (ugh!) epoch.  Note: do *not* do greedy matching.
+      # Also, parameter expansions aren't nestable.  No respect, I tell ya.
+      _JUNK=${SOURCE_VERSION%-*}
+      UPSTREAM_VERSION=${_JUNK#*:}
+
+      CMD="discover --type-summary display"
+      eval $CMD >>$VENDOR_MODEL_FILE || debug_report_status "$CMD" "$?"
+      CMD="discover --data-path=xfree86/server/name \
+                    --data-version=$UPSTREAM_VERSION display"
+      eval $CMD >>$SERVER_FILE || debug_report_status "$CMD" "$?"
+      CMD="discover --data-path=xfree86/server/device/driver \
+                    --data-version=$UPSTREAM_VERSION display"
+      eval $CMD >>$DRIVER_FILE || debug_report_status "$CMD" "$?"
+
+      DISCOVERED_VIDEO=$(paste $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE)
+      rm -f $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE
+    else
+      # must be Discover 1.x
+      DISCOVERED_VIDEO=$(discover --disable=serial,parallel,usb,ide,scsi \
+                                  --format="%V %M\t%S\t%D\n" video 2>/dev/null)
+    fi
+    echo "$DISCOVERED_VIDEO"
+  else
+    warn "cannot use discover; failed with error message:" \
+         "$(cat "$DISCOVER_ERRORFILE")"
+  fi
+  rm "$DISCOVER_ERRORFILE" || warn "discover error file never created, or" \
+                                   "already removed"
+}
+
+validate_string_db_input () {
+  # Syntax: validate_string_db_input priority template
+  #
+  # validate string input; can't have doublequotes
+  # If $MAY_BE_NULL is a non-null value (e.g., "yes"), the string may be null.
+  if [ $# -ne 2 ]; then
+    echo "internal error: validate_string_db_input() called with wrong number of arguments: $*" >&2
+    exit 1
+  fi
+  PRIORITY=$1
+  TEMPLATE=$2
+  db_get "$TEMPLATE"
+  SAFE="$RET"
+  set +e
+  while :; do
+    db_input "$PRIORITY" "$TEMPLATE"
+    # is the question going to be asked?
+    if [ $? -eq 30 ]; then
+      break # no; bail out of validation loop
+    fi
+    db_go
+    db_get "$TEMPLATE"
+    if [ -n "$RET" ]; then
+      if ! expr "$RET" : '.*".*' > /dev/null 2>&1; then
+        break # valid input
+      else
+        ERROR=xserver-xorg/config/doublequote_in_string_error
+      fi
+    else
+      if [ -n "$MAY_BE_NULL" ]; then
+        break # valid (null) input
+      else
+        ERROR=xserver-xorg/config/null_string_error
+      fi
+    fi
+    # we only get to this point if the input was invalid; restore the known
+    # good value in case we are interrupted before the user provides a valid
+    # one
+    db_set "$TEMPLATE" "$SAFE"
+    db_fset "$TEMPLATE" seen false
+    # now show the user the error message
+    db_fset "$ERROR" seen false
+    db_input critical "$ERROR"
+    db_go
+  done
+  set -e
+}
+
+validate_numeric_db_input () {
+  # Syntax: validate_numeric_db_input priority template
+  #
+  # validate numeric input; must have only digits, can be null
+  if [ $# -ne 2 ]; then
+    echo "internal error: validate_numeric_db_input() called with wrong number of arguments: $*" >&2
+    exit 1
+  fi
+  PRIORITY=$1
+  TEMPLATE=$2
+  db_get "$TEMPLATE"
+  SAFE="$RET"
+  set +e
+  while :; do
+    db_input "$PRIORITY" "$TEMPLATE"
+    # is the question going to be asked?
+    if [ $? -eq 30 ]; then
+      break # no; bail out of validation loop
+    fi
+    db_go
+    db_get "$TEMPLATE"
+    if [ -z "$RET" ] || expr "$RET" : "[0-9]\+$" > /dev/null 2>&1; then
+      break # valid input
+    fi
+    # we only get to this point if the input was invalid; restore the known
+    # good value in case we are interrupted before the user provides a valid
+    # one
+    db_set "$TEMPLATE" "$SAFE"
+    db_fset "$TEMPLATE" seen false
+    # now show the user the error message
+    db_fset xserver-xorg/config/nonnumeric_string_error seen false
+    db_input critical xserver-xorg/config/nonnumeric_string_error
+    db_go
+  done
+  set -e
+}
+
+validate_bus_id_db_input () {
+  # Syntax: validate_bus_id_db_input priority template
+  #
+  # validate BusID input
+  if [ $# -ne 2 ]; then
+    echo "internal error: validate_bus_id_db_input() called with wrong number of arguments: $*" >&2
+    exit 1
+  fi
+  PRIORITY=$1
+  TEMPLATE=$2
+  db_get "$TEMPLATE"
+  SAFE="$RET"
+  set +e
+  while :; do
+    db_input "$PRIORITY" "$TEMPLATE"
+    # is the question going to be asked?
+    if [ $? -eq 30 ]; then
+      break # no; bail out of validation loop
+    fi
+    db_go
+    db_get "$TEMPLATE"
+    case "$RET" in
+      "")
+        # An empty string is valid.
+        break
+        ;;
+      ISA:*)
+        # Looks like an ISA bus ID specification string.  At least up to a
+        # point; upstream (xf86ParseIsaBusString() in
+        # xc/programs/Xserver/hw/xfree86/common/xf86isaBus.c) doesn't actually
+        # *supply* a specification.  So if the user's gotten this far, it's good
+        # enough.
+        break
+        ;;
+      PCI:*)
+        # Looks like a PCI bus ID specification; validate it.  (We can use &&
+        # outside a conditional here because of the "set +e" above.)
+        expr "$RET" : "PCI:[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null \
+          2>&1 && break
+        ;;
+      SBUS:*)
+        # Looks like an SBUS bus ID specification; validate it.  (We can use &&
+        # outside a conditional here because of the "set +e" above.)
+        #
+        # According to upstream (xf86ParseSbusBusString() in
+        # xc/programs/Xserver/hw/xfree86/common/xf86sbusBus.c):
+        #
+        # The format is assumed to be one of:
+        # * "fbN", e.g. "fb1", which means the device corresponding to /dev/fbN
+        # * "nameN", e.g. "cgsix0", which means Nth instance of card NAME
+        # * "/prompath", e.g. "/sbus@0,10001000/cgsix@3,0" which is
+        #   PROM pathname to the device.
+        #
+        # Well, okay.
+        #
+        # Accept any non-null sequence of lowercase letters followed by a
+        # non-null sequence of decimal digits.  This handles "fbN" and "nameN".
+        expr "$RET" : "SBUS:[a-z]\+[0-9]\+" >/dev/null 2>&1 && break
+        # Now for the PROM path.  I am lazy; accept a slash followed a non-null
+        # sequence of letters and commas, an at sign, a non-null sequence of
+        # hexadecimal digits, a comma, and another non-null sequence of
+        # hexadecimal digits.  Furthermore, accept multiple occurences of this
+        # entire sequence.  Whew.
+        expr "$RET" : "SBUS:\(/[A-Za-z,]\+@[0-9A-Fa-f]\+,[0-9A-Fa-f]\+\)\+$" \
+          >/dev/null 2>&1 && break
+        ;;
+      [0-9])
+        # Accept a simple decimal integer for legacy buses that haven't been
+        # properly implemented (e.g., for SGI Indigo2 XL).
+        break
+        ;;
+      *)
+    esac
+    # we only get to this point if the input was invalid; restore the known good
+    # value in case we are interrupted before the user provides a valid one
+    db_set "$TEMPLATE" "$SAFE"
+    db_fset "$TEMPLATE" seen false
+    # now show the user the error message
+    db_fset xserver-xorg/config/device/bus_id_error seen false
+    db_input critical xserver-xorg/config/device/bus_id_error
+    db_go
+  done
+  set -e
+}
+
+auto_answer () {
+  # Syntax: auto_answer input_command priority template default_answer
+  #
+  # Used to auto-answer questions that don't have reasonable defaults.  Some
+  # people insist on running the xserver-xorg config script with the
+  # non-interactive frontend.  For this to work, the debconf database will need
+  # to be pre-loaded with answers to several questions.  You have been
+  # warned...
+  if [ $# -ne 4 ]; then
+    echo "internal error: auto_answer() called with wrong number of arguments: $*" >&2
+    exit 1
+  fi
+  INPUT_COMMAND=$1
+  PRIORITY=$2
+  TEMPLATE=$3
+  DEFAULT_ANSWER=$4
+  set +e
+  debug_echo "auto_answer() \"$INPUT_COMMAND $PRIORITY $TEMPLATE\" with default \"$DEFAULT_ANSWER\""
+  db_fget "$TEMPLATE" seen
+  # are we re-configuring?
+  if [ -z "$FIRSTINST" ] && [ "$RET" = "true" ]; then
+    # yes, we are reconfiguring
+    db_get "$TEMPLATE"
+    debug_echo "auto_answer: (reconfiguring) preserving existing answer \"$RET\""
+  else
+    # not reconfiguring; has the question been seen before?
+    if [ "$RET" = "true" ]; then
+      db_get "$TEMPLATE"
+      debug_echo "auto_answer: (not reconfiguring) preserving existing answer \"$RET\""
+    else
+      debug_echo "auto_answer: auto-answering with \"$DEFAULT_ANSWER\""
+      db_set $TEMPLATE "$DEFAULT_ANSWER"
+    fi
+  fi
+  "$INPUT_COMMAND" "$PRIORITY" "$TEMPLATE"
+  if [ $? -eq 30 ]; then
+    debug_echo "auto_answer: $TEMPLATE is not being asked"
+  else
+    debug_echo "auto_answer: asking $TEMPLATE"
+  fi
+  set -e
+  db_go
+  db_get "$TEMPLATE"
+  debug_echo "auto_answer: $TEMPLATE is \"$RET\""
+}
+
+priority_ceil() {
+  # syntax: priority_ceil requested_priority
+  #
+  # Given a variable PRIORITY_CEILING and a "requested_priority" argument, echo
+  # a debconf priority string corresponding to the lesser of the two.
+
+  # Implementation note: a clever version of this could be done using "eval",
+  # or embedding a Perl script, but those would be more difficult to maintain.
+  # Better just to go the simple and stupid route.  Yes, I know this is not
+  # very efficient.
+
+  # Validate arguments.
+  if [ $# -ne 1 ]; then
+    debug_echo "priority_ceil() called with empty or bogus arguments \"$*\";" \
+               "assuming argument of \"low\""
+    _requested_priority=low
+  else
+    _requested_priority="$1"
+  fi
+
+  # If PRIORITY_CEILING is null or unset, it's same as not having one at all;
+  # the sky's the limit.  We use a locally scoped priority_ceiling variable
+  # because we don't want to affect the value of the global one.
+  _priority_ceiling=${PRIORITY_CEILING:-"critical"}
+
+  # Ensure the value of _priority_ceiling is reasonable.
+  if [ "$_priority_ceiling" != "critical" ] && \
+       [ "$_priority_ceiling" != "high" ] && \
+       [ "$_priority_ceiling" != "medium" ] && \
+       [ "$_priority_ceiling" != "low" ]; then
+    debug_echo "priority_ceil() called with bogus value of \$PRIORITY_CEILING" \
+               "\"$_priority_ceiling\"; treating as \"critical\""
+    _priority_ceiling=critical
+  fi
+
+  case "$_requested_priority" in
+    critical)
+      # This is the highest priority, so there is nowhere to go but down.
+      echo "$_priority_ceiling"
+      ;;
+    high)
+      case "$_priority_ceiling" in
+        critical)
+          echo "$_requested_priority"
+          ;;
+        high|medium|low)
+          echo "$_priority_ceiling"
+          ;;
+      esac
+      ;;
+    medium)
+      case "$_priority_ceiling" in
+        critical|high)
+          echo "$_requested_priority"
+          ;;
+        medium|low)
+          echo "$_priority_ceiling"
+          ;;
+      esac
+      ;;
+    low)
+      # This is the lowest priority, so we can't go any lower.
+      echo "$_requested_priority"
+      ;;
+    *)
+      debug_echo "priority_ceil() called with bogus argument" \
+                 "\"$_requested_priority\"; returning \"low\""
+      echo low
+      ;;
+  esac
+}
+
+non_latin_keyboard () {
+  NONLATINMAPS="am ar bg by cs el gr il ir iu lo mk ml mm mn ru th tj ua"
+  for i in $NONLATINMAPS; do
+    if [ "$XMAP" = "$i" ]; then
+      NON_LATIN="true"
+    fi
+  done
+
+  # Turkish F keyboards are non-Latin; Turkish Q aren't.
+  if [ "$XMAP" = "tr" ] && [ "$VARIANT" = "f" ]; then
+    NON_LATIN="true"
+  fi
+}
+
+# analyze arguments; used by auto_answer()
+if [ "$1" = "reconfigure" ] || [ -n "$DEBCONF_RECONFIGURE" ]; then
+  RECONFIGURE=true
+else
+  RECONFIGURE=
+fi
+
+if [ -z "$2" ]; then
+  FIRSTINST=yes
+fi
+
+# Migrate debconf templates from xserver-xfree86 to xserver-xorg
+XF86TEMPLATELIST=$(debconf-show xserver-xfree86 | sed -e 's/^\*//g' | awk '{print $1}' | sed -e 's/\:$//g')
+
+if [ -n "$FIRSTINST" ] && [ -z "$RECONFIGURE" ] && [ -n "$XF86TEMPLATELIST" ]; then
+  MIGRATE_XF86=true
+  warn "Migrating xserver-xfree86 debconf values to xserver-xorg."
+  # set +e is required otherwise debconf will kick us out if the template is not
+  # there.
+  set +e
+  for XF86TEMPLATE in $XF86TEMPLATELIST; do
+    XORGTEMPLATE=$(echo "$XF86TEMPLATE" | sed -e 's/xserver-xfree86/xserver-xorg/g')
+    # db_get doesn't need checking. If we are here is because it is in the list.
+    db_get "$XF86TEMPLATE"
+    db_set "$XORGTEMPLATE" "$RET"
+    if [ "$RET" = "10 $XORGTEMPLATE doesn't exist" ]; then
+      debug_echo "$XF86TEMPLATE is not mapped to $XORGTEMPLATE"
+    else
+      db_fset "$XORGTEMPLATE" seen true
+    fi
+  done
+  # migrate special cases
+  db_metaget xserver-xfree86/config/display/modes choices
+  if [ "$RET" != "10 xserver-xfree86/config/display/modes doesn't exist" ]; then
+    db_subst xserver-xorg/config/display/modes choices "$RET"
+  else
+    db_subst xserver-xorg/config/display/modes choices @DEFAULT_DCRESOLUTIONS@
+  fi
+  # migrate keyboard/rules
+  db_get xserver-xorg/config/inputdevice/keyboard/rules
+  if [ "$RET" = "xfree86" ]; then
+    db_set xserver-xorg/config/inputdevice/keyboard/rules "xorg"
+  fi
+  db_set xserver-xorg/config/monitor/use_sync_ranges true
+  set -e
+  if [ -e "$XF86CONFIG" ] && [ ! -e "$XORGCONFIG" ]; then
+    touch "$CONFIG_AUX_DIR/.migrateconfig"
+    cp "$XF86CONFIG" "$XORGCONFIG"
+    if [ -e "$XF86CONFIG_CHECKSUM" ] && [ ! -e "$XORGCONFIG_CHECKSUM" ]; then
+      cat "$XF86CONFIG_CHECKSUM" | sed -e 's/XF86Config-4/xorg\.conf/' > "$XORGCONFIG_CHECKSUM"
+    fi
+    if [ -e "$XF86CONFIG_ROSTER" ] && [ ! -e "$XORGCONFIG_ROSTER" ]; then
+      echo "$THIS_PACKAGE" > "$XORGCONFIG_ROSTER"
+    fi
+  fi
+fi
+
+# migrate from old select-type templates
+for TEMPLATE in xserver-xorg/config/inputdevice/mouse/emulate3buttons ; do
+  db_get "$TEMPLATE" || continue
+  if [ "$RET" = "Yes" ]; then
+    db_set $TEMPLATE "true"
+  elif [ "$RET" = "No" ]; then
+    db_set $TEMPLATE "false"
+  fi
+done
+
+# Delete obsolete templates
+for TEMPLATE in xserver-xorg/config/inputdevice/mouse/zaxismapping; do
+  db_get "$TEMPLATE" || continue
+  db_unregister "$TEMPLATE"
+done
+
+# migrate from "expert" to "advanced"
+db_get xserver-xorg/config/monitor/selection-method
+if [ "$RET" = "Expert" ]; then
+  db_set xserver-xorg/config/monitor/selection-method "Advanced"
+fi
+
+# migrate to X.Org 6.8.1, where there are no pex, xtt or xie modules
+db_get xserver-xorg/config/modules
+SELECTED_MODULES="$(echo $RET | awk 'BEGIN { RS=", "} {print $1}')"
+# are the pex or xie modules selected?
+if echo "$SELECTED_MODULES" | egrep -q "(pex|xie|xtt)"; then
+  # get rid of them
+  SELECTED_MODULES=$(echo "$SELECTED_MODULES" | egrep -v "(pex|xie|xtt)")
+  SELECTED_MODULES=$(echo $SELECTED_MODULES | sed 's/ /, /g')
+  db_set xserver-xorg/config/modules "$SELECTED_MODULES"
+fi
+
+# migrate from ATI driver sub-modules to ATI driver
+db_get xserver-xorg/config/device/driver
+case "$RET" in
+  atimisc|r128|radeon)
+    db_set xserver-xorg/config/device/driver "ati"
+    ;;
+  *)
+    ;;
+esac
+
+# The only supported protocol (per Zephaniah Hull) for the GPM repeater is
+# IntelliMouse; migrate anyone using that mouse device to that protocol.  Other
+# values used to work as well, but no longer do since the XFree86 mouse driver
+# was rewritten for XFree86 4.3.0.  See Debian bug #233933 for more details.
+db_get xserver-xorg/config/inputdevice/mouse/port
+if [ "$RET" = "/dev/gpmdata" ]; then
+  db_get xserver-xorg/config/inputdevice/mouse/protocol
+  if [ "$RET" != "IntelliMouse" ]; then
+    observe "migrating template" \
+            "\"xserver-xorg/config/inputdevice/mouse/protocol\" from" \
+            "\"$RET\" to \"IntelliMouse\""
+    db_set xserver-xorg/config/inputdevice/mouse/protocol "IntelliMouse"
+  fi
+fi
+
+debug_echo "Configuring $THIS_PACKAGE."
+
+# default X server
+
+# if the X server symlink file already exists and points to an executable X
+# server, it's not as important to ask questions related to it (these questions
+# "have a reasonable default")
+PRIORITY_CEILING=
+if [ -e "$SERVER_SYMLINK" ]; then
+  if [ -x "$(readlink "$SERVER_SYMLINK")" ]; then
+    debug_echo "X server symlink exists and points to executable X server;" \
+               "capping X server question priority at medium."
+    PRIORITY_CEILING=medium
+  fi
+fi
+
+# priority of shared/default-x-server
+PRIORITY=high
+
+db_metaget shared/default-x-server owners
+OWNERS="$RET"
+db_metaget shared/default-x-server choices
+CHOICES="$RET"
+
+if [ "$OWNERS" != "$CHOICES" ]; then
+  debug_echo "\$OWNERS does not equal \$CHOICES: \"$OWNERS\" != \"$CHOICES\""
+  db_subst shared/default-x-server choices $OWNERS
+  db_fset shared/default-x-server seen false
+fi
+
+if ! expr "$OWNERS" : ".*,.*" > /dev/null 2>&1; then
+  debug_echo "\$OWNERS has only one value; shared/default-x-server will not be asked"
+fi
+
+# collect information about installed video card(s), if possible
+case "$ARCH" in
+  sparc)
+    DISCOVER_PROG='prtconf'
+    DISCOVER_FUNC='discover_sparc_video'
+    ;;
+  *)
+    DISCOVER_PROG='discover'
+    DISCOVER_FUNC='discover_video'
+    ;;
+esac
+if which $DISCOVER_PROG > /dev/null 2>&1; then
+  DISCOVERED_VIDEO=$($DISCOVER_FUNC)
+  MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
+  DISCOVERED_VIDEO=$(echo "$DISCOVERED_VIDEO" | head -n 1)
+  if [ -n "$DISCOVERED_VIDEO" ]; then
+    NCARDS=$(echo "$DISCOVERED_VIDEO" | wc -l)
+    SERVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $2}' | grep -v unknown | sort | uniq)
+    if [ -n "$SERVERS" ]; then
+      NSERVERS=$(echo "$SERVERS" | wc -l)
+    fi
+    DRIVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $NF}' | grep -v unknown | sort | uniq)
+    if [ -n "$DRIVERS" ]; then
+      NDRIVERS=$(echo "$DRIVERS" | wc -l)
+    fi
+    if [ $MULTIHEAD -gt 1 ]; then
+      MULTIHEAD=yes
+    fi
+  fi
+fi
+
+# set a failsafe default answer for shared/default-x-server
+DEFAULT=$THIS_PACKAGE
+
+if which $DISCOVER_PROG > /dev/null 2>&1; then
+  if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
+    PRIORITY="medium"
+    if [ -n "$RECONFIGURE" ]; then
+      PRIORITY="high"
+    fi
+    auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/autodetect_video_card "true"
+    db_get xserver-xorg/autodetect_video_card
+    AUTODETECT_VIDEO_CARD="$RET"
+    if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
+      # We're going to autodetect, so clear out the old values
+      for param in use_fbdev driver video_ram identifier bus_id; do
+          db_reset xserver-xorg/config/device/$param
+      done
+
+      if [ $NSERVERS -eq 0 ]; then
+        debug_echo "could not autodetect X server: no video card detected," \
+                   "or no server known for it"
+        db_input "$(priority_ceil medium)" shared/no_known_x-server || debug_report_status "db_input $(priority_ceil medium) shared/no_known_x-server" "$?"
+        db_go
+      elif [ $NSERVERS -eq 1 ]; then
+        debug_echo "autodetected X server: $SERVERS"
+        if [ "$SERVERS" = "${THIS_SERVER##*/}" ] || [ "$SERVERS" = "XFree86" ]; then
+          # the autodetected X server is the only one on the system, and the one
+          # we're currently configuring; it's unlikely the user will want to use
+          # something else
+          PRIORITY=low
+        else
+          debug_echo "X server autodetected, but does not correspond to this package"
+          # we do not set shared/default-x-server here, because the
+          # autodetected X server might not be getting installed
+        fi
+      elif [ $NSERVERS -gt 1 ]; then
+        debug_echo "could not autodetect X server: multiple servers for video cards"
+        VIDEOCARD_SERVER_REPORT=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t"; printf " %-40s%20s\n .\n", "Detected Video Card", "Suggested X server" } { printf " %-50s%10s\n", $1, $2 } END { printf " .\n" }')
+        # can't do this until there is a way to embed newlines into debconf command streams :(
+        #db_subst shared/multiple_possible_x-servers detected_cards "$VIDEOCARD_SERVER_REPORT"
+        debug_echo "$VIDEOCARD_SERVER_REPORT"
+        db_input "$(priority_ceil high)" shared/multiple_possible_x-servers || debug_report_status "db_input $(priority_ceil high) shared/multiple_possible_x-servers" "$?"
+        db_go
+      fi
+    else
+      debug_echo "user declined video card autodetection"
+    fi
+  else
+    debug_echo "upgrading package; not running autodetection script"
+  fi
+else
+  debug_echo "could not autodetect X server: $DISCOVER_PROG not found"
+fi
+
+# now the default-x-server question may be asked
+db_fget shared/default-x-server seen
+debug_echo "seen flag of shared/default-x-server is $RET"
+debug_echo "db_input $(priority_ceil $PRIORITY) shared/default-x-server"
+auto_answer db_input $(priority_ceil $PRIORITY) shared/default-x-server "$DEFAULT"
+
+# is this the selected X server?
+db_get shared/default-x-server
+if [ "$RET" != "$THIS_PACKAGE" ]; then
+  # nothing else to do in this script
+  debug_echo "Skipping further configuration of $THIS_PACKAGE, because it is not the default X server package."
+  exit 0
+fi
+
+# priority of xserver-xorg/config/device/driver
+PRIORITY=medium
+if [ -n "$RECONFIGURE" ]; then
+  PRIORITY=high
+fi
+
+DRIVER_DIRS="/usr/X11R6/lib/modules/drivers /usr/lib/xorg/modules/drivers"
+for i in $DRIVER_DIRS; do
+  if [ -d $i ]; then
+    REAL_DRIVER_DIRS="$REAL_DRIVER_DIRS $i "
+  fi
+done
+
+if [ -n "$REAL_DRIVER_DIRS" ]; then
+  # Build list of available video drivers, omitting the atimisc, r128, and
+  # radeon sub-modules (the ati driver knows when and how to load these).
+  # v4l is not a display driver, and dummy is for advanced users.
+  DRIVER_LIST="$(find $REAL_DRIVER_DIRS -name '*_drv.*' \
+                 | sed 's|^.*/\([^/]*\)_drv\.[^\._]*|\1|g' \
+                 | egrep -v '(atimisc|dummy|r128|radeon|v4l)' | sort -u | xargs \
+                 | sed 's/ /, /g' 2>/dev/null) "
+fi
+
+# Set a hard-coded module list (if necessary) and default driver module on an
+# architecture-specific basis.
+case "$ARCH" in
+  alpha)
+    DEFAULT_DRIVER=vga
+    ;;
+  amd64|hurd-i386|i386)
+    DEFAULT_DRIVER=vesa
+    ;;
+  sparc)
+    DEFAULT_DRIVER=sunffb
+    ;;
+  *)
+    DEFAULT_DRIVER=fbdev
+    ;;
+esac
+
+if [ -z "$DRIVER_LIST" ]; then
+  observe "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
+  DRIVER_LIST="$DEFAULT_DRIVER"
+fi
+
+observe "available video driver list set to \"$DRIVER_LIST\""
+
+if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
+  if which $DISCOVER_PROG >/dev/null 2>&1; then
+    if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
+      if [ $NDRIVERS -eq 0 ]; then
+        observe "could not autodetect X server driver: no video card" \
+                "detected, or no driver known for it"
+      elif [ $NDRIVERS -eq 1 ]; then
+        observe "autodetected X server driver: $DRIVERS"
+        PRIORITY=low
+        DEFAULT_DRIVER="$DRIVERS"
+      elif [ $NDRIVERS -gt 1 ]; then
+        observe "could not autodetect X server driver: multiple drivers for" \
+                "video cards"
+        VIDEOCARD_DRIVER_REPORT=$(echo "$DISCOVERED_VIDEO" \
+          | awk 'BEGIN { FS="\t"; printf " %-30s%30s\n .\n", "Detected Video Card", "Suggested driver module" } { printf " %-50s%10s\n", $1, $3 } END { printf " .\n" }')
+        # can't do this until there is a way to embed newlines into debconf
+        # command streams :(
+        # db_subst shared/multiple_possible_x-drivers detected_cards \
+        #   "$VIDEOCARD_DRIVER_REPORT"
+        observe "$VIDEOCARD_DRIVER_REPORT"
+        PRIORITY=high
+        db_input "$(priority_ceil high)" xserver-xorg/multiple_possible_x-drivers || debug_report_status "db_input $(priority_ceil high) xserver-xorg/multiple_possible_x-drivers" "$?"
+        db_go
+      fi
+    else
+      observe "user declined video card autodetection (driver)"
+    fi
+  else
+    observe "could not autodetect X server driver: $DISCOVER_PROG not found"
+  fi
+
+  db_subst xserver-xorg/config/device/driver choices "$DRIVER_LIST"
+  auto_answer db_input "$PRIORITY" \
+    xserver-xorg/config/device/driver "$DEFAULT_DRIVER"
+
+  # card identifier; try to set a sensible default
+  DEFAULT=
+  if [ -n "$(echo $NDRIVERS)" ] && [ $NDRIVERS -eq 1 ] && [ $NCARDS -eq 1 ]; then
+    if which $DISCOVER_PROG > /dev/null 2>&1; then
+      if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
+        DEFAULT=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $1}')
+      fi
+    fi
+  fi
+  if [ -z "$DEFAULT" ]; then
+    # fall back to some language-specific generic text
+    db_metaget xserver-xorg/config/device/default-identifier Description
+    DEFAULT=$RET
+  fi
+  # this question requires input validation
+  MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/device/identifier "$DEFAULT"
+
+  DEVICE_IDENTIFIER="$DEFAULT"
+
+  # BusID
+  PRIORITY=low
+  DEFAULT=
+
+  # Some PowerPCs need to be told where to find the video card even if there is
+  # only one in the machine (broken PCI bus code in the XFree86 X server, most
+  # likely).  If there are multiple video cards, we need to configure one as the
+  # primary head.
+  # Warty: always feed this info.
+  MULTIHEAD=yes
+  if [ "$ARCH" = "powerpc" ] || [ "$MULTIHEAD" = "yes" ]; then
+    if [ "$ARCH" = "powerpc" ]; then
+      PRIORITY=medium
+    fi
+    if [ "$MULTIHEAD" = "yes" ]; then
+      PRIORITY=medium
+    fi
+    if which lspci > /dev/null 2>&1; then
+      # Try to guess the correct BusID.
+      VIDEO_CARD=$(LC_ALL=C lspci -n | grep -E "(Class )?0300:" | sort -n | head -n 1 \
+        | cut -d\  -f1)
+      if [ -n "$VIDEO_CARD" ]; then
+        # Recent versions of lspci report a four-digit domain as the first field.
+        if expr "$VIDEO_CARD" : ".*:.*:.*\..*" >/dev/null 2>&1; then
+          # We have an entry in "hex:hex:hex.hex" format; we need
+          # "PCI:decimal:decimal:decimal" (we don't use the domain).
+          DOMAIN=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f1) )
+          BUS=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f2) )
+          DEVICE=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f3 | cut -d. -f1) )
+          FUNCTION=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d. -f2) )
+          DEFAULT="PCI:$BUS:$DEVICE:$FUNCTION"
+        elif expr "$VIDEO_CARD" : ".*:.*\..*" >/dev/null 2>&1; then
+          # We have an entry in "hex:hex.hex" format; we need
+          # "PCI:decimal:decimal:decimal".
+          BUS=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f1) )
+          DEVICE=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f2 | cut -d. -f1) )
+          FUNCTION=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d. -f2) )
+          DEFAULT="PCI:$BUS:$DEVICE:$FUNCTION"
+        else
+          warn "unrecognized output from lspci: \"$VIDEO_CARD\""
+        fi
+      fi
+    fi
+  fi
+
+  # SGI Indigo2 XLs require a special hack, per Guido Guenther (see Debian
+  # #249614).
+  if [ -e /proc/cpuinfo ]; then
+    if grep -q "system type.*:.*SGI Indigo2" /proc/cpuinfo; then
+      PRIORITY=medium
+      DEFAULT=1
+    fi
+  fi
+
+  # this question requires input validation
+  if [ -n "$DEFAULT" ]; then
+    auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
+  else
+    validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
+  fi
+
+  # video RAM
+  db_get xserver-xorg/config/device/driver
+  DEFAULT=
+  # this question requires input validation
+  if [ -n "$DEFAULT" ]; then
+    auto_answer validate_numeric_db_input "$(priority_ceil low)" xserver-xorg/config/device/video_ram "$DEFAULT"
+  else
+    validate_numeric_db_input "$(priority_ceil low)" xserver-xorg/config/device/video_ram || debug_report_status "validate_numeric_db_input $(priority_ceil low) xserver-xorg/config/device/video_ram" "$?"
+  fi
+
+  # use fbcon kernel functions?
+
+  case "$ARCH" in
+    alpha|hurd-i386|i386|amd64)
+      USE_FBDEV=false
+      ;;
+    *)
+      USE_FBDEV=true
+      ;;
+  esac
+
+  if [ -e /proc/fb ]; then
+    FB_TYPE="$(grep '^0 ' /proc/fb | sed 's/[^[:space:]] //')"
+    # did we actually get back anything?
+    if [ -n "$FB_TYPE" ]; then
+      if echo "$FB_TYPE" | grep -Eiq '(OFfb|VESA|VGA16)'; then
+        USE_FBDEV=false
+      else
+        # other framebuffers do support UseFBDEV
+        USE_FBDEV=true
+      fi
+    fi
+  else
+    USE_FBDEV=false
+  fi
+
+  # it looks like Mac Mini need an extra kick. Make sure to give it to it.
+ 
+  if [ "$ARCH" = powerpc ] && [ "$USE_FBDEV" = "false" ]; then
+    # it looks like Mac Mini need an extra kick. Make sure to give it to it.
+    if [ -e /proc/cpuinfo ]; then
+      if [ -n "$(cat /proc/cpuinfo | grep "^machine.*PowerMac10,1")" ] && \
+         [ -n "$(cat /proc/cpuinfo | grep "^platform.*PowerMac")" ]; then
+        USE_FBDEV=true
+      fi
+    fi
+    # Make sure to force UseFBDev with Rage 128 or stuff will go bad in some
+    # old Macs.
+    if echo "$DEVICE_IDENTIFIER" | grep -q "Rage 128"; then
+      USE_FBDEV=true
+    fi
+  fi
+
+  if [ -n "$XORG_USE_FBDEV" ] && [ "$XORG_USE_FBDEV" = "no" ]; then
+    USE_FBDEV=false
+  fi
+
+  db_get xserver-xorg/config/device/use_fbdev || debug_report_status "db_get xserver-xorg/config/device/use_fbdev"
+  if [ "$RET" = "true" ] && [ "$USE_FBDEV" = "false" ]; then
+    debug_echo "xserver-xorg/config/device/use_fbdev is \"true\" but /proc/fb does not exist, is empty, or reports a framebuffer type with which UseFBDev cannot be used; setting template to \"false\""
+    db_set xserver-xorg/config/device/use_fbdev false
+  fi
+
+  auto_answer db_input "$(priority_ceil medium)" xserver-xorg/config/device/use_fbdev "$USE_FBDEV"
+fi
+
+# keyboard setup
+PRIORITY="medium"
+
+if [ -n "$FIRSTINST" ]; then
+  AUTODETECT_KB="true"
+else
+  AUTODETECT_KB="false"
+fi
+
+auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/autodetect_keyboard "$AUTODETECT_KB" || debug_echo "db_input xserver-xorg/autodetect_keyboard"
+db_get xserver-xorg/autodetect_keyboard || debug_report_status "db_get server-xorg/autodetect_keyboard"
+if [ "$RET" = "true" ]; then
+  DOKBDETECT="true"
+  debug_echo "Redetecting keyboard layout; resetting flag to false."
+  db_set xserver-xorg/autodetect_keyboard false
+fi
+
+if [ -n "$DOKBDETECT" ]; then
+  # generated by a small bit of Perl from a static list of keymaps provided
+  # by Matthias Urlichs
+  REALLANG=${LANG%%@*}
+  REALLANG=${REALLANG%%.*}
+
+  db_get debian-installer/keymap || debug_report_status "db_get debian-installer/keymap"
+  DI_KEYMAP="${RET##mac-usb-}"
+  DI_KEYMAP="${DI_KEYMAP%%-latin1}"
+
+  case "$DI_KEYMAP" in
+    be2) XMAP="be";;
+    bg) XMAP="bg"; VARIANT="bds";;
+    br) XMAP="us"; VARIANT="intl"; MODEL="pc104";;
+    br-abnt2) XMAP="br"; VARIANT="abnt2"; MODEL="abnt2";;
+    by) XMAP="by";;
+    lfc-cat) XMAP="es"; VARIANT="cat";;
+    cz-lat2) XMAP="cz";;
+    de-latin1-nodeadkeys) XMAP="de"; VARIANT="nodeadkeys";;
+    de) XMAP="de";;
+    dvorak) XMAP="us"; VARIANT="dvorak"; MODEL="pc104";;
+    dk) XMAP="dk";;
+    es) XMAP="es";;
+    fr_CH) XMAP="ch"; VARIANT="fr";;
+    fr) XMAP="fr";;
+    hebrew) XMAP="il";;
+    hu) XMAP="hu";;
+    fi) XMAP="fi";;
+    fr-latin9) XMAP="fr"; VARIANT="latin9";;
+    gb) XMAP="gb";;
+    hu) XMAP="hu";;
+    is) XMAP="is";;
+    it) XMAP="it";;
+    jp106) XMAP="jp"; MODEL="jp106";;
+    la) XMAP="latam";;
+    lt) XMAP="lt";; 
+    # XXX should these be MODEL="macintosh"?
+    mac-us-std) XMAP="us";;
+    mac-de2-ext) XMAP="de"; VARIANT="nodeadkeys";;
+    mac-fr2-ext) XMAP="fr";;
+    mac-fr3) XMAP="fr";;
+    mac-es) XMAP="es";;
+    no) XMAP="no";;
+    pl) XMAP="pl";;
+    pt) XMAP="pt";;
+    uk) XMAP="gb";;
+    lv-latin4) XMAP="lv";;
+    se) XMAP="se";;
+    sg) XMAP="ch"; VARIANT="de";;
+    sk-qwerty) XMAP="sk"; VARIANT="qwerty";;
+    sr-cy) XMAP="sr";;
+    trf) XMAP="tr"; VARIANT="f";;
+    trq) XMAP="tr";;
+    ua) XMAP="ua";;
+    uk) XMAP="gb"; VARIANT="intl";;
+    us) XMAP="us"; MODEL="pc104";;
+    *) XMAP="UNKNOWN";;
+  esac
+
+  if [ "$XMAP" = "UNKNOWN" ]; then
+    warn "failed to infer keyboard layout from layout/lang '$DI_KEYMAP--$REALLANG'"
+    PRIORITY=medium
+    XMAP="us"
+    MODEL="pc104"
+  # prompt for layout if we ended up with French Canadian; apparently having
+  # US-layout keyboards is common there
+  elif [ "$XMAP" = "ca" ] && [ "$OPTIONS" = "fr" ]; then
+    PRIORITY=high
+  else
+    PRIORITY=low
+  fi
+
+  # we can't do non-Latin usernames, so people with Latin layouts need a US
+  # layout so they can log in, and then switch to writing native text.  Bit hard
+  # to work out which one should be the default.
+  non_latin_keyboard
+  if [ -n "$NON_LATIN" ]; then
+    warn "selected layout '$XMAP' from '$DI_KEYMAP--$REALLANG' is non-Latin; " \
+         "adding us to the layout list, Alt+Shift toggles"
+    if [ -z "$OPTIONS" ]; then
+      OPTIONS="grp:alt_shift_toggle"
+    else
+      OPTIONS="$OPTIONS,grp:alt_shift_toggle"
+    fi
+    XMAP="us,$XMAP"
+  fi
+  
+  if [ -n "$LEVEL2" ]; then
+    warn "selected layout '$XMAP' from '$DI_KEYMAP--$REALLANG' is l2-only"
+  fi
+
+  XKBLAYOUT="$XMAP"
+  XKBOPTIONS="$OPTIONS"
+  XKBVARIANT="$VARIANT"
+  XKBMODEL="$MODEL"
+else
+  db_get xserver-xorg/config/inputdevice/keyboard/layout || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/layout"
+  XKBLAYOUT="$RET"
+  db_get xserver-xorg/config/inputdevice/keyboard/options || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/options"
+  XKBOPTIONS="$RET"
+  db_get xserver-xorg/config/inputdevice/keyboard/variant || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/variant"
+  XKBVARIANT="$RET"
+  db_get xserver-xorg/config/inputdevice/keyboard/model || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/model"
+  XKBMODEL="$RET"
+  PRIORITY=low
+fi
+
+MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/layout "$XKBLAYOUT"
+
+# these questions require input validation
+PRIORITY=medium
+
+DEFAULT=xorg
+MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/rules "$DEFAULT"
+
+if [ -z "$XKBMODEL" ]; then
+  db_get xserver-xorg/config/inputdevice/keyboard/rules
+  if [ "$RET" = "sun" ]; then
+    XKBMODEL=type5
+  elif [ "$RET" = "xorg" ]; then
+    if [ "$ARCH" = "powerpc" ] && \
+        [ -e /proc/sys/dev/mac_hid/keyboard_sends_linux_keycodes ] && \
+        [ "$(cat /proc/sys/dev/mac_hid/keyboard_sends_linux_keycodes)" = "0" ]; then
+      XKBMODEL=macintosh_old
+    else
+      XKBMODEL=pc105
+    fi
+  fi
+fi
+MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/model "$XKBMODEL"
+
+# ugly kludge, I know; map Apple->AltGr for most European Macs
+db_get xserver-xorg/config/inputdevice/keyboard/model
+if [ "$ARCH" = "powerpc" ] && [ "$RET" = "pc105" ]; then
+  if [ -n "$XKBOPTIONS" ]; then
+    if ! echo "$XKBOPTIONS" | grep -q "lv3:"; then
+      XKBOPTIONS="$XKBOPTIONS,lv3:lwin_switch"
+    fi
+  else
+    XKBOPTIONS="lv3:lwin_switch"
+  fi
+fi
+
+# kill me now.
+if echo "$XKBOPTIONS" | grep -q "nodeadkeys"; then
+  if [ -z "$XKBVARIANT" ]; then
+    XKBVARIANT="nodeadkeys"
+    NEWOPTIONS=""
+    IFS_SAVE="$IFS"
+    IFS=","
+    for i in $XKBOPTIONS; do
+      IFS="$IFS_SAVE"
+      if [ "$i" != "nodeadkeys" ]; then
+        NEWOPTIONS="${NEWOPTIONS:+$NEWOPTIONS,}$i"
+      fi
+      IFS=","
+    done
+    IFS="$IFS_SAVE"
+    XKBOPTIONS="$NEWOPTIONS"
+    db_set xserver-xorg/config/inputdevice/keyboard/variant "$XKBVARIANT"
+    db_set xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
+  else
+    warn "wanted to migrate nodeadkeys from options -> variant, but variant" \
+         "is already $XKBVARIANT; not migrating"
+  fi
+fi
+
+MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/keyboard/variant "$XKBVARIANT"
+
+MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
+
+AUTODETECTED_PORT="/dev/input/mice"
+AUTODETECTED_PROTOCOL="ImPS/2"
+
+db_subst xserver-xorg/config/inputdevice/mouse/port choices $AUTODETECTED_PORT
+auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/port "${AUTODETECTED_PORT}"
+
+db_get xserver-xorg/config/inputdevice/mouse/port
+case "$RET" in
+  *psaux)
+    MOUSE_PROTOCOL_CHOICES="PS/2, ImPS/2, GlidePointPS/2, NetMousePS/2, NetScrollPS/2, ThinkingMousePS/2, MouseManPlusPS/2, ExplorerPS/2"
+    DEFAULT_PROTOCOL="PS/2"
+    ;;
+  *ttyS*|*tts/*)
+    MOUSE_PROTOCOL_CHOICES="Auto, Microsoft, MouseSystems, GlidePoint, ThinkingMouse, ValuMouseScroll, MouseMan, Logitech, IntelliMouse, MMSeries, MMHitTab"
+    DEFAULT_PROTOCOL="Auto"
+    ;;
+  *input/mice)
+    MOUSE_PROTOCOL_CHOICES="ImPS/2, ExplorerPS/2"
+    DEFAULT_PROTOCOL="ImPS/2"
+    ;;
+  *atibm|*atixl|*sunmouse)
+    MOUSE_PROTOCOL_CHOICES="BusMouse"
+    DEFAULT_PROTOCOL="BusMouse"
+    ;;
+  *gpmdata)
+    MOUSE_PROTOCOL_CHOICES="IntelliMouse"
+    DEFAULT_PROTOCOL="IntelliMouse"
+    ;;
+esac
+db_subst xserver-xorg/config/inputdevice/mouse/protocol choices $MOUSE_PROTOCOL_CHOICES
+if ! expr "$MOUSE_PROTOCOL_CHOICES" : ".*,.*" > /dev/null 2>&1; then
+  debug_echo "\$MOUSE_PROTOCOL_CHOICES has only one value; setting xserver-xorg/config/inputdevice/mouse/protocol to \"$DEFAULT_PROTOCOL\""
+  db_set xserver-xorg/config/inputdevice/mouse/protocol "$DEFAULT_PROTOCOL"
+else
+  auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/mouse/protocol "${AUTODETECTED_PROTOCOL:-$DEFAULT_PROTOCOL}"
+fi
+
+auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/emulate3buttons true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/inputdevice/mouse/emulate3buttons" "$?"
+db_go
+
+# server modules to load
+db_fget xserver-xorg/config/modules seen
+# if it's seen but empty, then give it a default value.  fixes stuff for people
+# upgrading through breezy, and no modules is enough of a pathological case that
+# people doing that would've modified their config in other ways anyway.
+if [ "$RET" = "true" ]; then
+  db_get xserver-xorg/config/modules
+  if [ -z "$RET" ]; then
+    db_reset xserver-xorg/config/modules
+  fi
+fi
+
+# kill me now.
+if echo "$MODULES" | grep -q "GLcore"; then
+  NEWOPTIONS=""
+  IFS_SAVE="$IFS"
+  IFS=","
+  for i in $MODULES; do
+    IFS="$IFS_SAVE"
+    if [ "$i" != "GLcore" ]; then
+      NEWMODULES="${NEWMODULES:+$NEWMODULES,}${i%% }"
+    fi
+    IFS=","
+  done
+  IFS="$IFS_SAVE"
+  MODULES="$NEWMODULES"
+  db_set xserver-xorg/config/modules "$MODULES"
+fi
+
+DEFAULT_MODULES='i2c, bitmap, ddc, dri, extmod, freetype, glx, int10, type1, vbe'
+if [ "$ARCH" = 'sparc' ]; then
+  DEFAULT_MODULES="${DEFAULT_MODULES}, cfb, cfb32"
+fi
+auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/modules "${DEFAULT_MODULES}" || true
+db_go
+
+# files and dri sections
+auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/write_files_section true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/write_files_section" "$?"
+db_go
 if [ -e "$CONFIG_AUX_DIR/.migrateconfig" ]; then
   AUTODETECT_VIDEO="yes"
   rm -f $CONFIG_AUX_DIR/.migrateconfig
