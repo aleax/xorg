@@ -287,8 +287,8 @@ Section "InputDevice"
 	Identifier	"Configured Mouse"
 	Driver		"mouse"
 	Option		"CorePointer"
-	Option		"Device"		"/dev/input/mice"
-	Option		"Protocol"		"ExplorerPS/2"
+	Option		"Device"		"$MOUSE_PORT"
+	Option		"Protocol"		"$MOUSE_PROTOCOL"
 SECTION
 if [ -n "$DO_EMULATE3BUTTONS" ]; then
   printf "\tOption\t\t\"Emulate3Buttons\"\t\"true\"\n" >&4
