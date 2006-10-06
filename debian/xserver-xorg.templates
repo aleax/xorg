@@ -295,7 +295,8 @@ _Description: Attempt mouse device autodetection?
 
 Template: xserver-xorg/config/inputdevice/mouse/port
 Type: select
-Choices: ${choices}
+Choices: /dev/input/mice, /dev/psaux, /dev/ttyS0, /dev/tts0, /dev/gpmdata
+Default: ImPS/2
 _Description: Mouse port:
  For the X Window System graphical user interface to operate correctly,
  certain characteristics of the mouse (or other pointing device, such as a
