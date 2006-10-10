@@ -24,10 +24,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfree86 4.3.0.dfsg.1-5\n"
+"Project-Id-Version: xorg 1:7.1.0-2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-17 09:13+0200\n"
-"PO-Revision-Date: 2006-05-28 23:32+0200\n"
+"PO-Revision-Date: 2006-10-10 00:29+0200\n"
 "Last-Translator: Ivan Vilata i Balaguer <ivan@selidor.net>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,20 +38,19 @@ msgstr ""
 #. Choices
 #: ../x11-common.templates:1001
 msgid "Root Only"
-msgstr ""
+msgstr "Només root"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
-#, fuzzy
 msgid "Console Users Only"
-msgstr "Només root, Només usuaris de la consola, Qualsevol"
+msgstr "Només usuaris de la consola"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
 msgid "Anybody"
-msgstr ""
+msgstr "Qualsevol"
 
 #. Type: select
 #. Description
@@ -72,10 +71,10 @@ msgid ""
 msgstr ""
 "Com que el servidor X corre amb privilegis de superusuari, podria no ser "
 "assenyat que qualsevol usuari l’iniciara, per motius de seguretat.  D’altra "
-"banda, encara té menys seny usar programes client X de propòsit general com "
-"a root, cosa que ocorreria si només root puguera iniciar el servidor X.  Un "
-"bon compromís és deixar iniciar el servidor X només a aquells usuaris que "
-"hagen entrat en el sistema per una de les consoles virtuals."
+"banda, encara té menys seny emprar programes client X de propòsit general "
+"com a root, cosa que ocorreria si només root puguera iniciar el servidor X.  "
+"Un bon compromís és deixar iniciar el servidor X només a aquells usuaris que "
+"hagen entrat al sistema per una de les consoles virtuals."
 
 #. Type: string
 #. Description
@@ -95,13 +94,13 @@ msgid ""
 "priority).  The default nice value for ordinary processes is 0, and this is "
 "also the recommend value for the X server."
 msgstr ""
-"En usar nuclis de sistema operatiu que posseeixen una estratègia particular "
-"de planificació, a sovint s’ha notat que el rendiment del servidor X millora "
-"si s’executa amb una prioritat de procés major que l’habitual; la prioritat "
-"d’un procés es coneix com el seu valor de «nice».  Aquest varia entre -20 "
-"(prioritat extremadament alta, «desagradable» als altres processos) i 19 "
-"(prioritat extremadament baixa).  El valor de «nice» d’un procés ordinari és "
-"0, valor també recomanat per al servidor X."
+"En emprar nuclis de sistema operatiu que posseeixen una estratègia "
+"particular de planificació, a sovint s’ha notat que el rendiment del "
+"servidor X millora si s’executa amb una prioritat de procés major que "
+"l’habitual; la prioritat d’un procés es coneix com el seu valor de «nice».  "
+"Aquest varia entre -20 (prioritat extremadament alta, «desagradable» als "
+"altres processos) i 19 (prioritat extremadament baixa).  El valor de «nice» "
+"d’un procés ordinari és 0, valor també recomanat per al servidor X."
 
 #. Type: string
 #. Description
@@ -155,7 +154,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:6001
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr ""
+msgstr "No s’ha pogut eliminar el directori «/usr/X11R6/bin»."
 
 #. Type: note
 #. Description
@@ -167,6 +166,12 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"Aquesta actualització necessita eliminar el directori «/usr/X11R6/bin» i "
+"reemplaçar‐lo per un enllaç simbòlic.  S’ha provat de fer‐ho però s’ha "
+"fallat, molt probablement perquè el directori no està encara buit.  Cal que "
+"lleveu d’emmig els fitxers que s’hi troben actualment, de forma que es puga "
+"completar la instaŀlació.  Si voleu, podeu tornar‐los al lloc quan s’haja "
+"creat l’enllaç simbòlic."
 
 #. Type: note
 #. Description
@@ -176,6 +181,9 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
+"La instaŀlació d’aquest paquet fallarà i eixirà per a que pugueu fer‐ho.  "
+"Per favor, torneu a executar el procediment d’actualització una volta hàgeu "
+"netejat el directori."
 
 #. Type: boolean
 #. Description
@@ -230,7 +238,7 @@ msgstr ""
 "O bé no teniu cap maquinari de vídeo instaŀlat en aquesta màquina (per "
 "exemple, només teniu una consola sèrie), o bé el programa «discover» no ha "
 "pogut determinar quin servidor X és l’apropiat per al vostre maquinari de "
-"vídeo.  Açò pot ser degut a una informació incompleta en la base de dades de "
+"vídeo.  Açò pot ser degut a una informació incompleta a la base de dades de "
 "maquinari de «discover», o potser no hi haja cap servidor X disponible per "
 "al vostre maquinari de vídeo."
 
@@ -265,7 +273,7 @@ msgid ""
 "\"; this is generally the video card and monitor used for display when the "
 "computer is booted up."
 msgstr ""
-"Per favor, configureu el dispositiu que s’usarà com al «cap principal» de "
+"Per favor, configureu el dispositiu que s’emprarà com al «cap principal» de "
 "l’ordinador; aquest és generalment la targeta de vídeo i monitor als quals "
 "l’ordinador escriu quan es posa en marxa."
 
@@ -318,7 +326,7 @@ msgstr ""
 #: ../xserver-xorg.templates:5001
 msgid "Write default Files section to configuration file?"
 msgstr ""
-"Voleu escriure una secció «Files» per defecte en el fitxer de configuració?"
+"Voleu escriure una secció «Files» per defecte al fitxer de configuració?"
 
 #. Type: boolean
 #. Description
@@ -332,7 +340,7 @@ msgstr ""
 "La secció «Files» del fitxer de configuració del servidor X li diu on pot "
 "trobar els mòduls del servidor, la base de dades de colors RGB i els fitxers "
 "de tipus de lletra.  Aquesta és una opció només recomanada a usuaris "
-"avançats.  Cal que l’habiliteu en la majoria dels casos."
+"experminentats.  Cal que l’habiliteu en la majoria dels casos."
 
 #. Type: boolean
 #. Description
@@ -344,10 +352,10 @@ msgid ""
 "rearrange the default set of local font paths."
 msgstr ""
 "Inhabiliteu aquesta opció si voleu mantenir la vostra pròpia secció «Files» "
-"en el fitxer de configuració del servidor d’X.Org.  Açò pot ser necessari "
-"per a eliminar la referència al servidor local de tipus de lletra, afegir "
-"una referència a un servidor de tipus diferent, o per a reorganitzar el "
-"conjunt per defecte de camins locals cap als tipus."
+"al fitxer de configuració del servidor d’X.Org.  Açò pot ser necessari per a "
+"eliminar la referència al servidor local de tipus de lletra, afegir una "
+"referència a un servidor de tipus diferent, o per a reorganitzar el conjunt "
+"per defecte de camins locals cap als tipus."
 
 #. Type: multiselect
 #. Description
@@ -362,8 +370,8 @@ msgid ""
 "This option is recommended to experienced users only.  In most cases, all of "
 "these modules should be enabled."
 msgstr ""
-"Aquesta és una opció només recomanada a usuaris avançats.  Cal que habiliteu "
-"tots aquests mòduls en la majoria dels casos."
+"Aquesta és una opció només recomanada a usuaris experimentats.  Cal que "
+"habiliteu tots aquests mòduls en la majoria dels casos."
 
 #. Type: multiselect
 #. Description
@@ -387,27 +395,26 @@ msgid ""
 " - bitmap: font rasterizer (so are freetype, and type1 modules)."
 msgstr ""
 " - glx:    Habilita la representació d’OpenGL.\n"
-" - dri:    Habilita en el servidor X la Infraestructura de Representació\n"
-"           Directa (DRI).\n"
+" - dri:    Habilita al servidor X la Infraestructura de Representació "
+"Directa\n"
+"           (DRI).\n"
 " - vbe:    Habilita l’ús de les extensions VESA del BIOS.  Permet consultar\n"
 "           les capacitats del monitor via la targeta de vídeo.\n"
 " - ddc:    Habilita l’ús del Data Display Channel.  Permet consultar les\n"
 "           capacitats del monitor via la targeta de vídeo.\n"
-" - int10:  Emulador d’x86 en mode real que s’usa per a iniciar via "
-"programari\n"
-"           les targetes VGA secundàries.  És necessari si voleu habilitar "
-"el\n"
-"           mòdul «vbe».\n"
+" - int10:  Emulador d’x86 en mode real que s’empra per a iniciar via\n"
+"           programari les targetes VGA secundàries.  És necessari si voleu\n"
+"           habilitar el mòdul «vbe».\n"
 " - dbe:    Habilita l’extensió de doble memòria intermèdia («double-"
 "buffer»)\n"
 "           del servidor.  És útil per a les animacions i operacions de "
 "vídeo.\n"
-" - extmod: Habilita moltes extensions tradicionals usades comunament, com "
-"les\n"
-"           finestres amb forma, la memòria compartida, el canvi de mode de\n"
+" - extmod: Habilita moltes extensions tradicionals emprades comunament, com\n"
+"           les finestres amb forma, la memòria compartida, el canvi de mode "
+"de\n"
 "           vídeo, DGA i Xv.\n"
-" - record: Implementa l’extensió RECORD, usada comunament en la comprovació\n"
-"           del servidor.\n"
+" - record: Implementa l’extensió RECORD, emprada comunament durant la\n"
+"           comprovació del servidor.\n"
 " - bitmap: Un representador de tipus de lletra (com els mòduls «bitmap»,\n"
 "           «freetype» i «type1»)."
 
@@ -451,7 +458,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:9001
 msgid "Generic Video Card"
-msgstr ""
+msgstr "Targeta de vídeo genèrica"
 
 #. Type: select
 #. Description
@@ -485,7 +492,8 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:11001
 msgid "Use kernel framebuffer device interface?"
-msgstr "Voleu usar la interfície cap al dispositiu de «framebuffer» del nucli?"
+msgstr ""
+"Voleu emprar la interfície cap al dispositiu de «framebuffer» del nucli?"
 
 #. Type: boolean
 #. Description
@@ -552,13 +560,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:12001
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"Potser desitgeu usar l’ordre «lspci -X» per a determinar la ubicació de la "
-"vostra targeta PCI, AGP o PCI-Express en el bus."
+"Potser desitgeu emprar l’ordre «lspci» per a determinar la ubicació de la "
+"vostra targeta PCI, AGP o PCI-Express al bus."
 
 #. Type: string
 #. Description
@@ -580,7 +587,7 @@ msgstr "El format de l’identificador de bus no és correcte"
 #. Description
 #: ../xserver-xorg.templates:14001
 msgid "Amount of memory (kB) to be used by the video card:"
-msgstr "Quantitat de memòria (en kB) que usarà la targeta de vídeo:"
+msgstr "Quantitat de memòria (en kB) que emprarà la targeta de vídeo:"
 
 #. Type: string
 #. Description
@@ -592,7 +599,7 @@ msgid ""
 "main system memory for their needs."
 msgstr ""
 "Normalment, el servidor X detecta automàticament la quantitat de memòria "
-"dedicada usada per la vostra targeta de vídeo; però, alguns xips de vídeo "
+"dedicada emprada per la vostra targeta de vídeo; però, alguns xips de vídeo "
 "integrats (com l’Intel i810) tenen poca o gens de memòria pròpia, i en canvi "
 "la prenen de la memòria principal del sistema per a les seues necessitats."
 
@@ -611,7 +618,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:15001
 msgid "XKB rule set to use:"
-msgstr "Regla d’XKB a usar:"
+msgstr "Regla d’XKB a emprar:"
 
 #. Type: string
 #. Description
@@ -636,15 +643,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:15001
-#, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
-"Els usuaris avançats poden usar qualsevol joc definit de regles d’XKB.  Si "
-"heu instaŀlat el paquet «xkeyboard-config», vegeu el directori «/etc/X11/xkb/"
-"rules» per a trobar els jocs disponibles de regles."
+"Els usuaris experimentats poden emprar qualsevol joc definit de regles "
+"d’XKB.  Si heu desempaquetat el paquet «xkb-data», vegeu el directori «/usr/"
+"share/X11/xkb/rules» per a trobar els jocs disponibles de regles."
 
 #. Type: string
 #. Description
@@ -721,15 +727,15 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:16001
-#, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
-"Els usuaris avançats poden usar qualsevol model definit pel joc de regles "
-"d’XKB escollit.  Si heu instaŀlat el paquet «xkeyboard-config», vegeu el "
-"directori «/etc/X11/xkb/rules» per a trobar els jocs disponibles de regles."
+"Els usuaris experimentats poden emprar qualsevol model definit pel joc de "
+"regles d’XKB escollit.  Si heu desempaquetat el paquet «xkb-data», vegeu el "
+"directori «/usr/share/X11/xkb/rules» per a trobar els jocs disponibles de "
+"regles."
 
 #. Type: string
 #. Description
@@ -762,15 +768,15 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:17001
-#, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"Els usuaris avançats poden usar qualsevol model definit pel joc de regles "
-"d’XKB escollit.  Si heu instaŀlat el paquet «xkeyboard-config», vegeu el "
-"directori «/etc/X11/xkb/rules» per a trobar els jocs disponibles de regles."
+"Els usuaris experimentats poden emprar qualsevol disposició definida pel joc "
+"de regles d’XKB escollit.  Si heu desempaquetat el paquet «xkb-data», vegeu "
+"el directori «/usr/share/X11/xkb/rules» per a trobar els jocs disponibles de "
+"regles."
 
 #. Type: string
 #. Description
@@ -819,17 +825,16 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:18001
-#, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
-"Els usuaris avançats poden usar qualsevol variant oferida per la disposició "
-"d’XKB escollida.  Si heu instaŀlat el paquet «xkeyboard-config», cerqueu en "
-"el directori «/etc/X11/xkb/symbols» el fitxer corresponent a la disposició "
-"que heu escollit, per a trobar‐hi les variants disponibles."
+"Els usuaris experimentats poden emprar qualsevol variant oferida per la "
+"disposició d’XKB escollida.  Si heu desempaquetat el paquet «xkb-data», "
+"cerqueu al directori «/usr/share/X11/xkb/symbols» el fitxer corresponent a "
+"la disposició que heu escollit per a trobar‐hi les variants disponibles."
 
 #. Type: string
 #. Description
@@ -883,11 +888,10 @@ msgid ""
 "meta_win\"."
 msgstr ""
 "Com a exemple addicional, alguna gent prefereix tenir les tecles Meta "
-"disponibles en les tecles Alt del teclat (aquest és el comportament per "
-"defecte), mentre que altra gent prefereix tenir les tecles Meta en les "
-"tecles de Windows o en les tecles del «logo».  Si preferiu usar les tecles "
-"de Windows o les del «logo» com a tecles Meta, podeu entrar «altwin:"
-"meta_win»."
+"disponibles a les tecles Alt del teclat (aquest és el comportament per "
+"defecte), mentre que altra gent prefereix tenir les tecles Meta a les tecles "
+"de Windows o a les tecles del «logo».  Si preferiu emprar les tecles de "
+"Windows o les del «logo» com a tecles Meta, podeu entrar «altwin:meta_win»."
 
 #. Type: string
 #. Description
@@ -906,8 +910,8 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
-"Els usuaris avançats poden usar qualssevol opcions compatibles amb el model, "
-"disposició i variant d’XKB escollits."
+"Els usuaris experimentats poden emprar qualssevol opcions compatibles amb el "
+"model, disposició i variant d’XKB escollits."
 
 #. Type: string
 #. Description
@@ -989,15 +993,15 @@ msgid ""
 "or bus/inport devices from your computer, please do so with the computer's "
 "power off."
 msgstr ""
-"Cal determinar quin port (tipus de connexió) usa el ratolí.  Els ports sèrie "
-"usen connectors amb forma de D amb 9 o 25 pius (connectors DB‐9 i DB‐25); el "
-"connector del ratolí és femella (té forats) i el de l’ordinador és mascle "
-"(té pius).  Els ports PS/2 són connectors rodons i menuts (DIN) amb 6 pius; "
-"el connector del ratolí és mascle i el de l’ordinador, femella.  Altrament, "
-"podeu usar un ratolí USB, un de bus/inport (molt antics), o podeu usar el "
-"programa «gpm» com a repetidor.  Si necessiteu connectar o desconnectar "
-"dispositius PS/2 o bus/inport del vostre ordinador, per favor feu‐ho amb "
-"l’ordinador desconnectat."
+"Cal determinar quin port (tipus de connexió) empra el ratolí.  Els ports "
+"sèrie usen connectors amb forma de D amb 9 o 25 pius (connectors DB‐9 i DB‐"
+"25); el connector del ratolí és femella (té forats) i el de l’ordinador és "
+"mascle (té pius).  Els ports PS/2 són connectors rodons i menuts (DIN) amb 6 "
+"pius; el connector del ratolí és mascle i el de l’ordinador, femella.  "
+"Altrament, podeu emprar un ratolí USB, un de bus/inport (molt antics), o "
+"podeu emprar el programa «gpm» com a repetidor.  Si necessiteu connectar o "
+"desconnectar dispositius PS/2 o bus/inport del vostre ordinador, per favor "
+"feu‐ho amb l’ordinador desconnectat."
 
 #. Type: select
 #. Description
@@ -1032,7 +1036,7 @@ msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
 msgstr ""
-"També podeu usar aquesta opció amb ratolins amb 3 o més botons; el botó "
+"També podeu emprar aquesta opció amb ratolins amb 3 o més botons; el botó "
 "central continuarà funcionant amb normalitat."
 
 #. Type: boolean
@@ -1117,7 +1121,7 @@ msgid ""
 msgstr ""
 "Amb l’opció «medium» se vos presentarà una llista de resolucions i "
 "freqüències de refresc, com «800x600 @ 85Hz»; cal que escolliu el millor "
-"mode que vulgueu usar (sempre que el monitor l’accepte)."
+"mode que vulgueu emprar (sempre que el monitor l’accepte)."
 
 #. Type: select
 #. Description
@@ -1133,31 +1137,31 @@ msgstr ""
 #. Choices
 #: ../xserver-xorg.templates:26001
 msgid "Up to 14 inches (355 mm)"
-msgstr ""
+msgstr "Fins a 14 polzades (355 mm)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
 msgid "15 inches (380 mm)"
-msgstr ""
+msgstr "15 polzades (380 mm)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
 msgid "17 inches (430 mm)"
-msgstr ""
+msgstr "17 polzades (430 mm)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
 msgid "19-20 inches (480-510 mm)"
-msgstr ""
+msgstr "19‐20 polzades (480‐510 mm)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:26001
 msgid "21 inches (530 mm) or more"
-msgstr ""
+msgstr "21 polzades (530 mm) o més"
 
 #. Type: select
 #. Description
@@ -1220,14 +1224,14 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:29001
 msgid "Generic Monitor"
-msgstr ""
+msgstr "Monitor genèric"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:30001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
-"Voleu escriure els rangs de sincronització del monitor en el fitxer de "
+"Voleu escriure els rangs de sincronització del monitor al fitxer de "
 "configuració?"
 
 #. Type: boolean
@@ -1240,7 +1244,7 @@ msgid ""
 msgstr ""
 "El servidor X és capaç de detectar automàticament els rangs de "
 "sincronització del monitor en la majoria dels casos, però a voltes necessita "
-"indicacions.  Aquesta és una opció per a usuaris avançats; deixeu‐ne el "
+"indicacions.  Aquesta és una opció per a usuaris experimentats; deixeu‐ne el "
 "valor per defecte."
 
 #. Type: string
@@ -1261,8 +1265,8 @@ msgstr ""
 "Per favor, entreu o bé una llista de valors discrets separats per comes (per "
 "a monitors de freqüències fixes), o bé un parell de valors separats per un "
 "guió (per a tots els monitors CRT moderns).  Hauríeu de poder trobar aquesta "
-"informació en el manual del monitor.  Els valors per sota de 30 o per sobre "
-"de 130 són extremadament rars."
+"informació al manual del monitor.  Els valors per sota de 30 o per sobre de "
+"130 són extremadament rars."
 
 #. Type: string
 #. Description
@@ -1282,8 +1286,8 @@ msgstr ""
 "Per favor, entreu o bé una llista de valors discrets separats per comes (per "
 "a monitors de freqüències fixes), o bé un parell de valors separats per un "
 "guió (per a tots els monitors CRT moderns).  Hauríeu de poder trobar aquesta "
-"informació en el manual del monitor.  Els valors per sota de 50 o per sobre "
-"de 160 són extremadament rars."
+"informació al manual del monitor.  Els valors per sota de 50 o per sobre de "
+"160 són extremadament rars."
 
 #. Type: note
 #. Description
@@ -1305,7 +1309,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:34001
 msgid "Video modes to be used by the X server:"
-msgstr "Modes de vídeo que pot usar el servidor X:"
+msgstr "Modes de vídeo que pot emprar el servidor X:"
 
 #. Type: multiselect
 #. Description
@@ -1317,7 +1321,7 @@ msgid ""
 msgstr ""
 "Per favor, deixeu marcades només les resolucions que voleu que use el "
 "servidor X.  Eliminar‐les totes és de fet el mateix que no eliminar‐ne cap, "
-"ja que en ambdós casos el servidor X provarà d’usar la major resolució "
+"ja que en ambdós casos el servidor X provarà d’emprar la major resolució "
 "disponible."
 
 #. Type: select
@@ -1378,7 +1382,7 @@ msgstr "Les cometes dobles no són vàlides"
 #: ../xserver-xorg.templates:37001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr ""
-"No es permeten els caràcters de cometes dobles (\") en el valor de l’entrada."
+"No es permeten els caràcters de cometes dobles (\") al valor de l’entrada."
 
 #. Type: note
 #. Description
@@ -1390,7 +1394,7 @@ msgstr "Cal un valor numèric"
 #. Description
 #: ../xserver-xorg.templates:38001
 msgid "Characters other than digits are not allowed in the entry."
-msgstr "No es permeten altres caràcters que no siguen dígits en l’entrada."
+msgstr "No es permeten altres caràcters que no siguen dígits a l’entrada."
 
 #. Type: boolean
 #. Description
@@ -1407,7 +1411,7 @@ msgid ""
 "installer."
 msgstr ""
 "La disposició de teclat escollida per defecte pel servidor d’Xorg es basarà "
-"en una combinació de l’idioma i disposició de teclat seleccionats en "
+"en una combinació de l’idioma i disposició de teclat seleccionats a "
 "l’instaŀlador."
 
 #. Type: boolean
@@ -1419,10 +1423,3 @@ msgid ""
 msgstr ""
 "Escolliu aquesta opció si voleu que es torne a detectar la disposició del "
 "teclat.  No l’escolliu si voleu mantenir‐ne l’actual."
-
-#~ msgid ""
-#~ "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
-#~ "inches (480-510 mm), 21 inches (530 mm) or more"
-#~ msgstr ""
-#~ "Fins a 14 polzades (355 mm), 15 polzades (380 mm), 17 polzades (430mm), "
-#~ "19‐20 polzades (480‐510 mm), 21 polzades (530 mm) o més"
