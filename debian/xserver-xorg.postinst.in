@@ -1929,6 +1929,10 @@ if [ -L "$SERVER_SYMLINK" ] || ! [ -e "$SERVER_SYMLINK" ]; then
        "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
      [ "$(echo "/usr/bin/X11/Xorg" | md5sum)" = \
        "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
+     [ "$(echo "/usr/bin/X11/XFree86" | md5sum)" = \
+       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
+     [ "$(echo "/bin/true" | md5sum)" = \
+       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
      ! [ -e "$SERVER_SYMLINK" ]; then
     # finally, only update the symlink if this package contains the
     # selected default X server.

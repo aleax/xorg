@@ -41,15 +41,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
     fi
   done
 
-  # If this checksum got removed on upgrade for some reason, re-add it
-  if ! [ -e "$SERVER_SYMLINK_CHECKSUM" ]; then
-    message "Server symlink checksum doesn't exist. We need to make it"
-    if [ -L "$SERVER_SYMLINK" ] ; then
-      message "Re-adding lost server symlink checksum"
-      readlink "$SERVER_SYMLINK" | md5sum > "$SERVER_SYMLINK_CHECKSUM"
-    fi
-  fi
-
   # the transition from /var/lib/xfree86 to /var/lib/x11 occurred in
   # 7.0.0-0ubuntu1 and 1:7.0.0
   if [ -n "$2" ] && \
