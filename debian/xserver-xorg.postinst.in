@@ -1974,7 +1974,8 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
   # it regardless and back it up.
   if [ "$(md5sum "$XORGCONFIG")" = "$(cat "$XORGCONFIG_CHECKSUM")" ] || \
      ! [ -e "$XORGCONFIG" ] || [ -n "$RECONFIGURE" ]; then
-    # they match or user deleted the file; prepare a new version
+    # they match or user deleted the file or they're running dpkg-reconfigure; 
+    # prepare a new version
     NEW_XORGCONFIG="$XORGCONFIG.dpkg-new"
     if [ -n "$XRESPROBE_DEBUG" ]; then
       set -x
