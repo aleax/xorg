@@ -41,6 +41,7 @@ include debian/scripts/vars.$(ARCH)
 clean: cleanscripts
 	dh_testdir
 	dh_clean stamp-* debian/local/X debian/po/pothead
+	-rm -rf stampdir
 	-debconf-updatepo
 
 

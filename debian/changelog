@@ -7,7 +7,12 @@ xorg (1:7.1.0-6) UNRELEASED; urgency=low
   [ Debconf translations added ]
   * Turkish.
 
- -- Christian Perrier <bubulle@debian.org>  Fri, 20 Oct 2006 19:19:57 +0200
+  [ Julien Cristau ]
+  * Readd /etc/X11/Xresources/x11-common which was lost in the transition from
+    the monolith.  This enables the -color customization, and closes: #365358.
+  * Delete stampdir in debian/rules clean.
+
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Tue, 24 Oct 2006 01:09:15 +0200
 
 xorg (1:7.1.0-5) unstable; urgency=low
 
