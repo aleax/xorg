@@ -11,8 +11,10 @@ xorg (1:7.1.0-6) UNRELEASED; urgency=low
   * Readd /etc/X11/Xresources/x11-common which was lost in the transition from
     the monolith.  This enables the -color customization, and closes: #365358.
   * Delete stampdir in debian/rules clean.
+  * Don't load the obsolete Type 1 font backend in the server, as suggested by
+    Juliusz Chroboczek (closes: #364965).
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Tue, 24 Oct 2006 01:09:15 +0200
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Tue, 24 Oct 2006 04:20:15 +0200
 
 xorg (1:7.1.0-5) unstable; urgency=low
 

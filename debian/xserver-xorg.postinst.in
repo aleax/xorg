@@ -1374,7 +1374,7 @@ if echo "$MODULES" | grep -q "GLcore"; then
   db_set xserver-xorg/config/modules "$MODULES"
 fi
 
-DEFAULT_MODULES='i2c, bitmap, ddc, dri, extmod, freetype, glx, int10, type1, vbe'
+DEFAULT_MODULES='i2c, bitmap, ddc, dri, extmod, freetype, glx, int10, vbe'
 if [ "$ARCH" = 'sparc' ]; then
   DEFAULT_MODULES="${DEFAULT_MODULES}, cfb, cfb32"
 fi
@@ -2015,6 +2015,7 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 	/^[[:space:]]*Section[[:space:]]\+"Module"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
 		/^[[:space:]]*Load[[:space:]]\+"GLcore"[[:space:]]*$/d
 		/^[[:space:]]*Load[[:space:]]\+"speedo"[[:space:]]*$/d
+		/^[[:space:]]*Load[[:space:]]\+"type1"[[:space:]]*$/d
 	}
 	/^[[:space:]]*Section[[:space:]]\+"Files"[[:space:]]*$/,/*[[:space:]]*EndSection[[:space:]]*$/ {
 		# Delete the module path
