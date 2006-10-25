@@ -1,11 +1,10 @@
+# translation of xserver-xorg_po_el.po to Greek
 # debconf templates for xorg-x11 package
 # Greek translation
 #
 # $Id: el.po 1042 2006-01-09 07:55:08Z ender $
 #
 # Copyrights:
-# Branden Robinson, 2000-2004
-# Konstantinos Margaritis <markos@debian.org>, 2004
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
@@ -22,37 +21,40 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
+# Branden Robinson, 2000-2004.
+# Konstantinos Margaritis <markos@debian.org>, 2004.
+# QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: el\n"
+"Project-Id-Version: xserver-xorg_po_el\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-21 11:30+0200\n"
-"PO-Revision-Date: 2005-12-19 18:40+0200\n"
-"Last-Translator: Konstantinos Margaritis <markos@debian.org>\n"
+"PO-Revision-Date: 2006-10-25 14:49+0300\n"
+"Last-Translator: QUAD-nrg.net <yodesy@quad-nrg.net>\n"
 "Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:1001
 msgid "Video modes to be used by the X server:"
-msgstr ""
+msgstr "Οι καταστάσεις οθόνης που θα χρησιμοποιηθούν από τον εξυπηρετητή Χ:"
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:1001
-#, fuzzy
 msgid ""
 "Please keep only the resolutions you would like the X server to use.  "
 "Removing all of them is the same as removing none, since in both cases the X "
 "server will attempt to use the highest possible resolution."
 msgstr ""
-"Αν υπάρχουν κάποιες αναλύσεις που δεν επιθυμείτε να χρησιμοποιηθούν από τον "
-"εξυπηρετητή X, ακόμη κι αν ο εξοπλισμός σας τις υποστηρίζει, αφαιρέστε τις "
-"από την παρακάτω λίστα.  Η αφαίρεση όλων πρακτικά έχει το ίδιο αποτέλεσμα με "
-"την αφαίρεση καμίας, καθώς και στις δύο περιπτώσεις ο εξυπηρετητής X θα "
+"Παρακαλώ κρατήστε μόνο τις αναλύσεις που θα θέλατε να χρησιμοποιηθούν από "
+"τον εξυπηρετητή X. Το να αφαιρέσετε όλες τις αναλύσεις είναι το ίδιο με το "
+"να μην αφαιρέσετε καμμία, καθώς και στις δύο περιπτώσεις ο εξυπηρετητής X θα "
 "προσπαθήσει να χρησιμοποιήσει την υψηλότερη δυνατή ανάλυση."
 
 #. Type: boolean
@@ -64,7 +66,6 @@ msgstr "Να γίνει προσπάθεια αυτόματης ανίχνευσ
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:2001
-#, fuzzy
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -72,37 +73,34 @@ msgid ""
 "or driver module.  If it succeeds, further configuration questions about "
 "your video hardware will be pre-answered."
 msgstr ""
-"Αποδεχτείτε αυτήν την επιλογή, αν επιθυμείτε την αυτόματη ανίχνευση και "
-"χρήση του καταλληλότερου εξυπηρετητή X και οδηγού για την κάρτα οθόνης σας.  "
-"Αν η αυτόματη ανίχνευση αποτύχει, θα σας ζητηθεί να ορίσετε τον επιθυμητό "
-"εξυπηρετητή X και/ή τον οδηγό της κάρτας.  Αν η αυτόματη ανίχνευση επιτύχει, "
-"οι επιπλέον ερωτήσεις του debconf για την κάρτα οθόνης θα έχουν ήδη "
-"απαντηθεί."
+"Θα πρέπει να κάνετε αυτήν την επιλογή, αν επιθυμείτε να γίνει προσπάθεια "
+"αυτόματης ανίχνευσης του καταλληλότερου εξυπηρετητή X και οδηγού για την "
+"κάρτα γραφικών σας. Αν η αυτόματη ανίχνευση αποτύχει, θα σας ζητηθεί να "
+"ορίσετε τον επιθυμητό εξυπηρετητή X και/ή τον οδηγό της κάρτας.  Αν πετύχει, "
+"επιπλέον ερωτήσεις για το υλικό της κάρτας γραφικών σας θα είναι προ-"
+"απαντημένες."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:2001
-#, fuzzy
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
 "is only one available."
 msgstr ""
-"Αν παρ' όλ' αυτά, επιθυμείτε να επιλέξετε μόνοι σας το εξυπηρετητή X και τον "
-"οδηγό της κάρτας οθόνης, απορρίψτε αυτήν την επιλογή.  Δε θα σας ζητηθεί να "
-"επιλέξετε εξυπηρετητή X αν υπάρχει μόνο ένας διαθέσιμος."
+"Αν θα θέλατε όμως να επιλέξετε μόνοι σας τον εξυπηρετητή X και τον οδηγό της "
+"κάρτας οθόνης, απορρίψτε αυτήν την επιλογή. Δεν θα σας ζητηθεί να επιλέξετε "
+"εξυπηρετητή X αν υπάρχει μόνο ένας διαθέσιμος."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:3001
-#, fuzzy
 msgid "No X server known for your video hardware"
-msgstr "Δε βρέθηκε εξυπηρετητής X κατάλληλος για τη κάρτα οθόνης σας."
+msgstr "Δεν υπάρχει γνωστός εξυπηρετητής X για την κάρτα οθόνης σας"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:3001
-#, fuzzy
 msgid ""
 "There is either no video hardware installed on this machine (e.g. serial "
 "console only), or the \"discover\" program was unable to determine which X "
@@ -110,38 +108,33 @@ msgid ""
 "incomplete information in discover's hardware database, or because your "
 "video hardware is not supported by the available X servers."
 msgstr ""
-"Είτε δεν έχετε εγκατεστημένη κάρτα οθόνης στο σύστημα αυτό (ίσως λόγω χρήσης "
-"μέσω σειριακής θύρας), ή το πρόγραμμα \"discover\" δεν κατάφερε να "
-"αναγνωρίσει ποιος είναι ο καταλληλότερος εξυπηρετητής X για την κάρτα οθόνης "
-"σας.  Αυτό μπορεί να οφείλεται σε μη επαρκείς πληροφορίες στην βάση "
-"δεδομένων υλικού του discover, ή απλώς να μην υποστηρίζεται η κάρτα οθόνης "
-"σας από τους διαθέσιμους διακομιστές X."
+"Είτε δεν υπάρχει εγκαταστημένη κάρτα οθόνης στο σύστημα αυτό (πχ. υπάρχει "
+"μόνο σειριακή κονσόλα), ή το πρόγραμμα \"discover\" δεν κατάφερε να "
+"προσδιορίσει ποιος είναι ο κατάλληλος εξυπηρετητής X για την κάρτα οθόνης "
+"σας. Αυτό μπορεί να οφείλεται είτε σε ανεπαρκείς πληροφορίες της βάσης "
+"δεδομένων υλικού του discover, ή στο ότι η κάρτα οθόνης σας δεν "
+"υποστηρίζεται από τους διαθέσιμους εξυπηρετητές X."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001
-#, fuzzy
 msgid "Multiple potential default X servers for your hardware"
-msgstr "Πολλαπλοί πιθανοί διακομιστές X για την κάρτα οθόνης σας."
+msgstr ""
+"Πολλαπλοί πιθανοί προεπιλεγμένοι εξυπηρετητές X για την κάρτα οθόνης σας"
 
 #. Type: note
 #. Description
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001 ../xserver-xorg.templates:8001
-#, fuzzy
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
 "automatically select a default X server."
 msgstr ""
 "Ανιχνεύθηκαν πολλαπλές κάρτες οθόνης και είναι απαραίτητη η χρήση "
-"διαφορετικών εξυπηρετητών X για κάθε μία από αυτές.  Έτσι, δεν είναι δυνατή "
-"η αυτόματη επιλογή κάποιου προκαθορισμένου εξυπηρετητή X.  Παρακαλώ, "
-"ρυθμίστε τη κάρτα οθόνης που θα χρησιμοποιηθεί ως η κύρια συσκευή "
-"απεικόνισης του υπολογιστή σας (\"primary head\"). Αυτή συνήθως είναι η "
-"κάρτα οθόνης (και οθόνη) που χρησιμοποιείται κατά την εκκίνηση του "
-"υπολογιστή σας."
+"διαφορετικών εξυπηρετητών X για την υποστήριξη των διαφόρων συσκευών. Δεν "
+"είναι λοιπόν δυνατή η αυτόματη επιλογή κάποιου προκαθορισμένου εξυπηρετητή X."
 
 #. Type: note
 #. Description
@@ -153,57 +146,55 @@ msgid ""
 "\"; this is generally the video card and monitor used for display when the "
 "computer is booted up."
 msgstr ""
+"Παρακαλώ ρυθμίστε την συσκευή που θα χρησιμοποιηθεί σαν η \"πρώτη κεφαλή\" "
+"γραφικών αυτού του υπολογιστή. Αυτή είναι συνήθως η κάρτα γραφικών και η "
+"οθόνη που χρησιμοποιούνται για εικόνα όταν ξεκινά ο υπολογιστής σας."
 
 #. Type: note
 #. Description
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001 ../xserver-xorg.templates:8001
-#, fuzzy
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
 "multi-head configuration."
 msgstr ""
-"Την παρούσα στιγμή, το debconf υποστηρίζει τη ρύθμιση μόνο της μίας κάρτας "
-"οθόνης. Ωστόσο, το αρχείο ρυθμίσεων του εξυπηρετητή X μπορεί να "
-"παραμετροποιηθεί ώστε να υποστηρίζει τη ταυτόχρονη χρήση περισσότερων από "
-"μιας καρτών οθόνης."
+"Η διαδικασία ρύθμισης υποστηρίζει προς το παρόν μόνο διαμορφώσεις με μια "
+"μοναδική κάρτα γραφικών. Ωστόσο, το αρχείο ρυθμίσεων του εξυπηρετητή X "
+"μπορεί να διορθωθεί αργότερα ώστε να υποστηρίζει μια διαμόρφωση με πολλαπλές "
+"κάρτες."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:5001
-#, fuzzy
 msgid "Desired default X server:"
-msgstr "Επιλέξτε τον προκαθορισμένο εξυπηρετητή X."
+msgstr "Επιθυμητός προεπιλεγμένος εξυπηρετητής X:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:5001
-#, fuzzy
 msgid ""
 "The X server is the hardware interface of the X Window System.  It "
 "communicates with the video display and input devices, providing a "
 "foundation for the chosen Graphical User Interface (GUI)."
 msgstr ""
-"Ο εξυπηρετητής X είναι η διασύνδεση του συστήματος παραθύρων X (X Window "
-"System) με την κάρτα οθόνης.  Η λειτουργία του είναι η επικοινωνία με την "
-"κάρτα οθόνης και τις συσκευές αλληλεπίδρασης με το χρήστη (ποντίκι/"
-"πληκτρολόγιο), προσφέροντας έτσι ένα θεμέλιο για το επιλεγόμενο γραφικό "
+"Ο εξυπηρετητής X είναι η διεπαφή του παραθυρικού συστήματος X (X Window "
+"System) με την κάρτα οθόνης. Επικοινωνεί με την κάρτα οθόνης και τις "
+"συσκευές εισόδου,  προσφέροντας έτσι μια βάση για το επιλεγμένο γραφικό "
 "περιβάλλον (GUI)."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:5001
-#, fuzzy
 msgid ""
 "Several X servers may be available; the default is selected via the /etc/X11/"
 "X symbolic link.  Some X servers may not work with some particular graphics "
 "hardware."
 msgstr ""
-"Υπάρχουν αρκετοί εξυπηρετητές X διαθέσιμοι. Ο προκαθορισμένος επιλέγεται "
-"μέσω του συμβολικού δεσμού /etc/X11.  Κάποιοι εξυπηρετητές X δεν είναι "
-"συμβατοί με την συγκεκριμένη κάρτα οθόνης σας."
+"Μπορεί να υπάρχουν αρκετοί διαθέσιμοι εξυπηρετητές X. Ο προκαθορισμένος "
+"επιλέγεται μέσω του συμβολικού δεσμού /etc/X11. Μερικοί εξυπηρετητές X "
+"πιθανόν να μην δουλεύουν με μερικές συγκεκριμένες κάρτες γραφικών."
 
 #. Type: boolean
 #. Description
@@ -214,43 +205,40 @@ msgstr "Να αποθηκευτεί το τμήμα Αρχείων (Files) στ�
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:6001
-#, fuzzy
 msgid ""
 "The Files section of the X server configuration file tells the X server "
 "where to find server modules, the RGB color database, and font files.  This "
 "option is recommended to experienced users only.  In most cases, it should "
 "be enabled."
 msgstr ""
-"Το τμήμα Αρχείων του αρχείου ρυθμίσεων του εξυπηρετητή X καθορίζει τις "
-"θέσεις των μονάδων λογισμικού του εξυπηρετητή, τη χρωματική βάση δεδομένων "
-"RGB και τα αρχεία γραμματοσειρών.  Αυτή η επιλογή είναι για προχωρημένους "
-"χρήστες.  Για τις περισσότερες περιπτώσεις, συνιστάται η ενεργοποίησή της."
+"Η ενότητα Αρχεία του αρχείου ρυθμίσεων του εξυπηρετητή X προσδιορίζει για "
+"τον εξυπηρετητή Χ τις θέσεις των αρθρωμάτων του, την χρωματική βάση "
+"δεδομένων RGB και τα αρχεία γραμματοσειρών. Αυτή η επιλογή συνιστάται μόνο "
+"για πεπειραμένους χρήστες. Για τις περισσότερες περιπτώσεις, θα πρέπει να "
+"είναι ενεργοποιημένη."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:6001
-#, fuzzy
 msgid ""
 "Disable this option if you want to maintain a custom Files section into the "
 "X.Org server configuration file.  This may be needed to remove the reference "
 "to the local font server, add a reference to a different font server, or "
 "rearrange the default set of local font paths."
 msgstr ""
-"Απενεργοποιήστε αυτήν την επιλογή αν επιθυμείτε να δημιουργήσετε το δικό σας "
-"τμήμα Αρχείων (\"Files\" section) στο αρχείο ρυθμίσεων του εξυπηρετητή X."
-"Org.  Πιθανόν γιατί χρειάζεται να αφαιρέσετε την αναφορά σε κάποιο τοπικό "
-"διακομιστή γραμματοσειρών, να προσθέσετε μια αναφορά σε κάποιο διαφορετικό "
-"διακομιστή γραμματοσειρών, ή να αναδιοργανώσετε τις προκαθορισμένες τοπικές "
-"διαδρομές των γραμματοσειρών."
+"Απενεργοποιήστε αυτήν την επιλογή αν επιθυμείτε να δημιουργήσετε την δική "
+"σας Αρχεία (\"Files\") στο αρχείο ρυθμίσεων του εξυπηρετητή X.Org. Αυτό "
+"μπορεί να είναι απαραίτητο αν πρόκειται να αφαιρέσετε την αναφορά σε κάποιο "
+"τοπικό εξυπηρετητή γραμματοσειρών, να προσθέσετε μια αναφορά σε κάποιον "
+"διαφορετικό εξυπηρετητή γραμματοσειρών, ή να αναδιοργανώσετε τις "
+"προκαθορισμένες διαδρομές των τοπικών γραμματοσειρών."
 
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:7001
-#, fuzzy
 msgid "X.Org server modules that should be loaded by default:"
 msgstr ""
-"Επιλέξτε τις μονάδες λογισμικού του X.Org που θα πρέπει να φορτώνονται εξ "
-"ορισμού."
+"Αρθρώματα του εξυπηρετητή X.Org που θα πρέπει να φορτώνονται εξ ορισμού:"
 
 #. Type: multiselect
 #. Description
@@ -259,6 +247,8 @@ msgid ""
 "This option is recommended to experienced users only.  In most cases, all of "
 "these modules should be enabled."
 msgstr ""
+"Η επιλογή αυτή συνιστάται μόνο για έμπειρους χρήστες. Στις περισσότερες "
+"περιπτώσεις όλα αυτά τα αρθρώματα θα πρέπει να είναι ενεργοποιημένα."
 
 #. Type: multiselect
 #. Description
@@ -281,6 +271,29 @@ msgid ""
 " - record: implements the RECORD extension, often used in server testing;\n"
 " - bitmap: font rasterizer (so are freetype, and type1 modules)."
 msgstr ""
+" - glx   : υποστήριξη για OpenGL rendering;\n"
+" - dri   : υποστήριξη στον εξυπηρετητή X για DRI (Direct Rendering "
+"Infrastructure);\n"
+" - vbe   : υποστήριξη για τις επεκτάσεις VESA BIOS. Επιτρέπει την "
+"διερεύνηση\n"
+"           των δυνατοτήτων της οθόνης μέσω της κάρτας γραφικών;\n"
+" - ddc   : υποστήριξη αντίστοιχα για Data Display Channel. Επιτρέπει την "
+"διερεύνηση\n"
+"           των δυνατοτήτων της οθόνης μέσω της κάρτας γραφικώνt;\n"
+" - int10 : προσομοιωτής real-mode x86 που χρησιμοποιείται για την εκκίνηση "
+"μέσω λογισμικού (softboot) δευτερευόντων καρτών VGA.\n"
+"           Θα πρέπει να είναι ενεργοποιημένο αν είναι ενργοποιημένο και το "
+"vbe;\n"
+" - dbe   : ενεργοποιεί την επέκταση double-buffering στον εξυπηρετητή.\n"
+"           Χρήσιμο για λειτουργίες animation και εικόνας;\n"
+" - extmod: επιτρέπει πολλές παραδοσιακές και κοινά χρησιμοποιούμενες "
+"επεκτάσεις, όπως\n"
+"           shaped windows, shared memory, video mode switching, DGA, και "
+"Xv;\n"
+" - record: υλοποιεί την επέκταση RECORD, που χρησιμοποιείται συχνά για "
+"δοκιμές του εξυπηρετητή;\n"
+" - bitmap: rasterizer γραμματοσειρών (όπως και τα αρθρώματα freetype και  "
+"type1)."
 
 #. Type: multiselect
 #. Description
@@ -295,43 +308,42 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:8001
-#, fuzzy
 msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "Βρέθηκαν πολλαπλοί πιθανοί οδηγοί οθόνης για τον εξυπηρετητή X.Org."
+msgstr ""
+"Πολλαπλοί πιθανοί προεπιλεγμένοι οδηγοί για τον εξυπηρετητή X.Org για το "
+"υλικό σας"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:9001
-#, fuzzy
 msgid "Identifier for your video card:"
-msgstr "Εισάγετε ένα διακριτικό για την κάρτα οθόνης σας."
+msgstr "Ταυτοποίηση για την κάρτα οθόνης σας:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:9001
-#, fuzzy
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
-"Το αρχείο ρυθμίσεων του εξυπηρετητή X αντιστοιχίζει ένα όνομα, που εσείς "
-"δίνετε, στην κάρτα οθόνης σας.  Αυτό συνήθως αποτελείται από το όνομα του "
-"κατασκευαστή ακολουθούμενο από το μοντέλο της κάρτας, π.χ. \"3Dfx Voodoo 3\" "
-"ή \"ATI Rage Fury Maxx\"."
+"Το αρχείο ρυθμίσεων του εξυπηρετητή X συσχετίζει την κάρτα οθόνης σας με ένα "
+"όνομα που δίνετε εσείς. Αυτό είναι συνήθως το όνομα του κατασκευαστή ή η "
+"μάρκα της κάρτας ακολουθούμενη από το όνομα του μοντέλου της,\"Intel i915\", "
+"\"ATI RADEON X800\", ή \"NVIDIA GeForce 6600\"."
 
 #. Type: text
 #. Description
 #: ../xserver-xorg.templates:10001
 msgid "Generic Video Card"
-msgstr ""
+msgstr "Γενική Κάρτα Γραφικών"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:11001
 msgid "X server driver:"
-msgstr ""
+msgstr "Οδηγός του εξυπηρετητή Χ:"
 
 #. Type: select
 #. Description
@@ -391,9 +403,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:13001
-#, fuzzy
 msgid "Video card's bus identifier:"
-msgstr "Παρακαλώ εισάγετε το διακριτικό διαύλου της κάρτας οθόνης σας."
+msgstr "Ταυτοποίηση του διαύλου της κάρτας οθόνης σας:"
 
 #. Type: string
 #. Description
@@ -429,15 +440,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:13001
-#, fuzzy
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
 msgstr ""
 "Μπορείτε να χρησιμοποιήσετε την εντολή \"lspci\" για να καθορίσετε την θέση "
-"της κάρτας οθόνης σας στο δίαυλο PCI ή AGP.  Έχετε υπόψιν σας ότι η lspci "
-"καταγράφει τους αριθμούς του διαύλου, συσκευής, και λειτουργίας σε "
-"δεκαεξαδική μορφή και όχι σε δεκαδική."
+"στο δίαυλο PCI, AGP ή PCI-Express της κάρτας οθόνης σας."
 
 #. Type: string
 #. Description
@@ -454,56 +462,49 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:14001
 msgid "Incorrect format for the bus identifier"
-msgstr ""
+msgstr "Λάθος μορφή για τον ταυτοποιητή του διαύλου"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:15001
-#, fuzzy
 msgid "Amount of memory (kB) to be used by the video card:"
-msgstr ""
-"Εισάγετε το ποσό της μνήμης (σε kB) που θα χρησιμοποιηθεί από την κάρτα "
-"οθόνης σας."
+msgstr "Μέγεθος της μνήμης (σε kB) που θα χρησιμοποιηθεί από την κάρτα οθόνης:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:15001
-#, fuzzy
 msgid ""
 "Typically, the amount of dedicated memory used by the video card is "
 "autodetected by the X server, but some integrated video chips (such as the "
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
-"Κανονικά, το ποσό της μνήμης που χρησιμοποιεί η κάρτα οθόνης σας ανιχνεύεται "
-"αυτόματα από τον εξυπηρετητή X, αλλά κάποιοι ελεγκτές οθόνης (όπως το Intel "
-"i810) έχουν λίγη ή καθόλου μνήμη αποκλειστικά δική τους και αντί αυτού "
-"δανείζονται από την κυρίως μνήμη του συστήματος για τις ανάγκες τους."
+"Τυπικά, το ποσό της μνήμης που χρησιμοποιεί η κάρτα οθόνης ανιχνεύεται "
+"αυτόματα από τον εξυπηρετητή X, αλλά κάποιοι ενσωματωμένοι ελεγκτές οθόνης "
+"(όπως ο Intel i810) έχουν λίγη ή καθόλου μνήμη αποκλειστικά για δική τους "
+"χρήση, αντί γι' αυτό δανείζονται από την κυρίως μνήμη του συστήματος για τις "
+"ανάγκες τους."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:15001
-#, fuzzy
 msgid ""
 "This parameter should usually be left blank and specified only if the video "
 "card lacks RAM, or if the X server has trouble autodetecting the RAM size."
 msgstr ""
-"Είναι απόλυτα αποδεκτό να αφήσετε αυτό το πεδίο κενό, εκτός αν η κάρτα "
-"οθόνης σας έχει λιγότερη μνήμη, ή αν ο εξυπηρετητής X αδυνατεί να ανιχνεύσει "
-"αυτόματα το ποσό της μνήμης, οπότε θα πρέπει να καθορίσετε το ποσό της "
-"μνήμης της κάρτας οθόνης."
+"Η παράμετρος αυτή θα πρέπει συνήθως να αφήνεται κενή και να ορίζεται μόνο αν "
+"η κάρτα οθόνης δεν έχει μνήμη RAM ή αν ο εξυπηρετητής X έχει πρόβλημα στην "
+"αυτόματη ανίχνευση του μεγέθους της μνήμης RAM."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:16001
-#, fuzzy
 msgid "XKB rule set to use:"
-msgstr "Παρακαλώ επιλέξτε το σύνολο κανόνων XKB που θέλετε να χρησιμοποιήσετε."
+msgstr "Σύνολο κανόνων XKB που θα χρησιμοποιηθεί:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:16001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -525,38 +526,36 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:16001
-#, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
-"Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποιοδήποτε ορισμένο "
-"σύνολο κανόνων XKB.  Αν το πακέτο xlibs έχει εγκατασταθεί, τα διαθέσιμα "
-"σύνολα βρίσκονται στον κατάλογο /usr/share/X11/xkb/rules."
+"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιοδήποτε ορισμένο "
+"σύνολο κανόνων XKB.  Αν το πακέτο xlibs έχει αποσυμπιεστεί, δείτε τον "
+"κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα σύνολα κανόνων."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:16001
 msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr ""
+msgstr "Αν δεν είστε σίγουροι, η τιμή αυτή θα πρέπει να τεθεί σαν \"xorg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:17001
 msgid "Keyboard model:"
-msgstr ""
+msgstr "Μοντέλο πληκτρολογίου:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:17001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
 "Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
-"πρέπει να επιλεχθεί ένα μοντέλο πληκτρολογίου.  Τα διαθέσιμα μοντέλα "
+"πρέπει να δηλώσετε ένα μοντέλο πληκτρολογίου. Τα διαθέσιμα μοντέλα "
 "εξαρτώνται από το σύνολο κανόνων XKB που χρησιμοποιείται."
 
 #. Type: string
@@ -579,6 +578,25 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
+" Με το σύνολο κανόνων \"xorg\" :\n"
+" - pc101: παραδοσιακού τύπου πληκτρολόγιο IBM PC/AT με 101 πλήκτρα, "
+"συνηθισμένο στις\n"
+"          ΗΠΑ. Δεν έχει πλήκτρα \"logo\" ή \"menu\";\n"
+" - pc104: παρόμοιο με το μοντέλο pc101, με επιπλέον πλήκτρα, συνήθως "
+"εγχάρακτα\n"
+"          με τα σύμβολα \"logo\" και \"menu\";\n"
+" - pc102: παρόμοιο με το pc101 και συνήθως απαντώμενο στην Ευρώπη. "
+"Περιλαμβάνει ένα πλήκτρο \"< >\";\n"
+" - pc105: παρόμοιο με το pc104 και συνήθως απαντώμενο στην Ευρώπηan. "
+"Περιλαμβάνει ένα πλήκτρο \"< >\" ;\n"
+" - macintosh: πληκτρολόγια Macintosh που χρησιμοποιούν το καινούριο layer "
+"εισόδου με το κωδικούς πλήκτρων για το\n"
+"              Linux;\n"
+" - macintosh_old: πληκτρολόγια Macintosh που δεν χρησιμοποιούν το καινούριο "
+"layer εισόδου.\n"
+" Με το σύνολο κανόνων \"sun\" :\n"
+" - type4: πληλτρολόγια Sun Type4;\n"
+" - type5: πληκτρολόγια Sun Type5."
 
 #. Type: string
 #. Description
@@ -596,39 +614,36 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:17001
-#, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
-"Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποίοδήποτε μοντέλο "
-"ορίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xlibs είναι "
-"εγκατεστημένο, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα "
-"σύνολα."
+"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποίοδήποτε μοντέλο "
+"ορίζεται από το επιλεγμένο σύνολο κανόνων XKB. Αν το πακέτο xkb-data έχει "
+"αποσυμπιεστεί, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα "
+"σύνολα κανόνων."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:17001
-#, fuzzy
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ), μπορούν γενικά να δώσουν \"pc104"
-"\"."
+"Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ) θα πρέπει γενικά να δηλώσουν το "
+"μοντέλο \"pc104\". Οι χρήστες των περισσοτέρων άλλων πληκτρολογίων θα πρέπει "
+"γενικά να δηλώσουν το μοντέλο \"pc105\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:18001
-#, fuzzy
 msgid "Keyboard layout:"
-msgstr "Παρακαλώ επιλέξτε την διάταξη του πληκτρολογίου σας."
+msgstr "Διάταξη του πληκτρολογίου:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:18001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -642,16 +657,15 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:18001
-#, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποίοδήποτε μοντέλο "
-"ορίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xlibs είναι "
-"εγκατεστημένο, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα "
-"σύνολα."
+"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε διάταξη "
+"υποστηρίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xkb-data "
+"έχει αποσυμπιεστεί, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα "
+"διαθέσιμα σύνολα κανόνων."
 
 #. Type: string
 #. Description
@@ -670,21 +684,20 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:19001
 msgid "Keyboard variant:"
-msgstr ""
+msgstr "Ποικιλία πληκτρολογίου:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:19001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
-"Για την επιθυμητή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, "
-"μπορείτε αν επιθυμείτε να επιλέξετε διαφοροποίηση του πληκτρολογίου.  Οι "
-"διαθέσιμες διαφοροποιήσεις εξαρτώνται από το σύνολο κανόνων XKB, το μοντέλο "
-"και τη διάταξη του πληκτρολογίου που έχουν επιλεχθεί προηγουμένως."
+"Για να διαχειριστεί το πληκτρολόγιό σας ο εξυπηρετητής X όπως εσείς "
+"επιθυμείτε, θα πρέπει να επιλέξετε μια ποικιλία για το  πληκτρολόγιο. Οι "
+"διαθέσιμες ποικιλίες εξαρτώνται από το σύνολο κανόνων XKB, το μοντέλο και τη "
+"διάταξη του πληκτρολογίου που έχουν επιλεχθεί προηγουμένως."
 
 #. Type: string
 #. Description
@@ -701,18 +714,17 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:19001
-#, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
-"Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποίαδήποτε "
-"διαφοροποίησηυποστηρίζεται από την επιλεγμένη διάταξη XKB.  Αν το πακέτο "
-"xlibs είναι εγκατεστημένο, δείτε τον κατάλογο /usr/share/X11/xkb/symbols και "
-"στο αρχείο που αντιστοιχεί στην επιλεγμένη διάταξη για τις διαθέσιμες "
-"διαφοροποιήσεις."
+"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε ποικιλία "
+"υποστηρίζεται από την επιλεγμένη διάταξη XKB. Αν το πακέτο xkb-data είναι "
+"αποσυμπιεσμένο, κοιτάξτε στον κατάλογο /usr/share/X11/xkb/symbols για το "
+"αρχείο που αντιστοιχεί στην διάταξη που έχετε επιλέξει για τις διάφορες "
+"διαθέσιμες ποικιλίες."
 
 #. Type: string
 #. Description
@@ -727,22 +739,21 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:20001
 msgid "Keyboard options:"
-msgstr ""
+msgstr "Επιλογές πληκτρολογίου:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:20001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
-"Για την επιθυμητή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, "
-"μπορείτε αν επιθυμείτε να εισάγετε επιλογές του πληκτρολογίου.  Οι "
-"διαθέσιμες επιλογές εξαρτώνται από το σύνολο κανόνων XKB που έχει επιλεχθεί "
-"προηγουμένως.  Δεν είναι όλες οι επιλογές συμβατές με κάθε μοντέλο και "
-"διάταξη."
+"Για να διαχειριστεί το πληκτρολόγιό σας ο εξυπηρετητής X σύμφωνα όπως εσείς "
+"θέλετε, μπορείτε να εισάγετε επιλογές για το πληκτρολόγιο. Οι διαθέσιμες "
+"επιλογές εξαρτώνται από το σύνολο κανόνων XKB που έχει επιλεχθεί "
+"προηγουμένως. Δεν λειτουργούν όλες οι επιλογές με οποιοδήποτε μοντέλο και "
+"διάταξη πληκτρολογίου."
 
 #. Type: string
 #. Description
@@ -780,6 +791,8 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
+"Μπορείτε να συνδυάσετε επιλογές διαχωρίζοντάς τες με άνω-κάτω τελεία, για "
+"παράδειγμα \"ctrl:nocaps,altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -788,12 +801,14 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
+"Έμπειροι χρήστες μπορούν να χρησιμοποιούν οποιεσδήποτε επιλογές συμβατές με "
+"το επιλεγμένο μοντέλο XKB, την διάταξη και την ποικιλία του πληκτρολογίου."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:20001
 msgid "When in doubt, this value should be left blank."
-msgstr ""
+msgstr "Αν δεν είστε σίγουροι, αυτή η τιμή θα πρέπει να αφεθεί κενή."
 
 #. Type: boolean
 #. Description
@@ -810,51 +825,54 @@ msgid ""
 "should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
 "requires rebooting."
 msgstr ""
+"Αν υπάρχει ένα ποντίκι συνδεδεμένο στον υπολογιστή σας, μπορεί να γίνει "
+"προσπάθεια αυτόματης ανίχνευσής του. Μπορεί να βοηθήσει το να κινείτε το "
+"ποντίκι στην διάρκεια της προσπάθειας αυτής (αν χρησιμοποιείτε το πρόγραμμα "
+"gpm θα πρέπει να το σταματήσετε). Η σύνδεση ενός ποντικιού PS/2 ή bus/inport "
+"απαιτεί τώρα επανεκκίνηση."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:21001
 msgid "Do not choose this option if you wish to select a mouse type manually."
 msgstr ""
+"Μην κάνετε αυτή την επιλογή αν επιθυμείτε να διαλέξετε έναν τύπο ποντικιού "
+"με το χέρι."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:21001
-#, fuzzy
 msgid ""
 "If you choose it and autodetection fails, you will be asked this question "
 "again.  Autodetection can be attempted as many times as desired.  If it "
 "succeeds, further configuration questions about the mouse will be pre-"
 "answered."
 msgstr ""
-"Αν απαντήσετε καταφατικά και η αυτόματη ανίχνευση αποτύχει, θα ερωτηθείτε "
-"ξανά.  Μπορείτε να επιχειρήσετε την αυτόματη ανίχνευση όσες φορές θέλετε.  "
-"Αν η αυτόματη ανίχνευση επιτύχει, οι επόμενες ερωτήσεις του debconf σχετικά "
-"με το ποντίκι θα έχουν ήδη απαντηθεί."
+"Αν το επιλέξετε και η αυτόματη ανίχνευση αποτύχει, θα ερωτηθείτε ξανά. "
+"Μπορείτε να επιχειρήσετε την αυτόματη ανίχνευση όσες φορές θέλετε. Αν αυτή "
+"επιτύχει, οι επόμενες ερωτήσεις σχετικά με το ποντίκι θα έχουν προ-απαντηθεί."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:22001
 msgid "Mouse port:"
-msgstr ""
+msgstr "Θύρα ποντικιού:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:22001
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
-"Για τη σωστή λειτουργία του γραφικού περιβάλλοντος του συστήματος παραθύρων "
-"X, πρέπει να είναι γνωστά συγκεκριμένα χαρακτηριστικά του ποντικιού σας (ή "
-"άλλης συσκευής δείκτη, όπως το trackball)."
+"Για τη σωστή λειτουργία του γραφικού περιβάλλοντος του παραθυρικού "
+"συστήματος X, συγκεκριμένα χαρακτηριστικά του ποντικιού σας (ή άλλης "
+"συσκευής δείκτη, όπως το trackball) θα πρέπει να είναι γνωστά."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:22001
-#, fuzzy
 msgid ""
 "It is necessary to determine which port (connection type) is used by the "
 "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
@@ -866,21 +884,22 @@ msgid ""
 "or bus/inport devices from your computer, please do so with the computer's "
 "power off."
 msgstr ""
-"Είναι απαραίτητος ο καθορισμός της θύρας (τύπος συνδεσης) του ποντικιού "
-"σας.  Οι σειριακές θύρες χρησιμοποιούν βύσματα D-shaped με 9 ή 25 pins "
-"(γνωστά ώς DB-9 ή DB-25), με θηλυκό βύσμα για το ποντίκι (με τρύπες) και "
-"αρσενικό για τον υπολογιστή (με pins).  Τα ποντίκια PS/2 έχουν μικρά "
-"στρογγυλά βύσματα (DIN) με 6 pins, αρσενικό για το ποντίκι και θηλυκό για "
-"τον υπολογιστή.  Εναλλακτικά, μπορείτε να χρησιμοποιήσετε ποντίκι USB, ή ένα "
-"ποντίκι bus/inport (πολύ παλιό) ή να χρησιμοποιήσετε το πρόγραμμα gpm ως "
-"αναμεταδότη.  Αν πρέπει να (απο)συνδέσετε ποντίκι PS/2 ή bus/inport στον"
-"(από) τον υπολογιστή σας, καλό είναι το κάνετε με τον υπολογιστή κλειστό."
+"Είναι απαραίτητο να καθορίσετε τη θύρα (τύπο συνδεσης) που χρησιμοποιείται "
+"από το ποντίκι. Οι σειριακές θύρες χρησιμοποιούν βύσματα σχήματος-D με 9 ή "
+"25 ακίδες (γνωστά και ως DB-9 ή DB-25). Το βύσμα για το ποντίκι είναι θηλυκό "
+"(έχει τρύπες) ενώ το βύσμα για τον υπολογιστή είναι αρσενικό (με ακίδες). Οι "
+"θύρες PS/2 είναι μικρά στρογγυλά βύσματα (DIN) με 6 ακίδες, με αρσενικό "
+"βύσμα για το ποντίκι και θηλυκό από την πλευρά του υπολογιστή.  Εναλλακτικά, "
+"μπορείτε να χρησιμοποιήσετε ποντίκι USB, ή ένα ποντίκι bus/inport (πολύ "
+"παλιό) ή να χρησιμοποιήσετε το πρόγραμμα gpm ως αναμεταδότη.  Αν χρειαστεί "
+"να (απο)συνδέσετε ένα ποντίκι PS/2 ή bus/inport στον (από) τον υπολογιστή "
+"σας, παρακαλώ κάντε το ενώ ο υπολογιστής είναι κλειστός."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:23001
 msgid "Mouse protocol:"
-msgstr ""
+msgstr "Πρωτόκολλο ποντικιού:"
 
 #. Type: boolean
 #. Description
@@ -891,7 +910,6 @@ msgstr "Να γίνει εξομοίωση ποντικιού τριών πλή�
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:24001
-#, fuzzy
 msgid ""
 "Most programs in the X Window System expect the mouse to have 3 buttons "
 "(left, right, and middle).  Mice with only 2 buttons can emulate the "
@@ -900,8 +918,9 @@ msgid ""
 msgstr ""
 "Τα περισσότερα προγράμματα στο παραθυρικό σύστημα X, θεωρούν ότι το ποντίκι "
 "σας έχει 3 πλήκτρα (αριστερό, δεξί και μεσαίο).  Τα ποντίκια με μόνο 2 "
-"πλήκτρα μπορούν να εξομοιώσουν το μεσαίο πλήκτρο με το ταυτόχρονο πάτημα του "
-"αριστερού και δεξιού πλήκτρου."
+"πλήκτρα μπορούν να εξομοιώσουν την παρουσία του μεσαίου πλήκτρου "
+"αντιμετωπίζοντας το ταυτόχρονο πάτημα ή το σύρσιμο του αριστερού και του "
+"δεξιού πλήκτρου σαν γεγονότα του μεσαίου πλήκτρου."
 
 #. Type: boolean
 #. Description
@@ -935,7 +954,6 @@ msgstr "Να γίνει προσπάθεια αυτόματης ανίχνευσ
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:25001
-#, fuzzy
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -944,60 +962,53 @@ msgid ""
 "answered."
 msgstr ""
 "Πολλές οθόνες (ακόμη και οι LCD) και κάρτες οθόνης υποστηρίζουν ένα "
-"πρωτόκολλο επικοινωνίας που επιτρέπει τα τεχνικά χαρακτηριστικά της οθόνης "
-"να μεταδοθούν στον υπολογιστή.  Αν η οθόνη και η κάρτα οθόνης σας "
-"υποστηρίζουν την ίδια διάλεκτο του πρωτοκόλλου, οι επόμενες ερωτήσεις "
-"σχετικά με την οθόνη σας θα έχουν ήδη απαντηθεί."
+"πρωτόκολλο επικοινωνίας που επιτρέπει την μετάδοση στον υπολογιστή των "
+"τεχνικών χαρακτηριστικών της οθόνης. Αν η οθόνη και η κάρτα οθόνης σας "
+"υποστηρίζουν αυτό το πρωτόκολλο, επόμενες ερωτήσεις σχετικά με την οθόνη σας "
+"θα έχουν προ-απαντηθεί."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:25001
-#, fuzzy
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr ""
-"Αν η αυτόματη ανίχνευση αποτύχει, θα σας ζητηθούν ορισμένες πληροφορίες για "
-"την οθόνη σας."
+"Αν η αυτόματη ανίχνευση αποτύχει, θα σας ζητηθούν πληροφορίες σχετικά με την "
+"οθόνη σας."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid "Method for selecting the monitor characteristics:"
-msgstr ""
-"Παρακαλώ επιλέξτε μια μέθοδο για ρύθμιση των χαρακτηριστικών της οθόνης σας."
+msgstr "Μέθοδος για την επιλογή των χαρακτηριστικών της οθόνης:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
 msgstr ""
-"Για τη σωστή λειτουργία του γραφικού περιβάλλοντος του συστήματος παραθύρων "
-"X, θα πρέπει να είναι γνωστά συγκεκριμένα χαρακτηριστικά της οθόνης σας."
+"Για τη σωστή λειτουργία του γραφικού περιβάλλοντος του παραθυρικού "
+"συστήματος X, πρέπει να είναι γνωστά μερικά συγκεκριμένα χαρακτηριστικά της "
+"οθόνης."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
-"Για την \"απλή\" (simple) επιλογή, αρκεί να γνωρίζετε μόνο το μέγεθος της "
-"οθόνης σας, ώστε να καθοριστούν κάποιες από τις ρυθμίσεις της οθόνης σας για "
-"μια τυπική οθόνη CRT αυτού του μεγέθους, που όμως μπορεί να είναι "
-"υποβέλτιστες για υψηλής ποιότητας οθόνες CRT.  (Αυτή η επιλογή είναι "
-"ανενεργή για οθόνες LCD, καθώς αυτές έχουν προδιαγραφές για μια συγκεκριμένη "
-"ανάλυση)."
+"Στην \"απλή\" (simple) επιλογή, θα ερωτηθείτε σχετικά με το φυσικό μέγεθος "
+"της οθόνης. Αυτό θα καθορίσει κάποιες τιμές ρυθμίσεων που να είναι "
+"κατάλληλες για μια τυπική οθόνη CRT του αντίστοιχου μεγέθους, που μπορεί να "
+"μην είναι όμως οι βέλτιστες για οθόνες CRT υψηλής ποιότητας."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -1005,20 +1016,18 @@ msgid ""
 msgstr ""
 "Η \"μεσαία\" (middle) επιλογή θα σας εμφανίσει μια λίστα αναλύσεων και "
 "συχνοτήτων σάρωσης, όπως \"800x600 @ 85Hz\". Θα πρέπει να επιλέξετε την "
-"καλύτερη ανάλυση που επιθυμείτε να χρησιμοποιήσετε (εφόσον η οθόνη σας την "
-"υποστηρίζει)."
+"καλύτερη ανάλυση που επιθυμείτε να χρησιμοποιήσετε (και την οποία γνωρίζετε "
+"ότι υποστηρίζει η οθόνη σας)."
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:26001
-#, fuzzy
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
-"Η \"προχωρημένη\" επιλογή θα σας επιτρέψει να καθορίσετε τα όρια των "
-"συχνοτήτων οριζόντιου συγχρονισμού και κάθετης σάρωσης της οθόνης σας "
-"απευθείας."
+"Η \"προχωρημένη\" επιλογή θα σας επιτρέψει να καθορίσετε απευθείας τα όρια "
+"των συχνοτήτων οριζόντιου συγχρονισμού και κάθετης σάρωσης της οθόνης σας."
 
 #. Type: select
 #. Choices
@@ -1053,9 +1062,8 @@ msgstr "21 ίντσες (530 mm) ή περισσότερο"
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:27002
-#, fuzzy
 msgid "Approximate monitor size:"
-msgstr "Παρακαλώ επιλέξτε το μέγεθος της οθόνης σας (περίπου)."
+msgstr "Κατά προσέγγιση μέγεθος οθόνης:"
 
 #. Type: select
 #. Description
@@ -1068,14 +1076,12 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:28001
-#, fuzzy
 msgid "Monitor's best video mode:"
-msgstr "Παρακαλώ επιλέξτε την καλύτερη υποστηριζόμενη ανάλυση της οθόνης σας."
+msgstr "Βέλτιστη ανάλυση της οθόνης:"
 
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:28001
-#, fuzzy
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -1084,33 +1090,31 @@ msgid ""
 "only if both the video chipset and the driver support it; if in doubt, use "
 "the video mode recommended by the manufacturer of your LCD."
 msgstr ""
-"Επιλέξτε την \"καλύτερη\" (best) ανάλυση και συχνότητα σάρωσης που πιστεύετε "
-"ότι υποστηρίζει η οθόνη σας.  Οι μεγαλύτερες αναλύσεις και συχνότητες "
-"σάρωσης είναι καλύτερες.  Αν χρησιμοποιείτε οθόνη CRT, είναι αποδεκτό να "
-"επιλέξετε μια \"χειρότερη\" (worse) ανάλυση από ό,τι υποστηρίζει η οθόνη "
-"σας, αν το επιθυμείτε.  Οι χρήστες των οθονών LCD μπορούν επίσης να "
-"επιλέξουν κάτι τέτοιο, αλλά μόνο αν το υποστηρίζουνο ελεγκτής οθόνης και ο "
-"οδηγός της κάρτας οθόνης.  Αν έχετε αμφιβολίες, χρησιμοποιήστε την ανάλυση "
-"που προτείνεται από τον κατασκευαστή της LCD οθόνης σας."
+"Επιλέξτε την \"βέλτιστη\" ανάλυση και συχνότητα σάρωσης που μπορεί να "
+"υποστηρίξει η οθόνη σας. Οι μεγαλύτερες αναλύσεις και συχνότητες σάρωσης "
+"είναι καλλίτερες. Για μια οθόνη CRT, είναι απόλυτα αποδεκτό να επιλέξετε αν "
+"θέλετε μια \"χειρότερη\" ανάλυση από την βέλτιστη που υποστηρίζει η οθόνη. "
+"Οι χρήστες των οθονών LCD μπορούν επίσης να επιλέξουν κάτι τέτοιο, αλλά μόνο "
+"αν το υποστηρίζουν τόσο ο ελεγκτής οθόνης όσο και ο οδηγός της κάρτας "
+"οθόνης. Αν δεν είσαστε σίγουροι, χρησιμοποιήστε την ανάλυση που προτείνεται "
+"από τον κατασκευαστή της οθόνης σας LCD."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:29001
-#, fuzzy
 msgid "Identifier for the monitor:"
-msgstr "Δώστε ένα όνομα για την οθόνη σας."
+msgstr "Χαρακτηριστικό όνομα για την οθόνη:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:29001
-#, fuzzy
 msgid ""
 "The X server configuration file associates the monitor with a name that you "
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
-"Το αρχείο ρυθμίσεων του εξυπηρετητή X αντιστοιχίζει ένα όνομα, που εσείς "
-"δίνετε, στην οθόνη σας.  Αυτό συνήθως αποτελείται από το όνομα του "
+"Το αρχείο ρυθμίσεων του εξυπηρετητή X συνδέει ένα όνομα, που μπορείτε εσείς "
+"να δώσετε, με την οθόνη σας.  Αυτό συνήθως αποτελείται από το όνομα του "
 "κατασκευαστή ακολουθούμενο από το μοντέλο της κάρτας, π.χ. \"Sony E200\" ή "
 "\"Dell E770s\"."
 
@@ -1118,80 +1122,74 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:30001
 msgid "Generic Monitor"
-msgstr ""
+msgstr "Γενική Οθόνη"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:31001
-#, fuzzy
 msgid "Write monitor sync ranges to the configuration file?"
-msgstr "Να αποθηκευτεί το εύρος συγχρονισμού οθόνης στο αρχείο ρυθμίσεων;"
+msgstr "Να αποθηκευτούν τα εύρη συγχρονισμού οθόνης στο αρχείο ρυθμίσεων;"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:31001
-#, fuzzy
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
 "users, and should be left at its default."
 msgstr ""
-"Οι περισσότερες ρυθμίσεις εύρους συγχρονισμού οθόνης θα πρέπει να "
-"εντοπίζονται αυτόματα απότον εξυπηρετητή X στην περισσότερες των "
-"περιπτώσεων, αλλά μερικές φορές χρειάζονται ρύθμιση.Αυτή η επιλογή είναι για "
-"προχωρημένους χρήστες και θα πρέπει να την αφήσετε όπως είναι."
+"Στις περισσότερες περιπτώσεις τα εύρη συχνοτήτων συγχρονισμού οθόνης θα "
+"πρέπει να εντοπίζονται αυτόματα από τον εξυπηρετητή X, αλλά μερικές φορές "
+"χρειάζεται κάποιες υποδείξεις. Αυτή η επιλογή είναι για έμπειρους χρήστες "
+"και θα πρέπει να την αφήσετε στην προκαθορισμένη της τιμή."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:32001
-#, fuzzy
 msgid "Monitor's horizontal sync range:"
-msgstr "Εισάγετε την συχνότητα οριζόντιου συγχρονισμού της οθόνης σας."
+msgstr "Εύρος συχνότητων οριζόντιου συγχρονισμού:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:32001
-#, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
 "CRT's).  This information should be available in the monitor's manual.  "
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
-"Παρακαλώ εισάγετε είτε μια λίστα διακριτών τιμών (για οθόνες συγκεκριμένης "
-"συχνότητας), χωρισμένων με κόμμα, είτε ζεύγη τιμών χωρισμένων με παύλες "
-"(όλες οι νεώτερες οθόνες CRT).  Αυτή η πληροφορία συνήθως καταγράφεται στο "
-"βιβλίο οδηγιών της οθόνης σας. Οι τιμές μικρότερες από 30 ή υψηλότερες από "
-"130 είναι εξαιρετικά σπάνιες."
+"Παρακαλώ εισάγετε είτε μια λίστα διαακεκριμένων τιμών (για οθόνες σταθερής "
+"συχνότητας), χωρισμένων με άνω-κάτω τελείες, είτε ένα ζεύγος τιμών "
+"χωρισμένων με παύλες (για όλες τις σύγχρονες οθόνες CRT). Αυτή η πληροφορία "
+"είναι συνήθως διαθέσιμη στο βιβλίο χρήσης της οθόνης. Τιμές μικρότερες από "
+"30 ή υψηλότερες από 130 είναι εξαιρετικά σπάνιες."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:33001
-#, fuzzy
 msgid "Monitor's vertical refresh range:"
-msgstr "Εισάγετε την κατακόρυφη συχνότητα σάρωσης της οθόνης σας."
+msgstr "Συχνότητα κατακόρυφης σάρωσης της οθόνης:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:33001
-#, fuzzy
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
 "CRT's).  This information should be available in the monitor's manual.  "
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
-"Παρακαλώ εισάγετε είτε μια λίστα διακριτών τιμών (για οθόνες συγκεκριμένης "
-"συχνότητας), χωρισμένων με κόμμα, είτε ζεύγη τιμών χωρισμένων με παύλες "
-"(όλες οι νεώτερες οθόνες CRT).  Αυτή η πληροφορία συνήθως καταγράφεται στο "
-"βιβλίο οδηγιών της οθόνης σας. Οι τιμές μικρότερες από 60 ή υψηλότερες από "
-"160 είναι εξαιρετικά σπάνιες."
+"Παρακαλώ εισάγετε είτε μια λίστα διακεκριμένων τιμών (για οθόνες σταθερής "
+"συχνότητας), χωρισμένων με άνω-κάτω τελείες, είτε ένα ζεύγος τιμών "
+"χωρισμένων με μια παύλα (όλες οι σύγχρονες οθόνες CRT). Αυτή η πληροφορία "
+"είναι συνήθως διαθέσιμη στο βιβλίο χρήσης της οθόνης. Τιμές μικρότερες από "
+"60 ή υψηλότερες από 160 είναι εξαιρετικά σπάνιες."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:34001
 msgid "Incorrect values entered"
-msgstr ""
+msgstr "ΕΙσαγωγή λάθος τιμών"
 
 #. Type: note
 #. Description
@@ -1206,9 +1204,8 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:35001
-#, fuzzy
 msgid "Desired default color depth in bits:"
-msgstr "Παρακαλώ επιλέξτε το επιθυμητό χρωματικό βάθος σε bits."
+msgstr "Επιθυμητό χρωματικό βάθος σε bits:"
 
 #. Type: select
 #. Description
@@ -1229,36 +1226,34 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../xserver-xorg.templates:35001
-#, fuzzy
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits."
 msgstr ""
-"Το αποκαλούμενο \"32-μπιτο χρώμα\" είναι στην πραγματικότητα 24 bits "
-"πληροφορία χρώματος συν 8 bits πληροφορίας alpha channel ή απλώς "
-"συμπληρωματικά bits χωρίς περιεχόμενο. Το σύστημα παραθύρων X υποστηρίζει "
-"και τις δύο εναλλακτικές.  Αν επιθυμείτε οποιαδήποτε από τις δύο, επιλέξτε "
-"24 bits."
+"Το αποκαλούμενο \"32-μπιτο χρώμα\" είναι στην πραγματικότητα 24-"
+"bitπληροφορίας χρώματος συν 8 bit πληροφορίας για alpha channel ή απλά "
+"συμπληρωματικά bits χωρίς περιεχόμενο. Το παραθυρικό σύστημα X υποστηρίζει "
+"και τις δυο περιπτώσεις. Αν επιθυμείτε οποιαδήποτε από τις δύο, επιλέξτε "
+"βάθος 24 bit."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:36001
 msgid "Empty value"
-msgstr ""
+msgstr "Κενή τιμή"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:36001
-#, fuzzy
 msgid "A null entry is not permitted for this value."
-msgstr "Δεν επιτρέπεται το κενό."
+msgstr "Δεν επιτρέπεται κενή εισαγωγή για την τιμή αυτή."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:37001
 msgid "Invalid double-quote characters"
-msgstr ""
+msgstr "Μη έγκυροι χαρακτήρες εισαγωγικών"
 
 #. Type: note
 #. Description
@@ -1270,7 +1265,7 @@ msgstr "Διπλά εισαγωγικά (\") δεν επιτρέπονται ω�
 #. Description
 #: ../xserver-xorg.templates:38001
 msgid "Numerical value needed"
-msgstr ""
+msgstr "Απαιτείται αριθμητική τιμή"
 
 #. Type: note
 #. Description
@@ -1281,9 +1276,8 @@ msgstr "Άλλοι χαρακτήρες εκτός από ψηφία δεν εί
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:39001
-#, fuzzy
 msgid "Autodetect keyboard layout?"
-msgstr "Παρακαλώ επιλέξτε την διάταξη του πληκτρολογίου σας."
+msgstr "Να γίνει αυτόματη ανίχνευση της διάταξης του πληκτρολογίου;"
 
 #. Type: boolean
 #. Description
@@ -1293,6 +1287,9 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"Η επιλογή της προκαθορισμένης διάταξης πληκτρολογίου για τον εξυπηρετητή "
+"Xorg θα βασιστεί σε έναν συνδυασμό της γλώσσας και της διάταξης του "
+"πληκτρολογίου που επιλέχθηκαν κατά την εγκατάσταση."
 
 #. Type: boolean
 #. Description
@@ -1301,6 +1298,8 @@ msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
+"Κάνετε αυτή την επιλογή αν επιθυμείτε να ανιχνευθεί ξανά η διάταξη του "
+"πληκτρολογίου. Μην την κάνετε αν θέλετε να διατηρήσετε την υπάρχουσα διάταξη."
 
 #. Type: select
 #. Choices
@@ -1324,7 +1323,7 @@ msgstr "Οποιοσδήποτε"
 #. Description
 #: ../x11-common.templates:1002
 msgid "Users allowed to start the X server:"
-msgstr ""
+msgstr "Χρήστες που επιτρέπεται να ξεκινούν τον εξυπηρετητή Χ:"
 
 #. Type: select
 #. Description
@@ -1348,15 +1347,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../x11-common.templates:3001
-#, fuzzy
 msgid "Nice value for the X server:"
-msgstr ""
-"Εισάγετε την επιθυμητή τιμή προτεραιότητας 'nice' για τον εξυπηρετητή X."
+msgstr "Τιμή προτεραιότητας 'nice' για τον εξυπηρετητή X:"
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:3001
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -1366,17 +1362,16 @@ msgid ""
 "priority).  The default nice value for ordinary processes is 0, and this is "
 "also the recommend value for the X server."
 msgstr ""
-"Έχει παρατηρηθεί ότι σε λειτουργικά συστήματα όπου οι πυρήνες χρησιμοποιούν "
-"κάποια συγκεκριμένη μέθοδο διαμοιρασμού χρόνου των διεργασιών (schedulers), "
-"η απόδοση του εξυπηρετητή X είναι καλύτερη όταν του δίνεται προτεραιότητα "
-"μεγαλύτερη από την προκαθορισμένη. Η προτεραιότητα αυτή είναι επίσης γνωστή "
-"ως η προτεραιότητα \"nice\" της διεργασίας. Έχει εύρος από -20 (πολύ υψηλή "
-"προτεραιότητα ή καθόλου \"nice\" στις άλλες διεργασίες) έως 19 (πολύ χαμηλή "
-"προτεραιότητα).  Η προκαθορισμένη τιμή της προτεραιότητας nice για τις απλές "
-"διεργασίες είναι 0.  Η τιμή -10 είναι μια καλή επιλογή για ένα σταθμό "
-"εργασίας ενός μόνο χρήστη, ενώ η τιμή 0 ταιριάζει περισσότερο σε κάποιο "
-"σύστημα που έχει επιπλέον εργασίες πέραν της δραδραστικότητας με τον χρήστη "
-"της κονσόλας (όπως η χρήση ως διακομιστή ιστοσελίδων)."
+"Όταν χρησιμοποιούνται πυρήνες λειτουργικών συστημάτων που έχουν μια "
+"συγκεκριμένη στρατηγική διαμοιρασμού χρόνου των διεργασιών (scheduling), "
+"έχει παρατηρηθεί ευρέως ότι η απόδοση του εξυπηρετητή X βελτιώνεται όταν "
+"αυτός εκτελείται με προτεραιότητα μεγαλύτερη από την προκαθορισμένη. Η "
+"προτεραιότητα μιας διεργασίας είναι επίσης γνωστή ως η τιμή \"nice\" της "
+"διεργασίας. Οι τιμές αυτές κυμαίνονται από το -20 (πολύ υψηλή προτεραιότητα "
+"ή καθόλου \"nice\" στις άλλες διεργασίες) έως 19 (πολύ χαμηλή "
+"προτεραιότητα). Η προκαθορισμένη τιμή προτεραιότητας nice για τις "
+"συνηθισμένες διεργασίες είναι 0 και αυτή είναι επίσης η προτεινόμενη τιμή "
+"για τον εξυπηρετητή Χ."
 
 #. Type: string
 #. Description
@@ -1395,7 +1390,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:4001
 msgid "Incorrect nice value"
-msgstr ""
+msgstr "Λάθος τιμή προτεραιότητας nice"
 
 #. Type: note
 #. Description
@@ -1407,7 +1402,7 @@ msgstr "Παρακαλώ εισάγετε έναν ακέραιο από το -2
 #. Description
 #: ../x11-common.templates:5001
 msgid "Major possible upgrade issues"
-msgstr ""
+msgstr "Σημαντικά πιθανά προβλήματα αναβάθμισης"
 
 #. Type: note
 #. Description
@@ -1420,12 +1415,19 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
+"Μερικοί χρήστες έχουν αναφέρει ότι κατά την αναβάθμιση στο παρόν σύνολο "
+"πακέτων, το πακέτο xserver δεν ήταν πια εγκατεστημένο. Επειδή δεν υπάρχει "
+"εύκολος τρόπος αντιμετώπισης αυτού του προβλήματος, θα πρέπει να βεβαιωθείτε "
+"ότι το πακέτο xserver-xorg είναι εγκατεστημένο μετά την αναβάθμιση. Αν δεν "
+"είναι και το χρειάζεστε, σας συνιστούμε να εγκαταστήσετε το πακέτο xorg για "
+"να σιγουρευτείτε ότι έχετε μια πλήρως λειτουργική εγκατάσταση του συστήματος "
+"Χ."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:6001
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr ""
+msgstr "Δεν μπορώ να αφαιρέσω τον κατάλογο /usr/X11R6/bin"
 
 #. Type: note
 #. Description
@@ -1437,6 +1439,13 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"Αυτή η αναβάθμιση απαιτεί την αφαίρεση του καταλόγου /usr/X11R6/bin και την "
+"αντικατάστασή του από έναν συμβολικό σύνδεσμο. Έγινε μια προσπάθεια γι' αυτό "
+"η οποία όμως απέτυχε, το πιο πιθανό επειδή ο κατάλογος δεν είναι ακόμα "
+"άδειος. Θα πρέπει να μετακινήσετε τα αρχεία που βρίσκονται στον κατάλογο "
+"αυτή τη στιγμή ώστε να μπορεί να ολοκληρωθεί η εγκατάσταση. Αν θέλετε, "
+"μπορείτε να τα ξαναφέρετε στον κατάλογο αργότερα, μετά την δημιουργία του "
+"συμβολικού συνδέσμου."
 
 #. Type: note
 #. Description
@@ -1446,795 +1455,6 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
-
-#~ msgid "Root Only, Console Users Only, Anybody"
-#~ msgstr "Μόνο ο χρήστης root, Μόνο από την κονσόλα, Οποιοσδήποτε"
-
-#~ msgid ""
-#~ "Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 "
-#~ "inches (480-510 mm), 21 inches (530 mm) or more"
-#~ msgstr ""
-#~ "Έως 14 ίντσες (355 mm), 15 ίντσες (380 mm), 17 ίντσες (430 mm), 19-20 "
-#~ "ίντσες (480-510 mm), 21 ίντσες (530 mm) ή περισσότερο"
-
-#, fuzzy
-#~ msgid ""
-#~ "Multiple video cards have been detected, and different X servers are "
-#~ "required to support the various devices.  It is thus not possible to "
-#~ "automatically select a default X server.  Please configure the device "
-#~ "that will serve as this computer's \"primary head\"; this is generally "
-#~ "the video card and monitor used for display when the computer is booted "
-#~ "up."
-#~ msgstr ""
-#~ "Ανιχνεύθηκαν πολλαπλές κάρτες οθόνης και είναι απαραίτητη η χρήση "
-#~ "διαφορετικών εξυπηρετητών X για κάθε μία από αυτές.  Έτσι, δεν είναι "
-#~ "δυνατή η αυτόματη επιλογή κάποιου προκαθορισμένου εξυπηρετητή X.  "
-#~ "Παρακαλώ, ρυθμίστε τη κάρτα οθόνης που θα χρησιμοποιηθεί ως η κύρια "
-#~ "συσκευή απεικόνισης του υπολογιστή σας (\"primary head\"). Αυτή συνήθως "
-#~ "είναι η κάρτα οθόνης (και οθόνη) που χρησιμοποιείται κατά την εκκίνηση "
-#~ "του υπολογιστή σας."
-
-#~ msgid "Select what type of user has permission to start the X server."
-#~ msgstr ""
-#~ "Επιλέξτε την κατηγορία των χρηστών που επιτρέπονται να ξεκινήσουν το "
-#~ "σύστημα X."
-
-#~ msgid ""
-#~ "It is possible to customize (or completely omit) the list of modules that "
-#~ "the X server loads by default.  This option is for advanced users.  In "
-#~ "most cases, all of these modules should be enabled."
-#~ msgstr ""
-#~ "Είναι δυνατόν να παραμετροποιήσετε (ή να παραλείψετε τελείως) τις μονάδες "
-#~ "λογισμικού που φορτώνονται κατά την εκκίνηση του εξυπηρετητή X.  Η "
-#~ "επιλογή αυτή είναι για προχωρημένους χρήστες.  Για τις περισσότερες "
-#~ "περιπτώσεις, όλες οι μονάδες λογισμικού θα πρέπει να είναι "
-#~ "ενεργοποιημένες."
-
-#, fuzzy
-#~ msgid ""
-#~ "The glx module enables support for OpenGL rendering.  The dri module "
-#~ "enables support in the X server for Direct Rendering Infrastructure "
-#~ "(DRI).  Note that support for DRI must also exist in the kernel, the "
-#~ "video card, and the installed version of the Mesa libraries for hardware-"
-#~ "accelerated 3D operations using DRI to work.  Otherwise, the server falls "
-#~ "back to software rendering."
-#~ msgstr ""
-#~ "Οι μονάδες GLCore και glx ενεργοποιούν την εμφάνιση γραφικών OpenGL μέσω "
-#~ "λογισμικού. Η μονάδα dri ενεργοποιεί την υποστήριξη του Direct Rendering "
-#~ "Infrastracture (DRI) στον εξυπηρετητή X. Σημειωτέον ότι θα πρέπει να "
-#~ "υπάρχει επιπλέον υποστήριξη του DRI στον πυρήνα, την κάρτα οθόνης και την "
-#~ "εγκατεστημένη έκδοση των βιβλιοθηκών Mesa για επιταχυνόμενες από την "
-#~ "κάρτα οθόνης εργασίες γραφικών 3D, για να λειτουργήσει σωστά το DRI.  "
-#~ "Διαφορετικά, ο εξυπηρετητής θα επαναφερθεί σε εμφάνιση γραφικών OpenGL "
-#~ "μέσω λογισμικού."
-
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilties via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "Οι μονάδες vbe και ddc ενεργοποιούν υποστήριξη για επεκτάσεις VESA BIOS "
-#~ "και Data Display Channel, αντίστοιχα.  Αυτές οι μονάδες χρησιμοποιούνται "
-#~ "για πληροφόρησητων δυνατοτήτων της οθόνης μέσω της κάρτας οθόνης.  Η "
-#~ "μονάδα int10 είναι ένας πραγματικός εξομοιωτής επεξεργαστών x86 που "
-#~ "χρησιμοποιείται για την εκκίνηση δευτερευόντων καρτών οθόνης VGA. "
-#~ "Σημειώστε ότι η μονάδα vbe στηρίζεται στη μονάδα int10, έτσι αν "
-#~ "επιθυμείτε να ενεργοποιήσετε τη μονάδα vbe, θα πρέπει να ενεργοποιήσετε "
-#~ "και την int10."
-
-#~ msgid ""
-#~ "The dbe module enables the double-buffering extension in the server, and "
-#~ "is useful for animation and video operations."
-#~ msgstr ""
-#~ "Η μονάδα dbe ενεργοποιεί την επέκταση διπλής αποθήκευσης (double "
-#~ "buffering) στον εξυπηρετητή, και χρησιμεύει σε εργασίες που περιλαμβάνουν "
-#~ "animation και video."
-
-#~ msgid ""
-#~ "The extmod module enables many traditional and commonly used extensions, "
-#~ "such as shaped windows, shared memory, video mode switching, DGA, and "
-#~ "Xv.  The record module implements the RECORD extension, commonly used in "
-#~ "server testing."
-#~ msgstr ""
-#~ "Η μονάδα extmod ενεργοποιεί πολλές τυπικές και κοινές επεκτάσεις, όπως "
-#~ "αυθαίρετα σχήματα παραθύρων (shaped windows), κοινόχρηστη μνήμη (shared "
-#~ "memory), αλλαγή της ανάλυσης (video mode switching), DGA και Xv.  Η "
-#~ "μονάδα record υλοποιεί την επέκταση RECORD, που χρησιμοποιείται συχνά σε "
-#~ "ελέγχους."
-
-#~ msgid "The bitmap, freetype, and type1 modules are all font rasterizers."
-#~ msgstr ""
-#~ "Οι μονάδες bitmap, freetype και type1 χρησιμοποιούνται όλες για την "
-#~ "απεικόνιση γραμματοσειρών."
-
-#~ msgid ""
-#~ "If you unsure what to do, leave all of the modules enabled.  Advanced "
-#~ "users may wish to disable all modules -- in which case no Modules section "
-#~ "will be written to the X server configuration file -- and add their own "
-#~ "Modules section to the file manually."
-#~ msgstr ""
-#~ "Αν δεν είστε σίγουροι, αφήστε όλες τις μονάδες λογισμικού "
-#~ "ενεργοποιημένες. Οι πιο προχωρημένοι χρήστες ίσως να επιθυμούν να "
-#~ "απενεργοποιήσουν όλες τις μονάδες -- ώστε να μη δημιουργηθεί τμήμα "
-#~ "Modules στο αρχείο ρυθμίσεων του εξυπηρετητή X -- και να προσθέσουν το "
-#~ "δικό τους παραμετροποιημένο τμήμα στο αρχείο ρυθμίσεων χειροκίνητα."
-
-#~ msgid ""
-#~ "Multiple video cards have been detected, and different drivers are "
-#~ "required to support the various devices.  It is thus not possible to "
-#~ "automatically select a default X.Org server driver.  Please configure the "
-#~ "device that will serve as your computer's \"primary head\"; this is "
-#~ "generally the video card and monitor to which the computer displays when "
-#~ "it first boots."
-#~ msgstr ""
-#~ "Ανιχνεύθηκαν περισσότερες από μία κάρτες οθόνης και είναι απαραίτητη η "
-#~ "χρήση διαφορετικών οδηγών για την υποστήριξή των καρτών αυτών.  Έτσι δεν "
-#~ "είναι δυνατή η αυτόματη επιλογή ενός προκαθορισμένου οδηγού κάρτας οθόνης "
-#~ "για τον εξυπηρετητή X.Org.  Παρακαλώ, ρυθμίστε τη κάρτα οθόνης που θα "
-#~ "χρησιμοποιηθεί ως η κύρια συσκευή απεικόνισης του υπολογιστή σας "
-#~ "(\"primary head\"). Αυτή συνήθως είναι η κάρτα οθόνης (και οθόνη) που "
-#~ "χρησιμοποιείται κατά την εκκίνηση του υπολογιστή σας."
-
-#~ msgid "Select the desired X server driver."
-#~ msgstr "Επιλέξτε τον επιθυμητό οδηγό του εξυπηρετητή X."
-
-#~ msgid ""
-#~ " ISA:1\n"
-#~ " PCI:0:16:0\n"
-#~ " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
-#~ msgstr ""
-#~ " ISA:1\n"
-#~ " PCI:0:16:0\n"
-#~ " SBUS:/iommu@0,10000000/sbus@0,10001000/SUNW,tcx@2,800000"
-
-#~ msgid "Please enter a bus identifier in the proper format."
-#~ msgstr "Παρακαλώ εισάγετε ένα διακριτικό διαύλου στη κατάλληλη μορφή."
-
-#~ msgid "The BusID entered was not in a recognized format."
-#~ msgstr "Το  BusID  που εισήχθηκε δεν είναι σε αναγνωρίσιμη μορφή."
-
-#~ msgid "If you don't know what rule set to use, enter \"xorg\"."
-#~ msgstr "Αν δε γνωρίζετε ποιο σύνολο να επιλέξετε, εισάγετε \"xorg\"."
-
-#~ msgid "Please select your keyboard model."
-#~ msgstr "Παρακαλώ επιλέξτε το μοντέλο του πληκτρολογίου σας."
-
-#~ msgid ""
-#~ "The \"pc101\" keyboard is a traditional IBM PC/AT style keyboard with 101 "
-#~ "keys, historically common in the United States.  It does not have the "
-#~ "\"logo\" or \"menu\" keys."
-#~ msgstr ""
-#~ "Το μοντέλο \"pc101\" είναι ένα τυπικό πληκτρολόγιο τύπου IBM PC/AT με 101 "
-#~ "πλήκτρα, ιστορικά κοινότυπο στις ΗΠΑ.  Δεν έχει τα πλήκτρα \"logo\" ή "
-#~ "\"menu\"."
-
-#~ msgid ""
-#~ "The \"pc104\" keyboard is like the pc101 model, with additional keys.  "
-#~ "These keys are usually engraved with a \"logo\" symbol (there is "
-#~ "typically a pair of these, between each set of control and alt keys), and "
-#~ "a \"menu\" key."
-#~ msgstr ""
-#~ "Το μοντέλο \"pc104\" είναι σαν το μοντέλο pc101, με κάποια επιπλέον "
-#~ "πλήκτρα.  Σε αυτάσυνήθως αναγράφεται ένα λογότυπο (\"logo\") και ένα "
-#~ "\"menu\". Τα πλήκτρα \"logo\" έρχονται συνήθως σε ζεύγη, ανάμεσα στα "
-#~ "πλήκτρα control και alt."
-
-#~ msgid ""
-#~ "The \"pc102\" and \"pc105\" models are versions of the pc101 and pc104 "
-#~ "keyboards, respectively, often found in Europe.  If your keyboard has a "
-#~ "\"< >\" key (a single key engraved with both the less-than and greater-"
-#~ "than symbols), you likely have a \"pc102\" or \"pc105\" model; if you "
-#~ "choose \"pc101\" or \"pc104\" instead, your \"< >\" key might not work."
-#~ msgstr ""
-#~ "Τα μοντέλα \"pc102\" και \"pc105\" είναι ευρωπαϊκές εκδόσεις των μοντέλων "
-#~ "pc101 και pc104, αντίστοιχα.  Αν το πληκτρολόγιό σας έχει ένα πλήκτρο \"< "
-#~ ">\" (ένα μονάδικό πλήκτρο με τα σύμβολα \"μικρότερο\" και \"μεγαλύτερο"
-#~ "\"), μάλλον έχετε ένα μοντέλο πληκτρολογίου \"pc102\" ή \"pc105\", και αν "
-#~ "επιλέξετε μοντέλο \"pc101\" ή \"pc104\" το πλήκτρο \"< >\" πιθανόν να μη "
-#~ "λειτουργεί."
-
-#~ msgid ""
-#~ "The \"macintosh\" model is for Macintosh keyboards where the kernel and "
-#~ "console tools use the new input layer which uses Linux keycodes; "
-#~ "\"macintosh_old\" is for Macintosh keyboard users who are not using the "
-#~ "new input layer."
-#~ msgstr ""
-#~ "Το μοντέλο \"macintosh\" είναι για πληκτρολόγια Macintosh, όπου ο πυρήνας "
-#~ "και τα προγράμματα της κονσόλας χρησιμοποιούν το νέο σύστημα επικοινωνίας "
-#~ "(input layer) με γενικούς κωδικούς πλήκτρων στο Linux (Linux keycodes). "
-#~ "Το \"macintosh_old\" είναι για χρήστες πληκτρολόγιων Macintosh που δε "
-#~ "χρησιμοποιούν το νέο σύστημα επικοινωνίας."
-
-#~ msgid "All of the above models use the \"xorg\" rule set."
-#~ msgstr "Όλα τα παραπάνω μοντέλα χρησιμοποιούν το σύνολο κανόνων \"xorg\"."
-
-#~ msgid ""
-#~ "The \"type4\" and \"type5\" models are for Sun Type4 and Type5 keyboards, "
-#~ "respectively.  These models can only be used if the \"sun\" XKB rule set "
-#~ "is in use."
-#~ msgstr ""
-#~ "Τα μοντέλα \"type4\" και \"type5\" είναι για πληκτρολόγια Sun Type 4 και "
-#~ "Type 5, αντίστοιχα.  Αυτά τα μοντέλα μπορούν να χρησιμοποιηθούν μόνο αν "
-#~ "έχει οριστεί το σύνολο κανόνων XKB \"sun\"."
-
-#~ msgid "Please select your keyboard layout."
-#~ msgstr "Παρακαλώ επιλέξτε την διάταξη του πληκτρολογίου σας."
-
-#~ msgid "Please select your keyboard variant."
-#~ msgstr "Παρακαλώ επιλέξτε τον τύπο του πληκτρολογίου σας."
-
-#~ msgid "Please select your keyboard options."
-#~ msgstr "Παρακαλώ καθορίστε τις επιλογές του πληκτρολογίου σας."
-
-#~ msgid ""
-#~ "You can combine options by separating them with a comma; for example, if "
-#~ "you wish the Caps Lock key to behave as an additional Control key and you "
-#~ "would like to use your Windows or logo keys as Meta keys, you may enter "
-#~ "\"ctrl:nocaps,altwin:meta_win\"."
-#~ msgstr ""
-#~ "Μπορείτε να συνδυάσετε επιλογές διαχωρίζοντάς τις με κόμμα. Για "
-#~ "παράδειγμα, αν επιθυμείτε το πλήκτρο Caps Lock να συμπεριφέρεται ως "
-#~ "επιπλέον πλήκτρο Control και τα πλήκτρα Windows ή logo να συμπεριφέρονται "
-#~ "ως πλήκτρα Meta, μπορείτε να εισάγετε \"ctrl:nocaps,altwin:meta_win\"."
-
-#~ msgid "If you don't know what options to use, leave this entry blank."
-#~ msgstr ""
-#~ "Αν δε γνωρίζετε ποιες επιλογές πρέπει να χρησιμοποιήσετε, μπορείτε να "
-#~ "αφήσετε το πεδίο κενό."
-
-#~ msgid ""
-#~ "If you have a mouse attached to the computer, an attempt to detect it can "
-#~ "be made; it may help to move the mouse while detection is attempted "
-#~ "(also, the gpm program should not be running).  If you would like to "
-#~ "attach a PS/2 or bus/inport mouse to your computer, you should shut down "
-#~ "the system, turn off the computer's power, connect the mouse, turn the "
-#~ "computer back on, and reboot.  If you wish to select a mouse type "
-#~ "manually, decline this option."
-#~ msgstr ""
-#~ "Αν έχετε κάποιο ποντίκι συνδεδεμένο στον υπολογιστή, μπορεί να γίνει "
-#~ "προσπάθεια ανίχνευσής του.  Αν μετακινείτε το ποντίκι κατά την ανίχνευση, "
-#~ "ίσως αυτό βοηθήσει στην καλύτερη ανίχνευση (επίσης το πρόγραμμα gpm δε θα "
-#~ "πρέπει να τρέχει).  Αν επιθυμείτε να συνδέσετε ένα ποντίκι PS/2 ή bus/"
-#~ "inport στον υπολογιστή σας, θα πρέπει να τερματίσετε το σύστημα, να "
-#~ "αποσυνδέσετε την τροφοδοσία να συνδέσετε το ποντίκι να ξανασυνδέσετε την "
-#~ "τροφοδοσία και να επανεκκινήσετε τον υπολογιστή.  Αν επιθυμείτε τη "
-#~ "χειροκίνητη επιλογή ποντικιού, απαντήστε αρνητικά σε αυτήν την ερώτηση."
-
-#~ msgid "Please choose your mouse port."
-#~ msgstr "Παρακαλώ καθορίστε την θύρα του ποντικιού σας."
-
-#~ msgid "Please choose the entry that best describes your mouse."
-#~ msgstr ""
-#~ "Παρακαλώ επιλέξτε την καταχώρηση που ταιριάζει περισσότερο στο ποντίκι "
-#~ "σας."
-
-#~ msgid "Please enter a comma-separated list of ranges or values."
-#~ msgstr ""
-#~ "Παρακαλώ εισάγετε μια λίστα από τιμές ή όρια τιμών, χωρισμένα με κόμμα."
-
-#~ msgid "Select the video modes you would like the X server to use."
-#~ msgstr ""
-#~ "Επιλέξτε τις αναλύσεις της οθόνης που επιθυμείτε να χρησιμοποιεί ο "
-#~ "εξυπηρετητής X."
-
-#~ msgid "Please enter a value for the entry."
-#~ msgstr "Παρακαλώ εισάγετε μια τιμή για το πεδίο."
-
-#~ msgid "Please enter a value without double-quotes."
-#~ msgstr "Παρακαλώ εισάγετε μια τιμή χωρίς διπλά εισαγωγικά."
-
-#~ msgid "Please enter only a numeric value."
-#~ msgstr "Παρακαλώ εισάγετε μόνο μια αριθμητική τιμή."
-
-#~ msgid "Migrate XKB configuration directory?"
-#~ msgstr "Να εισηχθεί ο κατάλογος ρύθμισης XKB;"
-
-#~ msgid ""
-#~ "The directory where configuration information (including keyboard data) "
-#~ "for the X KEYBOARD Extension (XKB) is stored has been changed from /usr/"
-#~ "X11R6/lib/X11/xkb to /usr/share/X11/xkb."
-#~ msgstr ""
-#~ "Ο κατάλογoς όπου είναι αποθηκευμένες οι πληροφορίες ρυθμίσεων "
-#~ "(συμπεριλαμβανομένων των δεδομένωνπληκτρολογίου) για το X KEYBOARD "
-#~ "Extension (XKB) έχει αλλάξει από το /usr/X11R6/lib/X11/xkb  στο /usr/"
-#~ "share/X11/xkb."
-
-#~ msgid ""
-#~ "Your system is using the old location, and some programs, such as those "
-#~ "from old or unofficial Debian packages, may continue to install files "
-#~ "there."
-#~ msgstr ""
-#~ "Το σύστημα σας χρησιμοποιεί την παλιά τοποθεσία, και μερικά προγράμματα, "
-#~ "όπως εκείναπου προέρχονται από παλιά ή ανεπίσημα πακέτα Debian, μπορεί να "
-#~ "συνεχίζουν να εγκαθιστούν αρχείασε αυτή την τοποθεσία."
-
-#~ msgid ""
-#~ "Would you like the XKB configuration files on the system to be "
-#~ "automatically migrated from the old location to the new one?  Any "
-#~ "existing files in the new location that have the same name will be backed "
-#~ "up and replaced by the files from the old location.  A symbolic link from "
-#~ "the old location to the new one will be created to prevent legacy "
-#~ "applications from breaking."
-#~ msgstr ""
-#~ "Θέλετε να εισαχθούν αυτόματα τα αρχεία ρυθμίσεων XKB από την παλιά "
-#~ "τοποθεσία στη νέα;Θα δημιουργηθούν αντίγραφα ασφαλείας για όλα τα αρχεία "
-#~ "που έχουν το ίδιο όνομα και θα αντικατασταθούν από αυτά από την παλιά "
-#~ "τοποθεσία. Θα δημιουργηθεί και ένας συμβολικός δεσμόςαπό την παλιά στη "
-#~ "νέα τοποθεσία ώστε να διατηρηθεί η απρόσκοπτη λειτουργία παλαιότερων "
-#~ "εφαρμογών."
-
-#~ msgid "Migrate Xt application defaults directory?"
-#~ msgstr "Να εισηχθεί ο κατάλογος προεπιλογών εφαρμογών Xt; "
-
-#~ msgid ""
-#~ "The directory where application defaults for X Window System client "
-#~ "programs based on the X Toolkit Intrinsics (Xt) are stored has been "
-#~ "changed from /usr/X11R6/lib/X11/app-defaults to /etc/X11/app-defaults."
-#~ msgstr ""
-#~ "Ο κατάλογος όπου είναι αποθηκευμένες οι προεπιλογές των εφαρμογών για τα "
-#~ "προγράμματα-πελάτες του ΣυστήματοςΠαραθύρων X που βασίζονται στο X "
-#~ "Toolkit Intrinsics (Xt) έχει αλλάξει από το usr/X11R6/lib/X11/app-"
-#~ "defaults στο /etc/X11/app-defaults."
-
-#~ msgid ""
-#~ "Would you like the app-defaults files on the system to be automatically "
-#~ "migrated from the old location to the new one?  Any existing files in the "
-#~ "new location that have the same name will be backed up and replaced by "
-#~ "the files from the old location.  A symbolic link from the old location "
-#~ "to the new one will be created to prevent legacy applications from "
-#~ "breaking."
-#~ msgstr ""
-#~ "Θέλετε να εισαχθούν αυτόματα τα αρχεία προεπιλογών εφαρμογών από την "
-#~ "παλιά τοποθεσία στη νέα;Θα δημιουργηθούν αντίγραφα ασφαλείας για όλα τα "
-#~ "αρχεία που έχουν το ίδιο όνομα και θα αντικατασταθούν από αυτά από την "
-#~ "παλιά τοποθεσία. Θα δημιουργηθεί και ένας συμβολικός δεσμόςαπό την παλιά "
-#~ "στη νέα τοποθεσία ώστε να διατηρηθεί η απρόσκοπτη λειτουργία παλαιότερων "
-#~ "εφαρμογών."
-
-#~ msgid "Select the desired default display manager."
-#~ msgstr "Επιλέξτε τον επιθυμητό διαχειριστή οθόνης."
-
-#~ msgid ""
-#~ "A display manager is a program that provides graphical login capabilities "
-#~ "for the X Window System."
-#~ msgstr ""
-#~ "Ο διαχειριστής οθόνης είναι ένα πρόγραμμα που προσφέρει τη δυνατότητα "
-#~ "σύνδεσης στο σύστημα παραθύρων X μέσω γραφικού περιβάλλοντος."
-
-#~ msgid ""
-#~ "Only one display manager can manage a given X server, but multiple "
-#~ "display manager packages are installed.  Please select which display "
-#~ "manager should run by default."
-#~ msgstr ""
-#~ "Μόνο ένας διαχειριστής οθόνης μπορεί να χειρίζεται ένα συγκεκριμένο "
-#~ "εξυπηρετητή X, αλλά περισσότεροι από ένας είναι εγκατεστημένοι. Παρακαλώ "
-#~ "επιλέξτε τον διαχειριστή οθόνης που θα εκτελείται ως προκαθορισμένος."
-
-#~ msgid ""
-#~ "(Multiple display managers can run simultaneously if they are configured "
-#~ "to manage different servers; to achieve this, configure the display "
-#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
-#~ "disable the check for a default display manager.)"
-#~ msgstr ""
-#~ "Πολλαπλοί διαχειριστές οθόνης μπορούν να τρέχουν ταυτόχρονα, αν έχουν "
-#~ "ρυθμιστεί να χειρίζονται διαφορετικούς διακομιστές X. Για να επιτευχθεί "
-#~ "αυτό, ρυθμίστε τους διαχειριστές οθόνης κατάλληλα, επεξεργαστείτε τα "
-#~ "αρχεία εκκίνησής τους στον κατάλογο /etc/init.d, και απενεργοποιήστε τον "
-#~ "έλεγχο για προκαθορισμένο διαχειριστή οθόνης."
-
-#~ msgid "Do you wish to stop the xdm daemon?"
-#~ msgstr "Θέλετε να σταματήσετε να χρησιμοποιείτε τον δαίμονα xdm;"
-
-#~ msgid ""
-#~ "The X display manager (xdm) daemon is typically stopped on package "
-#~ "upgrade and removal, but it appears to be managing at least one running X "
-#~ "session. If xdm is stopped now, any X sessions it manages will be "
-#~ "terminated. Otherwise you may leave xdm running, and the new version will "
-#~ "take effect the next time the daemon is restarted."
-#~ msgstr ""
-#~ "Κανονικά, η λειτουργία του δαίμονα του διαχειριστή οθόνης των X (xdm) "
-#~ "διακόπτεται με κάθε αναβάθμιση και διαγραφή του πακέτου, αλλά στη "
-#~ "συγκεκριμένη περίπτωση φαίνεται ότι διαχειρίζεται ήδη τουλάχιστον μια "
-#~ "συνεδρία των X (X session). Αν ο xdm τερματιστεί τώρα, οποιεσδήποτε "
-#~ "συνεδρίες των X χειρίζεται θα τερματιστούν επίσης. Διαφορετικά, μπορείτε "
-#~ "να αφήσετε τον xdm να συνεχίσει τη λειτουργία του και η νέα έκδοση να "
-#~ "χρησιμοποιηθεί την επόμενη φορά που θα τρέξει ο δαίμονας."
-
-#~ msgid "experimental version of X.Org packages"
-#~ msgstr "πειραματική έκδοση των πακέτων X.Org"
-
-#~ msgid ""
-#~ "You are using an experimental version of X.Org packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Χρησιμοποιείτε μια πειραματική έκδοση των πακέτων X.Org του Debian.  "
-#~ "Παρακαλώ μην αποστείλετε αναφορές σφαλμάτων με το Σύστημα Ανίχνευσης "
-#~ "Σφαλμάτων του Debian (Bug Tracking System/BTS) για αυτήν την έκδοση των "
-#~ "πακέτων, καθώς δεν έχουν ακόμη κυκλοφορήσει στην κυρίως διανομή του "
-#~ "Debian."
-
-#~ msgid ""
-#~ "If you experience problems with these packages or would like to submit "
-#~ "patches, please send mail to the Debian X mailing list.  You can read "
-#~ "more about this mailing list on the World Wide Web:\n"
-#~ "  http://lists.debian.org/debian-x/"
-#~ msgstr ""
-#~ "Αν αντιμετωπίσετε προβλήματα με αυτά τα πακέτα ή αν θέλετε να "
-#~ "συνεισφέρετε διορθώσεις, παρακαλώ στείλτε email στην λίστα ταχυδρομείου "
-#~ "Debian X.  Μπορείτε να μάθετε περισσότερα για αυτήν την λίστα στο "
-#~ "Διαδίκτυο:\n"
-#~ "  http://lists.debian.gr/debian-x/"
-
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade X.Org to an appropriate released version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install x11-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install x11-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Αν δεν επιθυμείτε να τρέχετε πειραματικά πακέτα X, θα πρέπει να κάνετε τα "
-#~ "εξής δύο βήματα:\n"
-#~ "  1) Βεβαιωθείτε ότι δεν έχετε πηγές πειραματικών πακέτων στο αρχείο σας\n"
-#~ "     /etc/apt/sources.list,\n"
-#~ "  2) Δώστε εντολή στο apt να υποβαθμίσει την έκδοση του X.Org στην\n"
-#~ "\tκατάλληλη έκδοση της διανομής. Μπορείτε να το επιτύχετε αυτό με την\n"
-#~ " \tπροσθήκη της έκδοσης της διανομής στο όνομα του πακέτου με το \"apt-get"
-#~ "\"\n"
-#~ "     -- για παράδειγμα:\n"
-#~ "\tapt-get install x11-common/unstable\n"
-#~ "    ή\n"
-#~ "       apt-get install x11-common/stable\n"
-#~ "    Πιθανόν να χρειαστεί να υποβαθμίσετε περισσότερα από ένα πακέτα."
-
-#~ msgid ""
-#~ "When using operating system kernels with a particular scheduling "
-#~ "strategy, it has been widely noted that the X server's performance "
-#~ "improves when it is run at a higher process priority than the default; a "
-#~ "process's priority is known as its \"nice\" value.  They range from -20 "
-#~ "(extremely high priority, or \"not nice\" to other processes) to 19 "
-#~ "(extremely low priority).  The default nice value for ordinary processes "
-#~ "is 0.  -10 is a good default for a single-user workstation; 0 is a good "
-#~ "default for a machine that has duties other than interacting with the "
-#~ "console user (such as a web server)."
-#~ msgstr ""
-#~ "Έχει παρατηρηθεί ότι σε λειτουργικά συστήματα όπου οι πυρήνες "
-#~ "χρησιμοποιούν κάποια συγκεκριμένη μέθοδο διαμοιρασμού χρόνου των "
-#~ "διεργασιών (schedulers), η απόδοση του εξυπηρετητή X είναι καλύτερη όταν "
-#~ "του δίνεται προτεραιότητα μεγαλύτερη από την προκαθορισμένη. Η "
-#~ "προτεραιότητα αυτή είναι επίσης γνωστή ως η προτεραιότητα \"nice\" της "
-#~ "διεργασίας. Έχει εύρος από -20 (πολύ υψηλή προτεραιότητα ή καθόλου \"nice"
-#~ "\" στις άλλες διεργασίες) έως 19 (πολύ χαμηλή προτεραιότητα).  Η "
-#~ "προκαθορισμένη τιμή της προτεραιότητας nice για τις απλές διεργασίες "
-#~ "είναι 0.  Η τιμή -10 είναι μια καλή επιλογή για ένα σταθμό εργασίας ενός "
-#~ "μόνο χρήστη, ενώ η τιμή 0 ταιριάζει περισσότερο σε κάποιο σύστημα που "
-#~ "έχει επιπλέον εργασίες πέραν της αλληεπίδρασης με τον χρήστη της κονσόλας "
-#~ "(όπως η χρήση ως διακομιστή ιστοσελίδων)."
-
-#~ msgid ""
-#~ "The above is not true of Linux kernel version 2.6 (nor of the 2.5 series "
-#~ "after the \"O(1) scheduler\" was included); on such systems, the nice "
-#~ "value of the X server should be set to 0."
-#~ msgstr ""
-#~ "Το παραπάνω δεν ισχύει για τις εκδόσεις του πυρήνα του Linux 2.6 (ούτε "
-#~ "για τη σειρά 2.5, έπειτα από την ενσωμάτωση του scheduler \"O(1)\" ). Στα "
-#~ "συστήματα αυτά, η προτεραιότητα 'nice' του εξυπηρετητή X θα πρέπει να "
-#~ "οριστεί στο 0."
-
-#~ msgid ""
-#~ "The glx module enables software OpenGL rendering.  The dri module enables "
-#~ "support in the X server for Direct Rendering Infrastructure (DRI).  Note "
-#~ "that support for DRI must also exist in the kernel, the video card, and "
-#~ "the installed version of the Mesa libraries for hardware-accelerated 3D "
-#~ "operations using DRI to work.  Otherwise, the server falls back to "
-#~ "software rendering."
-#~ msgstr ""
-#~ "Οι μονάδες GLCore και glx ενεργοποιούν την εμφάνιση γραφικών OpenGL μέσω "
-#~ "λογισμικού. Η μονάδα dri ενεργοποιεί την υποστήριξη του Direct Rendering "
-#~ "Infrastracture (DRI) στον εξυπηρετητή X. Σημειωτέον ότι θα πρέπει να "
-#~ "υπάρχει επιπλέον υποστήριξη του DRI στον πυρήνα, την κάρτα οθόνης και την "
-#~ "εγκατεστημένη έκδοση των βιβλιοθηκών Mesa για επιταχυνόμενες από την "
-#~ "κάρτα οθόνης εργασίες γραφικών 3D, για να λειτουργήσει σωστά το DRI.  "
-#~ "Διαφορετικά, ο εξυπηρετητής θα επαναφερθεί σε εμφάνιση γραφικών OpenGL "
-#~ "μέσω λογισμικού."
-
-#~ msgid ""
-#~ "The vbe and ddc modules enable support for VESA BIOS Extensions and Data "
-#~ "Display Channel, respectively.  These modules are used to query monitor "
-#~ "capabilities via the video card.  The int10 module is a real-mode x86 "
-#~ "emulator that is used to softboot secondary VGA cards.  Note that the vbe "
-#~ "module depends on the int10 module, so if you wish to enable vbe, enable "
-#~ "int10 as well."
-#~ msgstr ""
-#~ "Οι μονάδες vbe και ddc ενεργοποιούν υποστήριξη για επεκτάσεις VESA BIOS "
-#~ "και Data Display Channel, αντίστοιχα.  Αυτές οι μονάδες χρησιμοποιούνται "
-#~ "για πληροφόρηση των δυνατοτήτων της οθόνης μέσω της κάρτας οθόνης.  Η "
-#~ "μονάδα int10 είναι ένας πραγματικός εξομοιωτής επεξεργαστών x86 που "
-#~ "χρησιμοποιείται για την εκκίνηση δευτερευόντων καρτών οθόνης VGA. "
-#~ "Σημειώστε ότι η μονάδα vbe στηρίζεται στη μονάδα int10, έτσι αν "
-#~ "επιθυμείτε να ενεργοποιήσετε τη μονάδα vbe, θα πρέπει να ενεργοποιήσετε "
-#~ "και την int10."
-
-#~ msgid ""
-#~ "The X server configuration file associates your video card with a name "
-#~ "that you may provide.  This is usually the vendor or brand name followed "
-#~ "by the model name, e.g., \"3Dfx Voodoo3\" or \"ATI Rage Fury Maxx\"."
-#~ msgstr ""
-#~ "Το αρχείο ρυθμίσεων του εξυπηρετητή X αντιστοιχίζει ένα όνομα, που εσείς "
-#~ "δίνετε, στην κάρτα οθόνης σας.  Αυτό συνήθως αποτελείται από το όνομα του "
-#~ "κατασκευαστή ακολουθούμενο από το μοντέλο της κάρτας, π.χ. \"3Dfx Voodoo 3"
-#~ "\" ή \"ATI Rage Fury Maxx\"."
-
-#~ msgid ""
-#~ "Users of SGI Indigo2 XL machines, or machines with other buses not yet "
-#~ "fully supported, should specify simply \"1\" here.  (This is not "
-#~ "guaranteed to work.)"
-#~ msgstr ""
-#~ "Οι χρήστες συστημάτων  SGI Indigo2 XL, ή συστημάτων με διαύλους που δεν "
-#~ "υποστηρίζονται ακόμαπλήρως, θα πρέπει να βάλουν εδώ απλά \"1\" (δεν "
-#~ "υπάρχει εγγύηση ότι αυτό θα λειτουργήσει.)"
-
-#~ msgid ""
-#~ "You may wish to use the \"lspci\" command to determine the bus location "
-#~ "of your PCI or AGP video card.  Keep in mind that lspci reports the bus, "
-#~ "device, and function numbers in hexadecimal, not decimal."
-#~ msgstr ""
-#~ "Μπορείτε να χρησιμοποιήσετε την εντολή \"lspci\" για να καθορίσετε την "
-#~ "θέση της κάρτας οθόνης σας στο δίαυλο PCI ή AGP.  Έχετε υπόψιν σας ότι η "
-#~ "lspci καταγράφει τους αριθμούς του διαύλου, συσκευής, και λειτουργίας σε "
-#~ "δεκαεξαδική μορφή και όχι σε δεκαδική."
-
-#~ msgid ""
-#~ "Users of machines other than PowerPCs or SGI Indigo2 XLs with only one "
-#~ "video card should leave this entry blank."
-#~ msgstr ""
-#~ "Οι χρήστες συστημάτων εκτός PowerPC ή SGI Indigo2 XLs με μόνο μία κάρτα "
-#~ "οθόνης θα πρέπει να αφήσουν το πεδίο κενό."
-
-#~ msgid ""
-#~ "Advanced users can use any defined XKB rule set.  If the xlibs package "
-#~ "has been unpacked, see the /usr/share/X11/xkb/rules directory for "
-#~ "available rule sets."
-#~ msgstr ""
-#~ "Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποιοδήποτε ορισμένο "
-#~ "σύνολο κανόνων XKB.  Αν το πακέτο xlibs έχει εγκατασταθεί, τα διαθέσιμα "
-#~ "σύνολα βρίσκονται στον κατάλογο /usr/share/X11/xkb/rules."
-
-#~ msgid ""
-#~ "Advanced users can use any model defined by the selected XKB rule set.  "
-#~ "If the xlibs package has been unpacked, see the /usr/share/X11/xkb/rules "
-#~ "directory for available rule sets."
-#~ msgstr ""
-#~ "Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποιοδήποτε μοντέλο "
-#~ "ορίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xlibs είναι "
-#~ "εγκατεστημένο, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα "
-#~ "διαθέσιμα σύνολα."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr ""
-#~ "Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ), μπορούν γενικά να δώσουν "
-#~ "\"pc104\"."
-
-#~ msgid ""
-#~ "Advanced users can use any layout supported by the selected XKB rule "
-#~ "set.  If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
-#~ "rules directory for available rule sets, and the /usr/share/X11/xkb/"
-#~ "symbols directory for available layouts."
-#~ msgstr ""
-#~ "Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε διάταξη "
-#~ "υποστηρίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xlibs "
-#~ "είναι εγκατεστημένο, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα "
-#~ "διαθέσιμα σύνολα, και τον κατάλογο /usr/share/X11/xkb/symbols για τις "
-#~ "διαθέσιμες διατάξεις."
-
-#~ msgid ""
-#~ "Advanced users can use any variant supported by the selected XKB layout.  "
-#~ "If the xlibs package has been unpacked, see the /usr/share/X11/xkb/"
-#~ "symbols directory for the file corresponding to your selected layout for "
-#~ "available variants."
-#~ msgstr ""
-#~ "Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε "
-#~ "διαφοροποίηση υποστηρίζεται από την επιλεγμένη διάταξη XKB.  Αν το πακέτο "
-#~ "xlibs είναι εγκατεστημένο, δείτε τον κατάλογο /usr/share/X11/xkb/symbols "
-#~ "και στο αρχείο που αντιστοιχεί στην επιλεγμένη διάταξη για τις διαθέσιμες "
-#~ "διαφοροποιήσεις."
-
-#~ msgid ""
-#~ "Advanced users can use any options compatible with the selected XKB "
-#~ "model, layout and variant.  If the xlibs package has been unpacked, see "
-#~ "the /usr/share/X11/xkb/symbols directory available options files, which "
-#~ "define only partial keyboard translations.  (For example, /usr/share/X11/"
-#~ "xkb/symbols/ctrl.)"
-#~ msgstr ""
-#~ "Οι προχωρημένοι χρήστες μπορούν να χρησιμοποιήσουν οποιεσδήποτε επιλογές "
-#~ "υποστηρίζονται από το επιλεγμένο μοντέλο XKB, τη διάταξη και τη "
-#~ "διαφοροποίηση.  Αν το πακέτο xlibs είναι εγκατεστημένο, δείτε τον "
-#~ "κατάλογο /usr/share/X11/xkb/symbols και στα αρχεία των διαθέσιμων "
-#~ "επιλογών, που ορίζουν μερικώς τις χαρτογραφήσεις των πληκτρολογίων (για "
-#~ "παράδειγμα, /usr/share/X11/xkb/symbols/ctrl)."
-
-#~ msgid "Enable scroll events from mouse wheel?"
-#~ msgstr "Να ενεργοποιηθεί η δυνατότητα χρήσης της ρόδας κύλισης;"
-
-#~ msgid ""
-#~ "Events from a wheeled mouse's wheel can be treated as clicks of "
-#~ "additional buttons (buttons 4 and 5).  Some X applications treat buttons "
-#~ "4 and 5 as scroll-up and scroll-down events, making the mouse wheel work "
-#~ "as expected. This is application-level behavior however, and may not "
-#~ "always work.  Also, exotic mice with more than 3 buttons in addition to a "
-#~ "wheel may behave in an unexpected fashion if this option is set."
-#~ msgstr ""
-#~ "Τα μηνύματα που στέλνει στον υπολογιστή η ρόδα κύλισης, μπορούν να "
-#~ "μεταφραστούν ως πατήματα επιπλέον πλήκτρων (πλήκτρα 4 και 5).  Κάποιες "
-#~ "εφαρμογές των X, μεταχειρίζονται τα πλήκτρα 4 και 5 ως μηνύματα για "
-#~ "κύλιση πάνω και κάτω, ώστε η ρόδα κύλισης να συμπεριφέρεται ως "
-#~ "αναμενόμενο.  Αυτή η συμπεριφορά όμως εξαρτάται από την εφαρμογή και "
-#~ "πιθανόν να μη λειτουργεί πάντα.  Επίσης, τα πιο εξωτικά ποντίκια με "
-#~ "περισσότερα από 3 πλήκτρα επιπλέον της ρόδας κύλισης μπορεί να μη "
-#~ "συμπεριφέρονται με προβλεπόμενο τρόπο αν ενεργοποιηθεί αυτή η επιλογή."
-
-#~ msgid "Enabling this option is harmless if your mouse has no scroll wheel."
-#~ msgstr ""
-#~ "Μπορείτε να ενεργοποιήσετε αυτήν την επιλογή ακόμη και αν το ποντίκι σας "
-#~ "δεν έχει ρόδα κύλισης."
-
-#~ msgid ""
-#~ "If you have an NVidia video card, you may want to decline this option, as "
-#~ "these cards' support for the DDC protocol is often so poor that attempts "
-#~ "to use it can result in system lockups."
-#~ msgstr ""
-#~ "Αν έχετε κάρτα οθόνης NVidia, πιθανόν να πρέπει να απορρίψετε αυτήν την "
-#~ "επιλογή, καθώς αυτές οι κάρτες δεν υποστηρίζουν σωστά το πρωτόκολλο DDC "
-#~ "και οι προσπάθειες χρήσης του μπορεί να οδηγήσουν σε \"κλείδωμα\" του "
-#~ "συστήματος (lockups)."
-
-#~ msgid "Is your monitor an LCD device?"
-#~ msgstr "Η οθόνη σας είναι τύπου LCD;"
-
-#~ msgid ""
-#~ "If your monitor is a liquid-crystal display (which is the case with "
-#~ "almost all laptops), you should set this option."
-#~ msgstr ""
-#~ "Αν η οθόνη σας είναι υγρών κρυστάλλων (όπως συμβαίνει σε σχεδόν όλους "
-#~ "τους φορητούς υπολογιστές), θα πρέπει να απαντήσετε καταφατικά σε αυτήν "
-#~ "την επιλογή."
-
-#~ msgid ""
-#~ "Users of traditional cathode-ray tube (CRT) monitors should not set this "
-#~ "option."
-#~ msgstr ""
-#~ "Οι κάτοχοι τυπικών οθονών καθοδικής λυχνίας (CRT), θα πρέπει να "
-#~ "απαντήσουν αρνητικά."
-
-#~ msgid ""
-#~ "For the \"simple\" option, you need only know the monitor's physical "
-#~ "size; this will set some configuration values appropriate for a typical "
-#~ "CRT of the corresponding size, but may be suboptimal for high-quality "
-#~ "CRT's.  (This option is disabled for LCD panel users, since such displays "
-#~ "are configured for a particular resolution.)"
-#~ msgstr ""
-#~ "Για την \"απλή\" (simple) επιλογή, αρκεί να γνωρίζετε μόνο το μέγεθος της "
-#~ "οθόνης σας, ώστε να καθοριστούν κάποιες από τις ρυθμίσεις της οθόνης σας "
-#~ "για μια τυπική οθόνη CRT αυτού του μεγέθους, που όμως μπορεί να είναι "
-#~ "υποβέλτιστες για υψηλής ποιότητας οθόνες CRT.  (Αυτή η επιλογή είναι "
-#~ "ανενεργή για οθόνες LCD, καθώς αυτές έχουν προδιαγραφές για μια "
-#~ "συγκεκριμένη ανάλυση)."
-
-#~ msgid ""
-#~ "Note that on some old ATI hardware, such as the Mach8 (VGA Wonder), "
-#~ "Mach32, and early Mach64 (\"GX\") chipsets, depths higher than 8 are "
-#~ "unsupported."
-#~ msgstr ""
-#~ "Σημειώστε ότι σε παλιές κάρτες ATI, με ελεγκτές όπως Mach8 (VGA Wonder), "
-#~ "Mach32, και πρώιμους Mach64 (\"GX\"), δεν υποστηρίζεται χρωματικό βάθος "
-#~ "μεγαλύτερο του 8."
-
-#~ msgid "Write default DRI section to configuration file?"
-#~ msgstr "Να αποθηκευτεί το προκαθορισμένο τμήμα DRI στο αρχείο ρυθμίσεων;"
-
-#~ msgid ""
-#~ "The DRI section of the X server configuration file determines the "
-#~ "permissions of the DRI device.  This option is for advanced users.  In "
-#~ "most cases, you should enable it."
-#~ msgstr ""
-#~ "Το τμήμα DRI του αρχείου ρυθμίσεων των X, καθορίζει τις άδειες πρόσβασης "
-#~ "στην μονάδα DRI.  Αυτή η επιλογή είναι για προχωρημένους χρήστες.  Στις "
-#~ "περισσότερες περιπτώσεις, συνιστάται να την ενεργοποιήσετε."
-
-#~ msgid ""
-#~ "Disable this option if you want to write your own \"DRI\" section into "
-#~ "the X.Org server configuration file.  You may wish to do this if you want "
-#~ "to change the access privileges to the DRI port."
-#~ msgstr ""
-#~ "Απενεργοποιήστε την επιλογή αυτή αν επιθυμείτε να γράψετε μόνοι σας το "
-#~ "τμήμα \"DRI\" στο αρχείο ρυθμίσεων του X.  Μπορεί να χρειαστεί να "
-#~ "προβείτε σε μία τέτοια κίνηση αν θέλετε να αλλάξετε τις άδειες πρόσβασης "
-#~ "στη θύρα DRI."
-
-#~ msgid "The v4l module enables support for the Video4Linux kernel interface."
-#~ msgstr ""
-#~ "Η μονάδα v4l ενεργοποιεί την υποστήριξη για το περιβάλλον πυρήνα "
-#~ "Video4Linux"
-
-#~ msgid "PCI:nn:nn:nn"
-#~ msgstr "PCI:nn:nn:nn"
-
-#~ msgid ""
-#~ "(where each nn is a decimal number referring to the card's bus, device, "
-#~ "and function number, respectively)."
-#~ msgstr ""
-#~ "(όπου κάθε nn είναι ένας δεκαδικός αριθμός που αναφέρεται στο δίαυλο της "
-#~ "κάρτας (bus), τον αριθμό της συσκευής (device) και στη λειτουργία της "
-#~ "(function), αντίστοιχα)."
-
-#~ msgid "The BusID should be a string in the following format:"
-#~ msgstr "Το διακριτικό του διαύλου θα πρέπει να έχει την εξής μορφή:"
-
-#~ msgid "bustype:bus:device:function"
-#~ msgstr "τύπος διαύλου:δίαυλος:συσκευή:λειτουργία"
-
-#~ msgid ""
-#~ "Where \"bustype\" is \"PCI\" for PCI and AGP video cards, and each of "
-#~ "\"bus\", \"device\", and \"function\" is a decimal (not hexadecimal) "
-#~ "value.  For example, \"PCI:0:16:0\" is valid input (without the double-"
-#~ "quotes)."
-#~ msgstr ""
-#~ "Όπου ο \"τύπος διαύλου\" είναι \"PCI\" για κάρτες οθόνης PCI και AGP και "
-#~ "κάθε μία από τις τιμές \"δίαυλος\", \"συσκευή\" και \"λειτουργία\" είναι "
-#~ "ένας δεκαδικός (όχι δεκαεξαδικός) αριθμός.  Για παράδειγμα, \"PCI:0:16:0"
-#~ "\" είναι μία έγκυρη τιμή (χωρίς τα διπλά εισαγωγικά)."
-
-#~ msgid "experimental version of XFree86 packages"
-#~ msgstr "πειραματική έκδοση των πακέτων XFree86"
-
-#~ msgid ""
-#~ "You are using an experimental version of XFree86 packages for Debian.  "
-#~ "Please do not file bugs with the Debian Bug Tracking System against this "
-#~ "version of the packages, since they have not been released to the Debian "
-#~ "distribution yet."
-#~ msgstr ""
-#~ "Χρησιμοποιείτε μια πειραματική έκδοση των πακέτων XFree86 του Debian.  "
-#~ "Παρακαλώ μην αποστείλετε αναφορές σφαλμάτων με το Σύστημα Ανίχνευσης "
-#~ "Σφαλμάτων του Debian (Bug Tracking System/BTS) για αυτήν την έκδοση των "
-#~ "πακέτων, καθώς δεν έχουν ακόμη κυκλοφορήσει στην κυρίως διανομή του "
-#~ "Debian."
-
-#, fuzzy
-#~ msgid ""
-#~ "If you do not want to be running experimental X packages, you need to do "
-#~ "two things:\n"
-#~ "  1) Ensure that you do not have experimental package repositiories in\n"
-#~ "     your /etc/apt/sources.list file;\n"
-#~ "  2) Instruct apt to downgrade XFree86 to an appropriate released "
-#~ "version;\n"
-#~ "     you can do this by appending a package suite name to the package "
-#~ "name\n"
-#~ "     with \"apt-get\" -- for example:\n"
-#~ "       apt-get install xfree86-common/unstable\n"
-#~ "    or\n"
-#~ "       apt-get install xfree86-common/stable\n"
-#~ "    You may need to specify downgrades for several packages."
-#~ msgstr ""
-#~ "Αν δεν επιθυμείτε να τρέχετε πειραματικά πακέτε X, θα πρέπει να κάνετε τα "
-#~ "εξής δύο βήματα:\n"
-#~ "  1) Βεβαιωθείτε ότι δεν έχετε πηγές πειραματικών πακέτων στο αρχείο σας\n"
-#~ "     /etc/apt/sources.list,\n"
-#~ "  2) Δώστε εντολή στο apt να υποβαθμίσει την έκδοση του XFree86 στην "
-#~ "κατάλληλη      έκδοση της διανομής. Μπορείτε να το επιτύχετε αυτό με την "
-#~ "προσθήκη της\n"
-#~ "     έκδοσης της διανομής στο όνομα του πακέτου με το \"apt-get\"\n"
-#~ "     -- για παράδειγμα:        apt-get install xorg-common/unstable\n"
-#~ "    ή\n"
-#~ "       apt-get install xorg-common/stable\n"
-#~ "    Πιθανόν να χρειαστεί να υποβαθμίσετε περισσότερα από ένα πακέτα."
+"Η εγκατάσταση αυτού του πακέτου θα αποτύχει τώρα και υα τερματιστεί ώστε να "
+"μπορέσετε να το κάνετε αυτό. Παρακαλώ, ξανατρέξτε τξν διαδικασία αναβάθμισης "
+"αφού έχετε απομακρύνει τον κατάλογο."
