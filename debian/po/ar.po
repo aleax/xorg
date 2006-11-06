@@ -9,13 +9,15 @@ msgstr ""
 "Project-Id-Version: xserver-xorg_po\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-21 11:30+0200\n"
-"PO-Revision-Date: 2006-10-20 20:55+0300\n"
+"PO-Revision-Date: 2006-11-06 01:00+0300\n"
 "Last-Translator: Ossama M. Khayat <okhayat@yahoo.com>\n"
 "Language-Team: Arabic <support@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 || n==0 ? 0 : n%100==2 ? 2 : n%"
+"100>=3 && n%100<=10 ? 2 : 3;\n"
 
 #. Type: multiselect
 #. Description
@@ -31,6 +33,9 @@ msgid ""
 "Removing all of them is the same as removing none, since in both cases the X "
 "server will attempt to use the highest possible resolution."
 msgstr ""
+"الرجاء إبقاء استبانات الشاشة فقط التي تود أن يقوم خادم X باستخدامها. كما أن "
+"إزالتها كلها هو بمثابة عدم إزالة أي منها، حيث أنه في الحالتين سيقوم خادم X "
+"بمحاولة استخدام أعلى استبانة ممكن."
 
 #. Type: boolean
 #. Description
@@ -48,6 +53,10 @@ msgid ""
 "or driver module.  If it succeeds, further configuration questions about "
 "your video hardware will be pre-answered."
 msgstr ""
+"عليك بانتقاء هذا الخيار إن أردت تجربة الاكتشاف الآلي لخادم X المقترح ووحدة "
+"تشغيل بطاقتك الفيديوية.  إن فشلت عملية الاكتشاف الآلي، فسيطلب منك تحديد خادم "
+"X المطلوب و/أو وحدة التشغيل.  أما إن نجحت العملية، فستتم الإجابة عن الأسئلة "
+"الإضافية حول تهيئة عتادك الفيديوي."
 
 #. Type: boolean
 #. Description
@@ -57,6 +66,8 @@ msgid ""
 "choose this option.  You will not be asked to select the X server if there "
 "is only one available."
 msgstr ""
+"إن كنت تفضل اختيار خادم X ووحدة تشغيله بنفسك، لا تقم بانتقاء هذا الخيار.  لن "
+"يطلب منك اختيار خادم X إن كان هناك واحد فقط متوفر."
 
 #. Type: note
 #. Description
@@ -74,12 +85,16 @@ msgid ""
 "incomplete information in discover's hardware database, or because your "
 "video hardware is not supported by the available X servers."
 msgstr ""
+"يبدو أنه ليس هناك عتاد فيديو مثبت على هذا الجهاز (مثلاً بسبب أنه طرفية "
+"تسلسلية فقط)، أو أن برنامج \"discover\" لم يستطع تحديد خادم X الملائم لعتادك "
+"الفيديوي. قد يكون هذا بسبب المعلومات الغير كاملة في قاعدة بيانات عتاد "
+"discover، أو بسبب أن عتاد الفيديو الخاص بك لا تدعمه خادمات X المتوفرة."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001
 msgid "Multiple potential default X servers for your hardware"
-msgstr ""
+msgstr "هناك عدة خادمات X افتراضية محتملة لعتادك"
 
 #. Type: note
 #. Description
@@ -91,6 +106,8 @@ msgid ""
 "required to support the various devices.  It is thus not possible to "
 "automatically select a default X server."
 msgstr ""
+"لقد تم اكتشاف عدة بطاقات فيديو، وهناك حاجة إلى خادمات X مختلفة لدعم هذه "
+"الأجهزة المتعددة.  لذا فليس من الممكن اختيار خادم X افتراضي تلقائياً."
 
 #. Type: note
 #. Description
@@ -102,6 +119,8 @@ msgid ""
 "\"; this is generally the video card and monitor used for display when the "
 "computer is booted up."
 msgstr ""
+"الرجاء تهيئة الجهاز الذي سيخدم \"الرأس الأولي\" لحاسبك؛ يكون هذا عادة بطاقة "
+"الفيديو والشاشة التي تستخدم للعرض عند إقلاع حاسبك."
 
 #. Type: note
 #. Description
@@ -113,6 +132,8 @@ msgid ""
 "however, the X server configuration files can be edited later to support a "
 "multi-head configuration."
 msgstr ""
+"تدعم عملية التهيئة حالياً فقط إعدادات الرأس الواحد؛ على أي حال، يمكنك تعديل "
+"ملفات تهيئة خادم X لاحقاً لدعم تهيئة الرؤوس المتعددة."
 
 #. Type: select
 #. Description
@@ -128,6 +149,8 @@ msgid ""
 "communicates with the video display and input devices, providing a "
 "foundation for the chosen Graphical User Interface (GUI)."
 msgstr ""
+"خادم x هو واجهة العتاد لنظام نوافذ X، حيث يقوم بالتواصل مع عرض الفيديو "
+"وأجهزة الإدخال لتوفير أساس تعمل عليه واجهة المستخدم الرسومية (GUI)."
 
 #. Type: select
 #. Description
@@ -137,6 +160,8 @@ msgid ""
 "X symbolic link.  Some X servers may not work with some particular graphics "
 "hardware."
 msgstr ""
+"يبدو أن هناك عدة خادمات X متوفرة؛ وقد تم اختيار الخادم الافتراضي عبر الرابط "
+"الرمزي /etc/X11/X.  قد لا تعمل بعض خادمات X مع عتاد رسومي محدد."
 
 #. Type: boolean
 #. Description
@@ -153,6 +178,9 @@ msgid ""
 "option is recommended to experienced users only.  In most cases, it should "
 "be enabled."
 msgstr ""
+"يبين قسم Files في ملف تهيئة خادم X المكان الذي يمكن للخادم العثور بداخله على "
+"وحدات الخادم، وقواعد بيانات ألوان RGB، وملفات الخطوط. هذا الخيار مستحسن "
+"للمستخدمين الخبراء فقط ويجب تمكينه في معظم الحالات."
 
 #. Type: boolean
 #. Description
@@ -163,6 +191,9 @@ msgid ""
 "to the local font server, add a reference to a different font server, or "
 "rearrange the default set of local font paths."
 msgstr ""
+"عطل هذا الخيار إن كنت تريد المحافظة على قسم Files المخصص في ملف تهيئة خادم X."
+"Org.  قد تحتاج لهذا لإزالة الرابط لخادم الخط المحلي، واستبداله بخادم خط آخر، "
+"أو لإعادة ترتيب المجموعة الافتراضية لمسارات الخطوط المحلية."
 
 #. Type: multiselect
 #. Description
@@ -246,12 +277,15 @@ msgid ""
 "model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
 "6600\"."
 msgstr ""
+"يقوم ملف تهيئة خادم X يتعيين اسم لبطاقة الفيديو يمكنك تحديده.  ويكون هذا "
+"الاسم عادة اسم المصنّع أو الماركة يتبعها رقم الطراز، مثلاً، \"Intel i915\"، "
+"\"ATI RADEON X800\" أو \"NVIDIA GeForce 6600\"."
 
 #. Type: text
 #. Description
 #: ../xserver-xorg.templates:10001
 msgid "Generic Video Card"
-msgstr ""
+msgstr "بطاقة فيديو عامة"
 
 #. Type: select
 #. Description
@@ -293,6 +327,8 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
+"بدلاً من التواصل مباشرة مع عتاد الفيديو، يمكن تهيئة خادم X لتأدية بعض "
+"الأعمال، كتبديل وضع الفيديو عبر مُشغل kernel framebuffer."
 
 #. Type: boolean
 #. Description
@@ -302,6 +338,9 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
+"نظرياً، يجب أن تصلح أي من الطريقتين، ولكن عملياً، قد تصلح طريقة ولا تصلح "
+"الأخرى.  تمكين هذا الخيار هو الاختيار الأفضل، ولكن لا تتردد بتعطيله إن كان "
+"يبدو أن يسبب أية مشاكل."
 
 #. Type: string
 #. Description
@@ -317,6 +356,8 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
+"يجب على مستخدمي PowerPC، أو مستخدمي أية حاسب يحتوي عدة أجهزة فيديو، تحديد "
+"قيمة BusID لبطاقة الفيديو بنسق معيّن مقبول."
 
 #. Type: string
 #. Description
@@ -332,6 +373,8 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
+"لمستخدمي إعدادات الرؤوس المتعددة، سيقوم هذا الخيار بتهيئة واحد من الرؤوس "
+"فقط.  ويجب إتمام التهيئة يدوياً في ملف تهيئة خادم X، /etc/X11/xorg.conf."
 
 #. Type: string
 #. Description
@@ -374,6 +417,10 @@ msgid ""
 "Intel i810) have little or no video memory of their own, and instead borrow "
 "main system memory for their needs."
 msgstr ""
+"عادة، يقوم خادم X آلياً باكتشاف كمية الذاكرة المخصصة لاستخدام بطاقة الفيدو، "
+"إلا أن بعض رقاقات الفيديو المضمنة (مثل Intel i810) لها كمية ذاكرة قليلة "
+"مخصصلة أو لا يكون لها أي ذاكرة مخصصة، وبالتالي يقوم باستعارة بعض ذاكرة "
+"النظام الرئيسية لاستخدامها."
 
 #. Type: string
 #. Description
@@ -382,6 +429,8 @@ msgid ""
 "This parameter should usually be left blank and specified only if the video "
 "card lacks RAM, or if the X server has trouble autodetecting the RAM size."
 msgstr ""
+"يجب عادة ترك هذا المُعطى فارغاً وتحديده فقط إن كانت بطاقة الفيديو تفتقر إلى "
+"المزيد من الذاكرة، أو إن واجه خادم X مشاكل في اكتشاف حجم الذاكرة آلياً."
 
 #. Type: string
 #. Description
@@ -417,6 +466,9 @@ msgid ""
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
+"يمكن لخبراء المستخدمين استخدام أية مجموعة أحكام XKB.  إن تم استخراج محتويات "
+"الحزمة xkb-data، فانظر في الدليل /usr/share/X11/xkb/rules للاطلاع على "
+"مجموعات الأحكام المتوفرة."
 
 #. Type: string
 #. Description
@@ -437,6 +489,8 @@ msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
+"كي يتمكن خادم X من التحكم بلوحة المفاتيح مباشرة، يجب اختيار طرازها. تعتمد "
+"الطرازات المتوفرة على مجموعة أحكام XKB المستخدمة."
 
 #. Type: string
 #. Description
@@ -458,6 +512,19 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
+" باستخدام مجموعة أحكام \"xorg\":\n"
+" - pc101: لوحة مفاتيح IBM PC/AT تحتوي 101 زر، شائعة في\n"
+"          الولايات المتحدة.  ليس لها أي \"شعار\" أو أزرار \"قائمة\"\n"
+" - pc104: شبيهة بطراز pc101، وتحتوي مفاتيح إضافية، محفورة عادة برمز\n"
+"          \"الشعار\" ورمز \"القائمة\";\n"
+" - pc102: شبيهة بطراز pc101 وغالباً ما تكون في أوروبا. تشمل مفتاح \"< >\";\n"
+" - pc105: شبيهة بطراز pc104 وغالباً ما تكون في أوروبا. تشمل مفتاح \"< >\";\n"
+" - macintosh: لوحات مفاتيح ماكنتوش تستخدم طبقة الإدخال الجديدة مع رموز\n"
+"              مفاتيح لينكس;\n"
+" - macintosh_old: لوحات مفاتيح ماكنتوش التي لا تستخدم طبقة الإدخال الجديدة.\n"
+" تستخدم مجموعة أحكام \"sun\":\n"
+" - type4: لوحات مفاتيح Sun Type4;\n"
+" - type5: لوحات مفاتيح Sun Type5."
 
 #. Type: string
 #. Description
@@ -467,6 +534,9 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
+"لا تحتوي لوحات مفاتيح أجهزة الحاسب المحمولة عادة عدد مفاتيح يساوي لوحات "
+"المفاتيح المنفصلة؛ على مستخدمي أجهزة الحاسب المحمولة اختيار طراز لوحة "
+"المفاتيح المشابهة تقريباً لما هو أعلاه."
 
 #. Type: string
 #. Description
@@ -476,6 +546,9 @@ msgid ""
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
+"يمكن لخبراء المستخدمين استخدام أي طراز معرف في مجموعة أحكام XKB المحددة. إن "
+"كان قد تم استخراج محتويات الحزمة xkb-data، فانظر في الدليل /usr/share/X11/"
+"xkb/rules للاطلاع على مجموعات الأحكام المتوفرة."
 
 #. Type: string
 #. Description
@@ -484,6 +557,9 @@ msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
+"يجب على مستخدمي لوحات المفاتيح الإنجليزية الأمريكية عامة إدخال القيمة \"pc104"
+"\". أما مستخدمي لوحات المفاتيح الأخرى بشكل عام فعليهم أن يدخلو القيمة \"pc105"
+"\"."
 
 #. Type: string
 #. Description
@@ -499,6 +575,9 @@ msgid ""
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
 "were previously selected."
 msgstr ""
+"كي يستطيع خادم X التعامل مع لوحة المفاتيح بشكل صحيح، يجب كتابة اسم تخطيط "
+"لوحة المفاتيح الذي تستخدمه.  تعتمد التخطيطات المتوفرة على مجموعة أحكام XKB "
+"وطراز لوحة المفاتيح التي تم اختيارها مسبقاً."
 
 #. Type: string
 #. Description
@@ -508,6 +587,9 @@ msgid ""
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
+"يمكن لخبراء المستخدمين استخدام أي تخطيط تدعمه مجموعة أحكام XKB المحددة. إن "
+"تم استخراج محتويات الحزمة xkb-data، فانظر في الدليل /usr/share/X11/xkb/rules "
+"للاطلاع على مجموعات الأحكام المتوفرة."
 
 #. Type: string
 #. Description
@@ -517,12 +599,15 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
+"يجب على مستخدمي لوحات المفاتيح الإنجليزية الأمريكية إدخال القيمة \"us\". أما "
+"مستخدمو لوحات المفاتيح المحلية باللغات الأخرى عليهم إدخال رمز ISO 3166 الخاص "
+"ببلادهم. مثلاً، الكويت تستخدم الرمز \"kw\"، ومصر تستخدم الرمز \"eg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:19001
 msgid "Keyboard variant:"
-msgstr ""
+msgstr "بديل لوحة المفاتيح:"
 
 #. Type: string
 #. Description
@@ -532,6 +617,9 @@ msgid ""
 "be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
+"كي يتمكن خادم X من التعامل مع لوحة المفاتيح كما هو مطلوب، يجب إدخال بديل "
+"لوحة المفاتيح.  البدائل المتوفرة تعتمد على مجموعة أحكام XKB، وطراز، وتخطيط "
+"لوحة المفاتيح التي تم اختيارها مسبقاً."
 
 #. Type: string
 #. Description
@@ -541,6 +629,8 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
+"تدعم العديد من تخطيطات لوحات المفاتيح خيار التعامل مع مفاتيح \"dead\" "
+"كعلامات التشكيل، فإن كان هذا هو تريده، فأدخل القيمة \"nodeadkeys\"."
 
 #. Type: string
 #. Description
@@ -551,6 +641,9 @@ msgid ""
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
+"يمكن لخبراء المستخدمين استخدام أي بديل يدعمه تخطيط XKB.إن تم استخراج محتويات "
+"الحزمة xkb-data، فانظر في دليل الرموز /usr/share/X11/xkb/rules للاطلاع على "
+"الملف المقابل للتخطيط الذي اخترته للبدائل المتوفرة."
 
 #. Type: string
 #. Description
@@ -558,6 +651,8 @@ msgstr ""
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
+"مستخدمو لوحات المفاتيح الإنجليزية الأمريكية عامة يجب عليهم ترك هذه القيمة "
+"خالية."
 
 #. Type: string
 #. Description
@@ -573,6 +668,9 @@ msgid ""
 "entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
+"كي يتمكن خادم X من التعامل مع لوحة المفاتيح كما هو مطلوب، يمكن إدخال خيارات "
+"لوحة المفاتيح.  تعتمد الخيارات المتوفرة على مجموعة أحكام XKB التي تم "
+"اختيارها مسبقاً. لن تسري جميع الخيارات مع جميع طرازات وتخطيطات لوحات المفاتيح."
 
 #. Type: string
 #. Description
@@ -582,6 +680,9 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
+"على سبيل المثال، إن كنت تريد أن يعمل زر Caps Lock كمفتاح تحكم إضافي، يمكن "
+"إدخال القيمة \"ctrl:nocaps\"؛ وإن كنت تود عكس مفتاح Caps Lock وأزرار التحكم "
+"اليسرى، يمكنك إدخال القيمة \"ctrl:swapcaps\"."
 
 #. Type: string
 #. Description
@@ -593,6 +694,10 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
+"كمثال آخر، يفضل بعض الناس الحصول على مفاتيح Meta في في أزرار Alt الخاصة "
+"بلوحات مفاتيحهم (وهذا هو الافتراضي)، بينما يفضل آخرون الحصول على مفاتيح Meta "
+"من خلال مفتاح \"الشعار\" أو ويندوز. إن كنت تفضل استخدام أزرار ويندوز أو "
+"الشعار كمفاتيح Meta، فيمكنك إدخال القيمة \"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -601,6 +706,8 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
+"يمكنك دمج الخيارات بفصلها بفواصل، على سبيل المثال: \"ctrl:nocaps,altwin:"
+"meta_win\"."
 
 #. Type: string
 #. Description
@@ -609,6 +716,8 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
+"يمكن لخبراء المستخدمين استخدام أية خيارات متوافقة مع طراز XKB والتخطيط "
+"والبديل المحدد."
 
 #. Type: string
 #. Description
@@ -631,6 +740,9 @@ msgid ""
 "should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
 "requires rebooting."
 msgstr ""
+"إن كانت هناك ماوس موصلة بالحاسب، يمكن محاولة الاكتشاف الآلي؛ قد يساعد على "
+"ذلك تحريك الماوس أثناء محاولة اكتشافها (يجب إيقاف gpm إن كان مستخدماً).  كما "
+"أن وصل ماوس من نوع PS/2 أو bus/inport الآن يتطلب إعادة تشغيل."
 
 #. Type: boolean
 #. Description
@@ -647,6 +759,9 @@ msgid ""
 "succeeds, further configuration questions about the mouse will be pre-"
 "answered."
 msgstr ""
+"إن قمت بانتقائها وفشل الاكتشاف التلقائي، فستسأل هذا السؤال مجدداً. يمكن "
+"محاولة تكرار الاكتشاف التلقائي قدر ما تشاء.إن نجحت العملية، فإن أسئلة تهيئة "
+"الماوس الإضافية ستتم الإجابة عنها مسبقاً."
 
 #. Type: select
 #. Description
@@ -662,6 +777,8 @@ msgid ""
 "certain characteristics of the mouse (or other pointing device, such as a "
 "trackball) must be known."
 msgstr ""
+"كي تتمكن من تشغيل واجهة المستخدم الرسومية لنظام نوافذ X بشكل صحيح، فيجب "
+"معرفة صفات معينة عن الماوس (أو أي جهاز إشارة آخر، مثل trackball)."
 
 #. Type: select
 #. Description
@@ -677,6 +794,14 @@ msgid ""
 "or bus/inport devices from your computer, please do so with the computer's "
 "power off."
 msgstr ""
+"من الضروري معرفة المنفذ (نوع الوصلة) التي تستخدمها الماوس. تستخدم المنافذ "
+"المتوالية وصلات على شكل D لها 9 أو 25 دبوساً (يرمز لها بالرمز DB-9 أو DB-25)؛ "
+"حيث أن وصلة الماوس لها ثقوب ووصلة الحاسب لها دبابيس.  أما منافذ PS/2 فهي "
+"وصلات مدورة (DIN) لها 6 دبابيس؛ بحيث تكون وصلة الماوس لها دبابيس ووصلة "
+"الحاسب لها ثقوب مطابقة. يمكنك عوضاً عن ذلك أن تستخدم ماوس USB، أو bus/inport "
+"(قديمة جداً)، أو أن تستخدم برنامج gpm كمُكرّر. إن احتجت إلى وصل أو إزالة أجهزة "
+"PS/2 أو bus/inport من حاسبك، الرجاء القيام بذلك عندما يكون الجهاز متوقفاً عن "
+"العمل."
 
 #. Type: select
 #. Description
@@ -699,6 +824,9 @@ msgid ""
 "presence of a middle button by treating simultaneous clicks or drags of the "
 "left and right buttons as middle button events."
 msgstr ""
+"معظم البرامج في نظام نوافذ X تتوقع أن تكون الماوس ذات 3 أزرار (يسار، يمين، "
+"ووسط).  أما الماوس ذات الزرين فيمكنها محاكاة وجود الزر الأوسط بمعاملة النقر "
+"على الزرين أو السحب بهما كأحداث للزر الأوسط."
 
 #. Type: boolean
 #. Description
@@ -707,6 +835,8 @@ msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
 msgstr ""
+"يمكن استخدام هذا الخيار أيضاً مع الماوس ذات 3 أزرار أو أكثر؛ بحيث يبقى الزر "
+"الأوسط يعمل بشكل طبيعي."
 
 #. Type: boolean
 #. Description
@@ -716,6 +846,9 @@ msgid ""
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
 "\") are not yet supported with this configuration tool."
 msgstr ""
+"لاحظ أن أزرار الماوس التي تتعدى خمسة (بعدّ إطار التمرير كزرين، واحد \"للأعلى"
+"\" والآخر \"للأسفل\"، وزر ثالث إن كان بالإمكان \"النقر\") ليست بعد مدعومة من "
+"قبل أداة التهيئة هذه."
 
 #. Type: boolean
 #. Description
@@ -733,13 +866,16 @@ msgid ""
 "this protocol, further configuration questions about the monitor will be pre-"
 "answered."
 msgstr ""
+"العديد من الشاشات (بما في ذلك LCD) وبطاقات الفيديو تدعم بروتوكول تواصل يسمح "
+"بتوصيل صفات الشاشة التقنية إلى الحاسب. إن كانت الشاشة وبطاقة الفيديو تدعم "
+"هذا البروتوكول، فسوف يتم الإجابة عن أية أسئلة إضافية حول تهيئة الشاشة."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:25001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
-msgstr ""
+msgstr "إن فشل الاكتشاف التلقائي، فسيطلب منك المزيد من المعلومات حول الشاشة."
 
 #. Type: select
 #. Description
@@ -754,6 +890,8 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
 msgstr ""
+"كي تعمل واجهة المستخدم الرسومية لنظام نوافذ X بشكل صحيح، يجب معرفة المواصفات "
+"الخاصة بشاشتك."
 
 #. Type: select
 #. Description
@@ -763,6 +901,9 @@ msgid ""
 "will set some configuration values appropriate for a typical CRT of the "
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
+"يسألك الخيار \"بسيط\" حول حجم الشاشة الفعلي؛ ويقوم بعدها بتعيين بعض قيم "
+"التهيئة الملائمة لشاشات CRT التي لها نفس الحجم،إلا أن هذا قد يكون دون "
+"المستوى المطلوب لشاشات CRT ذات الجودة العالية."
 
 #. Type: select
 #. Description
@@ -772,6 +913,9 @@ msgid ""
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
 "you wish to use (and that you know the monitor is capable of)."
 msgstr ""
+"يقدم لك الخيار \"متوسط\" قائمة باستبانات الشاشة و معدلات الإنعاش، مثال "
+"\"800X600 @ 85Hz\"؛ عليك باختيار الوضع الأفضل الذي تود استخدامه (والذي تعمله "
+"أن شاشاتك يمكنها استخدامه)."
 
 #. Type: select
 #. Description
@@ -780,36 +924,38 @@ msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
 msgstr ""
+"يسمح لك الخيار \"متقدم\" بتحديد قيم مزامنة الشاشة الأفقية والعمودية بشكل "
+"مباشر."
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:27001
 msgid "Up to 14 inches (355 mm)"
-msgstr ""
+msgstr "حتى 14 إنش (355 مليمتر)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:27001
 msgid "15 inches (380 mm)"
-msgstr ""
+msgstr "15 إنش (380 مليمتر)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:27001
 msgid "17 inches (430 mm)"
-msgstr ""
+msgstr "17 إنش (430 مليمتر)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:27001
 msgid "19-20 inches (480-510 mm)"
-msgstr ""
+msgstr "19-20 إنش (480-510 مليمتر)"
 
 #. Type: select
 #. Choices
 #: ../xserver-xorg.templates:27001
 msgid "21 inches (530 mm) or more"
-msgstr ""
+msgstr "21 إنش (530 مليمتر) أو أكثر"
 
 #. Type: select
 #. Description
@@ -822,6 +968,7 @@ msgstr "حجم الشاشة التقريبي:"
 #: ../xserver-xorg.templates:27002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
+"شاشات CRT عالية الجودة قد تكون قادرة على استخدام فئة الحجم الأكبر التالية."
 
 #. Type: select
 #. Description
@@ -840,6 +987,12 @@ msgid ""
 "only if both the video chipset and the driver support it; if in doubt, use "
 "the video mode recommended by the manufacturer of your LCD."
 msgstr ""
+"اختر \"أفضل\" استبانة ومعدل إنعاش تستطيع الشاشة استخدامه. الاستبانات الأكبر "
+"حجماً ومعدل إنعاش أكثر وضوحاً. عند استخدام شاشة CRT، من المقبول تماماً اختيار "
+"وضع فيديو \"أسوأ\" من أفضل ما تستطيع الشاشة عرضه. قد يستطيع مستخدمو شاشات "
+"LCD أيضاً قادرين على القيام بهذا، ولكن فقط إن كانت رقاقة الفيديو وبرنامج "
+"التشغيل يدعمها. وإن كنت في شك، استخدم وضع الفيديو المقترح من قبل مصنّع شاشة "
+"LCD الخاصة بك."
 
 #. Type: string
 #. Description
@@ -855,18 +1008,21 @@ msgid ""
 "may provide.  This is usually the vendor or brand name followed by the model "
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
+"يقوم ملف تهيئة خادم X يتعيين اسم للشاشة يمكنك تحديده.  ويكون هذا الاسم عادة "
+"اسم المصنّع أو الماركة يتبعها رقم الطراز، مثلاً، \"Sony E200\" أو \"Dell E770s"
+"\"."
 
 #. Type: text
 #. Description
 #: ../xserver-xorg.templates:30001
 msgid "Generic Monitor"
-msgstr ""
+msgstr "شاشة عامة"
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:31001
 msgid "Write monitor sync ranges to the configuration file?"
-msgstr ""
+msgstr "كتابة قيم مدى مزامنة الشاشة إلى ملف التهيئة؟"
 
 #. Type: boolean
 #. Description
@@ -876,12 +1032,15 @@ msgid ""
 "most cases, but sometimes it needs hinting.  This option is for experienced "
 "users, and should be left at its default."
 msgstr ""
+"يجب اكتشاف مدى مزامنة الشاشة آلياً من قبل خادم X في معظم الحالات، إلا أنه قد "
+"يحتاج إلى بعض المساعدة أحياناً.  هذا الخيار مخصص للمستخدمين الخبراء، ويجب "
+"تركه بقيمته الافتراضية."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:32001
 msgid "Monitor's horizontal sync range:"
-msgstr ""
+msgstr "مدى مزامنة الشاشة الأفقي:"
 
 #. Type: string
 #. Description
@@ -892,12 +1051,16 @@ msgid ""
 "CRT's).  This information should be available in the monitor's manual.  "
 "Values lower than 30 or higher than 130 are extremely rare."
 msgstr ""
+"الرجاء إدخال قائمة القيم الفريدة والمفصولة بفواصل (لأجهزة العرض ذات التردد "
+"الثابت)، أو زوجاً من القيم مفصولة بشرطة (-) (جميع شاشات CRT الحديثة).  قد تجد "
+"هذه المعلومات متوفرة في كتيب تعليمات الشاشة. القيم التي تقل عن 30 أو تزيد عن "
+"130 هي نادرة جداً."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:33001
 msgid "Monitor's vertical refresh range:"
-msgstr ""
+msgstr "مدى إنعاش الشاشة الرأسي:"
 
 #. Type: string
 #. Description
@@ -908,6 +1071,10 @@ msgid ""
 "CRT's).  This information should be available in the monitor's manual.  "
 "Values lower than 50 or higher than 160 are extremely rare."
 msgstr ""
+"الرجاء إدخال قائمة القيم الفريدة والمفصولة بفواصل (لأجهزة العرض ذات التردد "
+"الثابت)، أو زوجاً من القيم مفصولة بشرطة (-) (جميع شاشات CRT الحديثة).  قد تجد "
+"هذه المعلومات متوفرة في كتيب تعليمات الشاشة. القيم التي تقل عن 50 أو تزيد عن "
+"160 هي نادرة جداً."
 
 #. Type: note
 #. Description
@@ -922,6 +1089,8 @@ msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
 msgstr ""
+"الصيغة الصحيحة هي لائحة بالقيم الفريدة والمفصولة بفواصل، أو زوجاً من القيم "
+"مفصولاً بشرطة (-)."
 
 #. Type: select
 #. Description
@@ -939,6 +1108,11 @@ msgid ""
 "acceleration only for certain depths.  Consult your video card manual for "
 "more information."
 msgstr ""
+"غالباً ما يرغب في ألوان 24-بت، ولكن في بطاقات الرسوميات ذات كميات الذاكرة "
+"المحدودة أو ذاكرة framebuffer، يمكن الحصول على استبانات أعلى على حساب عمق "
+"الألوان.  كما أن بعض عتاد البطاقات تدعم التعزيز الثلاثي الأبعاد فقط في عمق "
+"ألوان محدد.  الرجاء الاطلاع على كتيب بطاقة الفيديو الخاص بك للمزيد من "
+"المعلومات."
 
 #. Type: select
 #. Description
@@ -948,6 +1122,9 @@ msgid ""
 "bits of alpha channel or simple zero padding; the X Window System can handle "
 "both.  If you want either, select 24 bits."
 msgstr ""
+"ما يسمى \"بألوان 32-بت\" هو في الحقيقة 24 بت من معلومات الألوان إضافة إلى 8 "
+"بت لقناة ألفا أو simple zero padding؛ يستطيع نظام نوافذ X التعامل مع كل "
+"منهما. إن كنت تريد أياً منهما، فقم بانتقاء 24 بت."
 
 #. Type: note
 #. Description
@@ -999,6 +1176,8 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"سيتم اختيار تخطيط لوحة المفاتيح الافتراضي لخادم Xorg وفقاً لكل من اللغة "
+"وتخطيط لوحة المفاتيح المنتقى أثناء عملية التثبيت."
 
 #. Type: boolean
 #. Description
@@ -1007,25 +1186,26 @@ msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
+"انتق هذا الخيار إن كنت تريد اكتشاف تخطيط لوحة مفاتيحك مجددا. لا تنتق هذا "
+"الختيار إن كنت تريد المحافظة على التخطيط الحالي."
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
 msgid "Root Only"
-msgstr ""
+msgstr "المستخدم root فقط"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
-#, fuzzy
 msgid "Console Users Only"
-msgstr "لللقراءة فقط, مستخدمي الطرفية فقط, أي أحد"
+msgstr "مستخدمي الطرفية فقط"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:1001
 msgid "Anybody"
-msgstr ""
+msgstr "أي أحد"
 
 #. Type: select
 #. Description
@@ -1044,6 +1224,11 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
+"لأن خادم X يعمل بصلاحية المستخدم الخارق، فقد لا يكون من الحكمة السماح لأي "
+"مستخدم بتشغيله، لأسباب أمنية. من ناحية أخرى، فليس من الحكمة أيضاً تشغيل برامج "
+"X العامة كمستخدم root، والذي قد يحدث إن كان المستخدم root هو الوحيد الذي "
+"يمكنه تشغيل خادم X. لذا، فإن الحل الأمثل لهذه المعضلة هو السماح فقط لمستخدمي "
+"النظام عبر أحد الطرفيات الوهمية."
 
 #. Type: string
 #. Description
@@ -1063,6 +1248,12 @@ msgid ""
 "priority).  The default nice value for ordinary processes is 0, and this is "
 "also the recommend value for the X server."
 msgstr ""
+"عند استخدام نواة نظام تشغيل ذات استراتيجية جدولة معينة، لوحظ بشكل كبير بأن "
+"كفاءة خادم X تتحسن عند تشغيله بأولوية عملية أعلى من الافتراضية، والتي تعرف "
+"بقيمة \"nice\". وتتراوح هذه القيمة بين -20 (والتي هي الأولوية المرتفعة جداً، "
+"أو التي \"ليست لطيفة\" للعمليات الأخرى) إلى 19 (والتي هي الأولوية المنخفضة "
+"جداً). تكون قيمة nice للعمليات العادية هي 0، وهذه هي القيمة المستحسنة أيضاً "
+"لخادم X."
 
 #. Type: string
 #. Description
@@ -1072,6 +1263,9 @@ msgid ""
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
+"القيم التي تقل عن -10 أو تزيد عن 0 ليست مستحسنة؛ فإن كانت أقل من -10 فإن "
+"خادم X سيتعارض مع مهام النظام الضرورية. وإن كانت أكبر من 0 فستبطئ عمل خادم X "
+"وتثبطه."
 
 #. Type: note
 #. Description
@@ -1102,6 +1296,11 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
+"أبلغنا بعض المستخدمين بأنه عند الترقية إلى مجموعة الحزم الحالية، فإن حزمة "
+"xserver لا يتم تثبيتها. ولإنه ليست هناك طريقة سهلة لحل هذه المعضلة، فعليك "
+"بالتأكد من تثبيت حزمة xserver-xorg بعد الترقية. إن تكن الحزمة مثبتةً وكنت "
+"بحاجة لها، فمن المستحسن أن تقوم بتثبيت حزمة xorg كي تضمن الحصول على إعداد "
+"لخادم X يمكنك العمل به."
 
 #. Type: note
 #. Description
@@ -1119,6 +1318,11 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"تتطلب عملية الترقية هذه إزالة الدليل /usr/X11R6/bin و استبداله برابط رمزي. "
+"لقد حاولنا القيام بذلك، ولكن العملية فشلت، ويبدو أن هذا بسبب أن الدليل غير "
+"فارغ. عليك بنقل الملفات الموجودة حالياً في الدليل كي يتمكن برنامج التثبيت من "
+"إتمام هذه العملية. إن أردت، يمكن إعادة الملفات إلى حيث كانت بعد إنشاء الرابط "
+"الرمزي."
 
 #. Type: note
 #. Description
@@ -1128,3 +1332,5 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
+"ستفشل عملية تثبيت الحزمة هذه وتتوقف كي تستطيع القيام بهذا. الرجاء إعادة "
+"تشغيل عملية الترقية بعد أن تنتهي من تنظيف الدليل."
