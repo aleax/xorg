@@ -6,7 +6,12 @@ xorg (1:7.1.0-7) UNRELEASED; urgency=low
   [ Debconf translations updated ]
   * Arabic (from Arabeyes CVS)
 
- -- Christian Perrier <bubulle@debian.org>  Mon,  6 Nov 2006 08:11:00 +0100
+  [ Julien Cristau ]
+  * Install /etc/X11/Xsession with mode 0755, since that's what we did in the
+    monolith, and some display managers rely on it being executable
+    (closes: #390526).
+
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Tue,  7 Nov 2006 16:41:36 +0100
 
 xorg (1:7.1.0-6) unstable; urgency=low
 

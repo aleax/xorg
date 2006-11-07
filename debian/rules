@@ -110,6 +110,8 @@ binary-arch: build install
 	dh_link
 	dh_compress
 	dh_fixperms
+	chown root:root debian/x11-common/etc/X11/Xsession
+	chmod 755 debian/x11-common/etc/X11/Xsession
 	chown root:root debian/x11-common/usr/bin/X
 	chmod ug+s debian/x11-common/usr/bin/X
 	dh_installdeb
