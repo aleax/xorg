@@ -282,6 +282,10 @@ discover_sparc_video () {
         card='Sun Elite3D framebuffer or similar'
         driver='sunffb'
         ;;
+      'TSI,gfxp' )
+        card='PGX32 framebuffer or similar'
+        driver='glint'
+        ;;
       * )
         card='Unknown'
         server='unknown'
