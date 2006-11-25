@@ -14,8 +14,11 @@ xorg (1:7.1.0-8) UNRELEASED; urgency=low
   [ Julien Cristau ]
   * Run invoke-rc.d and update-rc.d only once in postinst (instead of 3
     times), and let debhelper handle it.
+  * Add a link to xserver-xorg-core's reportbug script, so bug reports against
+    xserver-xorg contain the submitter's config and log files.  This means
+    xserver-xorg needs to depend on xserver-xorg-core >= 2:1.1.1-11.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Sat, 25 Nov 2006 16:35:42 +0100
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Sat, 25 Nov 2006 18:55:36 +0100
 
 xorg (1:7.1.0-7) unstable; urgency=high
 
