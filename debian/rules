@@ -84,8 +84,6 @@ binary-indep: build install
 	dh_installdebconf
 	dh_installdirs
 	dh_installdocs
-	dh_installinit -Nx11-common
-	dh_installinit -px11-common -u'start 70 S .'
 	dh_installchangelogs
 	dh_link
 	dh_compress
@@ -105,7 +103,7 @@ binary-arch: build install
 	dh_installdirs
 	dh_installdocs
 	dh_installman
-	dh_installinit
+	dh_installinit -px11-common -u'start 70 S .'
 	dh_installchangelogs
 	dh_link
 	dh_compress

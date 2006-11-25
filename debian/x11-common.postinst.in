@@ -117,13 +117,7 @@ if [ -n "$2" ] && dpkg --compare-versions "$2" eq "1:7.0.16"; then
   fi
 fi
 
-if [ -e /etc/init.d/x11-common ]; then
-  update-rc.d x11-common start 70 S .
-fi
-
 #DEBHELPER#
-
-invoke-rc.d x11-common start || true
 
 exit 0
 
