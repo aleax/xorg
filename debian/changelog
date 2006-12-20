@@ -9,7 +9,12 @@ xorg (1:7.1.0-9) UNRELEASED; urgency=low
   * Mistake in explanation about lspci in french translation fixed.
     Closes: #403297
 
- -- Christian Perrier <bubulle@debian.org>  Fri, 15 Dec 2006 19:30:59 +0100
+  [ Julien Cristau ]
+  * Bump x11-common's conflict on xtel to <= 3.3.0-5.4, as that version
+    installs fonts in /usr/lib/X11/fonts, which x11-common includes as a
+    symlink.
+
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Wed, 20 Dec 2006 03:12:56 +0100
 
 xorg (1:7.1.0-8) unstable; urgency=medium
 
