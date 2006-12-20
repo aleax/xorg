@@ -1,20 +1,32 @@
 xorg (1:7.1.0-9) UNRELEASED; urgency=low
 
+  [ Christian Perrier ]
   * xserver-xorg: set Depends on ${misc:Depends} mostly to have
     "debconf|debconf-2.0" listed in Depends to allow for the cdebconf
     transition. Closes: #402570
-
-  [ Debconf translations updated ]
-  * Italian typos fixed. Closes: #403196
-  * Mistake in explanation about lspci in french translation fixed.
-    Closes: #403297
 
   [ Julien Cristau ]
   * Bump x11-common's conflict on xtel to <= 3.3.0-5.4, as that version
     installs fonts in /usr/lib/X11/fonts, which x11-common includes as a
     symlink.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Wed, 20 Dec 2006 03:12:56 +0100
+  [ David Nusinow ]
+  * Move the depends on xserver-xorg-(input/video)-all to a recommends. Just
+    depend on the pseudopackages. The recommends also | -vesa for video, and
+    -kbd and -mouse for -input. We duplicate the recommendation for
+    xserver-xorg-input-all to handle the two different input packages we need.
+    This is to deal with issues in which aptitude can't install the -all
+    packages, so it just picks something random. This gives it some hints,
+    hopefully at least guaranteeing that -vesa, -kbd, and -mouse are
+    installed. Unfortunately, because we can't reproduce this bug, we can't
+    fully guarnatee that this is fixed. It doesn't appear to break upgrades
+    though. Thanks Steinar Gunerson. Closes: #403818
+  [ Debconf translations updated ]
+  * Italian typos fixed. Closes: #403196
+  * Mistake in explanation about lspci in french translation fixed.
+    Closes: #403297
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 19 Dec 2006 22:15:08 -0500
 
 xorg (1:7.1.0-8) unstable; urgency=medium
 
