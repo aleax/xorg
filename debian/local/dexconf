@@ -117,6 +117,7 @@ DEXCONFTMPDIR=
 trap 'if [ -e "$DEXCONFTMPDIR/backup" ] && [ -n "$XF86CONFIG" ]; then \
         cat "$DEXCONFTMPDIR/backup" >"$XF86CONFIG"; \
       fi; \
+      exec 4<&-; \
       rm -rf "$DEXCONFTMPDIR"; \
       bomb "received signal; aborting"' HUP INT QUIT TERM
 
@@ -413,6 +414,9 @@ Section "DRI"
 	Mode	0666
 EndSection
 SECTION
+
+# Close file descriptor 4 before we delete temporary files
+exec 4<&-
 
 # Tell debconf to stop listening to us.
 db_stop

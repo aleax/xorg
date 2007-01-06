@@ -6,8 +6,11 @@ xorg (1:7.1.0-10) UNRELEASED; urgency=low
     pulled in on initial install.
   * Add xserver-xorg-input-void to xserver-xorg-input-all's dependencies on
     s390.
+  * Fix dexconf to work when $TMPDIR is NFS-mounted, by closing the redirected
+    file descriptor before trying to rm $DEXCONFTMPDIR (closes: #405782).
+    Thanks to Boris Dores for the report, and to Brice Goglin for the patch.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Mon,  1 Jan 2007 19:54:08 +0100
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Sat,  6 Jan 2007 19:13:12 +0100
 
 xorg (1:7.1.0-9) unstable; urgency=high
 
