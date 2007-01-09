@@ -1,16 +1,18 @@
-xorg (1:7.1.0-10) UNRELEASED; urgency=low
+xorg (1:7.1.0-10) unstable; urgency=low
 
   * Change the Depends of xserver-xorg back to xserver-xorg-video-all |
     xserver-xorg-video-1.0, xserver-xorg-input-all | xserver-xorg-input, and
     remove alternative recommends, because we'd like the -all packages to be
-    pulled in on initial install.
+    pulled in on initial install and on upgrade from pre-modular versions
+    (closes: #405639, #406058).
   * Add xserver-xorg-input-void to xserver-xorg-input-all's dependencies on
     s390.
   * Fix dexconf to work when $TMPDIR is NFS-mounted, by closing the redirected
     file descriptor before trying to rm $DEXCONFTMPDIR (closes: #405782).
     Thanks to Boris Dores for the report, and to Brice Goglin for the patch.
+  * Add myself to Uploaders, and remove Fabio with his permission.
 
- -- Julien Cristau <julien.cristau@ens-lyon.org>  Sat,  6 Jan 2007 19:13:12 +0100
+ -- Julien Cristau <julien.cristau@ens-lyon.org>  Tue,  9 Jan 2007 02:34:33 +0100
 
 xorg (1:7.1.0-9) unstable; urgency=high
 
