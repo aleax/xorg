@@ -200,7 +200,7 @@ SECTION
 
 fetch xserver-$SERVER/config/write_files_section
 if [ "$RET" = "true" ]; then
-  db_get $TEMPLATE_BASE/config/fontpath/fontserver
+  db_get shared/fontpath/fontserver
   if [ -n "$RET" ] ; then
     FONTSERVER="$RET"
   else
