@@ -211,7 +211,9 @@ if [ "$RET" = "true" ]; then
 Section "Files"
 SECTION
   if [ -n "$FONTSERVER" ] ; then
-      echo "   FontPath        \"$FONTSERVER\"" >&4
+      cat >&4 <<SECTION
+	FontPath	"$FONTSERVER"
+SECTION
   fi
   cat >&4 <<SECTION
 	FontPath	"/usr/share/fonts/X11/misc"
