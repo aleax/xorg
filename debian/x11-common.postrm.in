@@ -56,8 +56,6 @@ if [ "$1" = "purge" ]; then
     fi
   fi
 
-  update-rc.d x11-common remove >/dev/null
-
   for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
       rmdir "$DIR" 2> /dev/null || true
   done

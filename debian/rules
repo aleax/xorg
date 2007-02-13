@@ -106,6 +106,7 @@ binary-arch: build install
 	dh_installinit -px11-common -u'start 70 S .'
 	dh_installchangelogs
 	dh_link
+	dh_strip
 	dh_compress
 	dh_fixperms
 	chown root:root debian/x11-common/etc/X11/Xsession

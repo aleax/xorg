@@ -10,8 +10,10 @@ xorg (1:7.1.0-12) unstable; urgency=high
     upgrade path for users with this third-party package installed.  Thanks to
     Steve Langasek (closes: #410740).
   * Change my email address in debian/control.
+  * Use dh_strip to strip /usr/bin/X in x11-common.
+  * Don't call update-rc.d twice in x11-common's postrm.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 13 Feb 2007 08:23:07 +0100
+ -- Julien Cristau <jcristau@debian.org>  Tue, 13 Feb 2007 11:12:46 +0100
 
 xorg (1:7.1.0-11) unstable; urgency=medium
 
