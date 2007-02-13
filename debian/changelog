@@ -1,9 +1,17 @@
-xorg (1:7.1.0-12) UNRELEASED; urgency=low
+xorg (1:7.1.0-12) unstable; urgency=high
 
+  [ Christian Perrier ]
   * Map French Canadian console keymap to "ca" X keymap in the postinst
     Closes: #408482
 
- -- Christian Perrier <bubulle@debian.org>  Fri, 26 Jan 2007 08:49:47 +0100
+  [ Julien Cristau ]
+  * High urgency upload for RC bugfix.
+  * x11-common Conflicts with opera (<< 9.10-20061214.6), to provide an
+    upgrade path for users with this third-party package installed.  Thanks to
+    Steve Langasek (closes: #410740).
+  * Change my email address in debian/control.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 13 Feb 2007 08:23:07 +0100
 
 xorg (1:7.1.0-11) unstable; urgency=medium
 
