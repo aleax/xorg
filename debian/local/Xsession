@@ -78,7 +78,7 @@ ALTUSERXSESSION=$HOME/.Xsession
 ERRFILE=$HOME/.xsession-errors
 
 # attempt to create an error file; abort if we cannot
-if touch "$ERRFILE" 2> /dev/null && [ -w "$ERRFILE" ] &&
+if (umask 077 && touch "$ERRFILE") 2> /dev/null && [ -w "$ERRFILE" ] &&
   [ ! -L "$ERRFILE" ]; then
   chmod 600 "$ERRFILE"
 elif ERRFILE=$(tempfile 2> /dev/null); then
