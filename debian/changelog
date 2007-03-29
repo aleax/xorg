@@ -3,6 +3,8 @@ xorg (1:7.2-2) UNRELEASED; urgency=low
   [ Julien Cristau ]
   * Add support for kfreebsd-{amd64,i386} (closes: #363910).  Thanks,
     Robert Millan and Daniel Stone!
+  * In xserver-xorg's postinst, delete old FontPaths pointing to CID fonts,
+    are these aren't supported anymore.
 
   [ Colin Watson ]
   * debian/xserver-xorg.config.in: Improve expr return code handling in

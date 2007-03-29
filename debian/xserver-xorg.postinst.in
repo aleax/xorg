@@ -2048,8 +2048,7 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 	FontPath	"/usr/share/fonts/X11/75dpi"
 		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/Type1"[[:space:]]*$/i\
 	FontPath	"/usr/share/fonts/X11/Type1"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/CID"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/d
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
 	chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
