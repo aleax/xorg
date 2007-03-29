@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian installer HR\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-21 11:30+0200\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2007-03-29 21:29+0200\n"
 "PO-Revision-Date: 2006-10-24 22:15+0200\n"
 "Last-Translator: Josip Rodin <joy+ditrans@linux.hr>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
@@ -78,9 +78,9 @@ msgid ""
 "incomplete information in discover's hardware database, or because your "
 "video hardware is not supported by the available X servers."
 msgstr ""
-"Na ovom raèunalu ili nema instaliranog grafièkog sklopovlja (npr. koristi "
-"se samo serijska konzola), ili program \"discover\" nije uspio odrediti "
-"koji je X server prikladan za grafièko sklopovlje. To se mo¾e dogoditi zbog "
+"Na ovom raèunalu ili nema instaliranog grafièkog sklopovlja (npr. koristi se "
+"samo serijska konzola), ili program \"discover\" nije uspio odrediti koji je "
+"X server prikladan za grafièko sklopovlje. To se mo¾e dogoditi zbog "
 "nepotpunih informacija u discoverovoj bazi sklopovlja, ili zbog toga ¹to "
 "va¹a grafièka kartica nije podr¾ana od X servera koji su dostupni."
 
@@ -101,8 +101,8 @@ msgid ""
 "automatically select a default X server."
 msgstr ""
 "Pronaðeno je vi¹e grafièkih kartica, a za njihovu podr¹ku su potrebni "
-"razlièiti X serveri. Zato nije moguæe automatski odabrati pretpostavljeni "
-"X server."
+"razlièiti X serveri. Zato nije moguæe automatski odabrati pretpostavljeni X "
+"server."
 
 #. Type: note
 #. Description
@@ -215,13 +215,12 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " - glx   : support for OpenGL rendering;\n"
 " - dri   : support in the X server for DRI (Direct Rendering "
 "Infrastructure);\n"
 " - vbe   : support for VESA BIOS Extensions. Allows to query\n"
-"           the monitor capabilities via the video card;\n"
-" - ddc   : support for Data Display Channel, respectively. Allows to query\n"
 "           the monitor capabilities via the video card;\n"
 " - int10 : real-mode x86 emulator used to softboot secondary VGA cards.\n"
 "           Should be enabled if vbe is enabled;\n"
@@ -231,7 +230,7 @@ msgid ""
 "           shaped windows, shared memory, video mode switching, DGA, and "
 "Xv;\n"
 " - record: implements the RECORD extension, often used in server testing;\n"
-" - bitmap: font rasterizer (so are freetype, and type1 modules)."
+" - freetype: font rasterizer."
 msgstr ""
 " - glx   : podr¹ka za OpenGL renderiranje;\n"
 " - dri   : podr¹ka u X serveru za DRI (Direct Rendering Infrastructure);\n"
@@ -246,7 +245,8 @@ msgstr ""
 " - extmod: ukljuèuje mnoge tradicionalne i èesto kori¹tene ekstenzije\n"
 "           kao ¹to su shaped windows, shared memory, video mode switching,\n"
 "           DGA, Xv;\n"
-" - record: ukljuèuje RECORD ekstenziju, èesto kori¹tenu za testiranje servera;\n"
+" - record: ukljuèuje RECORD ekstenziju, èesto kori¹tenu za testiranje "
+"servera;\n"
 " - bitmap: font rasterizer (to su i moduli freetype i type1)."
 
 #. Type: multiselect
@@ -255,8 +255,7 @@ msgstr ""
 msgid ""
 "For further information about these modules, please consult the X.Org "
 "documentation."
-msgstr ""
-"Za vi¹e informacija o ovim modulima, pogledajte X.Org dokumentaciju."
+msgstr "Za vi¹e informacija o ovim modulima, pogledajte X.Org dokumentaciju."
 
 #. Type: note
 #. Description
@@ -360,8 +359,8 @@ msgid ""
 "specific format."
 msgstr ""
 "Korisnici PowerPC strojeva, i korisnici bilo kojeg raèunala s vi¹e grafièkih "
-"ureðaja, trebaju odrediti BusID grafièke kartice u obliku prihvatljivom "
-"za va¹u sabirnicu."
+"ureðaja, trebaju odrediti BusID grafièke kartice u obliku prihvatljivom za "
+"va¹u sabirnicu."
 
 #. Type: string
 #. Description
@@ -461,8 +460,8 @@ msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
 msgstr ""
-"Korisnici veæine tipkovnica trebaju unijeti \"xorg\". Korisnici Sun Type 4 "
-"i Type 5 tipkovnica pak trebaju unijeti \"sun\"."
+"Korisnici veæine tipkovnica trebaju unijeti \"xorg\". Korisnici Sun Type 4 i "
+"Type 5 tipkovnica pak trebaju unijeti \"sun\"."
 
 #. Type: string
 #. Description
@@ -624,8 +623,8 @@ msgid ""
 "layout were previously selected."
 msgstr ""
 "Postav tipkovnice mo¾e biti odabran kako bi X server radio s tipkovnicom na "
-"¾eljeni naèin. Dostupne varijante ovise o XKB setu pravila, modelu i "
-"postavu tipkovnice koji su prethodno odabrani."
+"¾eljeni naèin. Dostupne varijante ovise o XKB setu pravila, modelu i postavu "
+"tipkovnice koji su prethodno odabrani."
 
 #. Type: string
 #. Description
@@ -650,8 +649,8 @@ msgid ""
 msgstr ""
 "Iskusni korisnici mogu koristiti bilo koju varijantu koju podr¾ava odabrani "
 "XKB postav znakova. Ako je paket xkb-data otpakiran na sustavu, popis "
-"dostupnih postava i odgovarajuæih varijanti pogledajte u direktoriju "
-"/usr/share/X11/xkb/symbols."
+"dostupnih postava i odgovarajuæih varijanti pogledajte u direktoriju /usr/"
+"share/X11/xkb/symbols."
 
 #. Type: string
 #. Description
@@ -748,10 +747,10 @@ msgid ""
 "should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
 "requires rebooting."
 msgstr ""
-"Ako je mi¹ prikljuèen na raèunalo, mo¾e se poku¹ati automatsko prepoznavanje; "
-"mo¾e biti od pomoæi ako pomièete mi¹a u tijeku prepoznavanja (a program gpm "
-"treba zaustaviti, ako se koristi). Ako sada prikljuèite PS/2 ili bus/inport "
-"mi¹, to æe zahtijevati ponovno podizanje sustava."
+"Ako je mi¹ prikljuèen na raèunalo, mo¾e se poku¹ati automatsko "
+"prepoznavanje; mo¾e biti od pomoæi ako pomièete mi¹a u tijeku prepoznavanja "
+"(a program gpm treba zaustaviti, ako se koristi). Ako sada prikljuèite PS/2 "
+"ili bus/inport mi¹, to æe zahtijevati ponovno podizanje sustava."
 
 #. Type: boolean
 #. Description
@@ -770,8 +769,8 @@ msgid ""
 msgstr ""
 "Ako odaberete ovo i automatsko prepoznavanje ne uspije, ovo pitanje æe vam "
 "biti postavljeno ponovo. Automatsko prepoznavanje se mo¾e poku¹ati "
-"proizvoljan broj puta. Ako uspije, daljnja pitanja o postavkama mi¹a æe "
-"biti unaprijed odgovorena."
+"proizvoljan broj puta. Ako uspije, daljnja pitanja o postavkama mi¹a æe biti "
+"unaprijed odgovorena."
 
 #. Type: select
 #. Description
@@ -806,10 +805,10 @@ msgid ""
 "power off."
 msgstr ""
 "Potrebno je odrediti koji port (tip spoja) se koristi kod va¹eg mi¹a. "
-"Serijski portovi koriste konektore u obliku slova D sa 9 ili 25 pina "
-"(tzv. DB-9 ili DB-25); konektor mi¹a je ¾enski (ima rupe) a konektor na "
-"raèunalu je mu¹ki (ima pinove). PS/2 portovi su mali okrugli konektori (DIN) "
-"sa 6 pina; konektor mi¹a je mu¹ki a na strani raèunala je ¾enski. Mo¾ete "
+"Serijski portovi koriste konektore u obliku slova D sa 9 ili 25 pina (tzv. "
+"DB-9 ili DB-25); konektor mi¹a je ¾enski (ima rupe) a konektor na raèunalu "
+"je mu¹ki (ima pinove). PS/2 portovi su mali okrugli konektori (DIN) sa 6 "
+"pina; konektor mi¹a je mu¹ki a na strani raèunala je ¾enski. Mo¾ete "
 "koristiti i USB mi¹, ili bus/inport mi¹ (jako stari tip), ili pak program "
 "gpm kao 'repeater'. Ako trebate spojiti ili odspojiti PS/2 ili bus/inport "
 "ureðaje, molim vas napravite to kada je raèunalo uga¹eno."
@@ -836,9 +835,9 @@ msgid ""
 "left and right buttons as middle button events."
 msgstr ""
 "Veæina programa u X Window Systemu oèekuje da mi¹ ima tri tipke (lijeva, "
-"desna i srednja). Mi¹evi sa samo dvije tipke mogu emulirati prisutnost "
-"treæe tipke tako da se istovremeni klik ili povlaèenje lijeve i desne tipke "
-"shvaæa kao pritisak na treæu tipku."
+"desna i srednja). Mi¹evi sa samo dvije tipke mogu emulirati prisutnost treæe "
+"tipke tako da se istovremeni klik ili povlaèenje lijeve i desne tipke shvaæa "
+"kao pritisak na treæu tipku."
 
 #. Type: boolean
 #. Description
@@ -859,8 +858,8 @@ msgid ""
 "\") are not yet supported with this configuration tool."
 msgstr ""
 "Primijetite da tipke mi¹a iznad broja pet (ukljuèujuæi kotaèiæ za pomicanje "
-"kao dvije tipke, po jednu za \"gore\" i \"dolje\", te treæu ako kotaèiæ "
-"mo¾e 'kliknuti') nisu podr¾ane u ovom konfiguracijskom alatu."
+"kao dvije tipke, po jednu za \"gore\" i \"dolje\", te treæu ako kotaèiæ mo¾e "
+"'kliknuti') nisu podr¾ane u ovom konfiguracijskom alatu."
 
 #. Type: boolean
 #. Description
@@ -917,8 +916,8 @@ msgid ""
 "corresponding size, but may be suboptimal for high-quality CRT's."
 msgstr ""
 "Opcija \"jednostavno\" æe vas pitati fizièku velièinu monitora; to æe "
-"postaviti neke postavke prikladne za tipièni CRT te velièine, ¹to mo¾e "
-"biti neoptimalno za visokokvalitetne CRT-ove."
+"postaviti neke postavke prikladne za tipièni CRT te velièine, ¹to mo¾e biti "
+"neoptimalno za visokokvalitetne CRT-ove."
 
 #. Type: select
 #. Description
@@ -1025,8 +1024,8 @@ msgid ""
 "name, e.g., \"Sony E200\" or \"Dell E770s\"."
 msgstr ""
 "Datoteka postavki X servera oznaèava va¹ monitor imenom koje sami mo¾ete "
-"odabrati. To je obièno ime proizvoðaèa te ime modela monitora, npr. "
-"\"Sony E200\" or \"Dell E770s\"."
+"odabrati. To je obièno ime proizvoðaèa te ime modela monitora, npr. \"Sony "
+"E200\" or \"Dell E770s\"."
 
 #. Type: text
 #. Description
@@ -1105,8 +1104,8 @@ msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
 msgstr ""
-"Ispravna sintaksa je zarezom odijeljen popis diskretnih vrijednosti, ili "
-"par vrijednosti odvojen crticom."
+"Ispravna sintaksa je zarezom odijeljen popis diskretnih vrijednosti, ili par "
+"vrijednosti odvojen crticom."
 
 #. Type: select
 #. Description
@@ -1125,9 +1124,9 @@ msgid ""
 "more information."
 msgstr ""
 "Obièno je po¾eljna 24-bitna boja. Ipak, na grafièkim karticama s ogranièenom "
-"kolièinom framebuffer memorije, vi¹e rezolucije se mogu ostvariti samo "
-"na u¹trb veæe dubine boje. Takoðer, neke kartice podr¾avaju 3D ubrzanje "
-"u sklopovlju samo za odreðene dubine. Pogledajte upute va¹e grafièke kartice "
+"kolièinom framebuffer memorije, vi¹e rezolucije se mogu ostvariti samo na "
+"u¹trb veæe dubine boje. Takoðer, neke kartice podr¾avaju 3D ubrzanje u "
+"sklopovlju samo za odreðene dubine. Pogledajte upute va¹e grafièke kartice "
 "za vi¹e informacija."
 
 #. Type: select
@@ -1267,12 +1266,12 @@ msgid ""
 "also the recommend value for the X server."
 msgstr ""
 "Pri kori¹tenju jezgri operacijskih sustava sa odreðenim strategijama "
-"rasporeðivanja redoslijeda poslova, primijeæeno je kako se performanse "
-"X servera pobolj¹avaju ako se pokreæe sa prioritetom procesa vi¹im od "
+"rasporeðivanja redoslijeda poslova, primijeæeno je kako se performanse X "
+"servera pobolj¹avaju ako se pokreæe sa prioritetom procesa vi¹im od "
 "pretpostavljene vrijednosti; prioritet procesa se naziva 'nice' vrijednost. "
 "Ove vrijednosti se kreæu od -20 (iznimno visok prioritet) do 19 (iznimno "
-"nizak prioritet). Pretpostavljena vrijednost za obiène procese je 0, a to "
-"je i preporuèena vrijednost za X server."
+"nizak prioritet). Pretpostavljena vrijednost za obiène procese je 0, a to je "
+"i preporuèena vrijednost za X server."
 
 #. Type: string
 #. Description
@@ -1341,9 +1340,9 @@ msgstr ""
 "Ova nadogradnja zahtijeva da se obri¹e direktorij /usr/X11R6/bin i da se on "
 "zamijeni sa simbolièkim linkom. Procedura je to poku¹ala napraviti, ali nije "
 "uspjela, najvjerojatnije zato ¹to direktorij jo¹ nije prazan. Morate "
-"premjestiti datoteke koje su trenutno u njemu negdje gdje neæe smetati, "
-"tako da se instalacija mo¾e dovr¹iti. Ako ¾eite, mo¾ete ih vratiti natrag "
-"nakon ¹to se postavi simbolièki link."
+"premjestiti datoteke koje su trenutno u njemu negdje gdje neæe smetati, tako "
+"da se instalacija mo¾e dovr¹iti. Ako ¾eite, mo¾ete ih vratiti natrag nakon "
+"¹to se postavi simbolièki link."
 
 #. Type: note
 #. Description

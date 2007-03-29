@@ -74,8 +74,8 @@ _Description: Write default Files section to configuration file?
 
 Template: xserver-xorg/config/modules
 Type: multiselect
-Choices: bitmap, dbe, ddc, dri, extmod, freetype, glx, int10, record, v4l, vbe
-Default: bitmap, dbe, ddc, dri, extmod, freetype, glx, int10, record, vbe
+Choices: dbe, dri, extmod, freetype, glx, int10, record, v4l, vbe
+Default: dbe, dri, extmod, freetype, glx, int10, record, vbe
 _Description: X.Org server modules that should be loaded by default:
  This option is recommended to experienced users only.  In most
  cases, all of these modules should be enabled.
@@ -84,8 +84,6 @@ _Description: X.Org server modules that should be loaded by default:
   - dri   : support in the X server for DRI (Direct Rendering Infrastructure);
   - vbe   : support for VESA BIOS Extensions. Allows to query
             the monitor capabilities via the video card;
-  - ddc   : support for Data Display Channel, respectively. Allows to query
-            the monitor capabilities via the video card;
   - int10 : real-mode x86 emulator used to softboot secondary VGA cards.
             Should be enabled if vbe is enabled;
   - dbe   : enables the double-buffering extension in the server.
@@ -93,7 +91,7 @@ _Description: X.Org server modules that should be loaded by default:
   - extmod: enables many traditional and commonly used extensions, such as
             shaped windows, shared memory, video mode switching, DGA, and Xv;
   - record: implements the RECORD extension, often used in server testing;
-  - bitmap: font rasterizer (so are freetype, and type1 modules).
+  - freetype: font rasterizer.
  .
  For further information about these modules, please consult the X.Org
  documentation.
