@@ -160,7 +160,7 @@ fi
 # xorg.conf sections:
 #   Files          File pathnames
 #   ServerFlags    Server flags                      NOT USED BY DEXCONF
-#   Module         Dynamic module loading
+#   Module         Dynamic module loading            NOT USED BY DEXCONF
 #   InputDevice    Input device description
 #   Device         Graphics device description
 #   VideoAdaptor   Xv video adaptor description      NOT USED BY DEXCONF
@@ -168,7 +168,7 @@ fi
 #   Modes          Video modes descriptions          NOT USED BY DEXCONF
 #   Screen         Screen configuration
 #   ServerLayout   Overall layout
-#   DRI            DRI-specific configuration
+#   DRI            DRI-specific configuration        NOT USED BY DEXCONF
 #   Vendor         Vendor-specific configuration     NOT USED BY DEXCONF
 
 ### HEADER
@@ -399,14 +399,6 @@ if [ -n "$LAPTOP" ]; then
 fi
 printf "EndSection\n" >&4
 
-### DRI
-exec 4>"$DEXCONFTMPDIR/DRI"
-cat >&4 <<SECTION
-Section "DRI"
-	Mode	0666
-EndSection
-SECTION
-
 # Close file descriptor 4 before we delete temporary files
 exec 4<&-
 
@@ -422,7 +414,7 @@ umask 022
 
 SPACER=
 for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ServerLayout DRI; do
+               Device Monitor Screen ServerLayout; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
