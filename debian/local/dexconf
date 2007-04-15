@@ -229,20 +229,6 @@ EndSection
 SECTION
 fi
 
-### MODULE
-
-# The module list is permitted to be null.
-db_get xserver-$SERVER/config/modules || true
-if [ -n "$RET" ]; then
-  MODULES=$(list_convert "$RET")
-  exec 4>"$DEXCONFTMPDIR/Module"
-  printf "Section \"Module\"\n" >&4
-  for MODULE in $MODULES; do
-    printf "\tLoad\t$MODULE\n" >&4
-  done
-  printf "EndSection\n" >&4
-fi
-
 ### KEYBOARD / INPUTDEVICE
 
 fetch xserver-$SERVER/config/inputdevice/keyboard/rules
@@ -435,7 +421,7 @@ umask 022
 : >"$OUTFILE"
 
 SPACER=
-for SECTION in Header Files Module InputDeviceKeyboard InputDeviceMouse \
+for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
                Device Monitor Screen ServerLayout DRI; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER

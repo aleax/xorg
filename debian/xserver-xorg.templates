@@ -72,30 +72,6 @@ _Description: Write default Files section to configuration file?
  remove the reference to the local font server, add a reference to a different
  font server, or rearrange the default set of local font paths.
 
-Template: xserver-xorg/config/modules
-Type: multiselect
-Choices: dbe, dri, extmod, freetype, glx, int10, record, v4l, vbe
-Default: dbe, dri, extmod, freetype, glx, int10, record, vbe
-_Description: X.Org server modules that should be loaded by default:
- This option is recommended to experienced users only.  In most
- cases, all of these modules should be enabled.
- .
-  - glx   : support for OpenGL rendering;
-  - dri   : support in the X server for DRI (Direct Rendering Infrastructure);
-  - vbe   : support for VESA BIOS Extensions. Allows to query
-            the monitor capabilities via the video card;
-  - int10 : real-mode x86 emulator used to softboot secondary VGA cards.
-            Should be enabled if vbe is enabled;
-  - dbe   : enables the double-buffering extension in the server.
-            Useful for animation and video operations;
-  - extmod: enables many traditional and commonly used extensions, such as
-            shaped windows, shared memory, video mode switching, DGA, and Xv;
-  - record: implements the RECORD extension, often used in server testing;
-  - freetype: font rasterizer.
- .
- For further information about these modules, please consult the X.Org
- documentation.
-
 Template: xserver-xorg/multiple_possible_x-drivers
 Type: note
 _Description: Multiple potential default X.Org server drivers for the hardware

@@ -24,8 +24,13 @@ xorg (1:7.2-2) UNRELEASED; urgency=low
   [ David Nusinow ]
   * Add xserver-xorg-input-evtouch to the dependency list for
     xserver-xorg-input-all
+  * Remove code from dexconf, xserver-xorg.templates, and
+    xserver-xorg.postinst to process the module list. The server will now have
+    a default set of modules to be loaded and those can be added to or
+    disabled in xorg.conf. This will require xserver-xorg-core 2:1.2.99.905-3
+    so bump the versioned dependency to it.
 
- -- David Nusinow <dnusinow@debian.org>  Sun, 01 Apr 2007 21:53:18 -0400
+ -- David Nusinow <dnusinow@debian.org>  Sat, 14 Apr 2007 12:55:21 -0400
 
 xorg (1:7.2-1) experimental; urgency=low
 
