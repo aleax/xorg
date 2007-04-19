@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-04-06 09:15+0200\n"
+"POT-Creation-Date: 2007-04-07 07:39+0200\n"
 "PO-Revision-Date: 2006-09-20 22:54+0800\n"
 "Last-Translator: Tetralet <tetralet@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
@@ -63,9 +63,9 @@ msgid ""
 "or driver module.  If it succeeds, further configuration questions about "
 "your video hardware will be pre-answered."
 msgstr ""
-"如果您想試著自動偵測適合您的顯示卡的的 X Server 和驅動模組，請選取這個選項。"
-"如果自動偵測失敗，您就必須自行指定合適的 X Server  和/或 驅動模組。如果自動偵"
-"測成功了，接下來有關您的顯示裝置的一些設定問題將會預先填入了可能的答案。"
+"如果您想試著自動偵測適合您的顯示卡的 X Server 和驅動模組，請選取這個選項。如"
+"果自動偵測失敗，您就必須自行指定合適的 X Server  和/或 驅動模組。如果自動偵測"
+"成功了，接下來有關您的顯示裝置的一些設定問題將會預先填入了可能的答案。"
 
 #. Type: boolean
 #. Description
@@ -221,7 +221,6 @@ msgstr ""
 #. Type: multiselect
 #. Description
 #: ../xserver-xorg.templates:8001
-#, fuzzy
 msgid ""
 " - glx   : support for OpenGL rendering;\n"
 " - dri   : support in the X server for DRI (Direct Rendering "
@@ -244,11 +243,10 @@ msgstr ""
 " - dri   ：讓 X Server 支援 DRI (Direct Rendering  Infrastructure)；\n"
 " - vbe   ：支援 VESA BIOS Extensions。允許透過顯示卡查詢螢幕的參數。\n"
 " - ddc   ：支援 Data Display Channel。允許透過顯示卡查詢螢幕的參數；\n"
-" - int10 ：以真實模式模擬 x86，用在以軟體啟動第二個 VGA 卡。如果啟用了 "
-"vbe，\n"
-"           應同時開啟。\n"
-" - dbe   ：啟用伺服器的 Double-Buffering Extension。在動畫和視訊操作上\n"
-"           極有用處；\n"
+" - int10 ：以真實模式模擬 x86，用在以軟體啟動第二個 VGA 卡。\n"
+"            如果啟用了vbe，應同時開啟。\n"
+" - dbe   ：啟用伺服器的 Double-Buffering Extension。\n"
+"           在動畫和視訊操作上極有用處；\n"
 " - extmod：啟用多個傳統且廣泛使用的擴充功能，例如視窗成型 (shaped "
 "windows)、\n"
 "           記憶體共享 (shared memory)、切換顯示模式 (video mode "
@@ -287,14 +285,14 @@ msgid ""
 "6600\"."
 msgstr ""
 "在 X Server 的設定檔中可以依您所提供的名稱來識別您的顯示卡。這通常是廠商或品"
-"牌名稱加上型號名稱，例如：Intel i915、ATI RADEON X800”或“NCIDIA GeForce "
+"牌名稱加上型號名稱，例如：Intel i915、ATI RADEON X800”或“NVIDIA GeForce "
 "6600。"
 
 #. Type: text
 #. Description
 #: ../xserver-xorg.templates:11001
 msgid "Generic Video Card"
-msgstr "Generic Video Card"
+msgstr "通用顯示卡"
 
 #. Type: select
 #. Description
@@ -435,7 +433,7 @@ msgid ""
 "This parameter should usually be left blank and specified only if the video "
 "card lacks RAM, or if the X server has trouble autodetecting the RAM size."
 msgstr ""
-"此參數通常必須留白，除非顯示卡沒有顯示記憶體，或是 X Server 在偵測記憶體大小"
+"此參數通常必須留白，除非顯示卡缺少顯示記憶體，或是 X Server 在偵測記憶體大小"
 "時發生了問題時，才有必要指定。"
 
 #. Type: string
@@ -1048,7 +1046,7 @@ msgid ""
 msgstr ""
 "請輸入一連串以逗號分隔的獨立數值（適用於固定頻率的螢幕），或者是以連接線 (-) "
 "相連的一對數值（適用於所有新式 CRT）。這些資訊應該能在您的螢幕使用手冊中找"
-"到。但應該會很少看到低於 30 或高於 130 的數值。"
+"到。但應該會很少看到低於 50 或高於 160 的數值。"
 
 #. Type: note
 #. Description
