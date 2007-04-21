@@ -1,10 +1,14 @@
 xorg (1:7.2-3) UNRELEASED; urgency=low
 
+  [ David Nusinow ]
   * Don't write the DRI section to xorg.conf. We now ship a default mode in
     libdrm as of libdrm 2.3.0-3, so we don't need to do this. Users can still
     override the default mode in their xorg.conf's if they choose
 
- -- David Nusinow <dnusinow@debian.org>  Sun, 15 Apr 2007 13:42:02 -0400
+  [ Julien Cristau ]
+  * xorg recommends libgl1-mesa-dri instead of depending on it.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 21 Apr 2007 23:13:17 +0200
 
 xorg (1:7.2-2) experimental; urgency=low
 
