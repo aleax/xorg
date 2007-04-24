@@ -102,6 +102,8 @@ Description: transitional package for moving from XFree86 to X.Org
 Package: xserver-xorg-video-all
 Architecture: any
 Depends: ${F:XServer-Xorg-Video-Depends}
+Replaces: xserver-xorg-driver-all
+Conflicts: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
