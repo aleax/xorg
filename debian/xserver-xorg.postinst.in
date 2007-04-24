@@ -728,17 +728,6 @@ if [ "$RET" = "Expert" ]; then
   db_set xserver-xorg/config/monitor/selection-method "Advanced"
 fi
 
-# migrate to X.Org 6.8.1, where there are no pex, xtt or xie modules
-db_get xserver-xorg/config/modules
-SELECTED_MODULES="$(echo $RET | awk 'BEGIN { RS=", "} {print $1}')"
-# are the pex or xie modules selected?
-if echo "$SELECTED_MODULES" | egrep -q "(pex|xie|xtt)"; then
-  # get rid of them
-  SELECTED_MODULES=$(echo "$SELECTED_MODULES" | egrep -v "(pex|xie|xtt)")
-  SELECTED_MODULES=$(echo $SELECTED_MODULES | sed 's/ /, /g')
-  db_set xserver-xorg/config/modules "$SELECTED_MODULES"
-fi
-
 # migrate from ATI driver sub-modules to ATI driver
 db_get xserver-xorg/config/device/driver
 case "$RET" in
@@ -1351,42 +1340,6 @@ else
 fi
 
 auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/emulate3buttons true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/inputdevice/mouse/emulate3buttons" "$?"
-db_go
-
-# server modules to load
-db_fget xserver-xorg/config/modules seen
-# if it's seen but empty, then give it a default value.  fixes stuff for people
-# upgrading through breezy, and no modules is enough of a pathological case that
-# people doing that would've modified their config in other ways anyway.
-if [ "$RET" = "true" ]; then
-  db_get xserver-xorg/config/modules
-  if [ -z "$RET" ]; then
-    db_reset xserver-xorg/config/modules
-  fi
-fi
-
-# kill me now.
-if echo "$MODULES" | grep -q "GLcore"; then
-  NEWOPTIONS=""
-  IFS_SAVE="$IFS"
-  IFS=","
-  for i in $MODULES; do
-    IFS="$IFS_SAVE"
-    if [ "$i" != "GLcore" ]; then
-      NEWMODULES="${NEWMODULES:+$NEWMODULES,}${i%% }"
-    fi
-    IFS=","
-  done
-  IFS="$IFS_SAVE"
-  MODULES="$NEWMODULES"
-  db_set xserver-xorg/config/modules "$MODULES"
-fi
-
-DEFAULT_MODULES='i2c, bitmap, ddc, dri, extmod, freetype, glx, int10, vbe'
-if [ "$ARCH" = 'sparc' ]; then
-  DEFAULT_MODULES="${DEFAULT_MODULES}, cfb, cfb32"
-fi
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/modules "${DEFAULT_MODULES}" || true
 db_go
 
 # files and dri sections
@@ -2049,8 +2002,7 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 	FontPath	"/usr/share/fonts/X11/75dpi"
 		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/Type1"[[:space:]]*$/i\
 	FontPath	"/usr/share/fonts/X11/Type1"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/CID"
+		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/d
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
 	chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new

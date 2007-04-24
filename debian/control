@@ -82,7 +82,7 @@ Architecture: all
 Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
 Replaces: xserver-common
 Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
-Depends: xserver-xorg-core (>= 2:1.1.1-11), xserver-xorg-video-all | xserver-xorg-video-1.0, xserver-xorg-input-all | xserver-xorg-input, ${misc:Depends}, xkb-data | xkb-data-legacy, xbase-clients
+Depends: xserver-xorg-core (>= 2:1.2.99.905-3), xserver-xorg-video-all | xserver-xorg-video-1.0, xserver-xorg-input-all | xserver-xorg-input, ${misc:Depends}, xkb-data | xkb-data-legacy, xbase-clients
 Recommends: xserver-xorg-video-all, xserver-xorg-input-all, laptop-detect, xresprobe, mdetect, discover1 | discover
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
@@ -90,8 +90,7 @@ Description: the X.Org X server
  xorg.conf.  It does not provide the actual server itself, but removing it
  is strongly discouraged.
 # versioned dependency on xserver-xorg-core needed because xserver-xorg
-# contains a symlink to the reportbug script shipped in that package starting
-# with 2:1.1.1-11
+# contains a patch to allow in-server module defaults in 2:1.2.99.905-3
 
 
 Package: xserver-xfree86
@@ -118,7 +117,8 @@ Description: the X.Org X server -- input driver metapackage
 
 Package: xorg
 Architecture: all
-Depends: xserver-xorg, libgl1-mesa-glx, libgl1-mesa-dri, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), xbase-clients (>= 1:1.0.1-1), xutils (>= 1:1.0.1-1), xkb-data, xterm | x-terminal-emulator, sparc-utils | not+sparc
+Depends: xserver-xorg, libgl1-mesa-glx, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), xbase-clients (>= 1:1.0.1-1), xutils (>= 1:1.0.1-1), xkb-data, xterm | x-terminal-emulator, sparc-utils | not+sparc, xorg-docs
+Recommends: libgl1-mesa-dri
 Provides: x-window-system, x-window-system-core
 Description: X.Org X Window System
  This metapackage provides the components for a standalone
