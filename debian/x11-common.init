@@ -17,7 +17,9 @@ SOCKET_DIR=/tmp/.X11-unix
 ICE_DIR=/tmp/.ICE-unix
 
 . /lib/lsb/init-functions
-. /etc/default/rcS
+if [ -f /etc/default/rcS ]; then
+  . /etc/default/rcS
+fi
 
 do_restorecon () {
   # Restore file security context (SELinux).
