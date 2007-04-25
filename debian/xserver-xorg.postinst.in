@@ -1440,8 +1440,8 @@ xresprobeint() {
     if [ "$DEVICE_DRIVER" = "ati" ]; then
       # r128 is in the same 'special' list, AFAICT.
       if [ "$DISPLAY_TYPE" = "lcd/lvds" ]; then
-        if [ "$DEVICE_IDENTIFIER" = "ATI Technologies, Inc. Rage Mobility M3 (AGP)" ] || \
-           [ "$DEVICE_IDENTIFIER" = "ATI Technologies, Inc. Rage Mobility M4 (AGP)" ] || \
+        if [ "$DEVICE_IDENTIFIER" = "ATI Technologies Inc Rage Mobility M3 (AGP)" ] || \
+           [ "$DEVICE_IDENTIFIER" = "ATI Technologies Inc Rage Mobility M4 (AGP)" ] || \
            echo "$DEVICE_IDENTIFIER" | grep -q "Rage 128"; then
           MONITOR_SYNC_RANGES="yes"
           debug_echo "r128 laptop chipset detected; writing sync ranges"
