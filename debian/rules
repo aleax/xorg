@@ -18,6 +18,9 @@ export DH_OPTIONS
 # latest ABI is 7.0 final
 SERVERABIBUMP = 7.1.0
 
+# Default list of detection packages
+XSERVER_XORG_DETECT_DEPENDS = ""
+
 include debian/xsfbs/xsfbs.mk
 
 # Get package version info.
@@ -89,7 +92,7 @@ binary-indep: build install
 	dh_compress
 	dh_fixperms
 	dh_installdeb
-	dh_gencontrol
+	dh_gencontrol -- -VF:XServer-Xorg-Detect-Depends=$(XSERVER_XORG_DETECT_DEPENDS)
 	dh_md5sums
 	dh_builddeb
 	touch stamp-$@
