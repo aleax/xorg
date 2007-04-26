@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_po\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-04-06 09:15+0200\n"
+"POT-Creation-Date: 2007-04-26 07:09+0200\n"
 "PO-Revision-Date: 2006-10-17 19:25+0000\n"
 "Last-Translator: Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>\n"
 "Language-Team: Wolof <debian-boot@lists.debian.org>\n"
@@ -100,7 +100,7 @@ msgstr "Ay serwóor X yu defóo yu bare yu ñeel sa periferik bi"
 #. Description
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -113,7 +113,7 @@ msgstr ""
 #. Description
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -127,7 +127,7 @@ msgstr ""
 #. Description
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -202,88 +202,21 @@ msgstr ""
 "lokaal yi, daldi yokku ab juñju bu jëm ci baneen serwóor mbindiin, walla "
 "toftalewaat reglaasu defóo bu yoon (path) yu mbindiin yu lokaal yi."
 
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "X.Org server modules that should be loaded by default:"
-msgstr "Modil yu serwóor X.Org yiñu wara sëf ci defóo:"
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"This option is recommended to experienced users only.  In most cases, all of "
-"these modules should be enabled."
-msgstr ""
-"Bii tann nak deesuko laabiire kudul jëfandikukat bu ci am xamxam. Liy faral "
-"di am moodi ne mbooleem modil yi deesleena wara kattanal."
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:8001
-#, fuzzy
-msgid ""
-" - glx   : support for OpenGL rendering;\n"
-" - dri   : support in the X server for DRI (Direct Rendering "
-"Infrastructure);\n"
-" - vbe   : support for VESA BIOS Extensions. Allows querying\n"
-"           the monitor capabilities via the video card;\n"
-" - ddc   : support for Data Display Channel. Allows querying\n"
-"           the monitor capabilities via the video card;\n"
-" - int10 : real-mode x86 emulator used to softboot secondary VGA cards.\n"
-"           Should be enabled if vbe is enabled;\n"
-" - dbe   : enables the double-buffering extension in the server.\n"
-"           Useful for animation and video operations;\n"
-" - extmod: enables many traditional and commonly used extensions, such as\n"
-"           shaped windows, shared memory, video mode switching, DGA, and "
-"Xv;\n"
-" - record: implements the RECORD extension, often used in server testing;\n"
-" - bitmap: font rasterizer (so are freetype, and type1 modules)."
-msgstr ""
-" - glx   : doxal nataalu OpenGL;\n"
-" - dri   : doxal ci serwóor X bi DRI (Direct Rendering Infrastructure);\n"
-" - vbe   : doxal yaatal bu VESA BIOS. Maye ñu mana laaj\n"
-"           ci kattanu monitóor bi, jaareko ci kart video bi;\n"
-" - ddc   : doxal Data Display Channel. Maye ñu mana laaj\n"
-"           ci kattantu monitóor bi, jaareko ci kart video bi;\n"
-" - int10 : real-mode x86 emulator , biñuy jëfandikoo ngir  softboot ñaareeli "
-"kart yu VGA.\n"
-"           Wareesna koo kattanal bu fekkee kattanalnañu vbe;\n"
-" - dbe   : kattanal yaatalu double-buffering ci serwóor bi.\n"
-"           Dana am njariñ ci animaasioŋ ak ci liggéeyu video;\n"
-" - extmod: dafay kattanal ay yaatal yu bare yuñuy faral di jëfandikoo, yu "
-"mel ne\n"
-"           Palanteer yuñu jox form, memwaar buñu séddóo, video mode "
-"switching, DGA, ak Xv;\n"
-" - record: dafay sàmpu yaatal bu RECORD, ñukoy farala jëfandikoo ci teste "
-"serwóor bi;\n"
-" - bitmap: font rasterizer (yu deme ne freetype, ak modil yu type1)."
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For further information about these modules, please consult the X.Org "
-"documentation."
-msgstr ""
-"Ngir am yaneen faramfacce ci modil yii, demal nga xool dokimantaasioŋ yu X."
-"Org."
-
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr "Amna ay driver yu serwóoru X.Org yu bare ñeel sa periferik"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Identifier for your video card:"
 msgstr "Xamleel sa kart video:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -297,19 +230,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "Generic Video Card"
 msgstr "Kart video Generik"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "X server driver:"
 msgstr "Driver bu serwóir X:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -319,7 +252,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -329,13 +262,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Ndax nu jëfandikoo interfaasu periferik framebuffer bu kernel bi?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -347,7 +280,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -359,13 +292,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Video card's bus identifier:"
 msgstr "Xamlekat (ID) bu bus bo kart video bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -377,13 +310,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Examples:"
 msgstr "Misaal yi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -396,7 +329,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -406,7 +339,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -416,19 +349,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "Incorrect format for the bus identifier"
 msgstr "Formaatu xamlekat (ID) bu bus bi baaxul"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid "Amount of memory (kB) to be used by the video card:"
 msgstr "Rëyaayu memwaar (KB) bi kart video bi di jëfandikoo:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Typically, the amount of dedicated memory used by the video card is "
 "autodetected by the X server, but some integrated video chips (such as the "
@@ -442,7 +375,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "This parameter should usually be left blank and specified only if the video "
 "card lacks RAM, or if the X server has trouble autodetecting the RAM size."
@@ -453,13 +386,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid "XKB rule set to use:"
 msgstr "Reegalu XKB biñu jëfandikoo:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -469,7 +402,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -479,7 +412,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -491,19 +424,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Bu fekke dangay nattable, kon fii bind fi \"xorg\"."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid "Keyboard model:"
 msgstr "Modeel bu tablocaabi bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -514,7 +447,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -555,7 +488,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -567,7 +500,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -579,7 +512,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -590,13 +523,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid "Keyboard layout:"
 msgstr "Tërëliinu tablocaabi bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -608,7 +541,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -620,7 +553,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -632,13 +565,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid "Keyboard variant:"
 msgstr "Cafaan bu tablocaabi bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -650,7 +583,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -663,7 +596,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -677,7 +610,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -686,13 +619,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid "Keyboard options:"
 msgstr "Tann yu tablocaabi bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -705,7 +638,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -717,7 +650,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -733,7 +666,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -743,7 +676,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -753,19 +686,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid "When in doubt, this value should be left blank."
 msgstr "Bu fekkee dangay sikksakka, kon fii waróo fée bind dara."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid "Attempt mouse device autodetection?"
 msgstr "Ndax nu jéema gisal jinax ci sunu boppu?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "If a mouse is attached to the computer, autodetection can be attempted; it "
 "may help to move the mouse while detection is attempted (the gpm program "
@@ -780,13 +713,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid "Do not choose this option if you wish to select a mouse type manually."
 msgstr "Bul tànn lii bu fekkee dangaa bëgga tànnal jinax sa boppu ak sa loxo."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "If you choose it and autodetection fails, you will be asked this question "
 "again.  Autodetection can be attempted as many times as desired.  If it "
@@ -800,13 +733,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid "Mouse port:"
 msgstr "Poor bu jinax ci:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the mouse (or other pointing device, such as a "
@@ -818,7 +751,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "It is necessary to determine which port (connection type) is used by the "
 "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
@@ -843,19 +776,19 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid "Mouse protocol:"
 msgstr "Protokol bu jinax ji:"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "Emulate 3 button mouse?"
 msgstr "Ndax nu emule jinax bu am 3 butoŋ?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "Most programs in the X Window System expect the mouse to have 3 buttons "
 "(left, right, and middle).  Mice with only 2 buttons can emulate the "
@@ -869,7 +802,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
@@ -879,7 +812,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "Note that mouse buttons in excess of five (counting a scroll wheel as two "
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
@@ -892,13 +825,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid "Attempt monitor autodetection?"
 msgstr "Ndax nu jéema gisal monitor bi sunu boppu?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -913,7 +846,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr ""
@@ -922,13 +855,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Yoonu tann karakteristik yu monitor bi:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -938,7 +871,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -950,7 +883,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -962,7 +895,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -972,43 +905,43 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Up to 14 inches (355 mm)"
 msgstr "Ba ci 14 puus (35 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "15 inches (380 mm)"
 msgstr "15 puus (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "17 inches (430 mm)"
 msgstr "17 puus (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 puus (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "21 inches (530 mm) or more"
 msgstr "21 puus (530 mm) walla luko ëppu"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28002
+#: ../xserver-xorg.templates:27002
 msgid "Approximate monitor size:"
 msgstr "Rëyaayu monitor bi cik nattale:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28002
+#: ../xserver-xorg.templates:27002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Monitor bu CRT bu kalite bu kawe man naa jëfandikoo kategori bu gëna kawe bi "
@@ -1016,13 +949,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Monitor's best video mode:"
 msgstr "doxiin (mode) video bi gën ci monitor bi:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -1041,13 +974,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Identifier for the monitor:"
 msgstr "Xamlekat (ID) bu monitor bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "The X server configuration file associates the monitor with a name that you "
 "may provide.  This is usually the vendor or brand name followed by the model "
@@ -1059,19 +992,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid "Generic Monitor"
 msgstr "Monitor Generik"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Ndax nu bind sync ranges bu monitor bi ci fiise komfiguraasioŋ bi?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -1084,13 +1017,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "Monitor's horizontal sync range:"
 msgstr "Intervalle bu horizontal sync bu monitor bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1105,13 +1038,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Monitor's vertical refresh range:"
 msgstr "Intervalle bu vertical refresh bu monitor bi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1126,13 +1059,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Incorrect values entered"
 msgstr "Lim bi nga bind jubul"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1142,13 +1075,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Desired default color depth in bits:"
 msgstr "Xóotaayu kulóor bu defóo bi ci ay bit:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1164,7 +1097,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1177,49 +1110,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid "Empty value"
 msgstr "Lim bi dafa widd"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid "A null entry is not permitted for this value."
 msgstr "Fii duñu naŋgu nga bayyiko mu neen bañ fee def dara."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:37001
 msgid "Invalid double-quote characters"
 msgstr "Karakteer yu guillemet yi baaxul"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:37001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Karakteer bu guillemet (\") deesuko naŋgu fii."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:38001
 msgid "Numerical value needed"
 msgstr "Am lim (numero) lañu soxla"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:38001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Kenn du naŋgu fii ab karakteer budul ab lim (numero)."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:40001
+#: ../xserver-xorg.templates:39001
 msgid "Autodetect keyboard layout?"
 msgstr "Ndax nu jéema gisal sunu boppu tërëliinu tablocaabi bi?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:40001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1231,7 +1164,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:40001
+#: ../xserver-xorg.templates:39001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1390,3 +1323,60 @@ msgstr ""
 "Kon istalaasioŋ bu bii paket antuwl ta mingi nii di génn ngir nga mana def "
 "loolii. Kon nanga dellu defaat yokku daraja bi ginnaaw boo setalee kaggu bi "
 "ba noppi."
+
+#~ msgid "X.Org server modules that should be loaded by default:"
+#~ msgstr "Modil yu serwóor X.Org yiñu wara sëf ci defóo:"
+
+#~ msgid ""
+#~ "This option is recommended to experienced users only.  In most cases, all "
+#~ "of these modules should be enabled."
+#~ msgstr ""
+#~ "Bii tann nak deesuko laabiire kudul jëfandikukat bu ci am xamxam. Liy "
+#~ "faral di am moodi ne mbooleem modil yi deesleena wara kattanal."
+
+#, fuzzy
+#~ msgid ""
+#~ " - glx   : support for OpenGL rendering;\n"
+#~ " - dri   : support in the X server for DRI (Direct Rendering "
+#~ "Infrastructure);\n"
+#~ " - vbe   : support for VESA BIOS Extensions. Allows querying\n"
+#~ "           the monitor capabilities via the video card;\n"
+#~ " - ddc   : support for Data Display Channel. Allows querying\n"
+#~ "           the monitor capabilities via the video card;\n"
+#~ " - int10 : real-mode x86 emulator used to softboot secondary VGA cards.\n"
+#~ "           Should be enabled if vbe is enabled;\n"
+#~ " - dbe   : enables the double-buffering extension in the server.\n"
+#~ "           Useful for animation and video operations;\n"
+#~ " - extmod: enables many traditional and commonly used extensions, such "
+#~ "as\n"
+#~ "           shaped windows, shared memory, video mode switching, DGA, and "
+#~ "Xv;\n"
+#~ " - record: implements the RECORD extension, often used in server "
+#~ "testing;\n"
+#~ " - bitmap: font rasterizer (so are freetype, and type1 modules)."
+#~ msgstr ""
+#~ " - glx   : doxal nataalu OpenGL;\n"
+#~ " - dri   : doxal ci serwóor X bi DRI (Direct Rendering Infrastructure);\n"
+#~ " - vbe   : doxal yaatal bu VESA BIOS. Maye ñu mana laaj\n"
+#~ "           ci kattanu monitóor bi, jaareko ci kart video bi;\n"
+#~ " - ddc   : doxal Data Display Channel. Maye ñu mana laaj\n"
+#~ "           ci kattantu monitóor bi, jaareko ci kart video bi;\n"
+#~ " - int10 : real-mode x86 emulator , biñuy jëfandikoo ngir  softboot "
+#~ "ñaareeli kart yu VGA.\n"
+#~ "           Wareesna koo kattanal bu fekkee kattanalnañu vbe;\n"
+#~ " - dbe   : kattanal yaatalu double-buffering ci serwóor bi.\n"
+#~ "           Dana am njariñ ci animaasioŋ ak ci liggéeyu video;\n"
+#~ " - extmod: dafay kattanal ay yaatal yu bare yuñuy faral di jëfandikoo, yu "
+#~ "mel ne\n"
+#~ "           Palanteer yuñu jox form, memwaar buñu séddóo, video mode "
+#~ "switching, DGA, ak Xv;\n"
+#~ " - record: dafay sàmpu yaatal bu RECORD, ñukoy farala jëfandikoo ci teste "
+#~ "serwóor bi;\n"
+#~ " - bitmap: font rasterizer (yu deme ne freetype, ak modil yu type1)."
+
+#~ msgid ""
+#~ "For further information about these modules, please consult the X.Org "
+#~ "documentation."
+#~ msgstr ""
+#~ "Ngir am yaneen faramfacce ci modil yii, demal nga xool dokimantaasioŋ yu "
+#~ "X.Org."
