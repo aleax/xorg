@@ -64,7 +64,7 @@ validate_nice_value () {
   # (expr is noisy, always throw away its output)
   set +e
   expr "$1" - "$1" > /dev/null 2>&1
-  if [ $? -ne 2 ]; then
+  if [ $? -eq 1 ]; then
     # now check for valid range
     if expr "$1" ">=" "-20" > /dev/null 2>&1 &&
        expr "$1" "<=" "19" > /dev/null 2>&1; then
@@ -130,7 +130,7 @@ fi
 
 set +e
 while :; do
-  run db_input low x11-common/xwrapper/nice_value
+  db_input low x11-common/xwrapper/nice_value
   # is the question going to be asked?
   if [ $? -eq 30 ]; then
     break # no; bail out of validation loop

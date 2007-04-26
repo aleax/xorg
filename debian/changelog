@@ -1,5 +1,6 @@
-xorg (1:7.1.0-19) UNRELEASED; urgency=low
+xorg (1:7.2-3) UNRELEASED; urgency=low
 
+  [ Christian Perrier ]
   * Debconf templates proofread by the debian-l10n-english team
     Closes: #418007
   * Debconf translations:
@@ -27,7 +28,64 @@ xorg (1:7.1.0-19) UNRELEASED; urgency=low
     - German
     - Italian. Closes: #421013
 
- -- Christian Perrier <bubulle@debian.org>  Tue, 10 Apr 2007 14:28:36 +0200
+  [ David Nusinow ]
+  * Don't write the DRI section to xorg.conf. We now ship a default mode in
+    libdrm as of libdrm 2.3.0-3, so we don't need to do this. Users can still
+    override the default mode in their xorg.conf's if they choose
+
+  [ Julien Cristau ]
+  * xorg recommends libgl1-mesa-dri instead of depending on it.
+
+  [ Timo Aaltonen ]
+  * xserver-xorg-video-all: Replaces/Conflicts xserver-xorg-driver-all
+  * x11-common.init: Only source /etc/default/rcS if it exists,
+    allowing x11-common to be installed by debootstrap.
+  * x11common.{dirs,links}: Don't ship or link to
+    /usr/X11R6/lib/X11/fonts
+  * debian/scripts/vars.*: Remove xserver-xorg-video-vmware from non-x86
+    archs.
+  * debian/{control,rules,scripts/vars.*}: Set XSERVER_XORG_DETECT_DEPENDS
+    on amd64, hppa, i386, ia64.
+  * debian/scripts/vars: Add xserver-xorg-input-elographics to
+    XSERVER_XORG_INPUT_DEPENDS.
+  * debian/xserver-xorg.postinst.in: ATI vendor string was changed in
+    discover-data_2.2006.08.15, so edit them to reflect the change.
+
+ -- Timo Aaltonen <tjaalton@cc.hut.fi>  Wed, 25 Apr 2007 16:56:19 +0300
+
+xorg (1:7.2-2) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Add support for kfreebsd-{amd64,i386} (closes: #363910).  Thanks,
+    Robert Millan and Daniel Stone!
+  * In xserver-xorg's postinst, delete old FontPaths pointing to CID fonts,
+    are these aren't supported anymore.
+
+  [ Colin Watson ]
+  * debian/xserver-xorg.config.in: Improve expr return code handling in
+    validate_nice_value; don't use run function when we need to check
+    db_input's return value (LP: #68267).
+
+  [ Julien Cristau ]
+  * Drop references to obsolete modules in the debconf templates.
+  * dexconf: don't add fontpaths in /usr/X11R6.
+  * dexconf: point to the xorg.conf manpage, not /etc/X11/xorg.conf
+    (closes: #408114).
+  * Add patch from Guillem Jover <guillem@debian.org> to add console detection
+    support for GNU/kFreeBSD to the X server wrapper (closes: #413454).
+  * Add xserver-xorg-video-vmware to xserver-xorg-video-all's dependencies on
+    amd64 (closes: #413492).
+
+  [ David Nusinow ]
+  * Add xserver-xorg-input-evtouch to the dependency list for
+    xserver-xorg-input-all
+  * Remove code from dexconf, xserver-xorg.templates, and
+    xserver-xorg.postinst to process the module list. The server will now have
+    a default set of modules to be loaded and those can be added to or
+    disabled in xorg.conf. This will require xserver-xorg-core 2:1.2.99.905-3
+    so bump the versioned dependency to it.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 15 Apr 2007 11:44:28 -0400
 
 xorg (1:7.1.0-18) unstable; urgency=high
 
@@ -49,7 +107,6 @@ xorg (1:7.1.0-17) unstable; urgency=high
     by Lennart Sorensen.
 
  -- Julien Cristau <jcristau@debian.org>  Fri, 06 Apr 2007 01:45:17 +0200
-
 xorg (1:7.1.0-16) unstable; urgency=high
 
   [ Christian Perrier ]
@@ -64,6 +121,17 @@ xorg (1:7.1.0-16) unstable; urgency=high
   * Urgency high to get this into etch.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 03 Apr 2007 14:06:17 +0200
+
+xorg (1:7.2-1) experimental; urgency=low
+
+  * New upstream release
+  * Have the metapackages support xserver-xorg-video-intel,
+    xserver-xorg-video-i810-modesetting, and xserver-xorg-intel-modesetting
+    packages as valid options in addition to i810
+  * Add xorg-docs to the xorg package dependencies. There's some very useful
+    manpages in there, among other things.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun,  4 Mar 2007 15:38:57 -0500
 
 xorg (1:7.1.0-15) unstable; urgency=low
 

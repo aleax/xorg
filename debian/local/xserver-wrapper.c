@@ -66,6 +66,10 @@
  * Branden Robinson: chdir() to the directory where the X server symlink is kept
  *                   before executing its target, so that relative symlinks work
  *                   (1 Aug 2003)
+ * Guillem Jover: add console detection support for GNU/kFreeBSD, and some
+ *                messages at build and run time to allow the user to know
+ *                what failed on unsupported systems
+ *                (30 Mar 2007)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -102,7 +106,12 @@
 # include <sys/resource.h>
 #endif
 
+#if defined(__linux__)
 #define VT_MAJOR_DEV 4
+#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+#include <sys/consio.h>
+#endif
+
 #define X_WRAPPER_CONFIG_FILE "/etc/X11/Xwrapper.config"
 #define X_SERVER_SYMLINK_DIR "/etc/X11"
 #define X_SERVER_SYMLINK "/etc/X11/X"
@@ -138,10 +147,37 @@ getSecLevel(char *security)
 }
 
 static int
-checkSecLevel(SecurityLevel level)
+onConsole()
 {
+#if defined(__linux__)
   struct stat s;
 
+  /* see if stdin is a virtual console device */
+  if (fstat(0, &s) != 0) {
+    (void) fprintf(stderr, "X: cannot stat stdin\n");
+    return FALSE;
+  }
+  if (S_ISCHR(s.st_mode) &&
+      ((s.st_rdev >> 8) & 0xff) == VT_MAJOR_DEV &&
+      (s.st_rdev & 0xff) < 64) {
+    return TRUE;
+  }
+#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+  int idx;
+
+  if (ioctl(0, VT_GETINDEX, &idx) != -1)
+    return TRUE;
+#else
+#warning This program needs porting to your kernel.
+  (void) fprintf(stderr, "X: unable to determine if running on a console\n");
+#endif
+
+  return FALSE;
+}
+
+static int
+checkSecLevel(SecurityLevel level)
+{
   switch (level) {
   case RootOnly:
     if (getuid() == 0) { /* real uid is root */
@@ -152,16 +188,7 @@ checkSecLevel(SecurityLevel level)
     break;
   case Console:
     if (getuid() == 0) return TRUE; /* root */
-    /* see if stdin is a virtual console device */
-    if (fstat(0, &s) != 0) {
-      (void) fprintf(stderr,"X: cannot stat stdin\n");
-      return FALSE;
-    }
-    if (S_ISCHR(s.st_mode) &&
-        ((s.st_rdev >> 8) & 0xff) == VT_MAJOR_DEV &&
-        (s.st_rdev & 0xff) < 64) {
-      return TRUE;
-    }
+    return onConsole();
     break;
   case Anybody:
     return TRUE;

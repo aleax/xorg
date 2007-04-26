@@ -127,7 +127,7 @@ XSERVERPKG="$RET"
 case "$XSERVERPKG" in
   xserver-xorg|xserver-xorg-dbg|xserver-xorg-core)
     : ${XF86CONFIG:=/etc/X11/xorg.conf}
-    REALCONFIG="/etc/X11/xorg.conf"
+    REALCONFIG="xorg.conf"
     SERVER="xorg"
     ;;
   *)
@@ -160,7 +160,7 @@ fi
 # xorg.conf sections:
 #   Files          File pathnames
 #   ServerFlags    Server flags                      NOT USED BY DEXCONF
-#   Module         Dynamic module loading
+#   Module         Dynamic module loading            NOT USED BY DEXCONF
 #   InputDevice    Input device description
 #   Device         Graphics device description
 #   VideoAdaptor   Xv video adaptor description      NOT USED BY DEXCONF
@@ -168,7 +168,7 @@ fi
 #   Modes          Video modes descriptions          NOT USED BY DEXCONF
 #   Screen         Screen configuration
 #   ServerLayout   Overall layout
-#   DRI            DRI-specific configuration
+#   DRI            DRI-specific configuration        NOT USED BY DEXCONF
 #   Vendor         Vendor-specific configuration     NOT USED BY DEXCONF
 
 ### HEADER
@@ -217,37 +217,16 @@ SECTION
   fi
   cat >&4 <<SECTION
 	FontPath	"/usr/share/fonts/X11/misc"
-	FontPath	"/usr/X11R6/lib/X11/fonts/misc"
 	FontPath	"/usr/share/fonts/X11/cyrillic"
-	FontPath	"/usr/X11R6/lib/X11/fonts/cyrillic"
 	FontPath	"/usr/share/fonts/X11/100dpi/:unscaled"
-	FontPath	"/usr/X11R6/lib/X11/fonts/100dpi/:unscaled"
 	FontPath	"/usr/share/fonts/X11/75dpi/:unscaled"
-	FontPath	"/usr/X11R6/lib/X11/fonts/75dpi/:unscaled"
 	FontPath	"/usr/share/fonts/X11/Type1"
-	FontPath	"/usr/X11R6/lib/X11/fonts/Type1"
 	FontPath	"/usr/share/fonts/X11/100dpi"
-	FontPath	"/usr/X11R6/lib/X11/fonts/100dpi"
 	FontPath	"/usr/share/fonts/X11/75dpi"
-	FontPath	"/usr/X11R6/lib/X11/fonts/75dpi"
 	# path to defoma fonts
 	FontPath	"/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType"
 EndSection
 SECTION
-fi
-
-### MODULE
-
-# The module list is permitted to be null.
-db_get xserver-$SERVER/config/modules || true
-if [ -n "$RET" ]; then
-  MODULES=$(list_convert "$RET")
-  exec 4>"$DEXCONFTMPDIR/Module"
-  printf "Section \"Module\"\n" >&4
-  for MODULE in $MODULES; do
-    printf "\tLoad\t$MODULE\n" >&4
-  done
-  printf "EndSection\n" >&4
 fi
 
 ### KEYBOARD / INPUTDEVICE
@@ -420,14 +399,6 @@ if [ -n "$LAPTOP" ]; then
 fi
 printf "EndSection\n" >&4
 
-### DRI
-exec 4>"$DEXCONFTMPDIR/DRI"
-cat >&4 <<SECTION
-Section "DRI"
-	Mode	0666
-EndSection
-SECTION
-
 # Close file descriptor 4 before we delete temporary files
 exec 4<&-
 
@@ -442,8 +413,8 @@ umask 022
 : >"$OUTFILE"
 
 SPACER=
-for SECTION in Header Files Module InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ServerLayout DRI; do
+for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
+               Device Monitor Screen ServerLayout; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
