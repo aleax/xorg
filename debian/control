@@ -92,13 +92,6 @@ Description: the X.Org X server
 # versioned dependency on xserver-xorg-core needed because xserver-xorg
 # contains a patch to allow in-server module defaults in 2:1.2.99.905-3
 
-
-Package: xserver-xfree86
-Architecture: all
-Depends: xserver-xorg
-Description: transitional package for moving from XFree86 to X.Org
- This package smooths upgrades from Debian 3.1 by depending on xserver-xorg.
-
 Package: xserver-xorg-video-all
 Architecture: any
 Depends: ${F:XServer-Xorg-Video-Depends}
@@ -168,14 +161,6 @@ Description: transitional metapackage
  purposes to prevent disruptions during automated package builds, and my be
  safely removed from your system.
 
-Package: xlibmesa-dri
-Section: libs
-Architecture: all
-Depends: libgl1-mesa-dri
-Description: transitional package for Debian etch
- This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
- Debian etch. It may be safely removed from your system.
-
 Package: xlibmesa-gl
 Section: libs
 Architecture: all
@@ -215,23 +200,3 @@ Depends: libglu1-mesa-dev
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
-
-Package: x-window-system
-Section: x11
-Architecture: all
-Depends: xorg
-Description: transitional package for Debian etch
- This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
- Debian etch. It may be safely removed from your system. It depends on the
- xorg package which is the new metapackage for installing the X Window
- System in Debian.
-
-Package: x-window-system-core
-Section: x11
-Architecture: all
-Depends: xorg
-Description: transitional package for Debian etch
- This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
- Debian etch. It may be safely removed from your system. It depends on the
- xorg package which is the new metapackage for installing the X Window
- System in Debian.
