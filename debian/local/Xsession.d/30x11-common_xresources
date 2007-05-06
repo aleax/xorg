@@ -4,7 +4,7 @@
 
 # If xrdb (from xbase-clients) is installed, merge system-wide X resources.
 # Then merge the user's X resources, if the options file is so configured.
-if which xrdb >/dev/null 2>&1; then
+if /usr/bin/which xrdb >/dev/null 2>&1; then
   if [ -d "$SYSRESOURCES" ]; then
     RESOURCEFILES=$(run-parts --list $SYSRESOURCES)
     if [ -n "$RESOURCEFILES" ]; then
