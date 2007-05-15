@@ -79,13 +79,18 @@ See \(lqCUSTOMIZING THE STARTUP PROCEDURE\(rq below.
 .I Xsession
 may optionally be passed a single argument indicating the type of X
 session to be started.
-It is up to the display manager to set the argument, and there is no way to
-pass
+It is up to the display manager to set the argument. To pass
 .I Xsession
 an argument from
 .B startx
 or
-.BR xinit .
+.BR xinit ,
+.I /etc/X11/Xsession
+(or
+.IR /etc/X11/xinit/xinitrc )
+must be called explicitly with a path, as in
+.B startx /etc/X11/Xsession
+.BR failsafe .
 By default, three different arguments are supported:
 .TP
 .B failsafe
@@ -120,6 +125,9 @@ in
 .I .xsession
 files, it makes little sense to permit them to specify the names of
 arbitrary programs to run.)
+Note that the restriction may be easy to bypass, e.g. by using a
+.I .gnomerc
+file instead.
 .SS "DEFAULT STARTUP PROCEDURE"
 Initially,
 .I Xsession
