@@ -201,10 +201,10 @@ main(int argc, char **argv)
 {
   FILE *cf;
   struct stat statbuf;
-  char xserver[1024];
+  char xserver[1025];
   char line[1024];
-  char var[64];
-  char value[256];
+  char var[65];
+  char value[257];
   int length;
   int i;
   int intval;
