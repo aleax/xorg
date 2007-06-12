@@ -374,14 +374,11 @@ Section "Screen"
 	Monitor		"$MONITOR_IDENTIFIER"
 	DefaultDepth	$DISPLAY_DEFAULT_DEPTH
 SECTION
-for DEPTH in 1 4 8 15 16 24; do
-  printf "\tSubSection \"Display\"\n" >&4
-  printf "\t\tDepth\t\t$DEPTH\n" >&4
   if [ -n "$DISPLAY_MODES" ]; then
+	printf "\tSubSection \"Display\"\n" >&4
     printf "\t\tModes\t\t$DISPLAY_MODES\n" >&4
+    printf "\tEndSubSection\n" >&4
   fi
-  printf "\tEndSubSection\n" >&4
-done
 printf "EndSection\n" >&4
 
 ### SERVERLAYOUT
