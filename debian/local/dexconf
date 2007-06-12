@@ -354,7 +354,7 @@ printf "EndSection\n" >&4
 
 fetch xserver-$SERVER/config/display/default_depth
 DISPLAY_DEFAULT_DEPTH="$RET"
-fetch xserver-$SERVER/config/display/modes
+db_get xserver-$SERVER/config/display/modes
 DISPLAY_MODES="$(list_convert $RET)"
 
 exec 4>"$DEXCONFTMPDIR/Screen"
