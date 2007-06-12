@@ -29,7 +29,27 @@ xorg (1:7.2-4) UNRELEASED; urgency=low
   * Debconf translations:
     - Vietnamese. Closes: #426978, #427180
 
- -- Brice Goglin <Brice.Goglin@ens-lyon.org>  Tue, 15 May 2007 18:41:22 +0200
+  [ David Nusinow ]
+  * Get rid of all the explicit modes by default. They just bloated the
+    default config for no reason.
+    + The /config/display/modes now has no default (blank). As a result of
+      this, under normal conditions, this multi-select field will be empty.
+      The debconfage and dexconf will not fill in this section at all. The
+      server will then choose the highest resolution that it can probe with
+      DDC. This should work for most people, who are probably choosing their
+      best resolution anyway. If xresprobe is available and used, the
+      resolutions it finds will be selected. Until there is a good way for the
+      server to store this information by itself, we should leave this as it
+      is. Most people can get by without this section, but it'll help some of
+      those with broken hardware.
+    + If the user does select a mode or modes for this question, dexconf no
+      longer iterates through a set of depths and puts the mode list in for
+      each. Instead, if dexconf does find a set of specified modes, it will
+      write a single "Display" subsection for the screen, and it will contain
+      the modes. This is functionally equivalent to what we were doing anyway,
+      and it cuts down the number of lines in our xorg.conf considerably.
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 11 Jun 2007 22:56:52 -0400
 
 xorg (1:7.2-3) unstable; urgency=low
 
