@@ -1,10 +1,17 @@
 xorg (1:7.2-6) UNRELEASED; urgency=low
 
+  [ Brice Goglin ]
   * Remove the reference to the unexisting example file
     /usr/share/doc/x11-common/examples/xsession in Xsession.5.
     Thanks Braun Gabor (closes: #393233).
 
- -- Brice Goglin <Brice.Goglin@ens-lyon.org>  Thu, 14 Jun 2007 00:18:07 +0200
+  [ Julien Cristau ]
+  * xserver-xorg-video-all: don't depend on the intel driver on alpha, arm,
+    armeb, armel, m32r, m68k, mips and mipsel; drop alternative dependency on
+    the obsolete -modesetting drivers on other architectures, and prefer
+    -intel to -i810.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 14 Jun 2007 10:22:22 +0200
 
 xorg (1:7.2-5) unstable; urgency=low
 
