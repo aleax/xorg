@@ -19,8 +19,13 @@ xorg (1:7.2-6) UNRELEASED; urgency=low
   * Remove the code to migrate old XFree86 templates over to Xorg. You'll have
     to install etch now if you're migrating from sarge for your settings to
     transition over.
+  * Add libgl1-mesa-dri to the xserver-xorg recommends. 
+    Previously, this recommends was in the xorg package, but many people don't
+    have the xorg package installed (even though they should). Moving it here
+    makes it far more likely that people will actually have a working DRI.
+    Thanks Frans Pop. Closes: #433035
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 18 Jun 2007 16:16:06 +0100
+ -- David Nusinow <dnusinow@debian.org>  Fri, 13 Jul 2007 19:31:00 -0400
 
 xorg (1:7.2-5) unstable; urgency=low
 
