@@ -323,7 +323,7 @@ main(int argc, char **argv)
     }
 
     for (i = 1; i < argc; i++) {
-      if (!strcmp(argv[i], "-config" || !strcmp(argv[i], "-xf86config")) {
+      if (!strcmp(argv[i], "-config") || !strcmp(argv[i], "-xf86config")) {
         if (setuid(getuid())) {
           perror("X unable to drop setuid privileges for alternate config");
           exit(1);
