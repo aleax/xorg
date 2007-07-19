@@ -200,3 +200,33 @@ Depends: libglu1-mesa-dev
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
+
+Package: xbase-clients
+Section: x11
+Architecture: all
+Depends: x11-apps, x11-session-utils, x11-utils, x11-xfs-utils, x11-xkb-utils,
+ x11-xserver-utils, xauth, xinit
+Description: miscellaneous X clients - metapackage
+ An X client is a program that interfaces with an X server (almost always via
+ the X libraries), and thus with some input and output hardware like a
+ graphics card, monitor, keyboard, and pointing device (such as a mouse).
+ .
+ This package provides a miscellaneous assortment of several dozen X clients
+ that ship with the X Window System.
+ .
+ This package is provided for transition from earlier Debian releases, the
+ programs formerly in xutils and xbase-clients having been split out in smaller
+ packages.
+
+Package: xutils
+Section: x11
+Architecture: all
+Depends: x11-xfs-utils, x11-utils, x11-xserver-utils, x11-session-utils, xfonts-utils, xutils-dev
+Description: X Window System utility programs metapackage
+ xutils provides a set of utility programs shipped with the X Window System.
+ Many of these programs are useful even on a system that does not have any X
+ clients or X servers installed.
+ .
+ This package is provided for transition from earlier Debian releases, the
+ programs formerly in xutils and xbase-clients having been split out in smaller
+ packages.
