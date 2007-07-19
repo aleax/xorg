@@ -15,9 +15,6 @@
 # debhelper
 export DH_OPTIONS
 
-# latest ABI is 7.0 final
-SERVERABIBUMP = 7.1.0
-
 # Default list of detection packages
 XSERVER_XORG_DETECT_DEPENDS = ""
 
@@ -119,8 +116,7 @@ binary-arch: build install
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol -- -VF:XServer-Xorg-Video-Depends=$(XSERVER_XORG_VIDEO_DEPENDS) \
-	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS) \
-	                 -VServer-ABI-Version=$(SERVERABIBUMP)
+	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS)
 	dh_md5sums
 	dh_builddeb
 	touch stamp-$@
