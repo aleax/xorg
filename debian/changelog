@@ -1,9 +1,73 @@
-xorg (1:7.2-3) UNRELEASED; urgency=low
+xorg (1:7.2-6) UNRELEASED; urgency=low
+
+  [ Brice Goglin ]
+  * Remove the reference to the unexisting example file
+    /usr/share/doc/x11-common/examples/xsession in Xsession.5.
+    Thanks Braun Gabor (closes: #393233).
+  * xserver-wrapper.c: drop privileges on alternate config file given
+    with -xf86config as we do for -config, closes: #323107.
+  * Update xsfbs to fix displaying of patches applied by quilt,
+    closes: #428090.
+
+  [ Julien Cristau ]
+  * xserver-xorg-video-all: don't depend on the intel driver on alpha, arm,
+    armeb, armel, m32r, m68k, mips and mipsel; drop alternative dependency on
+    the obsolete -modesetting drivers on other architectures, and prefer
+    -intel to -i810.
+  * Drop the xserver-xfree86, xlibmesa-dri, x-window-system and
+    x-window-system-core transitional packages.
 
   [ David Nusinow ]
-  * Don't write the DRI section to xorg.conf. We now ship a default mode in
-    libdrm as of libdrm 2.3.0-3, so we don't need to do this. Users can still
-    override the default mode in their xorg.conf's if they choose
+  * Remove the code to migrate old XFree86 templates over to Xorg. You'll have
+    to install etch now if you're migrating from sarge for your settings to
+    transition over.
+  * Add libgl1-mesa-dri to the xserver-xorg recommends.
+    Previously, this recommends was in the xorg package, but many people don't
+    have the xorg package installed (even though they should). Moving it here
+    makes it far more likely that people will actually have a working DRI.
+    Thanks Frans Pop. Closes: #433035
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 19 Jul 2007 18:08:51 +0200
+
+xorg (1:7.2-5) unstable; urgency=low
+
+  * Don't use the dexconf function fetch to get the modes. This will fail when
+    the value is empty by design. Just use db_get instead.
+
+ -- David Nusinow <dnusinow@debian.org>  Tue, 12 Jun 2007 20:54:56 -0400
+
+xorg (1:7.2-4) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Add ${shlibs:Depends} to x11-common's Depends field, because the X server
+    wrapper is an ELF object... oops.
+  * Allow libgl1 as alternative to libgl1-mesa-glx in xorg's dependencies.
+
+  [ Brice Goglin ]
+  * Add armel support, thanks to Riku Voipio (closes: #408817).
+  * Make xephem conflict versioned as <= 3.4-5 (closes: #419533).
+  * Replace references to xserver-common with x11-common in Xwrapper.config(5)
+    manpage. Thanks Mikhail Gusarov (closes: #405739).
+  * Replace references to .Xsession with .xsession in Xsession(5) and
+    Xsession.options(5) manpages. Thanks Reuben Thomas (closes: #365430).
+  * Add documentation for use-session-dbus in Xsession.options(5), based on
+    75dbus_dbus-launch header in the dbus package, closes: #322284.
+  * Minor fixes in Xsession(5), thanks Lajos Parkatti, closes: #372519.
+  * Add DebianRed to rgb.txt, closes: #243288.
+  * Fix possible buffer overflows in xserver-wrapper.c.
+    Thanks Jochen Voss (closes: #396958).
+  * Add conflict for x11-common against vide (<= 1.21-3).
+    Thanks Pierre Machard, closes: #370167.
+
+  [ Timo Aaltonen ]
+  * Xsession.d/*: change 'which' -> '/usr/bin/which', since the zsh builtin
+    command can in some circumstances make the login fail.
+
+  [ Christian Perrier ]
+  * Debconf translations:
+    - Vietnamese. Closes: #426978, #427180
+
+  [ David Nusinow ]
   * Get rid of all the explicit modes by default. They just bloated the
     default config for no reason.
     + The /config/display/modes now has no default (blank). As a result of
@@ -22,12 +86,70 @@ xorg (1:7.2-3) UNRELEASED; urgency=low
       write a single "Display" subsection for the screen, and it will contain
       the modes. This is functionally equivalent to what we were doing anyway,
       and it cuts down the number of lines in our xorg.conf considerably.
-  * Don't write out the font section to xorg.conf by default
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 11 Jun 2007 22:58:03 -0400
+
+xorg (1:7.2-3) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Debconf templates proofread by the debian-l10n-english team
+    Closes: #418007
+  * Debconf translations:
+    - Arabic. Closes: #418026
+    - Thai. Closes: #418049
+    - Lituanian. Closes: #418042
+    - Nepali.
+    - Bulgarian. Closes: #418027
+    - Slovak. Closes: #418024
+    - Tamil. Closes: #418022
+    - Korean. Closes: #418075
+    - Portuguese.
+    - Galician. Closes: #418187
+    - Basque. Closes: #418191
+    - Brazilian Portuguese. Closes: #418223
+    - Dutch
+    - Albanian. Closes: #418504
+    - Swedish. Closes: #418537
+    - Russian. Closes: #418589
+    - Czech. Closes: #418769
+    - Malayalam. Closes: #419522
+    - Japanese. Closes: #419707
+    - Traditional Chinese. Closes: #420047
+    - Hungarian. Closes: #420116
+    - German
+    - Italian. Closes: #421013
+
+  [ David Nusinow ]
+  * Don't write the DRI section to xorg.conf. We now ship a default mode in
+    libdrm as of libdrm 2.3.0-3, so we don't need to do this. Users can still
+    override the default mode in their xorg.conf's if they choose
+  * Don't write the files section of xorg.conf by default. If the user does
+    want to write the files section, don't write out any font paths, only
+    write out the font server bit if they specify that.
+    + This will depend on having xserver-xorg-core version 2:1.3.0.0.dfsg-3
+      which includes a patch to always look in the default font paths by
+      default. Bump the xserver-xorg dependency on xserver-xorg-core to this
+      version.
 
   [ Julien Cristau ]
   * xorg recommends libgl1-mesa-dri instead of depending on it.
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 11 Jun 2007 22:30:24 -0400
+  [ Timo Aaltonen ]
+  * xserver-xorg-video-all: Replaces/Conflicts xserver-xorg-driver-all
+  * x11-common.init: Only source /etc/default/rcS if it exists,
+    allowing x11-common to be installed by debootstrap.
+  * x11common.{dirs,links}: Don't ship or link to
+    /usr/X11R6/lib/X11/fonts
+  * debian/scripts/vars.*: Remove xserver-xorg-video-vmware from non-x86
+    archs.
+  * debian/{control,rules,scripts/vars.*}: Set XSERVER_XORG_DETECT_DEPENDS
+    on amd64, hppa, i386, ia64.
+  * debian/scripts/vars: Add xserver-xorg-input-elographics to
+    XSERVER_XORG_INPUT_DEPENDS.
+  * debian/xserver-xorg.postinst.in: ATI vendor string was changed in
+    discover-data_2.2006.08.15, so edit them to reflect the change.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 29 Apr 2007 21:33:00 -0400
 
 xorg (1:7.2-2) experimental; urgency=low
 
@@ -62,6 +184,41 @@ xorg (1:7.2-2) experimental; urgency=low
     so bump the versioned dependency to it.
 
  -- David Nusinow <dnusinow@debian.org>  Sun, 15 Apr 2007 11:44:28 -0400
+
+xorg (1:7.1.0-18) unstable; urgency=high
+
+  * Add more conflicts to x11-common:
+    + communicator-smotif-477
+    + epan
+    + navigator-smotif-477
+    + stella (<< 2.2-1)
+    + xfractint (<< 20.3.01-1)
+    + xgobi
+    + xpostitplus
+    + xisp
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 06 Apr 2007 02:54:22 +0200
+
+xorg (1:7.1.0-17) unstable; urgency=high
+
+  * x11-common Conflicts with netscape-base-4 (from woody/contrib).  Reported
+    by Lennart Sorensen.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 06 Apr 2007 01:45:17 +0200
+xorg (1:7.1.0-16) unstable; urgency=high
+
+  [ Christian Perrier ]
+  * Debconf translations:
+    - Norwegian Nynorsk added (sent privately)
+    - Marathi added. Closes: #416799
+  * Configure Romanian keymap when the system is installed in
+    Romanian. Closes: #416544
+
+  [ Julien Cristau ]
+  * Add x11-common conflict with ucbmpeg-play << 2.3p-13 (closes: #417564).
+  * Urgency high to get this into etch.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 03 Apr 2007 14:06:17 +0200
 
 xorg (1:7.2-1) experimental; urgency=low
 

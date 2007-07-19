@@ -660,84 +660,6 @@ if [ -z "$2" ]; then
   FIRSTINST=yes
 fi
 
-# Migrate debconf templates from xserver-xfree86 to xserver-xorg
-XF86TEMPLATELIST=$(debconf-show xserver-xfree86 | sed -e 's/^\*//g' | awk '{print $1}' | sed -e 's/\:$//g')
-
-if [ -n "$FIRSTINST" ] && [ -z "$RECONFIGURE" ] && [ -n "$XF86TEMPLATELIST" ]; then
-  MIGRATE_XF86=true
-  warn "Migrating xserver-xfree86 debconf values to xserver-xorg."
-  # set +e is required otherwise debconf will kick us out if the template is not
-  # there.
-  set +e
-  for XF86TEMPLATE in $XF86TEMPLATELIST; do
-    XORGTEMPLATE=$(echo "$XF86TEMPLATE" | sed -e 's/xserver-xfree86/xserver-xorg/g')
-    # db_get doesn't need checking. If we are here is because it is in the list.
-    db_get "$XF86TEMPLATE"
-    db_set "$XORGTEMPLATE" "$RET"
-    if [ "$RET" = "10 $XORGTEMPLATE doesn't exist" ]; then
-      debug_echo "$XF86TEMPLATE is not mapped to $XORGTEMPLATE"
-    else
-      db_fset "$XORGTEMPLATE" seen true
-    fi
-  done
-  # migrate special cases
-  db_metaget xserver-xfree86/config/display/modes choices
-  if [ "$RET" != "10 xserver-xfree86/config/display/modes doesn't exist" ]; then
-    db_subst xserver-xorg/config/display/modes choices "$RET"
-  else
-    db_subst xserver-xorg/config/display/modes choices @DEFAULT_DCRESOLUTIONS@
-  fi
-  # migrate keyboard/rules
-  db_get xserver-xorg/config/inputdevice/keyboard/rules
-  if [ "$RET" = "xfree86" ]; then
-    db_set xserver-xorg/config/inputdevice/keyboard/rules "xorg"
-  fi
-  db_set xserver-xorg/config/monitor/use_sync_ranges true
-  set -e
-  if [ -e "$XF86CONFIG" ] && [ ! -e "$XORGCONFIG" ]; then
-    touch "$CONFIG_AUX_DIR/.migrateconfig"
-    cp "$XF86CONFIG" "$XORGCONFIG"
-    if [ -e "$XF86CONFIG_CHECKSUM" ] && [ ! -e "$XORGCONFIG_CHECKSUM" ]; then
-      cat "$XF86CONFIG_CHECKSUM" | sed -e 's/XF86Config-4/xorg\.conf/' > "$XORGCONFIG_CHECKSUM"
-    fi
-    if [ -e "$XF86CONFIG_ROSTER" ] && [ ! -e "$XORGCONFIG_ROSTER" ]; then
-      echo "$THIS_PACKAGE" > "$XORGCONFIG_ROSTER"
-    fi
-  fi
-fi
-
-# migrate from old select-type templates
-for TEMPLATE in xserver-xorg/config/inputdevice/mouse/emulate3buttons ; do
-  db_get "$TEMPLATE" || continue
-  if [ "$RET" = "Yes" ]; then
-    db_set $TEMPLATE "true"
-  elif [ "$RET" = "No" ]; then
-    db_set $TEMPLATE "false"
-  fi
-done
-
-# Delete obsolete templates
-for TEMPLATE in xserver-xorg/config/inputdevice/mouse/zaxismapping; do
-  db_get "$TEMPLATE" || continue
-  db_unregister "$TEMPLATE"
-done
-
-# migrate from "expert" to "advanced"
-db_get xserver-xorg/config/monitor/selection-method
-if [ "$RET" = "Expert" ]; then
-  db_set xserver-xorg/config/monitor/selection-method "Advanced"
-fi
-
-# migrate from ATI driver sub-modules to ATI driver
-db_get xserver-xorg/config/device/driver
-case "$RET" in
-  atimisc|r128|radeon)
-    db_set xserver-xorg/config/device/driver "ati"
-    ;;
-  *)
-    ;;
-esac
-
 # The only supported protocol (per Zephaniah Hull) for the GPM repeater is
 # IntelliMouse; migrate anyone using that mouse device to that protocol.  Other
 # values used to work as well, but no longer do since the XFree86 mouse driver
@@ -1179,6 +1101,7 @@ if [ -n "$DOKBDETECT" ]; then
     no) XMAP="no";;
     pl) XMAP="pl";;
     pt) XMAP="pt";;
+    ro) XMAP="ro";;
     uk) XMAP="gb";;
     lv-latin4) XMAP="lv";;
     se) XMAP="se";;
@@ -1439,8 +1362,8 @@ xresprobeint() {
     if [ "$DEVICE_DRIVER" = "ati" ]; then
       # r128 is in the same 'special' list, AFAICT.
       if [ "$DISPLAY_TYPE" = "lcd/lvds" ]; then
-        if [ "$DEVICE_IDENTIFIER" = "ATI Technologies, Inc. Rage Mobility M3 (AGP)" ] || \
-           [ "$DEVICE_IDENTIFIER" = "ATI Technologies, Inc. Rage Mobility M4 (AGP)" ] || \
+        if [ "$DEVICE_IDENTIFIER" = "ATI Technologies Inc Rage Mobility M3 (AGP)" ] || \
+           [ "$DEVICE_IDENTIFIER" = "ATI Technologies Inc Rage Mobility M4 (AGP)" ] || \
            echo "$DEVICE_IDENTIFIER" | grep -q "Rage 128"; then
           MONITOR_SYNC_RANGES="yes"
           debug_echo "r128 laptop chipset detected; writing sync ranges"

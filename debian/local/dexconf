@@ -216,15 +216,6 @@ SECTION
 SECTION
   fi
   cat >&4 <<SECTION
-	FontPath	"/usr/share/fonts/X11/misc"
-	FontPath	"/usr/share/fonts/X11/cyrillic"
-	FontPath	"/usr/share/fonts/X11/100dpi/:unscaled"
-	FontPath	"/usr/share/fonts/X11/75dpi/:unscaled"
-	FontPath	"/usr/share/fonts/X11/Type1"
-	FontPath	"/usr/share/fonts/X11/100dpi"
-	FontPath	"/usr/share/fonts/X11/75dpi"
-	# path to defoma fonts
-	FontPath	"/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType"
 EndSection
 SECTION
 fi
@@ -363,7 +354,7 @@ printf "EndSection\n" >&4
 
 fetch xserver-$SERVER/config/display/default_depth
 DISPLAY_DEFAULT_DEPTH="$RET"
-fetch xserver-$SERVER/config/display/modes
+db_get xserver-$SERVER/config/display/modes
 DISPLAY_MODES="$(list_convert $RET)"
 
 exec 4>"$DEXCONFTMPDIR/Screen"

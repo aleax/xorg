@@ -60,13 +60,19 @@ X resources when they log in.
 .TP
 .B allow\-user\-xsession
 If users have an executable file called
-.I .Xsession
+.I .xsession
 in their home directories, it can be used as the startup program for the X
 session (see
 .BR Xsession (5)).
 If the file is present but not executable, it may still be used, but is
 assumed to be a Bourne shell script, and executed with
 .BR sh (1).
+.TP
+.B use-session-dbus
+If the
+.BR dbus
+package is installed, the session bus will be activated at X session
+launch.
 .TP
 .B use\-ssh\-agent
 If the

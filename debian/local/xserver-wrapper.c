@@ -201,10 +201,10 @@ main(int argc, char **argv)
 {
   FILE *cf;
   struct stat statbuf;
-  char xserver[1024];
+  char xserver[1025];
   char line[1024];
-  char var[64];
-  char value[256];
+  char var[65];
+  char value[257];
   int length;
   int i;
   int intval;
@@ -323,7 +323,7 @@ main(int argc, char **argv)
     }
 
     for (i = 1; i < argc; i++) {
-      if (!strcmp(argv[i], "-config")) {
+      if (!strcmp(argv[i], "-config") || !strcmp(argv[i], "-xf86config")) {
         if (setuid(getuid())) {
           perror("X unable to drop setuid privileges for alternate config");
           exit(1);

@@ -8,7 +8,7 @@ Build-Depends: dpkg (>= 1.7.0), po-debconf, debhelper (>= 4.1.16)
 
 Package: x11-common
 Architecture: any
-Depends: ${misc:Depends}, debianutils (>= 1.13), lsb-base (>= 1.3-9ubuntu2)
+Depends: ${shlibs:Depends}, ${misc:Depends}, debianutils (>= 1.13), lsb-base (>= 1.3-9ubuntu2)
 Pre-Depends: debconf | debconf-2.0
 Conflicts: xfree86-common, xorg-common, xserver-common, x-common,
  xserver-xorg (<< 1:7.0.12), xserver-xfree86 (<< 1:7.0),
@@ -59,8 +59,11 @@ Conflicts: xfree86-common, xorg-common, xserver-common, x-common,
  beaver (<= 0.2.5-2), lsb-core (<= 3.1-4), yank (<=0.2.1-7.2),
  xpmumon (<= 1.3.0), ivtools-dev (<= 1.1.3-5), ppxp (<= 0.2001080415-14),
  guitar (<= 0.1.4-11), xftp, xext, xpaste, ghostview, xv (<= 3.10a-26),
- xserver-xfree86-dbg, grace6 (<= 5.99.0+final-4), xephem,
- opera (<< 9.10-20060616), hamsoft (<< 0.2.3-1), phototk, tkworld
+ xserver-xfree86-dbg, grace6 (<= 5.99.0+final-4), xephem (<= 3.4-5),
+ opera (<< 9.10-20060616), hamsoft (<< 0.2.3-1), phototk, tkworld,
+ ucbmpeg-play (<< 2.3p-13), netscape-base-4, communicator-smotif-477, epan,
+ navigator-smotif-477, stella (<< 2.2-1), xfractint (<< 20.3.01-1), xgobi,
+ xpostitplus, xisp, vide (<= 1.21-3)
 Replaces: xfree86-common, xorg-common, xserver-common, x-common
 Description: X Window System (X.Org) infrastructure
  x11-common contains the filesystem infrastructure required for further
@@ -79,8 +82,8 @@ Architecture: all
 Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
 Replaces: xserver-common
 Pre-Depends: x11-common (>= 7.0.0-0ubuntu3)
-Depends: xserver-xorg-core (>= 2:1.2.99.905-3), xserver-xorg-video-all | xserver-xorg-video-1.0, xserver-xorg-input-all | xserver-xorg-input, ${misc:Depends}, xkb-data | xkb-data-legacy, xbase-clients
-Recommends: xserver-xorg-video-all, xserver-xorg-input-all, laptop-detect, xresprobe, mdetect, discover1 | discover
+Depends: xserver-xorg-core (>= 2:1.3.0.0.dfsg-3), xserver-xorg-video-all | xserver-xorg-video-1.0, xserver-xorg-input-all | xserver-xorg-input, ${misc:Depends}, xkb-data | xkb-data-legacy, xbase-clients
+Recommends: xserver-xorg-video-all, xserver-xorg-input-all, libgl1-mesa-dri, laptop-detect, xresprobe, mdetect, discover1 | discover, ${F:XServer-Xorg-Detect-Depends}
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server, as well as providing a configuration infrastructure to manage
@@ -89,16 +92,11 @@ Description: the X.Org X server
 # versioned dependency on xserver-xorg-core needed because xserver-xorg
 # contains a patch to allow in-server module defaults in 2:1.2.99.905-3
 
-
-Package: xserver-xfree86
-Architecture: all
-Depends: xserver-xorg
-Description: transitional package for moving from XFree86 to X.Org
- This package smooths upgrades from Debian 3.1 by depending on xserver-xorg.
-
 Package: xserver-xorg-video-all
 Architecture: any
 Depends: ${F:XServer-Xorg-Video-Depends}
+Replaces: xserver-xorg-driver-all
+Conflicts: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
@@ -114,8 +112,7 @@ Description: the X.Org X server -- input driver metapackage
 
 Package: xorg
 Architecture: all
-Depends: xserver-xorg, libgl1-mesa-glx, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), xbase-clients (>= 1:1.0.1-1), xutils (>= 1:1.0.1-1), xkb-data, xterm | x-terminal-emulator, sparc-utils | not+sparc, xorg-docs
-Recommends: libgl1-mesa-dri
+Depends: xserver-xorg, libgl1-mesa-glx | libgl1, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), xbase-clients (>= 1:1.0.1-1), xutils (>= 1:1.0.1-1), xkb-data, xterm | x-terminal-emulator, sparc-utils | not+sparc, xorg-docs
 Provides: x-window-system, x-window-system-core
 Description: X.Org X Window System
  This metapackage provides the components for a standalone
@@ -164,14 +161,6 @@ Description: transitional metapackage
  purposes to prevent disruptions during automated package builds, and my be
  safely removed from your system.
 
-Package: xlibmesa-dri
-Section: libs
-Architecture: all
-Depends: libgl1-mesa-dri
-Description: transitional package for Debian etch
- This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
- Debian etch. It may be safely removed from your system.
-
 Package: xlibmesa-gl
 Section: libs
 Architecture: all
@@ -211,23 +200,3 @@ Depends: libglu1-mesa-dev
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
-
-Package: x-window-system
-Section: x11
-Architecture: all
-Depends: xorg
-Description: transitional package for Debian etch
- This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
- Debian etch. It may be safely removed from your system. It depends on the
- xorg package which is the new metapackage for installing the X Window
- System in Debian.
-
-Package: x-window-system-core
-Section: x11
-Architecture: all
-Depends: xorg
-Description: transitional package for Debian etch
- This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
- Debian etch. It may be safely removed from your system. It depends on the
- xorg package which is the new metapackage for installing the X Window
- System in Debian.
