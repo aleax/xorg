@@ -92,7 +92,7 @@ validate_monitor_frequency_expr () {
   # syntax: validate_monitor_frequency_expr expression
   #
   # Confirm that the given expression is a valid monitor frequency expression
-  # per XF86Config-4(5x).  Note that this does *not* handle (comma-delimited)
+  # per xorg.conf(5).  Note that this does *not* handle (comma-delimited)
   # tuples.  We expect a single value or range with an optional unit suffix.
   #
   # Note: We don't check to see if the latter value in a range is actually
@@ -151,7 +151,7 @@ validate_monitor_frequency_db_input () {
     # do.  We force the first character to be a number to avoid hideous problems
     # in the debconf dialog frontend in 0.3.83 (it needs to be one anyway).  We
     # need to handle multiple expressions, delimited by commas.  See
-    # XF86Config-4(5x) for more information.
+    # xorg.conf(5) for more information.
     if expr "$RET" : ".*,.*" >/dev/null 2>&1; then
       _expr_is_valid=true
         echo "$RET" | tr -s ',' '\n' | while read _freq_expr; do
@@ -184,14 +184,11 @@ validate_monitor_frequency_db_input () {
 CONFIG_DIR="/etc/X11"
 CONFIG_AUX_DIR=/var/lib/x11
 SERVER_SYMLINK="$CONFIG_DIR/X"
-XF86CONFIG="$CONFIG_DIR/XF86Config-4"
 XORGCONFIG="$CONFIG_DIR/xorg.conf"
 CONFIG_AUX_DIR="/var/lib/x11"
 SERVER_SYMLINK_CHECKSUM="$CONFIG_AUX_DIR/${SERVER_SYMLINK##*/}.md5sum"
 SERVER_SYMLINK_ROSTER="$CONFIG_AUX_DIR/${SERVER_SYMLINK##*/}.roster"
-XF86CONFIG_CHECKSUM="$CONFIG_AUX_DIR/${XF86CONFIG##*/}.md5sum"
 XORGCONFIG_CHECKSUM="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.md5sum"
-XF86CONFIG_ROSTER="$CONFIG_AUX_DIR/${XF86CONFIG##*/}.roster"
 XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.roster"
 THIS_SERVER=/usr/bin/Xorg
 
@@ -740,11 +737,8 @@ if which $DISCOVER_PROG > /dev/null 2>&1; then
   fi
 fi
 
-# set a failsafe default answer for shared/default-x-server
-DEFAULT=$THIS_PACKAGE
-
-if which $DISCOVER_PROG > /dev/null 2>&1; then
-  if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
+if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
+  if which $DISCOVER_PROG > /dev/null 2>&1; then
     PRIORITY="medium"
     if [ -n "$RECONFIGURE" ]; then
       PRIORITY="high"
@@ -758,106 +752,53 @@ if which $DISCOVER_PROG > /dev/null 2>&1; then
           db_reset xserver-xorg/config/device/$param
       done
 
-      if [ $NSERVERS -eq 0 ]; then
-        debug_echo "could not autodetect X server: no video card detected," \
-                   "or no server known for it"
-        db_input "$(priority_ceil medium)" shared/no_known_x-server || debug_report_status "db_input $(priority_ceil medium) shared/no_known_x-server" "$?"
-        db_go
-      elif [ $NSERVERS -eq 1 ]; then
-        debug_echo "autodetected X server: $SERVERS"
-        if [ "$SERVERS" = "${THIS_SERVER##*/}" ] || [ "$SERVERS" = "XFree86" ]; then
-          # the autodetected X server is the only one on the system, and the one
-          # we're currently configuring; it's unlikely the user will want to use
-          # something else
-          PRIORITY=low
-        else
-          debug_echo "X server autodetected, but does not correspond to this package"
-          # we do not set shared/default-x-server here, because the
-          # autodetected X server might not be getting installed
-        fi
-      elif [ $NSERVERS -gt 1 ]; then
-        debug_echo "could not autodetect X server: multiple servers for video cards"
-        VIDEOCARD_SERVER_REPORT=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t"; printf " %-40s%20s\n .\n", "Detected Video Card", "Suggested X server" } { printf " %-50s%10s\n", $1, $2 } END { printf " .\n" }')
-        # can't do this until there is a way to embed newlines into debconf command streams :(
-        #db_subst shared/multiple_possible_x-servers detected_cards "$VIDEOCARD_SERVER_REPORT"
-        debug_echo "$VIDEOCARD_SERVER_REPORT"
-        db_input "$(priority_ceil high)" shared/multiple_possible_x-servers || debug_report_status "db_input $(priority_ceil high) shared/multiple_possible_x-servers" "$?"
-        db_go
+      # priority of xserver-xorg/config/device/driver
+      PRIORITY=medium
+      if [ -n "$RECONFIGURE" ]; then
+        PRIORITY=high
       fi
-    else
-      debug_echo "user declined video card autodetection"
-    fi
-  else
-    debug_echo "upgrading package; not running autodetection script"
-  fi
-else
-  debug_echo "could not autodetect X server: $DISCOVER_PROG not found"
-fi
 
-# now the default-x-server question may be asked
-db_fget shared/default-x-server seen
-debug_echo "seen flag of shared/default-x-server is $RET"
-debug_echo "db_input $(priority_ceil $PRIORITY) shared/default-x-server"
-auto_answer db_input $(priority_ceil $PRIORITY) shared/default-x-server "$DEFAULT"
+      DRIVER_DIRS="/usr/lib/xorg/modules/drivers"
+      for i in $DRIVER_DIRS; do
+        if [ -d $i ]; then
+          REAL_DRIVER_DIRS="$REAL_DRIVER_DIRS $i "
+        fi
+      done
 
-# is this the selected X server?
-db_get shared/default-x-server
-if [ "$RET" != "$THIS_PACKAGE" ]; then
-  # nothing else to do in this script
-  debug_echo "Skipping further configuration of $THIS_PACKAGE, because it is not the default X server package."
-  exit 0
-fi
+      if [ -n "$REAL_DRIVER_DIRS" ]; then
+        # Build list of available video drivers, omitting the atimisc, r128, and
+        # radeon sub-modules (the ati driver knows when and how to load these).
+        # v4l is not a display driver, and dummy is for advanced users.
+        DRIVER_LIST="$(find $REAL_DRIVER_DIRS -name '*_drv.*' \
+                       | sed 's|^.*/\([^/]*\)_drv\.[^\._]*|\1|g' \
+                       | egrep -v '(atimisc|dummy|r128|radeon|v4l)' | sort -u | xargs \
+                       | sed 's/ /, /g' 2>/dev/null) "
+      fi
 
-# priority of xserver-xorg/config/device/driver
-PRIORITY=medium
-if [ -n "$RECONFIGURE" ]; then
-  PRIORITY=high
-fi
+      # Set a hard-coded module list (if necessary) and default driver module on an
+      # architecture-specific basis.
+      case "$ARCH" in
+        alpha)
+          DEFAULT_DRIVER=vga
+          ;;
+        amd64|hurd-i386|i386)
+          DEFAULT_DRIVER=vesa
+          ;;
+        sparc)
+          DEFAULT_DRIVER=sunffb
+          ;;
+        *)
+          DEFAULT_DRIVER=fbdev
+          ;;
+      esac
 
-DRIVER_DIRS="/usr/X11R6/lib/modules/drivers /usr/lib/xorg/modules/drivers"
-for i in $DRIVER_DIRS; do
-  if [ -d $i ]; then
-    REAL_DRIVER_DIRS="$REAL_DRIVER_DIRS $i "
-  fi
-done
+      if [ -z "$DRIVER_LIST" ]; then
+        observe "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
+        DRIVER_LIST="$DEFAULT_DRIVER"
+      fi
 
-if [ -n "$REAL_DRIVER_DIRS" ]; then
-  # Build list of available video drivers, omitting the atimisc, r128, and
-  # radeon sub-modules (the ati driver knows when and how to load these).
-  # v4l is not a display driver, and dummy is for advanced users.
-  DRIVER_LIST="$(find $REAL_DRIVER_DIRS -name '*_drv.*' \
-                 | sed 's|^.*/\([^/]*\)_drv\.[^\._]*|\1|g' \
-                 | egrep -v '(atimisc|dummy|r128|radeon|v4l)' | sort -u | xargs \
-                 | sed 's/ /, /g' 2>/dev/null) "
-fi
+      observe "available video driver list set to \"$DRIVER_LIST\""
 
-# Set a hard-coded module list (if necessary) and default driver module on an
-# architecture-specific basis.
-case "$ARCH" in
-  alpha)
-    DEFAULT_DRIVER=vga
-    ;;
-  amd64|hurd-i386|i386)
-    DEFAULT_DRIVER=vesa
-    ;;
-  sparc)
-    DEFAULT_DRIVER=sunffb
-    ;;
-  *)
-    DEFAULT_DRIVER=fbdev
-    ;;
-esac
-
-if [ -z "$DRIVER_LIST" ]; then
-  observe "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
-  DRIVER_LIST="$DEFAULT_DRIVER"
-fi
-
-observe "available video driver list set to \"$DRIVER_LIST\""
-
-if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
-  if which $DISCOVER_PROG >/dev/null 2>&1; then
-    if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
       if [ $NDRIVERS -eq 0 ]; then
         observe "could not autodetect X server driver: no video card" \
                 "detected, or no driver known for it"
