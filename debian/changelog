@@ -21,6 +21,9 @@ xorg (1:7.2-6) UNRELEASED; urgency=low
     with -xf86config as we do for -config, closes: #323107.
   * Update xsfbs to fix displaying of patches applied by quilt,
     closes: #428090.
+  * Remove mdetect from xserver-xorg Recommends since it does not use
+    it anymore, thanks Joey Hess (closes: #435588).
+  * Move xorg-docs from xorg Depends to Recommends, closes: #427172.
 
   [ Julien Cristau ]
   * xserver-xorg-video-all: don't depend on the intel driver on alpha, arm,
@@ -40,7 +43,7 @@ xorg (1:7.2-6) UNRELEASED; urgency=low
     makes it far more likely that people will actually have a working DRI.
     Thanks Frans Pop. Closes: #433035
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 19 Jul 2007 18:08:51 +0200
+ -- Brice Goglin <bgoglin@debian.org>  Sat, 11 Aug 2007 19:06:20 +0200
 
 xorg (1:7.2-5) unstable; urgency=low
 
