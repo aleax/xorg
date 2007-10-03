@@ -167,7 +167,7 @@ fi
 #   Monitor        Monitor description
 #   Modes          Video modes descriptions          NOT USED BY DEXCONF
 #   Screen         Screen configuration
-#   ServerLayout   Overall layout
+#   ServerLayout   Overall layout                    NOT USED BY DEXCONF
 #   DRI            DRI-specific configuration        NOT USED BY DEXCONF
 #   Vendor         Vendor-specific configuration     NOT USED BY DEXCONF
 
@@ -372,21 +372,6 @@ SECTION
   fi
 printf "EndSection\n" >&4
 
-### SERVERLAYOUT
-
-exec 4>"$DEXCONFTMPDIR/ServerLayout"
-cat >&4 <<SECTION
-Section "ServerLayout"
-	Identifier	"Default Layout"
-	Screen		"Default Screen"
-	InputDevice	"Generic Keyboard"
-	InputDevice	"Configured Mouse"
-SECTION
-if [ -n "$LAPTOP" ]; then
-  printf "\tInputDevice\t\"Synaptics Touchpad\"\n" >&4
-fi
-printf "EndSection\n" >&4
-
 # Close file descriptor 4 before we delete temporary files
 exec 4<&-
 
@@ -402,7 +387,7 @@ umask 022
 
 SPACER=
 for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ServerLayout; do
+               Device Monitor Screen ; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
