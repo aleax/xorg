@@ -1276,6 +1276,15 @@ xresprobeint() {
     db_get xserver-xorg/config/device/identifier || debug_echo "db_get xserver-xorg/config/device/driver"
     DEVICE_IDENTIFIER="$RET"
 
+    if which fbset >/dev/null 2>&1; then
+      if [ "$DEVICE_DRIVER" = "fbdev" ] && [ "$ARCH" = "hppa" ] && [ -r /dev/fb0 ]; then
+        HPPAFBOUT="$(fbset)"
+        HPPARES="$(echo "$HPPAFBOUT" | grep ^mode | sed -e 's/^mode "//g' -e 's/"//g')"
+        HPPADEPTH="$(echo "$HPPAFBOUT" | grep ^[[:space:]]*geometry | awk '{print $NF}')"
+        PROBE_DUMP="$(echo -e "res: $HPPARES\ndepth: $HPPADEPTH")"
+      fi
+    fi
+
     # first install, we attempt a probe
     if which xresprobe >/dev/null 2>&1; then
       set +e
