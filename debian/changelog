@@ -7,7 +7,26 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   [ Christian Perrier ]
   * Hebrew. Closes: #447308
 
- -- Christian Perrier <bubulle@debian.org>  Sat, 20 Oct 2007 07:30:21 +0200
+  [ Timo Aaltonen ]
+  * xserver-xorg.postinst.in:
+    - Add lt to the list of non-Latin keymaps.
+    - Clean up duplicate keymaps in xserver-xorg.config.in and make sure
+      they're all neatly alphabetised.
+    - Map cf console keymap to ca(fr)
+    - Map croat console keymap to hr.
+    - Map et console keymap to ee.
+    - Set default keyboard variant for French to oss.
+    - Map mk console keymap to mk.
+    - Map nl console keymap to nl.
+    - Map ru console keymap to ru.
+    - Map slovene console keymap to si.
+    - Map sr-cy console keymap to map to cs, not sr, following xkeyboard-config
+      changes.
+    - Handle trfu/trqu console keymaps the same way as trf/trq.
+    - Map uk console keymap to gb, not gb(intl).
+    - Fix sanity-checking logic for French Canadian vs. US-layout keyboards.
+
+ -- Timo Aaltonen <tjaalton@cc.hut.fi>  Sun, 21 Oct 2007 18:36:38 +0300
 
 xorg (1:7.3+2) unstable; urgency=low
 

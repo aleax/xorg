@@ -640,7 +640,7 @@ priority_ceil() {
 }
 
 non_latin_keyboard () {
-  NONLATINMAPS="am ar bg by cs el gr il ir iu lo mk ml mm mn ru th tj ua"
+  NONLATINMAPS="am ar bg by cs el gr il ir iu lo lt mk ml mm mn ru th tj ua"
   for i in $NONLATINMAPS; do
     if [ "$XMAP" = "$i" ]; then
       NON_LATIN="true"
@@ -1017,28 +1017,30 @@ if [ -n "$DOKBDETECT" ]; then
     br) XMAP="us"; VARIANT="intl"; MODEL="pc104";;
     br-abnt2) XMAP="br"; VARIANT="abnt2"; MODEL="abnt2";;
     by) XMAP="by";;
-    cf) XMAP="ca";;
-    lfc-cat) XMAP="es"; VARIANT="cat";;
+    cf) XMAP="ca"; VARIANT="fr";;
+    croat) XMAP="hr";;
     cz-lat2) XMAP="cz";;
     de-latin1-nodeadkeys) XMAP="de"; VARIANT="nodeadkeys";;
     de) XMAP="de";;
     dvorak) XMAP="us"; VARIANT="dvorak"; MODEL="pc104";;
     dk) XMAP="dk";;
     es) XMAP="es";;
-    fr_CH) XMAP="ch"; VARIANT="fr";;
-    fr) XMAP="fr";;
-    hebrew) XMAP="il";;
-    hu) XMAP="hu";;
+    et) XMAP="ee";;
     fi) XMAP="fi";;
+    fr) XMAP="fr"; VARIANT="oss";;
+    fr_CH) XMAP="ch"; VARIANT="fr";;
     fr-latin9) XMAP="fr"; VARIANT="latin9";;
     gb) XMAP="gb";;
     gr) XMAP="gr";;
+    hebrew) XMAP="il";;
     hu) XMAP="hu";;
     is) XMAP="is";;
     it) XMAP="it";;
     jp106) XMAP="jp"; MODEL="jp106";;
     la) XMAP="latam";;
-    lt) XMAP="lt";; 
+    lfc-cat) XMAP="es"; VARIANT="cat";;
+    lt) XMAP="lt";;
+    lv-latin4) XMAP="lv";;
     # XXX should these be MODEL="macintosh"?
     mac-us-std) XMAP="us";;
     mac-de2-ext) XMAP="de"; VARIANT="nodeadkeys";;
@@ -1046,20 +1048,22 @@ if [ -n "$DOKBDETECT" ]; then
     mac-fr3) XMAP="fr";;
     mac-es) XMAP="es";;
     mac-usb-de_CH) XMAP="ch"; VARIANT="de";;
+    mk) XMAP="mk";;
+    nl) XMAP="nl";;
     no) XMAP="no";;
     pl) XMAP="pl";;
     pt) XMAP="pt";;
     ro) XMAP="ro";;
-    uk) XMAP="gb";;
-    lv-latin4) XMAP="lv";;
+    ru) XMAP="ru";;
     se) XMAP="se";;
     sg) XMAP="ch"; VARIANT="de";;
     sk-qwerty) XMAP="sk"; VARIANT="qwerty";;
-    sr-cy) XMAP="sr";;
-    trf) XMAP="tr"; VARIANT="f";;
-    trq) XMAP="tr";;
+    slovene) XMAP="si";;
+    sr-cy) XMAP="cs";;
+    trf|trfu) XMAP="tr"; VARIANT="f";;
+    trq|trqu) XMAP="tr";;
     ua) XMAP="ua";;
-    uk) XMAP="gb"; VARIANT="intl";;
+    uk) XMAP="gb";;
     us) XMAP="us"; MODEL="pc104";;
     *) XMAP="UNKNOWN";;
   esac
@@ -1071,7 +1075,7 @@ if [ -n "$DOKBDETECT" ]; then
     MODEL="pc104"
   # prompt for layout if we ended up with French Canadian; apparently having
   # US-layout keyboards is common there
-  elif [ "$XMAP" = "ca" ] && [ "$OPTIONS" = "fr" ]; then
+  elif [ "$XMAP" = "ca" ] && [ "$VARIANT" = "fr" ]; then
     PRIORITY=high
   else
     PRIORITY=low
