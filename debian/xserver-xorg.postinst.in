@@ -1068,6 +1068,11 @@ if [ -n "$DOKBDETECT" ]; then
     *) XMAP="UNKNOWN";;
   esac
 
+  if [ "$XMAP" = "us" ] && [ "${DI_LANG}" = "ko_KR" ]; then
+    XMAP=kr # Uses US keyboard on the console.
+    MODEL=
+  fi
+
   if [ "$XMAP" = "UNKNOWN" ]; then
     warn "failed to infer keyboard layout from layout/lang '$DI_KEYMAP--$REALLANG'"
     PRIORITY=medium
