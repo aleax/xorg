@@ -105,13 +105,6 @@ if [ -n "$EARLYEXIT" ]; then
     exit 0
 fi
 
-
-if which laptop-detect >/dev/null 2>&1; then
-  if laptop-detect > /dev/null ; then
-    LAPTOP=true
-  fi
-fi
-
 DEXCONFTMPDIR=
 
 trap 'if [ -e "$DEXCONFTMPDIR/backup" ] && [ -n "$XF86CONFIG" ]; then \
@@ -257,7 +250,6 @@ cat >&4 <<SECTION
 Section "InputDevice"
 	Identifier	"Configured Mouse"
 	Driver		"mouse"
-	Option		"CorePointer"
 	Option		"Device"		"$MOUSE_PORT"
 	Option		"Protocol"		"$MOUSE_PROTOCOL"
 SECTION
@@ -265,20 +257,6 @@ if [ -n "$DO_EMULATE3BUTTONS" ]; then
   printf "\tOption\t\t\"Emulate3Buttons\"\t\"true\"\n" >&4
 fi
 printf "EndSection\n" >&4
-
-if [ -n "$LAPTOP" ]; then
-  cat >&4 <<SECTION
-
-Section "InputDevice"
-	Identifier	"Synaptics Touchpad"
-	Driver		"synaptics"
-	Option		"SendCoreEvents"	"true"
-	Option		"Device"		"/dev/psaux"
-	Option		"Protocol"		"auto-dev"
-	Option		"HorizEdgeScroll"	"0"
-EndSection
-SECTION
-fi
 
 ### DEVICE
 
