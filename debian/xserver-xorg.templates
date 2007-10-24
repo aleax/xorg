@@ -52,18 +52,6 @@ _Description: Multiple potential default X servers for your hardware
  however, the X server configuration files can be edited later to support a
  multi-head configuration.
 
-Template: shared/default-x-server
-Type: select
-Choices: ${choices}
-_Description: Desired default X server:
- The X server is the hardware interface of the X Window System.  It
- communicates with the video display and input devices, providing a foundation for
- the chosen Graphical User Interface (GUI).
- .
- Several X servers may be available; the default is selected via the
- /etc/X11/X symbolic link.  Some X servers may not work with some particular
- graphics hardware.
-
 Template: xserver-xorg/config/write_files_section
 Type: boolean
 Default: false

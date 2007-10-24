@@ -121,19 +121,6 @@ trap 'if [ -e "$DEXCONFTMPDIR/backup" ] && [ -n "$XF86CONFIG" ]; then \
       rm -rf "$DEXCONFTMPDIR"; \
       bomb "received signal; aborting"' HUP INT QUIT TERM
 
-# Ensure we know how to write a configuation file for the X server in use.
-fetch shared/default-x-server
-XSERVERPKG="$RET"
-case "$XSERVERPKG" in
-  xserver-xorg|xserver-xorg-dbg|xserver-xorg-core)
-    : ${XF86CONFIG:=/etc/X11/xorg.conf}
-    REALCONFIG="xorg.conf"
-    SERVER="xorg"
-    ;;
-  *)
-    bomb "this program does not know how to configure the \"$XSERVERPKG\" X" \
-      "server"
-esac
 
 # Set up a temporary directory for the files we'll be writing.
 TDIR_PARENT="${TMPDIR:-/tmp}"

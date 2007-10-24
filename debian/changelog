@@ -35,7 +35,13 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   * dexconf: Fix problem preventing touchpad scrolling from being able to be
     enabled by switching HorizEdgeDelta for HorizEdgeScroll.
 
- -- Timo Aaltonen <tjaalton@cc.hut.fi>  Mon, 22 Oct 2007 01:15:09 +0300
+  [ Julien Cristau ]
+  * dexconf: don't use the shared/default-x-server template (closes: #443004).
+  * debian/control: xserver-xorg depends on x11-common >= 1:7.3+3 for the
+    above change.
+  * debian/xserver-xorg.templates: drop the default-x-server question.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 24 Oct 2007 14:23:34 +0200
 
 xorg (1:7.3+2) unstable; urgency=low
 
