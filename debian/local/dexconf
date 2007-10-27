@@ -267,8 +267,6 @@ DEVICE_DRIVER="$RET"
 # BusID, VideoRam, and UseFBDev are permitted to be null.
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
-db_get xserver-$SERVER/config/device/video_ram
-DEVICE_VIDEO_RAM="$RET"
 db_get xserver-$SERVER/config/device/use_fbdev
 DEVICE_USE_FBDEV="$RET"
 exec 4>"$DEXCONFTMPDIR/Device"
@@ -279,9 +277,6 @@ Section "Device"
 SECTION
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
-fi
-if [ -n "$DEVICE_VIDEO_RAM" ]; then
-   printf "\tVideoRam\t$DEVICE_VIDEO_RAM\n" >&4
 fi
 if [ "$DEVICE_USE_FBDEV" = "true" ]; then
   printf "\tOption\t\t\"UseFBDev\"\t\t\"$DEVICE_USE_FBDEV\"\n" >&4

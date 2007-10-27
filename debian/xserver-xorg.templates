@@ -140,17 +140,6 @@ Template: xserver-xorg/config/device/bus_id_error
 Type: note
 _Description: Incorrect format for the bus identifier
 
-Template: xserver-xorg/config/device/video_ram
-Type: string
-_Description: Amount of memory (kB) to be used by the video card:
- Typically, the amount of dedicated memory used by the video card is autodetected
- by the X server, but some integrated video chips (such as the Intel i810)
- have little or no video memory of their own, and instead borrow main system
- memory for their needs.
- .
- This parameter should usually be left blank and specified only if the video
- card lacks RAM, or if the X server has trouble autodetecting the RAM size.
-
 Template: xserver-xorg/config/inputdevice/keyboard/rules
 Type: string
 _Description: XKB rule set to use:

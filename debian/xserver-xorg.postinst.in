@@ -755,7 +755,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     AUTODETECT_VIDEO_CARD="$RET"
     if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
       # We're going to autodetect, so clear out the old values
-      for param in use_fbdev driver video_ram identifier bus_id; do
+      for param in use_fbdev driver identifier bus_id; do
           db_reset xserver-xorg/config/device/$param
       done
 
@@ -916,16 +916,6 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
   else
     validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
-  fi
-
-  # video RAM
-  db_get xserver-xorg/config/device/driver
-  DEFAULT=
-  # this question requires input validation
-  if [ -n "$DEFAULT" ]; then
-    auto_answer validate_numeric_db_input "$(priority_ceil low)" xserver-xorg/config/device/video_ram "$DEFAULT"
-  else
-    validate_numeric_db_input "$(priority_ceil low)" xserver-xorg/config/device/video_ram || debug_report_status "validate_numeric_db_input $(priority_ceil low) xserver-xorg/config/device/video_ram" "$?"
   fi
 
   # use fbcon kernel functions?
