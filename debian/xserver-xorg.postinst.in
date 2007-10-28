@@ -817,6 +817,16 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
 
       observe "available video driver list set to \"$DRIVER_LIST\""
 
+      if [ -n "$XFORCEVESA" ] || [ -n "$(grep xforcevesa /proc/cmdline)" ]; then
+      # don't autodetect the video card, but always use the default driver instead
+      AUTODETECT_VIDEO_CARD=false
+  
+      # FIXME: should "xserver-xorg/autodetect_video_card" also be set to "false"?
+      # NOTE: "xforcevesa" should really be "xsafemode", since the default safe mode
+      #       happens to be arch specific (see how DEFAULT_DRIVER is set a few lines
+      #       above).
+      fi
+
       if [ $NDRIVERS -eq 0 ]; then
         observe "could not autodetect X server driver: no video card" \
                 "detected, or no driver known for it"
