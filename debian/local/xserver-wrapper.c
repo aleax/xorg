@@ -70,6 +70,10 @@
  *                messages at build and run time to allow the user to know
  *                what failed on unsupported systems
  *                (30 Mar 2007)
+ * Tollef Fog Heen: stop handling -config specifically, since newer
+ *                  Xorg does that check automatically and only allows
+ *                  non-root users to specify configuration files
+ *                  relative to /etc/X11 (10 Aug 2007)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -323,12 +327,7 @@ main(int argc, char **argv)
     }
 
     for (i = 1; i < argc; i++) {
-      if (!strcmp(argv[i], "-config") || !strcmp(argv[i], "-xf86config")) {
-        if (setuid(getuid())) {
-          perror("X unable to drop setuid privileges for alternate config");
-          exit(1);
-        }
-      } else if (strlen(argv[i]) > 256) {
+      if (strlen(argv[i]) > 256) {
         if (setuid(getuid())) {
           perror("X unable to drop setuid privileges for suspiciously long "
                  "argument");

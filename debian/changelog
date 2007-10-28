@@ -15,11 +15,14 @@ xorg (1:7.3+3ubuntu1) UNRELEASED; urgency=low
     - Symlink the doc directories to x11-common, explicitly remove the
       doc directories on upgrade for the now symlinked doc directories.
   * control, rules, vars.sparc:
-    - Make xorg Architecture: any and use an extra variable to not 
+    - Make xorg Architecture: any and use an extra variable to not
       Depends on type-handling.
     - Drop dependency on "sparc-utils | not+sparc"
+  * local/xserver-wrapper.c:
+    - Stop handling -config specifically in the wrapper, as Xorg now 
+      handles this itself.
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 13:50:03 -0400
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 13:57:03 -0400
 
 xorg (1:7.3+3) UNRELEASED; urgency=low
 
