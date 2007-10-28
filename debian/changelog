@@ -21,8 +21,11 @@ xorg (1:7.3+3ubuntu1) UNRELEASED; urgency=low
   * local/xserver-wrapper.c:
     - Stop handling -config specifically in the wrapper, as Xorg now 
       handles this itself.
+  * local/dexconf, control:
+    - Added support for vmmouse_detect (if present) to override mouse
+      driver with vmware. Depends on mdetect.
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 13:57:03 -0400
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 14:03:55 -0400
 
 xorg (1:7.3+3) UNRELEASED; urgency=low
 

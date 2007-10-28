@@ -245,11 +245,18 @@ if [ "$RET" = "true" ]; then
   DO_EMULATE3BUTTONS=true
 fi
 
+MOUSE_DRIVER=mouse
+if which vmmouse_detect >/dev/null 2>&1; then
+  if vmmouse_detect > /dev/null ; then
+    MOUSE_DRIVER=vmmouse
+  fi
+fi
+
 exec 4>"$DEXCONFTMPDIR/InputDeviceMouse"
 cat >&4 <<SECTION
 Section "InputDevice"
 	Identifier	"Configured Mouse"
-	Driver		"mouse"
+	Driver		"$MOUSE_DRIVER"
 	Option		"Device"		"$MOUSE_PORT"
 	Option		"Protocol"		"$MOUSE_PROTOCOL"
 SECTION
