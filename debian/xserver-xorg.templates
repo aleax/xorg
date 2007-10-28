@@ -151,6 +151,14 @@ _Description: Amount of memory (kB) to be used by the video card:
  This parameter should usually be left blank and specified only if the video
  card lacks RAM, or if the X server has trouble autodetecting the RAM size.
 
+Template: xserver-xorg/config/device/extra_options
+Type: string
+Description: Additional driver options
+ Each line must consist of an option name, a space, and a value (rest
+ of the line), and is copied to the configuration file as
+ .
+  Option "Name" "Value"
+
 Template: xserver-xorg/config/inputdevice/keyboard/rules
 Type: string
 _Description: XKB rule set to use:

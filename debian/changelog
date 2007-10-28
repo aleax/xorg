@@ -27,8 +27,12 @@ xorg (1:7.3+3ubuntu1) UNRELEASED; urgency=low
   * local/dexconf:
     - Unconditionally enable ZAxisMapping.
     - Add extra bits for ps3fb xorg.conf.
+  * local/dexconf, xserver-xorg.templates:
+    - Read xserver-xorg/config/device/extra_options key, parse it
+      (first token is option name, rest of the line after first space
+      is value), and add it as Option lines to the device section.
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 14:15:44 -0400
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 14:33:02 -0400
 
 xorg (1:7.3+3) UNRELEASED; urgency=low
 
