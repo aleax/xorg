@@ -42,8 +42,12 @@ xorg (1:7.3+3ubuntu1) UNRELEASED; urgency=low
     - If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
       0.5MiB to avoid having it grow indefinitively. (This does not happen
       with gdm anyway since gdm cleans the file on login).
+  * xserver-xorg.postinst.in:
+    - Make sure to ask video driver on sparc even if autodetected. Some
+      cards still require weird overrides (ati -> fbdev) that are not
+      100% known in all combinations.
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 15:02:23 -0400
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 15:55:57 -0400
 
 xorg (1:7.3+3) UNRELEASED; urgency=low
 

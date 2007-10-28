@@ -765,6 +765,17 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
         PRIORITY=high
       fi
 
+      ## per arch driver specific overrides:
+      #
+      # make sure to ask the driver on sparc till we have a reliable way
+      # to gather these info properly.
+      #
+      case "$ARCH" in
+       sparc)
+         PRIORITY=high
+         ;;
+      esac
+
       DRIVER_DIRS="/usr/lib/xorg/modules/drivers"
       for i in $DRIVER_DIRS; do
         if [ -d $i ]; then
