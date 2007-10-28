@@ -87,6 +87,17 @@ binary-indep: build install
 	dh_installchangelogs
 	dh_link
 	dh_compress
+	t=x11-common; \
+	for p in $$(dh_listpackages -i -N$$t); do \
+	  rm -rf debian/$$p/usr/share/doc/$$p; \
+	  ln -s $$t debian/$$p/usr/share/doc/$$p; \
+	  ( \
+	    echo "# doc dir is now a symlink to $$p"; \
+	    echo 'if [ "$$1" = upgrade ] && [ ! -L /usr/share/doc/'$$p' ]; then'; \
+	    echo "    rm -rf /usr/share/doc/$$p"; \
+	    echo "fi"; \
+	  ) >> debian/$$p.preinst.debhelper; \
+	done
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol -- -VF:XServer-Xorg-Detect-Depends=$(XSERVER_XORG_DETECT_DEPENDS)
@@ -108,6 +119,17 @@ binary-arch: build install
 	dh_link
 	dh_strip
 	dh_compress
+	t=x11-common; \
+	for p in $$(dh_listpackages -s -N$$t); do \
+	  rm -rf debian/$$p/usr/share/doc/$$p; \
+	  ln -s $$t debian/$$p/usr/share/doc/$$p; \
+	  ( \
+	    echo "# doc dir is now a symlink to $$p"; \
+	    echo 'if [ "$$1" = upgrade ] && [ ! -L /usr/share/doc/'$$p' ]; then'; \
+	    echo "    rm -rf /usr/share/doc/$$p"; \
+	    echo "fi"; \
+	  ) >> debian/$$p.preinst.debhelper; \
+	done
 	dh_fixperms
 	chown root:root debian/x11-common/etc/X11/Xsession
 	chmod 755 debian/x11-common/etc/X11/Xsession
