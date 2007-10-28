@@ -91,6 +91,12 @@ else
   errormsg "unable to create X session log/error file; aborting."
 fi
 
+# truncate ERRFILE if it is too big to avoid disk usage DoS
+if [ "`stat -c%s \"$ERRFILE\"`" -gt 500000 ]; then
+  T=`mktemp -p "$HOME"`
+  tail -c 500000 "$ERRFILE" > "$T" && mv -f "$T" "$ERRFILE" || rm -f "$T"
+fi
+
 exec >>"$ERRFILE" 2>&1
 
 echo "$PROGNAME: X session started for $LOGNAME at $(date)"
