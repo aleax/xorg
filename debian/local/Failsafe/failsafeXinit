@@ -1,0 +1,42 @@
+# This provides a stripped down 'failsafe' mode for situations
+# where X is failing to start up.
+
+# Author: Bryce W. Harrington <bryce@canonical.com>
+
+# Copyright 2007 Canonical, Ltd
+#
+# This is free software; you may redistribute it and/or modify
+# it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2,
+# or (at your option) any later version.
+#
+# This is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License with
+# the Debian operating system, in /usr/share/common-licenses/GPL;  if
+# not, write to the Free Software Foundation, Inc., 59 Temple Place,
+# Suite 330, Boston, MA 02111-1307 USA
+
+BULLETPROOF_X_PATH="/etc/gdm"
+
+xorg_conf=$1
+with_gdm=$2
+
+if [ ! -x /usr/bin/xfailsafedialog ] ; then
+   if [ ! -x /usr/bin/displayconfig-gtk ]; then
+      zenity --error --text "Cannot launch graphical configuration tool\nbecause displayconfig-gtk is not installed.\nSorry, without this tool installed you must manually\nconfigure Xorg."
+   else
+      zenity --error --text "Cannot launch graphical configuration tool\nbecause the installed version of displayconfig-gtk\nis too old.  Sorry, without this tool installed\nyou must manually configure Xorg."
+   fi
+
+else
+    /usr/bin/gksu -u root "/usr/bin/xfailsafedialog"
+
+    if [ "x$with_gdm" = "xwith-gdm" ]; then
+        export XORGCONFIG=${xorg_conf}
+        /etc/init.d/gdm restart
+    fi
+fi
