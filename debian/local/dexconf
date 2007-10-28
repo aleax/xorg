@@ -285,6 +285,10 @@ Section "Device"
 	Identifier	"$DEVICE_IDENTIFIER"
 	Driver		"$DEVICE_DRIVER"
 SECTION
+PS3_FB=$(grep PS3 /proc/fb 2>/dev/null || true)
+if [ -n "$PS3_FB" ]; then
+  printf "\tOption\t\t\"ShadowFB\"\t\t\"false\"\n" >&4
+fi
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
 fi
@@ -338,6 +342,9 @@ Section "Screen"
 	Monitor		"$MONITOR_IDENTIFIER"
 	DefaultDepth	$DISPLAY_DEFAULT_DEPTH
 SECTION
+if [ -n "$PS3_FB" ]; then
+  printf "\tDefaultFbBpp 32\n" >&4
+fi
   if [ -n "$DISPLAY_MODES" ]; then
 	printf "\tSubSection \"Display\"\n" >&4
     printf "\t\tModes\t\t$DISPLAY_MODES\n" >&4
