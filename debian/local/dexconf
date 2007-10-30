@@ -68,6 +68,7 @@ list_convert () {
   echo $(IFS=", "; set -- $RET; while [ $# -gt 0 ]; do echo \"$1\"; shift; done)
 }
 
+SERVER="xorg"
 PROGNAME=${0##*/}
 SHOWHELP=
 EARLYEXIT=
