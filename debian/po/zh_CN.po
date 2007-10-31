@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-27 11:37-0400\n"
+"POT-Creation-Date: 2007-10-30 15:08-0400\n"
 "PO-Revision-Date: 2006-10-03 19:13-0500\n"
 "Last-Translator: Carlos Z.F. Liu <carlosliu@users.sourceforge.net>\n"
 "Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
@@ -859,38 +859,21 @@ msgstr ""
 "显示芯片和驱动程序两者都支持才行；如果您不清楚，请使用您的 LCD 的制造商所推荐"
 "的显示模式。"
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid "Identifier for the monitor:"
-msgstr "显示器标识符："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid ""
-"The X server configuration file associates the monitor with a name that you "
-"may provide.  This is usually the vendor or brand name followed by the model "
-"name, e.g., \"Sony E200\" or \"Dell E770s\"."
-msgstr ""
-"X 服务器的配置文件会给您的显示器取一个标识名称，这个名称可以由您提供。通常该"
-"名称由厂商或品牌名加上型号组成，例如“Sony E200”或“Dell E770s”。"
-
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Generic Monitor"
 msgstr "通用显示器"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "是否将显示器同步频率范围写入配置文件？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -901,13 +884,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Monitor's horizontal sync range:"
 msgstr "显示器的水平同步频率范围："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -920,13 +903,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid "Monitor's vertical refresh range:"
 msgstr "显示器的垂直刷新频率范围："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -939,13 +922,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid "Incorrect values entered"
 msgstr "输入的值不正确"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -955,13 +938,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "Desired default color depth in bits:"
 msgstr "您想要的默认色深 (单位：位)："
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -975,7 +958,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -986,49 +969,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Empty value"
 msgstr "空值"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "A null entry is not permitted for this value."
 msgstr "此栏不能为空值。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Invalid double-quote characters"
 msgstr "无效的双引号字符"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "此栏的值中不能带有双引号 (\") 字符。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Numerical value needed"
 msgstr "需要数字字符"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "此栏中不能有数字以外的字符。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid "Autodetect keyboard layout?"
 msgstr "自动探测键盘布局？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1039,7 +1022,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1185,6 +1168,17 @@ msgid ""
 msgstr ""
 "本软件包安装失败并将退出，以让您完成所述的工作。请在清除目录后重新运行您的升"
 "级程序。"
+
+#~ msgid "Identifier for the monitor:"
+#~ msgstr "显示器标识符："
+
+#~ msgid ""
+#~ "The X server configuration file associates the monitor with a name that "
+#~ "you may provide.  This is usually the vendor or brand name followed by "
+#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
+#~ msgstr ""
+#~ "X 服务器的配置文件会给您的显示器取一个标识名称，这个名称可以由您提供。通常"
+#~ "该名称由厂商或品牌名加上型号组成，例如“Sony E200”或“Dell E770s”。"
 
 #~ msgid "Amount of memory (kB) to be used by the video card:"
 #~ msgstr "请输入您的显示卡所使用的内存大小 (单位：kB)："

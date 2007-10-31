@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.0.14\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-27 11:37-0400\n"
+"POT-Creation-Date: 2007-10-30 15:08-0400\n"
 "PO-Revision-Date: 2007-04-17 23:42+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org> and ISHIKAWA Mutsumi "
 "<ishikawa@debian.org>\n"
@@ -909,39 +909,21 @@ msgstr ""
 "チップセットとドライバの両方がそれをサポートしている必要があります。よくわか"
 "らなければ、LCD の製造元が推奨するビデオモードを使って下さい。"
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid "Identifier for the monitor:"
-msgstr "モニタの識別子:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid ""
-"The X server configuration file associates the monitor with a name that you "
-"may provide.  This is usually the vendor or brand name followed by the model "
-"name, e.g., \"Sony E200\" or \"Dell E770s\"."
-msgstr ""
-"X サーバの設定ファイルはモニタを指定の名前と関連付けます。これは通常、ベンダ"
-"名かブランド名のあとにモデル名が付きます。例えば「Sony E200」や「Dell E770s」"
-"などです。"
-
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Generic Monitor"
 msgstr "Generic Monitor"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "設定ファイルにモニタ同期範囲を書き込みますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -953,13 +935,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Monitor's horizontal sync range:"
 msgstr "モニタの水平同期の範囲:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -973,13 +955,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid "Monitor's vertical refresh range:"
 msgstr "モニタの垂直リフレッシュの範囲:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -993,13 +975,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid "Incorrect values entered"
 msgstr "無効な値が入力されました"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1009,13 +991,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "Desired default color depth in bits:"
 msgstr "使いたいデフォルトの色深度のビット数:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1031,7 +1013,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1043,49 +1025,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Empty value"
 msgstr "空の値"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "A null entry is not permitted for this value."
 msgstr "この値では空の値は許されていません。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Invalid double-quote characters"
 msgstr "無効な二重引用符文字"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "ここでは二重引用符 (\") の使用はできません。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Numerical value needed"
 msgstr "数値が必要です"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "数字以外の文字はここでは入力しないで下さい。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid "Autodetect keyboard layout?"
 msgstr "キーボードレイアウトを自動検出しますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1096,7 +1078,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1252,6 +1234,18 @@ msgid ""
 msgstr ""
 "このパッケージのインストールは、上記の作業ができるよう、ただちに失敗し、終了"
 "します。ディレクトリを清掃したあと、更新処理を再実行してください。"
+
+#~ msgid "Identifier for the monitor:"
+#~ msgstr "モニタの識別子:"
+
+#~ msgid ""
+#~ "The X server configuration file associates the monitor with a name that "
+#~ "you may provide.  This is usually the vendor or brand name followed by "
+#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
+#~ msgstr ""
+#~ "X サーバの設定ファイルはモニタを指定の名前と関連付けます。これは通常、ベン"
+#~ "ダ名かブランド名のあとにモデル名が付きます。例えば「Sony E200」や「Dell "
+#~ "E770s」などです。"
 
 #~ msgid "Amount of memory (kB) to be used by the video card:"
 #~ msgstr "ビデオカードが利用するメモリ量 (kB 単位):"

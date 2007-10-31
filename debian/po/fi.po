@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer xserver-xorg\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-27 11:37-0400\n"
+"POT-Creation-Date: 2007-10-30 15:08-0400\n"
 "PO-Revision-Date: 2006-09-27 11:15+0300\n"
 "Last-Translator: Tapio Lehtonen <tale@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -899,33 +899,15 @@ msgstr ""
 "piirisarja että ajuri tukevat sitä; jos ei ole varma, käytetään littunäytön "
 "valmistajan suosittelemaa näyttötilaa."
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid "Identifier for the monitor:"
-msgstr "Näytön tunniste:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid ""
-"The X server configuration file associates the monitor with a name that you "
-"may provide.  This is usually the vendor or brand name followed by the model "
-"name, e.g., \"Sony E200\" or \"Dell E770s\"."
-msgstr ""
-"X-palvelimen asetustiedostoissa voidaan näytölle antaa nimi. Nimi on "
-"tavallisesti valmistajan tai merkin nimi jonka jälkeen tulee mallinimi, "
-"esim. \"Sony E200\" tai \"Dell E770s\"."
-
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Generic Monitor"
 msgstr "Tyypillinen näyttö"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
 "Kirjoitetaanko näytön vaaka- ja pystypoikkeutustaajuusalueet "
@@ -933,7 +915,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -946,13 +928,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Monitor's horizontal sync range:"
 msgstr "Näytön vaakapoikkeutustaajuusalue:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -966,13 +948,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid "Monitor's vertical refresh range:"
 msgstr "Näytön pystypoikkeutustaajuusalue:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -986,13 +968,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid "Incorrect values entered"
 msgstr "Annetut arvot olivat väärin"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1002,13 +984,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "Desired default color depth in bits:"
 msgstr "Haluttu oletus värisyvyydelle bitteinä:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1024,7 +1006,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1036,49 +1018,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Empty value"
 msgstr "Tyhjä arvo"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "A null entry is not permitted for this value."
 msgstr "Tämä arvo ei saa olla tyhjä."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Invalid double-quote characters"
 msgstr "Ei saa kirjoittaa lainausmerkkejä"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Lainausmerkit (\") eivät ole sallittuja arvossa."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Numerical value needed"
 msgstr "Tarvitaan numero"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Arvossa saa olla vain numeromerkkejä."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid "Autodetect keyboard layout?"
 msgstr "Tunnistetaanko näppäinasettelu automaattisesti?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1089,7 +1071,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1244,6 +1226,18 @@ msgid ""
 msgstr ""
 "Tämän paketin asennus päättyy nyt virheeseen, jotta tuo voidaan tehdä. "
 "Käynnistä päivitys uudestaan, kun hakemisto on siivottu."
+
+#~ msgid "Identifier for the monitor:"
+#~ msgstr "Näytön tunniste:"
+
+#~ msgid ""
+#~ "The X server configuration file associates the monitor with a name that "
+#~ "you may provide.  This is usually the vendor or brand name followed by "
+#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
+#~ msgstr ""
+#~ "X-palvelimen asetustiedostoissa voidaan näytölle antaa nimi. Nimi on "
+#~ "tavallisesti valmistajan tai merkin nimi jonka jälkeen tulee mallinimi, "
+#~ "esim. \"Sony E200\" tai \"Dell E770s\"."
 
 #~ msgid "Amount of memory (kB) to be used by the video card:"
 #~ msgstr "Näytönohjaimen käyttämän muistin määrä (kt):"

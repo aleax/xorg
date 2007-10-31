@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-27 11:37-0400\n"
+"POT-Creation-Date: 2007-10-30 15:08-0400\n"
 "PO-Revision-Date: 2007-04-06 21:38+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
@@ -853,38 +853,21 @@ msgstr ""
 "ก็ถือว่ายอมรับได้ ผู้ใช้จอภาพ LCD ก็อาจทำเช่นนี้ได้ แต่ชิปเซ็ตแสดงภาพและไดรเวอร์ก็ต้องสนับสนุนด้วย "
 "ถ้าไม่แน่ใจ ก็ควรใช้โหมดภาพที่ผู้ผลิต LCD ของคุณแนะนำ"
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid "Identifier for the monitor:"
-msgstr "ชื่อของจอภาพ:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:27001
-msgid ""
-"The X server configuration file associates the monitor with a name that you "
-"may provide.  This is usually the vendor or brand name followed by the model "
-"name, e.g., \"Sony E200\" or \"Dell E770s\"."
-msgstr ""
-"แฟ้มค่าตั้งของเซิร์ฟเวอร์เอ็กซ์จะอ้างถึงจอภาพของคุณด้วยชื่อที่คุณตั้ง ชื่อที่ว่านี้ "
-"โดยปกติจะเป็นชื่อผู้ผลิตหรือยี่ห้อ ตามด้วยชื่อรุ่น เช่น \"Sony E200\" หรือ \"Dell E770s\""
-
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Generic Monitor"
 msgstr "จอภาพแบบทั่วไป"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "จะเขียนข้อมูลช่วงการ sync ลงในแฟ้มค่าตั้งหรือไม่?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -895,13 +878,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Monitor's horizontal sync range:"
 msgstr "ช่วงการ sync ตามแนวนอนของจอภาพ:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -914,13 +897,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid "Monitor's vertical refresh range:"
 msgstr "ช่วงการรีเฟรชตามแนวตั้งของจอภาพ:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -933,13 +916,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid "Incorrect values entered"
 msgstr "ข้อมูลที่ป้อนไม่ถูกต้อง"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -947,13 +930,13 @@ msgstr "รูปแบบที่ถูกต้อง คือรายก�
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "Desired default color depth in bits:"
 msgstr "จำนวนบิตสีปริยายที่ต้องการ:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -967,7 +950,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -979,49 +962,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Empty value"
 msgstr "ค่าว่างเปล่า"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "A null entry is not permitted for this value."
 msgstr "ไม่อนุญาตให้ใช้ค่าว่างเปล่าสำหรับข้อมูลนี้"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Invalid double-quote characters"
 msgstr "ห้ามใช้อัญประกาศคู่"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "ไม่อนุญาตให้ใช้อัญประกาศคู่ (\") ในช่องข้อมูลนี้"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Numerical value needed"
 msgstr "ต้องการค่าตัวเลข"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "ไม่อนุญาตให้ใช้อักขระที่ไม่ใช่ตัวเลขในช่องข้อมูลนี้"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid "Autodetect keyboard layout?"
 msgstr "ตรวจสอบผังแป้นพิมพ์โดยอัตโนมัติหรือไม่?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1032,7 +1015,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:36001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1182,6 +1165,17 @@ msgid ""
 msgstr ""
 "การติดตั้งแพกเกจนี้จะหยุดตัวเองแบบล้มเหลว เพื่อให้คุณสามารถจัดแจงตามที่กล่าวข้างต้นได้ "
 "กรุณาดำเนินการปรับรุ่นใหม่อีกครั้ง หลังจากที่คุณได้เก็บกวาดไดเรกทอรีดังกล่าวเรียบร้อยแล้ว"
+
+#~ msgid "Identifier for the monitor:"
+#~ msgstr "ชื่อของจอภาพ:"
+
+#~ msgid ""
+#~ "The X server configuration file associates the monitor with a name that "
+#~ "you may provide.  This is usually the vendor or brand name followed by "
+#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
+#~ msgstr ""
+#~ "แฟ้มค่าตั้งของเซิร์ฟเวอร์เอ็กซ์จะอ้างถึงจอภาพของคุณด้วยชื่อที่คุณตั้ง ชื่อที่ว่านี้ "
+#~ "โดยปกติจะเป็นชื่อผู้ผลิตหรือยี่ห้อ ตามด้วยชื่อรุ่น เช่น \"Sony E200\" หรือ \"Dell E770s\""
 
 #~ msgid "Amount of memory (kB) to be used by the video card:"
 #~ msgstr "ปริมาณหน่วยความจำ (kB) ที่การ์ดแสดงภาพจะใช้:"

@@ -1247,7 +1247,6 @@ xresprobeint() {
   fi
   if [ -n "$AUTODETECT_VIDEO" ] && [ -z "$UPGRADE" ]; then
     # clean vars
-    MONITOR_IDENTIFIER=
     RESOLUTIONS=
     HORIZ_SYNC=
     VERT_REFRESH=
@@ -1293,7 +1292,6 @@ xresprobeint() {
     fi
 
     # Set proper vars.
-    MONITOR_IDENTIFIER="$(echo "$PROBE_DUMP" | grep "^id:" | sed -e 's/^id: //g' -e 's/"//g')"
     RESOLUTIONS="$(echo "$PROBE_DUMP" | grep "^res:" | sed -e 's/^res: //g')"
     HORIZ_SYNC="$(echo "$PROBE_DUMP" | grep "^freq:" | sed -e 's/^freq: //g' | cut -d " " -f 1)"
     VERT_REFRESH="$(echo "$PROBE_DUMP" | grep "^freq:" | sed -e 's/^freq: //g' | cut -d " " -f 2)"
@@ -1358,8 +1356,6 @@ xresprobeint() {
     fi
   else
     # reconfiguring. debconf should have sane defaults
-    db_get xserver-xorg/config/monitor/identifier || debug_echo "db_get xserver-xorg/config/monitor/identifier"
-    MONITOR_IDENTIFIER="$RET"
     db_get xserver-xorg/config/display/modes || debug_echo "db_get xserver-xorg/config/display/modes"
     RESOLUTIONS=$(echo "$RET" | sed -e 's/,//g')
     db_get xserver-xorg/config/monitor/horiz-sync || debug_echo "db_get xserver-xorg/config/monitor/horiz-sync"
@@ -1372,15 +1368,6 @@ xresprobeint() {
       debug_echo "preserving sync ranges from debconf"
     fi
   fi
-
-  # Set a sane monitor id default if probe fails
-  if [ -z "$MONITOR_IDENTIFIER" ]; then
-    # fall back to some language-specific generic text
-    db_metaget xserver-xorg/config/monitor/default-identifier Description
-    MONITOR_IDENTIFIER=$RET
-  fi
-  db_set xserver-xorg/config/monitor/identifier "$MONITOR_IDENTIFIER"
-  MAY_BE_NULL="" validate_string_db_input low xserver-xorg/config/monitor/identifier || true
 
 
   # Resolution hell:

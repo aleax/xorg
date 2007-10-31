@@ -286,8 +286,6 @@ printf "EndSection\n" >&4
 
 ### MONITOR
 
-fetch xserver-$SERVER/config/monitor/identifier
-MONITOR_IDENTIFIER="$RET"
 fetch xserver-$SERVER/config/monitor/horiz-sync
 MONITOR_HORIZ_SYNC="$RET"
 fetch xserver-$SERVER/config/monitor/vert-refresh
@@ -298,7 +296,7 @@ MONITOR_SYNC_RANGES="$RET"
 exec 4>"$DEXCONFTMPDIR/Monitor"
 cat >&4 <<SECTION
 Section "Monitor"
-	Identifier	"$MONITOR_IDENTIFIER"
+	Identifier	"Configured Monitor"
 	Option		"DPMS"
 SECTION
 
@@ -323,7 +321,7 @@ cat >&4 <<SECTION
 Section "Screen"
 	Identifier	"Default Screen"
 	Device		"$DEVICE_IDENTIFIER"
-	Monitor		"$MONITOR_IDENTIFIER"
+	Monitor		"Configured Monitor"
 	DefaultDepth	$DISPLAY_DEFAULT_DEPTH
 SECTION
   if [ -n "$DISPLAY_MODES" ]; then
