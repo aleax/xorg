@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 16:27-0400\n"
+"POT-Creation-Date: 2007-10-31 16:42-0400\n"
 "PO-Revision-Date: 2006-10-21 19:24+0300\n"
 "Last-Translator: Osman Yüksel <yuxel@sonsuzdongu.com>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
@@ -641,103 +641,15 @@ msgstr ""
 msgid "When in doubt, this value should be left blank."
 msgstr "Emin değilseniz boş bırakın."
 
-#. Type: select
+#. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:19001
-msgid "Mouse port:"
-msgstr "Fare bağlantı noktası:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"X Window Sistemi grafik kullanıcı arayüzünün doğru çalışması için, farenin "
-"(veya iztopu gibi başka bir işaretçinin) özellikleri bilinmelidir."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"Farenin hangi girişi (bağlantı tipini) kullandığı belirlenmeli.  Seri "
-"portlar 9 veya 25 (DB-9 veya DB-25) iğneli, D-şekilli bağlayıcılar kullanır; "
-"bağlayıcının fare tarafı dişi (delikleri vardır), bilgisayar tarafı erkektir "
-"(iğneleri vardır).  PS/2 portlar 6 iğneli küçük yuvarlak bağlayıcılardır "
-"(DIN); fare tarafındaki bağlayıcı erkek, bilgisayar tarafındaki ise "
-"dişidir.  Alternatif olarak USB fare, seri bağlantılı fare (çok eski bir "
-"tip) veya tekrarlayıcı olarak gpm programını kullanıyor olabilirsiniz.  Eğer "
-"bir PS/2 veya seri bağlantılı fare takmak veya çıkarmak isterseniz lütfen bu "
-"işlemi bilgisayar kapalıyken yapın."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Mouse protocol:"
-msgstr "Fare iletişim kuralı:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Emulate 3 button mouse?"
-msgstr "3 tuş öykünümü (emulasyon) kullanılsın mı?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"X Window Sistemindeki çoğu program farenizin 3 tuşlu (sağ, sol ve orta) "
-"olmasını bekler.  2 tuşlu fare, iki tuşa aynı anda basarak veya, sağ ve sol "
-"tuşun sürüklenmesi ile orta tuş görevini görür."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"Bu seçenek 3 tuşlu farelerde de kullanılabilir, orta tuş normal işlevini "
-"devam ettirecektir."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"5 tuşun üzeri farelerin (tekerleği; yukarı kaydırma, aşağı kaydırma ve "
-"tıklama şeklinde 3 tuş olarak sayarsak) bu yapılandırma aracı tarafından "
-"desteklenmediğini unutmayın."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:22001
 msgid "Attempt monitor autodetection?"
 msgstr "Monitörün otomatik olarak algılanması denensin mi?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -752,7 +664,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr ""
@@ -761,7 +673,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid "Method for selecting the monitor characteristics:"
 msgstr ""
 "Lütfen monitörünüze ait özelliklerin belirlenmesinde kullanılacak yöntemi "
@@ -769,7 +681,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -779,7 +691,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -792,7 +704,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -804,7 +716,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -814,56 +726,56 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "Up to 14 inches (355 mm)"
 msgstr "14 inç'e kadar (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "15 inches (380 mm)"
 msgstr "15 inç (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "17 inches (430 mm)"
 msgstr "17 inç (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 inç (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "21 inches (530 mm) or more"
 msgstr "21 inç (530 mm) veya daha üstü"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "Approximate monitor size:"
 msgstr "Tahmini monitör boyutu:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Yüksek kalite CRT'ler bir sonraki yüksek boyut kategorisini kullanabilir."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's best video mode:"
 msgstr "Monitörünüz için en iyi video kipi:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -881,19 +793,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:23001
 msgid "Generic Monitor"
 msgstr "Genel Monitör"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Monitör tazeleme oranları yapılandırma dosyasına yazılsın mı?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -905,13 +817,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid "Monitor's horizontal sync range:"
 msgstr "Monitörünüzün yatay tarama aralığı:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -925,13 +837,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid "Monitor's vertical refresh range:"
 msgstr "Monitörünüzün dikey tazeleme aralığı:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -945,13 +857,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid "Incorrect values entered"
 msgstr "Yanlış değerler girildi"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -961,13 +873,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid "Desired default color depth in bits:"
 msgstr "İstenilen öntanımlı renk derinliği (bit olarak):"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -983,7 +895,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -995,49 +907,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "Empty value"
 msgstr "Boş değer"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "A null entry is not permitted for this value."
 msgstr "Bu değer için boş giriş yapılamaz."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Invalid double-quote characters"
 msgstr "Geçersiz çift tırnak karakteri"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Tırnak işareti karakteri (\") girdi bölümünde kullanılamaz."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Numerical value needed"
 msgstr "Rakam değeri girmelisiniz"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Girdilerde, rakamlardan başka karakter kullanılamaz."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid "Autodetect keyboard layout?"
 msgstr "Klavye düzeni otomatik denetlensin mi?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1048,7 +960,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1205,6 +1117,70 @@ msgstr ""
 "Bu paketin kurulumu başarısızlıkla sonlanacak ve kurulumdan çıkılacaktır, "
 "böylece bunu yapabileceksiniz. Lütfen, dizini sildikten sonra güncelleme "
 "işleminizi yeniden başlatın."
+
+#~ msgid "Mouse port:"
+#~ msgstr "Fare bağlantı noktası:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "X Window Sistemi grafik kullanıcı arayüzünün doğru çalışması için, "
+#~ "farenin (veya iztopu gibi başka bir işaretçinin) özellikleri bilinmelidir."
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "Farenin hangi girişi (bağlantı tipini) kullandığı belirlenmeli.  Seri "
+#~ "portlar 9 veya 25 (DB-9 veya DB-25) iğneli, D-şekilli bağlayıcılar "
+#~ "kullanır; bağlayıcının fare tarafı dişi (delikleri vardır), bilgisayar "
+#~ "tarafı erkektir (iğneleri vardır).  PS/2 portlar 6 iğneli küçük yuvarlak "
+#~ "bağlayıcılardır (DIN); fare tarafındaki bağlayıcı erkek, bilgisayar "
+#~ "tarafındaki ise dişidir.  Alternatif olarak USB fare, seri bağlantılı "
+#~ "fare (çok eski bir tip) veya tekrarlayıcı olarak gpm programını "
+#~ "kullanıyor olabilirsiniz.  Eğer bir PS/2 veya seri bağlantılı fare takmak "
+#~ "veya çıkarmak isterseniz lütfen bu işlemi bilgisayar kapalıyken yapın."
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "Fare iletişim kuralı:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "3 tuş öykünümü (emulasyon) kullanılsın mı?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "X Window Sistemindeki çoğu program farenizin 3 tuşlu (sağ, sol ve orta) "
+#~ "olmasını bekler.  2 tuşlu fare, iki tuşa aynı anda basarak veya, sağ ve "
+#~ "sol tuşun sürüklenmesi ile orta tuş görevini görür."
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "Bu seçenek 3 tuşlu farelerde de kullanılabilir, orta tuş normal işlevini "
+#~ "devam ettirecektir."
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "5 tuşun üzeri farelerin (tekerleği; yukarı kaydırma, aşağı kaydırma ve "
+#~ "tıklama şeklinde 3 tuş olarak sayarsak) bu yapılandırma aracı tarafından "
+#~ "desteklenmediğini unutmayın."
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "Farenin otomatik olarak algılanması denensin mi?"

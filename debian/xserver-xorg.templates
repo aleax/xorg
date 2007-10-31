@@ -244,46 +244,6 @@ _Description: Keyboard options:
  .
  When in doubt, this value should be left blank.
 
-Template: xserver-xorg/config/inputdevice/mouse/port
-Type: select
-Choices: /dev/input/mice, /dev/psaux, /dev/ttyS0, /dev/tts0, /dev/gpmdata
-Default: /dev/input/mice
-_Description: Mouse port:
- For the X Window System graphical user interface to operate correctly,
- certain characteristics of the mouse (or other pointing device, such as a
- trackball) must be known.
- .
- It is necessary to determine which port (connection type) is used by the mouse.
- Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 or
- DB-25); the mouse connector is female (has holes) and the computer connector
- is male (has pins).  PS/2 ports are small round connectors (DIN) with 6 pins;
- the mouse connector is male and the computer side female.  You may
- alternatively use a USB mouse, a bus/inport (very old) mouse, or be using
- the gpm program as a repeater.  If you need to attach or remove PS/2 or
- bus/inport devices from your computer, please do so with the computer's power
- off.
-
-Template: xserver-xorg/config/inputdevice/mouse/protocol
-Type: select
-Choices: ${choices}
-_Description: Mouse protocol:
-
-Template: xserver-xorg/config/inputdevice/mouse/emulate3buttons
-Type: boolean
-Default: true
-_Description: Emulate 3 button mouse?
- Most programs in the X Window System expect the mouse to have 3 buttons
- (left, right, and middle).  Mice with only 2 buttons can emulate the presence
- of a middle button by treating simultaneous clicks or drags of the left and
- right buttons as middle button events.
- .
- This option may also be used on mice with 3 or more buttons; the middle
- button will continue to work normally.
- .
- Note that mouse buttons in excess of five (counting a scroll wheel as two
- buttons, one each for "up" and "down", and a third if the wheel "clicks") are
- not yet supported with this configuration tool.
-
 Template: xserver-xorg/autodetect_monitor
 Type: boolean
 Default: true

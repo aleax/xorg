@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 16:27-0400\n"
+"POT-Creation-Date: 2007-10-31 16:42-0400\n"
 "PO-Revision-Date: 2007-04-06 12:43+0200\n"
 "Last-Translator: Peter Mann <Peter.Mann@tuke.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -612,102 +612,15 @@ msgstr ""
 msgid "When in doubt, this value should be left blank."
 msgstr "Ak sa neviete rozhodnúť, nechajte túto hodnotu prázdnu."
 
-#. Type: select
+#. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:19001
-msgid "Mouse port:"
-msgstr "Port myši:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"Pre správnu funkciu grafického rozhrania X Window System je nutné poznať "
-"vlastnosti pripojenej myši (alebo iného ukazovacieho zariadenia, akým je "
-"napr. trackball)."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"Najprv je nutné určiť port (typ pripojenia), ktorým je myš pripojená k "
-"počítaču. Sériové porty používajú konektory s 9 alebo 25 vývodmi (DB-9 alebo "
-"DB-25) typu samec, konektor na myši je typu samica. Porty PS/2 sú malé "
-"okrúhle konektory (DIN) so 6 vývodmi typu samica, konektor myši je typu "
-"samec. Ďalej môžete použiť USB myš, zbernicovú (veľmi starú) myš alebo "
-"program gpm ako opakovač. Ak potrebujete pripojiť alebo odpojiť PS/2 alebo "
-"zbernicové zariadenie, počítač musíte vypnúť."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Mouse protocol:"
-msgstr "Protokol myši:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Emulate 3 button mouse?"
-msgstr "Emulovať trojtlačidlovú myš?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"Väčšina programov v X Window Systéme predpokladá, že myš má tri tlačidlá "
-"(ľavé, prostredné a pravé). Myš s dvoma tlačidlami môže emulovať prostredné "
-"tlačidlo súčasným stlačením oboch tlačidiel."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"Táto voľba bude fungovať aj na trojtlačidlových a viac-tlačidlových myšiach; "
-"prostredné tlačidlo bude normálne fungovať."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"Tento konfiguračný nástroj nepodporuje viac ako päť tlačidiel (vrátane "
-"kolieska, ktoré sa počíta za dve - jedno \"nahor\" a jedno \"nadol\", pričom "
-"tretím je \"klik\" kolieska)."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:22001
 msgid "Attempt monitor autodetection?"
 msgstr "Pokúsiť sa o rozpoznanie monitora?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -722,7 +635,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr ""
@@ -731,13 +644,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Spôsob voľby vlastností monitora:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -747,7 +660,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -759,7 +672,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -771,7 +684,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -781,56 +694,56 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "Up to 14 inches (355 mm)"
 msgstr "Do 14 palcov (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "15 inches (380 mm)"
 msgstr "15 palcov (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "17 inches (430 mm)"
 msgstr "17 palcov (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 palcov (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "21 inches (530 mm) or more"
 msgstr "21 palcov (530 mm) alebo viac"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "Approximate monitor size:"
 msgstr "Približná veľkosť monitora:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Veľmi kvalitné monitory vedia pracovať aj s nastavením z vyššej kategórie."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's best video mode:"
 msgstr "Najlepší režim monitora:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -846,19 +759,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:23001
 msgid "Generic Monitor"
 msgstr "Všeobecný monitor"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Zapísať frekvenčné rozsahy monitora do konfiguračného súboru?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -870,13 +783,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid "Monitor's horizontal sync range:"
 msgstr "Horizontálna frekvencia monitora:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -890,13 +803,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid "Monitor's vertical refresh range:"
 msgstr "Vertikálna frekvenciu monitora:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -910,13 +823,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid "Incorrect values entered"
 msgstr "Nesprávne zadané hodnoty"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -926,13 +839,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid "Desired default color depth in bits:"
 msgstr "Požadovaná predvolená hĺbka farieb v bitoch:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -947,7 +860,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -959,49 +872,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "Empty value"
 msgstr "Prázdna hodnota"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "A null entry is not permitted for this value."
 msgstr "Pre túto položku nie je dovolená prázdna hodnota."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Invalid double-quote characters"
 msgstr "Neplatné úvodzovky"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "V hodnote položky nie sú dovolené úvodzovky (\")."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Numerical value needed"
 msgstr "Požadovaná číselná hodnota"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "V položke nie sú dovolené iné znaky ako číslice."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid "Autodetect keyboard layout?"
 msgstr "Automaticky rozpoznať rozloženie klávesnice?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1012,7 +925,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1167,6 +1080,69 @@ msgstr ""
 "Inštalácia tohto balíka teraz skončí s chybou, aby ste mohli vykonať "
 "potrebný zásah. Po vyčistení adresára musíte znovu spustiť aktualizačnú "
 "procedúru."
+
+#~ msgid "Mouse port:"
+#~ msgstr "Port myši:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "Pre správnu funkciu grafického rozhrania X Window System je nutné poznať "
+#~ "vlastnosti pripojenej myši (alebo iného ukazovacieho zariadenia, akým je "
+#~ "napr. trackball)."
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "Najprv je nutné určiť port (typ pripojenia), ktorým je myš pripojená k "
+#~ "počítaču. Sériové porty používajú konektory s 9 alebo 25 vývodmi (DB-9 "
+#~ "alebo DB-25) typu samec, konektor na myši je typu samica. Porty PS/2 sú "
+#~ "malé okrúhle konektory (DIN) so 6 vývodmi typu samica, konektor myši je "
+#~ "typu samec. Ďalej môžete použiť USB myš, zbernicovú (veľmi starú) myš "
+#~ "alebo program gpm ako opakovač. Ak potrebujete pripojiť alebo odpojiť "
+#~ "PS/2 alebo zbernicové zariadenie, počítač musíte vypnúť."
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "Protokol myši:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "Emulovať trojtlačidlovú myš?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "Väčšina programov v X Window Systéme predpokladá, že myš má tri tlačidlá "
+#~ "(ľavé, prostredné a pravé). Myš s dvoma tlačidlami môže emulovať "
+#~ "prostredné tlačidlo súčasným stlačením oboch tlačidiel."
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "Táto voľba bude fungovať aj na trojtlačidlových a viac-tlačidlových "
+#~ "myšiach; prostredné tlačidlo bude normálne fungovať."
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "Tento konfiguračný nástroj nepodporuje viac ako päť tlačidiel (vrátane "
+#~ "kolieska, ktoré sa počíta za dve - jedno \"nahor\" a jedno \"nadol\", "
+#~ "pričom tretím je \"klik\" kolieska)."
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "Pokúsiť sa o rozpoznanie myši?"

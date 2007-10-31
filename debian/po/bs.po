@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 16:27-0400\n"
+"POT-Creation-Date: 2007-10-31 16:42-0400\n"
 "PO-Revision-Date: 2006-11-01 01:17+0100\n"
 "Last-Translator: Safir Secerovic <sapphire@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
@@ -629,104 +629,15 @@ msgstr ""
 msgid "When in doubt, this value should be left blank."
 msgstr "Ako ste u nedoumici, ovu vrijednost ostavite praznu."
 
-#. Type: select
+#. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:19001
-msgid "Mouse port:"
-msgstr "Port miša:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"Kako bi X Window System grafički korisnički interfejs ispravno radio, "
-"određene karakteristike miša (ili drugog pokazivačkog uređaja, poput "
-"trackball-a) moraju biti poznate."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"Potrebno je odrediti koji port (tip konekcije) se koristi kod vašeg miša. "
-"Serijski portovi koriste konektore u obliku slova D sa 9 ili 25 pinova (tzv. "
-"DB-9 ili DB-25); konektor miša je ženski (sa rupama), a konektor na računaru "
-"je muški (ima pinove).  PS/2 portovi su mali okrugli konektori (DIN) sa 6 "
-"pinova; konektor miša je muški a na strani računara je ženski.  Možete "
-"koristiti i USB miš, ili bus/inport miš (veoma stari tip), ili pak program "
-"gpm kao 'repeater'.  Ako trebate spojiti ili odspojiti PS/2 ili bus/inport "
-"uređaje, molim napravite to kada je računar ugašen."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Mouse protocol:"
-msgstr "Protokol miša:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Emulate 3 button mouse?"
-msgstr "Emulirati treće dugme na mišu?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"Većina programa u X Window System-u očekuje da miš ima 3 dugmeta (lijeva, "
-"desno i srednje).  Miševi sa samo 2 dugmeta mogu emulirati prisustvo "
-"srednjeg dugmeta tako što tretiraju simultane klikove ili povlačenja lijevog "
-"i desnog dugmeta kao klikove srednjeg dugmeta."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"Ova opcija se takođe može koristiti na miševima s 3 ili više dugmadi; "
-"srednje dugme će nastaviti raditi normalno."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"Primijetite da dugmad miša iznad broja pet (računajući kotačić kao dva "
-"dugmeta, po jedno za \"gore\" i \"dole\", te treće ako dugme može "
-"'kliknuti') nisu još podržana u ovom konfiguracionom halatu."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:22001
 msgid "Attempt monitor autodetection?"
 msgstr "Pokušati autodetekciju monitora?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -741,20 +652,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "Ako autodetekcija ne uspije, bićete pitani o informacijama o monitoru."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Metod za odabir karakteristika monitora:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -764,7 +675,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -776,7 +687,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -788,7 +699,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -798,43 +709,43 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "Up to 14 inches (355 mm)"
 msgstr "Do 14 inča (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "15 inches (380 mm)"
 msgstr "15 inča (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "17 inches (430 mm)"
 msgstr "17 inča (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 inča (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "21 inches (530 mm) or more"
 msgstr "21 inča (530 mm) i veći"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "Approximate monitor size:"
 msgstr "Približna veličina monitora:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Visoko-kvalitetni CRT-ovi mogu biti u mogućnosti da koriste sljedeću "
@@ -842,13 +753,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's best video mode:"
 msgstr "Monitorov najbolji video mod:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -866,19 +777,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:23001
 msgid "Generic Monitor"
 msgstr "Neki monitor"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "Spremiti sinhronizacione opsege monitora u konfiguracijsku datoteku?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -890,13 +801,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid "Monitor's horizontal sync range:"
 msgstr "Horizontalni sinhronizacioni opseg monitora:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -910,13 +821,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid "Monitor's vertical refresh range:"
 msgstr "Vertikalni sinhronizacioni opseg monitora:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -930,13 +841,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid "Incorrect values entered"
 msgstr "Neispravne vrijednosti unešene"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -946,13 +857,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid "Desired default color depth in bits:"
 msgstr "Željena podrazumijevana dubina boje u bitovima:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -968,7 +879,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -980,49 +891,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "Empty value"
 msgstr "Prazna vrijednost"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "A null entry is not permitted for this value."
 msgstr "Prazan unos nije dozvoljen za ovu vrijednost."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Invalid double-quote characters"
 msgstr "Neispravni znaci dvostrukih navodnika"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Znaci dvostrukih navodnika (\") nisu dozvoljeni u vrijednosti unosa."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Numerical value needed"
 msgstr "Potrebna brojna vrijednost"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Drugi znaci osim cifara nisu dozvoljeni u ovom unosu."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid "Autodetect keyboard layout?"
 msgstr "Autodetektovati raspored tastature?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1033,7 +944,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1192,6 +1103,72 @@ msgstr ""
 "Instalacija ovog paketa će se sada prekinuti tako da možete uraditi to. "
 "Molim ponovo pokrenite postupak nadogradnje (upgrade) nakon što očistite "
 "direktorij."
+
+#~ msgid "Mouse port:"
+#~ msgstr "Port miša:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "Kako bi X Window System grafički korisnički interfejs ispravno radio, "
+#~ "određene karakteristike miša (ili drugog pokazivačkog uređaja, poput "
+#~ "trackball-a) moraju biti poznate."
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "Potrebno je odrediti koji port (tip konekcije) se koristi kod vašeg miša. "
+#~ "Serijski portovi koriste konektore u obliku slova D sa 9 ili 25 pinova "
+#~ "(tzv. DB-9 ili DB-25); konektor miša je ženski (sa rupama), a konektor na "
+#~ "računaru je muški (ima pinove).  PS/2 portovi su mali okrugli konektori "
+#~ "(DIN) sa 6 pinova; konektor miša je muški a na strani računara je "
+#~ "ženski.  Možete koristiti i USB miš, ili bus/inport miš (veoma stari "
+#~ "tip), ili pak program gpm kao 'repeater'.  Ako trebate spojiti ili "
+#~ "odspojiti PS/2 ili bus/inport uređaje, molim napravite to kada je računar "
+#~ "ugašen."
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "Protokol miša:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "Emulirati treće dugme na mišu?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "Većina programa u X Window System-u očekuje da miš ima 3 dugmeta (lijeva, "
+#~ "desno i srednje).  Miševi sa samo 2 dugmeta mogu emulirati prisustvo "
+#~ "srednjeg dugmeta tako što tretiraju simultane klikove ili povlačenja "
+#~ "lijevog i desnog dugmeta kao klikove srednjeg dugmeta."
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "Ova opcija se takođe može koristiti na miševima s 3 ili više dugmadi; "
+#~ "srednje dugme će nastaviti raditi normalno."
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "Primijetite da dugmad miša iznad broja pet (računajući kotačić kao dva "
+#~ "dugmeta, po jedno za \"gore\" i \"dole\", te treće ako dugme može "
+#~ "'kliknuti') nisu još podržana u ovom konfiguracionom halatu."
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "Pokušati autodetekciju miša?"

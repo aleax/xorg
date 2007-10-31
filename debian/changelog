@@ -7,6 +7,15 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   * dexconf: Set SERVER to xorg
   * Don't ask for the monitor identifier, just use a generic name
   * Delete the obsolete template question for autodetect mouse
+  * Don't ask for the mouse port or protocol any more
+    + Will be set to /dev/input/mice by default.
+    + Add udev to xserver-xorg recommends to make sure this device file is
+      present on normal systems
+    + Will be set to "auto" protocol by default. This will let the driver
+      choose the correct protocol automatically. The kernel driver multiplexes
+      different protocols through the same /dev/input/mice device file,
+      allowing this. Only in pathological cases will you need to work around
+      it.
 
   [ Christian Perrier ]
   * Hebrew. Closes: #447308
@@ -47,7 +56,7 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   * dexconf: don't generate two mouse sections.  Touchpads will be handled
     through input-hotplug.
 
- -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 16:34:18 -0400
+ -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 16:39:51 -0400
 
 xorg (1:7.3+2) unstable; urgency=low
 

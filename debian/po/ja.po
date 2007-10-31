@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.0.14\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 16:27-0400\n"
+"POT-Creation-Date: 2007-10-31 16:42-0400\n"
 "PO-Revision-Date: 2007-04-17 23:42+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org> and ISHIKAWA Mutsumi "
 "<ishikawa@debian.org>\n"
@@ -635,105 +635,15 @@ msgstr ""
 msgid "When in doubt, this value should be left blank."
 msgstr "よくわからなければ、この値は空のままにしておくべきです。"
 
-#. Type: select
+#. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:19001
-msgid "Mouse port:"
-msgstr "マウスポート:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"X Window System のグラフィカルユーザインタフェースを正しく動作させるために"
-"は、あなたのマウス (あるいはトラックボールのようなその他のポインティングデバ"
-"イス) の正しい特性を知ることが必要です。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"どのポート (接続タイプ) をあなたのマウスが使っているかを決めることが必要で"
-"す。シリアルポートは 9 または 25 ピンの D 型のコネクタ (またの名を DB-9 や "
-"DB-25) を利用し、マウス側のコネクタはメス (穴側) で、コンピュータ側のコネクタ"
-"はオス (ピン側) です。PS/2 ポートは 6 ピンの小さな円形のコネクタ (DIN) です。"
-"マウス側のコネクタはオスで、コンピュータ側はメスです。あるいは USB マウスや、"
-"バス/インポートマウス (非常に古い) を使っているか、あるいはリピータとして "
-"gpm プログラムを使って いるかもしれません。もしデバイスを装着あるいはあなたの"
-"コンピュータから除去する必要がある場合は、シャットダウンした上で電源を切って"
-"下さい。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Mouse protocol:"
-msgstr "マウスプロトコル:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Emulate 3 button mouse?"
-msgstr "3 ボタンマウスのエミュレートを行いますか?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"X Window System のほとんどのプログラムは、あなたのマウスが 3 つのボタン (左、"
-"右、それに真ん中) を持っていると想定しています。2 ボタンしかないマウスでは、"
-"中ボタンイベントを行いたいときに左右のボタンを同時にクリックするかドラッグす"
-"ることで、中ボタンを実行したようにエミュレートできます。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"この選択は3 つ以上のボタンがあるマウスでも利用できます。中ボタンは普通に中ボ"
-"タンとして働き続けます。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"5 つを超えるマウスボタン (スクロールホイールは「上」と「下」の 2 つのボタンと"
-"して計上され、3 つ目はホイールの「クリック」です) はまだこの設定ツールではサ"
-"ポートされていないことに注意して下さい。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:22001
 msgid "Attempt monitor autodetection?"
 msgstr "モニタの自動認識を試みますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -748,20 +658,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "自動検出に失敗すると、モニタに関する情報を尋ねられます。"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "モニタ特性を選択する方法:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -771,7 +681,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -783,7 +693,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -795,7 +705,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -805,55 +715,55 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "Up to 14 inches (355 mm)"
 msgstr "14 インチ (355 mm) 以下"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "15 inches (380 mm)"
 msgstr "15 インチ (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "17 inches (430 mm)"
 msgstr "17 インチ (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19〜20 インチ (480 〜 510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "21 inches (530 mm) or more"
 msgstr "21 インチ (530 mm) 以上"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "Approximate monitor size:"
 msgstr "あなたのモニタサイズに近似のもの:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr "高品質の CRT では、2 番目に大きなサイズを使うことができるでしょう。"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's best video mode:"
 msgstr "モニタに最適なビデオモード:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -871,19 +781,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:23001
 msgid "Generic Monitor"
 msgstr "Generic Monitor"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "設定ファイルにモニタ同期範囲を書き込みますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -895,13 +805,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid "Monitor's horizontal sync range:"
 msgstr "モニタの水平同期の範囲:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -915,13 +825,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid "Monitor's vertical refresh range:"
 msgstr "モニタの垂直リフレッシュの範囲:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -935,13 +845,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid "Incorrect values entered"
 msgstr "無効な値が入力されました"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -951,13 +861,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid "Desired default color depth in bits:"
 msgstr "使いたいデフォルトの色深度のビット数:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -973,7 +883,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -985,49 +895,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "Empty value"
 msgstr "空の値"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "A null entry is not permitted for this value."
 msgstr "この値では空の値は許されていません。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Invalid double-quote characters"
 msgstr "無効な二重引用符文字"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "ここでは二重引用符 (\") の使用はできません。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Numerical value needed"
 msgstr "数値が必要です"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "数字以外の文字はここでは入力しないで下さい。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid "Autodetect keyboard layout?"
 msgstr "キーボードレイアウトを自動検出しますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1038,7 +948,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1194,6 +1104,72 @@ msgid ""
 msgstr ""
 "このパッケージのインストールは、上記の作業ができるよう、ただちに失敗し、終了"
 "します。ディレクトリを清掃したあと、更新処理を再実行してください。"
+
+#~ msgid "Mouse port:"
+#~ msgstr "マウスポート:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "X Window System のグラフィカルユーザインタフェースを正しく動作させるために"
+#~ "は、あなたのマウス (あるいはトラックボールのようなその他のポインティングデ"
+#~ "バイス) の正しい特性を知ることが必要です。"
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "どのポート (接続タイプ) をあなたのマウスが使っているかを決めることが必要で"
+#~ "す。シリアルポートは 9 または 25 ピンの D 型のコネクタ (またの名を DB-9 "
+#~ "や DB-25) を利用し、マウス側のコネクタはメス (穴側) で、コンピュータ側のコ"
+#~ "ネクタはオス (ピン側) です。PS/2 ポートは 6 ピンの小さな円形のコネクタ "
+#~ "(DIN) です。マウス側のコネクタはオスで、コンピュータ側はメスです。あるい"
+#~ "は USB マウスや、バス/インポートマウス (非常に古い) を使っているか、あるい"
+#~ "はリピータとして gpm プログラムを使って いるかもしれません。もしデバイスを"
+#~ "装着あるいはあなたのコンピュータから除去する必要がある場合は、シャットダウ"
+#~ "ンした上で電源を切って下さい。"
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "マウスプロトコル:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "3 ボタンマウスのエミュレートを行いますか?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "X Window System のほとんどのプログラムは、あなたのマウスが 3 つのボタン "
+#~ "(左、右、それに真ん中) を持っていると想定しています。2 ボタンしかないマウ"
+#~ "スでは、中ボタンイベントを行いたいときに左右のボタンを同時にクリックするか"
+#~ "ドラッグすることで、中ボタンを実行したようにエミュレートできます。"
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "この選択は3 つ以上のボタンがあるマウスでも利用できます。中ボタンは普通に中"
+#~ "ボタンとして働き続けます。"
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "5 つを超えるマウスボタン (スクロールホイールは「上」と「下」の 2 つのボタ"
+#~ "ンとして計上され、3 つ目はホイールの「クリック」です) はまだこの設定ツール"
+#~ "ではサポートされていないことに注意して下さい。"
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "マウスの自動認識を試みますか?"

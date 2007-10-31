@@ -664,21 +664,6 @@ if [ -z "$2" ]; then
   FIRSTINST=yes
 fi
 
-# The only supported protocol (per Zephaniah Hull) for the GPM repeater is
-# IntelliMouse; migrate anyone using that mouse device to that protocol.  Other
-# values used to work as well, but no longer do since the XFree86 mouse driver
-# was rewritten for XFree86 4.3.0.  See Debian bug #233933 for more details.
-db_get xserver-xorg/config/inputdevice/mouse/port
-if [ "$RET" = "/dev/gpmdata" ]; then
-  db_get xserver-xorg/config/inputdevice/mouse/protocol
-  if [ "$RET" != "IntelliMouse" ]; then
-    observe "migrating template" \
-            "\"xserver-xorg/config/inputdevice/mouse/protocol\" from" \
-            "\"$RET\" to \"IntelliMouse\""
-    db_set xserver-xorg/config/inputdevice/mouse/protocol "IntelliMouse"
-  fi
-fi
-
 debug_echo "Configuring $THIS_PACKAGE."
 
 # default X server
@@ -1186,38 +1171,6 @@ MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil low)" xser
 
 MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
 
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/port "/dev/input/mice"
-
-db_get xserver-xorg/config/inputdevice/mouse/port
-case "$RET" in
-  *psaux)
-    MOUSE_PROTOCOL_CHOICES="PS/2, ImPS/2, GlidePointPS/2, NetMousePS/2, NetScrollPS/2, ThinkingMousePS/2, MouseManPlusPS/2, ExplorerPS/2"
-    DEFAULT_PROTOCOL="PS/2"
-    ;;
-  *ttyS*|*tts/*)
-    MOUSE_PROTOCOL_CHOICES="Auto, Microsoft, MouseSystems, GlidePoint, ThinkingMouse, ValuMouseScroll, MouseMan, Logitech, IntelliMouse, MMSeries, MMHitTab"
-    DEFAULT_PROTOCOL="Auto"
-    ;;
-  *input/mice)
-    MOUSE_PROTOCOL_CHOICES="ImPS/2, ExplorerPS/2"
-    DEFAULT_PROTOCOL="ImPS/2"
-    ;;
-  *atibm|*atixl|*sunmouse)
-    MOUSE_PROTOCOL_CHOICES="BusMouse"
-    DEFAULT_PROTOCOL="BusMouse"
-    ;;
-  *gpmdata)
-    MOUSE_PROTOCOL_CHOICES="IntelliMouse"
-    DEFAULT_PROTOCOL="IntelliMouse"
-    ;;
-esac
-db_subst xserver-xorg/config/inputdevice/mouse/protocol choices $MOUSE_PROTOCOL_CHOICES
-if ! expr "$MOUSE_PROTOCOL_CHOICES" : ".*,.*" > /dev/null 2>&1; then
-  debug_echo "\$MOUSE_PROTOCOL_CHOICES has only one value; setting xserver-xorg/config/inputdevice/mouse/protocol to \"$DEFAULT_PROTOCOL\""
-  db_set xserver-xorg/config/inputdevice/mouse/protocol "$DEFAULT_PROTOCOL"
-else
-  auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/mouse/protocol "${AUTODETECTED_PROTOCOL:-$DEFAULT_PROTOCOL}"
-fi
 
 auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/emulate3buttons true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/inputdevice/mouse/emulate3buttons" "$?"
 db_go

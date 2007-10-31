@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.0.24\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 16:27-0400\n"
+"POT-Creation-Date: 2007-10-31 16:42-0400\n"
 "PO-Revision-Date: 2006-09-10 01:21+0200\n"
 "Last-Translator: David Martinez Moreno <ender@debian.org>\n"
 "Language-Team: ES <debian-l10n-spanish@lists.debian.org>\n"
@@ -664,108 +664,15 @@ msgstr ""
 msgid "When in doubt, this value should be left blank."
 msgstr "Si tiene dudas, deje este campo en blanco."
 
-#. Type: select
+#. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:19001
-msgid "Mouse port:"
-msgstr "Puerto de ratón:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"Para que el interfaz gráfico de usuario del sistema X Window funcione "
-"correctamente, han de conocerse ciertas características de su ratón (o "
-"cualquier otro dispositivo apuntador, como un «trackball»)."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"Es necesario determinar qué puerto (o tipo de conector) usa su ratón. Los "
-"puertos serie usan unos conectores en forma de D con 9 o 25 pines (o "
-"patillas), y también se los conoce como DB-9 o DB-25, respectivamente; el "
-"conector del ratón es hembra (tiene agujeros) y el conector en el ordenador "
-"es macho (tiene pines o patillas). Los puertos PS/2 son pequeños conectores "
-"redondos (DIN) con 6 pines; el conector del ratón es macho y el del "
-"ordenador hembra. De forma alternativa, puede tener un ratón USB, un ratón "
-"bus/inport (muy antiguos), o estar usando el programa gpm como repetidor. Si "
-"necesita conectar o quitar dispositivos PS/2 o bus/inport de su computadora, "
-"por favor, hágalo con la computadora apagada."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Mouse protocol:"
-msgstr "Procolo del ratón:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Emulate 3 button mouse?"
-msgstr "¿Emular un ratón de 3 botones?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"La mayoría de los programas en el sistema X Window esperan que su ratón "
-"tenga 3 botones (izquierdo, derecho, y central). Los ratones con sólo 2 "
-"botones pueden emular la presencia de un botón central tratando las "
-"pulsaciones simultáneas o arrastres de los botones izquierdo y derecho como "
-"eventos del botón central."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"Esta opción también se puede usar con ratones con 3 o más botones, y el "
-"botón central continuará funcionando normalmente."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"Tenga en cuenta que esta herramienta de configuración no soporta ratones  de "
-"más de cinco botones (contando la rueda de desplazamiento como dos botones, "
-"uno para \"arriba\" y otro para \"abajo\", y un tercero si la rueda se puede "
-"\"pulsar\")."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:22001
 msgid "Attempt monitor autodetection?"
 msgstr "¿Intentar la detección automática del monitor?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -782,20 +689,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "Si la autodetección falla, se le pedirá información de su monitor."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Método para seleccionar las características de su monitor:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -805,7 +712,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -818,7 +725,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -830,7 +737,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -840,43 +747,43 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "Up to 14 inches (355 mm)"
 msgstr "Hasta 14 pulgadas (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "15 inches (380 mm)"
 msgstr "15 pulgadas (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "17 inches (430 mm)"
 msgstr "17 pulgadas (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 pulgadas (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:21001
 msgid "21 inches (530 mm) or more"
 msgstr "21 pulgadas (530 mm) o más"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "Approximate monitor size:"
 msgstr "Por favor, escoja el tamaño aproximado de su monitor:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24002
+#: ../xserver-xorg.templates:21002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Los monitores CRT de buena calidad pueden ser capaces de usar la siguiente "
@@ -884,13 +791,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's best video mode:"
 msgstr "Mejor modo de vídeo de su monitor:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -910,13 +817,13 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:23001
 msgid "Generic Monitor"
 msgstr "Monitor genérico"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
 "¿Escribir los rangos de sincronismo del monitor en el fichero de "
@@ -924,7 +831,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -937,13 +844,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid "Monitor's horizontal sync range:"
 msgstr "Rango de sincronización horizontal de su monitor:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -958,13 +865,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid "Monitor's vertical refresh range:"
 msgstr "Rango de refresco vertical de su monitor:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -979,13 +886,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid "Incorrect values entered"
 msgstr "Los valores introducidos son incorrectos."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:27001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -995,13 +902,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid "Desired default color depth in bits:"
 msgstr "Profundidad de color (en bits) deseada:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1017,7 +924,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1030,25 +937,25 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "Empty value"
 msgstr "Valor vacío"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:29001
 msgid "A null entry is not permitted for this value."
 msgstr "No se permite un valor nulo en este campo."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Invalid double-quote characters"
 msgstr "Se han hallado comillas inválidas"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:30001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr ""
 "Las dobles comillas (\") o las comillas tipográficas («») no están "
@@ -1056,25 +963,25 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Numerical value needed"
 msgstr "Es necesario un valor numérico"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:31001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "En esta entrada no se permiten caracteres que no sean números."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid "Autodetect keyboard layout?"
 msgstr "¿Se debe autodetectar el diseño de su teclado?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1086,7 +993,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:32001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1247,6 +1154,75 @@ msgstr ""
 "La instalación de este paquete terminará con un error ahora para que pueda "
 "hacerlo. Por favor, ejecute de nuevo su procedimiento de actualización una "
 "vez que haya vaciado el directorio."
+
+#~ msgid "Mouse port:"
+#~ msgstr "Puerto de ratón:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "Para que el interfaz gráfico de usuario del sistema X Window funcione "
+#~ "correctamente, han de conocerse ciertas características de su ratón (o "
+#~ "cualquier otro dispositivo apuntador, como un «trackball»)."
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "Es necesario determinar qué puerto (o tipo de conector) usa su ratón. Los "
+#~ "puertos serie usan unos conectores en forma de D con 9 o 25 pines (o "
+#~ "patillas), y también se los conoce como DB-9 o DB-25, respectivamente; el "
+#~ "conector del ratón es hembra (tiene agujeros) y el conector en el "
+#~ "ordenador es macho (tiene pines o patillas). Los puertos PS/2 son "
+#~ "pequeños conectores redondos (DIN) con 6 pines; el conector del ratón es "
+#~ "macho y el del ordenador hembra. De forma alternativa, puede tener un "
+#~ "ratón USB, un ratón bus/inport (muy antiguos), o estar usando el programa "
+#~ "gpm como repetidor. Si necesita conectar o quitar dispositivos PS/2 o bus/"
+#~ "inport de su computadora, por favor, hágalo con la computadora apagada."
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "Procolo del ratón:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "¿Emular un ratón de 3 botones?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "La mayoría de los programas en el sistema X Window esperan que su ratón "
+#~ "tenga 3 botones (izquierdo, derecho, y central). Los ratones con sólo 2 "
+#~ "botones pueden emular la presencia de un botón central tratando las "
+#~ "pulsaciones simultáneas o arrastres de los botones izquierdo y derecho "
+#~ "como eventos del botón central."
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "Esta opción también se puede usar con ratones con 3 o más botones, y el "
+#~ "botón central continuará funcionando normalmente."
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "Tenga en cuenta que esta herramienta de configuración no soporta ratones  "
+#~ "de más de cinco botones (contando la rueda de desplazamiento como dos "
+#~ "botones, uno para \"arriba\" y otro para \"abajo\", y un tercero si la "
+#~ "rueda se puede \"pulsar\")."
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "¿Intentar detectar el ratón automáticamente?"
