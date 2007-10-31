@@ -244,22 +244,6 @@ _Description: Keyboard options:
  .
  When in doubt, this value should be left blank.
 
-Template: xserver-xorg/autodetect_mouse
-Type: boolean
-Default: true
-_Description: Attempt mouse device autodetection?
- If a mouse is attached to the computer, autodetection can be attempted;
- it may help to move the mouse while detection is attempted (the
- gpm program should be stopped if it is used).  Plugging  a PS/2 or
- bus/inport mouse now requires rebooting.
- .
- Do not choose this option if you wish to select a mouse type manually.
- .
- If you choose it and autodetection fails, you will be asked this
- question again.  Autodetection can be attempted as many times as desired.  If
- it succeeds, further configuration questions about the mouse will be
- pre-answered.
-
 Template: xserver-xorg/config/inputdevice/mouse/port
 Type: select
 Choices: /dev/input/mice, /dev/psaux, /dev/ttyS0, /dev/tts0, /dev/gpmdata

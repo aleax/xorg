@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer xserver-xorg\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-30 15:08-0400\n"
+"POT-Creation-Date: 2007-10-31 16:27-0400\n"
 "PO-Revision-Date: 2006-09-27 11:15+0300\n"
 "Last-Translator: Tapio Lehtonen <tale@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -623,55 +623,15 @@ msgstr ""
 msgid "When in doubt, this value should be left blank."
 msgstr "Jos on epävarma, olisi tämä arvo jätettävä tyhjäksi."
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid "Attempt mouse device autodetection?"
-msgstr "Yritetäänkö tunnistaa hiiri automaattisesti?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"If a mouse is attached to the computer, autodetection can be attempted; it "
-"may help to move the mouse while detection is attempted (the gpm program "
-"should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
-"requires rebooting."
-msgstr ""
-"Jos hiiri on kytkettynä tietokoneesseen, voidaan yrittää automaattista "
-"laitetunnistusta; voi olla eduksi liikutella hiirtä tunnistuksen aikana "
-"(ohjelma gpm olisi sammutettava jos se on käytössä). Jos PS/2- tai "
-"väylähiiri kytketään nyt, tarvitaan tietokoneen uudelleenkäynnistys."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid "Do not choose this option if you wish to select a mouse type manually."
-msgstr "Tätä ei pidä valita jos hiiren tyyppi halutaan antaa itse."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"If you choose it and autodetection fails, you will be asked this question "
-"again.  Autodetection can be attempted as many times as desired.  If it "
-"succeeds, further configuration questions about the mouse will be pre-"
-"answered."
-msgstr ""
-"Jos tämä valittiin ja automaattinen laitetunnistus epäonnistuu, kysytään "
-"tämä kysymys uudestaan. Automaattista laitetunnistusta voidaan yrittää "
-"kuinka monta kertaa vaan. Jos se onnistuu, enemmät hiirtä koskevat "
-"kysymykset saavat valmiin vastauksen."
-
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid "Mouse port:"
 msgstr "Hiiren portti:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the mouse (or other pointing device, such as a "
@@ -683,7 +643,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "It is necessary to determine which port (connection type) is used by the "
 "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
@@ -706,19 +666,19 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid "Mouse protocol:"
 msgstr "Hiiren protokolla:"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid "Emulate 3 button mouse?"
 msgstr "Emuloidaanko 3-näppäimistä hiirtä?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "Most programs in the X Window System expect the mouse to have 3 buttons "
 "(left, right, and middle).  Mice with only 2 buttons can emulate the "
@@ -732,7 +692,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "This option may also be used on mice with 3 or more buttons; the middle "
 "button will continue to work normally."
@@ -742,7 +702,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "Note that mouse buttons in excess of five (counting a scroll wheel as two "
 "buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
@@ -754,13 +714,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid "Attempt monitor autodetection?"
 msgstr "Yritetäänkö tunnistaa näyttö automaattisesti?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -775,20 +735,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "Näytön tiedot kysytään jos automaattinen laitetunnistus epäonnistuu."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Tapa jolla näytön ominaisuudet kysytään:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -798,7 +758,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -810,7 +770,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -823,7 +783,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -833,43 +793,43 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "Up to 14 inches (355 mm)"
 msgstr "Enintään 14 tuumaa (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "15 inches (380 mm)"
 msgstr "Enintään 15 tuumaa (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "17 inches (430 mm)"
 msgstr "Enintään 17 tuumaa (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19 - 20 tuumaa (480 - 510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "21 inches (530 mm) or more"
 msgstr "Yli 21 tuumaa (530 mm)"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25002
+#: ../xserver-xorg.templates:24002
 msgid "Approximate monitor size:"
 msgstr "Näytön koko suunnilleen:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:25002
+#: ../xserver-xorg.templates:24002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Laadukas kuvaputkinäyttö saattaa pystyä käyttämään seuraavaksi paremman "
@@ -877,13 +837,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid "Monitor's best video mode:"
 msgstr "Näytön paras näyttötila:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -901,13 +861,13 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid "Generic Monitor"
 msgstr "Tyypillinen näyttö"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
 "Kirjoitetaanko näytön vaaka- ja pystypoikkeutustaajuusalueet "
@@ -915,7 +875,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -928,13 +888,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Monitor's horizontal sync range:"
 msgstr "Näytön vaakapoikkeutustaajuusalue:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -948,13 +908,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Monitor's vertical refresh range:"
 msgstr "Näytön pystypoikkeutustaajuusalue:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -968,13 +928,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid "Incorrect values entered"
 msgstr "Annetut arvot olivat väärin"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -984,13 +944,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid "Desired default color depth in bits:"
 msgstr "Haluttu oletus värisyvyydelle bitteinä:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1006,7 +966,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:31001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1018,49 +978,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "Empty value"
 msgstr "Tyhjä arvo"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:32001
 msgid "A null entry is not permitted for this value."
 msgstr "Tämä arvo ei saa olla tyhjä."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Invalid double-quote characters"
 msgstr "Ei saa kirjoittaa lainausmerkkejä"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:33001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Lainausmerkit (\") eivät ole sallittuja arvossa."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Numerical value needed"
 msgstr "Tarvitaan numero"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:34001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Arvossa saa olla vain numeromerkkejä."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid "Autodetect keyboard layout?"
 msgstr "Tunnistetaanko näppäinasettelu automaattisesti?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1071,7 +1031,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:35001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1226,6 +1186,35 @@ msgid ""
 msgstr ""
 "Tämän paketin asennus päättyy nyt virheeseen, jotta tuo voidaan tehdä. "
 "Käynnistä päivitys uudestaan, kun hakemisto on siivottu."
+
+#~ msgid "Attempt mouse device autodetection?"
+#~ msgstr "Yritetäänkö tunnistaa hiiri automaattisesti?"
+
+#~ msgid ""
+#~ "If a mouse is attached to the computer, autodetection can be attempted; "
+#~ "it may help to move the mouse while detection is attempted (the gpm "
+#~ "program should be stopped if it is used).  Plugging  a PS/2 or bus/inport "
+#~ "mouse now requires rebooting."
+#~ msgstr ""
+#~ "Jos hiiri on kytkettynä tietokoneesseen, voidaan yrittää automaattista "
+#~ "laitetunnistusta; voi olla eduksi liikutella hiirtä tunnistuksen aikana "
+#~ "(ohjelma gpm olisi sammutettava jos se on käytössä). Jos PS/2- tai "
+#~ "väylähiiri kytketään nyt, tarvitaan tietokoneen uudelleenkäynnistys."
+
+#~ msgid ""
+#~ "Do not choose this option if you wish to select a mouse type manually."
+#~ msgstr "Tätä ei pidä valita jos hiiren tyyppi halutaan antaa itse."
+
+#~ msgid ""
+#~ "If you choose it and autodetection fails, you will be asked this question "
+#~ "again.  Autodetection can be attempted as many times as desired.  If it "
+#~ "succeeds, further configuration questions about the mouse will be pre-"
+#~ "answered."
+#~ msgstr ""
+#~ "Jos tämä valittiin ja automaattinen laitetunnistus epäonnistuu, kysytään "
+#~ "tämä kysymys uudestaan. Automaattista laitetunnistusta voidaan yrittää "
+#~ "kuinka monta kertaa vaan. Jos se onnistuu, enemmät hiirtä koskevat "
+#~ "kysymykset saavat valmiin vastauksen."
 
 #~ msgid "Identifier for the monitor:"
 #~ msgstr "Näytön tunniste:"
