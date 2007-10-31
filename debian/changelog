@@ -16,6 +16,11 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
       different protocols through the same /dev/input/mice device file,
       allowing this. Only in pathological cases will you need to work around
       it.
+  * Don't specify the device section to use in the screen section
+    + xserver-xorg-core 2:1.4-3 and above will use the first device section
+      listed when none is specified. We only write one device with this script
+      anyway.
+    + Have xserver-xorg depend on -core >= 2:1.4-3
 
   [ Christian Perrier ]
   * Hebrew. Closes: #447308
@@ -56,7 +61,7 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   * dexconf: don't generate two mouse sections.  Touchpads will be handled
     through input-hotplug.
 
- -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 16:39:51 -0400
+ -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 16:51:14 -0400
 
 xorg (1:7.3+2) unstable; urgency=low
 
