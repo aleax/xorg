@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.0.14\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 16:42-0400\n"
+"POT-Creation-Date: 2007-10-31 17:07-0400\n"
 "PO-Revision-Date: 2007-04-17 23:42+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org> and ISHIKAWA Mutsumi "
 "<ishikawa@debian.org>\n"
@@ -89,85 +89,15 @@ msgstr ""
 "「いいえ」を選んで下さい。もし利用できる X サーバが 1 つだけであれば X サーバ"
 "の選択は尋ねられません。"
 
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "No X server known for your video hardware"
-msgstr "あなたのビデオハードウェアに対応する X サーバがわかりませんでした"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"There is either no video hardware installed on this machine (e.g. serial "
-"console only), or the \"discover\" program was unable to determine which X "
-"server is appropriate for the video hardware.  This could be due to "
-"incomplete information in discover's hardware database, or because your "
-"video hardware is not supported by the available X servers."
-msgstr ""
-"このマシンにビデオハードウェアが装着されていない (シリアルコンソールのみ?) "
-"か、あるいは「discover」プログラムはあなたのビデオハードウェアに適切な X サー"
-"バを決定できませんでした。discover のハードウェアデータベースの情報が不完全な"
-"ためか、単純にあなたのビデオハードウェアが既存の X サーバのいずれによってもサ"
-"ポートされていないことが考えられます。"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Multiple potential default X servers for your hardware"
-msgstr "あなたのハードウェアにはデフォルト X サーバの候補が複数あります"
-
-#. Type: note
-#. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:7001
-msgid ""
-"Multiple video cards have been detected, and different X servers are "
-"required to support the various devices.  It is thus not possible to "
-"automatically select a default X server."
-msgstr ""
-"複数のビデオカードが検出され、それらのデバイスをサポートするために異なる X "
-"サーバが必要とされています。したがって、自動的にデフォルト X サーバを選択する"
-"ことは不可能です。"
-
-#. Type: note
-#. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:7001
-msgid ""
-"Please configure the device that will serve as this computer's \"primary head"
-"\"; this is generally the video card and monitor used for display when the "
-"computer is booted up."
-msgstr ""
-"このコンピュータの「プライマリヘッド」として提供するデバイスを設定して下さ"
-"い。これは一般に、コンピュータのブート時に表示するのに使うビデオカードおよび"
-"モニタです。"
-
-#. Type: note
-#. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:7001
-msgid ""
-"The configuration process currently only supports single-headed setups; "
-"however, the X server configuration files can be edited later to support a "
-"multi-head configuration."
-msgstr ""
-"設定処理ではシングルヘッド (1 つのビデオカード) のセットアップだけがサポート"
-"されています。ただし、マルチヘッド設定をサポートするよう、後で X サーバの設定"
-"ファイルを編集することもできます。"
-
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "Write default Files section to configuration file?"
 msgstr "設定ファイルにデフォルトの Files セクションを書きますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The Files section of the X server configuration file tells the X server "
 "where to find server modules, the RGB color database, and font files.  This "
@@ -180,7 +110,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Disable this option if you want to maintain a custom Files section into the "
 "X.Org server configuration file.  This may be needed to remove the reference "
@@ -194,21 +124,57 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr ""
 "あなたのハードウェア向けに、複数のデフォルト X.Org サーバドライバ候補がありま"
 "す"
 
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001
+msgid ""
+"Multiple video cards have been detected, and different X servers are "
+"required to support the various devices.  It is thus not possible to "
+"automatically select a default X server."
+msgstr ""
+"複数のビデオカードが検出され、それらのデバイスをサポートするために異なる X "
+"サーバが必要とされています。したがって、自動的にデフォルト X サーバを選択する"
+"ことは不可能です。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001
+msgid ""
+"Please configure the device that will serve as this computer's \"primary head"
+"\"; this is generally the video card and monitor used for display when the "
+"computer is booted up."
+msgstr ""
+"このコンピュータの「プライマリヘッド」として提供するデバイスを設定して下さ"
+"い。これは一般に、コンピュータのブート時に表示するのに使うビデオカードおよび"
+"モニタです。"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001
+msgid ""
+"The configuration process currently only supports single-headed setups; "
+"however, the X server configuration files can be edited later to support a "
+"multi-head configuration."
+msgstr ""
+"設定処理ではシングルヘッド (1 つのビデオカード) のセットアップだけがサポート"
+"されています。ただし、マルチヘッド設定をサポートするよう、後で X サーバの設定"
+"ファイルを編集することもできます。"
+
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "Identifier for your video card:"
 msgstr "あなたのビデオカードの識別子:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -221,19 +187,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid "Generic Video Card"
 msgstr "Generic Video Card"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "X server driver:"
 msgstr "X サーバドライバ:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -243,7 +209,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -253,13 +219,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid "Use kernel framebuffer device interface?"
 msgstr "カーネルフレームバッファデバイスを使いますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -271,7 +237,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -283,13 +249,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "Video card's bus identifier:"
 msgstr "ビデオカードのバス識別子:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -300,13 +266,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "Examples:"
 msgstr "例:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -318,7 +284,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -328,7 +294,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -338,19 +304,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "Incorrect format for the bus identifier"
 msgstr "バス識別子として無効なフォーマットです"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "XKB rule set to use:"
 msgstr "利用する XKB ルールセット:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -360,7 +326,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -370,7 +336,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -382,19 +348,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "よくわからなければ、この値を「xorg」に設定すべきです。"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard model:"
 msgstr "キーボードモデル:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -404,7 +370,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -438,7 +404,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -450,7 +416,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -462,7 +428,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -472,13 +438,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard layout:"
 msgstr "キーボードレイアウト:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -490,7 +456,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -502,7 +468,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -514,13 +480,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid "Keyboard variant:"
 msgstr "キーボードバリアント:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -532,7 +498,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -544,7 +510,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -558,20 +524,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "米国の英語キーボードのユーザは、一般的に空欄にしておくべきです。"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid "Keyboard options:"
 msgstr "キーボードオプション:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -584,7 +550,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -596,7 +562,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -611,7 +577,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -621,7 +587,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -631,19 +597,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid "When in doubt, this value should be left blank."
 msgstr "よくわからなければ、この値は空のままにしておくべきです。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:17001
 msgid "Attempt monitor autodetection?"
 msgstr "モニタの自動認識を試みますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -658,20 +624,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "自動検出に失敗すると、モニタに関する情報を尋ねられます。"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:18001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "モニタ特性を選択する方法:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -681,7 +647,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -693,7 +659,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -705,7 +671,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -715,55 +681,55 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:19001
 msgid "Up to 14 inches (355 mm)"
 msgstr "14 インチ (355 mm) 以下"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:19001
 msgid "15 inches (380 mm)"
 msgstr "15 インチ (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:19001
 msgid "17 inches (430 mm)"
 msgstr "17 インチ (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:19001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19〜20 インチ (480 〜 510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:19001
 msgid "21 inches (530 mm) or more"
 msgstr "21 インチ (530 mm) 以上"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:21002
+#: ../xserver-xorg.templates:19002
 msgid "Approximate monitor size:"
 msgstr "あなたのモニタサイズに近似のもの:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:21002
+#: ../xserver-xorg.templates:19002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr "高品質の CRT では、2 番目に大きなサイズを使うことができるでしょう。"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:20001
 msgid "Monitor's best video mode:"
 msgstr "モニタに最適なビデオモード:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:20001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -781,19 +747,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:21001
 msgid "Generic Monitor"
 msgstr "Generic Monitor"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:22001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "設定ファイルにモニタ同期範囲を書き込みますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -805,13 +771,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:23001
 msgid "Monitor's horizontal sync range:"
 msgstr "モニタの水平同期の範囲:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -825,13 +791,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:24001
 msgid "Monitor's vertical refresh range:"
 msgstr "モニタの垂直リフレッシュの範囲:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -845,13 +811,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:25001
 msgid "Incorrect values entered"
 msgstr "無効な値が入力されました"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -861,13 +827,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:26001
 msgid "Desired default color depth in bits:"
 msgstr "使いたいデフォルトの色深度のビット数:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -883,7 +849,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:26001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -895,49 +861,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:27001
 msgid "Empty value"
 msgstr "空の値"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:27001
 msgid "A null entry is not permitted for this value."
 msgstr "この値では空の値は許されていません。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:28001
 msgid "Invalid double-quote characters"
 msgstr "無効な二重引用符文字"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:28001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "ここでは二重引用符 (\") の使用はできません。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:29001
 msgid "Numerical value needed"
 msgstr "数値が必要です"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:29001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "数字以外の文字はここでは入力しないで下さい。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:30001
 msgid "Autodetect keyboard layout?"
 msgstr "キーボードレイアウトを自動検出しますか?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -948,7 +914,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:30001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1104,6 +1070,25 @@ msgid ""
 msgstr ""
 "このパッケージのインストールは、上記の作業ができるよう、ただちに失敗し、終了"
 "します。ディレクトリを清掃したあと、更新処理を再実行してください。"
+
+#~ msgid "No X server known for your video hardware"
+#~ msgstr "あなたのビデオハードウェアに対応する X サーバがわかりませんでした"
+
+#~ msgid ""
+#~ "There is either no video hardware installed on this machine (e.g. serial "
+#~ "console only), or the \"discover\" program was unable to determine which "
+#~ "X server is appropriate for the video hardware.  This could be due to "
+#~ "incomplete information in discover's hardware database, or because your "
+#~ "video hardware is not supported by the available X servers."
+#~ msgstr ""
+#~ "このマシンにビデオハードウェアが装着されていない (シリアルコンソールの"
+#~ "み?) か、あるいは「discover」プログラムはあなたのビデオハードウェアに適切"
+#~ "な X サーバを決定できませんでした。discover のハードウェアデータベースの情"
+#~ "報が不完全なためか、単純にあなたのビデオハードウェアが既存の X サーバのい"
+#~ "ずれによってもサポートされていないことが考えられます。"
+
+#~ msgid "Multiple potential default X servers for your hardware"
+#~ msgstr "あなたのハードウェアにはデフォルト X サーバの候補が複数あります"
 
 #~ msgid "Mouse port:"
 #~ msgstr "マウスポート:"

@@ -28,30 +28,6 @@ _Description: Attempt to autodetect video hardware?
  this option.  You will not be asked to select the X server if there is only
  one available.
 
-Template: shared/no_known_x-server
-Type: note
-_Description: No X server known for your video hardware
- There is either no video hardware installed on this machine (e.g. serial console
- only), or the "discover" program was unable to determine which X server is
- appropriate for the video hardware.  This could be due to incomplete
- information in discover's hardware database, or because your video
- hardware is not supported by the available X servers.
-
-Template: shared/multiple_possible_x-servers
-Type: note
-_Description: Multiple potential default X servers for your hardware
- Multiple video cards have been detected, and different X servers are required
- to support the various devices.  It is thus not possible to automatically
- select a default X server.
- .
- Please configure the device that will serve as
- this computer's "primary head"; this is generally the video card and monitor
- used for display when the computer is booted up.
- .
- The configuration process currently only supports single-headed setups;
- however, the X server configuration files can be edited later to support a
- multi-head configuration.
-
 Template: xserver-xorg/config/write_files_section
 Type: boolean
 Default: false
