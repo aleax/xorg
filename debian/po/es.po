@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.0.24\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 17:07-0400\n"
+"POT-Creation-Date: 2007-10-31 17:28-0400\n"
 "PO-Revision-Date: 2006-09-10 01:21+0200\n"
 "Last-Translator: David Martinez Moreno <ender@debian.org>\n"
 "Language-Team: ES <debian-l10n-spanish@lists.debian.org>\n"
@@ -91,51 +91,16 @@ msgstr ""
 "mismo, no acepte esta opción. No se le pedirá una elección de servidor X si "
 "tan sólo hay una opción disponible."
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Write default Files section to configuration file?"
-msgstr "¿Escribir sección Files por defecto en el fichero de configuración?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"The Files section of the X server configuration file tells the X server "
-"where to find server modules, the RGB color database, and font files.  This "
-"option is recommended to experienced users only.  In most cases, it should "
-"be enabled."
-msgstr ""
-"La sección Files del fichero de configuración le dice al servidor de X dónde "
-"encontrar módulos de servidor, la base de datos de color RGB, y ficheros de "
-"tipografías. Esta opción es para usuarios avanzados. En la gran mayoría de "
-"los casos, debería dejarla activada."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Disable this option if you want to maintain a custom Files section into the "
-"X.Org server configuration file.  This may be needed to remove the reference "
-"to the local font server, add a reference to a different font server, or "
-"rearrange the default set of local font paths."
-msgstr ""
-"Desactive esta opción si quiere escribir su propia sección «Files» en el "
-"fichero de configuración del servidor de X.Org. Puede desear hacer esto si "
-"necesita quitar la referencia al servidor de tipografías locales, añadir una "
-"referencia a un servidor de tipografías diferente, o recolocar el orden "
-"predeterminado de las rutas de tipografías instaladas localmente."
-
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr ""
 "Hay varios controladores posibles del servidor de X.Org para su hardware."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -147,7 +112,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -159,7 +124,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -172,13 +137,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "Identifier for your video card:"
 msgstr "Identificador para su tarjeta de vídeo:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -192,19 +157,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid "Generic Video Card"
 msgstr "Tarjeta de vídeo genérica"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid "X server driver:"
 msgstr "Controlador del servidor de X:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -215,7 +180,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -226,13 +191,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Use kernel framebuffer device interface?"
 msgstr "¿Usar el interfaz de dispositivos «framebuffer» del núcleo?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -244,7 +209,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -257,13 +222,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Video card's bus identifier:"
 msgstr "Identificador del bus de la tarjeta de vídeo:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -275,13 +240,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Examples:"
 msgstr "Ejemplos:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -294,7 +259,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -304,7 +269,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -315,19 +280,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "Incorrect format for the bus identifier"
 msgstr "Formato incorrecto para el identificador de bus"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "XKB rule set to use:"
 msgstr "Conjunto de reglas de XKB que usará:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -337,7 +302,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -348,7 +313,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -360,19 +325,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Si tiene dudas, el valor más seguro es «xorg»."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard model:"
 msgstr "Modelo de teclado:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -383,7 +348,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -422,7 +387,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -434,7 +399,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -447,7 +412,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -457,13 +422,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard layout:"
 msgstr "Diseño de su teclado:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -475,7 +440,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -488,7 +453,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -501,13 +466,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard variant:"
 msgstr "Variante de teclado:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -519,7 +484,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -533,7 +498,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -548,7 +513,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -557,13 +522,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid "Keyboard options:"
 msgstr "Opciones de teclado:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -576,7 +541,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -589,7 +554,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -605,7 +570,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -615,7 +580,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -625,19 +590,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:15001
 msgid "When in doubt, this value should be left blank."
 msgstr "Si tiene dudas, deje este campo en blanco."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid "Attempt monitor autodetection?"
 msgstr "¿Intentar la detección automática del monitor?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -654,20 +619,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "Si la autodetección falla, se le pedirá información de su monitor."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "Método para seleccionar las características de su monitor:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -677,7 +642,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -690,7 +655,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -702,7 +667,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -712,43 +677,43 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid "Up to 14 inches (355 mm)"
 msgstr "Hasta 14 pulgadas (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid "15 inches (380 mm)"
 msgstr "15 pulgadas (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid "17 inches (430 mm)"
 msgstr "17 pulgadas (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 pulgadas (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:18001
 msgid "21 inches (530 mm) or more"
 msgstr "21 pulgadas (530 mm) o más"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:19002
+#: ../xserver-xorg.templates:18002
 msgid "Approximate monitor size:"
 msgstr "Por favor, escoja el tamaño aproximado de su monitor:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:19002
+#: ../xserver-xorg.templates:18002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr ""
 "Los monitores CRT de buena calidad pueden ser capaces de usar la siguiente "
@@ -756,13 +721,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid "Monitor's best video mode:"
 msgstr "Mejor modo de vídeo de su monitor:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -782,13 +747,13 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:21001
+#: ../xserver-xorg.templates:20001
 msgid "Generic Monitor"
 msgstr "Monitor genérico"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr ""
 "¿Escribir los rangos de sincronismo del monitor en el fichero de "
@@ -796,7 +761,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:22001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -809,13 +774,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's horizontal sync range:"
 msgstr "Rango de sincronización horizontal de su monitor:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:23001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -830,13 +795,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid "Monitor's vertical refresh range:"
 msgstr "Rango de refresco vertical de su monitor:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:24001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -851,13 +816,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid "Incorrect values entered"
 msgstr "Los valores introducidos son incorrectos."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -867,13 +832,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid "Desired default color depth in bits:"
 msgstr "Profundidad de color (en bits) deseada:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -889,7 +854,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -902,25 +867,25 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid "Empty value"
 msgstr "Valor vacío"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:26001
 msgid "A null entry is not permitted for this value."
 msgstr "No se permite un valor nulo en este campo."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Invalid double-quote characters"
 msgstr "Se han hallado comillas inválidas"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:27001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr ""
 "Las dobles comillas (\") o las comillas tipográficas («») no están "
@@ -928,25 +893,25 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Numerical value needed"
 msgstr "Es necesario un valor numérico"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:28001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "En esta entrada no se permiten caracteres que no sean números."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid "Autodetect keyboard layout?"
 msgstr "¿Se debe autodetectar el diseño de su teclado?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -958,7 +923,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1119,6 +1084,32 @@ msgstr ""
 "La instalación de este paquete terminará con un error ahora para que pueda "
 "hacerlo. Por favor, ejecute de nuevo su procedimiento de actualización una "
 "vez que haya vaciado el directorio."
+
+#~ msgid "Write default Files section to configuration file?"
+#~ msgstr "¿Escribir sección Files por defecto en el fichero de configuración?"
+
+#~ msgid ""
+#~ "The Files section of the X server configuration file tells the X server "
+#~ "where to find server modules, the RGB color database, and font files.  "
+#~ "This option is recommended to experienced users only.  In most cases, it "
+#~ "should be enabled."
+#~ msgstr ""
+#~ "La sección Files del fichero de configuración le dice al servidor de X "
+#~ "dónde encontrar módulos de servidor, la base de datos de color RGB, y "
+#~ "ficheros de tipografías. Esta opción es para usuarios avanzados. En la "
+#~ "gran mayoría de los casos, debería dejarla activada."
+
+#~ msgid ""
+#~ "Disable this option if you want to maintain a custom Files section into "
+#~ "the X.Org server configuration file.  This may be needed to remove the "
+#~ "reference to the local font server, add a reference to a different font "
+#~ "server, or rearrange the default set of local font paths."
+#~ msgstr ""
+#~ "Desactive esta opción si quiere escribir su propia sección «Files» en el "
+#~ "fichero de configuración del servidor de X.Org. Puede desear hacer esto "
+#~ "si necesita quitar la referencia al servidor de tipografías locales, "
+#~ "añadir una referencia a un servidor de tipografías diferente, o recolocar "
+#~ "el orden predeterminado de las rutas de tipografías instaladas localmente."
 
 #~ msgid "No X server known for your video hardware"
 #~ msgstr "No se conoce ningún servidor de X para su hardware de vídeo"

@@ -177,17 +177,6 @@ cat >&4 <<SECTION
 #   sudo dpkg-reconfigure -phigh $XSERVERPKG
 SECTION
 
-### FILES
-
-fetch xserver-$SERVER/config/write_files_section
-if [ "$RET" = "true" ]; then
-  exec 4>"$DEXCONFTMPDIR/Files"
-  cat >&4 <<SECTION
-Section "Files"
-EndSection
-SECTION
-fi
-
 ### KEYBOARD / INPUTDEVICE
 
 fetch xserver-$SERVER/config/inputdevice/keyboard/rules

@@ -28,19 +28,6 @@ _Description: Attempt to autodetect video hardware?
  this option.  You will not be asked to select the X server if there is only
  one available.
 
-Template: xserver-xorg/config/write_files_section
-Type: boolean
-Default: false
-_Description: Write default Files section to configuration file?
- The Files section of the X server configuration file tells the X server where
- to find server modules, the RGB color database, and font files.  This option
- is recommended to experienced users only.  In most cases, it should be enabled.
- .
- Disable this option if you want to maintain a custom Files section into the
- X.Org server configuration file.  This may be needed to
- remove the reference to the local font server, add a reference to a different
- font server, or rearrange the default set of local font paths.
-
 Template: xserver-xorg/multiple_possible_x-drivers
 Type: note
 _Description: Multiple potential default X.Org server drivers for the hardware

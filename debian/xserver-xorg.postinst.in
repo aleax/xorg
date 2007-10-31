@@ -1176,8 +1176,6 @@ auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mous
 db_go
 
 # files and dri sections
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/write_files_section true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/write_files_section" "$?"
-db_go
 if [ -e "$CONFIG_AUX_DIR/.migrateconfig" ]; then
   AUTODETECT_VIDEO="yes"
   rm -f $CONFIG_AUX_DIR/.migrateconfig
