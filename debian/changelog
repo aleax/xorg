@@ -22,6 +22,9 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
       anyway.
     + Have xserver-xorg depend on -core >= 2:1.4-3
   * Delete unused templates for no_known_ and multible_possible_ x-servers
+  * Delete hidden fontserver template and dexconf ability to use it
+    + This wasn't configurable and most people should be fine without listing
+      a font server in xorg.conf
 
   [ Christian Perrier ]
   * Hebrew. Closes: #447308
@@ -62,7 +65,7 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   * dexconf: don't generate two mouse sections.  Touchpads will be handled
     through input-hotplug.
 
- -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 17:06:32 -0400
+ -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 17:13:48 -0400
 
 xorg (1:7.3+2) unstable; urgency=low
 

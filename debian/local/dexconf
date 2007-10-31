@@ -181,22 +181,9 @@ SECTION
 
 fetch xserver-$SERVER/config/write_files_section
 if [ "$RET" = "true" ]; then
-  FONTSERVER=""
-  if db_get shared/fontpath/fontserver; then
-    if [ -n "$RET" ] ; then
-      FONTSERVER="$RET"
-    fi
-  fi
   exec 4>"$DEXCONFTMPDIR/Files"
   cat >&4 <<SECTION
 Section "Files"
-SECTION
-  if [ -n "$FONTSERVER" ] ; then
-      cat >&4 <<SECTION
-	FontPath	"$FONTSERVER"
-SECTION
-  fi
-  cat >&4 <<SECTION
 EndSection
 SECTION
 fi
