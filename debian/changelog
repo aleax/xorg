@@ -1,7 +1,8 @@
 xorg (1:7.3+4) unstable; urgency=low
 
   * Don't try and reset monitor identifier question, it doesn't exist now
-  * Don't bother at all with default-x-server question. Closes: #448863
+  * Don't bother at all with default-x-server question. 
+    Closes: #448863, #374578
     + Remove it from the xserver-xorg postinst. Now instead of a complicated
       md5sum, only create the symlink if nothing exists there.
     + Make sure we delete the old md5sum and xserver roster files for this
