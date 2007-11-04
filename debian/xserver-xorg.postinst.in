@@ -1203,7 +1203,7 @@ xresprobeint() {
     VERT_REFRESH=
 
     # clear out all values
-    for i in identifier horiz-sync vert-refresh use_sync_ranges \
+    for i in horiz-sync vert-refresh use_sync_ranges \
              selection-method screen-size; do
       db_reset xserver-xorg/config/monitor/$i
     done
