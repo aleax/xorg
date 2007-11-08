@@ -664,54 +664,7 @@ if [ -z "$2" ]; then
   FIRSTINST=yes
 fi
 
-# The only supported protocol (per Zephaniah Hull) for the GPM repeater is
-# IntelliMouse; migrate anyone using that mouse device to that protocol.  Other
-# values used to work as well, but no longer do since the XFree86 mouse driver
-# was rewritten for XFree86 4.3.0.  See Debian bug #233933 for more details.
-db_get xserver-xorg/config/inputdevice/mouse/port
-if [ "$RET" = "/dev/gpmdata" ]; then
-  db_get xserver-xorg/config/inputdevice/mouse/protocol
-  if [ "$RET" != "IntelliMouse" ]; then
-    observe "migrating template" \
-            "\"xserver-xorg/config/inputdevice/mouse/protocol\" from" \
-            "\"$RET\" to \"IntelliMouse\""
-    db_set xserver-xorg/config/inputdevice/mouse/protocol "IntelliMouse"
-  fi
-fi
-
 debug_echo "Configuring $THIS_PACKAGE."
-
-# default X server
-
-# if the X server symlink file already exists and points to an executable X
-# server, it's not as important to ask questions related to it (these questions
-# "have a reasonable default")
-PRIORITY_CEILING=
-if [ -e "$SERVER_SYMLINK" ]; then
-  if [ -x "$(readlink "$SERVER_SYMLINK")" ]; then
-    debug_echo "X server symlink exists and points to executable X server;" \
-               "capping X server question priority at medium."
-    PRIORITY_CEILING=medium
-  fi
-fi
-
-# priority of shared/default-x-server
-PRIORITY=high
-
-db_metaget shared/default-x-server owners
-OWNERS="$RET"
-db_metaget shared/default-x-server choices
-CHOICES="$RET"
-
-if [ "$OWNERS" != "$CHOICES" ]; then
-  debug_echo "\$OWNERS does not equal \$CHOICES: \"$OWNERS\" != \"$CHOICES\""
-  db_subst shared/default-x-server choices $OWNERS
-  db_fset shared/default-x-server seen false
-fi
-
-if ! expr "$OWNERS" : ".*,.*" > /dev/null 2>&1; then
-  debug_echo "\$OWNERS has only one value; shared/default-x-server will not be asked"
-fi
 
 # collect information about installed video card(s), if possible
 case "$ARCH" in
@@ -755,7 +708,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     AUTODETECT_VIDEO_CARD="$RET"
     if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
       # We're going to autodetect, so clear out the old values
-      for param in use_fbdev driver video_ram identifier bus_id; do
+      for param in use_fbdev driver identifier bus_id; do
           db_reset xserver-xorg/config/device/$param
       done
 
@@ -937,16 +890,6 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
   else
     validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
-  fi
-
-  # video RAM
-  db_get xserver-xorg/config/device/driver
-  DEFAULT=
-  # this question requires input validation
-  if [ -n "$DEFAULT" ]; then
-    auto_answer validate_numeric_db_input "$(priority_ceil low)" xserver-xorg/config/device/video_ram "$DEFAULT"
-  else
-    validate_numeric_db_input "$(priority_ceil low)" xserver-xorg/config/device/video_ram || debug_report_status "validate_numeric_db_input $(priority_ceil low) xserver-xorg/config/device/video_ram" "$?"
   fi
 
   # use fbcon kernel functions?
@@ -1217,45 +1160,11 @@ MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil low)" xser
 
 MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
 
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/port "/dev/input/mice"
-
-db_get xserver-xorg/config/inputdevice/mouse/port
-case "$RET" in
-  *psaux)
-    MOUSE_PROTOCOL_CHOICES="PS/2, ImPS/2, GlidePointPS/2, NetMousePS/2, NetScrollPS/2, ThinkingMousePS/2, MouseManPlusPS/2, ExplorerPS/2"
-    DEFAULT_PROTOCOL="PS/2"
-    ;;
-  *ttyS*|*tts/*)
-    MOUSE_PROTOCOL_CHOICES="Auto, Microsoft, MouseSystems, GlidePoint, ThinkingMouse, ValuMouseScroll, MouseMan, Logitech, IntelliMouse, MMSeries, MMHitTab"
-    DEFAULT_PROTOCOL="Auto"
-    ;;
-  *input/mice)
-    MOUSE_PROTOCOL_CHOICES="ImPS/2, ExplorerPS/2"
-    DEFAULT_PROTOCOL="ImPS/2"
-    ;;
-  *atibm|*atixl|*sunmouse)
-    MOUSE_PROTOCOL_CHOICES="BusMouse"
-    DEFAULT_PROTOCOL="BusMouse"
-    ;;
-  *gpmdata)
-    MOUSE_PROTOCOL_CHOICES="IntelliMouse"
-    DEFAULT_PROTOCOL="IntelliMouse"
-    ;;
-esac
-db_subst xserver-xorg/config/inputdevice/mouse/protocol choices $MOUSE_PROTOCOL_CHOICES
-if ! expr "$MOUSE_PROTOCOL_CHOICES" : ".*,.*" > /dev/null 2>&1; then
-  debug_echo "\$MOUSE_PROTOCOL_CHOICES has only one value; setting xserver-xorg/config/inputdevice/mouse/protocol to \"$DEFAULT_PROTOCOL\""
-  db_set xserver-xorg/config/inputdevice/mouse/protocol "$DEFAULT_PROTOCOL"
-else
-  auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/mouse/protocol "${AUTODETECTED_PROTOCOL:-$DEFAULT_PROTOCOL}"
-fi
 
 auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/emulate3buttons true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/inputdevice/mouse/emulate3buttons" "$?"
 db_go
 
 # files and dri sections
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/write_files_section true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/write_files_section" "$?"
-db_go
 if [ -e "$CONFIG_AUX_DIR/.migrateconfig" ]; then
   AUTODETECT_VIDEO="yes"
   rm -f $CONFIG_AUX_DIR/.migrateconfig
@@ -1278,13 +1187,12 @@ xresprobeint() {
   fi
   if [ -n "$AUTODETECT_VIDEO" ] && [ -z "$UPGRADE" ]; then
     # clean vars
-    MONITOR_IDENTIFIER=
     RESOLUTIONS=
     HORIZ_SYNC=
     VERT_REFRESH=
 
     # clear out all values
-    for i in identifier horiz-sync vert-refresh use_sync_ranges \
+    for i in horiz-sync vert-refresh use_sync_ranges \
              selection-method screen-size; do
       db_reset xserver-xorg/config/monitor/$i
     done
@@ -1324,7 +1232,6 @@ xresprobeint() {
     fi
 
     # Set proper vars.
-    MONITOR_IDENTIFIER="$(echo "$PROBE_DUMP" | grep "^id:" | sed -e 's/^id: //g' -e 's/"//g')"
     RESOLUTIONS="$(echo "$PROBE_DUMP" | grep "^res:" | sed -e 's/^res: //g')"
     HORIZ_SYNC="$(echo "$PROBE_DUMP" | grep "^freq:" | sed -e 's/^freq: //g' | cut -d " " -f 1)"
     VERT_REFRESH="$(echo "$PROBE_DUMP" | grep "^freq:" | sed -e 's/^freq: //g' | cut -d " " -f 2)"
@@ -1389,8 +1296,6 @@ xresprobeint() {
     fi
   else
     # reconfiguring. debconf should have sane defaults
-    db_get xserver-xorg/config/monitor/identifier || debug_echo "db_get xserver-xorg/config/monitor/identifier"
-    MONITOR_IDENTIFIER="$RET"
     db_get xserver-xorg/config/display/modes || debug_echo "db_get xserver-xorg/config/display/modes"
     RESOLUTIONS=$(echo "$RET" | sed -e 's/,//g')
     db_get xserver-xorg/config/monitor/horiz-sync || debug_echo "db_get xserver-xorg/config/monitor/horiz-sync"
@@ -1403,15 +1308,6 @@ xresprobeint() {
       debug_echo "preserving sync ranges from debconf"
     fi
   fi
-
-  # Set a sane monitor id default if probe fails
-  if [ -z "$MONITOR_IDENTIFIER" ]; then
-    # fall back to some language-specific generic text
-    db_metaget xserver-xorg/config/monitor/default-identifier Description
-    MONITOR_IDENTIFIER=$RET
-  fi
-  db_set xserver-xorg/config/monitor/identifier "$MONITOR_IDENTIFIER"
-  MAY_BE_NULL="" validate_string_db_input low xserver-xorg/config/monitor/identifier || true
 
 
   # Resolution hell:
@@ -1785,67 +1681,8 @@ done
 
 # only mess with the server symlink file if it is a symbolic link or does
 # not exist.  otherwise, assume that's the way the user wants it.
-if [ -L "$SERVER_SYMLINK" ] || ! [ -e "$SERVER_SYMLINK" ]; then
-  # migrate from old symlinks.
-  if [ "$(readlink /etc/X11/X)" = "/usr/X11R6/bin/Xorg" ] || \
-     [ "$(readlink /etc/X11/X)" = "/usr/bin/X11/Xorg" ] || \
-     [ "$(readlink /etc/X11/X)" = "/bin/true" ]; then
-    rm /etc/X11/X
-    ln -s $THIS_SERVER /etc/X11/X
-  fi
-
-  # apparently on some broken upgrades the SERVER_SYMLINK_CHECKSUM has been 
-  # lost. If it does not exists, make sure to recreate it.
-
-  if [ ! -e "$SERVER_SYMLINK_CHECKSUM" ] && [ -L "$SERVER_SYMLINK" ]; then
-    readlink "$SERVER_SYMLINK" | md5sum > "$SERVER_SYMLINK_CHECKSUM"
-  fi
-
-  # compare the current and stored checksums; if they do not match, assume
-  # that's the way the user wants it.
-  # why, why, why, why, why, why, why are we md5suming this? -daniels
-  if [ "$(readlink "$SERVER_SYMLINK" | md5sum)" = \
-       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
-     [ "$(echo "/usr/X11R6/bin/Xorg" | md5sum)" = \
-       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
-     [ "$(echo "/usr/bin/X11/Xorg" | md5sum)" = \
-       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
-     [ "$(echo "/usr/bin/X11/XFree86" | md5sum)" = \
-       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
-     [ "$(echo "/bin/true" | md5sum)" = \
-       "$(cat "$SERVER_SYMLINK_CHECKSUM")" ] || \
-     ! [ -e "$SERVER_SYMLINK" ]; then
-    # finally, only update the symlink if this package contains the
-    # selected default X server.
-    db_get shared/default-x-server
-    if [ -n "$RET" ]; then
-      SELECTED_PACKAGE="$RET"
-      if [ "$SELECTED_PACKAGE" = "$THIS_PACKAGE" ]; then
-        # prepare a new version of the config file; this is a symlink so we
-        # can't use the tempfile command for it (we'd have to subsequently
-        # use ln -sf, which is subject to race condition attacks)
-        NEW_SERVER_SYMLINK="$SERVER_SYMLINK.dpkg-new"
-        ln -sf "$THIS_SERVER" "$NEW_SERVER_SYMLINK"
-        if ! cmp -s "$SERVER_SYMLINK" "$NEW_SERVER_SYMLINK"; then
-          if [ "$(readlink "$SERVER_SYMLINK")" \
-               != "$(readlink "$NEW_SERVER_SYMLINK")" ]; then
-            mv "$NEW_SERVER_SYMLINK" "$SERVER_SYMLINK"
-            readlink "$SERVER_SYMLINK" | md5sum > \
-                     "$SERVER_SYMLINK_CHECKSUM"
-          fi
-        fi
-        rm -f "$NEW_SERVER_SYMLINK"
-      fi
-    else
-      warn "not updating $SERVER_SYMLINK; no default X server" \
-           "configured; run \"dpkg-reconfigure $THIS_PACKAGE\" to" \
-           "correct this"
-    fi
-  else
-    warn "not updating $SERVER_SYMLINK; file has been customized"
-  fi
-else
-  warn "not updating $SERVER_SYMLINK; file exists but is not a symlink"
+if ! [ -e "$SERVER_SYMLINK" ]; then
+  ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 fi
 
 # Don't touch the config on upgrades except to deal with known issues with old
@@ -1932,6 +1769,9 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
 fi
+
+# Clean up our old crap
+rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
 
 exit 0
 

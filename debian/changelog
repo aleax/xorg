@@ -1,4 +1,4 @@
-xorg (1:7.3+3ubuntu1) UNRELEASED; urgency=low
+xorg (1:7.3+4ubuntu1) UNRELEASED; urgency=low
 
   * apport/xorg-server.py, debian/x11-common.install:
     - apport hook for xorg-server crashes
@@ -49,11 +49,46 @@ xorg (1:7.3+3ubuntu1) UNRELEASED; urgency=low
 
  -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sun, 28 Oct 2007 16:00:20 -0400
 
-xorg (1:7.3+3) UNRELEASED; urgency=low
+xorg (1:7.3+4) unstable; urgency=low
+
+  * Don't try and reset monitor identifier question, it doesn't exist now
+  * Don't bother at all with default-x-server question. 
+    Closes: #448863, #374578
+    + Remove it from the xserver-xorg postinst. Now instead of a complicated
+      md5sum, only create the symlink if nothing exists there.
+    + Make sure we delete the old md5sum and xserver roster files for this
+      stuff. We don't need it now.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 04 Nov 2007 11:41:04 -0500
+
+xorg (1:7.3+3) unstable; urgency=low
 
   [ David Nusinow ]
   * dexconf: Don't write the server layout. The server no longer requires one
     by default as of 1.4.
+  * Don't ask or write about video ram. This is a useless "feature"
+  * dexconf: Set SERVER to xorg
+  * Don't ask for the monitor identifier, just use a generic name
+  * Delete the obsolete template question for autodetect mouse
+  * Don't ask for the mouse port or protocol any more
+    + Will be set to /dev/input/mice by default.
+    + Add udev to xserver-xorg recommends to make sure this device file is
+      present on normal systems
+    + Will be set to "auto" protocol by default. This will let the driver
+      choose the correct protocol automatically. The kernel driver multiplexes
+      different protocols through the same /dev/input/mice device file,
+      allowing this. Only in pathological cases will you need to work around
+      it.
+  * Don't specify the device section to use in the screen section
+    + xserver-xorg-core 2:1.4-3 and above will use the first device section
+      listed when none is specified. We only write one device with this script
+      anyway.
+    + Have xserver-xorg depend on -core >= 2:1.4-3
+  * Delete unused templates for no_known_ and multible_possible_ x-servers
+  * Delete hidden fontserver template and dexconf ability to use it
+    + This wasn't configurable and most people should be fine without listing
+      a font server in xorg.conf
+  * Don't ask about writing the files section any more. Delete the question
 
   [ Christian Perrier ]
   * Hebrew. Closes: #447308
@@ -94,7 +129,7 @@ xorg (1:7.3+3) UNRELEASED; urgency=low
   * dexconf: don't generate two mouse sections.  Touchpads will be handled
     through input-hotplug.
 
- -- Julien Cristau <jcristau@debian.org>  Wed, 24 Oct 2007 19:25:59 +0200
+ -- David Nusinow <dnusinow@debian.org>  Wed, 31 Oct 2007 22:39:46 -0400
 
 xorg (1:7.3+2) unstable; urgency=low
 

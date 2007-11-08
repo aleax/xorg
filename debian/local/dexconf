@@ -68,6 +68,7 @@ list_convert () {
   echo $(IFS=", "; set -- $RET; while [ $# -gt 0 ]; do echo \"$1\"; shift; done)
 }
 
+SERVER="xorg"
 PROGNAME=${0##*/}
 SHOWHELP=
 EARLYEXIT=
@@ -176,30 +177,6 @@ cat >&4 <<SECTION
 #   sudo dpkg-reconfigure -phigh $XSERVERPKG
 SECTION
 
-### FILES
-
-fetch xserver-$SERVER/config/write_files_section
-if [ "$RET" = "true" ]; then
-  FONTSERVER=""
-  if db_get shared/fontpath/fontserver; then
-    if [ -n "$RET" ] ; then
-      FONTSERVER="$RET"
-    fi
-  fi
-  exec 4>"$DEXCONFTMPDIR/Files"
-  cat >&4 <<SECTION
-Section "Files"
-SECTION
-  if [ -n "$FONTSERVER" ] ; then
-      cat >&4 <<SECTION
-	FontPath	"$FONTSERVER"
-SECTION
-  fi
-  cat >&4 <<SECTION
-EndSection
-SECTION
-fi
-
 ### KEYBOARD / INPUTDEVICE
 
 fetch xserver-$SERVER/config/inputdevice/keyboard/rules
@@ -236,10 +213,6 @@ printf "EndSection\n" >&4
 
 DO_EMULATE3BUTTONS=
 
-fetch xserver-$SERVER/config/inputdevice/mouse/port
-MOUSE_PORT="$RET"
-fetch xserver-$SERVER/config/inputdevice/mouse/protocol
-MOUSE_PROTOCOL="$RET"
 fetch xserver-$SERVER/config/inputdevice/mouse/emulate3buttons
 if [ "$RET" = "true" ]; then
   DO_EMULATE3BUTTONS=true
@@ -257,8 +230,6 @@ cat >&4 <<SECTION
 Section "InputDevice"
 	Identifier	"Configured Mouse"
 	Driver		"$MOUSE_DRIVER"
-	Option		"Device"		"$MOUSE_PORT"
-	Option		"Protocol"		"$MOUSE_PROTOCOL"
 SECTION
 if [ -n "$DO_EMULATE3BUTTONS" ]; then
   printf "\tOption\t\t\"Emulate3Buttons\"\t\"true\"\n" >&4
@@ -274,8 +245,6 @@ DEVICE_DRIVER="$RET"
 # BusID, VideoRam, and UseFBDev are permitted to be null.
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
-db_get xserver-$SERVER/config/device/video_ram
-DEVICE_VIDEO_RAM="$RET"
 db_get xserver-$SERVER/config/device/use_fbdev
 DEVICE_USE_FBDEV="$RET"
 db_capb backup escape
@@ -297,9 +266,6 @@ fi
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
 fi
-if [ -n "$DEVICE_VIDEO_RAM" ]; then
-   printf "\tVideoRam\t$DEVICE_VIDEO_RAM\n" >&4
-fi
 if [ "$DEVICE_USE_FBDEV" = "true" ]; then
   printf "\tOption\t\t\"UseFBDev\"\t\t\"$DEVICE_USE_FBDEV\"\n" >&4
 fi
@@ -308,8 +274,6 @@ printf "EndSection\n" >&4
 
 ### MONITOR
 
-fetch xserver-$SERVER/config/monitor/identifier
-MONITOR_IDENTIFIER="$RET"
 fetch xserver-$SERVER/config/monitor/horiz-sync
 MONITOR_HORIZ_SYNC="$RET"
 fetch xserver-$SERVER/config/monitor/vert-refresh
@@ -320,7 +284,7 @@ MONITOR_SYNC_RANGES="$RET"
 exec 4>"$DEXCONFTMPDIR/Monitor"
 cat >&4 <<SECTION
 Section "Monitor"
-	Identifier	"$MONITOR_IDENTIFIER"
+	Identifier	"Configured Monitor"
 	Option		"DPMS"
 SECTION
 
@@ -344,8 +308,7 @@ exec 4>"$DEXCONFTMPDIR/Screen"
 cat >&4 <<SECTION
 Section "Screen"
 	Identifier	"Default Screen"
-	Device		"$DEVICE_IDENTIFIER"
-	Monitor		"$MONITOR_IDENTIFIER"
+	Monitor		"Configured Monitor"
 	DefaultDepth	$DISPLAY_DEFAULT_DEPTH
 SECTION
 if [ -n "$PS3_FB" ]; then

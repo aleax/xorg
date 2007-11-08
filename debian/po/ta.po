@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-04-26 07:09+0200\n"
+"POT-Creation-Date: 2007-10-31 17:28-0400\n"
 "PO-Revision-Date: 2007-04-06 15:48+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: TAMIL <ubuntu-l10n-tam@lists.ubuntu.com>\n"
@@ -79,35 +79,12 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001
-msgid "No X server known for your video hardware"
-msgstr "உங்கள் விடியோ வன் பொருளுக்குத் தகுந்த எக்ஸ் சேவையகம் ஏதும் இல்லை."
+msgid "Multiple potential default X.Org server drivers for the hardware"
+msgstr "வன்பொருட்களுக்கு முன்னிருப்பு எக்ஸ்.ஆர்க் (X.Org) சேவையகத்தில் பல இயக்கிகள் உள்ளன"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001
-msgid ""
-"There is either no video hardware installed on this machine (e.g. serial "
-"console only), or the \"discover\" program was unable to determine which X "
-"server is appropriate for the video hardware.  This could be due to "
-"incomplete information in discover's hardware database, or because your "
-"video hardware is not supported by the available X servers."
-msgstr ""
-"இந்த கணினியில் விடியோ வன்பொருள் ஏதுமில்லை (சீரியல் முனையம் போல) அல்லது டிஸ்கவர் நிரலால் "
-"(\"discover\") எந்த எக்ஸ் சேவையகம்  உங்கள் விடியோ வன்பொருளுக்கு உகந்தது என நிர்ணயிக்க "
-"இயலவில்லை. இது டிஸ்கவர் இன் வன்பொருள் தரவுத் தளத்தில் உள்ள தகவலின் குறைபாடாக இருக்கலாம். "
-"அல்லது கிடைப்பில் உள்ள எக்ஸ் சேவையகங்களால் உங்கள் விடியோ வன்பொருளை ஆதரிக்க இயலவில்லை. "
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Multiple potential default X servers for your hardware"
-msgstr "உங்கள் வன் பொருட்களுக்கு முன்னிலை இருப்பாகக் கூடிய பல எக்ஸ் சேவையகங்கள் உள்ளன."
-
-#. Type: note
-#. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -119,9 +96,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -132,9 +107,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -144,85 +117,15 @@ msgstr ""
 "எக்ஸ் வடிவமைப்பு கோப்புக்களை பின்னால் திருத்தி பல் தலைகள் அமைப்பை ஆதரிக்கும் படி செய்து "
 "கொள்ளலாம்."
 
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Desired default X server:"
-msgstr "விரும்பும் முன்னிருப்பு எக்ஸ் சேவையகம்:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"The X server is the hardware interface of the X Window System.  It "
-"communicates with the video display and input devices, providing a "
-"foundation for the chosen Graphical User Interface (GUI)."
-msgstr ""
-"எக்ஸ் சேவையகம் என்பது எக்ஸ் சாளர அமைப்பின் வன்பொருள் இடைமுகமாகும். இது திரை காட்சி மற்றும் "
-"உள்ளீட்டு சாதனங்கள் ஆகியவற்றுடன் தொடர்பு கொண்டு தேர்ந்தெடுக்கப் பட்ட வரைகலை பயனர் "
-"இடைமுகத்திற்கு (GUI) அடிப்படையாக விளங்குகிறது."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Several X servers may be available; the default is selected via the /etc/X11/"
-"X symbolic link.  Some X servers may not work with some particular graphics "
-"hardware."
-msgstr ""
-"பல எக்ஸ் சேவையகங்கள் கிடைக்கலாம்; முன்னிருப்பு எக்ஸ் சேவையகம் /etc/X11/X என்ற குறியீட்டு "
-"இணைப்பால் தேர்ந்தெடுக்கப் படும். சில எக்ஸ் சேவையகங்கள் சில வரைகலை வன் பொருட்களுடன் வேலை "
-"செய்யா."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Write default Files section to configuration file?"
-msgstr "முன்னிருப்பு கோப்புக்களை பாகங்களை வடிவமைப்பு கோப்புக்கு எழுதவா?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"The Files section of the X server configuration file tells the X server "
-"where to find server modules, the RGB color database, and font files.  This "
-"option is recommended to experienced users only.  In most cases, it should "
-"be enabled."
-msgstr ""
-"எக்ஸ் சேவையகத்தின் வடிவமைப்பு கோப்பின் கோப்பு பாகம் எக்ஸ் சேவையகத்துக்கு எங்கு சேவையக "
-"கூறுகள் ஆர்ஜிபி நிற தரவுத்தளம் எழுத்துரு கோப்புகள் ஆகியவற்றை கண்டு பிடிப்பது எனச் "
-"சொல்லுகிறது. இந்த தேர்வு அனுபவசாலியான பயனர்களுக்கு மட்டுமே பரிந்துரைக்கப் படுகிறது. "
-"அனேகமாக எல்லாவற்றிலும் இது செயலாக்கப் பட்டு இருக்க வேண்டும்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Disable this option if you want to maintain a custom Files section into the "
-"X.Org server configuration file.  This may be needed to remove the reference "
-"to the local font server, add a reference to a different font server, or "
-"rearrange the default set of local font paths."
-msgstr ""
-"நீங்கள் எக்ஸ் சேவையகத்தின் வடிவமைப்பு கோப்பில் தனிப்பயன் கோப்பு வைத்து ஆள விரும்பினால் இந்த "
-"தேர்வை செயல் நீக்க வேண்டும். இது உள்ளமை எழுத்துரு சேவயகத்துக்கான குறிப்பை நீக்கவும், வேறு "
-"எழுத்துரு சேவயகத்துக்கான குறிப்பை சேர்க்கவும் அல்லது முன்னிருப்பு எழுத்துரு பாதைகளை "
-"மாற்றி அமைக்கவும் தேவையாகும்."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "வன்பொருட்களுக்கு முன்னிருப்பு எக்ஸ்.ஆர்க் (X.Org) சேவையகத்தில் பல இயக்கிகள் உள்ளன"
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001
 msgid "Identifier for your video card:"
 msgstr "உங்கள் விடியோ அட்டைக்கு அடையாளம்:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -235,19 +138,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:6001
 msgid "Generic Video Card"
 msgstr "பாரம்பரிய விடியோ அட்டை"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:7001
 msgid "X server driver:"
 msgstr "எக்ஸ் சேவையக இயக்கி:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -257,7 +160,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -267,13 +170,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:8001
 msgid "Use kernel framebuffer device interface?"
 msgstr "உட்கூறு சட்ட இடையக சாதன இடைமுகத்தை பயன் படுத்தவா?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -285,7 +188,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -297,13 +200,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid "Video card's bus identifier:"
 msgstr "விடியோ அட்டை பஸ் அடையாள காட்டி:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -314,13 +217,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid "Examples:"
 msgstr "உதாரணங்கள்:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -332,7 +235,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -342,7 +245,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -352,49 +255,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:10001
 msgid "Incorrect format for the bus identifier"
 msgstr "பஸ் இனம் காணிக்கு தவறான வகையமைப்பு"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
-msgid "Amount of memory (kB) to be used by the video card:"
-msgstr "விடியோ அட்டை பயன் படுத்த வேண்டிய நினைவக அளவு (கேபி):"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:15001
-msgid ""
-"Typically, the amount of dedicated memory used by the video card is "
-"autodetected by the X server, but some integrated video chips (such as the "
-"Intel i810) have little or no video memory of their own, and instead borrow "
-"main system memory for their needs."
-msgstr ""
-"வழக்கமாக விடியோ அட்டை பயன் படுத்தும் தனிப் பயன் நினைவக அளவு எக்ஸ் சேவையகத்தால் "
-"தானியங்கியாக கண்டு பிடிக்கப் பட்டு விடும். ஆனால் இன்டல் i810 போன்ற சில ஒருங்கிணைந்த "
-"விடியோ சில்லுகள் அவற்றுடையது எனச் சொல்ல மிகக் குறைந்த அளவு அல்லது இல்லாத நினைவகத்தை "
-"கொண்டுள்ளன. அவை கணினியின் முதன்மை நினைவகத்திலிருந்து தங்கள் தேவைக்கு கடன் வாங்குகின்றன."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:15001
-msgid ""
-"This parameter should usually be left blank and specified only if the video "
-"card lacks RAM, or if the X server has trouble autodetecting the RAM size."
-msgstr ""
-"சாதாரணமாக இந்த அளவுருவை வெற்றாக விட வேண்டும். விடியோ அட்டையில் ராம் இல்லை அல்லது எக்ஸ் "
-"சேவையகத்தால் ராம் அளவை தானியங்கியாக கண்டு பிடிக்க இயலவில்லை என்றால் இதை குறிப்பிடலாம்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid "XKB rule set to use:"
 msgstr "பயன்படுத்த வேண்டிய எக்ஸ்கேபி (XKB) விதி:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -402,7 +275,7 @@ msgstr "விசைப் பலகையை எக்ஸ் சேவையக
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -412,7 +285,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -424,19 +297,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "சந்தேகமாக இருக்கும் போது மதிப்பை \"xorg\" எனக் குறிக்கவும்."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard model:"
 msgstr "விசைப் பலகை வகை:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -446,7 +319,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -482,7 +355,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -493,7 +366,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -505,7 +378,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -515,13 +388,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard layout:"
 msgstr "விசைப்பலகை அமைப்பு:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -533,7 +406,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -545,7 +418,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -557,13 +430,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard variant:"
 msgstr "மாற்று விசைப் பலகைகள்:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -575,7 +448,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -587,7 +460,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -600,7 +473,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -608,13 +481,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid "Keyboard options:"
 msgstr "விசைப்பலகை விருப்பங்கள்:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -626,7 +499,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -638,7 +511,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -653,7 +526,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -663,7 +536,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -673,147 +546,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid "When in doubt, this value should be left blank."
 msgstr "சந்தேகமாக உள்ள போது இந்த மதிப்பை வெற்றாக விடவும். "
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:21001
-msgid "Attempt mouse device autodetection?"
-msgstr "சொடுக்கி சாதனத்தை தானியங்கியாக கண்டு பிடிக்கவா?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"If a mouse is attached to the computer, autodetection can be attempted; it "
-"may help to move the mouse while detection is attempted (the gpm program "
-"should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
-"requires rebooting."
-msgstr ""
-"சொடுக்கி கணினியுடன் இணைத்திருந்தால் தானியங்கியாக கண்டு பிடிக்க முயற்சி செய்யலாம். அப்படி "
-"கண்டு பிடிக்க முயலும் போது சொடுக்கியை சற்று நகர்த்துவது உதவலாம். (அதை பயன் படுத்த "
-"ஜிபிஎம் நிரலை நிறுத்த வேண்டும்.) இப்போது PS/2 அல்லது bus/inport சொடுக்கியை  "
-"இணைத்தால்  மீண்டும் பூட் செய்ய வேண்டும்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Do not choose this option if you wish to select a mouse type manually."
-msgstr ""
-"கை முறையாக சொடுக்கியை தேர்ந்தெடுக்க விரும்பினால் இந்த தேர்வை இப்போது செய்ய வேண்டாம்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"If you choose it and autodetection fails, you will be asked this question "
-"again.  Autodetection can be attempted as many times as desired.  If it "
-"succeeds, further configuration questions about the mouse will be pre-"
-"answered."
-msgstr ""
-"இதை நீங்கள் தேர்வு செய்து பின் தானியங்கி கண்டுபிடிப்பு தோல்வியுற்றால் இந்த கேள்வி மீண்டும் "
-"கேட்கப்படும். தானியங்கி கண்டுபிடிப்பு விரும்பியபடி எத்தனை முறை வேண்டுமானாலும் முயற்சி "
-"செய்யப் படலாம். அது வெற்றி பெற்றால் சொடுக்கி பற்றிய மேற்கொண்டு வடிவமைப்பு கேள்விகள் "
-"முன்பதிலளிக்கப் பட்டு விடும்."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid "Mouse port:"
-msgstr "சொடுக்கித் துறை:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"எக்ஸ் சேவையகத்தின் வரைகலை இடைமுகம் சரியாக இயங்க சொடுக்கி (அல்லது தடப் பந்து போன்ற "
-"சுட்டும் சாதனம் ) குறித்த சில பண்புகள் தெரிய வேண்டும். "
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"சொடுக்கியால் எந்த துறை (இணைப்பான் வகை) பயன்படுத்தப் படும் என்று தெரிய வேண்டும். தொடர் "
-"துறைகள் D போன்ற வடிவமுள்ள 9 அல்லது 25 ஊசிகள் உள்ள இணைப்புகளை பயன் படுத்தும்; சொடுக்கி "
-"இணைப்பான் பெண்ணாகும் (துளைகள் இருக்கும்) கணினி இணைப்பான் ஆணாகும்  (ஊசிகள் இருக்கும்)  "
-"PS/2 துறைகள் 6 ஊசிகள் உள்ள சிறிய வட்டமான இணைப்புகள் ஆகும்; சொடுக்கி இணைப்பான் ஆணாகும். "
-"கணினி இணைப்பான் பெண்ணாகும். நீங்கள் பின் வருவனவற்றைக் கூட பயன் படுத்தலாம்: யுஎஸ்பி "
-"சொடுக்கி, ஒரு பஸ்/இன்போர்ட் சொடுக்கி (மிகப் பழையது) ஒரு ஜிபிஎம் ரிபீடர் நிரல். உங்கள் "
-"கணீனியில் ஒரு  PS/2 அல்லது பஸ்/இன்போர்ட் சாதனத்தை சொருக அல்லது பிரிக்க நினைத்தால் தயை "
-"செய்து கணினியை மின் நீக்கம் செய்துள்ள போது செய்யுங்கள்."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid "Mouse protocol:"
-msgstr "சொடுக்கி நெறிமுறை:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid "Emulate 3 button mouse?"
-msgstr "மூன்று பட்டன் சொடுக்கியை போலச் செய்யவா?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"எக்ஸ் சாளர அமைப்பில் அனேகமாக எல்லா செய்நிரல்களும் சொடுக்கியில் 3 விசைகள் இருக்குமென "
-"எதிர்பார்க்கிறன. (வலது, இடது, நடு). இரண்டு விசைகள் மட்டுமுள்ள சொடுக்கிகள் வலது இடது "
-"சொடுக்கி விசைகளின் இணைந்த சொடுக்கலையோ அல்லது இழுத்தலையோ நடு விசை போல கொள்கின்றன."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"இந்த தேர்வு 3 அல்லது அதிக விசைகள் கொண்ட சொடுக்கிகளுக்குக் கூட பயன் படும்; நடு விசை "
-"வழக்கம் போல பயன் படும்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"இந்த வடிவமைப்பு கருவி ஐந்துக்கு மேற்பட்ட விசைகள் கொண்ட (உருள் சக்கரம் இரண்டு விசைகள் என "
-"கணக்கு, \"மேல்\" \"கீழ்\", உருள் சக்கரம் \"சொடுக்குமாயின்\" மூன்று) சொடுக்கிகளை இன்னும் "
-"ஆதரிக்கவில்லை என அறியவும்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:16001
 msgid "Attempt monitor autodetection?"
 msgstr "திரையகத்தை தானியங்கியாக காண முயற்சிக்கவா?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -828,7 +573,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr ""
@@ -836,13 +581,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "திரையகத்தின் பண்புகளை தேர்ந்தெடுக்க முறை:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -852,7 +597,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -864,7 +609,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -876,7 +621,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -886,55 +631,55 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "Up to 14 inches (355 mm)"
 msgstr "14 இன்சுகள் வரை (355 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "15 inches (380 mm)"
 msgstr "15 இன்சுகள் (380 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "17 inches (430 mm)"
 msgstr "17 இன்சுகள் (430 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "19-20 inches (480-510 mm)"
 msgstr "19-20 இன்சுகள் (480-510 mm)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "21 inches (530 mm) or more"
 msgstr "21 இன்சுகள் (530 mm) அல்லது அதிகம்."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27002
+#: ../xserver-xorg.templates:18002
 msgid "Approximate monitor size:"
 msgstr "தோராயமான திரையக அளவு:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27002
+#: ../xserver-xorg.templates:18002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr "உயர் தர சிஆர்டிகள் அடுத்த உயர்ந்த அளவை பயன் படுத்தக் கூடும்."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:19001
 msgid "Monitor's best video mode:"
 msgstr "திரையகத்தின் சிறந்த விடியோ பாங்கு: "
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -950,39 +695,21 @@ msgstr ""
 "இயக்கியும் அதை ஆதரிக்க வேண்டும்; சந்தேகமாக இருப்பின் எல்சிடி தயாரிப்பாளர் பரிந்துரைக்கும் "
 "விடியோ பாங்கினையே தேர்வு செய்யவும்."
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:29001
-msgid "Identifier for the monitor:"
-msgstr "திரையகத்தின் அடையாளங் காட்டி:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:29001
-msgid ""
-"The X server configuration file associates the monitor with a name that you "
-"may provide.  This is usually the vendor or brand name followed by the model "
-"name, e.g., \"Sony E200\" or \"Dell E770s\"."
-msgstr ""
-"எக்ஸ் சேவையக வடிவமைப்பு கோப்பு திரையகத்தை நீங்கள் தரக்கூடிய ஒரு பெயருடன் சம்பந்தப் "
-"படுத்தும். வழக்கமாக இது வர்த்தகப் பெயருடன் வகையின் பெயர். எ-டு: \"Sony E200\" அல்லது "
-"\"Dell E770s\"."
-
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:20001
 msgid "Generic Monitor"
 msgstr "பொதுவான திரையகம்"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:21001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "திரையகத்தின் ஒத்திசை  (ஸின்க்) வீச்சை வடிவமைப்பு கோப்புக்கு எழுதவா?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -994,13 +721,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's horizontal sync range:"
 msgstr "திரையகத்தின் கிடைமட்ட ஒத்திசை வீச்சு:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1013,13 +740,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:23001
 msgid "Monitor's vertical refresh range:"
 msgstr "திரையகத்தின் நெடுவரிசை புதுப்பிப்பு வீச்சு:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1032,13 +759,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:24001
 msgid "Incorrect values entered"
 msgstr "சரியில்லாத மதிப்புகள் உள்ளிடப் பட்டன"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1047,13 +774,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:25001
 msgid "Desired default color depth in bits:"
 msgstr "விரும்பும் முனிருப்பு நிற ஆழம் - பிட்டுகளில்:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1068,7 +795,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1080,49 +807,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:26001
 msgid "Empty value"
 msgstr "காலி மதிப்பு"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:26001
 msgid "A null entry is not permitted for this value."
 msgstr "இந்த மதிப்புக்கு ஒரு வெற்று உள்ளீடு தர அனுமதியில்லை."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:27001
 msgid "Invalid double-quote characters"
 msgstr "செல்லுபடியாகாத இரட்டை மேற்கோள் குறியீடுகள்"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:27001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "இந்த உள்ளீடுக்கு இரட்டை மேற்கோள் குறியீடுகளுக்கு (\") அனுமதியில்லை."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:28001
 msgid "Numerical value needed"
 msgstr "எண் மதிப்பு தேவை"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:28001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "இந்த உள்ளீட்டில் எண்கள் தவிர வேறு குறியீடுகளுக்கு அனுமதியில்லை."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:29001
 msgid "Autodetect keyboard layout?"
 msgstr "தானியங்கியாக விசைப் பலகை அமைப்பை கண்டு பிடிக்கவா?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1133,7 +860,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1287,6 +1014,201 @@ msgid ""
 msgstr ""
 "இதை நீங்கள் செய்வதற்காக இந்த பொதி நிறுவல் இப்போது தோல்வியடைந்து வெளியேறும் அடைவை சுத்தம் "
 "செய்தபின் மேம் படுத்தும் செயலை மீண்டும் செய்க."
+
+#~ msgid "Write default Files section to configuration file?"
+#~ msgstr "முன்னிருப்பு கோப்புக்களை பாகங்களை வடிவமைப்பு கோப்புக்கு எழுதவா?"
+
+#~ msgid ""
+#~ "The Files section of the X server configuration file tells the X server "
+#~ "where to find server modules, the RGB color database, and font files.  "
+#~ "This option is recommended to experienced users only.  In most cases, it "
+#~ "should be enabled."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகத்தின் வடிவமைப்பு கோப்பின் கோப்பு பாகம் எக்ஸ் சேவையகத்துக்கு எங்கு சேவையக "
+#~ "கூறுகள் ஆர்ஜிபி நிற தரவுத்தளம் எழுத்துரு கோப்புகள் ஆகியவற்றை கண்டு பிடிப்பது எனச் "
+#~ "சொல்லுகிறது. இந்த தேர்வு அனுபவசாலியான பயனர்களுக்கு மட்டுமே பரிந்துரைக்கப் "
+#~ "படுகிறது. அனேகமாக எல்லாவற்றிலும் இது செயலாக்கப் பட்டு இருக்க வேண்டும்."
+
+#~ msgid ""
+#~ "Disable this option if you want to maintain a custom Files section into "
+#~ "the X.Org server configuration file.  This may be needed to remove the "
+#~ "reference to the local font server, add a reference to a different font "
+#~ "server, or rearrange the default set of local font paths."
+#~ msgstr ""
+#~ "நீங்கள் எக்ஸ் சேவையகத்தின் வடிவமைப்பு கோப்பில் தனிப்பயன் கோப்பு வைத்து ஆள விரும்பினால் "
+#~ "இந்த தேர்வை செயல் நீக்க வேண்டும். இது உள்ளமை எழுத்துரு சேவயகத்துக்கான குறிப்பை "
+#~ "நீக்கவும், வேறு எழுத்துரு சேவயகத்துக்கான குறிப்பை சேர்க்கவும் அல்லது முன்னிருப்பு "
+#~ "எழுத்துரு பாதைகளை மாற்றி அமைக்கவும் தேவையாகும்."
+
+#~ msgid "No X server known for your video hardware"
+#~ msgstr "உங்கள் விடியோ வன் பொருளுக்குத் தகுந்த எக்ஸ் சேவையகம் ஏதும் இல்லை."
+
+#~ msgid ""
+#~ "There is either no video hardware installed on this machine (e.g. serial "
+#~ "console only), or the \"discover\" program was unable to determine which "
+#~ "X server is appropriate for the video hardware.  This could be due to "
+#~ "incomplete information in discover's hardware database, or because your "
+#~ "video hardware is not supported by the available X servers."
+#~ msgstr ""
+#~ "இந்த கணினியில் விடியோ வன்பொருள் ஏதுமில்லை (சீரியல் முனையம் போல) அல்லது டிஸ்கவர் "
+#~ "நிரலால் (\"discover\") எந்த எக்ஸ் சேவையகம்  உங்கள் விடியோ வன்பொருளுக்கு உகந்தது என "
+#~ "நிர்ணயிக்க இயலவில்லை. இது டிஸ்கவர் இன் வன்பொருள் தரவுத் தளத்தில் உள்ள தகவலின் "
+#~ "குறைபாடாக இருக்கலாம். அல்லது கிடைப்பில் உள்ள எக்ஸ் சேவையகங்களால் உங்கள் விடியோ "
+#~ "வன்பொருளை ஆதரிக்க இயலவில்லை. "
+
+#~ msgid "Multiple potential default X servers for your hardware"
+#~ msgstr "உங்கள் வன் பொருட்களுக்கு முன்னிலை இருப்பாகக் கூடிய பல எக்ஸ் சேவையகங்கள் உள்ளன."
+
+#~ msgid "Mouse port:"
+#~ msgstr "சொடுக்கித் துறை:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகத்தின் வரைகலை இடைமுகம் சரியாக இயங்க சொடுக்கி (அல்லது தடப் பந்து போன்ற "
+#~ "சுட்டும் சாதனம் ) குறித்த சில பண்புகள் தெரிய வேண்டும். "
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "சொடுக்கியால் எந்த துறை (இணைப்பான் வகை) பயன்படுத்தப் படும் என்று தெரிய வேண்டும். தொடர் "
+#~ "துறைகள் D போன்ற வடிவமுள்ள 9 அல்லது 25 ஊசிகள் உள்ள இணைப்புகளை பயன் படுத்தும்; "
+#~ "சொடுக்கி இணைப்பான் பெண்ணாகும் (துளைகள் இருக்கும்) கணினி இணைப்பான் ஆணாகும்  (ஊசிகள் "
+#~ "இருக்கும்)  PS/2 துறைகள் 6 ஊசிகள் உள்ள சிறிய வட்டமான இணைப்புகள் ஆகும்; சொடுக்கி "
+#~ "இணைப்பான் ஆணாகும். கணினி இணைப்பான் பெண்ணாகும். நீங்கள் பின் வருவனவற்றைக் கூட பயன் "
+#~ "படுத்தலாம்: யுஎஸ்பி சொடுக்கி, ஒரு பஸ்/இன்போர்ட் சொடுக்கி (மிகப் பழையது) ஒரு ஜிபிஎம் "
+#~ "ரிபீடர் நிரல். உங்கள் கணீனியில் ஒரு  PS/2 அல்லது பஸ்/இன்போர்ட் சாதனத்தை சொருக அல்லது "
+#~ "பிரிக்க நினைத்தால் தயை செய்து கணினியை மின் நீக்கம் செய்துள்ள போது செய்யுங்கள்."
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "சொடுக்கி நெறிமுறை:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "மூன்று பட்டன் சொடுக்கியை போலச் செய்யவா?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "எக்ஸ் சாளர அமைப்பில் அனேகமாக எல்லா செய்நிரல்களும் சொடுக்கியில் 3 விசைகள் இருக்குமென "
+#~ "எதிர்பார்க்கிறன. (வலது, இடது, நடு). இரண்டு விசைகள் மட்டுமுள்ள சொடுக்கிகள் வலது "
+#~ "இடது சொடுக்கி விசைகளின் இணைந்த சொடுக்கலையோ அல்லது இழுத்தலையோ நடு விசை போல "
+#~ "கொள்கின்றன."
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "இந்த தேர்வு 3 அல்லது அதிக விசைகள் கொண்ட சொடுக்கிகளுக்குக் கூட பயன் படும்; நடு விசை "
+#~ "வழக்கம் போல பயன் படும்."
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "இந்த வடிவமைப்பு கருவி ஐந்துக்கு மேற்பட்ட விசைகள் கொண்ட (உருள் சக்கரம் இரண்டு விசைகள் "
+#~ "என கணக்கு, \"மேல்\" \"கீழ்\", உருள் சக்கரம் \"சொடுக்குமாயின்\" மூன்று) சொடுக்கிகளை "
+#~ "இன்னும் ஆதரிக்கவில்லை என அறியவும்."
+
+#~ msgid "Attempt mouse device autodetection?"
+#~ msgstr "சொடுக்கி சாதனத்தை தானியங்கியாக கண்டு பிடிக்கவா?"
+
+#~ msgid ""
+#~ "If a mouse is attached to the computer, autodetection can be attempted; "
+#~ "it may help to move the mouse while detection is attempted (the gpm "
+#~ "program should be stopped if it is used).  Plugging  a PS/2 or bus/inport "
+#~ "mouse now requires rebooting."
+#~ msgstr ""
+#~ "சொடுக்கி கணினியுடன் இணைத்திருந்தால் தானியங்கியாக கண்டு பிடிக்க முயற்சி செய்யலாம். "
+#~ "அப்படி கண்டு பிடிக்க முயலும் போது சொடுக்கியை சற்று நகர்த்துவது உதவலாம். (அதை பயன் "
+#~ "படுத்த ஜிபிஎம் நிரலை நிறுத்த வேண்டும்.) இப்போது PS/2 அல்லது bus/inport "
+#~ "சொடுக்கியை  இணைத்தால்  மீண்டும் பூட் செய்ய வேண்டும்."
+
+#~ msgid ""
+#~ "Do not choose this option if you wish to select a mouse type manually."
+#~ msgstr ""
+#~ "கை முறையாக சொடுக்கியை தேர்ந்தெடுக்க விரும்பினால் இந்த தேர்வை இப்போது செய்ய வேண்டாம்."
+
+#~ msgid ""
+#~ "If you choose it and autodetection fails, you will be asked this question "
+#~ "again.  Autodetection can be attempted as many times as desired.  If it "
+#~ "succeeds, further configuration questions about the mouse will be pre-"
+#~ "answered."
+#~ msgstr ""
+#~ "இதை நீங்கள் தேர்வு செய்து பின் தானியங்கி கண்டுபிடிப்பு தோல்வியுற்றால் இந்த கேள்வி மீண்டும் "
+#~ "கேட்கப்படும். தானியங்கி கண்டுபிடிப்பு விரும்பியபடி எத்தனை முறை வேண்டுமானாலும் "
+#~ "முயற்சி செய்யப் படலாம். அது வெற்றி பெற்றால் சொடுக்கி பற்றிய மேற்கொண்டு வடிவமைப்பு "
+#~ "கேள்விகள் முன்பதிலளிக்கப் பட்டு விடும்."
+
+#~ msgid "Identifier for the monitor:"
+#~ msgstr "திரையகத்தின் அடையாளங் காட்டி:"
+
+#~ msgid ""
+#~ "The X server configuration file associates the monitor with a name that "
+#~ "you may provide.  This is usually the vendor or brand name followed by "
+#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையக வடிவமைப்பு கோப்பு திரையகத்தை நீங்கள் தரக்கூடிய ஒரு பெயருடன் சம்பந்தப் "
+#~ "படுத்தும். வழக்கமாக இது வர்த்தகப் பெயருடன் வகையின் பெயர். எ-டு: \"Sony E200\" "
+#~ "அல்லது \"Dell E770s\"."
+
+#~ msgid "Amount of memory (kB) to be used by the video card:"
+#~ msgstr "விடியோ அட்டை பயன் படுத்த வேண்டிய நினைவக அளவு (கேபி):"
+
+#~ msgid ""
+#~ "Typically, the amount of dedicated memory used by the video card is "
+#~ "autodetected by the X server, but some integrated video chips (such as "
+#~ "the Intel i810) have little or no video memory of their own, and instead "
+#~ "borrow main system memory for their needs."
+#~ msgstr ""
+#~ "வழக்கமாக விடியோ அட்டை பயன் படுத்தும் தனிப் பயன் நினைவக அளவு எக்ஸ் சேவையகத்தால் "
+#~ "தானியங்கியாக கண்டு பிடிக்கப் பட்டு விடும். ஆனால் இன்டல் i810 போன்ற சில ஒருங்கிணைந்த "
+#~ "விடியோ சில்லுகள் அவற்றுடையது எனச் சொல்ல மிகக் குறைந்த அளவு அல்லது இல்லாத நினைவகத்தை "
+#~ "கொண்டுள்ளன. அவை கணினியின் முதன்மை நினைவகத்திலிருந்து தங்கள் தேவைக்கு கடன் "
+#~ "வாங்குகின்றன."
+
+#~ msgid ""
+#~ "This parameter should usually be left blank and specified only if the "
+#~ "video card lacks RAM, or if the X server has trouble autodetecting the "
+#~ "RAM size."
+#~ msgstr ""
+#~ "சாதாரணமாக இந்த அளவுருவை வெற்றாக விட வேண்டும். விடியோ அட்டையில் ராம் இல்லை அல்லது "
+#~ "எக்ஸ் சேவையகத்தால் ராம் அளவை தானியங்கியாக கண்டு பிடிக்க இயலவில்லை என்றால் இதை "
+#~ "குறிப்பிடலாம்."
+
+#~ msgid "Desired default X server:"
+#~ msgstr "விரும்பும் முன்னிருப்பு எக்ஸ் சேவையகம்:"
+
+#~ msgid ""
+#~ "The X server is the hardware interface of the X Window System.  It "
+#~ "communicates with the video display and input devices, providing a "
+#~ "foundation for the chosen Graphical User Interface (GUI)."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகம் என்பது எக்ஸ் சாளர அமைப்பின் வன்பொருள் இடைமுகமாகும். இது திரை காட்சி "
+#~ "மற்றும் உள்ளீட்டு சாதனங்கள் ஆகியவற்றுடன் தொடர்பு கொண்டு தேர்ந்தெடுக்கப் பட்ட வரைகலை பயனர் "
+#~ "இடைமுகத்திற்கு (GUI) அடிப்படையாக விளங்குகிறது."
+
+#~ msgid ""
+#~ "Several X servers may be available; the default is selected via the /etc/"
+#~ "X11/X symbolic link.  Some X servers may not work with some particular "
+#~ "graphics hardware."
+#~ msgstr ""
+#~ "பல எக்ஸ் சேவையகங்கள் கிடைக்கலாம்; முன்னிருப்பு எக்ஸ் சேவையகம் /etc/X11/X என்ற "
+#~ "குறியீட்டு இணைப்பால் தேர்ந்தெடுக்கப் படும். சில எக்ஸ் சேவையகங்கள் சில வரைகலை வன் "
+#~ "பொருட்களுடன் வேலை செய்யா."
 
 #~ msgid "X.Org server modules that should be loaded by default:"
 #~ msgstr "முன்னிருப்பாக ஏற்றப் பட வேண்டிய எக்ஸ்.ஆர்க் சேவயகக் கூறுகள்:"

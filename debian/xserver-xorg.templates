@@ -28,43 +28,6 @@ _Description: Attempt to autodetect video hardware?
  this option.  You will not be asked to select the X server if there is only
  one available.
 
-Template: shared/no_known_x-server
-Type: note
-_Description: No X server known for your video hardware
- There is either no video hardware installed on this machine (e.g. serial console
- only), or the "discover" program was unable to determine which X server is
- appropriate for the video hardware.  This could be due to incomplete
- information in discover's hardware database, or because your video
- hardware is not supported by the available X servers.
-
-Template: shared/multiple_possible_x-servers
-Type: note
-_Description: Multiple potential default X servers for your hardware
- Multiple video cards have been detected, and different X servers are required
- to support the various devices.  It is thus not possible to automatically
- select a default X server.
- .
- Please configure the device that will serve as
- this computer's "primary head"; this is generally the video card and monitor
- used for display when the computer is booted up.
- .
- The configuration process currently only supports single-headed setups;
- however, the X server configuration files can be edited later to support a
- multi-head configuration.
-
-Template: xserver-xorg/config/write_files_section
-Type: boolean
-Default: false
-_Description: Write default Files section to configuration file?
- The Files section of the X server configuration file tells the X server where
- to find server modules, the RGB color database, and font files.  This option
- is recommended to experienced users only.  In most cases, it should be enabled.
- .
- Disable this option if you want to maintain a custom Files section into the
- X.Org server configuration file.  This may be needed to
- remove the reference to the local font server, add a reference to a different
- font server, or rearrange the default set of local font paths.
-
 Template: xserver-xorg/multiple_possible_x-drivers
 Type: note
 _Description: Multiple potential default X.Org server drivers for the hardware
@@ -139,25 +102,6 @@ _Description: Video card's bus identifier:
 Template: xserver-xorg/config/device/bus_id_error
 Type: note
 _Description: Incorrect format for the bus identifier
-
-Template: xserver-xorg/config/device/video_ram
-Type: string
-_Description: Amount of memory (kB) to be used by the video card:
- Typically, the amount of dedicated memory used by the video card is autodetected
- by the X server, but some integrated video chips (such as the Intel i810)
- have little or no video memory of their own, and instead borrow main system
- memory for their needs.
- .
- This parameter should usually be left blank and specified only if the video
- card lacks RAM, or if the X server has trouble autodetecting the RAM size.
-
-Template: xserver-xorg/config/device/extra_options
-Type: string
-Description: Additional driver options
- Each line must consist of an option name, a space, and a value (rest
- of the line), and is copied to the configuration file as
- .
-  Option "Name" "Value"
 
 Template: xserver-xorg/config/inputdevice/keyboard/rules
 Type: string
@@ -263,62 +207,6 @@ _Description: Keyboard options:
  .
  When in doubt, this value should be left blank.
 
-Template: xserver-xorg/autodetect_mouse
-Type: boolean
-Default: true
-_Description: Attempt mouse device autodetection?
- If a mouse is attached to the computer, autodetection can be attempted;
- it may help to move the mouse while detection is attempted (the
- gpm program should be stopped if it is used).  Plugging  a PS/2 or
- bus/inport mouse now requires rebooting.
- .
- Do not choose this option if you wish to select a mouse type manually.
- .
- If you choose it and autodetection fails, you will be asked this
- question again.  Autodetection can be attempted as many times as desired.  If
- it succeeds, further configuration questions about the mouse will be
- pre-answered.
-
-Template: xserver-xorg/config/inputdevice/mouse/port
-Type: select
-Choices: /dev/input/mice, /dev/psaux, /dev/ttyS0, /dev/tts0, /dev/gpmdata
-Default: /dev/input/mice
-_Description: Mouse port:
- For the X Window System graphical user interface to operate correctly,
- certain characteristics of the mouse (or other pointing device, such as a
- trackball) must be known.
- .
- It is necessary to determine which port (connection type) is used by the mouse.
- Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 or
- DB-25); the mouse connector is female (has holes) and the computer connector
- is male (has pins).  PS/2 ports are small round connectors (DIN) with 6 pins;
- the mouse connector is male and the computer side female.  You may
- alternatively use a USB mouse, a bus/inport (very old) mouse, or be using
- the gpm program as a repeater.  If you need to attach or remove PS/2 or
- bus/inport devices from your computer, please do so with the computer's power
- off.
-
-Template: xserver-xorg/config/inputdevice/mouse/protocol
-Type: select
-Choices: ${choices}
-_Description: Mouse protocol:
-
-Template: xserver-xorg/config/inputdevice/mouse/emulate3buttons
-Type: boolean
-Default: true
-_Description: Emulate 3 button mouse?
- Most programs in the X Window System expect the mouse to have 3 buttons
- (left, right, and middle).  Mice with only 2 buttons can emulate the presence
- of a middle button by treating simultaneous clicks or drags of the left and
- right buttons as middle button events.
- .
- This option may also be used on mice with 3 or more buttons; the middle
- button will continue to work normally.
- .
- Note that mouse buttons in excess of five (counting a scroll wheel as two
- buttons, one each for "up" and "down", and a third if the wheel "clicks") are
- not yet supported with this configuration tool.
-
 Template: xserver-xorg/autodetect_monitor
 Type: boolean
 Default: true
@@ -367,13 +255,6 @@ _Description: Monitor's best video mode:
  the monitor's best if you wish.  Users of LCD displays may also be able to
  do this, but only if both the video chipset and the driver support it; if in
  doubt, use the video mode recommended by the manufacturer of your LCD.
-
-Template: xserver-xorg/config/monitor/identifier
-Type: string
-_Description: Identifier for the monitor:
- The X server configuration file associates the monitor with a name that you
- may provide.  This is usually the vendor or brand name followed by the model
- name, e.g., "Sony E200" or "Dell E770s".
 
 Template: xserver-xorg/config/monitor/default-identifier
 Type: text
@@ -446,8 +327,3 @@ _Description: Autodetect keyboard layout?
  .
  Choose this option if you want the keyboard layout to be redetected.  Do not
  choose it if you want to keep your current layout.
-
-Template: shared/fontpath/fontserver
-Type: string
-Description: Extra fontpath URL
- This is an internal (hidden) debconf question.  It should not be translated.

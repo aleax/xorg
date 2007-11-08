@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-04-26 07:09+0200\n"
+"POT-Creation-Date: 2007-10-31 17:28-0400\n"
 "PO-Revision-Date: 2006-08-14 11:05+0200\n"
 "Last-Translator: Priti Patil <prithisd@gmail.com>\n"
 "Language-Team:  Marathi, janabhaaratii, C-DAC, Mumbai, India "
@@ -71,35 +71,12 @@ msgstr ""
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001
-msgid "No X server known for your video hardware"
-msgstr "आपल्या व्हिडिओ हार्डवेअरसाठी एकही एक्स परिसेवक माहीत नाही"
+msgid "Multiple potential default X.Org server drivers for the hardware"
+msgstr "या हार्डवेअरकरिता अनेक संभाव्य मूलनिर्धारीत एक्स.आॅर्ग परिसेवक चालक"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:4001
-msgid ""
-"There is either no video hardware installed on this machine (e.g. serial "
-"console only), or the \"discover\" program was unable to determine which X "
-"server is appropriate for the video hardware.  This could be due to "
-"incomplete information in discover's hardware database, or because your "
-"video hardware is not supported by the available X servers."
-msgstr ""
-"या मशीनवर एकतर व्हिडिओ हार्डवेअर अधिष्टापन केलेले नाही (उदा. फक्त सिरियल कन्सोल), "
-"किंवा \"शोधा\" प्रोग्रामला या व्हिडिओ हार्डवेअरसाठी कोणता एक्स परिसेवक योग्य आहे हे "
-"ठरवता आले नाही. याचे कारण एकतर 'शोधा'च्या हार्डवेअर डेटाबेसमधे पुरेशी माहिती नसेल, किंवा "
-"तुमचे व्हिडिओ हार्डवेअर उपलब्ध एक्स परिसेवकांवर आधारीत नसेल."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Multiple potential default X servers for your hardware"
-msgstr "आपल्या व्हिडिओ हार्डवेअरसाठी अनेक मूलनिर्धारीत एक्स परिसेवक"
-
-#. Type: note
-#. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -110,9 +87,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -123,9 +98,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -134,84 +107,15 @@ msgstr ""
 "विन्यास प्रक्रिया सध्या फक्त एक-शीर्ष संरचनाच करू शकते. पण, एक्स परिसेवक विन्यास फायली "
 "नंतर संपादित करून बहु-शीर्ष संरचना करता येणे शक्य आहे."
 
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Desired default X server:"
-msgstr "इच्छित मूलनिर्धारीत एक्स परिसेवक:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"The X server is the hardware interface of the X Window System.  It "
-"communicates with the video display and input devices, providing a "
-"foundation for the chosen Graphical User Interface (GUI)."
-msgstr ""
-"एक्स परिसेवक हा एक्स दृश्यचौकट प्रणालीचा हार्डवेअर अंतराफलक आहे. तो व्हिडिओ दर्शक व निवेश "
-"उपकरणे यांच्याशी दळणवळण करतो, जेणेकरून तो निवडलेल्या दृक-चित्र वापरकर्ता अंतराफलकाला "
-"(जीयूआयला) पाया प्रदान करतो."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Several X servers may be available; the default is selected via the /etc/X11/"
-"X symbolic link.  Some X servers may not work with some particular graphics "
-"hardware."
-msgstr ""
-"अनेक एक्स परिसेवक उपलब्ध असू शकतात; /इटीसी/एक्स११/एक्स प्रतिकात्मक साखळीद्वारा "
-"मूलनिर्धारीत झालेला निवडला जातो. काही एक्स परिसेवक काही विशिष्ट दृक-चित्र "
-"हार्डवेअरसाठी अयोग्य असू शकतात."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Write default Files section to configuration file?"
-msgstr "मूलनिर्धारीत फाइल्स विभागाचे विन्यास फाइलमधे लेखन करायचे?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"The Files section of the X server configuration file tells the X server "
-"where to find server modules, the RGB color database, and font files.  This "
-"option is recommended to experienced users only.  In most cases, it should "
-"be enabled."
-msgstr ""
-"एक्स परिसेवकाला परिसेवक माॅड्यूलस्, अारजीबी रंग डेटाबेस व टंकमुद्रा (फॉंट) फायली कुठे असतील, "
-"याची माहिती एक्स परिसेवक विन्यास फाइलच्या फाइल्स विभागात मिळते. फक्त अनुभवी "
-"वापरकर्त्यांनीच हा पर्याय वापरावा. बहुतांशी, हा कार्यसक्षम करावा."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Disable this option if you want to maintain a custom Files section into the "
-"X.Org server configuration file.  This may be needed to remove the reference "
-"to the local font server, add a reference to a different font server, or "
-"rearrange the default set of local font paths."
-msgstr ""
-"आपणास एक्स.आॅर्ग परिसेवक विन्यास फाइलमधे स्वतःचा फाइल्स विभाग राखायचा असल्यास हा "
-"पर्याय कार्यअक्षम करा. स्थानिक टंकमुद्रा (फॉंट) परिसेवकाचे संदर्भ काढून टाकायचे असल्यास, "
-"वेगळ्या टंकमुद्रा परिसेवकाचे संदर्भ तयार करायचे असल्यास, किंवा मूलनिर्धारीत स्थानिक टंकमुद्रा "
-"मार्गांची पुनर्रचना करायची असल्यास हे करण्याची गरज भासेल."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "या हार्डवेअरकरिता अनेक संभाव्य मूलनिर्धारीत एक्स.आॅर्ग परिसेवक चालक"
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001
 msgid "Identifier for your video card:"
 msgstr "आपल्या व्हिडिओ कार्डचा ओळखदर्शक:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -224,19 +128,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:6001
 msgid "Generic Video Card"
 msgstr "जेनेरिक व्हिडिओ कार्ड"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:7001
 msgid "X server driver:"
 msgstr "एक्स परिसेवक चालक:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -246,7 +150,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -256,13 +160,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:8001
 msgid "Use kernel framebuffer device interface?"
 msgstr "कर्नेल फ्रेमबफर उपकरण अंतराफलक वापरायचा?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -273,7 +177,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -284,13 +188,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid "Video card's bus identifier:"
 msgstr "व्हिडिओ कार्डचा बस ओळखदर्शक:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -301,13 +205,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid "Examples:"
 msgstr "उदाहरणे"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -319,7 +223,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 #, fuzzy
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
@@ -330,7 +234,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -340,48 +244,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:10001
 msgid "Incorrect format for the bus identifier"
 msgstr "बस ओळखदर्शकाचे संरूप चुकीचे"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
-msgid "Amount of memory (kB) to be used by the video card:"
-msgstr "व्हिडिओ कार्डने वापरायची मेमरी (किलोबाइट):"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:15001
-msgid ""
-"Typically, the amount of dedicated memory used by the video card is "
-"autodetected by the X server, but some integrated video chips (such as the "
-"Intel i810) have little or no video memory of their own, and instead borrow "
-"main system memory for their needs."
-msgstr ""
-"बहुतेक वेळा, व्हिडिओ कार्डच्या वापरासाठी राखून ठेवलेली मेमरी एक्स परिसेवक आपोआप शोधतो. "
-"पण काही संलग्न व्हिडिओ चिपस् (इंटेल आय८१० सारख्या) ना स्वतःची व्हिडिओ मेमरी फारच कमी "
-"असते, वा नसतेच. त्यामुळे आपल्या गरजांसाठी त्या मुख्य प्रणालीची मेमरी वापरतात."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:15001
-msgid ""
-"This parameter should usually be left blank and specified only if the video "
-"card lacks RAM, or if the X server has trouble autodetecting the RAM size."
-msgstr ""
-"हा घटक सहसा रिक्त ठेवावा, आणी व्हिडिओ कार्डला मेमरीच नसेल, किंवा एक्स परिसेवक मेमरीचा "
-"अचूक आकार आपोआप शोधू शकत नसेल, तरच निर्धारित करावा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid "XKB rule set to use:"
 msgstr "वापरासाठी एक्सकेबी नियम संच:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -390,7 +265,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -400,7 +275,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -411,19 +286,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:11001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "खात्री नसेल तर हे मूल्य \"एक्सआॅर्ग\" ठेवले पाहिजे."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard model:"
 msgstr "कळफलकाचे माॅडेल:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -433,7 +308,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -468,7 +343,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -479,7 +354,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -491,7 +366,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -501,13 +376,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard layout:"
 msgstr "कळफलकाचा आराखडा:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -519,7 +394,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -531,7 +406,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -543,13 +418,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard variant:"
 msgstr "कळफलक बदलाव:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -561,7 +436,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -572,7 +447,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -585,20 +460,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:19001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो ही नोंद रिकामी ठेवावी."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid "Keyboard options:"
 msgstr "कळफलक पर्याय:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -610,7 +485,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -622,7 +497,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -637,7 +512,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -647,7 +522,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -657,144 +532,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:20001
+#: ../xserver-xorg.templates:15001
 msgid "When in doubt, this value should be left blank."
 msgstr "शंका असेल, तर हे मूल्य रिकामे ठेवले पाहिजे."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:21001
-msgid "Attempt mouse device autodetection?"
-msgstr "माउस उपकरण आपोआप शोधण्याचा प्रयत्न करायचा?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"If a mouse is attached to the computer, autodetection can be attempted; it "
-"may help to move the mouse while detection is attempted (the gpm program "
-"should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
-"requires rebooting."
-msgstr ""
-"संगणकाला माउस जोडलेला असल्यास स्वयंशोधन करता येईल; स्वयंशोधन होत असताना माउस हलवल्यास "
-"फायदा होउ शकेल (जीपीएम प्रोग्रॅम वापरत असल्यास तो बंद केला पाहिजे). पीएस२ वा बस/"
-"इनपोर्ट माउस जोडण्यासाठी पुनरारंभ आवश्यक आहे."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Do not choose this option if you wish to select a mouse type manually."
-msgstr "माउसचा प्रकार स्वतः निवडणार असाल, तर हा पर्याय स्विकारू नका."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"If you choose it and autodetection fails, you will be asked this question "
-"again.  Autodetection can be attempted as many times as desired.  If it "
-"succeeds, further configuration questions about the mouse will be pre-"
-"answered."
-msgstr ""
-"हे निवडले व स्वयंशोधन फसले, तर हो प्रश्न आपल्याला परत विचारला जाईल. स्वयंशोधनाचा प्रयत्न "
-"कितीही वेळा करता येईल. स्वयंशोधन यशस्वी झाल्यास माउसच्या संरचनेबाबतचे उरलेले प्रश्न आपोआप "
-"उत्तरीत होतील."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid "Mouse port:"
-msgstr "माउस पोर्ट:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the mouse (or other pointing device, such as a "
-"trackball) must be known."
-msgstr ""
-"एक्स दृश्यचौकट प्रणाली दृक-चित्र वापरकर्ता अंतराफलक (जीयूआय) व्यवस्थितपणे चालण्याकरिता "
-"माउस (अथवा ट्रॅकबाॅलसारखे अन्य निर्देशक उपकरण) संबंधी काही गुणधर्म माहीत होणे आवश्यक आहे."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"It is necessary to determine which port (connection type) is used by the "
-"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
-"or DB-25); the mouse connector is female (has holes) and the computer "
-"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
-"with 6 pins; the mouse connector is male and the computer side female.  You "
-"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
-"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
-"or bus/inport devices from your computer, please do so with the computer's "
-"power off."
-msgstr ""
-"माउसने कोणते पोर्ट (जोडणी प्रकार) वापरले आहे हे ठरवणे आवश्यक आहे. सिरियल पोर्ट ९ वा २५ "
-"पिना असलेले इंग्रजी डी आकाराचे जोडसाधन (कनेक्टर) वापरतात. (अर्थात  डीबी-९ वा डीबी-"
-"२५); माउस जोडसाधन मादी असते (भोके असतात) व संगणक जोडसाधन नर असतो (पिना असतात)."
-"पीएस२ पोर्ट हे छोटे गोल ६ पिना असणारे (डिन) जोडसाधन असते; माउस जोडसाधन नर असतो व "
-"संगणक जोडसाधन मादी असते. याव्यतिरिक्त आपण युएसबी माउस, बस/इनपोर्ट (फार जुना) माउस "
-"वापरू शकता, किंवा पुनरावर्ती म्हणून जीपीएम प्रोग्रॅम वापरत असाल. आपल्याला आपल्या "
-"संगणकाला पीएस२ वा बस/इनपोर्ट उपकरणे जोडायची किंवा काढायची असल्यास संगणकाचा "
-"वीजपुरवठा बंद करूनच तसे करा."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid "Mouse protocol:"
-msgstr "माउस प्रोटोकॉल:"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid "Emulate 3 button mouse?"
-msgstr "३ बटण माउसचा आभास करायचा?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"Most programs in the X Window System expect the mouse to have 3 buttons "
-"(left, right, and middle).  Mice with only 2 buttons can emulate the "
-"presence of a middle button by treating simultaneous clicks or drags of the "
-"left and right buttons as middle button events."
-msgstr ""
-"एक्स दृश्यचौकट प्रणालीतील जवळजवळ सर्व प्रोग्रॅमना माउसला ३ बटणे असणे अपेक्षित असते (डावे, "
-"उजवे, व मधले). २ बटणे असणारे माउस डावी व उजवी बटणे एकाच वेळी दाबून वा ओढून मधले बटण "
-"अस्तित्वात असल्याचा आभास निर्माण करू शकतात."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"This option may also be used on mice with 3 or more buttons; the middle "
-"button will continue to work normally."
-msgstr ""
-"हा पर्याय ३ वा अधिक बटणे असणारे माउस सुद्धा वापरू शकतात; मधले बटण नेहमीप्रमाणेच काम "
-"करत राहील."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"Note that mouse buttons in excess of five (counting a scroll wheel as two "
-"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
-"\") are not yet supported with this configuration tool."
-msgstr ""
-"या टूल द्वारा पाचहून अधिक बटणे असणारे माउस (मोजताना स्क्रोल चक्र ही दोन बटणे धरा,  "
-"\"वर\" व \"खाली\" साठी प्रत्येकी एक, आणी चक्र \"दाबले\" जात असल्यास ते तिसरे बटण) "
-"अद्याप संरचित करता येत नाहीत, याची नोंद घ्या."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:16001
 msgid "Attempt monitor autodetection?"
 msgstr "मॉनिटर आपोआप शोधण्याचा प्रयत्न करायचा?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Many monitors (including LCD's) and video cards support a communication "
 "protocol that allows the monitor's technical characteristics to be "
@@ -809,20 +559,20 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:25001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "If autodetection fails, you will be asked for information about the monitor."
 msgstr "स्वयंशोधन फसल्यास आपल्याला मॉनिटरबद्दल माहिती विचारली जाईल."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid "Method for selecting the monitor characteristics:"
 msgstr "माॅनिटरचे गुणधर्म निवडण्यासाठी वापरायची पद्धत:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, "
 "certain characteristics of the monitor must be known."
@@ -832,7 +582,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"simple\" option will prompt about the monitor's physical size; this "
 "will set some configuration values appropriate for a typical CRT of the "
@@ -844,7 +594,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"medium\" option will present you with a list of resolutions and "
 "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
@@ -856,7 +606,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:17001
 msgid ""
 "The \"advanced\" option will let you specify the monitor's horizontal sync "
 "and vertical refresh tolerances directly."
@@ -866,55 +616,55 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "Up to 14 inches (355 mm)"
 msgstr "१४ इंचांपर्यंत (३५५ मिमि)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "15 inches (380 mm)"
 msgstr "१५ इंच (३८० मिमि)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "17 inches (430 mm)"
 msgstr "१७ इंच (४३० मिमि)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "19-20 inches (480-510 mm)"
 msgstr "१९-२० इंच (४८०-५१० मिमि)"
 
 #. Type: select
 #. Choices
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:18001
 msgid "21 inches (530 mm) or more"
 msgstr "२१ इंच (५३० मिमि) व अधिक"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27002
+#: ../xserver-xorg.templates:18002
 msgid "Approximate monitor size:"
 msgstr "अंदाजे माॅनिटरचा आकार:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:27002
+#: ../xserver-xorg.templates:18002
 msgid "High-quality CRT's may be able to use the next highest size category."
 msgstr "उच्च दर्जाचे सीआरटी यानंतरचा मोठा आकार गट वापरू शकतील."
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:19001
 msgid "Monitor's best video mode:"
 msgstr "माॅनिटरचा उत्कृष्ठ व्हिडिओ मोड:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:19001
 msgid ""
 "Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
 "Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
@@ -929,40 +679,22 @@ msgstr ""
 "असतील, तर एलसीडी प्रदर्शकांचे वापरकर्ते सुद्धा हे करू शकतील. शंका असेल तर आपल्या एलसीडी "
 "माॅनिटरच्या निर्मात्याने शिफारस केलेला व्हिडिओ मोड वापरा."
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:29001
-msgid "Identifier for the monitor:"
-msgstr "माॅनिटर करिता ओळखदर्शक:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:29001
-msgid ""
-"The X server configuration file associates the monitor with a name that you "
-"may provide.  This is usually the vendor or brand name followed by the model "
-"name, e.g., \"Sony E200\" or \"Dell E770s\"."
-msgstr ""
-"एक्स परिसेवक विन्यास फाइल आपला माॅनिटर आपण दिलेल्या नावाशी संलग्न करते. सामान्यतः हे "
-"विक्रेत्याचे वा ब्रांडचे नाव व त्यापाठी माॅडेलचे नाव या स्वरुपात असते, उदा., \"सोनी ई२००\" "
-"वा \"डेल ई७७०एस\"."
-
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:30001
+#: ../xserver-xorg.templates:20001
 #, fuzzy
 msgid "Generic Monitor"
 msgstr "जेनेरिक व्हिडिओ कार्ड"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:21001
 msgid "Write monitor sync ranges to the configuration file?"
 msgstr "माॅनिटर सुसूत्री पल्ले विन्यास फायलीत लिहायचे?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:31001
+#: ../xserver-xorg.templates:21001
 msgid ""
 "The monitor synchronization ranges should be autodetected by the X server in "
 "most cases, but sometimes it needs hinting.  This option is for experienced "
@@ -973,13 +705,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:22001
 msgid "Monitor's horizontal sync range:"
 msgstr "माॅनिटरचा आडवा सुसूत्री पल्ला:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:32001
+#: ../xserver-xorg.templates:22001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -993,13 +725,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:23001
 msgid "Monitor's vertical refresh range:"
 msgstr "माॅनिटरचा उभा रिफ्रेश पल्ला:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:33001
+#: ../xserver-xorg.templates:23001
 msgid ""
 "Please enter either a comma-separated list of discrete values (for fixed-"
 "frequency displays), or a pair of values separated by a dash (all modern "
@@ -1013,13 +745,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:24001
 msgid "Incorrect values entered"
 msgstr "दिलेली मुल्ये चुकीची"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:34001
+#: ../xserver-xorg.templates:24001
 msgid ""
 "The valid syntax is a comma-separated list of discrete values, or a pair of "
 "values separated by a dash."
@@ -1029,13 +761,13 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:25001
 msgid "Desired default color depth in bits:"
 msgstr "इच्छित मूलनिर्धारित रंग खोली बिटस् मधे:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "Usually 24-bit color is desirable, but on graphics cards with limited "
 "amounts of framebuffer memory, higher resolutions may be achieved at the "
@@ -1049,7 +781,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:35001
+#: ../xserver-xorg.templates:25001
 msgid ""
 "So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
 "bits of alpha channel or simple zero padding; the X Window System can handle "
@@ -1061,49 +793,49 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:26001
 msgid "Empty value"
 msgstr "रिक्त मूल्य"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:36001
+#: ../xserver-xorg.templates:26001
 msgid "A null entry is not permitted for this value."
 msgstr "हे मूल्य रिक्त ठेवता येणार नाही."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:27001
 msgid "Invalid double-quote characters"
 msgstr "अवैध द्वी-अवतरण चिन्हे"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:37001
+#: ../xserver-xorg.templates:27001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "द्वी-अवतरण (\") चिन्हांना या नोंद मूल्यात संमती नाही."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:28001
 msgid "Numerical value needed"
 msgstr "मूल्य अंकात देणे गरजेचे"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:38001
+#: ../xserver-xorg.templates:28001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "या नोंदीत अंकांशिवाय अन्य चिन्हे वापरता येणार नाहीत."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:29001
 msgid "Autodetect keyboard layout?"
 msgstr "कळफलकाचा आराखडा आपोआप शोधायचा?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -1114,7 +846,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:39001
+#: ../xserver-xorg.templates:29001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1268,6 +1000,193 @@ msgid ""
 msgstr ""
 "या पॅकेजची अधिष्टापना आता फसेल आणी बंद होईल, जेणेकरून आपण हे करू शकाल. निर्देशिका संपूर्ण "
 "साफ केल्यावर श्रेणीवर्धन प्रक्रिया पुन्हा चालू करा."
+
+#~ msgid "Write default Files section to configuration file?"
+#~ msgstr "मूलनिर्धारीत फाइल्स विभागाचे विन्यास फाइलमधे लेखन करायचे?"
+
+#~ msgid ""
+#~ "The Files section of the X server configuration file tells the X server "
+#~ "where to find server modules, the RGB color database, and font files.  "
+#~ "This option is recommended to experienced users only.  In most cases, it "
+#~ "should be enabled."
+#~ msgstr ""
+#~ "एक्स परिसेवकाला परिसेवक माॅड्यूलस्, अारजीबी रंग डेटाबेस व टंकमुद्रा (फॉंट) फायली कुठे "
+#~ "असतील, याची माहिती एक्स परिसेवक विन्यास फाइलच्या फाइल्स विभागात मिळते. फक्त "
+#~ "अनुभवी वापरकर्त्यांनीच हा पर्याय वापरावा. बहुतांशी, हा कार्यसक्षम करावा."
+
+#~ msgid ""
+#~ "Disable this option if you want to maintain a custom Files section into "
+#~ "the X.Org server configuration file.  This may be needed to remove the "
+#~ "reference to the local font server, add a reference to a different font "
+#~ "server, or rearrange the default set of local font paths."
+#~ msgstr ""
+#~ "आपणास एक्स.आॅर्ग परिसेवक विन्यास फाइलमधे स्वतःचा फाइल्स विभाग राखायचा असल्यास हा "
+#~ "पर्याय कार्यअक्षम करा. स्थानिक टंकमुद्रा (फॉंट) परिसेवकाचे संदर्भ काढून टाकायचे असल्यास, "
+#~ "वेगळ्या टंकमुद्रा परिसेवकाचे संदर्भ तयार करायचे असल्यास, किंवा मूलनिर्धारीत स्थानिक "
+#~ "टंकमुद्रा मार्गांची पुनर्रचना करायची असल्यास हे करण्याची गरज भासेल."
+
+#~ msgid "No X server known for your video hardware"
+#~ msgstr "आपल्या व्हिडिओ हार्डवेअरसाठी एकही एक्स परिसेवक माहीत नाही"
+
+#~ msgid ""
+#~ "There is either no video hardware installed on this machine (e.g. serial "
+#~ "console only), or the \"discover\" program was unable to determine which "
+#~ "X server is appropriate for the video hardware.  This could be due to "
+#~ "incomplete information in discover's hardware database, or because your "
+#~ "video hardware is not supported by the available X servers."
+#~ msgstr ""
+#~ "या मशीनवर एकतर व्हिडिओ हार्डवेअर अधिष्टापन केलेले नाही (उदा. फक्त सिरियल कन्सोल), "
+#~ "किंवा \"शोधा\" प्रोग्रामला या व्हिडिओ हार्डवेअरसाठी कोणता एक्स परिसेवक योग्य आहे हे "
+#~ "ठरवता आले नाही. याचे कारण एकतर 'शोधा'च्या हार्डवेअर डेटाबेसमधे पुरेशी माहिती नसेल, "
+#~ "किंवा तुमचे व्हिडिओ हार्डवेअर उपलब्ध एक्स परिसेवकांवर आधारीत नसेल."
+
+#~ msgid "Multiple potential default X servers for your hardware"
+#~ msgstr "आपल्या व्हिडिओ हार्डवेअरसाठी अनेक मूलनिर्धारीत एक्स परिसेवक"
+
+#~ msgid "Mouse port:"
+#~ msgstr "माउस पोर्ट:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the mouse (or other pointing device, such as a "
+#~ "trackball) must be known."
+#~ msgstr ""
+#~ "एक्स दृश्यचौकट प्रणाली दृक-चित्र वापरकर्ता अंतराफलक (जीयूआय) व्यवस्थितपणे चालण्याकरिता "
+#~ "माउस (अथवा ट्रॅकबाॅलसारखे अन्य निर्देशक उपकरण) संबंधी काही गुणधर्म माहीत होणे आवश्यक "
+#~ "आहे."
+
+#~ msgid ""
+#~ "It is necessary to determine which port (connection type) is used by the "
+#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
+#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
+#~ "connector is male (has pins).  PS/2 ports are small round connectors "
+#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
+#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
+#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
+#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
+#~ "with the computer's power off."
+#~ msgstr ""
+#~ "माउसने कोणते पोर्ट (जोडणी प्रकार) वापरले आहे हे ठरवणे आवश्यक आहे. सिरियल पोर्ट ९ वा "
+#~ "२५ पिना असलेले इंग्रजी डी आकाराचे जोडसाधन (कनेक्टर) वापरतात. (अर्थात  डीबी-९ वा "
+#~ "डीबी-२५); माउस जोडसाधन मादी असते (भोके असतात) व संगणक जोडसाधन नर असतो (पिना "
+#~ "असतात).पीएस२ पोर्ट हे छोटे गोल ६ पिना असणारे (डिन) जोडसाधन असते; माउस जोडसाधन "
+#~ "नर असतो व संगणक जोडसाधन मादी असते. याव्यतिरिक्त आपण युएसबी माउस, बस/इनपोर्ट "
+#~ "(फार जुना) माउस वापरू शकता, किंवा पुनरावर्ती म्हणून जीपीएम प्रोग्रॅम वापरत असाल. "
+#~ "आपल्याला आपल्या संगणकाला पीएस२ वा बस/इनपोर्ट उपकरणे जोडायची किंवा काढायची "
+#~ "असल्यास संगणकाचा वीजपुरवठा बंद करूनच तसे करा."
+
+#~ msgid "Mouse protocol:"
+#~ msgstr "माउस प्रोटोकॉल:"
+
+#~ msgid "Emulate 3 button mouse?"
+#~ msgstr "३ बटण माउसचा आभास करायचा?"
+
+#~ msgid ""
+#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
+#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
+#~ "presence of a middle button by treating simultaneous clicks or drags of "
+#~ "the left and right buttons as middle button events."
+#~ msgstr ""
+#~ "एक्स दृश्यचौकट प्रणालीतील जवळजवळ सर्व प्रोग्रॅमना माउसला ३ बटणे असणे अपेक्षित असते "
+#~ "(डावे, उजवे, व मधले). २ बटणे असणारे माउस डावी व उजवी बटणे एकाच वेळी दाबून वा ओढून "
+#~ "मधले बटण अस्तित्वात असल्याचा आभास निर्माण करू शकतात."
+
+#~ msgid ""
+#~ "This option may also be used on mice with 3 or more buttons; the middle "
+#~ "button will continue to work normally."
+#~ msgstr ""
+#~ "हा पर्याय ३ वा अधिक बटणे असणारे माउस सुद्धा वापरू शकतात; मधले बटण नेहमीप्रमाणेच काम "
+#~ "करत राहील."
+
+#~ msgid ""
+#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
+#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
+#~ "\"clicks\") are not yet supported with this configuration tool."
+#~ msgstr ""
+#~ "या टूल द्वारा पाचहून अधिक बटणे असणारे माउस (मोजताना स्क्रोल चक्र ही दोन बटणे धरा,  "
+#~ "\"वर\" व \"खाली\" साठी प्रत्येकी एक, आणी चक्र \"दाबले\" जात असल्यास ते तिसरे बटण) "
+#~ "अद्याप संरचित करता येत नाहीत, याची नोंद घ्या."
+
+#~ msgid "Attempt mouse device autodetection?"
+#~ msgstr "माउस उपकरण आपोआप शोधण्याचा प्रयत्न करायचा?"
+
+#~ msgid ""
+#~ "If a mouse is attached to the computer, autodetection can be attempted; "
+#~ "it may help to move the mouse while detection is attempted (the gpm "
+#~ "program should be stopped if it is used).  Plugging  a PS/2 or bus/inport "
+#~ "mouse now requires rebooting."
+#~ msgstr ""
+#~ "संगणकाला माउस जोडलेला असल्यास स्वयंशोधन करता येईल; स्वयंशोधन होत असताना माउस "
+#~ "हलवल्यास फायदा होउ शकेल (जीपीएम प्रोग्रॅम वापरत असल्यास तो बंद केला पाहिजे). पीएस२ "
+#~ "वा बस/इनपोर्ट माउस जोडण्यासाठी पुनरारंभ आवश्यक आहे."
+
+#~ msgid ""
+#~ "Do not choose this option if you wish to select a mouse type manually."
+#~ msgstr "माउसचा प्रकार स्वतः निवडणार असाल, तर हा पर्याय स्विकारू नका."
+
+#~ msgid ""
+#~ "If you choose it and autodetection fails, you will be asked this question "
+#~ "again.  Autodetection can be attempted as many times as desired.  If it "
+#~ "succeeds, further configuration questions about the mouse will be pre-"
+#~ "answered."
+#~ msgstr ""
+#~ "हे निवडले व स्वयंशोधन फसले, तर हो प्रश्न आपल्याला परत विचारला जाईल. स्वयंशोधनाचा "
+#~ "प्रयत्न कितीही वेळा करता येईल. स्वयंशोधन यशस्वी झाल्यास माउसच्या संरचनेबाबतचे उरलेले "
+#~ "प्रश्न आपोआप उत्तरीत होतील."
+
+#~ msgid "Identifier for the monitor:"
+#~ msgstr "माॅनिटर करिता ओळखदर्शक:"
+
+#~ msgid ""
+#~ "The X server configuration file associates the monitor with a name that "
+#~ "you may provide.  This is usually the vendor or brand name followed by "
+#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
+#~ msgstr ""
+#~ "एक्स परिसेवक विन्यास फाइल आपला माॅनिटर आपण दिलेल्या नावाशी संलग्न करते. सामान्यतः हे "
+#~ "विक्रेत्याचे वा ब्रांडचे नाव व त्यापाठी माॅडेलचे नाव या स्वरुपात असते, उदा., \"सोनी ई२००"
+#~ "\" वा \"डेल ई७७०एस\"."
+
+#~ msgid "Amount of memory (kB) to be used by the video card:"
+#~ msgstr "व्हिडिओ कार्डने वापरायची मेमरी (किलोबाइट):"
+
+#~ msgid ""
+#~ "Typically, the amount of dedicated memory used by the video card is "
+#~ "autodetected by the X server, but some integrated video chips (such as "
+#~ "the Intel i810) have little or no video memory of their own, and instead "
+#~ "borrow main system memory for their needs."
+#~ msgstr ""
+#~ "बहुतेक वेळा, व्हिडिओ कार्डच्या वापरासाठी राखून ठेवलेली मेमरी एक्स परिसेवक आपोआप "
+#~ "शोधतो. पण काही संलग्न व्हिडिओ चिपस् (इंटेल आय८१० सारख्या) ना स्वतःची व्हिडिओ मेमरी "
+#~ "फारच कमी असते, वा नसतेच. त्यामुळे आपल्या गरजांसाठी त्या मुख्य प्रणालीची मेमरी वापरतात."
+
+#~ msgid ""
+#~ "This parameter should usually be left blank and specified only if the "
+#~ "video card lacks RAM, or if the X server has trouble autodetecting the "
+#~ "RAM size."
+#~ msgstr ""
+#~ "हा घटक सहसा रिक्त ठेवावा, आणी व्हिडिओ कार्डला मेमरीच नसेल, किंवा एक्स परिसेवक "
+#~ "मेमरीचा अचूक आकार आपोआप शोधू शकत नसेल, तरच निर्धारित करावा."
+
+#~ msgid "Desired default X server:"
+#~ msgstr "इच्छित मूलनिर्धारीत एक्स परिसेवक:"
+
+#~ msgid ""
+#~ "The X server is the hardware interface of the X Window System.  It "
+#~ "communicates with the video display and input devices, providing a "
+#~ "foundation for the chosen Graphical User Interface (GUI)."
+#~ msgstr ""
+#~ "एक्स परिसेवक हा एक्स दृश्यचौकट प्रणालीचा हार्डवेअर अंतराफलक आहे. तो व्हिडिओ दर्शक व "
+#~ "निवेश उपकरणे यांच्याशी दळणवळण करतो, जेणेकरून तो निवडलेल्या दृक-चित्र वापरकर्ता "
+#~ "अंतराफलकाला (जीयूआयला) पाया प्रदान करतो."
+
+#~ msgid ""
+#~ "Several X servers may be available; the default is selected via the /etc/"
+#~ "X11/X symbolic link.  Some X servers may not work with some particular "
+#~ "graphics hardware."
+#~ msgstr ""
+#~ "अनेक एक्स परिसेवक उपलब्ध असू शकतात; /इटीसी/एक्स११/एक्स प्रतिकात्मक साखळीद्वारा "
+#~ "मूलनिर्धारीत झालेला निवडला जातो. काही एक्स परिसेवक काही विशिष्ट दृक-चित्र "
+#~ "हार्डवेअरसाठी अयोग्य असू शकतात."
 
 #~ msgid "X.Org server modules that should be loaded by default:"
 #~ msgstr "मूलतः सुरू करण्याची एक्स.आॅर्ग परिसेवक माॅड्यूलस्:"
