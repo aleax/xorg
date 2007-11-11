@@ -1,9 +1,16 @@
 xorg (1:7.3+5) UNRELEASED; urgency=low
 
+  [ David Nusinow ]
   * Change xlibs-static-dev transitional package from the libs to oldlibs
     section
 
- -- David Nusinow <dnusinow@debian.org>  Mon, 05 Nov 2007 15:41:00 -0500
+  [ Brice Goglin ]
+  * Replace xorg dependency on xbase-clients and xutils with the corresponding
+    new x11-*utils packages (without xutils-dev), closes: #445471.
+  * Replace xserver-xorg dependency on xbase-clients with x11-xkb-utils
+    (for xkbcomp).
+
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 11 Nov 2007 13:11:05 +0100
 
 xorg (1:7.3+4) unstable; urgency=low
 
