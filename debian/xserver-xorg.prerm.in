@@ -66,25 +66,6 @@ if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
       fi
     fi
   fi
-
-  if [ -n "$HAVE_DEBCONF" ]; then
-    # disown this question
-    db_unregister shared/default-x-server
-    # does the question still exist?
-    if db_get shared/default-x-server; then
-      db_metaget shared/default-x-server owners
-      db_subst shared/default-x-server choices "$RET"
-      db_metaget shared/default-x-server value
-      if [ "$THIS_PACKAGE" = "$RET" ]; then
-        db_fset shared/default-x-server seen false
-        db_input critical shared/default-x-server || true
-        db_go
-        db_get shared/default-x-server
-        warn "run \"dpkg-reconfigure $RET\" before attempting to start the X" \
-             "server again"
-      fi
-    fi
-  fi
 fi
 
 #DEBHELPER#
