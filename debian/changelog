@@ -5,6 +5,8 @@ xorg (1:7.3+5) unstable; urgency=low
     section
   * Don't have dexconf write "CoreKeyboard" any more. With input-hotplug this
     is meaningless
+  * Unregister various old questions from the debconf database because we
+    don't use them any more.
 
   [ Brice Goglin ]
   * Replace xorg dependency on xbase-clients and xutils with the corresponding
@@ -16,7 +18,7 @@ xorg (1:7.3+5) unstable; urgency=low
   * Reupload, because 1:7.3+4 seems to have been lost in the ftp-master crash.
   * Drop code related to shared/default-x-server from xserver-xorg.prerm.
 
- -- Julien Cristau <jcristau@debian.org>  Mon, 12 Nov 2007 23:01:22 +0100
+ -- David Nusinow <dnusinow@debian.org>  Wed, 14 Nov 2007 21:29:31 -0500
 
 xorg (1:7.3+4) unstable; urgency=low
 

@@ -1710,8 +1710,7 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
       cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
     sed -e'
 	# Dump obsolete modules
-	/^[[:space:]]*Section[[:space:]]\+"Module"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
-		/^[[:space:]]*Load[[:space:]]\+"GLcore"[[:space:]]*$/d
+	/^[[:space:]]*Section[[:space:]]\+"Module"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ { /^[[:space:]]*Load[[:space:]]\+"GLcore"[[:space:]]*$/d
 		/^[[:space:]]*Load[[:space:]]\+"speedo"[[:space:]]*$/d
 		/^[[:space:]]*Load[[:space:]]\+"type1"[[:space:]]*$/d
 	}
@@ -1751,6 +1750,16 @@ fi
 
 # Clean up our old crap
 rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
+for QUESTION in "shared/default-x-server" "xserver-xorg/autodetect_mouse" \
+                "xserver-xorg/config/device/video_ram" \
+                "xserver-xorg/config/inputdevice/mouse/port" \
+                "xserver-xorg/config/inputdevice/mouse/protocol" \
+                "xserver-xorg/config/modules" \
+                "xserver-xorg/config/monitor/default-identifier" \
+                "xserver-xorg/config/monitor/identifier" \
+                "xserver-xorg/config/write_files_section"; do
+  db_unregister "$QUESTION" || true
+done
 
 exit 0
 
