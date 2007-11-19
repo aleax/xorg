@@ -83,7 +83,7 @@ Architecture: all
 Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
 Replaces: xserver-common
 Pre-Depends: x11-common (>= 1:7.3+3)
-Depends: xserver-xorg-core (>= 2:1.4-3), xserver-xorg-video-all | xserver-xorg-video-2, xserver-xorg-input-all | xserver-xorg-input-2, ${misc:Depends}, xkb-data | xkb-data-legacy, xbase-clients
+Depends: xserver-xorg-core (>= 2:1.4-3), xserver-xorg-video-all | xserver-xorg-video-2, xserver-xorg-input-all | xserver-xorg-input-2, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils
 Recommends: libgl1-mesa-dri, udev, laptop-detect, xresprobe, discover1 | discover, ${F:XServer-Xorg-Detect-Depends}, displayconfig-gtk, mdetect
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
@@ -111,7 +111,7 @@ Description: the X.Org X server -- input driver metapackage
 
 Package: xorg
 Architecture: any
-Depends: xserver-xorg, libgl1-mesa-glx | libgl1, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), xbase-clients (>= 1:1.0.1-1), xutils (>= 1:1.0.1-1), xkb-data, xterm | x-terminal-emulator, ${xorg-extra-dep}, x11-common 
+Depends: xserver-xorg, libgl1-mesa-glx | libgl1, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), x11-apps, x11-session-utils, x11-utils, x11-xfs-utils, x11-xkb-utils, x11-xserver-utils, xauth, xinit, xfonts-utils, xkb-data, xterm | x-terminal-emulator, ${xorg-extra-dep}, x11-common
 Suggests: xorg-docs
 Provides: x-window-system, x-window-system-core
 Description: X.Org X Window System
@@ -151,7 +151,7 @@ Description: transitional package for X11 client data
 
 Package: xlibs-static-dev
 Architecture: all
-Section: libs
+Section: oldlibs
 Depends: libxfont-dev, libfontenc-dev, x11-common
 Description: transitional metapackage
  This package depends on the individual libraries that used to be contained
