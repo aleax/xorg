@@ -1605,11 +1605,6 @@ xresprobeint() {
   db_input low xserver-xorg/config/monitor/use_sync_ranges || debug_echo "db_input low xserver-xorg/config/monitor/use_sync_ranges"
 
   case "$DEVICE_DRIVER" in
-    # Voodoo3's can't do 1024x768x24 and still cope with DRI; this is a common
-    # setup, apparently, so default to 16bpp.
-    tdfx)
-      DEFAULT_DEPTH=16
-      ;;
     # nVidia laptop chipsets should use 16bpp per default, or face horrific
     # colour banding issues, per Olivier Grawert and Trent Lloyd.
     nv)
