@@ -1605,12 +1605,6 @@ xresprobeint() {
   db_input low xserver-xorg/config/monitor/use_sync_ranges || debug_echo "db_input low xserver-xorg/config/monitor/use_sync_ranges"
 
   case "$DEVICE_DRIVER" in
-    newport)
-      DEFAULT_DEPTH=8
-      ;;
-    vga)
-      DEFAULT_DEPTH=4
-      ;;
     # Voodoo3's can't do 1024x768x24 and still cope with DRI; this is a common
     # setup, apparently, so default to 16bpp.
     tdfx)
@@ -1624,10 +1618,6 @@ xresprobeint() {
       else
         DEFAULT_DEPTH=24
       fi
-      ;;
-    # apparently this driver needs some hot hot depth action too.
-    savage)
-      DEFAULT_DEPTH=16
       ;;
     suncg6)
       DEFAULT_DEPTH=8
