@@ -1626,17 +1626,6 @@ xresprobeint() {
   db_input low xserver-xorg/config/monitor/use_sync_ranges || debug_echo "db_input low xserver-xorg/config/monitor/use_sync_ranges"
 
   case "$DEVICE_DRIVER" in
-    newport)
-      DEFAULT_DEPTH=8
-      ;;
-    vga)
-      DEFAULT_DEPTH=4
-      ;;
-    # Voodoo3's can't do 1024x768x24 and still cope with DRI; this is a common
-    # setup, apparently, so default to 16bpp.
-    tdfx)
-      DEFAULT_DEPTH=16
-      ;;
     # nVidia laptop chipsets should use 16bpp per default, or face horrific
     # colour banding issues, per Olivier Grawert and Trent Lloyd.
     nv)
@@ -1645,13 +1634,6 @@ xresprobeint() {
       else
         DEFAULT_DEPTH=24
       fi
-      ;;
-    # apparently this driver needs some hot hot depth action too.
-    savage)
-      DEFAULT_DEPTH=16
-      ;;
-    suncg6)
-      DEFAULT_DEPTH=8
       ;;
     *)
       DEFAULT_DEPTH=24
@@ -1682,6 +1664,10 @@ done
 # only mess with the server symlink file if it is a symbolic link or does
 # not exist.  otherwise, assume that's the way the user wants it.
 if ! [ -e "$SERVER_SYMLINK" ]; then
+  ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
+# recover from an old bug
+elif [ `readlink "$SERVER_SYMLINK"` = "/bin/true" ]; then
+  rm -f "$SERVER_SYMLINK"
   ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 fi
 

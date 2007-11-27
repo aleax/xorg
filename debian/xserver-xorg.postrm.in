@@ -28,40 +28,7 @@ THIS_SERVER=/usr/bin/Xorg
 
 # clean up non-conffile configuration files and related materials on purge
 if [ "$1" = "purge" ]; then
-  # de-register this file as a handler of the X server symlink
-  if [ -e "$SERVER_SYMLINK_ROSTER" ]; then
-    # check existing roster file for our package name
-    if fgrep -qx "$THIS_PACKAGE" "$SERVER_SYMLINK_ROSTER"; then
-      # construct temporary roster file with our package name removed, ignoring
-      # failure
-      fgrep -vx "$THIS_PACKAGE" "$SERVER_SYMLINK_ROSTER" > \
-        "$SERVER_SYMLINK_ROSTER.dpkg-tmp" || true
-      # is there anything left?
-      if [ -s "$SERVER_SYMLINK_ROSTER.dpkg-tmp" ]; then
-        # yes, replace the roster file
-        mv "$SERVER_SYMLINK_ROSTER.dpkg-tmp" "$SERVER_SYMLINK_ROSTER"
-      else
-        # no; remove both the roster and our temporary copy
-        rm -f "$SERVER_SYMLINK_ROSTER" "$SERVER_SYMLINK_ROSTER.dpkg-tmp"
-        # remove the X server symlink if it was still managed by the package
-        if [ -e "$SERVER_SYMLINK_CHECKSUM" ]; then
-          # does it exist?
-          if [ -e "$SERVER_SYMLINK" ]; then
-            # does the current MD5 checksum match the stored checksum?
-            if [ "$(readlink "$SERVER_SYMLINK" | md5sum)" \
-                 = "$(cat "$SERVER_SYMLINK_CHECKSUM")" ]; then
-              # yes; remove the symlink
-              rm -f "$SERVER_SYMLINK"
-            fi
-          fi
-          # remove the checksum file; any remaining X server symlink still on
-          # the system at this point is no longer being managed (local user
-          # customization)
-          rm -f "$SERVER_SYMLINK_CHECKSUM"
-        fi
-      fi
-    fi
-  fi
+  rm -f "$SERVER_SYMLINK"
 
   # de-register this file as a handler of the Xorg 4.x X server configuration
   # file

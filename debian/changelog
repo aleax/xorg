@@ -1,3 +1,67 @@
+xorg (1:7.3+7ubuntu1) UNRELEASED; urgency=low
+
+  * Merge with Debian unstable, remaining changes:
+    - apport/xorg-server.py, debian/x11-common.install:
+      + apport hook for xorg-server crashes
+    - local/Failsafe/*, x11-common.install:
+      + Bulletproof-X.
+    - control:
+      + Change maintainer address.
+      + xserver-xorg: Recommends displayconfig-gtk
+      + Move xorg-docs Recommends to Suggests, because xorg-docs is in
+        universe.
+    - control, rules:
+      + Add a dependency to x11-common for each binary built to save
+        disk/livecd space.
+      + Symlink the doc directories to x11-common, explicitly remove the
+        doc directories on upgrade for the now symlinked doc directories.
+    - control, rules, vars.sparc:
+      + Make xorg Architecture: any and use an extra variable to not
+        Depends on type-handling.
+      + Drop dependency on "sparc-utils | not+sparc"
+    - local/xserver-wrapper.c:
+      + Stop handling -config specifically in the wrapper, as Xorg now
+        handles this itself.
+    - local/dexconf, control:
+      + Added support for vmmouse_detect (if present) to override mouse
+        driver with vmware. Depends on mdetect.
+    - local/dexconf:
+      + Add extra bits for ps3fb xorg.conf.
+    - local/dexconf, xserver-xorg.templates:
+      + Read xserver-xorg/config/device/extra_options key, parse it
+        (first token is option name, rest of the line after first space
+        is value), and add it as Option lines to the device section.
+    - scripts/vars.{amd64,i386}:
+      + Install both xserver-xorg-video-intel AND xserver-xorg-video-i810,
+        instead of OR.
+    - scripts/vars.i386:
+      + Add xserver-xorg-video-amd and xserver-xorg-video-psb.
+    - scripts/vars.lpia:
+      + Copied from vars.i386.
+    - local/Xsession:
+      + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+        0.5MiB to avoid having it grow indefinitively. (This does not happen
+        with gdm anyway since gdm cleans the file on login).
+    - xserver-xorg.postinst.in:
+      + Make sure to ask video driver on sparc even if autodetected. Some
+        cards still require weird overrides (ati -> fbdev) that are not
+        100% known in all combinations.
+      + Skip video card autodetection if xforcevesa is set.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Mon, 19 Nov 2007 18:05:43 +0200
+
+xorg (1:7.3+7) unstable; urgency=low
+
+  * Don't set driver-specific depths in xserver postinst
+    + For newport, vga, savage, suncg6, and tdfx. These should all be handled
+      in the drivers themselves
+  * Get rid of old server symlink stuff that was left behind
+    + Make sure we replace symlinks pointing to /bin/true in the postinst.
+      This situation was created if you had installed the previous package
+      from scratch. Closes: #452897
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 26 Nov 2007 23:07:19 -0500
+
 xorg (1:7.3+6ubuntu1) hardy; urgency=low
 
   * Merge with Debian unstable, remaining changes:

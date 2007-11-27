@@ -26,48 +26,6 @@ CONFIG_AUX_DIR=/var/lib/x11
 SERVER_SYMLINK_CHECKSUM="$CONFIG_AUX_DIR/${SERVER_SYMLINK##*/}.md5sum"
 UNCONFIGURED_LINK_TARGET=$(which true)
 
-if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
-  # if the X server symlink is under automatic management, we are removing its
-  # target; we must re-set it to its "unconfigured default"
-
-  # first, only mess with config files if the configuration file auxiliary
-  # directory exists; if it does not, assume that's the way the user wants it
-  if [ -d "$CONFIG_AUX_DIR" ]; then
-    # only mess with the server symlink file it exists and is actually a
-    # symlink; otherwise, assume that's the way the user wants it
-    if [ -L "$SERVER_SYMLINK" ]; then
-      # similarly, check for the existence of the checksum file; if it doesn't
-      # exist, assume that's the way the user wants it
-      if [ -e "$SERVER_SYMLINK_CHECKSUM" ]; then
-        # compare the current and stored checksums; if they do not match,
-        # assume that's the way the user wants it
-        if [ "$(readlink "$SERVER_SYMLINK" | md5sum)" = \
-             "$(cat "$SERVER_SYMLINK_CHECKSUM")" ]; then
-          # prepare a new version of the config file; this is a symlink, so we
-          # can't use the tempfile command for it (we'd have to subsequently
-          # use ln -sf, which is subject to race condition attacks)
-          NEW_SERVER_SYMLINK="$SERVER_SYMLINK.dpkg-new"
-          ln -sf "$UNCONFIGURED_LINK_TARGET" "$NEW_SERVER_SYMLINK"
-          if ! cmp -s "$SERVER_SYMLINK" "$NEW_SERVER_SYMLINK"; then
-            if [ "$(readlink "$SERVER_SYMLINK")" \
-                 != "$(readlink "$NEW_SERVER_SYMLINK")" ]; then
-              if ! [ -d "$SERVER_SYMLINK" ]; then
-                warn "X server provided by $THIS_PACKAGE package is being" \
-                     "removed; setting $SERVER_SYMLINK to point to" \
-                     "$UNCONFIGURED_LINK_TARGET"
-                mv "$NEW_SERVER_SYMLINK" "$SERVER_SYMLINK"
-                readlink "$SERVER_SYMLINK" | md5sum > \
-                         "$SERVER_SYMLINK_CHECKSUM"
-              fi
-            fi
-          fi
-          rm -f "$NEW_SERVER_SYMLINK"
-        fi
-      fi
-    fi
-  fi
-fi
-
 #DEBHELPER#
 
 exit 0
