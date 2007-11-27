@@ -1644,6 +1644,10 @@ done
 # not exist.  otherwise, assume that's the way the user wants it.
 if ! [ -e "$SERVER_SYMLINK" ]; then
   ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
+# recover from an old bug
+elif [ `readlink "$SERVER_SYMLINK"` = "/bin/true" ]; then
+  rm -f "$SERVER_SYMLINK"
+  ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 fi
 
 # Don't touch the config on upgrades except to deal with known issues with old

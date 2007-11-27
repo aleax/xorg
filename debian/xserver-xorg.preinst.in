@@ -43,42 +43,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   if [ -n "$2" ] && \
      dpkg --compare-versions "$2" lt "1:7.0.11"; then
     if [ -e "/var/lib/xfree86" ]; then
-      if [ -e "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" ]; then
-        if fgrep -qx "$THIS_PACKAGE" \
-           "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE"; then
-          # construct temporary roster file with our package name removed, ignoring
-          # failure
-          fgrep -vx "$THIS_PACKAGE" \
-            "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" > \
-            "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
-            || true
-
-          # is there anything left?
-          if [ -s "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" ]; then
-            # yes, replace the roster file
-            mv "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp" \
-               "$CONFIG_AUX_DIR/$SERVER_SYMLINK_ROSTER_BASE"
-          else
-            # no; remove both the original and our temporary copy
-            rm -f "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE" \
-                  "/var/lib/xfree86/$SERVER_SYMLINK_ROSTER_BASE.dpkg-tmp"
-          fi
-        fi
-      fi
-
-      if [ -e "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE" ]; then
-        # migrate the checksum if it doesn't exist
-        if [ -e "$SERVER_SYMLINK_CHECKSUM" ]; then
-          message "Removing obsolete server symlink in /var/lib/xfree86"
-          rm "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE"
-        else
-          message "Migrating server symlink"
-          mv "/var/lib/xfree86/$SERVER_SYMLINK_CHECKSUM_BASE" \
-             "$CONFIG_AUX_DIR"
-        fi
-      fi
-
-
       if [ -e "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" ]; then \
         if fgrep -qx "$THIS_PACKAGE" \
            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"; then
@@ -122,14 +86,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   # if performing a fresh install, place config files under management if they
   # do *not* already exist
   if [ "$1" = "install" ]; then
-    # first, create and checksum the X server symlink; only do this if it
-    # both does not exist and is not a symbolic link
-    if ! [ -e "$SERVER_SYMLINK" ] && ! [ -L "$SERVER_SYMLINK" ]; then
-      # set the target to the unconfigured default
-      ln -s "$UNCONFIGURED_LINK_TARGET" "$SERVER_SYMLINK"
-      readlink "$SERVER_SYMLINK" | md5sum > "$SERVER_SYMLINK_CHECKSUM"
-    fi
-    # next, xorg.conf
     if ! [ -e "$XORGCONFIG" ]; then
       # cheap, fork()-free version of "touch"
       : > "$XORGCONFIG"
