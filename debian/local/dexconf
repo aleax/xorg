@@ -246,12 +246,6 @@ db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
 db_get xserver-$SERVER/config/device/use_fbdev
 DEVICE_USE_FBDEV="$RET"
-db_capb backup escape
-db_get xserver-$SERVER/config/device/extra_options
-DEVICE_EXTRA_OPTIONS="$RET"
-db_capb backup
-fetch xserver-$SERVER/config/monitor/identifier
-MONITOR_IDENTIFIER="$RET"
 exec 4>"$DEXCONFTMPDIR/Device"
 cat >&4 <<SECTION
 Section "Device"
@@ -268,7 +262,6 @@ fi
 if [ "$DEVICE_USE_FBDEV" = "true" ]; then
   printf "\tOption\t\t\"UseFBDev\"\t\t\"$DEVICE_USE_FBDEV\"\n" >&4
 fi
-printf "$DEVICE_EXTRA_OPTIONS" | perl -nae 'print "\tOption\t\t\"$F[0]\"\t\t\"@F[1..$#F]\"\n"' >&4
 printf "EndSection\n" >&4
 
 ### MONITOR
