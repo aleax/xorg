@@ -95,8 +95,15 @@ Package: xserver-xorg-video-all
 Architecture: any
 Depends: ${F:XServer-Xorg-Video-Depends}, x11-common
 Replaces: xserver-xorg-driver-all
-Conflicts: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
+ This package depends on the full suite of output drivers for the X.Org X server
+ (Xorg).  It does not provide any drivers itself, and may be removed if you wish
+ to only have certain drivers installed.
+
+Package: xserver-xorg-driver-all
+Architecture: any
+Depends: ${F:XServer-Xorg-Video-Depends}
+Description: the X.Org X server -- output driver transitional metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
  to only have certain drivers installed.
