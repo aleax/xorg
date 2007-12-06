@@ -4,7 +4,11 @@ xorg (1:7.3+7ubuntu3) UNRELEASED; urgency=low
   * Add "xserver-xorg-driver-all" transitional package to make
     dapper->hardy upgrades work.
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Thu, 06 Dec 2007 00:06:06 +0200
+  [ Tormod Volden ]
+  * xserver-xorg.postinst.in: Narrow down the drivers to filter from the list,
+    because otherwise radeonhd would not be selectable. (LP: #174311)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Thu, 06 Dec 2007 19:33:18 +0200
 
 xorg (1:7.3+7ubuntu2) hardy; urgency=low
 

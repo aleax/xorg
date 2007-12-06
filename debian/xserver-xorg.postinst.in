@@ -742,7 +742,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
         # v4l is not a display driver, and dummy is for advanced users.
         DRIVER_LIST="$(find $REAL_DRIVER_DIRS -name '*_drv.*' \
                        | sed 's|^.*/\([^/]*\)_drv\.[^\._]*|\1|g' \
-                       | egrep -v '(atimisc|dummy|r128|radeon|v4l)' | sort -u | xargs \
+                       | egrep -v '^(atimisc|dummy|r128|radeon|v4l)$' | sort -u | xargs \
                        | sed 's/ /, /g' 2>/dev/null) "
       fi
 
