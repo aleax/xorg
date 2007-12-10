@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg\n"
-"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 17:28-0400\n"
+"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-09 22:41-0500\n"
 "PO-Revision-Date: 2007-04-06 21:38+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
@@ -15,33 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Video modes to be used by the X server:"
-msgstr "โหมดภาพที่เซิร์ฟเวอร์เอ็กซ์จะใช้:"
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Please keep only the resolutions you would like the X server to use.  "
-"Removing all of them is the same as removing none, since in both cases the X "
-"server will attempt to use the highest possible resolution."
-msgstr ""
-"กรุณาเลือกเฉพาะความละเอียดที่คุณต้องการใช้กับเซิร์ฟเวอร์เอ็กซ์เท่านั้น  การลบออกทั้งหมด "
-"จะมีผลเหมือนกับเลือกทั้งหมด เนื่องจากในทั้งสองแบบนั้น "
-"เซิร์ฟเวอร์เอ็กซ์จะพยายามใช้ความละเอียดสูงสุดที่เป็นไปได้เหมือนกัน"
-
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Attempt to autodetect video hardware?"
 msgstr "จะพยายามตรวจสอบฮาร์ดแวร์แสดงภาพหรือไม่?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -56,7 +38,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
@@ -67,13 +49,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr "มีไดรเวอร์ปริยายสำหรับเซิร์ฟเวอร์ X.Org ที่เป็นไปได้หลายตัว"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -84,7 +66,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -95,7 +77,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -107,13 +89,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid "Identifier for your video card:"
 msgstr "ชื่อของการ์ดแสดงภาพของคุณ:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -126,19 +108,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "Generic Video Card"
 msgstr "การ์ดแสดงภาพแบบทั่วไป"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid "X server driver:"
 msgstr "ไดรเวอร์สำหรับเซิร์ฟเวอร์เอ็กซ์:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -148,7 +130,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -157,13 +139,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid "Use kernel framebuffer device interface?"
 msgstr "จะใช้การติดต่ออุปกรณ์แบบ framebuffer ของเคอร์เนลหรือไม่?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -174,7 +156,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -185,13 +167,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Video card's bus identifier:"
 msgstr "หมายเลขบัสของการ์ดแสดงภาพ:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -202,13 +184,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Examples:"
 msgstr "ตัวอย่าง:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -219,7 +201,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -229,7 +211,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -239,19 +221,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Incorrect format for the bus identifier"
 msgstr "รูปแบบหมายเลขบัสไม่ถูกต้อง"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "XKB rule set to use:"
 msgstr "ชุดกฎ XKB ที่จะใช้:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -259,7 +241,7 @@ msgstr "เพื่อให้เซิร์ฟเวอร์เอ็กซ
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -269,7 +251,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -280,19 +262,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "ถ้าไม่แน่ใจ ค่านี้ควรกำหนดเป็น \"xorg\""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "Keyboard model:"
 msgstr "รุ่นแป้นพิมพ์:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -302,7 +284,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -335,7 +317,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -346,7 +328,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -358,7 +340,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -368,13 +350,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard layout:"
 msgstr "ผังแป้นพิมพ์:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -385,7 +367,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -397,7 +379,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -409,13 +391,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard variant:"
 msgstr "แป้นพิมพ์แบบย่อย:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -426,7 +408,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -439,7 +421,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -452,7 +434,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -460,13 +442,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard options:"
 msgstr "ตัวเลือกของแป้นพิมพ์:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -478,7 +460,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -490,7 +472,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -504,7 +486,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -514,7 +496,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -522,303 +504,56 @@ msgstr "ผู้มีประสบการณ์สามารถใช้
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "When in doubt, this value should be left blank."
 msgstr ""
 "ถ้าไม่แน่ใจ ค่านี้ควรปล่อยว่างไว้ (สำหรับผู้ใช้ภาษาไทย ขอแนะนำ \"grp:alt_shift_toggle\")"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid "Attempt monitor autodetection?"
-msgstr "พยายามตรวจสอบจอภาพโดยอัตโนมัติหรือไม่?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"Many monitors (including LCD's) and video cards support a communication "
-"protocol that allows the monitor's technical characteristics to be "
-"communicated back to the computer.  If the monitor and video card support "
-"this protocol, further configuration questions about the monitor will be pre-"
-"answered."
-msgstr ""
-"จอภาพ (รวมทั้งจอ LCD) และการ์ดแสดงภาพหลายรุ่น "
-"สนับสนุนโพรโทคอลสื่อสารที่ทำให้สามารถส่งข้อมูลคุณลักษณ์ทางเทคนิคของจอภาพมาที่คอมพิวเตอร์ได้ "
-"ถ้าจอภาพและการ์ดแสดงภาพของคุณสนับสนุนโพรโทคอลนี้ คำถามต่างๆ ที่เกี่ยวกับการตั้งค่าจอภาพ "
-"จะถูกเติมคำตอบล่วงหน้าไว้ให้"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"If autodetection fails, you will be asked for information about the monitor."
-msgstr "แต่ถ้าการตรวจสอบอัตโนมัติล้มเหลว คุณจะต้องตอบคำถามเกี่ยวกับจอภาพแทน"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid "Method for selecting the monitor characteristics:"
-msgstr "วิธีเลือกคุณลักษณ์ของจอภาพ:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the monitor must be known."
-msgstr ""
-"เพื่อให้ระบบติดต่อผู้ใช้แบบกราฟิกส์ของเอ็กซ์วินโดว์ทำงานได้อย่างถูกต้อง "
-"จำเป็นต้องระบุคุณลักษณ์ของจอภาพ"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"simple\" option will prompt about the monitor's physical size; this "
-"will set some configuration values appropriate for a typical CRT of the "
-"corresponding size, but may be suboptimal for high-quality CRT's."
-msgstr ""
-"ตัวเลือก \"อย่างง่าย\" จะถามขนาดทางกายภาพของจอภาพ และจะกำหนดค่าที่เหมาะสมสำหรับจอภาพ "
-"CRT ทั่วไปตามขนาดที่เลือก แต่อาจจะไม่ใช่ค่าที่ดีที่สุดสำหรับจอ CRT คุณภาพสูง"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"medium\" option will present you with a list of resolutions and "
-"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
-"you wish to use (and that you know the monitor is capable of)."
-msgstr ""
-"ตัวเลือก \"ขั้นกลาง\" จะแสดงรายการความละเอียดและอัตราการรีเฟรชจอ เช่น \"800x600 @ 85 "
-"Hz\" คุณควรเลือกโหมดที่ดีที่สุดที่คุณต้องการใช้ และเป็นโหมดที่คุณรู้ว่าจอภาพสามารถรองรับได้"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"advanced\" option will let you specify the monitor's horizontal sync "
-"and vertical refresh tolerances directly."
-msgstr ""
-"ตัวเลือก \"ขั้นสูง\" จะให้คุณกำหนดช่วงความถี่การ sync ตามแนวนอน "
-"และการรีเฟรชตามแนวตั้งโดยตรง"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "Up to 14 inches (355 mm)"
-msgstr "ไม่เกิน 14 นิ้ว (355 มม.)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "15 inches (380 mm)"
-msgstr "15 นิ้ว (380 มม.)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "17 inches (430 mm)"
-msgstr "17 นิ้ว (430 มม.)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "19-20 inches (480-510 mm)"
-msgstr "19-20 นิ้ว (480-510 มม.)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "21 inches (530 mm) or more"
-msgstr "21 นิ้ว (530 มม.) ขึ้นไป"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "Approximate monitor size:"
-msgstr "ขนาดจอภาพโดยประมาณ:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "High-quality CRT's may be able to use the next highest size category."
-msgstr "จอภาพ CRT คุณภาพสูง อาจสามารถใช้ค่าสำหรับขนาดที่สูงกว่าในขั้นถัดไปได้"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid "Monitor's best video mode:"
-msgstr "โหมดภาพที่ดีที่สุดสำหรับจอภาพ:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
-"Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
-"perfectly acceptable to select a \"worse\" video mode than the monitor's "
-"best if you wish.  Users of LCD displays may also be able to do this, but "
-"only if both the video chipset and the driver support it; if in doubt, use "
-"the video mode recommended by the manufacturer of your LCD."
-msgstr ""
-"เลือกความละเอียดและอัตราการรีเฟรชที่ \"ดีที่สุด\" ที่จอภาพสามารถรองรับได้ "
-"ความละเอียดและอัตราการรีเฟรชที่สูงถือว่าดี สำหรับจอภาพ CRT การเลือกโหมดภาพที่ \"ดีน้อยที่สุด\" "
-"ก็ถือว่ายอมรับได้ ผู้ใช้จอภาพ LCD ก็อาจทำเช่นนี้ได้ แต่ชิปเซ็ตแสดงภาพและไดรเวอร์ก็ต้องสนับสนุนด้วย "
-"ถ้าไม่แน่ใจ ก็ควรใช้โหมดภาพที่ผู้ผลิต LCD ของคุณแนะนำ"
-
-#. Type: text
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Generic Monitor"
-msgstr "จอภาพแบบทั่วไป"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Write monitor sync ranges to the configuration file?"
-msgstr "จะเขียนข้อมูลช่วงการ sync ลงในแฟ้มค่าตั้งหรือไม่?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"The monitor synchronization ranges should be autodetected by the X server in "
-"most cases, but sometimes it needs hinting.  This option is for experienced "
-"users, and should be left at its default."
-msgstr ""
-"โดยส่วนใหญ่แล้ว ช่วงการ sync ของจอภาพควรจะถูกตรวจพบโดยอัตโนมัติโดยเซิร์ฟเวอร์เอ็กซ์ "
-"แต่บางทีก็ต้องการข้อชี้แนะ ตัวเลือกนี้มีไว้สำหรับผู้มีประสบการณ์เท่านั้น และปกติควรใช้ค่าปริยาย"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid "Monitor's horizontal sync range:"
-msgstr "ช่วงการ sync ตามแนวนอนของจอภาพ:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 30 or higher than 130 are extremely rare."
-msgstr ""
-"กรุณาป้อนรายการความถี่ตายตัว คั่นด้วยจุลภาค (สำหรับจอภาพที่ใช้ความถี่ตายตัว) "
-"หรือช่วงความถี่คั่นด้วยยัติภังค์ (สำหรับจอภาพ CRT รุ่นใหม่ๆ) ข้อมูลนี้ควรมีอยู่ในคู่มือจอภาพของคุณ "
-"ค่าที่ต่ำกว่า 30 หรือสูงกว่า 130 ถือว่าหายากมากๆ"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid "Monitor's vertical refresh range:"
-msgstr "ช่วงการรีเฟรชตามแนวตั้งของจอภาพ:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 50 or higher than 160 are extremely rare."
-msgstr ""
-"กรุณาป้อนรายการความถี่ตายตัว คั่นด้วยจุลภาค (สำหรับจอภาพที่ใช้ความถี่ตายตัว) "
-"หรือช่วงความถี่คั่นด้วยยัติภังค์ (สำหรับจอภาพ CRT รุ่นใหม่ๆ) ข้อมูลนี้ควรมีอยู่ในคู่มือจอภาพของคุณ "
-"ค่าที่ต่ำกว่า 50 หรือสูงกว่า 160 ถือว่าหายากมากๆ"
-
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:24001
-msgid "Incorrect values entered"
-msgstr "ข้อมูลที่ป้อนไม่ถูกต้อง"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"The valid syntax is a comma-separated list of discrete values, or a pair of "
-"values separated by a dash."
-msgstr "รูปแบบที่ถูกต้อง คือรายการความถี่คั่นด้วยจุลภาค หรือคู่ความถี่คั่นด้วยยัติภังค์เท่านั้น"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid "Desired default color depth in bits:"
-msgstr "จำนวนบิตสีปริยายที่ต้องการ:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"Usually 24-bit color is desirable, but on graphics cards with limited "
-"amounts of framebuffer memory, higher resolutions may be achieved at the "
-"expense of higher color depth.  Also, some cards support hardware 3D "
-"acceleration only for certain depths.  Consult your video card manual for "
-"more information."
-msgstr ""
-"โดยปกติ สี 24 บิตจะดีที่สุด แต่สำหรับการ์ดแสดงภาพบางรุ่นที่มีหน่วยความจำ framebuffer จำกัด "
-"อาจต้องลดจำนวนสีลงถ้าต้องการความละเอียดสูง นอกจากนี้ การ์ดบางรุ่นอาจสนับสนุนการเร่งความเร็ว "
-"3 มิติด้วยฮาร์ดแวร์ที่จำนวนบิตสีบางค่าเท่านั้น กรุณาอ่านคู่มือการแสดงภาพของคุณเพื่อดูรายละเอียด"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
-"bits of alpha channel or simple zero padding; the X Window System can handle "
-"both.  If you want either, select 24 bits."
-msgstr ""
-"สิ่งที่เรียกว่า \"สี 32 บิต\" ความจริงก็คือสี 24 บิต แล้วเพิ่ม alpha channel อีก 8 บิต "
-"หรือแค่เติมค่าศูนย์ ระบบเอ็กซ์วินโดว์สามารถจัดการทั้งสองแบบได้ "
-"ถ้าคุณต้องการอย่างใดอย่างหนึ่งในสองแบบนี้ ให้เลือกสี 24 บิต"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "Empty value"
 msgstr "ค่าว่างเปล่า"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "A null entry is not permitted for this value."
 msgstr "ไม่อนุญาตให้ใช้ค่าว่างเปล่าสำหรับข้อมูลนี้"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Invalid double-quote characters"
 msgstr "ห้ามใช้อัญประกาศคู่"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "ไม่อนุญาตให้ใช้อัญประกาศคู่ (\") ในช่องข้อมูลนี้"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Numerical value needed"
 msgstr "ต้องการค่าตัวเลข"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "ไม่อนุญาตให้ใช้อักขระที่ไม่ใช่ตัวเลขในช่องข้อมูลนี้"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid "Autodetect keyboard layout?"
 msgstr "ตรวจสอบผังแป้นพิมพ์โดยอัตโนมัติหรือไม่?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -829,7 +564,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -979,6 +714,184 @@ msgid ""
 msgstr ""
 "การติดตั้งแพกเกจนี้จะหยุดตัวเองแบบล้มเหลว เพื่อให้คุณสามารถจัดแจงตามที่กล่าวข้างต้นได้ "
 "กรุณาดำเนินการปรับรุ่นใหม่อีกครั้ง หลังจากที่คุณได้เก็บกวาดไดเรกทอรีดังกล่าวเรียบร้อยแล้ว"
+
+#~ msgid "Video modes to be used by the X server:"
+#~ msgstr "โหมดภาพที่เซิร์ฟเวอร์เอ็กซ์จะใช้:"
+
+#~ msgid ""
+#~ "Please keep only the resolutions you would like the X server to use.  "
+#~ "Removing all of them is the same as removing none, since in both cases "
+#~ "the X server will attempt to use the highest possible resolution."
+#~ msgstr ""
+#~ "กรุณาเลือกเฉพาะความละเอียดที่คุณต้องการใช้กับเซิร์ฟเวอร์เอ็กซ์เท่านั้น  การลบออกทั้งหมด "
+#~ "จะมีผลเหมือนกับเลือกทั้งหมด เนื่องจากในทั้งสองแบบนั้น "
+#~ "เซิร์ฟเวอร์เอ็กซ์จะพยายามใช้ความละเอียดสูงสุดที่เป็นไปได้เหมือนกัน"
+
+#~ msgid "Attempt monitor autodetection?"
+#~ msgstr "พยายามตรวจสอบจอภาพโดยอัตโนมัติหรือไม่?"
+
+#~ msgid ""
+#~ "Many monitors (including LCD's) and video cards support a communication "
+#~ "protocol that allows the monitor's technical characteristics to be "
+#~ "communicated back to the computer.  If the monitor and video card support "
+#~ "this protocol, further configuration questions about the monitor will be "
+#~ "pre-answered."
+#~ msgstr ""
+#~ "จอภาพ (รวมทั้งจอ LCD) และการ์ดแสดงภาพหลายรุ่น "
+#~ "สนับสนุนโพรโทคอลสื่อสารที่ทำให้สามารถส่งข้อมูลคุณลักษณ์ทางเทคนิคของจอภาพมาที่คอมพิวเตอร์ได้ "
+#~ "ถ้าจอภาพและการ์ดแสดงภาพของคุณสนับสนุนโพรโทคอลนี้ คำถามต่างๆ ที่เกี่ยวกับการตั้งค่าจอภาพ "
+#~ "จะถูกเติมคำตอบล่วงหน้าไว้ให้"
+
+#~ msgid ""
+#~ "If autodetection fails, you will be asked for information about the "
+#~ "monitor."
+#~ msgstr "แต่ถ้าการตรวจสอบอัตโนมัติล้มเหลว คุณจะต้องตอบคำถามเกี่ยวกับจอภาพแทน"
+
+#~ msgid "Method for selecting the monitor characteristics:"
+#~ msgstr "วิธีเลือกคุณลักษณ์ของจอภาพ:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the monitor must be known."
+#~ msgstr ""
+#~ "เพื่อให้ระบบติดต่อผู้ใช้แบบกราฟิกส์ของเอ็กซ์วินโดว์ทำงานได้อย่างถูกต้อง "
+#~ "จำเป็นต้องระบุคุณลักษณ์ของจอภาพ"
+
+#~ msgid ""
+#~ "The \"simple\" option will prompt about the monitor's physical size; this "
+#~ "will set some configuration values appropriate for a typical CRT of the "
+#~ "corresponding size, but may be suboptimal for high-quality CRT's."
+#~ msgstr ""
+#~ "ตัวเลือก \"อย่างง่าย\" จะถามขนาดทางกายภาพของจอภาพ "
+#~ "และจะกำหนดค่าที่เหมาะสมสำหรับจอภาพ CRT ทั่วไปตามขนาดที่เลือก "
+#~ "แต่อาจจะไม่ใช่ค่าที่ดีที่สุดสำหรับจอ CRT คุณภาพสูง"
+
+#~ msgid ""
+#~ "The \"medium\" option will present you with a list of resolutions and "
+#~ "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best "
+#~ "mode you wish to use (and that you know the monitor is capable of)."
+#~ msgstr ""
+#~ "ตัวเลือก \"ขั้นกลาง\" จะแสดงรายการความละเอียดและอัตราการรีเฟรชจอ เช่น \"800x600 @ "
+#~ "85 Hz\" คุณควรเลือกโหมดที่ดีที่สุดที่คุณต้องการใช้ และเป็นโหมดที่คุณรู้ว่าจอภาพสามารถรองรับได้"
+
+#~ msgid ""
+#~ "The \"advanced\" option will let you specify the monitor's horizontal "
+#~ "sync and vertical refresh tolerances directly."
+#~ msgstr ""
+#~ "ตัวเลือก \"ขั้นสูง\" จะให้คุณกำหนดช่วงความถี่การ sync ตามแนวนอน "
+#~ "และการรีเฟรชตามแนวตั้งโดยตรง"
+
+#~ msgid "Up to 14 inches (355 mm)"
+#~ msgstr "ไม่เกิน 14 นิ้ว (355 มม.)"
+
+#~ msgid "15 inches (380 mm)"
+#~ msgstr "15 นิ้ว (380 มม.)"
+
+#~ msgid "17 inches (430 mm)"
+#~ msgstr "17 นิ้ว (430 มม.)"
+
+#~ msgid "19-20 inches (480-510 mm)"
+#~ msgstr "19-20 นิ้ว (480-510 มม.)"
+
+#~ msgid "21 inches (530 mm) or more"
+#~ msgstr "21 นิ้ว (530 มม.) ขึ้นไป"
+
+#~ msgid "Approximate monitor size:"
+#~ msgstr "ขนาดจอภาพโดยประมาณ:"
+
+#~ msgid ""
+#~ "High-quality CRT's may be able to use the next highest size category."
+#~ msgstr "จอภาพ CRT คุณภาพสูง อาจสามารถใช้ค่าสำหรับขนาดที่สูงกว่าในขั้นถัดไปได้"
+
+#~ msgid "Monitor's best video mode:"
+#~ msgstr "โหมดภาพที่ดีที่สุดสำหรับจอภาพ:"
+
+#~ msgid ""
+#~ "Choose the \"best\" resolution and refresh rate the monitor is capable "
+#~ "of.  Larger resolutions and refresh rates are better.  With a CRT "
+#~ "monitor, it is perfectly acceptable to select a \"worse\" video mode than "
+#~ "the monitor's best if you wish.  Users of LCD displays may also be able "
+#~ "to do this, but only if both the video chipset and the driver support it; "
+#~ "if in doubt, use the video mode recommended by the manufacturer of your "
+#~ "LCD."
+#~ msgstr ""
+#~ "เลือกความละเอียดและอัตราการรีเฟรชที่ \"ดีที่สุด\" ที่จอภาพสามารถรองรับได้ "
+#~ "ความละเอียดและอัตราการรีเฟรชที่สูงถือว่าดี สำหรับจอภาพ CRT การเลือกโหมดภาพที่ \"ดีน้อยที่สุด"
+#~ "\" ก็ถือว่ายอมรับได้ ผู้ใช้จอภาพ LCD ก็อาจทำเช่นนี้ได้ "
+#~ "แต่ชิปเซ็ตแสดงภาพและไดรเวอร์ก็ต้องสนับสนุนด้วย ถ้าไม่แน่ใจ ก็ควรใช้โหมดภาพที่ผู้ผลิต LCD "
+#~ "ของคุณแนะนำ"
+
+#~ msgid "Generic Monitor"
+#~ msgstr "จอภาพแบบทั่วไป"
+
+#~ msgid "Write monitor sync ranges to the configuration file?"
+#~ msgstr "จะเขียนข้อมูลช่วงการ sync ลงในแฟ้มค่าตั้งหรือไม่?"
+
+#~ msgid ""
+#~ "The monitor synchronization ranges should be autodetected by the X server "
+#~ "in most cases, but sometimes it needs hinting.  This option is for "
+#~ "experienced users, and should be left at its default."
+#~ msgstr ""
+#~ "โดยส่วนใหญ่แล้ว ช่วงการ sync ของจอภาพควรจะถูกตรวจพบโดยอัตโนมัติโดยเซิร์ฟเวอร์เอ็กซ์ "
+#~ "แต่บางทีก็ต้องการข้อชี้แนะ ตัวเลือกนี้มีไว้สำหรับผู้มีประสบการณ์เท่านั้น และปกติควรใช้ค่าปริยาย"
+
+#~ msgid "Monitor's horizontal sync range:"
+#~ msgstr "ช่วงการ sync ตามแนวนอนของจอภาพ:"
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 30 or higher than 130 are extremely rare."
+#~ msgstr ""
+#~ "กรุณาป้อนรายการความถี่ตายตัว คั่นด้วยจุลภาค (สำหรับจอภาพที่ใช้ความถี่ตายตัว) "
+#~ "หรือช่วงความถี่คั่นด้วยยัติภังค์ (สำหรับจอภาพ CRT รุ่นใหม่ๆ) ข้อมูลนี้ควรมีอยู่ในคู่มือจอภาพของคุณ "
+#~ "ค่าที่ต่ำกว่า 30 หรือสูงกว่า 130 ถือว่าหายากมากๆ"
+
+#~ msgid "Monitor's vertical refresh range:"
+#~ msgstr "ช่วงการรีเฟรชตามแนวตั้งของจอภาพ:"
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 50 or higher than 160 are extremely rare."
+#~ msgstr ""
+#~ "กรุณาป้อนรายการความถี่ตายตัว คั่นด้วยจุลภาค (สำหรับจอภาพที่ใช้ความถี่ตายตัว) "
+#~ "หรือช่วงความถี่คั่นด้วยยัติภังค์ (สำหรับจอภาพ CRT รุ่นใหม่ๆ) ข้อมูลนี้ควรมีอยู่ในคู่มือจอภาพของคุณ "
+#~ "ค่าที่ต่ำกว่า 50 หรือสูงกว่า 160 ถือว่าหายากมากๆ"
+
+#~ msgid "Incorrect values entered"
+#~ msgstr "ข้อมูลที่ป้อนไม่ถูกต้อง"
+
+#~ msgid ""
+#~ "The valid syntax is a comma-separated list of discrete values, or a pair "
+#~ "of values separated by a dash."
+#~ msgstr "รูปแบบที่ถูกต้อง คือรายการความถี่คั่นด้วยจุลภาค หรือคู่ความถี่คั่นด้วยยัติภังค์เท่านั้น"
+
+#~ msgid "Desired default color depth in bits:"
+#~ msgstr "จำนวนบิตสีปริยายที่ต้องการ:"
+
+#~ msgid ""
+#~ "Usually 24-bit color is desirable, but on graphics cards with limited "
+#~ "amounts of framebuffer memory, higher resolutions may be achieved at the "
+#~ "expense of higher color depth.  Also, some cards support hardware 3D "
+#~ "acceleration only for certain depths.  Consult your video card manual for "
+#~ "more information."
+#~ msgstr ""
+#~ "โดยปกติ สี 24 บิตจะดีที่สุด แต่สำหรับการ์ดแสดงภาพบางรุ่นที่มีหน่วยความจำ framebuffer จำกัด "
+#~ "อาจต้องลดจำนวนสีลงถ้าต้องการความละเอียดสูง นอกจากนี้ "
+#~ "การ์ดบางรุ่นอาจสนับสนุนการเร่งความเร็ว 3 มิติด้วยฮาร์ดแวร์ที่จำนวนบิตสีบางค่าเท่านั้น "
+#~ "กรุณาอ่านคู่มือการแสดงภาพของคุณเพื่อดูรายละเอียด"
+
+#~ msgid ""
+#~ "So-called \"32-bit color\" is actually 24 bits of color information plus "
+#~ "8 bits of alpha channel or simple zero padding; the X Window System can "
+#~ "handle both.  If you want either, select 24 bits."
+#~ msgstr ""
+#~ "สิ่งที่เรียกว่า \"สี 32 บิต\" ความจริงก็คือสี 24 บิต แล้วเพิ่ม alpha channel อีก 8 บิต "
+#~ "หรือแค่เติมค่าศูนย์ ระบบเอ็กซ์วินโดว์สามารถจัดการทั้งสองแบบได้ "
+#~ "ถ้าคุณต้องการอย่างใดอย่างหนึ่งในสองแบบนี้ ให้เลือกสี 24 บิต"
 
 #~ msgid "Write default Files section to configuration file?"
 #~ msgstr "จะเขียนข้อมูลปริยายของหัวข้อ Files ลงในแฟ้มค่าตั้งหรือไม่?"

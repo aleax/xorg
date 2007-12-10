@@ -1,12 +1,12 @@
 # Vietnamese translation for Xorg.
 # Copyright © Branden Robinson, 2000-2004
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xorg 1:7.1.0-15\n"
-"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 17:28-0400\n"
+"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-09 22:41-0500\n"
 "PO-Revision-Date: 2007-06-02 20:49+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -16,33 +16,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.6.3b1\n"
 
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Video modes to be used by the X server:"
-msgstr "Chế độ ảnh động cần được dùng bởi trình phục vụ X:"
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Please keep only the resolutions you would like the X server to use.  "
-"Removing all of them is the same as removing none, since in both cases the X "
-"server will attempt to use the highest possible resolution."
-msgstr ""
-"Hãy giữ chỉ những độ phân giải bạn muốn trình phục vụ X sử dụng. Việc gỡ bỏ "
-"mọi điều làm cùng kết quả với không gỡ bỏ gì, vì trong cả hai trường hợp "
-"này, trình phục vụ X sẽ thử sử dụng độ phân giải cao nhất có thể."
-
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Attempt to autodetect video hardware?"
 msgstr "Thử tự động phát hiện phần cứng ảnh động không?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -58,7 +40,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
@@ -70,14 +52,14 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr ""
 "Có nhiều trình điều khiển phục vụ X.Org mặc định có thể cho phần cứng này"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -89,7 +71,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -100,7 +82,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -112,13 +94,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid "Identifier for your video card:"
 msgstr "Dấu nhận diện cho thẻ ảnh động:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -132,19 +114,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "Generic Video Card"
 msgstr "Thẻ ảnh động giống loài"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid "X server driver:"
 msgstr "Trình điều khiển phục vụ X:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -154,7 +136,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -164,13 +146,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Dùng giao diện thiết bị đệm khung hạt nhân không?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -182,7 +164,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -195,13 +177,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Video card's bus identifier:"
 msgstr "Điều nhận diện mạch nối thẻ ảnh động:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -213,13 +195,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Examples:"
 msgstr "Thí dụ :"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -231,7 +213,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -241,7 +223,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -251,19 +233,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Incorrect format for the bus identifier"
 msgstr "Định dạng không đúng cho điều nhận diện mạch nối"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "XKB rule set to use:"
 msgstr "Bộ quy tắc XKB cần dùng:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -273,7 +255,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -283,31 +265,31 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
 "Người dùng cấp cao có thể sử dụng bất kỳ bộ quy tắc XKB đã xác định. Nếu gói "
-"« xkb-data » đã được giải nén, xem thư mục « /usr/share/X11/xkb/rules » để "
-"tìm các bộ quy tắc sẵn sàng."
+"« xkb-data » đã được giải nén, xem thư mục « /usr/share/X11/xkb/rules » để tìm "
+"các bộ quy tắc sẵn sàng."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Khi chưa chắc, giá trị này nên được đặt thành « xorg »."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "Keyboard model:"
 msgstr "Mẫu bàn phím:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -318,7 +300,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -353,7 +335,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -365,7 +347,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -377,7 +359,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -387,13 +369,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard layout:"
 msgstr "Bố trí bàn phím:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -405,7 +387,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -417,7 +399,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -429,13 +411,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard variant:"
 msgstr "Biến thể bàn phím:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -447,7 +429,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -460,7 +442,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -474,20 +456,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "Người dùng bàn phím tiếng Anh kiểu Mỹ thường nên bỏ mục này rỗng."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard options:"
 msgstr "Tùy chọn bàn phím:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -500,7 +482,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -512,7 +494,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -527,17 +509,17 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
-"Bạn có thể kết hợp nhiều tùy chọn định giới bằng dấu phẩy, v.d. « ctrl:"
-"nocaps,altwin:meta_win »."
+"Bạn có thể kết hợp nhiều tùy chọn định giới bằng dấu phẩy, v.d. « ctrl:nocaps,"
+"altwin:meta_win »."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -547,321 +529,55 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "When in doubt, this value should be left blank."
 msgstr "Khi chưa chắc, hãy bỏ trống giá trị này."
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid "Attempt monitor autodetection?"
-msgstr "Thử tự động phát hiện màn hình không?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"Many monitors (including LCD's) and video cards support a communication "
-"protocol that allows the monitor's technical characteristics to be "
-"communicated back to the computer.  If the monitor and video card support "
-"this protocol, further configuration questions about the monitor will be pre-"
-"answered."
-msgstr ""
-"Nhiều bộ trình bày (gồm cái LCD) và thẻ ảnh động hỗ trợ một giao thức giao "
-"thông cho phép các đặc tuyến của bộ trình bày được gởi về máy tính. Nếu cả "
-"bộ trình bày lẫn thẻ ảnh động đều hỗ trợ giao thức này, câu hỏi cấu hình nữa "
-"về bộ trình bày được trả lời sẵn."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"If autodetection fails, you will be asked for information about the monitor."
-msgstr ""
-"Nếu việc phát hiện tự động không phải là thành công, bạn sẽ được nhắc nhập "
-"thông tin về bộ trình bày."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid "Method for selecting the monitor characteristics:"
-msgstr "Phương pháp chọn các đặc tuyến của bộ trình bày:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the monitor must be known."
-msgstr ""
-"Để giao diện người dùng đồ họa của Hệ Thống Cửa Sổ X sẽ hoạt động cho đúng, "
-"một số đặc tuyến của bộ trình bày cần phải được biết."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"simple\" option will prompt about the monitor's physical size; this "
-"will set some configuration values appropriate for a typical CRT of the "
-"corresponding size, but may be suboptimal for high-quality CRT's."
-msgstr ""
-"Tùy chọn « đơn giản » sẽ nhắc bạn nhập kích cỡ vật lý của bộ trình bày; việc "
-"này sẽ đặt một số giá trị cấu hình thích hợp với máy CRT chuẩn có kích cỡ "
-"tương ứng, nhưng mà có thể nằm dưới giá trị tối ưu cho máy CRT có chất lượng "
-"cao."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"medium\" option will present you with a list of resolutions and "
-"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
-"you wish to use (and that you know the monitor is capable of)."
-msgstr ""
-"Tùy chọn « vừa » sẽ hiển thị danh sách các độ phân giải và tỷ lệ câp nhật, "
-"như \"800x600 @ 85Hz\": hãy chọn chế độ tốt nhất bạn muốn sử dụng (cũng "
-"thích hợp với khả năng của bộ trình bày đó)."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"advanced\" option will let you specify the monitor's horizontal sync "
-"and vertical refresh tolerances directly."
-msgstr ""
-"Tùy chọn « cấp cao » sẽ cho bạn khả năng ghi rõ trực tiếp độ chịu đựng cả "
-"đồng bộ ngang (horizontal sync) lẫn cập nhật dọc (vertical refresh) của bộ "
-"trình bày."
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "Up to 14 inches (355 mm)"
-msgstr "Đến 14 insơ (355 mm)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "15 inches (380 mm)"
-msgstr "15 insơ (380 mm)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "17 inches (430 mm)"
-msgstr "17 insơ (430 mm)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "19-20 inches (480-510 mm)"
-msgstr "19-20 insơ (480-510 mm)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "21 inches (530 mm) or more"
-msgstr "21 insơ (530 mm) hay lớn hơn."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "Approximate monitor size:"
-msgstr "Kích cỡ xấp xỉ của bộ trình bày:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "High-quality CRT's may be able to use the next highest size category."
-msgstr ""
-"Màn hình CRT có chất lượng cao có thể sử dụng được loại kích cỡ lớn hơn kế "
-"tiếp."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid "Monitor's best video mode:"
-msgstr "Chế độ ảnh động tốt nhất của bộ trình bày:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
-"Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
-"perfectly acceptable to select a \"worse\" video mode than the monitor's "
-"best if you wish.  Users of LCD displays may also be able to do this, but "
-"only if both the video chipset and the driver support it; if in doubt, use "
-"the video mode recommended by the manufacturer of your LCD."
-msgstr ""
-"Hãy chọn cả độ phân giải lẫn tỷ lệ cập nhật « tốt nhất » trong phạm vị khả "
-"năng của bộ trình bày. Độ phân giải và tỷ lệ lớn hơn là tốt hơn. Nếu bạn "
-"dùng bộ trình bày CRT, chắc là có thể chọn chế độ ảnh động « xấu hơn » khả "
-"năng bộ trình bày, nếu bạn muốn. Người dùng bộ trình bày LCD (mặt phẳng) "
-"cũng có khả năng này, nhưng mà chỉ nếu cả bộ phiến tinh thể lẫn trình điêu "
-"khiển đều hỗ trợ giá trị này. Nếu chưa chắc, bạn hãy sử dụng chế độ ảnh động "
-"được khuyến khích bởi hãng chế tạo màn hình LCD của bạn."
-
-#. Type: text
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Generic Monitor"
-msgstr "Bộ trình bày giống loài"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Write monitor sync ranges to the configuration file?"
-msgstr "Ghi phạm vị đồng bộ màn hình vào tập tin cấu hình không?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"The monitor synchronization ranges should be autodetected by the X server in "
-"most cases, but sometimes it needs hinting.  This option is for experienced "
-"users, and should be left at its default."
-msgstr ""
-"Trong phần lớn trường hợp, trình phục vụ X nên phát hiện tự động những phạm "
-"vị đồng bộ hoá bộ trình bày, nhưng đôi khi cần gợi ý. Tùy chọn này chỉ cho "
-"người dùng cấp cao thì nên còn lại là giá trị mặc định."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid "Monitor's horizontal sync range:"
-msgstr "Phạm vị đồng bộ ngang của màn hình:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 30 or higher than 130 are extremely rare."
-msgstr ""
-"Hãy nhập hoặc danh sách giá trị riêng định giới bằng dấu phẩy (cho màn hình "
-"có tần số có định), hoặc một cặp giá trị định giới bằng một dấu gạch nối "
-"(mọi bộ trình bày CRT hiện đại). Thông tin này nên có sẵn trong sổ tay của "
-"bộ trình bày. Rất ít có giá trị nằm dưới 30 hoặc trên 130."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid "Monitor's vertical refresh range:"
-msgstr "Phạm vị cập nhật dọc của màn hình:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 50 or higher than 160 are extremely rare."
-msgstr ""
-"Hãy nhập hoặc danh sách giá trị riêng định giới bằng dấu phẩy (cho bộ trình "
-"bày có tần số có định), hoặc một cặp giá trị định giới bằng một dấu gạch nối "
-"(mọi bộ trình bày CRT hiện đại). Thông tin nên sẵn sàng trong sổ tay của bộ "
-"trình bày. Rất ít có giá trị nằm dưới 50 hoặc trên 160."
-
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:24001
-msgid "Incorrect values entered"
-msgstr "Giá trị không đúng được nhập"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"The valid syntax is a comma-separated list of discrete values, or a pair of "
-"values separated by a dash."
-msgstr ""
-"Cú pháp hợp lệ là danh sách các giá trị riêng định giới bằng dấu phẩy, hoặc "
-"một cặp giá trị định giới bằng một dấu gạch nối."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid "Desired default color depth in bits:"
-msgstr "Độ sâu màu mặc định đã muốn, theo bit:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"Usually 24-bit color is desirable, but on graphics cards with limited "
-"amounts of framebuffer memory, higher resolutions may be achieved at the "
-"expense of higher color depth.  Also, some cards support hardware 3D "
-"acceleration only for certain depths.  Consult your video card manual for "
-"more information."
-msgstr ""
-"Thường màu 24-bit là tốt nhất, nhưng mà trên thẻ độ họa có bộ nhớ đệm khung "
-"bị hạn chế, độ phân giải cao hơn có thể được đạt được trả giá bằng độ sâu "
-"màu cao hơn. Hơn nữa, một số thẻ riêng hỗ trợ khả năng tăng tốc ba chiều "
-"(3D) phần cứng chỉ cho một số độ sâu nào đó. Xem sổ tay của thẻ ảnh động để "
-"tìm thông tin thêm."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
-"bits of alpha channel or simple zero padding; the X Window System can handle "
-"both.  If you want either, select 24 bits."
-msgstr ""
-"« Màu 32-bit » (được gọi như thế) thật sự là 24 bit thông tin màu cộng với 8 "
-"bit đệm kênh anfa hay đệm số không đơn giản: Hệ Thống Cửa Sổ X có khả năng "
-"quản lý cả hai điều. Nếu bạn muốn bật một của hai tùy chọn này, hãy chọn 24 "
-"bit."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "Empty value"
 msgstr "Giá trị rỗng"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "A null entry is not permitted for this value."
 msgstr "Không cho phép nhập mục rỗng cho giá trị này."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Invalid double-quote characters"
 msgstr "Ký tự dấu trích đôi không hợp lệ"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Không cho phép \"dấu trích dẫn đôi\" trong giá trị mục này."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Numerical value needed"
 msgstr "Cần giá trị dạng số"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Không cho phép ký tự khác với chữ số trong mục này."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid "Autodetect keyboard layout?"
 msgstr "Tự động phát hiện bố trí bàn phím không?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -872,7 +588,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1030,6 +746,200 @@ msgstr ""
 "Tiến trình cài đặt gói này sẽ thất bại và thoát ngay bây giờ để cho bạn làm "
 "việc này. Hãy chạy lại thủ tục nâng cấp sau khi làm sạch thư mục đó."
 
+#~ msgid "Video modes to be used by the X server:"
+#~ msgstr "Chế độ ảnh động cần được dùng bởi trình phục vụ X:"
+
+#~ msgid ""
+#~ "Please keep only the resolutions you would like the X server to use.  "
+#~ "Removing all of them is the same as removing none, since in both cases "
+#~ "the X server will attempt to use the highest possible resolution."
+#~ msgstr ""
+#~ "Hãy giữ chỉ những độ phân giải bạn muốn trình phục vụ X sử dụng. Việc gỡ "
+#~ "bỏ mọi điều làm cùng kết quả với không gỡ bỏ gì, vì trong cả hai trường "
+#~ "hợp này, trình phục vụ X sẽ thử sử dụng độ phân giải cao nhất có thể."
+
+#~ msgid "Attempt monitor autodetection?"
+#~ msgstr "Thử tự động phát hiện màn hình không?"
+
+#~ msgid ""
+#~ "Many monitors (including LCD's) and video cards support a communication "
+#~ "protocol that allows the monitor's technical characteristics to be "
+#~ "communicated back to the computer.  If the monitor and video card support "
+#~ "this protocol, further configuration questions about the monitor will be "
+#~ "pre-answered."
+#~ msgstr ""
+#~ "Nhiều bộ trình bày (gồm cái LCD) và thẻ ảnh động hỗ trợ một giao thức "
+#~ "giao thông cho phép các đặc tuyến của bộ trình bày được gởi về máy tính. "
+#~ "Nếu cả bộ trình bày lẫn thẻ ảnh động đều hỗ trợ giao thức này, câu hỏi "
+#~ "cấu hình nữa về bộ trình bày được trả lời sẵn."
+
+#~ msgid ""
+#~ "If autodetection fails, you will be asked for information about the "
+#~ "monitor."
+#~ msgstr ""
+#~ "Nếu việc phát hiện tự động không phải là thành công, bạn sẽ được nhắc "
+#~ "nhập thông tin về bộ trình bày."
+
+#~ msgid "Method for selecting the monitor characteristics:"
+#~ msgstr "Phương pháp chọn các đặc tuyến của bộ trình bày:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the monitor must be known."
+#~ msgstr ""
+#~ "Để giao diện người dùng đồ họa của Hệ Thống Cửa Sổ X sẽ hoạt động cho "
+#~ "đúng, một số đặc tuyến của bộ trình bày cần phải được biết."
+
+#~ msgid ""
+#~ "The \"simple\" option will prompt about the monitor's physical size; this "
+#~ "will set some configuration values appropriate for a typical CRT of the "
+#~ "corresponding size, but may be suboptimal for high-quality CRT's."
+#~ msgstr ""
+#~ "Tùy chọn « đơn giản » sẽ nhắc bạn nhập kích cỡ vật lý của bộ trình bày; "
+#~ "việc này sẽ đặt một số giá trị cấu hình thích hợp với máy CRT chuẩn có "
+#~ "kích cỡ tương ứng, nhưng mà có thể nằm dưới giá trị tối ưu cho máy CRT có "
+#~ "chất lượng cao."
+
+#~ msgid ""
+#~ "The \"medium\" option will present you with a list of resolutions and "
+#~ "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best "
+#~ "mode you wish to use (and that you know the monitor is capable of)."
+#~ msgstr ""
+#~ "Tùy chọn « vừa » sẽ hiển thị danh sách các độ phân giải và tỷ lệ câp nhật, "
+#~ "như \"800x600 @ 85Hz\": hãy chọn chế độ tốt nhất bạn muốn sử dụng (cũng "
+#~ "thích hợp với khả năng của bộ trình bày đó)."
+
+#~ msgid ""
+#~ "The \"advanced\" option will let you specify the monitor's horizontal "
+#~ "sync and vertical refresh tolerances directly."
+#~ msgstr ""
+#~ "Tùy chọn « cấp cao » sẽ cho bạn khả năng ghi rõ trực tiếp độ chịu đựng cả "
+#~ "đồng bộ ngang (horizontal sync) lẫn cập nhật dọc (vertical refresh) của "
+#~ "bộ trình bày."
+
+#~ msgid "Up to 14 inches (355 mm)"
+#~ msgstr "Đến 14 insơ (355 mm)"
+
+#~ msgid "15 inches (380 mm)"
+#~ msgstr "15 insơ (380 mm)"
+
+#~ msgid "17 inches (430 mm)"
+#~ msgstr "17 insơ (430 mm)"
+
+#~ msgid "19-20 inches (480-510 mm)"
+#~ msgstr "19-20 insơ (480-510 mm)"
+
+#~ msgid "21 inches (530 mm) or more"
+#~ msgstr "21 insơ (530 mm) hay lớn hơn."
+
+#~ msgid "Approximate monitor size:"
+#~ msgstr "Kích cỡ xấp xỉ của bộ trình bày:"
+
+#~ msgid ""
+#~ "High-quality CRT's may be able to use the next highest size category."
+#~ msgstr ""
+#~ "Màn hình CRT có chất lượng cao có thể sử dụng được loại kích cỡ lớn hơn "
+#~ "kế tiếp."
+
+#~ msgid "Monitor's best video mode:"
+#~ msgstr "Chế độ ảnh động tốt nhất của bộ trình bày:"
+
+#~ msgid ""
+#~ "Choose the \"best\" resolution and refresh rate the monitor is capable "
+#~ "of.  Larger resolutions and refresh rates are better.  With a CRT "
+#~ "monitor, it is perfectly acceptable to select a \"worse\" video mode than "
+#~ "the monitor's best if you wish.  Users of LCD displays may also be able "
+#~ "to do this, but only if both the video chipset and the driver support it; "
+#~ "if in doubt, use the video mode recommended by the manufacturer of your "
+#~ "LCD."
+#~ msgstr ""
+#~ "Hãy chọn cả độ phân giải lẫn tỷ lệ cập nhật « tốt nhất » trong phạm vị khả "
+#~ "năng của bộ trình bày. Độ phân giải và tỷ lệ lớn hơn là tốt hơn. Nếu bạn "
+#~ "dùng bộ trình bày CRT, chắc là có thể chọn chế độ ảnh động « xấu hơn » khả "
+#~ "năng bộ trình bày, nếu bạn muốn. Người dùng bộ trình bày LCD (mặt phẳng) "
+#~ "cũng có khả năng này, nhưng mà chỉ nếu cả bộ phiến tinh thể lẫn trình "
+#~ "điêu khiển đều hỗ trợ giá trị này. Nếu chưa chắc, bạn hãy sử dụng chế độ "
+#~ "ảnh động được khuyến khích bởi hãng chế tạo màn hình LCD của bạn."
+
+#~ msgid "Generic Monitor"
+#~ msgstr "Bộ trình bày giống loài"
+
+#~ msgid "Write monitor sync ranges to the configuration file?"
+#~ msgstr "Ghi phạm vị đồng bộ màn hình vào tập tin cấu hình không?"
+
+#~ msgid ""
+#~ "The monitor synchronization ranges should be autodetected by the X server "
+#~ "in most cases, but sometimes it needs hinting.  This option is for "
+#~ "experienced users, and should be left at its default."
+#~ msgstr ""
+#~ "Trong phần lớn trường hợp, trình phục vụ X nên phát hiện tự động những "
+#~ "phạm vị đồng bộ hoá bộ trình bày, nhưng đôi khi cần gợi ý. Tùy chọn này "
+#~ "chỉ cho người dùng cấp cao thì nên còn lại là giá trị mặc định."
+
+#~ msgid "Monitor's horizontal sync range:"
+#~ msgstr "Phạm vị đồng bộ ngang của màn hình:"
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 30 or higher than 130 are extremely rare."
+#~ msgstr ""
+#~ "Hãy nhập hoặc danh sách giá trị riêng định giới bằng dấu phẩy (cho màn "
+#~ "hình có tần số có định), hoặc một cặp giá trị định giới bằng một dấu gạch "
+#~ "nối (mọi bộ trình bày CRT hiện đại). Thông tin này nên có sẵn trong sổ "
+#~ "tay của bộ trình bày. Rất ít có giá trị nằm dưới 30 hoặc trên 130."
+
+#~ msgid "Monitor's vertical refresh range:"
+#~ msgstr "Phạm vị cập nhật dọc của màn hình:"
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 50 or higher than 160 are extremely rare."
+#~ msgstr ""
+#~ "Hãy nhập hoặc danh sách giá trị riêng định giới bằng dấu phẩy (cho bộ "
+#~ "trình bày có tần số có định), hoặc một cặp giá trị định giới bằng một dấu "
+#~ "gạch nối (mọi bộ trình bày CRT hiện đại). Thông tin nên sẵn sàng trong sổ "
+#~ "tay của bộ trình bày. Rất ít có giá trị nằm dưới 50 hoặc trên 160."
+
+#~ msgid "Incorrect values entered"
+#~ msgstr "Giá trị không đúng được nhập"
+
+#~ msgid ""
+#~ "The valid syntax is a comma-separated list of discrete values, or a pair "
+#~ "of values separated by a dash."
+#~ msgstr ""
+#~ "Cú pháp hợp lệ là danh sách các giá trị riêng định giới bằng dấu phẩy, "
+#~ "hoặc một cặp giá trị định giới bằng một dấu gạch nối."
+
+#~ msgid "Desired default color depth in bits:"
+#~ msgstr "Độ sâu màu mặc định đã muốn, theo bit:"
+
+#~ msgid ""
+#~ "Usually 24-bit color is desirable, but on graphics cards with limited "
+#~ "amounts of framebuffer memory, higher resolutions may be achieved at the "
+#~ "expense of higher color depth.  Also, some cards support hardware 3D "
+#~ "acceleration only for certain depths.  Consult your video card manual for "
+#~ "more information."
+#~ msgstr ""
+#~ "Thường màu 24-bit là tốt nhất, nhưng mà trên thẻ độ họa có bộ nhớ đệm "
+#~ "khung bị hạn chế, độ phân giải cao hơn có thể được đạt được trả giá bằng "
+#~ "độ sâu màu cao hơn. Hơn nữa, một số thẻ riêng hỗ trợ khả năng tăng tốc ba "
+#~ "chiều (3D) phần cứng chỉ cho một số độ sâu nào đó. Xem sổ tay của thẻ ảnh "
+#~ "động để tìm thông tin thêm."
+
+#~ msgid ""
+#~ "So-called \"32-bit color\" is actually 24 bits of color information plus "
+#~ "8 bits of alpha channel or simple zero padding; the X Window System can "
+#~ "handle both.  If you want either, select 24 bits."
+#~ msgstr ""
+#~ "« Màu 32-bit » (được gọi như thế) thật sự là 24 bit thông tin màu cộng với "
+#~ "8 bit đệm kênh anfa hay đệm số không đơn giản: Hệ Thống Cửa Sổ X có khả "
+#~ "năng quản lý cả hai điều. Nếu bạn muốn bật một của hai tùy chọn này, hãy "
+#~ "chọn 24 bit."
+
 #~ msgid "Write default Files section to configuration file?"
 #~ msgstr "Ghi phần « Tập tin » mặc định vào tập tin cấu hình không?"
 
@@ -1050,11 +960,10 @@ msgstr ""
 #~ "reference to the local font server, add a reference to a different font "
 #~ "server, or rearrange the default set of local font paths."
 #~ msgstr ""
-#~ "Hãy tắt tùy chọn này nếu bạn muốn duy trì một phần « Tập tin » riêng "
-#~ "trong tập tin cấu hình phục vụ X.Org. Nó có thể cần thiết để gỡ bỏ tham "
-#~ "chiếu đến trình phục vụ phông chữ cục bộ, thêm tham chiếu đến trình phục "
-#~ "vụ phông chữ khác, hoặc sắp xếp lại bộ đường dẫn phông chữ cục bộ mặc "
-#~ "định."
+#~ "Hãy tắt tùy chọn này nếu bạn muốn duy trì một phần « Tập tin » riêng trong "
+#~ "tập tin cấu hình phục vụ X.Org. Nó có thể cần thiết để gỡ bỏ tham chiếu "
+#~ "đến trình phục vụ phông chữ cục bộ, thêm tham chiếu đến trình phục vụ "
+#~ "phông chữ khác, hoặc sắp xếp lại bộ đường dẫn phông chữ cục bộ mặc định."
 
 #~ msgid "No X server known for your video hardware"
 #~ msgstr ""
@@ -1142,8 +1051,8 @@ msgstr ""
 #~ msgstr ""
 #~ "Ghi chú rằng công cụ cấu hình này chưa hỗ trợ số lượng cái nút trên con "
 #~ "chuột hơn năm (tính bánh xe lăn nhỏ trên con chuột như là hai cái nút, "
-#~ "một nút cho « lên » và một nút cho « xuống », và cái nút thứ ba nếu bánh "
-#~ "xe « nhấn »."
+#~ "một nút cho « lên » và một nút cho « xuống », và cái nút thứ ba nếu bánh xe "
+#~ "« nhấn »."
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "Thử tự động phát hiện thiết bị con chuột không?"
