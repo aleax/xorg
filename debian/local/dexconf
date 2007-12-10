@@ -252,27 +252,12 @@ printf "EndSection\n" >&4
 
 ### MONITOR
 
-fetch xserver-$SERVER/config/monitor/horiz-sync
-MONITOR_HORIZ_SYNC="$RET"
-fetch xserver-$SERVER/config/monitor/vert-refresh
-MONITOR_VERT_REFRESH="$RET"
-db_get xserver-$SERVER/config/monitor/use_sync_ranges
-MONITOR_SYNC_RANGES="$RET"
-
 exec 4>"$DEXCONFTMPDIR/Monitor"
 cat >&4 <<SECTION
 Section "Monitor"
 	Identifier	"Configured Monitor"
 	Option		"DPMS"
 SECTION
-
-if [ "$MONITOR_SYNC_RANGES" = "true" ]; then
-cat >&4 <<SECTION
-	HorizSync	$MONITOR_HORIZ_SYNC
-	VertRefresh	$MONITOR_VERT_REFRESH
-SECTION
-fi
-
 printf "EndSection\n" >&4
 
 ### SCREEN
@@ -286,11 +271,6 @@ Section "Screen"
 	Identifier	"Default Screen"
 	Monitor		"Configured Monitor"
 SECTION
-  if [ -n "$DISPLAY_MODES" ]; then
-	printf "\tSubSection \"Display\"\n" >&4
-    printf "\t\tModes\t\t$DISPLAY_MODES\n" >&4
-    printf "\tEndSubSection\n" >&4
-  fi
 printf "EndSection\n" >&4
 
 # Close file descriptor 4 before we delete temporary files

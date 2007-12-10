@@ -12,10 +12,23 @@ xorg (1:7.3+8) UNRELEASED; urgency=low
     (Closes: #446441, LP: #174311)
 
   [ David Nusinow ]
-  * Don't write the default depth to xorg.conf any more. 
+  * Don't write the default depth to xorg.conf any more.
     The drivers should choose the appropriate depth by default now.
+  * Don't bother with resolutions in xorg.conf
+    We now rely on the server and drivers to do the right thing. Previously,
+    our best-case scenario was to have the xserver-xorg postinstall script ask
+    the monitor what the optimal values were, and if that wasn't possible to
+    give the user a default list of resolutions and a best-guess hsync and
+    vrefresh values that the user could override. The server and almost all
+    drivers will do this on boot anyway using properly maintained code, which
+    allows them to better adapt to changes. randr 1.2-compliant drivers will
+    do this even better than we possibly could. Finally, the server will
+    provide a better list of defaults than we were doing anyway. There will
+    undoubtedly be bugs uncovered by this change, but we need  to find and fix
+    the actual bugs in the drivers and server in order to move forward.
+    + Don't recommend xresprobe any more
 
- -- David Nusinow <dnusinow@debian.org>  Sun, 09 Dec 2007 22:04:34 -0500
+ -- David Nusinow <dnusinow@debian.org>  Sun, 09 Dec 2007 22:32:27 -0500
 
 xorg (1:7.3+7) unstable; urgency=low
 
