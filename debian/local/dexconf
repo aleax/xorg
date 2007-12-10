@@ -277,8 +277,6 @@ printf "EndSection\n" >&4
 
 ### SCREEN
 
-fetch xserver-$SERVER/config/display/default_depth
-DISPLAY_DEFAULT_DEPTH="$RET"
 db_get xserver-$SERVER/config/display/modes
 DISPLAY_MODES="$(list_convert $RET)"
 
@@ -287,7 +285,6 @@ cat >&4 <<SECTION
 Section "Screen"
 	Identifier	"Default Screen"
 	Monitor		"Configured Monitor"
-	DefaultDepth	$DISPLAY_DEFAULT_DEPTH
 SECTION
   if [ -n "$DISPLAY_MODES" ]; then
 	printf "\tSubSection \"Display\"\n" >&4

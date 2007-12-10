@@ -289,20 +289,6 @@ _Description: Incorrect values entered
  The valid syntax is a comma-separated list of discrete values, or a pair of
  values separated by a dash.
 
-Template: xserver-xorg/config/display/default_depth
-Type: select
-Choices: 1, 4, 8, 15, 16, 24
-Default: 24
-_Description: Desired default color depth in bits:
- Usually 24-bit color is desirable, but on graphics cards with limited amounts
- of framebuffer memory, higher resolutions may be achieved at the expense of
- higher color depth.  Also, some cards support hardware 3D acceleration only
- for certain depths.  Consult your video card manual for more information.
- .
- So-called "32-bit color" is actually 24 bits of color information plus 8
- bits of alpha channel or simple zero padding; the X Window System can handle
- both.  If you want either, select 24 bits.
-
 Template: xserver-xorg/config/null_string_error
 Type: note
 _Description: Empty value

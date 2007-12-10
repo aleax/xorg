@@ -1175,15 +1175,6 @@ xresprobeint() {
     for i in modes; do
       db_reset xserver-xorg/config/display/$i
     done
-    # Support preseeding of this one even when autodetecting; will mean
-    # people get the wrong default presented on second and subsequent
-    # low-priority reconfigures, though. Too bad.
-    for i in default_depth; do
-      db_fget xserver-xorg/config/display/$i seen
-      if [ "$RET" = false ]; then
-        db_reset xserver-xorg/config/display/$i
-      fi
-    done
     
     db_get xserver-xorg/config/device/driver || debug_echo "db_get xserver-xorg/config/device/driver"
     DEVICE_DRIVER="$RET"
@@ -1599,33 +1590,6 @@ xresprobeint() {
     db_set xserver-xorg/config/monitor/use_sync_ranges true
   fi
   db_input low xserver-xorg/config/monitor/use_sync_ranges || debug_echo "db_input low xserver-xorg/config/monitor/use_sync_ranges"
-
-  case "$DEVICE_DRIVER" in
-    # nVidia laptop chipsets should use 16bpp per default, or face horrific
-    # colour banding issues, per Olivier Grawert and Trent Lloyd.
-    nv)
-      if [ -n "$LAPTOP" ]; then
-        DEFAULT_DEPTH=16
-      else
-        DEFAULT_DEPTH=24
-      fi
-      ;;
-    *)
-      DEFAULT_DEPTH=24
-      ;;
-  esac
-
-  if [ -n "$DISPLAY_DEPTH" ]; then
-    DEFAULT_DEPTH="$DISPLAY_DEPTH"
-  fi
-
-  db_fget xserver-xorg/config/display/default_depth seen
-  if [ "$RET" = "false" ]; then
-    db_set xserver-xorg/config/display/default_depth $DEFAULT_DEPTH
-  fi
-
-  db_input low xserver-xorg/config/display/default_depth || true
-  db_go
 }
 
 # register this package as a (potential) handler of the X server symlink and
@@ -1729,6 +1693,7 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
         rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
         for QUESTION in "shared/default-x-server" "xserver-xorg/autodetect_mouse" \
                         "xserver-xorg/config/device/video_ram" \
+                        "xserver-xorg/config/display/default_depth" \
                         "xserver-xorg/config/inputdevice/mouse/port" \
                         "xserver-xorg/config/inputdevice/mouse/protocol" \
                         "xserver-xorg/config/modules" \
