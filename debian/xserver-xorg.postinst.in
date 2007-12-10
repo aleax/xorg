@@ -1149,10 +1149,6 @@ if [ -e "$CONFIG_AUX_DIR/.migrateconfig" ]; then
   rm -f $CONFIG_AUX_DIR/.migrateconfig
 fi
 
-if [ -n "$DEBUG_XORG_PACKAGE" ]; then
-  XRESPROBE_DEBUG="yes"
-fi
-
 #DEBHELPER#
 
 xresprobeint() {
@@ -1661,13 +1657,7 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
     # they match or user deleted the file or they're running dpkg-reconfigure; 
     # prepare a new version
     NEW_XORGCONFIG="$XORGCONFIG.dpkg-new"
-    if [ -n "$XRESPROBE_DEBUG" ]; then
-      set -x
-    fi
     xresprobeint
-    if [ -n "$XRESPROBE_DEBUG" ]; then
-      set +x
-    fi
     if [ -n "$RECONFIGURE" ] && [ -e "$XORGCONFIG" ]; then
       BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
       if [ -e "$BACKUP_XORGCONFIG" ]; then
