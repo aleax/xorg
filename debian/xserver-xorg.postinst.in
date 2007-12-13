@@ -14,13 +14,6 @@ set -e
 THIS_PACKAGE=xserver-xorg
 THIS_SCRIPT=postinst
 
-LAPTOP=""
-if [ -n "$(which laptop-detect)" ]; then
-    if laptop-detect >/dev/null; then
-	LAPTOP=true
-    fi
-fi
-
 #INCLUDE_SHELL_LIB#
 
 if [ -e /etc/default/xorg ]; then
