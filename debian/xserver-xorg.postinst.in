@@ -814,11 +814,6 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
         USE_FBDEV=true
       fi
     fi
-    # Make sure to force UseFBDev with Rage 128 or stuff will go bad in some
-    # old Macs.
-    if echo "$DEVICE_IDENTIFIER" | grep -q "Rage 128"; then
-      USE_FBDEV=true
-    fi
   fi
 
   if [ -n "$XORG_USE_FBDEV" ] && [ "$XORG_USE_FBDEV" = "no" ]; then
