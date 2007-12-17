@@ -1085,6 +1085,35 @@ elif [ `readlink "$SERVER_SYMLINK"` = "/bin/true" ]; then
   ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 fi
 
+if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
+        # Clean up our old crap
+        rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
+        for QUESTION in "shared/default-x-server" \
+                        "xserver-xorg/autodetect_mouse" \
+                        "xserver-xorg/autodetect_monitor" \
+                        "xserver-xorg/config/monitor/selection-method" \
+                        "xserver-xorg/config/monitor/screen-size" \
+                        "xserver-xorg/config/monitor/mode-list" \
+                        "xserver-xorg/config/monitor/default-identifier" \
+                        "xserver-xorg/config/monitor/horiz-sync" \
+                        "xserver-xorg/config/monitor/vert-refresh" \
+                        "xserver-xorg/config/monitor/range_input_error" \
+                        "xserver-xorg/config/display/modes" \
+                        "xserver-xorg/config/device/video_ram" \
+                        "xserver-xorg/config/display/default_depth" \
+                        "xserver-xorg/config/inputdevice/mouse/port" \
+                        "xserver-xorg/config/inputdevice/mouse/protocol" \
+                        "xserver-xorg/config/modules" \
+                        "xserver-xorg/config/monitor/default-identifier" \
+                        "xserver-xorg/config/monitor/identifier" \
+                        "xserver-xorg/config/write_files_section"; do
+          db_unregister "$QUESTION" || true
+        done
+fi
+
+# no debconf interaction should be done after this point
+# (the dexconf call below invokes db_stop)
+
 # Don't touch the config on upgrades except to deal with known issues with old
 # configs.
 if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
@@ -1160,32 +1189,6 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
   fi
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
-fi
-
-if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
-        # Clean up our old crap
-        rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
-        for QUESTION in "shared/default-x-server" \
-                        "xserver-xorg/autodetect_mouse" \
-                        "xserver-xorg/autodetect_monitor" \
-                        "xserver-xorg/config/monitor/selection-method" \
-                        "xserver-xorg/config/monitor/screen-size" \
-                        "xserver-xorg/config/monitor/mode-list" \
-                        "xserver-xorg/config/monitor/default-identifier" \
-                        "xserver-xorg/config/monitor/horiz-sync" \
-                        "xserver-xorg/config/monitor/vert-refresh" \
-                        "xserver-xorg/config/monitor/range_input_error" \
-                        "xserver-xorg/config/display/modes" \
-                        "xserver-xorg/config/device/video_ram" \
-                        "xserver-xorg/config/display/default_depth" \
-                        "xserver-xorg/config/inputdevice/mouse/port" \
-                        "xserver-xorg/config/inputdevice/mouse/protocol" \
-                        "xserver-xorg/config/modules" \
-                        "xserver-xorg/config/monitor/default-identifier" \
-                        "xserver-xorg/config/monitor/identifier" \
-                        "xserver-xorg/config/write_files_section"; do
-          db_unregister "$QUESTION" || true
-        done
 fi
 
 exit 0
