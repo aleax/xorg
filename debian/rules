@@ -12,6 +12,14 @@
 # /usr/share/common-licenses/GPL or <http://www.gnu.org/copyleft/gpl.txt>.
 # Acknowledgements to Stephen Early, Mark Eichin, and Manoj Srivastava.
 
+DEB_HOST_GNU_TYPE=$(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE=$(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+ifneq ($(DEB_HOST_GNU_TYPE),$(DEB_BUILD_GNU_TYPE))
+CC=$(DEB_HOST_GNU_TYPE)-gcc
+else
+CC ?=gcc
+endif
+
 # debhelper
 export DH_OPTIONS
 
@@ -138,8 +146,7 @@ binary-arch: build install
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol -- -VF:XServer-Xorg-Video-Depends=$(XSERVER_XORG_VIDEO_DEPENDS) \
-	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS) \
-	                 -Vxorg-extra-dep=$(XORG_EXTRA_DEP)
+	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS)
 	dh_md5sums
 	dh_builddeb
 	touch stamp-$@

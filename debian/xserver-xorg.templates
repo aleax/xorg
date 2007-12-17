@@ -4,16 +4,6 @@
 # Please consider interacting with the team if you intend
 # to modify the templates or add new templates
 
-# Maintainers, keep this template at the top
-# It's the most often used one so better have it translated first
-Template: xserver-xorg/config/display/modes
-Type: multiselect
-Choices: 1920x1440, 1920x1200, 1856x1392, 1792x1344, 1680x1050, 1600x1200, 1440x900, 1400x1050, 1280x1024, 1280x960, 1280x854, 1280x800, 1280x768, 1200x800, 1152x864, 1152x768, 1024x768, 800x600, 640x480
-_Description: Video modes to be used by the X server:
- Please keep only the resolutions you would like the X server to use.  Removing
- all of them is the same as removing none, since in both cases the
- X server will attempt to use the highest possible resolution.
-
 Template: xserver-xorg/autodetect_video_card
 Type: boolean
 Default: true
@@ -206,102 +196,6 @@ _Description: Keyboard options:
  layout and variant.
  .
  When in doubt, this value should be left blank.
-
-Template: xserver-xorg/autodetect_monitor
-Type: boolean
-Default: true
-_Description: Attempt monitor autodetection?
- Many monitors (including LCD's) and video cards support a communication
- protocol that allows the monitor's technical characteristics to be
- communicated back to the computer.  If the monitor and video card support
- this protocol, further configuration questions about the monitor
- will be pre-answered.
- .
- If autodetection fails, you will be asked for information about the monitor.
-
-Template: xserver-xorg/config/monitor/selection-method
-Type: select
-Choices: ${choices}
-_Description: Method for selecting the monitor characteristics:
- For the X Window System graphical user interface to operate correctly,
- certain characteristics of the monitor must be known.
- .
- The "simple" option will prompt about the monitor's physical size; this
- will set some configuration values appropriate for a typical CRT of the
- corresponding size, but may be suboptimal for high-quality CRT's.
- .
- The "medium" option will present you with a list of resolutions and refresh
- rates, such as "800x600 @ 85Hz"; you should choose the best mode you wish to
- use (and that you know the monitor is capable of).
- .
- The "advanced" option will let you specify the monitor's horizontal sync and
- vertical refresh tolerances directly.
-
-Template: xserver-xorg/config/monitor/screen-size
-Type: select
-__Choices: Up to 14 inches (355 mm), 15 inches (380 mm), 17 inches (430 mm), 19-20 inches (480-510 mm), 21 inches (530 mm) or more
-Default: 17 inches (430 mm)
-_Description: Approximate monitor size:
- High-quality CRT's may be able to use the next highest size category.
-
-Template: xserver-xorg/config/monitor/mode-list
-Type: select
-Choices: 640x480 @ 60Hz, 640x480 @ 72Hz, 800x600 @ 60Hz, 800x600 @ 72Hz, 800x600 @ 85Hz, 832x624 @ 75Hz, 1024x768 @ 60Hz, 1024x768 @ 70Hz, 1024x768 @ 75Hz, 1152x768 @ 54.8Hz, 1152x768 @ 60Hz, 1152x864 @ 75Hz, 1280x960 @ 60Hz, 1280x960 @ 85Hz, 1280x1024 @ 60Hz, 1400x1050 @ 60Hz, 1400x1050 @ 75Hz, 1440x900 @ 100Hz, 1600x1024 @ 60Hz, 1600x1200 @ 60Hz, 1600x1200 @ 75Hz, 1600x1200 @ 85Hz, 1680x1050 @ 75Hz, 1792x1344 @ 60Hz, 1792x1344 @ 75Hz, 1856x1392 @ 60Hz, 1856x1392 @ 75Hz, 1920x1200 @ 60Hz, 1920x1200 @ 75 Hz, 1920x1440 @ 60Hz, 1920x1440 @ 75Hz, 1920x1440 @ 85Hz, 2048x1536 @ 60Hz, 2048x1536 @ 75Hz, 2048x1536 @ 85Hz
-Default: 1024x768 @ 60Hz
-_Description: Monitor's best video mode:
- Choose the "best" resolution and refresh rate the monitor is
- capable of.  Larger resolutions and refresh rates are better.  With a
- CRT monitor, it is perfectly acceptable to select a "worse" video mode than
- the monitor's best if you wish.  Users of LCD displays may also be able to
- do this, but only if both the video chipset and the driver support it; if in
- doubt, use the video mode recommended by the manufacturer of your LCD.
-
-Template: xserver-xorg/config/monitor/default-identifier
-Type: text
-_Description: Generic Monitor
-
-Template: xserver-xorg/config/monitor/use_sync_ranges
-Type: boolean
-_Description: Write monitor sync ranges to the configuration file?
- The monitor synchronization ranges should be autodetected by the X server in
- most cases, but sometimes it needs hinting.  This option is for experienced users,
- and should be left at its default.
-
-Template: xserver-xorg/config/monitor/horiz-sync
-Type: string
-_Description: Monitor's horizontal sync range:
- Please enter either a comma-separated list of discrete values (for
- fixed-frequency displays), or a pair of values separated by a dash (all
- modern CRT's).  This information should be available in the monitor's
- manual.  Values lower than 30 or higher than 130 are extremely rare.
-
-Template: xserver-xorg/config/monitor/vert-refresh
-Type: string
-_Description: Monitor's vertical refresh range:
- Please enter either a comma-separated list of discrete values (for
- fixed-frequency displays), or a pair of values separated by a dash (all
- modern CRT's).  This information should be available in the monitor's
- manual.  Values lower than 50 or higher than 160 are extremely rare.
-
-Template: xserver-xorg/config/monitor/range_input_error
-Type: note
-_Description: Incorrect values entered
- The valid syntax is a comma-separated list of discrete values, or a pair of
- values separated by a dash.
-
-Template: xserver-xorg/config/display/default_depth
-Type: select
-Choices: 1, 4, 8, 15, 16, 24
-Default: 24
-_Description: Desired default color depth in bits:
- Usually 24-bit color is desirable, but on graphics cards with limited amounts
- of framebuffer memory, higher resolutions may be achieved at the expense of
- higher color depth.  Also, some cards support hardware 3D acceleration only
- for certain depths.  Consult your video card manual for more information.
- .
- So-called "32-bit color" is actually 24 bits of color information plus 8
- bits of alpha channel or simple zero padding; the X Window System can handle
- both.  If you want either, select 24 bits.
 
 Template: xserver-xorg/config/null_string_error
 Type: note

@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
-"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 17:28-0400\n"
+"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-09 22:41-0500\n"
 "PO-Revision-Date: 2006-09-20 22:54+0800\n"
 "Last-Translator: Tetralet <tetralet@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
@@ -30,32 +30,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Video modes to be used by the X server:"
-msgstr "X Server 所使用的顯示模式："
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Please keep only the resolutions you would like the X server to use.  "
-"Removing all of them is the same as removing none, since in both cases the X "
-"server will attempt to use the highest possible resolution."
-msgstr ""
-"請僅留下您想讓 X Server 使用的解析度。移除所有項目效果等同什麼都不移除，因為"
-"都會導致 X Server 試著使用最高的解析度。"
-
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Attempt to autodetect video hardware?"
 msgstr "是否要試著自動偵測顯示裝置？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -69,7 +52,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
@@ -80,13 +63,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr "有多個預設的 X.Org 伺服器驅動模組可能適用於您的硬體"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -97,7 +80,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -108,7 +91,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -119,13 +102,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid "Identifier for your video card:"
 msgstr "您的顯示卡的識別碼："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -138,19 +121,19 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "Generic Video Card"
 msgstr "通用顯示卡"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid "X server driver:"
 msgstr "X Server 驅動模組："
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -160,7 +143,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -169,13 +152,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid "Use kernel framebuffer device interface?"
 msgstr "是否使用 Kernel 的 framebuffer 裝置介面？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -186,7 +169,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -197,13 +180,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Video card's bus identifier:"
 msgstr "請輸入顯示卡的匯流排識別碼："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -214,13 +197,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Examples:"
 msgstr "例如："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -231,7 +214,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -241,7 +224,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -251,19 +234,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Incorrect format for the bus identifier"
 msgstr "匯流排識別碼的格式錯誤"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "XKB rule set to use:"
 msgstr "所要採用的 XKB 規則集："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -271,7 +254,7 @@ msgstr "為了讓 X Server 能正確控制鍵盤，您必須選擇一個 XKB 規
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -281,7 +264,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -292,19 +275,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "若不確定，那麼應該在此填上“xorg。"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "Keyboard model:"
 msgstr "鍵盤型號："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -314,7 +297,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -347,7 +330,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -358,7 +341,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -369,7 +352,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -378,13 +361,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard layout:"
 msgstr "鍵盤排列方式："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -395,7 +378,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -407,7 +390,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -418,13 +401,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard variant:"
 msgstr "異種鍵盤"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -435,7 +418,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -446,7 +429,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -459,20 +442,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "美語鍵盤的使用者通常應該在此欄留白。"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard options:"
 msgstr "鍵盤選項："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -483,7 +466,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -495,7 +478,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -509,7 +492,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -517,7 +500,7 @@ msgstr "您可以組合多個選項，並以逗號分隔，例如“ctrl:nocaps,
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -527,300 +510,55 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "When in doubt, this value should be left blank."
 msgstr "若無法確定，那麼請在此留白。"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid "Attempt monitor autodetection?"
-msgstr "是否試著自動偵測螢幕？"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"Many monitors (including LCD's) and video cards support a communication "
-"protocol that allows the monitor's technical characteristics to be "
-"communicated back to the computer.  If the monitor and video card support "
-"this protocol, further configuration questions about the monitor will be pre-"
-"answered."
-msgstr ""
-"許多螢幕（包括 LCD）和顯示卡都支援一種能將螢幕的技術參數特性傳回電腦的通訊協"
-"定。如果您的螢幕和顯示卡支持該協定，接下來有關螢幕的一些設定問題將會預先填入"
-"了可能的答案。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"If autodetection fails, you will be asked for information about the monitor."
-msgstr "如果自動偵測失敗了，程式將會向您詢問有關螢幕的資訊。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid "Method for selecting the monitor characteristics:"
-msgstr "請選取一種設定您的螢幕特性的方法："
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the monitor must be known."
-msgstr ""
-"為了讓 X Window System 圖形使用者界面能正確運作，您必須針對螢幕的特性進行確切"
-"設定。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"simple\" option will prompt about the monitor's physical size; this "
-"will set some configuration values appropriate for a typical CRT of the "
-"corresponding size, but may be suboptimal for high-quality CRT's."
-msgstr ""
-"[簡單]”選項將會要求您輸入螢幕的實際尺寸，這樣就會以同尺寸的標準 CRT 螢幕的相"
-"關數值來進行設定，但是對於高階 CRT 螢幕來說可能並非為最佳設定。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"medium\" option will present you with a list of resolutions and "
-"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
-"you wish to use (and that you know the monitor is capable of)."
-msgstr ""
-"[中等]”選項將會出現一個解析度及螢幕更新率的列表，像是『800x600 @ 85Hz』；您可"
-"以從中選擇一個您想要使用且相容於您的螢幕的最佳模式。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"advanced\" option will let you specify the monitor's horizontal sync "
-"and vertical refresh tolerances directly."
-msgstr ""
-"[進階]”選項將能讓您直接指定您的螢幕的水平更新率及垂直更新率的可用範圍。"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "Up to 14 inches (355 mm)"
-msgstr "最大 14 英吋（355 公釐）"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "15 inches (380 mm)"
-msgstr "15 英吋（380 公釐）"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "17 inches (430 mm)"
-msgstr "17 英吋（430 公釐）"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "19-20 inches (480-510 mm)"
-msgstr "19-20 英吋（480-510 公釐）"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "21 inches (530 mm) or more"
-msgstr "21 英吋（530 公釐）或更大"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "Approximate monitor size:"
-msgstr "螢幕的大概尺寸："
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "High-quality CRT's may be able to use the next highest size category."
-msgstr "高級 CRT 螢幕可能可以使用更高一級的設置。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid "Monitor's best video mode:"
-msgstr "螢幕的最佳顯示模式："
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
-"Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
-"perfectly acceptable to select a \"worse\" video mode than the monitor's "
-"best if you wish.  Users of LCD displays may also be able to do this, but "
-"only if both the video chipset and the driver support it; if in doubt, use "
-"the video mode recommended by the manufacturer of your LCD."
-msgstr ""
-"請選擇您的螢幕所能使用的『最佳』解析度及螢幕更新率。解析度及螢幕更新率都是越"
-"高越好。對於 CRT 螢幕而言，若您選擇了一個『低』於您的螢幕的最高顯示模式時將不"
-"會因而出現任何問題；LCD 螢幕的使用者或許也能比照辨理，但必須顯示晶片及驅動程"
-"式都有支援才行。若不確定，請使用您的 LCD 的製造商所推薦的顯示模式。"
-
-#. Type: text
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Generic Monitor"
-msgstr "Generic Monitor"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Write monitor sync ranges to the configuration file?"
-msgstr "是否將螢幕更新率的範圍寫入設定檔？"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"The monitor synchronization ranges should be autodetected by the X server in "
-"most cases, but sometimes it needs hinting.  This option is for experienced "
-"users, and should be left at its default."
-msgstr ""
-"在大多數情況下，X Server 能夠自行偵測判斷螢幕更新率的範圍，但是有時它還需要一"
-"些提示。建議將這個選項保留給經驗豐富的使用者，並應該不要去更動這個預設值。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid "Monitor's horizontal sync range:"
-msgstr "螢幕的水平更新率範圍："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 30 or higher than 130 are extremely rare."
-msgstr ""
-"請輸入一連串以逗號分隔的獨立數值（適用於固定頻率的螢幕），或者是以連接線 (-) "
-"相連的一對數值（適用於所有新式 CRT）。這些資訊應該能在您的螢幕使用手冊中找"
-"到。但應該會很少看到低於 30 或高於 130 的數值。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid "Monitor's vertical refresh range:"
-msgstr "螢幕的垂直更新率範圍："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 50 or higher than 160 are extremely rare."
-msgstr ""
-"請輸入一連串以逗號分隔的獨立數值（適用於固定頻率的螢幕），或者是以連接線 (-) "
-"相連的一對數值（適用於所有新式 CRT）。這些資訊應該能在您的螢幕使用手冊中找"
-"到。但應該會很少看到低於 50 或高於 160 的數值。"
-
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:24001
-msgid "Incorrect values entered"
-msgstr "輸入的值不正確"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"The valid syntax is a comma-separated list of discrete values, or a pair of "
-"values separated by a dash."
-msgstr ""
-"正確的格式是一連串以逗號分隔的獨立數值，或者是以連接線 (-) 相連的一對數值。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid "Desired default color depth in bits:"
-msgstr "您想使用的預設色深（單位：位元）："
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"Usually 24-bit color is desirable, but on graphics cards with limited "
-"amounts of framebuffer memory, higher resolutions may be achieved at the "
-"expense of higher color depth.  Also, some cards support hardware 3D "
-"acceleration only for certain depths.  Consult your video card manual for "
-"more information."
-msgstr ""
-"一般來說 24 位元色彩是最好的，但是對於某些 Framebuffer 記憶體有限的顯示卡來"
-"說，可能需要犧牲色深才能達到更高的解析度。另外，有些顯示卡只在特定的色深下才"
-"能支持硬體 3D 加速。請查閱您的顯示卡手冊以獲得更多資訊。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
-"bits of alpha channel or simple zero padding; the X Window System can handle "
-"both.  If you want either, select 24 bits."
-msgstr ""
-"所謂的『32 位元色彩』實際是 24 位的色彩資訊加上 8 位的 alpha 通道或只是簡單地"
-"用零補齊，X Window System 對兩者都支援。如有必要兩擇其一，請選擇 24 位元。"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "Empty value"
 msgstr "空值"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "A null entry is not permitted for this value."
 msgstr "此欄不能使用空值。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Invalid double-quote characters"
 msgstr "無效的雙引號"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "此欄的值中不能帶有雙引號(\")。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Numerical value needed"
 msgstr "必須為數字"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "此欄中不能有數字以外的字元。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid "Autodetect keyboard layout?"
 msgstr "是否自動偵測鍵盤排列方式？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -831,7 +569,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -980,6 +718,182 @@ msgid ""
 msgstr ""
 "本套件安裝程序失敗並將退出，以便能讓您完成上述工作。請在清除目錄後重新執行這"
 "個升級程序。"
+
+#~ msgid "Video modes to be used by the X server:"
+#~ msgstr "X Server 所使用的顯示模式："
+
+#~ msgid ""
+#~ "Please keep only the resolutions you would like the X server to use.  "
+#~ "Removing all of them is the same as removing none, since in both cases "
+#~ "the X server will attempt to use the highest possible resolution."
+#~ msgstr ""
+#~ "請僅留下您想讓 X Server 使用的解析度。移除所有項目效果等同什麼都不移除，因"
+#~ "為都會導致 X Server 試著使用最高的解析度。"
+
+#~ msgid "Attempt monitor autodetection?"
+#~ msgstr "是否試著自動偵測螢幕？"
+
+#~ msgid ""
+#~ "Many monitors (including LCD's) and video cards support a communication "
+#~ "protocol that allows the monitor's technical characteristics to be "
+#~ "communicated back to the computer.  If the monitor and video card support "
+#~ "this protocol, further configuration questions about the monitor will be "
+#~ "pre-answered."
+#~ msgstr ""
+#~ "許多螢幕（包括 LCD）和顯示卡都支援一種能將螢幕的技術參數特性傳回電腦的通訊"
+#~ "協定。如果您的螢幕和顯示卡支持該協定，接下來有關螢幕的一些設定問題將會預先"
+#~ "填入了可能的答案。"
+
+#~ msgid ""
+#~ "If autodetection fails, you will be asked for information about the "
+#~ "monitor."
+#~ msgstr "如果自動偵測失敗了，程式將會向您詢問有關螢幕的資訊。"
+
+#~ msgid "Method for selecting the monitor characteristics:"
+#~ msgstr "請選取一種設定您的螢幕特性的方法："
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the monitor must be known."
+#~ msgstr ""
+#~ "為了讓 X Window System 圖形使用者界面能正確運作，您必須針對螢幕的特性進行"
+#~ "確切設定。"
+
+#~ msgid ""
+#~ "The \"simple\" option will prompt about the monitor's physical size; this "
+#~ "will set some configuration values appropriate for a typical CRT of the "
+#~ "corresponding size, but may be suboptimal for high-quality CRT's."
+#~ msgstr ""
+#~ "[簡單]”選項將會要求您輸入螢幕的實際尺寸，這樣就會以同尺寸的標準 CRT 螢幕的"
+#~ "相關數值來進行設定，但是對於高階 CRT 螢幕來說可能並非為最佳設定。"
+
+#~ msgid ""
+#~ "The \"medium\" option will present you with a list of resolutions and "
+#~ "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best "
+#~ "mode you wish to use (and that you know the monitor is capable of)."
+#~ msgstr ""
+#~ "[中等]”選項將會出現一個解析度及螢幕更新率的列表，像是『800x600 @ 85Hz』；"
+#~ "您可以從中選擇一個您想要使用且相容於您的螢幕的最佳模式。"
+
+#~ msgid ""
+#~ "The \"advanced\" option will let you specify the monitor's horizontal "
+#~ "sync and vertical refresh tolerances directly."
+#~ msgstr ""
+#~ "[進階]”選項將能讓您直接指定您的螢幕的水平更新率及垂直更新率的可用範圍。"
+
+#~ msgid "Up to 14 inches (355 mm)"
+#~ msgstr "最大 14 英吋（355 公釐）"
+
+#~ msgid "15 inches (380 mm)"
+#~ msgstr "15 英吋（380 公釐）"
+
+#~ msgid "17 inches (430 mm)"
+#~ msgstr "17 英吋（430 公釐）"
+
+#~ msgid "19-20 inches (480-510 mm)"
+#~ msgstr "19-20 英吋（480-510 公釐）"
+
+#~ msgid "21 inches (530 mm) or more"
+#~ msgstr "21 英吋（530 公釐）或更大"
+
+#~ msgid "Approximate monitor size:"
+#~ msgstr "螢幕的大概尺寸："
+
+#~ msgid ""
+#~ "High-quality CRT's may be able to use the next highest size category."
+#~ msgstr "高級 CRT 螢幕可能可以使用更高一級的設置。"
+
+#~ msgid "Monitor's best video mode:"
+#~ msgstr "螢幕的最佳顯示模式："
+
+#~ msgid ""
+#~ "Choose the \"best\" resolution and refresh rate the monitor is capable "
+#~ "of.  Larger resolutions and refresh rates are better.  With a CRT "
+#~ "monitor, it is perfectly acceptable to select a \"worse\" video mode than "
+#~ "the monitor's best if you wish.  Users of LCD displays may also be able "
+#~ "to do this, but only if both the video chipset and the driver support it; "
+#~ "if in doubt, use the video mode recommended by the manufacturer of your "
+#~ "LCD."
+#~ msgstr ""
+#~ "請選擇您的螢幕所能使用的『最佳』解析度及螢幕更新率。解析度及螢幕更新率都是"
+#~ "越高越好。對於 CRT 螢幕而言，若您選擇了一個『低』於您的螢幕的最高顯示模式"
+#~ "時將不會因而出現任何問題；LCD 螢幕的使用者或許也能比照辨理，但必須顯示晶片"
+#~ "及驅動程式都有支援才行。若不確定，請使用您的 LCD 的製造商所推薦的顯示模"
+#~ "式。"
+
+#~ msgid "Generic Monitor"
+#~ msgstr "Generic Monitor"
+
+#~ msgid "Write monitor sync ranges to the configuration file?"
+#~ msgstr "是否將螢幕更新率的範圍寫入設定檔？"
+
+#~ msgid ""
+#~ "The monitor synchronization ranges should be autodetected by the X server "
+#~ "in most cases, but sometimes it needs hinting.  This option is for "
+#~ "experienced users, and should be left at its default."
+#~ msgstr ""
+#~ "在大多數情況下，X Server 能夠自行偵測判斷螢幕更新率的範圍，但是有時它還需"
+#~ "要一些提示。建議將這個選項保留給經驗豐富的使用者，並應該不要去更動這個預設"
+#~ "值。"
+
+#~ msgid "Monitor's horizontal sync range:"
+#~ msgstr "螢幕的水平更新率範圍："
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 30 or higher than 130 are extremely rare."
+#~ msgstr ""
+#~ "請輸入一連串以逗號分隔的獨立數值（適用於固定頻率的螢幕），或者是以連接線 "
+#~ "(-) 相連的一對數值（適用於所有新式 CRT）。這些資訊應該能在您的螢幕使用手冊"
+#~ "中找到。但應該會很少看到低於 30 或高於 130 的數值。"
+
+#~ msgid "Monitor's vertical refresh range:"
+#~ msgstr "螢幕的垂直更新率範圍："
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 50 or higher than 160 are extremely rare."
+#~ msgstr ""
+#~ "請輸入一連串以逗號分隔的獨立數值（適用於固定頻率的螢幕），或者是以連接線 "
+#~ "(-) 相連的一對數值（適用於所有新式 CRT）。這些資訊應該能在您的螢幕使用手冊"
+#~ "中找到。但應該會很少看到低於 50 或高於 160 的數值。"
+
+#~ msgid "Incorrect values entered"
+#~ msgstr "輸入的值不正確"
+
+#~ msgid ""
+#~ "The valid syntax is a comma-separated list of discrete values, or a pair "
+#~ "of values separated by a dash."
+#~ msgstr ""
+#~ "正確的格式是一連串以逗號分隔的獨立數值，或者是以連接線 (-) 相連的一對數"
+#~ "值。"
+
+#~ msgid "Desired default color depth in bits:"
+#~ msgstr "您想使用的預設色深（單位：位元）："
+
+#~ msgid ""
+#~ "Usually 24-bit color is desirable, but on graphics cards with limited "
+#~ "amounts of framebuffer memory, higher resolutions may be achieved at the "
+#~ "expense of higher color depth.  Also, some cards support hardware 3D "
+#~ "acceleration only for certain depths.  Consult your video card manual for "
+#~ "more information."
+#~ msgstr ""
+#~ "一般來說 24 位元色彩是最好的，但是對於某些 Framebuffer 記憶體有限的顯示卡"
+#~ "來說，可能需要犧牲色深才能達到更高的解析度。另外，有些顯示卡只在特定的色深"
+#~ "下才能支持硬體 3D 加速。請查閱您的顯示卡手冊以獲得更多資訊。"
+
+#~ msgid ""
+#~ "So-called \"32-bit color\" is actually 24 bits of color information plus "
+#~ "8 bits of alpha channel or simple zero padding; the X Window System can "
+#~ "handle both.  If you want either, select 24 bits."
+#~ msgstr ""
+#~ "所謂的『32 位元色彩』實際是 24 位的色彩資訊加上 8 位的 alpha 通道或只是簡"
+#~ "單地用零補齊，X Window System 對兩者都支援。如有必要兩擇其一，請選擇 24 位"
+#~ "元。"
 
 #~ msgid "Write default Files section to configuration file?"
 #~ msgstr "是否在設定檔裡寫入預設的 Files 段落？"

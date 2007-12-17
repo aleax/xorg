@@ -1,3 +1,86 @@
+xorg (1:7.3+8ubuntu1) UNRELEASED; urgency=low
+
+  * Merge with Debian unstable, remaining changes:
+    - apport/xorg-server.py, debian/x11-common.install:
+      + apport hook for xorg-server crashes
+    - local/Failsafe/*, x11-common.install:
+      + Bulletproof-X.
+    - control:
+      + Change maintainer address.
+      + xserver-xorg: Recommends displayconfig-gtk
+      + Move xorg-docs Recommends to Suggests, because xorg-docs is in
+        universe.
+      + Add "xserver-xorg-driver-all" transitional package to make
+        dapper->hardy upgrades work.
+    - control, rules:
+      + Add a dependency to x11-common for each binary built to save
+        disk/livecd space.
+      + Symlink the doc directories to x11-common, explicitly remove the
+        doc directories on upgrade for the now symlinked doc directories.
+    - local/xserver-wrapper.c:
+      + Stop handling -config specifically in the wrapper, as Xorg now
+        handles this itself.
+    - local/dexconf, control:
+      + Added support for vmmouse_detect (if present) to override mouse
+        driver with vmware. Depends on mdetect.
+    - local/dexconf:
+      + Add extra bits for ps3fb xorg.conf.
+    - scripts/vars.{amd64,i386}:
+      + Install both xserver-xorg-video-intel AND xserver-xorg-video-i810,
+        instead of OR.
+    - scripts/vars.i386:
+      + Add xserver-xorg-video-amd and xserver-xorg-video-psb.
+    - scripts/vars.lpia:
+      + Copied from vars.i386.
+    - local/Xsession:
+      + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+        0.5MiB to avoid having it grow indefinitively. (This does not happen
+        with gdm anyway since gdm cleans the file on login).
+    - xserver-xorg.postinst.in:
+      + Make sure to ask video driver on sparc even if autodetected. Some
+        cards still require weird overrides (ati -> fbdev) that are not
+        100% known in all combinations.
+      + Skip video card autodetection if xforcevesa is set.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 27 Nov 2007 11:53:49 +0200
+
+xorg (1:7.3+8) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Make xorg Architecture: any.  Depend on sparc-utils [sparc] instead of
+    sparc-utils | not+sparc.
+  * dexconf: Use xorg.conf/xserver-xorg instead of $REALCONFIG/$XSERVERPKG.
+    Thanks, Timo Aaltonen!
+
+  [ Tormod Volden ]
+  * xserver-xorg.postinst.in: Narrow down the drivers to filter from the list,
+    because otherwise radeonhd would not be selectable.
+    (Closes: #446441, LP: #174311)
+
+  [ David Nusinow ]
+  * Don't write the default depth to xorg.conf any more.
+    The drivers should choose the appropriate depth by default now.
+  * Don't bother with resolutions in xorg.conf
+    We now rely on the server and drivers to do the right thing. Previously,
+    our best-case scenario was to have the xserver-xorg postinstall script ask
+    the monitor what the optimal values were, and if that wasn't possible to
+    give the user a default list of resolutions and a best-guess hsync and
+    vrefresh values that the user could override. The server and almost all
+    drivers will do this on boot anyway using properly maintained code, which
+    allows them to better adapt to changes. randr 1.2-compliant drivers will
+    do this even better than we possibly could. Finally, the server will
+    provide a better list of defaults than we were doing anyway. There will
+    undoubtedly be bugs uncovered by this change, but we need  to find and fix
+    the actual bugs in the drivers and server in order to move forward.
+    + Don't recommend xresprobe any more
+    + Don't recommend laptop-detect any more or look for it in server postinst
+  * Don't set fbdev in the postinst for r128 on ppc.
+    The driver will do this automatically if no option is specified by the user
+  * Allow cross-building. Thanks Neil Williams. Closes: #451293
+  * Bump standards version to 3.7.3.0. No changes needed.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 16 Dec 2007 10:35:08 -0500
+
 xorg (1:7.3+7ubuntu3) hardy; urgency=low
 
   [ Michael Vogt ]

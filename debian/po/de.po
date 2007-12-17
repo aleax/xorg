@@ -34,8 +34,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11_6.8.2.dfsg.1-2_de\n"
-"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-31 17:28-0400\n"
+"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-09 22:41-0500\n"
 "PO-Revision-Date: 2007-04-21 01:07+0200\n"
 "Last-Translator: Jens Seidel <jensseidel@users.sf.net>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -43,34 +43,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Video modes to be used by the X server:"
-msgstr "Vom X-Server zu nutzende Video-Modi:"
-
-#. Type: multiselect
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Please keep only the resolutions you would like the X server to use.  "
-"Removing all of them is the same as removing none, since in both cases the X "
-"server will attempt to use the highest possible resolution."
-msgstr ""
-"Wenn es Auflösungen gibt, die der X-Server nicht verwenden soll, obwohl Ihre "
-"Hardware sie unterstützt, löschen Sie sie aus der Liste unten. Alle aus der "
-"Liste zu entfernen bewirkt dasselbe, wie keinen zu entfernen, da dann der X-"
-"Server versucht, die höchstmögliche Auflösung zu verwenden."
-
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Attempt to autodetect video hardware?"
 msgstr "Versuchen, die Grafikkarte automatisch zu erkennen?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You should choose this option if you would like to attempt to autodetect the "
 "recommended X server and driver module for your video card.  If the "
@@ -87,7 +68,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "If you would rather select the X server and driver module yourself, do not "
 "choose this option.  You will not be asked to select the X server if there "
@@ -100,13 +81,13 @@ msgstr ""
 # FIXME: Is this incomplete sentence really a "note"?
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Multiple potential default X.Org server drivers for the hardware"
 msgstr "Mehrere potenziell passende X.Org-Server-Treiber für die Hardware"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Multiple video cards have been detected, and different X servers are "
 "required to support the various devices.  It is thus not possible to "
@@ -118,7 +99,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Please configure the device that will serve as this computer's \"primary head"
 "\"; this is generally the video card and monitor used for display when the "
@@ -130,7 +111,7 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "The configuration process currently only supports single-headed setups; "
 "however, the X server configuration files can be edited later to support a "
@@ -142,13 +123,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid "Identifier for your video card:"
 msgstr "Bezeichnung für Ihre Grafikkarte:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "The X server configuration file associates your video card with a name that "
 "you may provide.  This is usually the vendor or brand name followed by the "
@@ -157,24 +138,24 @@ msgid ""
 msgstr ""
 "Die Konfigurationsdatei des X-Servers verknüpft Ihre Grafikkarte mit einem "
 "Namen, den Sie wählen können. Dies ist normalerweise der Hersteller oder "
-"Serienname, gefolgt vom Modellnamen, z.B. »Intel i915«, »ATI RADEON X800« "
-"oder »NVIDIA GeForce 6600«."
+"Serienname, gefolgt vom Modellnamen, z.B. »Intel i915«, »ATI RADEON X800« oder "
+"»NVIDIA GeForce 6600«."
 
 #. Type: text
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "Generic Video Card"
 msgstr "Standardgrafikkarte"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid "X server driver:"
 msgstr "X-Server-Treiber:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -184,7 +165,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -195,13 +176,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Kernel-Framebuffer-Schnittstelle benutzen?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -213,7 +194,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -225,13 +206,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Video card's bus identifier:"
 msgstr "Bus-Identifikator der Grafikkarte:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -242,13 +223,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Examples:"
 msgstr "Beispiele:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -260,7 +241,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -270,7 +251,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -281,19 +262,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Incorrect format for the bus identifier"
 msgstr "Falsches Format für den Bus-Identifikator"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "XKB rule set to use:"
 msgstr "Zu verwendender XKB-Regelsatz:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -303,7 +284,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -313,7 +294,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -325,19 +306,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Im Zweifelsfall sollte dieser Wert auf »xorg« gesetzt werden."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "Keyboard model:"
 msgstr "Tastaturmodell:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -348,7 +329,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -386,7 +367,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -397,7 +378,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -410,7 +391,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -421,13 +402,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard layout:"
 msgstr "Tastaturbelegung:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -439,7 +420,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -452,7 +433,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -460,18 +441,18 @@ msgid ""
 msgstr ""
 "Benutzer von US-englischen Tastaturen sollten »us« wählen. Benutzer von "
 "Tastaturen, die für die bestimmte Sprachen/Länder angepasst sind, sollten "
-"den jeweiligen ISO 3166 Ländercode eingeben, z.B. »fr« für Frankreich und "
-"»de« für Deutschland."
+"den jeweiligen ISO 3166 Ländercode eingeben, z.B. »fr« für Frankreich und »de« "
+"für Deutschland."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Keyboard variant:"
 msgstr "Tastaturvariante:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -484,7 +465,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -498,7 +479,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -512,20 +493,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "Benutzer von US-englischen Tastaturen sollten dieses Feld leer lassen."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "Keyboard options:"
 msgstr "Tastaturoptionen:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -538,19 +519,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
-"Beispiele: »ctrl:nocaps« macht die Feststelltaste (CapsLock) zur "
-"zusätzlichen Strg-Taste (Ctrl), »ctrl:swapcaps« vertauscht die Belegung von "
-"linker Strg- und Feststelltaste."
+"Beispiele: »ctrl:nocaps« macht die Feststelltaste (CapsLock) zur zusätzlichen "
+"Strg-Taste (Ctrl), »ctrl:swapcaps« vertauscht die Belegung von linker Strg- "
+"und Feststelltaste."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -566,7 +547,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -576,7 +557,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -586,326 +567,56 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:14001
 msgid "When in doubt, this value should be left blank."
 msgstr "Im Zweifelsfall sollte dieser Wert leergelassen werden."
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid "Attempt monitor autodetection?"
-msgstr "Versuchen, den Monitor automatisch zu erkennen?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"Many monitors (including LCD's) and video cards support a communication "
-"protocol that allows the monitor's technical characteristics to be "
-"communicated back to the computer.  If the monitor and video card support "
-"this protocol, further configuration questions about the monitor will be pre-"
-"answered."
-msgstr ""
-"Viele Monitore (auch LCDs) und Grafikkarten unterstützen ein "
-"Kommunikationsprotokoll, welches erlaubt, die technischen Eigenschaften des "
-"Monitors abzufragen. Wenn der Monitor und die Grafikkarte dieses Protokoll "
-"unterstützen, werden die ermittelten Werte als Antwort für die weiteren "
-"Konfigurationsfragen über Ihren Monitor eingetragen sein."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:16001
-msgid ""
-"If autodetection fails, you will be asked for information about the monitor."
-msgstr ""
-"Wenn die automatische Erkennung fehlschlägt, werden Sie nach Informationen "
-"über Ihren Monitor gefragt."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid "Method for selecting the monitor characteristics:"
-msgstr "Methode zur Bestimmung der Monitor-Charakteristika:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, "
-"certain characteristics of the monitor must be known."
-msgstr ""
-"Damit grafische Benutzeroberflächen mit dem »X Window System« korrekt "
-"arbeiten, müssen bestimmte Eigenschaften des Monitors bekannt sein."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"simple\" option will prompt about the monitor's physical size; this "
-"will set some configuration values appropriate for a typical CRT of the "
-"corresponding size, but may be suboptimal for high-quality CRT's."
-msgstr ""
-"Die Option »simple« (einfach) wird zur Abfrage der physikalischen Größe des "
-"Monitors führen; die Konfiguration wird dann für einen typischen Monitor "
-"dieser Größe passend eingestellt, was aber qualitativ hochwertige "
-"Röhrenmonitore nicht unbedingt ausreizt."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"medium\" option will present you with a list of resolutions and "
-"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
-"you wish to use (and that you know the monitor is capable of)."
-msgstr ""
-"Die Option »medium« (mittel) wird Ihnen eine Liste von Auflösungen und "
-"Bildwiederholraten anbieten, wie z.B. »800x600 @ 85Hz«. Sie sollten die "
-"beste Auflösung auswählen, die Sie nutzen wollen (und Ihr Monitor schafft)."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:17001
-msgid ""
-"The \"advanced\" option will let you specify the monitor's horizontal sync "
-"and vertical refresh tolerances directly."
-msgstr ""
-"Die Option »advanced« (Experte) fragt Sie direkt nach der horizontalen und "
-"vertikalen Bildwiederholfrequenz."
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "Up to 14 inches (355 mm)"
-msgstr "Bis zu 355 mm (14 Zoll)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "15 inches (380 mm)"
-msgstr "380 mm (15 Zoll)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "17 inches (430 mm)"
-msgstr "430 mm (17 Zoll)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "19-20 inches (480-510 mm)"
-msgstr "480-510 mm (19-20 Zoll)"
-
-#. Type: select
-#. Choices
-#: ../xserver-xorg.templates:18001
-msgid "21 inches (530 mm) or more"
-msgstr "530 mm (21 Zoll) oder mehr"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "Approximate monitor size:"
-msgstr "Geschätzte Monitorgröße:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:18002
-msgid "High-quality CRT's may be able to use the next highest size category."
-msgstr ""
-"Hochqualitative Röhrenmonitore könnten eventuell auch mit der nächsthöheren "
-"Größen-Kategorie betrieben werden."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid "Monitor's best video mode:"
-msgstr "Bester Videomodus des Monitors:"
-
-# FIXME: LCD displays ==> LC displays?
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:19001
-msgid ""
-"Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
-"Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
-"perfectly acceptable to select a \"worse\" video mode than the monitor's "
-"best if you wish.  Users of LCD displays may also be able to do this, but "
-"only if both the video chipset and the driver support it; if in doubt, use "
-"the video mode recommended by the manufacturer of your LCD."
-msgstr ""
-"Wählen Sie die »beste« Auflösung und Wiederholrate die Ihr Monitor schafft. "
-"Höhere Auflösungen und Wiederholraten sind besser. Bei einem Röhrenmonitor "
-"ist es in Ordnung, eine niedrigere Auflösung oder Wiederholrate auszuwählen, "
-"als der Monitor unterstützt. Auch Benutzer von LC-Displays können das tun, "
-"allerdings nur, wenn es sowohl vom Video-Chipsatz als auch vom Treiber "
-"unterstützt wird. Im Zweifelsfall sollte der Videomodus verwendet werden, "
-"den der Hersteller des LCDs empfiehlt."
-
-#. Type: text
-#. Description
-#: ../xserver-xorg.templates:20001
-msgid "Generic Monitor"
-msgstr "Standardbildschirm"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid "Write monitor sync ranges to the configuration file?"
-msgstr "Die Sync-Bereiche des Monitors in die Konfigurationsdatei schreiben?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:21001
-msgid ""
-"The monitor synchronization ranges should be autodetected by the X server in "
-"most cases, but sometimes it needs hinting.  This option is for experienced "
-"users, and should be left at its default."
-msgstr ""
-"Die Synchronisationsbereiche des Monitors sollten in den meisten Fällen vom "
-"X-Server automatisch ermittelt werden können, aber manchmal benötigt er "
-"dabei Hilfe. Diese Option ist für fortgeschrittene Benutzer und sollte in "
-"der Standardeinstellung belassen werden."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid "Monitor's horizontal sync range:"
-msgstr "Horizontaler Wiederholfrequenz-Bereich des Monitors:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:22001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 30 or higher than 130 are extremely rare."
-msgstr ""
-"Bitte geben Sie entweder eine kommagetrennte Liste von diskreten Werten ein "
-"(für Festfrequenzmonitore) oder ein Paar von Werten getrennt durch einen "
-"Bindestrich (für alle modernen Monitore). Diese Werte sollten in dem "
-"Handbuch des Monitors angegeben sein. Werte unterhalb von 30 oder oberhalb "
-"von 130 sind sehr ungewöhnlich."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid "Monitor's vertical refresh range:"
-msgstr "Vertikaler Bildwiederholfrequenz-Bereich des Monitors:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:23001
-msgid ""
-"Please enter either a comma-separated list of discrete values (for fixed-"
-"frequency displays), or a pair of values separated by a dash (all modern "
-"CRT's).  This information should be available in the monitor's manual.  "
-"Values lower than 50 or higher than 160 are extremely rare."
-msgstr ""
-"Bitte geben Sie entweder eine kommagetrennte Liste von diskreten Werten ein "
-"(für Festfrequenzmonitore) oder ein Paar von Werten getrennt durch einen "
-"Bindestrich (für alle modernen Monitore). Diese Werte sollten in dem "
-"Handbuch des Monitors angegeben sein. Werte unterhalb von 50 oder oberhalb "
-"von 160 sind sehr ungewöhnlich."
-
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:24001
-msgid "Incorrect values entered"
-msgstr "Falsche Werte wurden eingegeben"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:24001
-msgid ""
-"The valid syntax is a comma-separated list of discrete values, or a pair of "
-"values separated by a dash."
-msgstr ""
-"Die gültige Syntax ist eine kommagetrennte Liste von diskreten Werten, oder "
-"ein Paar von Zahlen getrennt durch einen Bindestrich (Minus)."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid "Desired default color depth in bits:"
-msgstr "Gewünschte Standardfarbtiefe in Bits:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"Usually 24-bit color is desirable, but on graphics cards with limited "
-"amounts of framebuffer memory, higher resolutions may be achieved at the "
-"expense of higher color depth.  Also, some cards support hardware 3D "
-"acceleration only for certain depths.  Consult your video card manual for "
-"more information."
-msgstr ""
-"Normalerweise ist eine Farbtiefe von 24 Bit wünschenswert (TrueColor), aber "
-"auf Grafikkarten mit begrenztem Speicher können höhere Auflösungen nur "
-"verwendet werden, wenn man die Farbtiefe reduziert. Außerdem unterstützen "
-"manche 3D-Grafikkarten Hardware-Beschleunigung nur in bestimmten Farbtiefen. "
-"Details finden Sie in der Anleitung Ihrer Grafikkarte."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:25001
-msgid ""
-"So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
-"bits of alpha channel or simple zero padding; the X Window System can handle "
-"both.  If you want either, select 24 bits."
-msgstr ""
-"So genannte »32 Bit Farbtiefe« sind in Wirklichkeit 24 Bits an "
-"Farbinformation plus 8 Bits für den Alpha-Kanal oder einfache Füllbits; das "
-"»X Window System« unterstützt beides. Wenn Sie eines davon brauchen, wählen "
-"Sie 24 Bit."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "Empty value"
 msgstr "Leerer Wert"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:26001
+#: ../xserver-xorg.templates:15001
 msgid "A null entry is not permitted for this value."
 msgstr "Ein leerer Eintrag ist für diesen Wert nicht zulässig."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Invalid double-quote characters"
 msgstr "Ungültige doppelte Anführungszeichen"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:27001
+#: ../xserver-xorg.templates:16001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr ""
 "Doppelte Anführungszeichen (\") sind in diesem Eingabefeld nicht erlaubt."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Numerical value needed"
 msgstr "Ein numerischer Wert wird benötigt"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:28001
+#: ../xserver-xorg.templates:17001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Andere Zeichen als Ziffern sind in diesem Eingabefeld nicht erlaubt."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid "Autodetect keyboard layout?"
 msgstr "Die Tastaturbelegung automatisch bestimmen?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -917,7 +628,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:29001
+#: ../xserver-xorg.templates:18001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -1080,6 +791,208 @@ msgstr ""
 "Diese Paketinstallation wird nun fehlschlagen und beenden, so dass Sie dies "
 "tun können. Bitte starten Sie die Aktualisierung neu, nachdem Sie das "
 "Verzeichnis geleert haben."
+
+#~ msgid "Video modes to be used by the X server:"
+#~ msgstr "Vom X-Server zu nutzende Video-Modi:"
+
+#~ msgid ""
+#~ "Please keep only the resolutions you would like the X server to use.  "
+#~ "Removing all of them is the same as removing none, since in both cases "
+#~ "the X server will attempt to use the highest possible resolution."
+#~ msgstr ""
+#~ "Wenn es Auflösungen gibt, die der X-Server nicht verwenden soll, obwohl "
+#~ "Ihre Hardware sie unterstützt, löschen Sie sie aus der Liste unten. Alle "
+#~ "aus der Liste zu entfernen bewirkt dasselbe, wie keinen zu entfernen, da "
+#~ "dann der X-Server versucht, die höchstmögliche Auflösung zu verwenden."
+
+#~ msgid "Attempt monitor autodetection?"
+#~ msgstr "Versuchen, den Monitor automatisch zu erkennen?"
+
+#~ msgid ""
+#~ "Many monitors (including LCD's) and video cards support a communication "
+#~ "protocol that allows the monitor's technical characteristics to be "
+#~ "communicated back to the computer.  If the monitor and video card support "
+#~ "this protocol, further configuration questions about the monitor will be "
+#~ "pre-answered."
+#~ msgstr ""
+#~ "Viele Monitore (auch LCDs) und Grafikkarten unterstützen ein "
+#~ "Kommunikationsprotokoll, welches erlaubt, die technischen Eigenschaften "
+#~ "des Monitors abzufragen. Wenn der Monitor und die Grafikkarte dieses "
+#~ "Protokoll unterstützen, werden die ermittelten Werte als Antwort für die "
+#~ "weiteren Konfigurationsfragen über Ihren Monitor eingetragen sein."
+
+#~ msgid ""
+#~ "If autodetection fails, you will be asked for information about the "
+#~ "monitor."
+#~ msgstr ""
+#~ "Wenn die automatische Erkennung fehlschlägt, werden Sie nach "
+#~ "Informationen über Ihren Monitor gefragt."
+
+#~ msgid "Method for selecting the monitor characteristics:"
+#~ msgstr "Methode zur Bestimmung der Monitor-Charakteristika:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, "
+#~ "certain characteristics of the monitor must be known."
+#~ msgstr ""
+#~ "Damit grafische Benutzeroberflächen mit dem »X Window System« korrekt "
+#~ "arbeiten, müssen bestimmte Eigenschaften des Monitors bekannt sein."
+
+#~ msgid ""
+#~ "The \"simple\" option will prompt about the monitor's physical size; this "
+#~ "will set some configuration values appropriate for a typical CRT of the "
+#~ "corresponding size, but may be suboptimal for high-quality CRT's."
+#~ msgstr ""
+#~ "Die Option »simple« (einfach) wird zur Abfrage der physikalischen Größe "
+#~ "des Monitors führen; die Konfiguration wird dann für einen typischen "
+#~ "Monitor dieser Größe passend eingestellt, was aber qualitativ hochwertige "
+#~ "Röhrenmonitore nicht unbedingt ausreizt."
+
+#~ msgid ""
+#~ "The \"medium\" option will present you with a list of resolutions and "
+#~ "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best "
+#~ "mode you wish to use (and that you know the monitor is capable of)."
+#~ msgstr ""
+#~ "Die Option »medium« (mittel) wird Ihnen eine Liste von Auflösungen und "
+#~ "Bildwiederholraten anbieten, wie z.B. »800x600 @ 85Hz«. Sie sollten die "
+#~ "beste Auflösung auswählen, die Sie nutzen wollen (und Ihr Monitor "
+#~ "schafft)."
+
+#~ msgid ""
+#~ "The \"advanced\" option will let you specify the monitor's horizontal "
+#~ "sync and vertical refresh tolerances directly."
+#~ msgstr ""
+#~ "Die Option »advanced« (Experte) fragt Sie direkt nach der horizontalen und "
+#~ "vertikalen Bildwiederholfrequenz."
+
+#~ msgid "Up to 14 inches (355 mm)"
+#~ msgstr "Bis zu 355 mm (14 Zoll)"
+
+#~ msgid "15 inches (380 mm)"
+#~ msgstr "380 mm (15 Zoll)"
+
+#~ msgid "17 inches (430 mm)"
+#~ msgstr "430 mm (17 Zoll)"
+
+#~ msgid "19-20 inches (480-510 mm)"
+#~ msgstr "480-510 mm (19-20 Zoll)"
+
+#~ msgid "21 inches (530 mm) or more"
+#~ msgstr "530 mm (21 Zoll) oder mehr"
+
+#~ msgid "Approximate monitor size:"
+#~ msgstr "Geschätzte Monitorgröße:"
+
+#~ msgid ""
+#~ "High-quality CRT's may be able to use the next highest size category."
+#~ msgstr ""
+#~ "Hochqualitative Röhrenmonitore könnten eventuell auch mit der "
+#~ "nächsthöheren Größen-Kategorie betrieben werden."
+
+#~ msgid "Monitor's best video mode:"
+#~ msgstr "Bester Videomodus des Monitors:"
+
+# FIXME: LCD displays ==> LC displays?
+#~ msgid ""
+#~ "Choose the \"best\" resolution and refresh rate the monitor is capable "
+#~ "of.  Larger resolutions and refresh rates are better.  With a CRT "
+#~ "monitor, it is perfectly acceptable to select a \"worse\" video mode than "
+#~ "the monitor's best if you wish.  Users of LCD displays may also be able "
+#~ "to do this, but only if both the video chipset and the driver support it; "
+#~ "if in doubt, use the video mode recommended by the manufacturer of your "
+#~ "LCD."
+#~ msgstr ""
+#~ "Wählen Sie die »beste« Auflösung und Wiederholrate die Ihr Monitor "
+#~ "schafft. Höhere Auflösungen und Wiederholraten sind besser. Bei einem "
+#~ "Röhrenmonitor ist es in Ordnung, eine niedrigere Auflösung oder "
+#~ "Wiederholrate auszuwählen, als der Monitor unterstützt. Auch Benutzer von "
+#~ "LC-Displays können das tun, allerdings nur, wenn es sowohl vom Video-"
+#~ "Chipsatz als auch vom Treiber unterstützt wird. Im Zweifelsfall sollte "
+#~ "der Videomodus verwendet werden, den der Hersteller des LCDs empfiehlt."
+
+#~ msgid "Generic Monitor"
+#~ msgstr "Standardbildschirm"
+
+#~ msgid "Write monitor sync ranges to the configuration file?"
+#~ msgstr ""
+#~ "Die Sync-Bereiche des Monitors in die Konfigurationsdatei schreiben?"
+
+#~ msgid ""
+#~ "The monitor synchronization ranges should be autodetected by the X server "
+#~ "in most cases, but sometimes it needs hinting.  This option is for "
+#~ "experienced users, and should be left at its default."
+#~ msgstr ""
+#~ "Die Synchronisationsbereiche des Monitors sollten in den meisten Fällen "
+#~ "vom X-Server automatisch ermittelt werden können, aber manchmal benötigt "
+#~ "er dabei Hilfe. Diese Option ist für fortgeschrittene Benutzer und sollte "
+#~ "in der Standardeinstellung belassen werden."
+
+#~ msgid "Monitor's horizontal sync range:"
+#~ msgstr "Horizontaler Wiederholfrequenz-Bereich des Monitors:"
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 30 or higher than 130 are extremely rare."
+#~ msgstr ""
+#~ "Bitte geben Sie entweder eine kommagetrennte Liste von diskreten Werten "
+#~ "ein (für Festfrequenzmonitore) oder ein Paar von Werten getrennt durch "
+#~ "einen Bindestrich (für alle modernen Monitore). Diese Werte sollten in "
+#~ "dem Handbuch des Monitors angegeben sein. Werte unterhalb von 30 oder "
+#~ "oberhalb von 130 sind sehr ungewöhnlich."
+
+#~ msgid "Monitor's vertical refresh range:"
+#~ msgstr "Vertikaler Bildwiederholfrequenz-Bereich des Monitors:"
+
+#~ msgid ""
+#~ "Please enter either a comma-separated list of discrete values (for fixed-"
+#~ "frequency displays), or a pair of values separated by a dash (all modern "
+#~ "CRT's).  This information should be available in the monitor's manual.  "
+#~ "Values lower than 50 or higher than 160 are extremely rare."
+#~ msgstr ""
+#~ "Bitte geben Sie entweder eine kommagetrennte Liste von diskreten Werten "
+#~ "ein (für Festfrequenzmonitore) oder ein Paar von Werten getrennt durch "
+#~ "einen Bindestrich (für alle modernen Monitore). Diese Werte sollten in "
+#~ "dem Handbuch des Monitors angegeben sein. Werte unterhalb von 50 oder "
+#~ "oberhalb von 160 sind sehr ungewöhnlich."
+
+#~ msgid "Incorrect values entered"
+#~ msgstr "Falsche Werte wurden eingegeben"
+
+#~ msgid ""
+#~ "The valid syntax is a comma-separated list of discrete values, or a pair "
+#~ "of values separated by a dash."
+#~ msgstr ""
+#~ "Die gültige Syntax ist eine kommagetrennte Liste von diskreten Werten, "
+#~ "oder ein Paar von Zahlen getrennt durch einen Bindestrich (Minus)."
+
+#~ msgid "Desired default color depth in bits:"
+#~ msgstr "Gewünschte Standardfarbtiefe in Bits:"
+
+#~ msgid ""
+#~ "Usually 24-bit color is desirable, but on graphics cards with limited "
+#~ "amounts of framebuffer memory, higher resolutions may be achieved at the "
+#~ "expense of higher color depth.  Also, some cards support hardware 3D "
+#~ "acceleration only for certain depths.  Consult your video card manual for "
+#~ "more information."
+#~ msgstr ""
+#~ "Normalerweise ist eine Farbtiefe von 24 Bit wünschenswert (TrueColor), "
+#~ "aber auf Grafikkarten mit begrenztem Speicher können höhere Auflösungen "
+#~ "nur verwendet werden, wenn man die Farbtiefe reduziert. Außerdem "
+#~ "unterstützen manche 3D-Grafikkarten Hardware-Beschleunigung nur in "
+#~ "bestimmten Farbtiefen. Details finden Sie in der Anleitung Ihrer "
+#~ "Grafikkarte."
+
+#~ msgid ""
+#~ "So-called \"32-bit color\" is actually 24 bits of color information plus "
+#~ "8 bits of alpha channel or simple zero padding; the X Window System can "
+#~ "handle both.  If you want either, select 24 bits."
+#~ msgstr ""
+#~ "So genannte »32 Bit Farbtiefe« sind in Wirklichkeit 24 Bits an "
+#~ "Farbinformation plus 8 Bits für den Alpha-Kanal oder einfache Füllbits; "
+#~ "das »X Window System« unterstützt beides. Wenn Sie eines davon brauchen, "
+#~ "wählen Sie 24 Bit."
 
 #~ msgid "Write default Files section to configuration file?"
 #~ msgstr "Abschnitt »Files« mit Standardwerten erzeugen?"
