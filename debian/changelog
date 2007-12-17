@@ -1,3 +1,12 @@
+xorg (1:7.3+9) UNRELEASED; urgency=low
+
+  * Deregister old debconf questions before calling dexconf.  dexconf calls
+    db_stop, and we can't use debconf after that.  Add a comment to that
+    effect above the dexconf call in debian/xserver-xorg.postinst.in, to try
+    to prevent future mistakes.  Thanks, Michael Vogt!
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 17 Dec 2007 23:21:35 +0100
+
 xorg (1:7.3+8) unstable; urgency=low
 
   [ Julien Cristau ]
