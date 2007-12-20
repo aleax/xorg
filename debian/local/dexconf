@@ -273,9 +273,6 @@ printf "EndSection\n" >&4
 
 ### SCREEN
 
-db_get xserver-$SERVER/config/display/modes
-DISPLAY_MODES="$(list_convert $RET)"
-
 exec 4>"$DEXCONFTMPDIR/Screen"
 cat >&4 <<SECTION
 Section "Screen"
@@ -285,11 +282,6 @@ SECTION
 if [ -n "$PS3_FB" ]; then
   printf "\tDefaultFbBpp 32\n" >&4
 fi
-  if [ -n "$DISPLAY_MODES" ]; then
-	printf "\tSubSection \"Display\"\n" >&4
-    printf "\t\tModes\t\t$DISPLAY_MODES\n" >&4
-    printf "\tEndSubSection\n" >&4
-  fi
 printf "EndSection\n" >&4
 
 # Close file descriptor 4 before we delete temporary files
