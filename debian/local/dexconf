@@ -262,9 +262,6 @@ printf "EndSection\n" >&4
 
 ### SCREEN
 
-db_get xserver-$SERVER/config/display/modes
-DISPLAY_MODES="$(list_convert $RET)"
-
 exec 4>"$DEXCONFTMPDIR/Screen"
 cat >&4 <<SECTION
 Section "Screen"
