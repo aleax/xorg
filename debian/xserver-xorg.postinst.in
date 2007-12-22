@@ -652,8 +652,8 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
           ;;
       esac
 
-      if [ -z "$DRIVER_LIST" ]; then
-        observe "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
+      if [ -z "$DRIVER_LIST" ] || [ "$DRIVER_LIST" = " " ]; then
+        warn "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
         DRIVER_LIST="$DEFAULT_DRIVER"
       fi
 
