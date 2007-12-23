@@ -16,7 +16,11 @@ xorg (1:7.3+9) UNRELEASED; urgency=low
   * Fix dexconf to write in /etc/X11/xorg.conf by default again,
     closes: #456925.
 
- -- Brice Goglin <bgoglin@debian.org>  Sat, 22 Dec 2007 18:48:34 +0100
+  [ David Nusinow ]
+  * Don't force fbdev on mac mini ppc any more. The ati driver no longer uses
+    fbdev, and it has been reported to work on mac minis without it.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 23 Dec 2007 17:05:01 -0500
 
 xorg (1:7.3+8) unstable; urgency=low
 
