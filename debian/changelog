@@ -27,6 +27,8 @@ xorg (1:7.3+9) UNRELEASED; urgency=low
     + Adds 40x11-common_xsessionrc to /etc/X11/Xsession.d
     + Document this in Xsession.5 manpage
     + Add a NEWS.Debian entry about it
+    + Modifies /etc/X11/Xsession to declare the location of ~/.xsessionrc.
+      Custom versions of Xsession (like gdm's) will need an update
   * Use run-parts --list instead of a custom run_parts function. 
     Thanks Vagrant Cascadi for the patch. Closes: #458345, #457606
 
