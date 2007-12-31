@@ -19,8 +19,16 @@ xorg (1:7.3+9) UNRELEASED; urgency=low
   [ David Nusinow ]
   * Don't force fbdev on mac mini ppc any more. The ati driver no longer uses
     fbdev, and it has been reported to work on mac minis without it.
+  * Add support for $HOME/.xsessionrc. Closes: #411639
+    This file, if present, will get sourced during the start of your X
+    session. This allows you to set session-wide environment variables easily
+    for things like locale information. Patch adapted from one by Yves-Alexis
+    Perez. Thanks also to Holger Levsen and Osamu Aoki for advice.
+    + Adds 40x11-common_xsessionrc to /etc/X11/Xsession.d
+    + Document this in Xsession.5 manpage
+    + Add a NEWS.Debian entry about it
 
- -- David Nusinow <dnusinow@debian.org>  Sun, 23 Dec 2007 17:05:01 -0500
+ -- David Nusinow <dnusinow@debian.org>  Sun, 30 Dec 2007 22:23:39 -0500
 
 xorg (1:7.3+8) unstable; urgency=low
 

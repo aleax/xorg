@@ -186,6 +186,13 @@ the user's
 .I $HOME/.Xresources
 file is merged in the same way.
 .TP
+.I /etc/X11/Xsession.d/40x11\-common_xsessionrc
+Source global environment variables.
+This script will source anything in 
+.IR $HOME/.xsessionrc
+if the file is present. This allows the user to set global environment
+variables for their X session, such as locale information.
+.TP
 .I /etc/X11/Xsession.d/50x11\-common_determine\-startup
 Determine startup program.
 The X client to launch as the controlling process (the one that, upon
