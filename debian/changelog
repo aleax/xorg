@@ -41,8 +41,10 @@ xorg (1:7.3+9ubuntu1) UNRELEASED; urgency=low
         cards still require weird overrides (ati -> fbdev) that are not
         100% known in all combinations.
       + Skip video card autodetection if xforcevesa is set.
+  * failsafeDexconf: Don't try to fetch() default-x-server, which is no more.
+    Just use xorg/xserver-xorg where appropriate, and fix variables.
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 18 Dec 2007 01:19:37 +0200
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Sat, 05 Jan 2008 00:25:53 +0200
 
 xorg (1:7.3+9) unstable; urgency=low
 
