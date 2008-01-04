@@ -663,8 +663,8 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
           ;;
       esac
 
-      if [ -z "$DRIVER_LIST" ]; then
-        observe "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
+      if [ -z "$DRIVER_LIST" ] || [ "$DRIVER_LIST" = " " ]; then
+        warn "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
         DRIVER_LIST="$DEFAULT_DRIVER"
       fi
 
@@ -816,18 +816,6 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     fi
   else
     USE_FBDEV=false
-  fi
-
-  # it looks like Mac Mini need an extra kick. Make sure to give it to it.
- 
-  if [ "$ARCH" = powerpc ] && [ "$USE_FBDEV" = "false" ]; then
-    # it looks like Mac Mini need an extra kick. Make sure to give it to it.
-    if [ -e /proc/cpuinfo ]; then
-      if [ -n "$(cat /proc/cpuinfo | grep "^machine.*PowerMac10,1")" ] && \
-         [ -n "$(cat /proc/cpuinfo | grep "^platform.*PowerMac")" ]; then
-        USE_FBDEV=true
-      fi
-    fi
   fi
 
   if [ -n "$XORG_USE_FBDEV" ] && [ "$XORG_USE_FBDEV" = "no" ]; then

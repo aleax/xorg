@@ -1,3 +1,85 @@
+xorg (1:7.3+9ubuntu1) UNRELEASED; urgency=low
+
+  * Merge with Debian unstable, remaining changes:
+    - apport/xorg-server.py, debian/x11-common.install:
+      + apport hook for xorg-server crashes
+    - local/Failsafe/*, x11-common.install:
+      + Bulletproof-X.
+    - control:
+      + Change maintainer address.
+      + xserver-xorg: Recommends displayconfig-gtk
+      + Move xorg-docs Recommends to Suggests, because xorg-docs is in
+        universe.
+      + Add "xserver-xorg-driver-all" transitional package to make
+        dapper->hardy upgrades work.
+    - control, rules:
+      + Add a dependency to x11-common for each binary built to save
+        disk/livecd space.
+      + Symlink the doc directories to x11-common, explicitly remove the
+        doc directories on upgrade for the now symlinked doc directories.
+    - local/xserver-wrapper.c:
+      + Stop handling -config specifically in the wrapper, as Xorg now
+        handles this itself.
+    - local/dexconf, control:
+      + Added support for vmmouse_detect (if present) to override mouse
+        driver with vmware. Depends on mdetect.
+    - local/dexconf:
+      + Add extra bits for ps3fb xorg.conf.
+    - scripts/vars.{amd64,i386}:
+      + Install both xserver-xorg-video-intel AND xserver-xorg-video-i810,
+        instead of OR.
+    - scripts/vars.i386:
+      + Add xserver-xorg-video-amd and xserver-xorg-video-psb.
+    - scripts/vars.lpia:
+      + Copied from vars.i386.
+    - local/Xsession:
+      + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+        0.5MiB to avoid having it grow indefinitively. (This does not happen
+        with gdm anyway since gdm cleans the file on login).
+    - xserver-xorg.postinst.in:
+      + Make sure to ask video driver on sparc even if autodetected. Some
+        cards still require weird overrides (ati -> fbdev) that are not
+        100% known in all combinations.
+      + Skip video card autodetection if xforcevesa is set.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 18 Dec 2007 01:19:37 +0200
+
+xorg (1:7.3+9) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Deregister old debconf questions before calling dexconf.  dexconf calls
+    db_stop, and we can't use debconf after that.  Add a comment to that
+    effect above the dexconf call in debian/xserver-xorg.postinst.in, to try
+    to prevent future mistakes.  Thanks, Michael Vogt!
+
+  [ Timo Aaltonen ]
+  * dexconf: Remove reference to xserver-xorg/config/display/modes,
+    which is no longer used.
+
+  [ Brice Goglin ]
+  * Fix "no video driver modules found" message, thanks Robert Millan,
+    closes: #453930.
+  * Fix dexconf to write in /etc/X11/xorg.conf by default again,
+    closes: #456925.
+
+  [ David Nusinow ]
+  * Don't force fbdev on mac mini ppc any more. The ati driver no longer uses
+    fbdev, and it has been reported to work on mac minis without it.
+  * Add support for $HOME/.xsessionrc. Closes: #411639
+    This file, if present, will get sourced during the start of your X
+    session. This allows you to set session-wide environment variables easily
+    for things like locale information. Patch adapted from one by Yves-Alexis
+    Perez. Thanks also to Holger Levsen and Osamu Aoki for advice.
+    + Adds 40x11-common_xsessionrc to /etc/X11/Xsession.d
+    + Document this in Xsession.5 manpage
+    + Add a NEWS.Debian entry about it
+    + Modifies /etc/X11/Xsession to declare the location of ~/.xsessionrc.
+      Custom versions of Xsession (like gdm's) will need an update
+  * Use run-parts --list instead of a custom run_parts function.
+    Thanks Vagrant Cascadi for the patch. Closes: #458345, #457606
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 30 Dec 2007 23:01:52 -0500
+
 xorg (1:7.3+8ubuntu2) hardy; urgency=low
 
   * dexconf:
