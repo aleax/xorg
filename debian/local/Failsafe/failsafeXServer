@@ -44,7 +44,7 @@ failsafe_log=${BPX_LOG:-"/var/log/gdm/failsafe.log"}
 
 server=${BPX_SERVER:-/usr/bin/X}
 serverargs=${BPX_SERVERARGS:-"$*"}
-if [ -z $serverargs ]; then
+if [ -z "$serverargs" ]; then
     # Use :10 to avoid overwriting the (failed) Xorg.0.log
     serverargs=":10"
 fi
