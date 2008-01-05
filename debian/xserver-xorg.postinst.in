@@ -519,7 +519,7 @@ fi
 debug_echo "Configuring $THIS_PACKAGE."
 
 # collect information about installed video card(s), if possible
-if [ "$ARCH" == "sparc" ]; then
+if [ "$ARCH" = "sparc" ]; then
   DISCOVER_PROG='prtconf'
   DISCOVER_FUNC='discover_sparc_video'
 
