@@ -25,8 +25,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xorg 1:7.1.0-2\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2007-12-09 22:41-0500\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-01-05 17:07-0500\n"
 "PO-Revision-Date: 2006-10-10 00:29+0200\n"
 "Last-Translator: Ivan Vilata i Balaguer <ivan@selidor.net>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -110,41 +110,15 @@ msgstr ""
 "cap; tanmateix, podeu editar els fitxers de configuració del servidor X més "
 "endavant per a que funcione amb una configuració amb múltiples caps."
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Identifier for your video card:"
-msgstr "Identificador per a la targeta de vídeo:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"The X server configuration file associates your video card with a name that "
-"you may provide.  This is usually the vendor or brand name followed by the "
-"model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
-"6600\"."
-msgstr ""
-"El fitxer de configuració del servidor X associa la vostra targeta de vídeo "
-"amb un nom que podeu especificar.  Normalment és el nom del venedor o marca, "
-"seguit del nom del model, com «Intel i915», «ATI RADEON X800» o «NVIDIA GeForce "
-"6600»."
-
-#. Type: text
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Generic Video Card"
-msgstr "Targeta de vídeo genèrica"
-
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "X server driver:"
 msgstr "Controlador del servidor X:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -155,7 +129,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -166,14 +140,14 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid "Use kernel framebuffer device interface?"
 msgstr ""
 "Voleu emprar la interfície cap al dispositiu de «framebuffer» del nucli?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -186,7 +160,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -199,13 +173,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "Video card's bus identifier:"
 msgstr "Identificador de bus de la targeta de vídeo:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -217,13 +191,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "Examples:"
 msgstr "Exemples:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -235,7 +209,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -245,7 +219,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -255,19 +229,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid "Incorrect format for the bus identifier"
 msgstr "El format de l’identificador de bus no és correcte"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "XKB rule set to use:"
 msgstr "Regla d’XKB a emprar:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -277,7 +251,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -287,7 +261,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -299,19 +273,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Si teniu dubtes, entreu el valor «xorg»."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid "Keyboard model:"
 msgstr "Model del teclat:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -322,7 +296,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -358,7 +332,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -370,7 +344,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -383,7 +357,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -393,13 +367,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "Keyboard layout:"
 msgstr "Disposició del teclat."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -411,7 +385,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -424,7 +398,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -437,13 +411,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "Keyboard variant:"
 msgstr "Variant del teclat:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -455,7 +429,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -468,7 +442,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -482,7 +456,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -491,13 +465,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard options:"
 msgstr "Opcions per al teclat:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -510,7 +484,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -523,7 +497,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -539,7 +513,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -549,7 +523,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -559,56 +533,56 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "When in doubt, this value should be left blank."
 msgstr "Si teniu dubtes, deixeu aquest valor en blanc."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Empty value"
 msgstr "El valor és buit"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "A null entry is not permitted for this value."
 msgstr "Aquesta entrada no admet un valor buit."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Invalid double-quote characters"
 msgstr "Les cometes dobles no són vàlides"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr ""
 "No es permeten els caràcters de cometes dobles (\") al valor de l’entrada."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid "Numerical value needed"
 msgstr "Cal un valor numèric"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "No es permeten altres caràcters que no siguen dígits a l’entrada."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid "Autodetect keyboard layout?"
 msgstr "Voleu provar de detectar la disposició del teclat?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -620,7 +594,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -778,6 +752,23 @@ msgstr ""
 "La instaŀlació d’aquest paquet fallarà i eixirà per a que pugueu fer‐ho.  "
 "Per favor, torneu a executar el procediment d’actualització una volta hàgeu "
 "netejat el directori."
+
+#~ msgid "Identifier for your video card:"
+#~ msgstr "Identificador per a la targeta de vídeo:"
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA "
+#~ "GeForce 6600\"."
+#~ msgstr ""
+#~ "El fitxer de configuració del servidor X associa la vostra targeta de "
+#~ "vídeo amb un nom que podeu especificar.  Normalment és el nom del venedor "
+#~ "o marca, seguit del nom del model, com «Intel i915», «ATI RADEON X800» o "
+#~ "«NVIDIA GeForce 6600»."
+
+#~ msgid "Generic Video Card"
+#~ msgstr "Targeta de vídeo genèrica"
 
 #~ msgid "Video modes to be used by the X server:"
 #~ msgstr "Modes de vídeo que pot emprar el servidor X:"

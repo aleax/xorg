@@ -27,8 +27,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2007-12-09 22:41-0500\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-01-05 17:07-0500\n"
 "PO-Revision-Date: 2006-10-03 19:13-0500\n"
 "Last-Translator: Carlos Z.F. Liu <carlosliu@users.sourceforge.net>\n"
 "Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
@@ -107,39 +107,15 @@ msgstr ""
 "配置过程目前仅支持单头设定。但是，稍后可以通过直接编辑 X 服务器配置文件来支持"
 "多头配置。"
 
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Identifier for your video card:"
-msgstr "请为您的显示卡输入一个标识符："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"The X server configuration file associates your video card with a name that "
-"you may provide.  This is usually the vendor or brand name followed by the "
-"model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
-"6600\"."
-msgstr ""
-"X 服务器配置文件将把您的显示卡与您所提供的名称对应。这通常是厂商或品牌名称加"
-"上型号名称，例如：“Intel i915”、“ATI RADEON X800”或“NCIDIA GeForce 6600”。"
-
-#. Type: text
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Generic Video Card"
-msgstr "通用显示卡"
-
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "X server driver:"
 msgstr "X 服务器驱动："
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -149,7 +125,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -158,13 +134,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid "Use kernel framebuffer device interface?"
 msgstr "是否使用内核帧缓冲设备接口？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -175,7 +151,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -186,13 +162,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "Video card's bus identifier:"
 msgstr "请输入显示卡的通道标识符 (bus identifier)："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -203,13 +179,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "Examples:"
 msgstr "例如："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -220,7 +196,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -230,7 +206,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -240,19 +216,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid "Incorrect format for the bus identifier"
 msgstr "通道号 (bus identifier) 的格式错误"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "XKB rule set to use:"
 msgstr "请选择要使用的 XKB 规则集："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -260,7 +236,7 @@ msgstr "要使 X 服务器能正确处理您的键盘，您必须选择一个 XK
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -270,7 +246,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -281,19 +257,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "如果您有所疑惑，此项值应该被设为“xorg”。"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid "Keyboard model:"
 msgstr "键盘型号："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -303,7 +279,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -336,7 +312,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -347,7 +323,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -358,7 +334,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -368,13 +344,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "Keyboard layout:"
 msgstr "键盘布局："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -385,7 +361,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -396,7 +372,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -407,13 +383,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "Keyboard variant:"
 msgstr "键盘变种 (variant)："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -424,7 +400,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -435,7 +411,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -448,20 +424,20 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr "美国英语键盘用户通常应该将此栏留空。"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "Keyboard options:"
 msgstr "键盘选项："
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -472,7 +448,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -484,7 +460,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -498,7 +474,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -507,7 +483,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -515,55 +491,55 @@ msgstr "有经验的用户可以使用任何兼容于所选 XKB 型号、布局�
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "When in doubt, this value should be left blank."
 msgstr "如果您有所疑惑，此项值应该被置空。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Empty value"
 msgstr "空值"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "A null entry is not permitted for this value."
 msgstr "此栏不能为空值。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Invalid double-quote characters"
 msgstr "无效的双引号字符"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "此栏的值中不能带有双引号 (\") 字符。"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid "Numerical value needed"
 msgstr "需要数字字符"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:17001
+#: ../xserver-xorg.templates:15001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "此栏中不能有数字以外的字符。"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid "Autodetect keyboard layout?"
 msgstr "自动探测键盘布局？"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -574,7 +550,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:18001
+#: ../xserver-xorg.templates:16001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -720,6 +696,22 @@ msgid ""
 msgstr ""
 "本软件包安装失败并将退出，以让您完成所述的工作。请在清除目录后重新运行您的升"
 "级程序。"
+
+#~ msgid "Identifier for your video card:"
+#~ msgstr "请为您的显示卡输入一个标识符："
+
+#~ msgid ""
+#~ "The X server configuration file associates your video card with a name "
+#~ "that you may provide.  This is usually the vendor or brand name followed "
+#~ "by the model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA "
+#~ "GeForce 6600\"."
+#~ msgstr ""
+#~ "X 服务器配置文件将把您的显示卡与您所提供的名称对应。这通常是厂商或品牌名称"
+#~ "加上型号名称，例如：“Intel i915”、“ATI RADEON X800”或“NCIDIA GeForce "
+#~ "6600”。"
+
+#~ msgid "Generic Video Card"
+#~ msgstr "通用显示卡"
 
 #~ msgid "Video modes to be used by the X server:"
 #~ msgstr "X 服务器所使用的视频模式："

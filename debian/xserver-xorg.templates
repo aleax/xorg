@@ -33,17 +33,6 @@ _Description: Multiple potential default X.Org server drivers for the hardware
  however, the X server configuration files can be edited later to support a
  multi-head configuration.
 
-Template: xserver-xorg/config/device/identifier
-Type: string
-_Description: Identifier for your video card:
- The X server configuration file associates your video card with a name that
- you may provide.  This is usually the vendor or brand name followed by the
- model name, e.g., "Intel i915", "ATI RADEON X800", or "NVIDIA GeForce 6600".
-
-Template: xserver-xorg/config/device/default-identifier
-Type: text
-_Description: Generic Video Card
-
 Template: xserver-xorg/config/device/driver
 Type: select
 Choices: ${choices}
