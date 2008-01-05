@@ -230,7 +230,6 @@ printf "EndSection\n" >&4
 
 db_get xserver-$SERVER/config/device/driver
 DEVICE_DRIVER="$RET"
-# BusID, VideoRam, and UseFBDev are permitted to be null.
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
 db_get xserver-$SERVER/config/device/use_fbdev
