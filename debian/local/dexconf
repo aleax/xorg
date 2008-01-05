@@ -228,8 +228,6 @@ printf "EndSection\n" >&4
 
 ### DEVICE
 
-fetch xserver-$SERVER/config/device/identifier
-DEVICE_IDENTIFIER="$RET"
 fetch xserver-$SERVER/config/device/driver
 DEVICE_DRIVER="$RET"
 # BusID, VideoRam, and UseFBDev are permitted to be null.
@@ -240,7 +238,7 @@ DEVICE_USE_FBDEV="$RET"
 exec 4>"$DEXCONFTMPDIR/Device"
 cat >&4 <<SECTION
 Section "Device"
-	Identifier	"$DEVICE_IDENTIFIER"
+	Identifier	"Configured Video Device"
 	Driver		"$DEVICE_DRIVER"
 SECTION
 if [ -n "$DEVICE_BUSID" ]; then

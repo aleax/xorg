@@ -608,7 +608,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     AUTODETECT_VIDEO_CARD="$RET"
     if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
       # We're going to autodetect, so clear out the old values
-      for param in use_fbdev driver identifier bus_id; do
+      for param in use_fbdev driver bus_id; do
           db_reset xserver-xorg/config/device/$param
       done
 
@@ -690,25 +690,6 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   db_subst xserver-xorg/config/device/driver choices "$DRIVER_LIST"
   auto_answer db_input "$PRIORITY" \
     xserver-xorg/config/device/driver "$DEFAULT_DRIVER"
-
-  # card identifier; try to set a sensible default
-  DEFAULT=
-  if [ -n "$(echo $NDRIVERS)" ] && [ $NDRIVERS -eq 1 ] && [ $NCARDS -eq 1 ]; then
-    if which $DISCOVER_PROG > /dev/null 2>&1; then
-      if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
-        DEFAULT=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $1}')
-      fi
-    fi
-  fi
-  if [ -z "$DEFAULT" ]; then
-    # fall back to some language-specific generic text
-    db_metaget xserver-xorg/config/device/default-identifier Description
-    DEFAULT=$RET
-  fi
-  # this question requires input validation
-  MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/device/identifier "$DEFAULT"
-
-  DEVICE_IDENTIFIER="$DEFAULT"
 
   # BusID
   PRIORITY=low
@@ -1058,6 +1039,7 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
         for QUESTION in "shared/default-x-server" \
                         "xserver-xorg/autodetect_mouse" \
                         "xserver-xorg/autodetect_monitor" \
+                        "xserver-xorg/config/device/identifier" \
                         "xserver-xorg/config/monitor/selection-method" \
                         "xserver-xorg/config/monitor/screen-size" \
                         "xserver-xorg/config/monitor/mode-list" \
