@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-01-05 17:07-0500\n"
+"POT-Creation-Date: 2008-01-05 19:04-0500\n"
 "PO-Revision-Date: 2006-10-21 19:24+0300\n"
 "Last-Translator: Osman Yüksel <yuxel@sonsuzdongu.com>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
@@ -37,91 +37,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Attempt to autodetect video hardware?"
-msgstr "Ekran kartının otomatik olarak algılanması denensin mi?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"You should choose this option if you would like to attempt to autodetect the "
-"recommended X server and driver module for your video card.  If the "
-"autodetection fails, you will be asked to specify the desired X server and/"
-"or driver module.  If it succeeds, further configuration questions about "
-"your video hardware will be pre-answered."
-msgstr ""
-"X sunucusunun, ekran kartınız için kullanacağı sürücü ve modülleri otomatik "
-"olarak algılanmasını denemek istiyorsanız bu işlemi onaylayın.  Otomatik "
-"algılamanın başarısız olması durumunda istenen X sunucusu ve/veya sürücü "
-"modülleri size sorulacaktır.  Eğer otomatik algılama başarılı olursa gelecek "
-"adımlardaki ekran kartınızla ilgili sorular önceden cevaplanmış olacaktır."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"If you would rather select the X server and driver module yourself, do not "
-"choose this option.  You will not be asked to select the X server if there "
-"is only one available."
-msgstr ""
-"Eğer X sunucusu ve modüllerini kendiniz seçmek isterseniz bu seçeneği "
-"onaylamayın.  Eğer sadece bir tane kullanılabilir X sunucusu varsa seçim "
-"yapmanıza gerek kalmayacaktır."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "Donanımınıza uygun olası çoklu X.Org sunucu sürücüleri"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Multiple video cards have been detected, and different X servers are "
-"required to support the various devices.  It is thus not possible to "
-"automatically select a default X server."
-msgstr ""
-"Çoklu ekran kartı tespit edildi ve bu aygıtları desteklemek için farklı X "
-"sunucular gereklidir. Bu yüzden öntanımlı X sunucu seçimi otomatik olarak "
-"yapılamayacaktır."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Please configure the device that will serve as this computer's \"primary head"
-"\"; this is generally the video card and monitor used for display when the "
-"computer is booted up."
-msgstr ""
-"Lütfen bu bilgisayar için kullanılacak monitör ve ekran kartını "
-"yapılandırın.  Bunlar genelde bilgisayar ilk açıldığında kullanılan "
-"aygıtlardır."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"The configuration process currently only supports single-headed setups; "
-"however, the X server configuration files can be edited later to support a "
-"multi-head configuration."
-msgstr ""
-"Yapılandırma işlemi şu anda sadece tek-çıkışlı veya tek-ekranlı ayarlamaları "
-"desteklemektedir. Bununla birlikte çoklu çıkış veya çoklu ekran desteğini "
-"etkinleştirmek için X sunucu yapılandırma dosyaları düzenlenebilir."
-
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid "X server driver:"
 msgstr "X sunucu sürücüsü:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -131,7 +55,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -141,13 +65,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Çekirdek kare tamponu arayüzü kullanılsın mı?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -159,7 +83,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -171,13 +95,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "Video card's bus identifier:"
 msgstr "Ekran kartının veriyolu tanımlayıcısı:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -189,13 +113,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "Examples:"
 msgstr "Örnekler:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -207,7 +131,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -217,7 +141,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -228,19 +152,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid "Incorrect format for the bus identifier"
 msgstr "Geçersiz veriyolu tanımlayıcı biçimi"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "XKB rule set to use:"
 msgstr "Kullanılacak XKB kural kümesi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -249,7 +173,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -259,7 +183,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -271,19 +195,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Emin değilseniz \"xorg\" olarak ayarlayın"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid "Keyboard model:"
 msgstr "Klavye tipi:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -293,7 +217,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -329,7 +253,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -341,7 +265,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -353,7 +277,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -363,13 +287,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "Keyboard layout:"
 msgstr "Klavye düzeni:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -381,7 +305,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -393,7 +317,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -406,13 +330,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid "Keyboard variant:"
 msgstr "Klavye alt türü (varyant)"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -424,7 +348,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -436,7 +360,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -449,7 +373,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -458,13 +382,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "Keyboard options:"
 msgstr "Klavye seçenekleri:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -477,7 +401,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -489,7 +413,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -505,7 +429,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -515,7 +439,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -525,55 +449,55 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be left blank."
 msgstr "Emin değilseniz boş bırakın."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "Empty value"
 msgstr "Boş değer"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "A null entry is not permitted for this value."
 msgstr "Bu değer için boş giriş yapılamaz."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "Invalid double-quote characters"
 msgstr "Geçersiz çift tırnak karakteri"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Tırnak işareti karakteri (\") girdi bölümünde kullanılamaz."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Numerical value needed"
 msgstr "Rakam değeri girmelisiniz"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Girdilerde, rakamlardan başka karakter kullanılamaz."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Autodetect keyboard layout?"
 msgstr "Klavye düzeni otomatik denetlensin mi?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -584,7 +508,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -741,6 +665,63 @@ msgstr ""
 "Bu paketin kurulumu başarısızlıkla sonlanacak ve kurulumdan çıkılacaktır, "
 "böylece bunu yapabileceksiniz. Lütfen, dizini sildikten sonra güncelleme "
 "işleminizi yeniden başlatın."
+
+#~ msgid "Attempt to autodetect video hardware?"
+#~ msgstr "Ekran kartının otomatik olarak algılanması denensin mi?"
+
+#~ msgid ""
+#~ "You should choose this option if you would like to attempt to autodetect "
+#~ "the recommended X server and driver module for your video card.  If the "
+#~ "autodetection fails, you will be asked to specify the desired X server "
+#~ "and/or driver module.  If it succeeds, further configuration questions "
+#~ "about your video hardware will be pre-answered."
+#~ msgstr ""
+#~ "X sunucusunun, ekran kartınız için kullanacağı sürücü ve modülleri "
+#~ "otomatik olarak algılanmasını denemek istiyorsanız bu işlemi onaylayın.  "
+#~ "Otomatik algılamanın başarısız olması durumunda istenen X sunucusu ve/"
+#~ "veya sürücü modülleri size sorulacaktır.  Eğer otomatik algılama başarılı "
+#~ "olursa gelecek adımlardaki ekran kartınızla ilgili sorular önceden "
+#~ "cevaplanmış olacaktır."
+
+#~ msgid ""
+#~ "If you would rather select the X server and driver module yourself, do "
+#~ "not choose this option.  You will not be asked to select the X server if "
+#~ "there is only one available."
+#~ msgstr ""
+#~ "Eğer X sunucusu ve modüllerini kendiniz seçmek isterseniz bu seçeneği "
+#~ "onaylamayın.  Eğer sadece bir tane kullanılabilir X sunucusu varsa seçim "
+#~ "yapmanıza gerek kalmayacaktır."
+
+#~ msgid "Multiple potential default X.Org server drivers for the hardware"
+#~ msgstr "Donanımınıza uygun olası çoklu X.Org sunucu sürücüleri"
+
+#~ msgid ""
+#~ "Multiple video cards have been detected, and different X servers are "
+#~ "required to support the various devices.  It is thus not possible to "
+#~ "automatically select a default X server."
+#~ msgstr ""
+#~ "Çoklu ekran kartı tespit edildi ve bu aygıtları desteklemek için farklı X "
+#~ "sunucular gereklidir. Bu yüzden öntanımlı X sunucu seçimi otomatik olarak "
+#~ "yapılamayacaktır."
+
+#~ msgid ""
+#~ "Please configure the device that will serve as this computer's \"primary "
+#~ "head\"; this is generally the video card and monitor used for display "
+#~ "when the computer is booted up."
+#~ msgstr ""
+#~ "Lütfen bu bilgisayar için kullanılacak monitör ve ekran kartını "
+#~ "yapılandırın.  Bunlar genelde bilgisayar ilk açıldığında kullanılan "
+#~ "aygıtlardır."
+
+#~ msgid ""
+#~ "The configuration process currently only supports single-headed setups; "
+#~ "however, the X server configuration files can be edited later to support "
+#~ "a multi-head configuration."
+#~ msgstr ""
+#~ "Yapılandırma işlemi şu anda sadece tek-çıkışlı veya tek-ekranlı "
+#~ "ayarlamaları desteklemektedir. Bununla birlikte çoklu çıkış veya çoklu "
+#~ "ekran desteğini etkinleştirmek için X sunucu yapılandırma dosyaları "
+#~ "düzenlenebilir."
 
 #~ msgid "Identifier for your video card:"
 #~ msgstr "Ekran kartınız için bir tanımlayıcı:"

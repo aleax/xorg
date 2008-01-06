@@ -4,35 +4,6 @@
 # Please consider interacting with the team if you intend
 # to modify the templates or add new templates
 
-Template: xserver-xorg/autodetect_video_card
-Type: boolean
-Default: true
-_Description: Attempt to autodetect video hardware?
- You should choose this option if you would like to attempt to autodetect the recommended
- X server and driver module for your video card.  If the autodetection fails, you
- will be asked to specify the desired X server and/or driver module.  If
- it succeeds, further configuration questions about your video hardware
- will be pre-answered.
- .
- If you would rather select the X server and driver module yourself, do not choose
- this option.  You will not be asked to select the X server if there is only
- one available.
-
-Template: xserver-xorg/multiple_possible_x-drivers
-Type: note
-_Description: Multiple potential default X.Org server drivers for the hardware
- Multiple video cards have been detected, and different X servers are required
- to support the various devices.  It is thus not possible to automatically
- select a default X server.
- .
- Please configure the device that will serve as
- this computer's "primary head"; this is generally the video card and monitor
- used for display when the computer is booted up.
- .
- The configuration process currently only supports single-headed setups;
- however, the X server configuration files can be edited later to support a
- multi-head configuration.
-
 Template: xserver-xorg/config/device/driver
 Type: select
 Choices: ${choices}

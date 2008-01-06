@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-01-05 17:07-0500\n"
+"POT-Creation-Date: 2008-01-05 19:04-0500\n"
 "PO-Revision-Date: 2007-04-06 14:58-0400\n"
 "Last-Translator: Sunjae Park <darehanl@gmail.com>\n"
 "Language-Team: Korean <debian-l10n-korean@lists.debian.org>\n"
@@ -13,86 +13,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Attempt to autodetect video hardware?"
-msgstr "비디오 하드웨어의 자동 검색을 시도할까요?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"You should choose this option if you would like to attempt to autodetect the "
-"recommended X server and driver module for your video card.  If the "
-"autodetection fails, you will be asked to specify the desired X server and/"
-"or driver module.  If it succeeds, further configuration questions about "
-"your video hardware will be pre-answered."
-msgstr ""
-"비디오 카드에 권장하는 X 서버와 드라이버를 자동으로 검색하고자 할 경우 이 옵"
-"션을 사용하십시오. 자동 검색에 실패하면 사용하고자 하는 X 서버와 드라이버 모"
-"듈을 선택하실 수 있습니다. 성공하면 비디오 하드웨어에 관한 질문 사항들의 대답"
-"들이 자동으로 채워집니다."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"If you would rather select the X server and driver module yourself, do not "
-"choose this option.  You will not be asked to select the X server if there "
-"is only one available."
-msgstr ""
-"X 서버와 드라이버 모듈을 직접 선택하고자 한다면 이 옵션을 선택하지 마십시오. "
-"사용할 수 있는 X 서버가 하나 뿐이라면 사용자가 따로 선택할 필요는 없습니다."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Multiple potential default X.Org server drivers for the hardware"
-msgstr "하드웨어에 맞을만한 X.Org 서버 드라이버가 여러 개 있습니다."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Multiple video cards have been detected, and different X servers are "
-"required to support the various devices.  It is thus not possible to "
-"automatically select a default X server."
-msgstr ""
-"검색된 비디오 카드가 여러개이며, 이들을 모두 지원하기 위해서는 X 서버가 여러"
-"개 필요합니다. 그렇기 때문에 기본 X 서버를 결정할 수 없습니다."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Please configure the device that will serve as this computer's \"primary head"
-"\"; this is generally the video card and monitor used for display when the "
-"computer is booted up."
-msgstr ""
-"이 컴퓨터의 \"주된 장치\"의 역할을 할 장치를 설정해주십시오. 주로 컴퓨터를 부"
-"팅할 때 영상을 표시하기 위해 사용하는 비디오 카드와 모니터를 말합니다."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"The configuration process currently only supports single-headed setups; "
-"however, the X server configuration files can be edited later to support a "
-"multi-head configuration."
-msgstr ""
-"설정 과정은 현재 단일 헤드 구성만을 지원합니다. 하지만 나중에 X 서버의 설정 "
-"파일을 수정해서 멀티헤드 구성을 지원하록 변경할 수 있습니다."
-
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid "X server driver:"
 msgstr "X 서버 드라이버:"
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
@@ -102,7 +31,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
@@ -112,13 +41,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid "Use kernel framebuffer device interface?"
 msgstr "커널의 프레임버퍼 디바이스 인터페이스를 사용할까요?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -129,7 +58,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -141,13 +70,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "Video card's bus identifier:"
 msgstr "비디오카드의 버스 식별자:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -158,13 +87,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid "Examples:"
 msgstr "예:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -175,7 +104,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -185,7 +114,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:4001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -195,19 +124,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:5001
 msgid "Incorrect format for the bus identifier"
 msgstr "버스 식별자의 형식이 잘못되었습니다"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "XKB rule set to use:"
 msgstr "사용할 XKB 규칙셋:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -216,7 +145,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
 "5 keyboards, however, should enter \"sun\"."
@@ -226,7 +155,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -238,19 +167,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:6001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "잘 모르겠으면 \"xorg\"라는 값을 사용하십시오."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid "Keyboard model:"
 msgstr "키보드 모델:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -260,7 +189,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -294,7 +223,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -305,7 +234,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -317,7 +246,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -327,13 +256,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid "Keyboard layout:"
 msgstr "키보드 구성:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -344,7 +273,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -356,7 +285,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -368,13 +297,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid "Keyboard variant:"
 msgstr "키보드 변종:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -386,7 +315,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -398,7 +327,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -411,7 +340,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -419,13 +348,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "Keyboard options:"
 msgstr "키보드 옵션:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -437,7 +366,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -449,7 +378,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -464,7 +393,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -473,7 +402,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -483,55 +412,55 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be left blank."
 msgstr "잘 모르겠으면 이 항목을 비워두십시오."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "Empty value"
 msgstr "빈 값"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:11001
 msgid "A null entry is not permitted for this value."
 msgstr "이 값은 비어둘 수가 없습니다."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "Invalid double-quote characters"
 msgstr "큰 따옴표는 사용할 수 없음"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:12001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "이 항목의 값으로는 큰 따옴표(\") 글자를 사용할 수 없습니다."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Numerical value needed"
 msgstr "숫자가 필요함"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:15001
+#: ../xserver-xorg.templates:13001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "이 항목에는 숫자 이외의 다른 값은 사용할 수 없습니다."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid "Autodetect keyboard layout?"
 msgstr "키보드 구성을 자동으로 감지할까요?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -542,7 +471,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:16001
+#: ../xserver-xorg.templates:14001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -695,6 +624,58 @@ msgid ""
 msgstr ""
 "이 작업을 할 수 있도록 꾸러미 설치는 이제 실패로 끝냅니다. 디렉토리를 모두 정"
 "리한 후에 업그레이드 작업을 다시 실행시켜 주십시오."
+
+#~ msgid "Attempt to autodetect video hardware?"
+#~ msgstr "비디오 하드웨어의 자동 검색을 시도할까요?"
+
+#~ msgid ""
+#~ "You should choose this option if you would like to attempt to autodetect "
+#~ "the recommended X server and driver module for your video card.  If the "
+#~ "autodetection fails, you will be asked to specify the desired X server "
+#~ "and/or driver module.  If it succeeds, further configuration questions "
+#~ "about your video hardware will be pre-answered."
+#~ msgstr ""
+#~ "비디오 카드에 권장하는 X 서버와 드라이버를 자동으로 검색하고자 할 경우 이 "
+#~ "옵션을 사용하십시오. 자동 검색에 실패하면 사용하고자 하는 X 서버와 드라이"
+#~ "버 모듈을 선택하실 수 있습니다. 성공하면 비디오 하드웨어에 관한 질문 사항"
+#~ "들의 대답들이 자동으로 채워집니다."
+
+#~ msgid ""
+#~ "If you would rather select the X server and driver module yourself, do "
+#~ "not choose this option.  You will not be asked to select the X server if "
+#~ "there is only one available."
+#~ msgstr ""
+#~ "X 서버와 드라이버 모듈을 직접 선택하고자 한다면 이 옵션을 선택하지 마십시"
+#~ "오. 사용할 수 있는 X 서버가 하나 뿐이라면 사용자가 따로 선택할 필요는 없습"
+#~ "니다."
+
+#~ msgid "Multiple potential default X.Org server drivers for the hardware"
+#~ msgstr "하드웨어에 맞을만한 X.Org 서버 드라이버가 여러 개 있습니다."
+
+#~ msgid ""
+#~ "Multiple video cards have been detected, and different X servers are "
+#~ "required to support the various devices.  It is thus not possible to "
+#~ "automatically select a default X server."
+#~ msgstr ""
+#~ "검색된 비디오 카드가 여러개이며, 이들을 모두 지원하기 위해서는 X 서버가 여"
+#~ "러개 필요합니다. 그렇기 때문에 기본 X 서버를 결정할 수 없습니다."
+
+#~ msgid ""
+#~ "Please configure the device that will serve as this computer's \"primary "
+#~ "head\"; this is generally the video card and monitor used for display "
+#~ "when the computer is booted up."
+#~ msgstr ""
+#~ "이 컴퓨터의 \"주된 장치\"의 역할을 할 장치를 설정해주십시오. 주로 컴퓨터"
+#~ "를 부팅할 때 영상을 표시하기 위해 사용하는 비디오 카드와 모니터를 말합니"
+#~ "다."
+
+#~ msgid ""
+#~ "The configuration process currently only supports single-headed setups; "
+#~ "however, the X server configuration files can be edited later to support "
+#~ "a multi-head configuration."
+#~ msgstr ""
+#~ "설정 과정은 현재 단일 헤드 구성만을 지원합니다. 하지만 나중에 X 서버의 설"
+#~ "정 파일을 수정해서 멀티헤드 구성을 지원하록 변경할 수 있습니다."
 
 #~ msgid "Identifier for your video card:"
 #~ msgstr "비디오카드가 사용할 식별자:"

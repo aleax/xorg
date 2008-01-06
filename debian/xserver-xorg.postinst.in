@@ -899,6 +899,7 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
         for QUESTION in "shared/default-x-server" \
                         "xserver-xorg/autodetect_mouse" \
                         "xserver-xorg/autodetect_monitor" \
+                        "xserver-xorg/autodetect_video_card" \
                         "xserver-xorg/config/device/identifier" \
                         "xserver-xorg/config/monitor/selection-method" \
                         "xserver-xorg/config/monitor/screen-size" \
@@ -915,7 +916,8 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
                         "xserver-xorg/config/modules" \
                         "xserver-xorg/config/monitor/default-identifier" \
                         "xserver-xorg/config/monitor/identifier" \
-                        "xserver-xorg/config/write_files_section"; do
+                        "xserver-xorg/config/write_files_section" \
+                        "xserver-xorg/multiple_possible_x-drivers"; do
           db_unregister "$QUESTION" || true
         done
 fi
