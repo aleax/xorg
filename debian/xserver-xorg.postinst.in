@@ -559,15 +559,8 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # only one in the machine (broken PCI bus code in the XFree86 X server, most
   # likely).  If there are multiple video cards, we need to configure one as the
   # primary head.
-  # Warty: always feed this info.
-  MULTIHEAD=yes
   if [ "$ARCH" = "powerpc" ] || [ "$MULTIHEAD" = "yes" ]; then
-    if [ "$ARCH" = "powerpc" ]; then
-      PRIORITY=medium
-    fi
-    if [ "$MULTIHEAD" = "yes" ]; then
-      PRIORITY=medium
-    fi
+    PRIORITY=medium
     if which lspci > /dev/null 2>&1; then
       # Try to guess the correct BusID.
       VIDEO_CARD=$(LC_ALL=C lspci -n | grep -E "(Class )?0300:" | sort -n | head -n 1 \
@@ -605,11 +598,17 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     fi
   fi
 
-  # this question requires input validation
-  if [ -n "$DEFAULT" ]; then
-    auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
+  # For most people, asking this question at all is a bad idea. Only do it
+  # if we have a need to do so, as defined by setting the priority
+  if [ "$PRIORITY" = "medium" ]; then
+    # this question requires input validation
+    if [ -n "$DEFAULT" ]; then
+      auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
+    else
+      validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
+    fi
   else
-    validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
+    db_set xserver-xorg/config/device/bus_id ""
   fi
 
   # use fbcon kernel functions?
