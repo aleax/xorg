@@ -203,54 +203,6 @@ discover_sparc_video () {
   done
 }
 
-discover_video () {
-  # wrapper for discover command that can distinguish Discover 1.x and 2.x
-
-  # Ugh, Discover 1.x didn't exit with nonzero status if given an unrecongized option!
-  # Double ugh!  Discover is crashy.  People blame X when it crashes (but then,
-  # people blame X when *anything* crashes).
-  DISCOVER_ERRORFILE=$(tempfile)
-  if DISCOVER_TEST=$(discover --version 2>>"$DISCOVER_ERRORFILE"); then
-    if expr "$DISCOVER_TEST" : 'discover 2.*' > /dev/null 2>&1; then
-      # Discover 2.x
-      # XXX: this is sort of nasty
-      VENDOR_MODEL_FILE=$(tempfile)
-      SERVER_FILE=$(tempfile)
-      DRIVER_FILE=$(tempfile)
-
-      # Munge the source package version into the upstream version so we can
-      # tell Discover what to look for.  Discover's data is based on the
-      # upstream version number, not the Debian package's, so strip the Debian
-      # revision and the (ugh!) epoch.  Note: do *not* do greedy matching.
-      # Also, parameter expansions aren't nestable.  No respect, I tell ya.
-      _JUNK=${SOURCE_VERSION%-*}
-      UPSTREAM_VERSION=${_JUNK#*:}
-
-      CMD="discover --type-summary display"
-      eval $CMD >>$VENDOR_MODEL_FILE || debug_report_status "$CMD" "$?"
-      CMD="discover --data-path=xfree86/server/name \
-                    --data-version=$UPSTREAM_VERSION display"
-      eval $CMD >>$SERVER_FILE || debug_report_status "$CMD" "$?"
-      CMD="discover --data-path=xfree86/server/device/driver \
-                    --data-version=$UPSTREAM_VERSION display"
-      eval $CMD >>$DRIVER_FILE || debug_report_status "$CMD" "$?"
-
-      DISCOVERED_VIDEO=$(paste $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE)
-      rm -f $VENDOR_MODEL_FILE $SERVER_FILE $DRIVER_FILE
-    else
-      # must be Discover 1.x
-      DISCOVERED_VIDEO=$(discover --disable=serial,parallel,usb,ide,scsi \
-                                  --format="%V %M\t%S\t%D\n" video 2>/dev/null)
-    fi
-    echo "$DISCOVERED_VIDEO"
-  else
-    warn "cannot use discover; failed with error message:" \
-         "$(cat "$DISCOVER_ERRORFILE")"
-  fi
-  rm "$DISCOVER_ERRORFILE" || warn "discover error file never created, or" \
-                                   "already removed"
-}
-
 validate_string_db_input () {
   # Syntax: validate_string_db_input priority template
   #
@@ -567,170 +519,44 @@ fi
 debug_echo "Configuring $THIS_PACKAGE."
 
 # collect information about installed video card(s), if possible
-case "$ARCH" in
-  sparc)
-    DISCOVER_PROG='prtconf'
-    DISCOVER_FUNC='discover_sparc_video'
-    ;;
-  *)
-    DISCOVER_PROG='discover'
-    DISCOVER_FUNC='discover_video'
-    ;;
-esac
-if which $DISCOVER_PROG > /dev/null 2>&1; then
-  DISCOVERED_VIDEO=$($DISCOVER_FUNC)
-  MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
-  DISCOVERED_VIDEO=$(echo "$DISCOVERED_VIDEO" | head -n 1)
-  if [ -n "$DISCOVERED_VIDEO" ]; then
-    NCARDS=$(echo "$DISCOVERED_VIDEO" | wc -l)
-    SERVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $2}' | grep -v unknown | sort | uniq)
-    if [ -n "$SERVERS" ]; then
-      NSERVERS=$(echo "$SERVERS" | wc -l)
-    fi
-    DRIVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $NF}' | grep -v unknown | sort | uniq)
-    if [ -n "$DRIVERS" ]; then
-      NDRIVERS=$(echo "$DRIVERS" | wc -l)
-    fi
-    if [ $MULTIHEAD -gt 1 ]; then
-      MULTIHEAD=yes
-    fi
-  fi
-fi
+if [ "$ARCH" = "sparc" ]; then
+  DISCOVER_PROG='prtconf'
+  DISCOVER_FUNC='discover_sparc_video'
 
-if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   if which $DISCOVER_PROG > /dev/null 2>&1; then
-    PRIORITY="medium"
-    if [ -n "$RECONFIGURE" ]; then
-      PRIORITY="high"
-    fi
-    auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/autodetect_video_card "true"
-    db_get xserver-xorg/autodetect_video_card
-    AUTODETECT_VIDEO_CARD="$RET"
-    if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
-      # We're going to autodetect, so clear out the old values
-      for param in use_fbdev driver identifier bus_id; do
-          db_reset xserver-xorg/config/device/$param
-      done
-
-      # priority of xserver-xorg/config/device/driver
-      PRIORITY=medium
-      if [ -n "$RECONFIGURE" ]; then
-        PRIORITY=high
+    DISCOVERED_VIDEO=$($DISCOVER_FUNC)
+    MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
+    DISCOVERED_VIDEO=$(echo "$DISCOVERED_VIDEO" | head -n 1)
+    if [ -n "$DISCOVERED_VIDEO" ]; then
+      NCARDS=$(echo "$DISCOVERED_VIDEO" | wc -l)
+      SERVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $2}' | grep -v unknown | sort | uniq)
+      if [ -n "$SERVERS" ]; then
+        NSERVERS=$(echo "$SERVERS" | wc -l)
       fi
-
-      ## per arch driver specific overrides:
-      #
-      # make sure to ask the driver on sparc till we have a reliable way
-      # to gather these info properly.
-      #
-      case "$ARCH" in
-       sparc)
-         PRIORITY=high
-         ;;
-      esac
-
-      DRIVER_DIRS="/usr/lib/xorg/modules/drivers"
-      for i in $DRIVER_DIRS; do
-        if [ -d $i ]; then
-          REAL_DRIVER_DIRS="$REAL_DRIVER_DIRS $i "
-        fi
-      done
-
-      if [ -n "$REAL_DRIVER_DIRS" ]; then
-        # Build list of available video drivers, omitting the atimisc, r128, and
-        # radeon sub-modules (the ati driver knows when and how to load these).
-        # v4l is not a display driver, and dummy is for advanced users.
-        DRIVER_LIST="$(find $REAL_DRIVER_DIRS -name '*_drv.*' \
-                       | sed 's|^.*/\([^/]*\)_drv\.[^\._]*|\1|g' \
-                       | egrep -v '^(atimisc|dummy|r128|radeon|v4l)$' | sort -u | xargs \
-                       | sed 's/ /, /g' 2>/dev/null) "
+      DRIVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $NF}' | grep -v unknown | sort | uniq)
+      if [ -n "$DRIVERS" ]; then
+        NDRIVERS=$(echo "$DRIVERS" | wc -l)
       fi
-
-      # Set a hard-coded module list (if necessary) and default driver module on an
-      # architecture-specific basis.
-      case "$ARCH" in
-        alpha)
-          DEFAULT_DRIVER=vga
-          ;;
-        amd64|hurd-i386|i386)
-          DEFAULT_DRIVER=vesa
-          ;;
-        sparc)
-          DEFAULT_DRIVER=sunffb
-          ;;
-        *)
-          DEFAULT_DRIVER=fbdev
-          ;;
-      esac
-
-      if [ -z "$DRIVER_LIST" ] || [ "$DRIVER_LIST" = " " ]; then
-        warn "no video driver modules found in $DRIVER_DIRS; defaulting to $DEFAULT_DRIVER"
-        DRIVER_LIST="$DEFAULT_DRIVER"
+      if [ $MULTIHEAD -gt 1 ]; then
+        MULTIHEAD=yes
       fi
-
-      observe "available video driver list set to \"$DRIVER_LIST\""
-
-      if [ -n "$XFORCEVESA" ] || [ -n "$(grep xforcevesa /proc/cmdline)" ]; then
-      # don't autodetect the video card, but always use the default driver instead
-      AUTODETECT_VIDEO_CARD=false
-  
-      # FIXME: should "xserver-xorg/autodetect_video_card" also be set to "false"?
-      # NOTE: "xforcevesa" should really be "xsafemode", since the default safe mode
-      #       happens to be arch specific (see how DEFAULT_DRIVER is set a few lines
-      #       above).
-      fi
-
-      if [ $NDRIVERS -eq 0 ]; then
-        observe "could not autodetect X server driver: no video card" \
-                "detected, or no driver known for it"
-      elif [ $NDRIVERS -eq 1 ]; then
-        observe "autodetected X server driver: $DRIVERS"
-        PRIORITY=low
-        DEFAULT_DRIVER="$DRIVERS"
-      elif [ $NDRIVERS -gt 1 ]; then
-        observe "could not autodetect X server driver: multiple drivers for" \
-                "video cards"
-        VIDEOCARD_DRIVER_REPORT=$(echo "$DISCOVERED_VIDEO" \
-          | awk 'BEGIN { FS="\t"; printf " %-30s%30s\n .\n", "Detected Video Card", "Suggested driver module" } { printf " %-50s%10s\n", $1, $3 } END { printf " .\n" }')
-        # can't do this until there is a way to embed newlines into debconf
-        # command streams :(
-        # db_subst shared/multiple_possible_x-drivers detected_cards \
-        #   "$VIDEOCARD_DRIVER_REPORT"
-        observe "$VIDEOCARD_DRIVER_REPORT"
-        PRIORITY=high
-        db_input "$(priority_ceil high)" xserver-xorg/multiple_possible_x-drivers || debug_report_status "db_input $(priority_ceil high) xserver-xorg/multiple_possible_x-drivers" "$?"
-        db_go
-      fi
-    else
-      observe "user declined video card autodetection (driver)"
     fi
   else
-    observe "could not autodetect X server driver: $DISCOVER_PROG not found"
+    DISCOVERED_VIDEO=""
   fi
+else
+  DISCOVERED_VIDEO=""
+fi
 
-  db_subst xserver-xorg/config/device/driver choices "$DRIVER_LIST"
-  auto_answer db_input "$PRIORITY" \
-    xserver-xorg/config/device/driver "$DEFAULT_DRIVER"
+if [ -n "$XFORCEVESA" ] || [ -n "$(grep xforcevesa /proc/cmdline)" ]; then
+  # don't let the server autodetect the video card, but always use vesa instead
+  DISCOVERED_VIDEO="vesa"
+fi
 
-  # card identifier; try to set a sensible default
-  DEFAULT=
-  if [ -n "$(echo $NDRIVERS)" ] && [ $NDRIVERS -eq 1 ] && [ $NCARDS -eq 1 ]; then
-    if which $DISCOVER_PROG > /dev/null 2>&1; then
-      if [ "$AUTODETECT_VIDEO_CARD" = "true" ]; then
-        DEFAULT=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $1}')
-      fi
-    fi
-  fi
-  if [ -z "$DEFAULT" ]; then
-    # fall back to some language-specific generic text
-    db_metaget xserver-xorg/config/device/default-identifier Description
-    DEFAULT=$RET
-  fi
-  # this question requires input validation
-  MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/device/identifier "$DEFAULT"
+db_subst xserver-xorg/config/device/driver choices "$DISCOVERED_VIDEO"
+auto_answer db_input low xserver-xorg/config/device/driver "$DISCOVERED_VIDEO"
 
-  DEVICE_IDENTIFIER="$DEFAULT"
-
+if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # BusID
   PRIORITY=low
   DEFAULT=
@@ -739,15 +565,8 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # only one in the machine (broken PCI bus code in the XFree86 X server, most
   # likely).  If there are multiple video cards, we need to configure one as the
   # primary head.
-  # Warty: always feed this info.
-  MULTIHEAD=yes
   if [ "$ARCH" = "powerpc" ] || [ "$MULTIHEAD" = "yes" ]; then
-    if [ "$ARCH" = "powerpc" ]; then
-      PRIORITY=medium
-    fi
-    if [ "$MULTIHEAD" = "yes" ]; then
-      PRIORITY=medium
-    fi
+    PRIORITY=medium
     if which lspci > /dev/null 2>&1; then
       # Try to guess the correct BusID.
       VIDEO_CARD=$(LC_ALL=C lspci -n | grep -E "(Class )?0300:" | sort -n | head -n 1 \
@@ -785,11 +604,17 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
     fi
   fi
 
-  # this question requires input validation
-  if [ -n "$DEFAULT" ]; then
-    auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
+  # For most people, asking this question at all is a bad idea. Only do it
+  # if we have a need to do so, as defined by setting the priority
+  if [ "$PRIORITY" = "medium" ]; then
+    # this question requires input validation
+    if [ -n "$DEFAULT" ]; then
+      auto_answer validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id "$DEFAULT"
+    else
+      validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
+    fi
   else
-    validate_bus_id_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/device/bus_id || debug_report_status "validate_bus_id_db_input $(priority_ceil $PRIORITY) xserver-xorg/config/device/bus_id" "$?"
+    db_set xserver-xorg/config/device/bus_id ""
   fi
 
   # use fbcon kernel functions?
@@ -1079,6 +904,8 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
         for QUESTION in "shared/default-x-server" \
                         "xserver-xorg/autodetect_mouse" \
                         "xserver-xorg/autodetect_monitor" \
+                        "xserver-xorg/autodetect_video_card" \
+                        "xserver-xorg/config/device/identifier" \
                         "xserver-xorg/config/monitor/selection-method" \
                         "xserver-xorg/config/monitor/screen-size" \
                         "xserver-xorg/config/monitor/mode-list" \
@@ -1094,7 +921,8 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
                         "xserver-xorg/config/modules" \
                         "xserver-xorg/config/monitor/default-identifier" \
                         "xserver-xorg/config/monitor/identifier" \
-                        "xserver-xorg/config/write_files_section"; do
+                        "xserver-xorg/config/write_files_section" \
+                        "xserver-xorg/multiple_possible_x-drivers"; do
           db_unregister "$QUESTION" || true
         done
 fi
