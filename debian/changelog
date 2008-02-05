@@ -7,7 +7,15 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
   * Remove $named from the Should-Start/Stop LSB dependency info of the
     x11-common init script, closes: #463630.
 
- -- Brice Goglin <bgoglin@debian.org>  Fri, 01 Feb 2008 23:20:50 +0100
+  [ David Nusinow ]
+  * Ship the X server wrapper in xserver-xorg rather than x11-common. This
+    avoids having an unnecessary SUID binary on some systems. Thanks Stephen
+    Frost. closes: #400632
+    + Have x11-common conflict with older xserver-xorg and vice-versa. Also
+      have xserver-xorg replace older x11-common
+    + Set x11-common to arch: all and xserver-xorg to arch: any
+
+ -- David Nusinow <dnusinow@debian.org>  Mon, 04 Feb 2008 19:05:50 -0500
 
 xorg (1:7.3+10) unstable; urgency=low
 
