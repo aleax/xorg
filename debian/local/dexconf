@@ -290,6 +290,7 @@ cat >&4 <<SECTION
 Section "Screen"
 	Identifier	"Default Screen"
 	Monitor		"Configured Monitor"
+	Device		"Configured Video Device"
 SECTION
 if [ -n "$PS3_FB" ]; then
   printf "\tDefaultFbBpp 32\n" >&4
