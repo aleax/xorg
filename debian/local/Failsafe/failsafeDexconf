@@ -85,43 +85,6 @@ cat <<SECTION >> ${OUTFILE}
 #   sudo dpkg-reconfigure -phigh xserver-xorg
 SECTION
 
-### FILES
-
-fetch xserver-$SERVER/config/write_files_section
-if [ "$RET" = "true" ]; then
-  FONTSERVER=""
-  if db_get shared/fontpath/fontserver; then
-    if [ -n "$RET" ] ; then
-      FONTSERVER="$RET"
-    fi
-  fi
-  cat <<SECTION >> ${OUTFILE}
-Section "Files"
-SECTION
-  if [ -n "$FONTSERVER" ] ; then
-      cat <<SECTION >> ${OUTFILE}
-	FontPath	"$FONTSERVER"
-SECTION
-  fi
-  cat <<SECTION >> ${OUTFILE}
-EndSection
-
-SECTION
-fi
-
-# TODO:  guidance is unable to parse 'disable' yet
-
-### MODULES
-cat <<SECTION >> ${OUTFILE}
-Section "Module"
-        Disable         "dbe"
-        Disable         "dri"
-        Disable         "glx"
-        Disable         "vbe"
-EndSection
-
-SECTION
-
 ### KEYBOARD / INPUTDEVICE
 
 fetch xserver-$SERVER/config/inputdevice/keyboard/rules
@@ -140,7 +103,6 @@ cat <<SECTION >> ${OUTFILE}
 Section "InputDevice"
 	Identifier	"Generic Keyboard"
 	Driver		"kbd"
-	Option		"CoreKeyboard"
 	Option		"XkbRules"	"$XKB_RULES"
 	Option		"XkbModel"	"$XKB_MODEL"
 	Option		"XkbLayout"	"$XKB_LAYOUT"
@@ -188,9 +150,8 @@ Section "InputDevice"
 	Option		"SendCoreEvents"	"true"
 	Option		"Device"		"/dev/psaux"
 	Option		"Protocol"		"auto-dev"
-	Option		"HorizScrollDelta"	"0"
+	Option		"HorizEdgeScroll"	"0"
 EndSection
-
 SECTION
 fi
 
@@ -200,42 +161,30 @@ db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
 cat <<SECTION >> ${OUTFILE}
 Section "Device"
-	Identifier	"Failsafe Device"
+	Identifier	"Configured Video Device"
 	Driver		"$DEVICE_DRIVER"
 SECTION
-if [ -n "$DEVICE_BUSID" ]; then
-  if [ ! "$DEVICE_BUSID" = "PCI:0:5:0" ]; then
-    # This seems to be what db_get returns when it has no clue
-    # We're better off ignoring it and leaving it blank for Xorg
-    # to figure out itself
-    printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >> ${OUTFILE}
-  fi
-fi
 printf "EndSection\n\n" >> ${OUTFILE}
 
 ### MONITOR
 
 cat <<SECTION >> ${OUTFILE}
 Section "Monitor"
-	Identifier	"Failsafe Monitor"
-	Option		"DPMS"
+	Identifier	"Configured Monitor"
 EndSection
 
 SECTION
 
 ### SCREEN
 
-DISPLAY_DEPTH="16"
 DISPLAY_MODES="800x600"
 
 cat <<SECTION >> ${OUTFILE}
 Section "Screen"
 	Identifier	"Default Screen"
-	Device		"Failsafe Device"
-	Monitor		"Failsafe Monitor"
-	DefaultDepth	$DISPLAY_DEPTH
+	Device		"Configured Video Device"
+	Monitor		"Configured Monitor"
 	SubSection "Display"
-		Depth	$DISPLAY_DEPTH
 		Modes   "$DISPLAY_MODES"
 	EndSubSection
 EndSection
@@ -248,8 +197,6 @@ cat <<SECTION >> ${OUTFILE}
 Section "ServerLayout"
 	Identifier	"Default Layout"
 	Screen		"Default Screen"
-	InputDevice	"Generic Keyboard"
-	InputDevice	"Configured Mouse"
 SECTION
 if [ -n "$LAPTOP" ]; then
   printf "\tInputDevice\t\"Synaptics Touchpad\"\n" >> ${OUTFILE}
