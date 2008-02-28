@@ -104,6 +104,12 @@ if [ -n "$EARLYEXIT" ]; then
     exit 0
 fi
 
+if which laptop-detect >/dev/null 2>&1; then
+  if laptop-detect > /dev/null ; then
+    LAPTOP=true
+  fi
+fi
+
 DEXCONFTMPDIR=
 
 trap 'if [ -e "$DEXCONFTMPDIR/backup" ] && [ -n "$XF86CONFIG" ]; then \
@@ -233,6 +239,20 @@ if [ -n "$DO_EMULATE3BUTTONS" ]; then
 fi
 printf "EndSection\n" >&4
 
+if [ -n "$LAPTOP" ]; then
+  cat >&4 <<SECTION
+
+Section "InputDevice"
+	Identifier	"Synaptics Touchpad"
+	Driver		"synaptics"
+	Option		"SendCoreEvents"	"true"
+	Option		"Device"		"/dev/psaux"
+	Option		"Protocol"		"auto-dev"
+	Option		"HorizEdgeScroll"	"0"
+EndSection
+SECTION
+fi
+
 ### DEVICE
 
 db_get xserver-$SERVER/config/device/driver
@@ -307,6 +327,19 @@ SUBSECTION
 fi
 printf "EndSection\n" >&4
 
+### SERVERLAYOUT
+
+exec 4>"$DEXCONFTMPDIR/ServerLayout"
+cat >&4 <<SECTION
+Section "ServerLayout"
+	Identifier	"Default Layout"
+	Screen		"Default Screen"
+SECTION
+if [ -n "$LAPTOP" ]; then
+  printf "\tInputDevice\t\"Synaptics Touchpad\"\n" >&4
+fi
+printf "EndSection\n" >&4
+
 # Close file descriptor 4 before we delete temporary files
 exec 4<&-
 
@@ -322,7 +355,7 @@ umask 022
 
 SPACER=
 for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ; do
+               Device Monitor Screen ServerLayout; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
