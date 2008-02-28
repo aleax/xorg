@@ -16,6 +16,11 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
     + Set x11-common to arch: all and xserver-xorg to arch: any
     + Move ${shlib:Depends} from x11-common to xserver-xorg
 
+  [ Julien Cristau ]
+  * Use root:root instead of 0:0 in chown calls in x11-common's init script.
+    This should prevent remote nss lookups and timeouts in some environments.
+    Closes: #407788.
+
  -- David Nusinow <dnusinow@debian.org>  Tue, 05 Feb 2008 20:46:12 -0500
 
 xorg (1:7.3+10) unstable; urgency=low

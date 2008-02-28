@@ -36,7 +36,7 @@ set_up_socket_dir () {
     mv $SOCKET_DIR $SOCKET_DIR.$$
   fi
   mkdir -p $SOCKET_DIR
-  chown 0:0 $SOCKET_DIR
+  chown root:root $SOCKET_DIR
   chmod 1777 $SOCKET_DIR
   do_restorecon $SOCKET_DIR
   [ "$VERBOSE" != no ] && log_end_msg 0 || return 0
@@ -50,7 +50,7 @@ set_up_ice_dir () {
     mv $ICE_DIR $ICE_DIR.$$
   fi
   mkdir -p $ICE_DIR
-  chown 0:0 $ICE_DIR
+  chown root:root $ICE_DIR
   chmod 1777 $ICE_DIR
   do_restorecon $ICE_DIR
   [ "$VERBOSE" != no ] && log_end_msg 0 || return 0
