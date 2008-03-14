@@ -6,6 +6,8 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
   [ Brice Goglin ]
   * Remove $named from the Should-Start/Stop LSB dependency info of the
     x11-common init script, closes: #463630.
+  * Remove $remote_fs from Required-Start/Stop LSB dependency info of
+    the x11-common init script, closes: #470940.
 
   [ David Nusinow ]
   * Ship the X server wrapper in xserver-xorg rather than x11-common. This
@@ -25,7 +27,7 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
   * Debconf translations:
     - Indonesian added. Closes: #469972
 
- -- David Nusinow <dnusinow@debian.org>  Tue, 05 Feb 2008 20:46:12 -0500
+ -- Brice Goglin <bgoglin@debian.org>  Fri, 14 Mar 2008 19:20:46 +0100
 
 xorg (1:7.3+10) unstable; urgency=low
 
