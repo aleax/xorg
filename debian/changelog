@@ -1,5 +1,6 @@
 xorg (1:7.4~1) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * X.Org 7.4 release candidate
   * Drop the vga, glint and dummy drivers from xserver-xorg-video-all Depends
     (except dummy on s390).
@@ -10,7 +11,11 @@ xorg (1:7.4~1) UNRELEASED; urgency=low
   * Remove pre-dependency on x11-common from xserver-xorg.
   * Bump x11-common's conflict with xserver-xorg to << 1:7.4~.
 
- -- Julien Cristau <jcristau@debian.org>  Sat, 08 Mar 2008 05:25:16 +0100
+  [ Brice Goglin ]
+  * Remove the dependency of xutils against xutils-dev, it was only useful
+    for transitional purpose in Etch, closes: #418123.
+
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 23 Mar 2008 11:40:56 +0100
 
 xorg (1:7.3+11) UNRELEASED; urgency=low
 
