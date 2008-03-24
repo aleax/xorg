@@ -1,0 +1,47 @@
+#!/bin/sh
+
+set -e
+
+rm_conffile() {
+    PKGNAME="$1"
+    CONFFILE="$2"
+    if [ -e "$CONFFILE" ]; then
+	md5sum="`md5sum \"$CONFFILE\" | sed -e \"s/ .*//\"`"
+	old_md5sum="`dpkg-query -W -f='${Conffiles}' $PKGNAME | sed -n -e \"\\\\' $CONFFILE'{s/ obsolete$//;s/.* //p}\"`"
+	if [ "$md5sum" != "$old_md5sum" ]; then
+	    echo "Obsolete conffile $CONFFILE has been modified by you."
+	    echo "Saving as $CONFFILE.dpkg-bak ..."
+	    mv -f "$CONFFILE" "$CONFFILE".dpkg-bak
+	else
+	    echo "Removing obsolete conffile $CONFFILE ..."
+	    rm -f "$CONFFILE"
+	fi
+    fi
+}
+
+case "$1" in
+install|upgrade)
+    if dpkg --compare-versions "$2" lt "1:7.4~1"; then
+	rm_conffile xutils "/etc/X11/rstart/commands/x11r6/@List"
+	rm_conffile xutils "/etc/X11/rstart/commands/x11r6/LoadMonitor"
+	rm_conffile xutils "/etc/X11/rstart/commands/x11r6/Terminal"
+	rm_conffile xutils "/etc/X11/rstart/commands/@List"
+	rm_conffile xutils "/etc/X11/rstart/commands/ListContexts"
+	rm_conffile xutils "/etc/X11/rstart/commands/ListGenericCommands"
+	rm_conffile xutils "/etc/X11/rstart/contexts/@List"
+	rm_conffile xutils "/etc/X11/rstart/contexts/default"
+	rm_conffile xutils "/etc/X11/rstart/contexts/x11r6"
+	rm_conffile xutils "/etc/X11/rstart/config"
+	rm_conffile xutils "/etc/X11/rstart/rstartd.real"
+	rmdir /etc/X11/rstart/commands/x11r6/ || true
+	rmdir /etc/X11/rstart/commands/ || true
+	rmdir /etc/X11/rstart/contexts/ || true
+	rmdir /etc/X11/rstart/ || true
+    fi
+esac
+
+#DEBHELPER#
+
+exit 0
+
+# vim:set ai et sts=2 sw=2 tw=0:

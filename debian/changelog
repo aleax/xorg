@@ -13,6 +13,8 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
   * Remove the dependency of xutils against xutils-dev, it was only useful
     for transitional purpose in Etch, closes: #418123.
   * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
+  * Add xutils preinst to drop obsolete /etc/X11/rstart/ files,
+    closes: #382360.
 
   [ David Nusinow ]
   * Ship the X server wrapper in xserver-xorg rather than x11-common. This
