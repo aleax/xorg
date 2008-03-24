@@ -114,7 +114,7 @@ rm_conffile() {
 case "$1" in
 install|upgrade)
     if dpkg --compare-versions "$2" lt "1:7.4~1"; then
-	rm_conffile mypackage "/etc/init.d/xserver-xorg"
+	rm_conffile xserver-xorg "/etc/init.d/xserver-xorg"
     fi
 esac
 
