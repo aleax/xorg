@@ -327,6 +327,7 @@ cat >&4 <<SECTION
 Section "ServerLayout"
 	Identifier	"Default Layout"
 	Screen		"Default Screen"
+	InputDevice	"Configured Mouse"
 SECTION
 if [ -n "$LAPTOP" ]; then
   printf "\tInputDevice\t\"Synaptics Touchpad\"\n" >&4
