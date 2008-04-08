@@ -199,7 +199,7 @@ discover_sparc_video () {
     if [ -n "${model}" ]; then
       card="${card} (${model})"
     fi
-    echo -e "${card}\t${server}\t${driver}"
+    printf "${card}\t${server}\t${driver}\n"
   done
 }
 
