@@ -124,13 +124,25 @@ if [ "$RET" = "true" ]; then
   DO_EMULATE3BUTTONS=true
 fi
 
+MOUSE_DRIVER=mouse
+IS_VIRT=
+if which vmmouse_detect >/dev/null 2>&1; then
+  if vmmouse_detect > /dev/null ; then
+    MOUSE_DRIVER=vmmouse
+    IS_VIRT=true
+  fi
+fi
+
 cat <<SECTION >> ${OUTFILE}
 Section "InputDevice"
 	Identifier	"Configured Mouse"
-	Driver		"vmmouse"
+	Driver		"$MOUSE_DRIVER"
 SECTION
 if [ -n "$DO_EMULATE3BUTTONS" ]; then
   printf "\tOption\t\t\"Emulate3Buttons\"\t\"true\"\n" >> ${OUTFILE}
+fi
+if [ -n "$IS_VIRT" ]; then
+  printf "\tOption\t\t\"Device\"\t\"/dev/input/mice\"\n" >> ${OUTFILE}
 fi
 printf "EndSection\n\n" >> ${OUTFILE}
 

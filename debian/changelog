@@ -1,3 +1,14 @@
+xorg (1:7.3+10ubuntu9) hardy; urgency=low
+
+  * control: Add an epoch to the "x11-common Replaces xrgb" version.
+    (LP: #212672)
+  * dexconf, failsafeDexconf: Revert back to using "mouse" by default, and
+    use vmmouse_detect to determine if the system is a virtual machine and
+    if yes, use vmmouse and set the device path. (LP: #216667, #216276)
+  * control: xserver-xorg needs to Depend on mdetect instead of Recommends.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Mon, 14 Apr 2008 16:35:12 +0300
+
 xorg (1:7.3+10ubuntu8) hardy; urgency=low
 
   * dexconf: Add CorePointer to the default mouse section, otherwise

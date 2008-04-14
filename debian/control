@@ -65,7 +65,7 @@ Conflicts: xfree86-common, xorg-common, xserver-common, x-common,
  ucbmpeg-play (<< 2.3p-13), netscape-base-4, communicator-smotif-477, epan,
  navigator-smotif-477, stella (<< 2.2-1), xfractint (<< 20.3.01-1), xgobi,
  xpostitplus, xisp, vide (<= 1.21-3)
-Replaces: xfree86-common, xorg-common, xserver-common, x-common, xinit (<= 1.0.2-0ubuntu3), xrgb (<= 1.0.0-0ubuntu2)
+Replaces: xfree86-common, xorg-common, xserver-common, x-common, xinit (<= 1.0.2-0ubuntu3), xrgb (<= 1:1.0.0-0ubuntu2)
 Description: X Window System (X.Org) infrastructure
  x11-common contains the filesystem infrastructure required for further
  installation of the X Window System in any configuration; it does not
@@ -83,8 +83,8 @@ Architecture: all
 Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
 Replaces: xserver-common
 Pre-Depends: x11-common (>= 1:7.3+3)
-Depends: xserver-xorg-core (>= 2:1.4-3), xserver-xorg-video-all | xserver-xorg-video-2, xserver-xorg-input-all | xserver-xorg-input-2, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils
-Recommends: libgl1-mesa-dri, udev, ${F:XServer-Xorg-Detect-Depends}, displayconfig-gtk, mdetect, laptop-detect
+Depends: xserver-xorg-core (>= 2:1.4-3), xserver-xorg-video-all | xserver-xorg-video-2, xserver-xorg-input-all | xserver-xorg-input-2, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils, mdetect
+Recommends: libgl1-mesa-dri, udev, ${F:XServer-Xorg-Detect-Depends}, displayconfig-gtk, laptop-detect
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server, as well as providing a configuration infrastructure to manage
