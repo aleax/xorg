@@ -139,26 +139,6 @@ Description: the X.Org X Window System development libraries
  Note that this is a convenience package for users and is not a package for
  Debian developers to have their package depend on.
 
-Package: xlibs-data
-Architecture: all
-Section: libs
-Depends: xbitmaps, xcursor-themes, libx11-6 (>= 2:1.0.0-2)
-Description: transitional package for X11 client data
- This package is provided to ease upgrades from Debian 3.1 ("sarge"). It
- may be safely removed from your system.
-
-Package: xlibs-static-dev
-Architecture: all
-Section: oldlibs
-Depends: libxfont-dev, libfontenc-dev
-Description: transitional metapackage
- This package depends on the individual libraries that used to be contained
- within the package of this name. These libraries used to be static
- libraries, but have since become shared libraries with their own packages
- and can be depended on by themselves. This package is for transitional
- purposes to prevent disruptions during automated package builds, and my be
- safely removed from your system.
-
 Package: xlibmesa-gl
 Section: libs
 Architecture: all
