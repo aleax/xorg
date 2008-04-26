@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: 6.9.0.dfsg.1-2+SVN\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
 "POT-Creation-Date: 2008-01-05 19:04-0500\n"
-"PO-Revision-Date: 2006-02-02 12:59+0100\n"
+"PO-Revision-Date: 2008-04-26 15:48+0200\n"
 "Last-Translator: Bartosz Fenski <fenio@debian.org>\n"
 "Language-Team: Polish <pddp@debian.linux.org.pl>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:2001
 msgid "X server driver:"
-msgstr ""
+msgstr "Sterownik serwera X:"
 
 #. Type: select
 #. Description
@@ -79,9 +79,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:4001
-#, fuzzy
 msgid "Video card's bus identifier:"
-msgstr "Proszê wprowadziæ identyfikator magistrali karty graficznej."
+msgstr "Identyfikator magistrali karty graficznej:"
 
 #. Type: string
 #. Description
@@ -120,6 +119,8 @@ msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
 msgstr ""
+"Mo¿esz wykorzystaæ polecenie \"lspci\", by uzyskaæ identyfikator magistrali "
+"karty graficznej PCI, AGP lub PCI-Express."
 
 #. Type: string
 #. Description
@@ -135,19 +136,17 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:5001
 msgid "Incorrect format for the bus identifier"
-msgstr ""
+msgstr "Nieprawid³owy identyfitator magistrali"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-#, fuzzy
 msgid "XKB rule set to use:"
-msgstr "Proszê wybraæ regu³ê XKB, która zostanie u¿yta."
+msgstr "Regu³a XKB, która zostanie u¿yta:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -168,38 +167,36 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-#, fuzzy
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
 "Zaawansowani u¿ytkownicy mog± u¿yæ jakiegokolwiek zdefiniowanego zestawu "
-"regu³ XKB. Je¶li pakiet xlibs zosta³ rozpakowany, dostêpne zestawy regu³ "
+"regu³ XKB. Je¶li pakiet xkb-data zosta³ rozpakowany, dostêpne zestawy regu³ "
 "mo¿na znale¼æ w /usr/share/X11/xkb/rules."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
 msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr ""
+msgstr "W przypadku w±tpliwo¶ci ustaw \"xorg\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
 msgid "Keyboard model:"
-msgstr ""
+msgstr "Model klawiatury:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
 "Aby serwer X móg³ obs³ugiwaæ Twoj± klawiaturê poprawnie, nale¿y wybraæ jej "
-"rodzaj. Dostêpno¶æ modeli zale¿y od wybranego zestawu regu³ XKB."
+"model. Dostêpno¶æ modeli zale¿y od wybranego zestawu regu³ XKB."
 
 #. Type: string
 #. Description
@@ -221,6 +218,20 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
+" Z regu³± \"xorg\":\n"
+" - pc101: tradycyjna klawiatura IBM PC/AT ze 101 klawiszami, popularna\n"
+"          w Stanach Zjednoczonych. Bez klawiszy \"logo\" lub \"menu\";\n"
+" - pc104: podobna do modelu pc101, z dodatkowymi klawiszami, zazwyczaj\n"
+"          oznaczonymi symbolami \"logo\" i \"menu\";\n"
+" - pc102: podobna do pc101 i czêsto u¿ywana w Europie. Zawiera klawisz \"< >"
+"\"; - pc105: podobna do pc104 i czêsto u¿ywana w Europie. Zawiera klawisz "
+"\"< >\"; - macintosh: Klawiatury Macontosh u¿ywaj±ce nowej metody "
+"wej¶ciowej\n"
+"z kodami klawiszy Linux;\n"
+" - macintosh_old: Klawiatury Macintosh nie u¿ywaj±ce nowej metody.\n"
+" Z regu³± \"sun\":\n"
+" - type4: klawiatury Sun Type4;\n"
+" - type5: klawiatury Sun Type5."
 
 #. Type: string
 #. Description
@@ -237,14 +248,13 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
-#, fuzzy
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
 "Zaawansowani u¿ytkownicy mog± u¿yæ jakikolwiek model zdefiniowany przez "
-"wybrany zestaw regu³ XKB. Je¶li pakiet xlibs jest rozpakowany, dostêpne "
+"wybrany zestaw regu³ XKB. Je¶li pakiet xkb-data jest rozpakowany, dostêpne "
 "zestawy regu³ mo¿na przejrzeæ w katalogu /usr/share/X11/xkb/rules."
 
 #. Type: string
@@ -254,17 +264,18 @@ msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
+"U¿ytkownicy klawiatur U.S. English powinni wprowadziæ \"pc104\". Wiêkszo¶æ z "
+"pozosta³ych zazwyczaj powinna u¿yæ \"pc105\"."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:8001
 msgid "Keyboard layout:"
-msgstr ""
+msgstr "Uk³ad klawiatury:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:8001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -277,14 +288,13 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:8001
-#, fuzzy
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"Zaawansowani u¿ytkownicy mog± u¿yæ jakikolwiek model zdefiniowany przez "
-"wybrany zestaw regu³ XKB. Je¶li pakiet xlibs jest rozpakowany, dostêpne "
+"Zaawansowani u¿ytkownicy mog± u¿yæ jakikolwiek uk³ad zdefiniowany przez "
+"wybrany zestaw regu³ XKB. Je¶li pakiet xkb-data jest rozpakowany, dostêpne "
 "zestawy regu³ mo¿na przejrzeæ w katalogu /usr/share/X11/xkb/rules."
 
 #. Type: string
@@ -303,20 +313,19 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:9001
 msgid "Keyboard variant:"
-msgstr ""
+msgstr "Wariant klawiatury:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:9001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
 "Aby serwer X móg³ obs³ugiwaæ Twoj± klawiaturê poprawnie, nale¿y wybraæ "
-"alternatywny uk³ad klawiatury. Dostêpno¶æ uk³adów zale¿y od wcze¶niejszych "
-"wyborów zestawu regu³ XKB, modelu i uk³adu klawiatury."
+"wariant klawiatury. Dostêpno¶æ wariantów zale¿y od wcze¶niejszych wyborów "
+"zestawu regu³ XKB, modelu i uk³adu klawiatury."
 
 #. Type: string
 #. Description
@@ -334,18 +343,16 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:9001
-#, fuzzy
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
-"Zaawansowani u¿ytkownicy mog± skorzystaæ z dowolnego uk³adu klawiatury, "
-"obs³ugiwanego przez wybrany zestaw regu³ XKB. Je¶li pakiet xlibs zosta³ "
-"rozpakowany, zajrzyj do katalogu /usr/share/X11/xkb/symbols, w którym "
-"znajduj± siê pliki odpowiadaj±ce wybranemu uk³adowi klawiatury i dostêpnym "
-"wariantom."
+"Zaawansowani u¿ytkownicy mog± skorzystaæ z dowolnego wariantu, obs³ugiwanego "
+"przez wybrany zestaw regu³ XKB. Je¶li pakiet xkb-data zosta³ rozpakowany, "
+"zajrzyj do katalogu /usr/share/X11/xkb/symbols, w którym znajduj± siê pliki "
+"odpowiadaj±ce wybranemu uk³adowi klawiatury i dostêpnym wariantom."
 
 #. Type: string
 #. Description
@@ -359,12 +366,11 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:10001
 msgid "Keyboard options:"
-msgstr ""
+msgstr "Opcje klawiatury:"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:10001
-#, fuzzy
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -411,6 +417,8 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
+"Opcje mo¿na ³±czyæ oddzielaj±c je znakiem przecinka, np. \"ctrl:nocaps,"
+"altwin:meta_win\"."
 
 #. Type: string
 #. Description
@@ -419,31 +427,32 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
+"Zaawansowani u¿ytkownicy mog± wybraæ jakiekolwiek opcje zgodne z wybranym "
+"zestawem regu³ XKB, uk³adem oraz wariantem."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be left blank."
-msgstr ""
+msgstr "W przypadku w±tpliwo¶ci ustaw pust± warto¶æ."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:11001
 msgid "Empty value"
-msgstr ""
+msgstr "Pusta warto¶æ"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:11001
-#, fuzzy
 msgid "A null entry is not permitted for this value."
-msgstr "Pusty wpis jest niedozwolony."
+msgstr "Pusty wpis jest niedozwolony dla tej warto¶ci."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:12001
 msgid "Invalid double-quote characters"
-msgstr ""
+msgstr "Nieprawid³owe znaki cudzys³owów"
 
 #. Type: note
 #. Description
@@ -455,7 +464,7 @@ msgstr "Znaki cytowania (\") s± niedozwolone w tym wpisie."
 #. Description
 #: ../xserver-xorg.templates:13001
 msgid "Numerical value needed"
-msgstr ""
+msgstr "Wymagana warto¶æ numeryczna"
 
 #. Type: note
 #. Description
@@ -467,7 +476,7 @@ msgstr "Ten wpis nie mo¿e zawieraæ znaków innych ni¿ cyfry."
 #. Description
 #: ../xserver-xorg.templates:14001
 msgid "Autodetect keyboard layout?"
-msgstr ""
+msgstr "Samodzielnie wykryæ uk³ad klawiatury?"
 
 #. Type: boolean
 #. Description
@@ -477,6 +486,8 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
+"Domy¶lny wybór uk³adu klawiatury Xorg dokonany bêdzie na kombinacji jêzyka, "
+"oraz klawiatury wybranej w instalatorze."
 
 #. Type: boolean
 #. Description
@@ -485,6 +496,8 @@ msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
+"Wybierz tê opcjê je¶li chcesz ponownie wykryæ uk³ad klawiatury. Nie u¿ywaj "
+"tej opcji je¶li chcesz zachowaæ aktualny uk³ad."
 
 #. Type: select
 #. Choices
@@ -508,7 +521,7 @@ msgstr "Ka¿dy u¿ytkownik"
 #. Description
 #: ../x11-common.templates:2002
 msgid "Users allowed to start the X server:"
-msgstr ""
+msgstr "U¿ytkownicy mog±cy uruchamiaæ serwer X:"
 
 #. Type: select
 #. Description
@@ -532,14 +545,12 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../x11-common.templates:4001
-#, fuzzy
 msgid "Nice value for the X server:"
-msgstr "Wprowad¼ po¿±dan± warto¶æ nice, z której bêdzie korzysta³ serwer X."
+msgstr "Warto¶æ nice dla serwera X."
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:4001
-#, fuzzy
 msgid ""
 "When using operating system kernels with a particular scheduling strategy, "
 "it has been widely noted that the X server's performance improves when it is "
@@ -553,10 +564,8 @@ msgstr ""
 "uruchomiony z wy¿szym od standardowego priorytetem. Priorytet jest okre¶lany "
 "przez tzw. warto¶æ \"nice\" (ang. uprzejmy). Mo¿e ona przyjmowaæ warto¶ci od "
 "-20 (najwy¿szy priorytet, czyli najmniej \"uprzejmy\" dla innych procesów) "
-"do 19 (najni¿szy priorytet). Standardow± warto¶ci± \"nice\" jest 0. Dobr± "
-"warto¶ci± dla X serwera dzia³aj±cego na maszynie, z której korzysta jeden "
-"u¿ytkownik, jest -10. Je¶li maszyna ma tak¿e inne obowi±zki (jest na "
-"przyk³ad serwerem WWW), to lepsz± warto¶ci± bêdzie 0."
+"do 19 (najni¿szy priorytet). Standardow± warto¶ci± \"nice\" jest 0 i to jest "
+"zalecana warto¶æ dla serwera X."
 
 #. Type: string
 #. Description
@@ -575,7 +584,7 @@ msgstr ""
 #. Description
 #: ../x11-common.templates:5001
 msgid "Incorrect nice value"
-msgstr ""
+msgstr "Nieprawid³owa warto¶æ nice"
 
 #. Type: note
 #. Description
@@ -587,7 +596,7 @@ msgstr "Wprowad¼ liczbê pomiêdzy -20 a 19."
 #. Description
 #: ../x11-common.templates:6001
 msgid "Major possible upgrade issues"
-msgstr ""
+msgstr "Mo¿liwe powa¿ne problemy podczas aktualizacji"
 
 #. Type: note
 #. Description
@@ -600,12 +609,17 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
+"Czê¶æ u¿ytkowników zg³osi³a, ¿e podczas aktualizacji zestawów pakietów ich "
+"pakiet xserver przesta³ byæ dostêpny w systemie. Poniewa¿ nie istnieje "
+"prosty sposób na ominiêcie tego problemu, upewnij siê, ¿e po aktualizacji "
+"Twój system zawiera pakiet xserver-xorg. Je¶li go nie ma, a potrzebujesz go, "
+"zalecane jest samodzielne go zainstalowanie."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr ""
+msgstr "Nie mogê usun±æ katalogu /usr/X11R6/bin"
 
 #. Type: note
 #. Description
@@ -617,6 +631,12 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
+"Proces aktualizacji wymaga usuniêcia katalogu /usr/X11R6/bin i utworzenia w "
+"jego miejsce dowi±zania symbolicznego. Nast±pi³a próba wykonania tej "
+"operacji, ale siê nie powiod³a (najprawdopodobniej dlatego, ¿e katalog nie "
+"by³ pusty). Musisz przenie¶æ pliki znajduj±ce siê w tym katalogu, by mo¿na "
+"by³o kontynuowaæ instalacjê. Po tej operacji mo¿esz je przenie¶æ w tê "
+"lokalizacjê z powrotem."
 
 #. Type: note
 #. Description
@@ -626,6 +646,8 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
+"Instalacja pakietu zostanie teraz przerwana by mo¿na by³o wykonaæ tê "
+"operacjê. Uruchom ponownie aktualizacjê gdy wyczy¶cisz ten katalog."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Czy spróbowaæ automatycznie wykryæ karte graficzn±?"
