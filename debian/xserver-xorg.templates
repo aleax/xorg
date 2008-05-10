@@ -181,21 +181,3 @@ _Description: Autodetect keyboard layout?
  .
  Choose this option if you want the keyboard layout to be redetected.  Do not
  choose it if you want to keep your current layout.
-
-Template: xserver-xorg/config/inputdevice/mouse/emulate3buttons
-Type: boolean
-Default: true
-_Description: Emulate 3 button mouse?
- Most programs in the X Window System expect the mouse to have 3 buttons
- (left, right, and middle).  Mice with only 2 buttons can emulate the presence
- of a middle button by treating simultaneous clicks or drags of the left and
- right buttons as middle button events.
- .
- This option may also be used on mice with 3 or more buttons; the middle
- button will continue to work normally.
- .
- Note that mouse buttons in excess of five (counting a scroll wheel as two
- buttons, one each for "up" and "down", and a third if the wheel "clicks") are
- not yet supported with this configuration tool.
- 
- 
