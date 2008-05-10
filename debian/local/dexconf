@@ -208,23 +208,13 @@ printf "EndSection\n" >&4
 
 ### MOUSE / INPUTDEVICE
 
-DO_EMULATE3BUTTONS=
-
-fetch xserver-$SERVER/config/inputdevice/mouse/emulate3buttons
-if [ "$RET" = "true" ]; then
-  DO_EMULATE3BUTTONS=true
-fi
-
 exec 4>"$DEXCONFTMPDIR/InputDeviceMouse"
 cat >&4 <<SECTION
 Section "InputDevice"
 	Identifier	"Configured Mouse"
 	Driver		"mouse"
+EndSection
 SECTION
-if [ -n "$DO_EMULATE3BUTTONS" ]; then
-  printf "\tOption\t\t\"Emulate3Buttons\"\t\"true\"\n" >&4
-fi
-printf "EndSection\n" >&4
 
 ### DEVICE
 

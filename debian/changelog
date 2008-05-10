@@ -35,6 +35,10 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
     away (closes: #477547, #477550).
   * xserver-xorg-video-newport is mips-only, don't depend on it on other
     architectures.
+  * dexconf, xserver-xorg.postinst: the emulate3buttons question is gone,
+    don't ask about it and don't add the corresponding option in the generated
+    xorg.conf.  The option is on by default, and the only thing we used to do
+    in dexconf is to explicitly enable it anyway.
 
   [ Christian Perrier ]
   * Debconf translations:
