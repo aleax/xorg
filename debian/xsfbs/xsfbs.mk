@@ -196,7 +196,6 @@ xsfclean: cleanscripts unpatch
 	rm -rf $(STAMP_DIR) $(SOURCE_DIR)
 	rm -rf imports
 	dh_clean debian/shlibs.local \
-	         debian/MANIFEST.$(ARCH) debian/MANIFEST.$(ARCH).new \
 	         debian/po/pothead
 
 # Generate the debconf templates POT file header.
@@ -209,58 +208,6 @@ debian/po/pothead: debian/po/pothead.in
 updatepo: debian/po/pothead
 	debian/scripts/debconf-updatepo --pot-header=pothead --verbose
 
-# Use the MANIFEST files to determine whether we're shipping everything we
-# expect to ship, and not shipping anything we don't expect to ship.
-.PHONY: check-manifest
-stampdir_targets+=check-manifest
-check-manifest: $(STAMP_DIR)/check-manifest
-$(STAMP_DIR)/check-manifest: $(STAMP_DIR)/install
-	# Compare manifests.
-	(cd debian/tmp && find -type f | LC_ALL=C sort | cut -c3-) \
-	  >debian/MANIFEST.$(ARCH).new
-	# Construct MANIFEST files from MANIFEST.$(ARCH).in and
-	# MANIFEST.$(ARCH).all or MANIFEST.all.
-	if expr "$(findstring -DBuildFonts=NO,$(IMAKE_DEFINES))" \
-	  : "-DBuildFonts=NO" >/dev/null 2>&1; then \
-	  LC_ALL=C sort -u debian/MANIFEST.$(ARCH).in >debian/MANIFEST.$(ARCH); \
-	else \
-	  if [ -e debian/MANIFEST.$(ARCH).all ]; then \
-	    LC_ALL=C sort -u debian/MANIFEST.$(ARCH).in debian/MANIFEST.$(ARCH).all >debian/MANIFEST.$(ARCH); \
-	  else \
-	    LC_ALL=C sort -u debian/MANIFEST.$(ARCH).in debian/MANIFEST.all >debian/MANIFEST.$(ARCH); \
-	  fi; \
-	fi
-	# Confirm that the installed file list has not changed.
-	if [ -e debian/MANIFEST.$(ARCH) ]; then \
-	  if ! cmp -s debian/MANIFEST.$(ARCH) debian/MANIFEST.$(ARCH).new; then \
-	    diff -U 0 debian/MANIFEST.$(ARCH) debian/MANIFEST.$(ARCH).new || DIFFSTATUS=$$?; \
-	    case $${DIFFSTATUS:-0} in \
-	      0) ;; \
-	      1) if [ -n "$$IGNORE_MANIFEST_CHANGES" ]; then \
-	           echo 'MANIFEST check failed; ignoring problem because \$$IGNORE_MANIFEST_CHANGES set' >&2; \
-	           echo 'Please ensure that the package maintainer has an up-to-date version of the' >&2; \
-	           echo 'MANIFEST.$(ARCH).in file.' >&2; \
-	         else \
-	           echo 'MANIFEST check failed; please see debian/README' >&2; \
-	           exit 1; \
-	         fi; \
-	         ;; \
-	      *) echo "diff reported unexpected exit status $$DIFFSTATUS when performing MANIFEST check" >&2; \
-	         exit 1; \
-	         ;; \
-	    esac; \
-	  fi; \
-	fi
-	>$@
-
-# Because we build (and install) different files depending on whether or not
-# any architecture-independent packages are being created, the list of files we
-# expect to see will differ; see the discussion of the "build" target above.
-.PHONY: check-manifest-arch check-manifest-indep
-check-manifest-arch: IMAKE_DEFINES+= -DBuildSpecsDocs=NO -DBuildFonts=NO -DInstallHardcopyDocs=NO
-check-manifest-arch: check-manifest
-check-manifest-indep: check-manifest
-
 # Remove files from the upstream source tree that we don't need, or which have
 # licensing problems.  It must be run before creating the .orig.tar.gz.
 #
@@ -271,29 +218,6 @@ prune-upstream-tree:
 	# Ensure we're in the correct directory.
 	dh_testdir
 	grep -rvh '^#' debian/prune/ | xargs --no-run-if-empty rm -rf
-
-# Change to what should be the correct directory, ensure it is, and if
-# so, create the .orig.tar.gz file.  Exclude the debian directory and its
-# contents, and any .svn directories and their contents (so that we can safely
-# build an .orig.tar.gz from SVN checkout, not just an export).
-#
-# Note: This rule is for Debian package maintainers' convenience, and is not
-# needed for conventional build scenarios.
-#
-# This rule *IS* the recommended method for creating a new .orig.tar.gz file,
-# for the rare situations when one is needed.
-.PHONY: make-orig-tar-gz
-make-orig-tar-gz: clean prune-upstream-tree
-	( cd .. \
-	  && if [ $(shell basename $(CURDIR)) != $(SOURCE_NAME)-$(NO_EPOCH_VER) ]; then \
-	    echo "Our current working directory has the wrong name. Renaming..." >&2; \
-		mv $(CURDIR) $(SOURCE_NAME)-$(NO_EPOCH_VER); \
-	  fi; \
-	    tar --exclude=debian --exclude=debian/* \
-	        --exclude=.svn --exclude=.svn/* \
-	        -cf - $(SOURCE_NAME)-$(NO_EPOCH_VER) \
-	    | gzip -9 >$(SOURCE_NAME)_$(NO_EPOCH_VER).orig.tar.gz; \
-	   )
 
 # Verify that there are no offsets or fuzz in the patches we apply.
 #
@@ -373,7 +297,7 @@ PACKAGE=$(shell awk '/^Package:/ { print $$2; exit }' < debian/control)
 endif
 
 .PHONY: serverabi
-serverabi:
+serverabi: install
 ifeq ($(SERVERMINVERS),)
 	@echo error: xserver-xorg-dev needs to be installed
 	@exit 1
@@ -382,7 +306,5 @@ else
 	echo "xviddriver:Provides=$(VIDDRIVER_PROVIDES)" >> debian/$(PACKAGE).substvars
 	echo "xinpdriver:Provides=$(INPDRIVER_PROVIDES)" >> debian/$(PACKAGE).substvars
 endif
-
-include debian/xsfbs/xsfbs-autoreconf.mk
 
 # vim:set noet ai sts=8 sw=8 tw=0:
