@@ -281,7 +281,7 @@ SECTION
 if [ -n "$DEVICE_DRIVER" ]; then
   printf "\tDriver\t\t\"$DEVICE_DRIVER\"\n" >&4
 fi
-PS3_FB=$(grep PS3 /proc/fb 2>/dev/null || true)
+PS3_FB=$(grep -i PS3 /proc/fb 2>/dev/null || true)
 if [ -n "$PS3_FB" ]; then
   printf "\tOption\t\t\"ShadowFB\"\t\t\"false\"\n" >&4
 fi

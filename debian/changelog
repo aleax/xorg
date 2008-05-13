@@ -1,3 +1,12 @@
+xorg (1:7.3+10ubuntu11) intrepid; urgency=low
+
+  * dexconf:
+    - The output of cat /proc/fb on 2.6.24 is "0 ps3fb". Dexconf was
+      searching for "PS3" and was therefore failing to detect the platform
+      correctly. (LP: #230091)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 13 May 2008 13:27:16 -0700
+
 xorg (1:7.3+10ubuntu10) hardy; urgency=low
 
   [ Michael Vogt ]
