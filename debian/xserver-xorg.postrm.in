@@ -72,6 +72,14 @@ if [ "$1" = "purge" ]; then
   done
 fi
 
+case "$1" in
+  abort-install|abort-upgrade)
+    if dpkg --compare-versions "$2" lt-nl "1:7.3+11"; then
+      remove_conffile_rollback "/etc/init.d/xserver-xorg"
+    fi
+    ;;
+esac
+
 #DEBHELPER#
 
 exit 0

@@ -998,6 +998,14 @@ else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
 fi
 
+case "$1" in
+  configure)
+    if dpkg --compare-versions "$2" lt-nl "1:7.3+11"; then
+      remove_conffile_commit "/etc/init.d/xserver-xorg"
+    fi
+    ;;
+esac
+
 exit 0
 
 # vim:set ai et sts=2 sw=2 tw=0:

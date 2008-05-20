@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+THIS_PACKAGE=xutils
+THIS_SCRIPT=postinst
+
+#INCLUDE_SHELL_LIB#
+
+case "$1" in
+configure)
+  if dpkg --compare-versions "$2" lt-nl "1:7.3+11"; then
+    remove_conffile_commit "/etc/X11/rstart/commands/x11r6/@List"
+    remove_conffile_commit "/etc/X11/rstart/commands/x11r6/LoadMonitor"
+    remove_conffile_commit "/etc/X11/rstart/commands/x11r6/Terminal"
+    remove_conffile_commit "/etc/X11/rstart/commands/@List"
+    remove_conffile_commit "/etc/X11/rstart/commands/ListContexts"
+    remove_conffile_commit "/etc/X11/rstart/commands/ListGenericCommands"
+    remove_conffile_commit "/etc/X11/rstart/contexts/@List"
+    remove_conffile_commit "/etc/X11/rstart/contexts/default"
+    remove_conffile_commit "/etc/X11/rstart/contexts/x11r6"
+    remove_conffile_commit "/etc/X11/rstart/config"
+    remove_conffile_commit "/etc/X11/rstart/rstartd.real"
+    rmdir /etc/X11/rstart/commands/x11r6/ || true
+    rmdir /etc/X11/rstart/commands/ || true
+    rmdir /etc/X11/rstart/contexts/ || true
+    rmdir /etc/X11/rstart/ || true
+  fi
+esac
+
+#DEBHELPER#
+
+exit 0
+
+# vim:set ai et sts=2 sw=2 tw=0:
