@@ -41,6 +41,10 @@ xorg (1:7.3+11) UNRELEASED; urgency=low
     in dexconf is to explicitly enable it anyway.
   * Run dh_installman in binary-indep as well, as x11-common is now built
     there.
+  * Use the XSF shell library to remove obsolete conffiles.  It seems less
+    fragile than the version recommended on
+    http://wiki.debian.org/DpkgConffileHandling and should handle failed
+    upgrades.
 
   [ Christian Perrier ]
   * Debconf translations:
