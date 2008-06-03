@@ -268,11 +268,6 @@ DEVICE_BUSID="$RET"
 db_get xserver-$SERVER/config/device/use_fbdev
 DEVICE_USE_FBDEV="$RET"
 
-QEMU_KVM=$(grep "QEMU Virtual CPU" /proc/cpuinfo || true)
-if [ -n "$QEMU_KVM" ]; then
-    DEVICE_DRIVER="cirrus"
-fi
-
 exec 4>"$DEXCONFTMPDIR/Device"
 cat >&4 <<SECTION
 Section "Device"
@@ -301,10 +296,6 @@ Section "Monitor"
 	Identifier	"Configured Monitor"
 SECTION
 
-if [ -n "$QEMU_KVM" ]; then
-  printf "\tHorizSync\t30-70\n" >&4
-  printf "\tVertRefresh\t50-160\n" >&4
-fi
 cat >&4 <<SECTION
 EndSection
 SECTION
@@ -320,16 +311,6 @@ Section "Screen"
 SECTION
 if [ -n "$PS3_FB" ]; then
   printf "\tDefaultFbBpp 32\n" >&4
-fi
-if [ -n "$QEMU_KVM" ]; then
-cat >&4 <<SUBSECTION
-	Device		"Configured Video Device"
-	DefaultDepth	24
-	SubSection "Display"
-		Depth	24
-		Modes	"1280x800" "1152x768" "1024x768" "800x600" "640x480"
-	EndSubSection
-SUBSECTION
 fi
 printf "EndSection\n" >&4
 
