@@ -1,0 +1,1441 @@
+# translation of fr.po to French
+# debconf templates for xfree86 package
+# French translation
+#
+# $Id: fr.po 1763M 2004-10-11 07:13:17Z (local) $
+#
+# Copyrights:
+#
+# This file is distributed under the same license as the xfree86 package.
+# Please see debian/copyright.
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+# Branden Robinson, 2000--2004.
+# Thomas Morin, 2001.
+# Patrice Karatchentzeff, 2001.
+# Jérôme Schell, 2001.
+# Jean-Christophe Dubacq, 2002.
+# Christian Perrier <bubulle@debian.org>, 2003, 2004, 2006, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: debian-x@lists.debian.org\n"
+"POT-Creation-Date: 2007-04-06 09:15+0200\n"
+"PO-Revision-Date: 2007-04-06 09:25+0200\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n>1;\n"
+"\n"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:2001
+msgid "Video modes to be used by the X server:"
+msgstr "Modes vidéo utilisés par le serveur X :"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:2001
+msgid ""
+"Please keep only the resolutions you would like the X server to use.  "
+"Removing all of them is the same as removing none, since in both cases the X "
+"server will attempt to use the highest possible resolution."
+msgstr ""
+"Il est conseillé de ne conserver que les résolutions utiles. Les supprimer "
+"toutes a le même effet que n'en supprimer aucune : le serveur X tentera dans "
+"tous les cas d'utiliser la résolution la plus haute possible."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:3001
+msgid "Attempt to autodetect video hardware?"
+msgstr "Faut-il essayer de détecter automatiquement votre carte vidéo ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:3001
+msgid ""
+"You should choose this option if you would like to attempt to autodetect the "
+"recommended X server and driver module for your video card.  If the "
+"autodetection fails, you will be asked to specify the desired X server and/"
+"or driver module.  If it succeeds, further configuration questions about "
+"your video hardware will be pre-answered."
+msgstr ""
+"Utilisez cette option si vous voulez que le choix du type de serveur X et du "
+"module du pilote de votre carte vidéo soient automatiques. Si cette "
+"détection automatique échoue, vous devrez entrer ces informations vous-même. "
+"Si elle réussit, les questions de configuration suivantes seront préremplies."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:3001
+msgid ""
+"If you would rather select the X server and driver module yourself, do not "
+"choose this option.  You will not be asked to select the X server if there "
+"is only one available."
+msgstr ""
+"Si vous préférez choisir le serveur X et le pilote vous-même, ne choisissez "
+"pas cette option. Vous n'aurez toutefois pas à choisir le serveur X si un "
+"seul est disponible."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:4001
+msgid "No X server known for your video hardware"
+msgstr "Aucun serveur X connu pour votre matériel vidéo"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:4001
+msgid ""
+"There is either no video hardware installed on this machine (e.g. serial "
+"console only), or the \"discover\" program was unable to determine which X "
+"server is appropriate for the video hardware.  This could be due to "
+"incomplete information in discover's hardware database, or because your "
+"video hardware is not supported by the available X servers."
+msgstr ""
+"Soit aucune carte vidéo n'est installée sur cette machine (console série "
+"seulement ?), soit le programme « discover » a été incapable de trouver le "
+"serveur X adapté au matériel. Cela peut avoir deux origines : soit la base "
+"de données de matériel pour « discover » est incomplète, soit il n'existe "
+"aucun serveur X capable de gérer ce matériel."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001
+msgid "Multiple potential default X servers for your hardware"
+msgstr "Plusieurs serveurs X disponibles par défaut pour votre matériel"
+
+#. Type: note
+#. Description
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:9001
+msgid ""
+"Multiple video cards have been detected, and different X servers are "
+"required to support the various devices.  It is thus not possible to "
+"automatically select a default X server."
+msgstr ""
+"Plusieurs cartes vidéo ont été détectées, et nécessitent chacune un serveur "
+"X différent. Il n'est donc pas possible de choisir un serveur X par défaut."
+
+#. Type: note
+#. Description
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:9001
+msgid ""
+"Please configure the device that will serve as this computer's \"primary head"
+"\"; this is generally the video card and monitor used for display when the "
+"computer is booted up."
+msgstr ""
+"Veuillez configurer le périphérique qui sera utilisé par le système comme "
+"« affichage principal » ; cela correspond en principe à l'écran et à la "
+"carte graphique utilisés pour l'affichage lors du démarrage de l'ordinateur."
+
+#. Type: note
+#. Description
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:5001 ../xserver-xorg.templates:9001
+msgid ""
+"The configuration process currently only supports single-headed setups; "
+"however, the X server configuration files can be edited later to support a "
+"multi-head configuration."
+msgstr ""
+"Il n'est actuellement possible de configurer automatiquement que les "
+"installations à un seul écran ; cependant, les fichiers de configuration "
+"peuvent ensuite être modifiés pour accepter des systèmes avec plusieurs "
+"sorties graphiques (« multi-head »)."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:6001
+msgid "Desired default X server:"
+msgstr "Serveur X par défaut :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:6001
+msgid ""
+"The X server is the hardware interface of the X Window System.  It "
+"communicates with the video display and input devices, providing a "
+"foundation for the chosen Graphical User Interface (GUI)."
+msgstr ""
+"Le serveur X est l'interface matérielle du système X Window. Son rôle est de "
+"communiquer avec l'affichage vidéo et les périphériques d'entrée, "
+"fournissant ainsi une base pour l'interface graphique utilisateur choisie."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:6001
+msgid ""
+"Several X servers may be available; the default is selected via the /etc/X11/"
+"X symbolic link.  Some X servers may not work with some particular graphics "
+"hardware."
+msgstr ""
+"Quand plusieurs serveurs X sont disponibles, le serveur par défaut est "
+"sélectionné via le lien symbolique /etc/X11/X. Certains serveurs X peuvent "
+"ne pas fonctionner avec certains matériels spécifiques."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:7001
+msgid "Write default Files section to configuration file?"
+msgstr "Faut-il ajouter une section « Files » de référence dans la configuration ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:7001
+msgid ""
+"The Files section of the X server configuration file tells the X server "
+"where to find server modules, the RGB color database, and font files.  This "
+"option is recommended to experienced users only.  In most cases, it should "
+"be enabled."
+msgstr ""
+"La section « Files » (fichiers) du fichier de configuration du serveur X "
+"indique au serveur X où trouver les modules, la base de données des couleurs "
+"RVB et les polices de caractères. Cette option est destinée aux utilisateurs "
+"expérimentés. Dans la plupart des cas, il suffit d'accepter."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:7001
+msgid ""
+"Disable this option if you want to maintain a custom Files section into the "
+"X.Org server configuration file.  This may be needed to remove the reference "
+"to the local font server, add a reference to a different font server, or "
+"rearrange the default set of local font paths."
+msgstr ""
+"Désactivez cette option si vous voulez gérer vous-même le contenu de la "
+"section « Files » du fichier de configuration du serveur X.Org. Il est "
+"possible que vous soyez obligé de le faire, si par exemple vous voulez "
+"enlever la référence au serveur de polices local, ajouter une référence à un "
+"autre serveur de polices, ou encore, changer la configuration des polices "
+"par défaut."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:8001
+msgid "X.Org server modules that should be loaded by default:"
+msgstr "Modules du serveur X.Org à charger par défaut :"
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:8001
+msgid ""
+"This option is recommended to experienced users only.  In most cases, all of "
+"these modules should be enabled."
+msgstr ""
+"Cette option est destinée aux utilisateurs expérimentés. Dans la plupart des "
+"cas, tous ces modules devraient être sélectionnés."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:8001
+
+msgid ""
+" - glx   : support for OpenGL rendering;\n"
+" - dri   : support in the X server for DRI (Direct Rendering "
+"Infrastructure);\n"
+" - vbe   : support for VESA BIOS Extensions. Allows to query\n"
+"           the monitor capabilities via the video card;\n"
+" - ddc   : support for Data Display Channel. Allows to query\n"
+"           the monitor capabilities via the video card;\n"
+" - int10 : real-mode x86 emulator used to softboot secondary VGA cards.\n"
+"           Should be enabled if vbe is enabled;\n"
+" - dbe   : enables the double-buffering extension in the server.\n"
+"           Useful for animation and video operations;\n"
+" - extmod: enables many traditional and commonly used extensions, such as\n"
+"           shaped windows, shared memory, video mode switching, DGA, and "
+"Xv;\n"
+" - record: implements the RECORD extension, often used in server testing;\n"
+" - bitmap: font rasterizer (so are freetype, and type1 modules)."
+msgstr ""
+" - glx : gestion du rendu OpenGL logiciel ;\n"
+" - dri : gestion de l'utilisation de l'infrastructure de rendu direct\n"
+"         dans le serveur X ;\n"
+" - vbe : gestion des extensions « VESA BIOS » permettant d'obtenir\n"
+"         les caractéristiques de l'écran via la carte vidéo ;\n"
+" - ddc : gestion des extensions « Data Display Channel » permettant\n"
+"         d'obtenir les caractéristiques de l'écran via la carte vidéo ;\n"
+" - int10 : émulateur x86 en mode réel qui permet d'amorcer les cartes\n"
+"           VGA secondaires. Ne doit être activé que si « vbe » l'est ;\n"
+" - dbe : gestion de la double mise en mémoire (« double-buffering »)\n"
+"         sur le serveur. Utile pour les opérations  vidéo et\n"
+"         l'animation ;\n"
+" - extmod : gestion d'un grand nombre d'extensions classiques, comme les\n"
+"            fenêtres non rectangulaires (« shaped »), la mémoire\n"
+"            partagée, le changement de résolution d'écran, l'accès\n"
+"            direct au graphisme (DGA), et la vidéo pour X (Xv) ;\n"
+" - record : extension RECORD, utilisée principalement dans le test des\n"
+"            serveurs ;\n"
+" - bitmap : (ainsi que freetype et type1) module d'affichage de polices."
+
+#. Type: multiselect
+#. Description
+#: ../xserver-xorg.templates:8001
+msgid ""
+"For further information about these modules, please consult the X.Org "
+"documentation."
+msgstr ""
+"Pour plus d'informations sur ces modules, veuillez consulter la "
+"documentation de X.Org."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:9001
+msgid "Multiple potential default X.Org server drivers for the hardware"
+msgstr "Plusieurs pilotes X.Org possibles pour le matériel"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:10001
+msgid "Identifier for your video card:"
+msgstr "Identifiant de votre carte vidéo :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:10001
+msgid ""
+"The X server configuration file associates your video card with a name that "
+"you may provide.  This is usually the vendor or brand name followed by the "
+"model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA GeForce "
+"6600\"."
+msgstr ""
+"Votre carte graphique est associée à un nom de votre choix dans le fichier "
+"de configuration du serveur X. Habituellement, on choisit la marque suivie "
+"du modèle de carte vidéo, par exemple « Intel i915 », « ATI RADEON X800 », "
+"ou « NVIDIA GeForce 6600 »."
+
+#. Type: text
+#. Description
+#: ../xserver-xorg.templates:11001
+msgid "Generic Video Card"
+msgstr "Carte vidéo générique"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:12001
+msgid "X server driver:"
+msgstr "Pilote de serveur X :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:12001
+msgid ""
+"For the X Window System graphical user interface to operate correctly, it is "
+"necessary to select a video card driver for the X server."
+msgstr ""
+"Pour que l'interface graphique utilisateur du système X Window fonctionne "
+"convenablement, il est nécessaire de choisir un pilote de carte graphique "
+"pour le serveur X."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:12001
+msgid ""
+"Drivers are typically named for the video card or chipset manufacturer, or "
+"for a specific model or family of chipsets."
+msgstr ""
+"Les pilotes sont en général nommés d'après le nom du fabricant de la carte "
+"vidéo ou du circuit graphique ; le nom peut aussi faire référence à un "
+"modèle particulier ou à toute une famille de circuits."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:13001
+msgid "Use kernel framebuffer device interface?"
+msgstr ""
+"Faut-il utiliser l'interface de mise en tampon vidéo (« framebuffer ») du "
+"noyau ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:13001
+msgid ""
+"Rather than communicating directly with the video hardware, the X server may "
+"be configured to perform some operations, such as video mode switching, via "
+"the kernel's framebuffer driver."
+msgstr ""
+"Plutôt que de s'adresser directement au matériel vidéo, le serveur X peut "
+"être configuré afin d'effectuer certaines actions, telles que le changement "
+"de mode vidéo, via le pilote « framebuffer » du noyau."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:13001
+msgid ""
+"In theory, either approach should work, but in practice, sometimes one does "
+"and the other does not.  Enabling this option is the safe bet, but feel free "
+"to turn it off if it appears to cause problems."
+msgstr ""
+"En théorie, les deux approches devraient fonctionner, mais en pratique, il "
+"se peut que l'une ou l'autre ne fonctionne pas. Activer cette option n'est "
+"pas un pari audacieux, mais libre à vous de la désactiver si cela semble "
+"poser des problèmes."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:14001
+msgid "Video card's bus identifier:"
+msgstr "Identifiant du bus de la carte vidéo :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:14001
+msgid ""
+"Users of PowerPC machines, and users of any computer with multiple video "
+"devices, should specify the BusID of the video card in an accepted bus-"
+"specific format."
+msgstr ""
+"Les utilisateurs de machines PowerPC et les utilisateurs d'ordinateurs avec "
+"plusieurs cartes vidéo, doivent préciser l'identifiant du bus de la carte "
+"vidéo dans un format adapté au bus concerné."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:14001
+msgid "Examples:"
+msgstr "Exemples :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:14001
+msgid ""
+"For users of multi-head setups, this option will configure only one of the "
+"heads.  Further configuration will have to be done manually in the X server "
+"configuration file, /etc/X11/xorg.conf."
+msgstr ""
+"Si votre matériel comporte plusieurs sorties graphiques (« multi-head »), "
+"cette option ne configurera que l'une des sorties. Le reste de la "
+"configuration devra se faire manuellement, dans le fichier de configuration "
+"du serveur /etc/X11/xorg.conf."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:14001
+msgid ""
+"You may wish to use the \"lspci\" command to determine the bus location of "
+"your PCI, AGP, or PCI-Express video card."
+msgstr ""
+"Il est possible d'utiliser la commande « lspci » pour déterminer "
+"l'identifiant de votre carte graphique, sur bus PCI, AGP ou PCI-Express."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:14001
+msgid ""
+"When possible, this question has been pre-answered for you and you should "
+"accept the default unless you know it doesn't work."
+msgstr ""
+"Dans la mesure du possible, cette question est déjà préremplie, et il vous "
+"suffit d'accepter la réponse par défaut, sauf si vous savez qu'elle ne "
+"fonctionnera pas."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:15001
+msgid "Incorrect format for the bus identifier"
+msgstr "Format incorrect pour l'identificateur du bus"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:16001
+msgid "Amount of memory (kB) to be used by the video card:"
+msgstr "Quantité de mémoire (en ko) utilisée par la carte vidéo :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:16001
+msgid ""
+"Typically, the amount of dedicated memory used by the video card is "
+"autodetected by the X server, but some integrated video chips (such as the "
+"Intel i810) have little or no video memory of their own, and instead borrow "
+"main system memory for their needs."
+msgstr ""
+"Souvent, la quantité de mémoire dont dispose la carte graphique est détectée "
+"automatiquement par le serveur X, mais certains processeurs graphiques "
+"intégrés (comme la puce graphique Intel i810) ont peu ou pas du tout de "
+"mémoire interne et utilisent à la place une partie de la mémoire principale "
+"du système pour leurs besoins."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:16001
+msgid ""
+"This parameter should usually be left blank and specified only if the video "
+"card lacks RAM, or if the X server has trouble autodetecting the RAM size."
+msgstr ""
+"Il est tout à fait acceptable de laisser ce paramètre vide ; c'est seulement "
+"si la carte vidéo manque de mémoire, ou si le serveur X n'arrive pas à la "
+"détecter correctement que vous devez indiquer la quantité appropriée."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:17001
+msgid "XKB rule set to use:"
+msgstr "Jeu de définitions XKB à utiliser :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:17001
+msgid ""
+"For the X server to handle the keyboard correctly, an XKB rule set must be "
+"chosen."
+msgstr ""
+"Pour que le clavier soit géré convenablement par le serveur X, vous devez "
+"choisir un jeu de définitions XKB."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:17001
+msgid ""
+"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
+"5 keyboards, however, should enter \"sun\"."
+msgstr ""
+"La plupart des claviers devraient être correctement gérés en choisissant "
+"« xorg ». Toutefois, les utilisateurs de clavier Sun Type 4 ou Type 5 "
+"doivent choisir « sun »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:17001
+msgid ""
+"Experienced users can use any defined XKB rule set.  If the xkb-data package "
+"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
+"rule sets."
+msgstr ""
+"Les utilisateurs expérimentés peuvent choisir n'importe quel jeu de "
+"définitions XKB. Si le paquet xkb-data a été installé, veuillez lire les "
+"fichiers du répertoire /usr/share/X11/xkb/rules pour voir les jeux "
+"disponibles."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:17001
+msgid "When in doubt, this value should be set to \"xorg\"."
+msgstr "Dans le doute, il est conseillé d'indiquer « xorg »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:18001
+msgid "Keyboard model:"
+msgstr "Modèle de clavier :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:18001
+msgid ""
+"For the X server to handle the keyboard correctly, a keyboard model must be "
+"entered.  Available models depend on which XKB rule set is in use."
+msgstr ""
+"Afin que le serveur X gère le clavier convenablement, il faut choisir un "
+"type de clavier. Les modèles disponibles dépendent du jeu de définitions XKB "
+"qui a été choisi."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:18001
+msgid ""
+" With the \"xorg\" rule set:\n"
+" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+"          with a \"logo\" symbol and a \"menu\" symbol;\n"
+" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+"key;\n"
+" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+"key;\n"
+" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+"              keycodes;\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+" With the \"sun\" rule set:\n"
+" - type4: Sun Type4 keyboards;\n"
+" - type5: Sun Type5 keyboards."
+msgstr ""
+"Pour le jeu de règles « xorg » :\n"
+" - pc101 : clavier classique IBM PC/AT comportant 101 touches, répandu\n"
+"           aux États-Unis. Il ne comporte pas les touches « logo »\n"
+"           ou « menu » ;\n"
+" - pc104 : semblable au modèle « pc101 », avec des touches\n"
+"           supplémentaires souvent gravées des symboles « logo »\n"
+"           et « menu » ;\n"
+" - pc102 : semblable à « pc101 » et utilisé fréquemment en Europe.\n"
+"           Comporte une touche « inférieur à » et « supérieur à » ;\n"
+" - pc105 : semblable à « pc104 » et utilisé fréquemment en Europe.\n"
+"           Comporte une touche « inférieur à » et « supérieur à » ;\n"
+" - macintosh : claviers Macintosh utilisent la nouvelle interface basée\n"
+"               sur les codes de clavier Linux ;\n"
+"Pour le jeu de règles « sun » :\n"
+" - type4 : claviers Sun Type4 ;\n"
+" - type5 : claviers Sun Type5."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:18001
+msgid ""
+"Laptop keyboards often do not have as many keys as standalone models; laptop "
+"users should select the keyboard model most closely approximated by the "
+"above."
+msgstr ""
+"Les claviers d'ordinateurs portables ont en général moins de touches que les "
+"modèles de bureau ; leurs utilisateurs doivent choisir le modèle de clavier "
+"qui se rapproche le plus du leur parmi ceux proposés."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:18001
+msgid ""
+"Experienced users can use any model defined by the selected XKB rule set.  "
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
+"directory for available rule sets."
+msgstr ""
+"Les utilisateurs expérimentés peuvent utiliser n'importe quel modèle défini "
+"par le jeu de définitions XKB choisi. Si le paquet xkb-data a été installé, "
+"consultez le répertoire /usr/share/X11/xkb/rules pour les jeux de "
+"définitions disponibles."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:18001
+msgid ""
+"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
+"most other keyboards should generally enter \"pc105\"."
+msgstr ""
+"Les utilisateurs de claviers anglais U.S. doivent en règle générale choisir "
+"« pc104 ». Pour la plupart des autres claviers, il faut choisir « pc105 »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:19001
+msgid "Keyboard layout:"
+msgstr "Disposition du clavier :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:19001
+msgid ""
+"For the X server to handle the keyboard correctly, a keyboard layout must be "
+"entered.  Available layouts depend on which XKB rule set and keyboard model "
+"were previously selected."
+msgstr ""
+"Pour que le clavier soit géré convenablement par le serveur X, il faut que "
+"vous indiquiez la disposition de ses touches. Les dispositions possibles "
+"dépendent du jeu de définitions XKB et du modèle de clavier précédemment "
+"sélectionnés."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:19001
+msgid ""
+"Experienced users can use any layout supported by the selected XKB rule "
+"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
+"rules directory for available rule sets."
+msgstr ""
+"Les utilisateurs expérimentés peuvent utiliser n'importe quel modèle défini "
+"par le jeu de définitions XKB choisi. Si le paquet xkb-data a été installé, "
+"consultez le répertoire /usr/share/X11/xkb/rules pour les jeux de "
+"définitions disponibles."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:19001
+msgid ""
+"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+"localized for other countries should generally enter their ISO 3166 country "
+"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+msgstr ""
+"Les utilisateurs de claviers français devraient choisir « fr ». Les "
+"utilisateurs de claviers d'autres pays devraient normalement entrer le code "
+"ISO 3166 de leur pays (par exemple, « be » pour la Belgique ou « ch » pour "
+"la Suisse)."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:20001
+msgid "Keyboard variant:"
+msgstr "Variante du clavier :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:20001
+msgid ""
+"For the X server to handle the keyboard as desired, a keyboard variant may "
+"be entered.  Available variants depend on which XKB rule set, model, and "
+"layout were previously selected."
+msgstr ""
+"Vous pouvez indiquer une variante de clavier particulière afin que le "
+"serveur X puisse gérer le clavier selon vos désirs. Les options disponibles "
+"dépendent du jeu de définitions XKB, du modèle et de la disposition choisis "
+"précédemment."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:20001
+msgid ""
+"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
+"spacing accent marks and diaereses as normal spacing keys, and if this is "
+"the preferred behavior, enter \"nodeadkeys\"."
+msgstr ""
+"Plusieurs dispositions de clavier ont une option qui gère les touches "
+"« mortes » (essentiellement la touche « circonflexe/tréma ») comme entrant "
+"un circonflexe seul ou un tréma seul. Si c'est ce que vous préférez, "
+"indiquez ici « nodeadkeys »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:20001
+msgid ""
+"Experienced users can use any variant supported by the selected XKB layout.  "
+"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
+"symbols directory for the file corresponding to your selected layout for "
+"available variants."
+msgstr ""
+"Les utilisateurs expérimentés peuvent utiliser n'importe quelle variante du "
+"jeu de définitions XKB choisi. Si le paquet xkb-data a été installé, "
+"veuillez lire le fichier du répertoire /usr/share/X11/xkb/symbols qui "
+"correspond à votre disposition pour voir les variantes disponibles."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:20001
+msgid "Users of U.S. English keyboards should generally leave this entry blank."
+msgstr ""
+"Les utilisateurs de clavier français devraient choisir la variante latin9 "
+"s'ils ont choisi la disposition « fr »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid "Keyboard options:"
+msgstr "Options du clavier :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid ""
+"For the X server to handle the keyboard as desired, keyboard options may be "
+"entered.  Available options depend on which XKB rule set was previously "
+"selected.  Not all options will work with every keyboard model and layout."
+msgstr ""
+"Pour que le serveur X puisse gérer le clavier selon vos souhaits, vous "
+"pouvez sélectionner un certain nombre d'options. Les options disponibles "
+"dépendent du jeu de définitions XKB choisi précédemment. Toutes les options "
+"ne fonctionnent pas avec tous les modèles et dispositions de claviers."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid ""
+"For example, if you wish the Caps Lock key to behave as an additional "
+"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
+"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+msgstr ""
+"Par exemple, si vous voulez que la touche « Caps Lock » (« Verrouillage "
+"Majuscules ») se comporte comme une touche « Ctrl » supplémentaire, vous "
+"pouvez utiliser « ctrl:nocaps » ; si vous préférez l'intervertir avec la "
+"touche « Ctrl » de gauche, vous pouvez utiliser « ctrl:swapcaps »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid ""
+"As another example, some people prefer having the Meta keys available on "
+"their keyboard's Alt keys (this is the default), while other people prefer "
+"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
+"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
+"meta_win\"."
+msgstr ""
+"Un autre exemple : certaines personnes préfèrent que les touches Meta soient "
+"associées aux touches Alt de leur clavier (ce qui est le réglage par défaut) "
+"alors que d'autres les préfèrent associées aux touches Windows ou « logo ». "
+"Si vous souhaitez utiliser vos touches Windows ou « logo » en tant que "
+"touches Meta, vous pouvez indiquer « altwin:meta_win »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid ""
+"You can combine options by separating them with a comma, for instance \"ctrl:"
+"nocaps,altwin:meta_win\"."
+msgstr ""
+"Vous pouvez combiner des options en les séparant par une virgule, par "
+"exemple « ctrl:swapcaps,altwin:meta_win »."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid ""
+"Experienced users can use any options compatible with the selected XKB "
+"model, layout and variant."
+msgstr ""
+"Les utilisateurs expérimentés peuvent choisir toute option compatible avec "
+"le modèle, la disposition et la variante XKB choisis."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:21001
+msgid "When in doubt, this value should be left blank."
+msgstr "Dans le doute, ce champ peut être laissé vide."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:22001
+msgid "Attempt mouse device autodetection?"
+msgstr "Faut-il essayer de détecter automatiquement la souris ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:22001
+msgid ""
+"If a mouse is attached to the computer, autodetection can be attempted; it "
+"may help to move the mouse while detection is attempted (the gpm program "
+"should be stopped if it is used).  Plugging  a PS/2 or bus/inport mouse now "
+"requires rebooting."
+msgstr ""
+"Si une souris est branchée à votre ordinateur, il est possible d'essayer de "
+"la détecter ; cela peut d'ailleurs mieux fonctionner si la souris bouge "
+"pendant que la détection est en cours (il faut également que le programme "
+"gpm soit arrêté). Si vous voulez brancher maintenant une souris PS/2 ou bus/"
+"inport, il faut éteindre au préalable votre ordinateur, brancher la souris "
+"et redémarrer."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:22001
+msgid "Do not choose this option if you wish to select a mouse type manually."
+msgstr ""
+"Si vous voulez choisir manuellement le type de votre souris, ne choisissez "
+"pas cette option."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:22001
+msgid ""
+"If you choose it and autodetection fails, you will be asked this question "
+"again.  Autodetection can be attempted as many times as desired.  If it "
+"succeeds, further configuration questions about the mouse will be pre-"
+"answered."
+msgstr ""
+"Si vous acceptez cette option et que l'autodétection échoue, cette question "
+"sera reposée. Vous pouvez essayer autant de fois que vous voulez. Si "
+"l'autodétection réussit, les questions ultérieures concernant la souris "
+"seront préremplies."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:23001
+msgid "Mouse port:"
+msgstr "Port de branchement de votre souris :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:23001
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of the mouse (or other pointing device, such as a "
+"trackball) must be known."
+msgstr ""
+"Pour que l'interface graphique utilisateur du système X Window fonctionne "
+"convenablement, ce dernier a besoin de connaître certaines caractéristiques "
+"de la souris (ou d'autres périphériques de pointage, tels qu'une boule de "
+"pointage « trackball »)."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:23001
+msgid ""
+"It is necessary to determine which port (connection type) is used by the "
+"mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-9 "
+"or DB-25); the mouse connector is female (has holes) and the computer "
+"connector is male (has pins).  PS/2 ports are small round connectors (DIN) "
+"with 6 pins; the mouse connector is male and the computer side female.  You "
+"may alternatively use a USB mouse, a bus/inport (very old) mouse, or be "
+"using the gpm program as a repeater.  If you need to attach or remove PS/2 "
+"or bus/inport devices from your computer, please do so with the computer's "
+"power off."
+msgstr ""
+"Il est nécessaire de déterminer le port (type de connexion) que la souris "
+"utilise. Les ports série correspondent à des connecteurs en D à 9 ou 25 "
+"broches (DB-9 ou DB-25) ; le connecteur de la souris est femelle et celui de "
+"l'ordinateur mâle (il possède les broches). Les ports PS/2 sont de petits "
+"connecteurs ronds (DIN) à 6 broches ; le connecteur de la souris (vert) est "
+"mâle et celui côté ordinateur est femelle. Vous pouvez aussi posséder un "
+"modèle de souris de type USB, une souris de type bus/inport (très vieille), "
+"ou aussi utiliser gpm en mode « répéteur ». Si vous devez brancher ou "
+"débrancher un périphérique, veuillez le faire après avoir arrêté votre "
+"système et coupé l'alimentation."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:24001
+msgid "Mouse protocol:"
+msgstr "Protocole de gestion de votre souris :"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:25001
+msgid "Emulate 3 button mouse?"
+msgstr "Faut-il émuler une souris à 3 boutons ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:25001
+msgid ""
+"Most programs in the X Window System expect the mouse to have 3 buttons "
+"(left, right, and middle).  Mice with only 2 buttons can emulate the "
+"presence of a middle button by treating simultaneous clicks or drags of the "
+"left and right buttons as middle button events."
+msgstr ""
+"La plupart des programmes du système X Window sont conçus pour des souris à "
+"3 boutons (gauche, droit et milieu). Une souris à 2 boutons peut émuler la "
+"présence du bouton du milieu en traitant un clic (ou glissé) simultané des "
+"boutons gauche et droit comme un clic du bouton du milieu."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:25001
+msgid ""
+"This option may also be used on mice with 3 or more buttons; the middle "
+"button will continue to work normally."
+msgstr ""
+"Cette option peut aussi être utilisée pour des souris à trois boutons ou "
+"plus ; le bouton du milieu continuera à fonctionner normalement."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:25001
+msgid ""
+"Note that mouse buttons in excess of five (counting a scroll wheel as two "
+"buttons, one each for \"up\" and \"down\", and a third if the wheel \"clicks"
+"\") are not yet supported with this configuration tool."
+msgstr ""
+"Veuillez noter que cet outil de configuration n'accepte pas les souris avec "
+"plus de cinq boutons (en comptant une molette pour deux boutons, un pour "
+"« Haut », un pour « Bas » et éventuellement un troisième si la roue peut "
+"être « cliquée »)."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:26001
+msgid "Attempt monitor autodetection?"
+msgstr "Faut-il essayer de détecter automatiquement l'écran ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:26001
+msgid ""
+"Many monitors (including LCD's) and video cards support a communication "
+"protocol that allows the monitor's technical characteristics to be "
+"communicated back to the computer.  If the monitor and video card support "
+"this protocol, further configuration questions about the monitor will be pre-"
+"answered."
+msgstr ""
+"Beaucoup d'écrans (y compris les écrans LCD) et de cartes vidéos sont "
+"fournis avec un protocole de communication qui permet d'indiquer à "
+"l'ordinateur les caractéristiques techniques de l'écran. Si l'écran et la "
+"carte vidéo utilisent la même version de ce protocole, les questions "
+"ultérieures relatives à l'écran seront préremplies."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:26001
+msgid "If autodetection fails, you will be asked for information about the monitor."
+msgstr ""
+"Si l'autodétection échoue, les caractéristiques techniques de l'écran vous "
+"seront demandées."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:27001
+msgid "Method for selecting the monitor characteristics:"
+msgstr "Méthode pour choisir les caractéristiques de l'écran :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:27001
+msgid ""
+"For the X Window System graphical user interface to operate correctly, "
+"certain characteristics of the monitor must be known."
+msgstr ""
+"Pour que l'interface graphique utilisateur du système X Window fonctionne "
+"convenablement, ce dernier a besoin de connaître certaines caractéristiques "
+"de votre écran."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:27001
+msgid ""
+"The \"simple\" option will prompt about the monitor's physical size; this "
+"will set some configuration values appropriate for a typical CRT of the "
+"corresponding size, but may be suboptimal for high-quality CRT's."
+msgstr ""
+"Avec l'option « Simple », vous devez seulement connaître la dimension "
+"physique de l'écran ; cela définira des valeurs convenables pour un écran à "
+"tube cathodique classique de cette dimension, mais peu optimisées pour un "
+"écran de haute qualité."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:27001
+msgid ""
+"The \"medium\" option will present you with a list of resolutions and "
+"refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best mode "
+"you wish to use (and that you know the monitor is capable of)."
+msgstr ""
+"L'option « Moyen » (« medium ») présente une liste de résolutions et de taux "
+"de rafraîchissement, tels que « 800x600 @ 85Hz » ; vous devrez choisir dans "
+"cette liste le mode que vous souhaitez utiliser (et que l'écran accepte)."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:27001
+msgid ""
+"The \"advanced\" option will let you specify the monitor's horizontal sync "
+"and vertical refresh tolerances directly."
+msgstr ""
+"L'option « Expert » (« advanced ») vous permet de définir directement les "
+"fréquences de rafraîchissement horizontal et vertical de l'écran."
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:28001
+msgid "Up to 14 inches (355 mm)"
+msgstr "Jusqu'à 14 pouces (35.5 cm)"
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:28001
+msgid "15 inches (380 mm)"
+msgstr "15 pouces (38 cm)"
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:28001
+msgid "17 inches (430 mm)"
+msgstr "17 pouces (43 cm)"
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:28001
+msgid "19-20 inches (480-510 mm)"
+msgstr "19-20 pouces (48-51 cm)"
+
+#. Type: select
+#. Choices
+#: ../xserver-xorg.templates:28001
+msgid "21 inches (530 mm) or more"
+msgstr "21 pouces (53 cm) ou plus"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:28002
+msgid "Approximate monitor size:"
+msgstr "Taille approximative de l'écran :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:28002
+msgid "High-quality CRT's may be able to use the next highest size category."
+msgstr ""
+"Les écrans à tube cathodique de qualité peuvent parfois utiliser la gamme de "
+"taille immédiatement supérieure."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:29001
+msgid "Monitor's best video mode:"
+msgstr "Meilleur mode accepté par l'écran :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:29001
+msgid ""
+"Choose the \"best\" resolution and refresh rate the monitor is capable of.  "
+"Larger resolutions and refresh rates are better.  With a CRT monitor, it is "
+"perfectly acceptable to select a \"worse\" video mode than the monitor's "
+"best if you wish.  Users of LCD displays may also be able to do this, but "
+"only if both the video chipset and the driver support it; if in doubt, use "
+"the video mode recommended by the manufacturer of your LCD."
+msgstr ""
+"Choisissez le « meilleur » couple résolution-taux de rafraîchissement "
+"possible pour l'écran. Une résolution et un taux de rafraîchissement élevés "
+"sont préférables. Si vous utilisez un écran à tube cathodique, il est tout à "
+"fait possible de choisir des valeurs moins bonnes que le maximum accepté. "
+"Avec un écran à cristaux liquides, ces réglages sont aussi possibles, mais "
+"uniquement si le circuit de la carte graphique et le pilote les prévoient ; "
+"si vous n'en êtes pas certain, utilisez le mode vidéo recommandé par le "
+"fabricant de l'écran."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:30001
+msgid "Identifier for the monitor:"
+msgstr "Identifiant de l'écran :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:30001
+msgid ""
+"The X server configuration file associates the monitor with a name that you "
+"may provide.  This is usually the vendor or brand name followed by the model "
+"name, e.g., \"Sony E200\" or \"Dell E770s\"."
+msgstr ""
+"L'écran est associé à un nom de votre choix dans le fichier de configuration "
+"du serveur X. L'usage est d'indiquer la marque suivie du modèle d'écran, par "
+"exemple « Sony E200 » ou « Dell E770s »."
+
+#. Type: text
+#. Description
+#: ../xserver-xorg.templates:31001
+msgid "Generic Monitor"
+msgstr "Écran générique"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:32001
+msgid "Write monitor sync ranges to the configuration file?"
+msgstr "Faut-il inscrire les plages de fréquence de l'écran dans la configuration ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:32001
+msgid ""
+"The monitor synchronization ranges should be autodetected by the X server in "
+"most cases, but sometimes it needs hinting.  This option is for experienced "
+"users, and should be left at its default."
+msgstr ""
+"Les plages de fréquences de synchronisation de l'écran devraient être "
+"détectées automatiquement par le serveur X dans la plupart des cas. "
+"Cependant, elles peuvent nécessiter des réglages plus fins. Cette option est "
+"réservée aux utilisateurs expérimentés ; il est recommandé de ne pas "
+"modifier la valeur par défaut."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:33001
+msgid "Monitor's horizontal sync range:"
+msgstr "Valeurs de rafraîchissement horizontal de l'écran :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:33001
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in the monitor's manual.  "
+"Values lower than 30 or higher than 130 are extremely rare."
+msgstr ""
+"Veuillez indiquer soit une liste de fréquences séparées par des virgules "
+"(pour les écrans à fréquences fixes), soit une paire de valeurs séparées par "
+"un tiret « - » (cas de la plupart des écrans à tube cathodique récents). Ces "
+"renseignements doivent être disponibles dans le manuel de l'écran. Des "
+"valeurs inférieures à 30 ou supérieures à 130 sont extrêmement rares."
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:34001
+msgid "Monitor's vertical refresh range:"
+msgstr "Valeurs de rafraîchissement vertical de l'écran :"
+
+#. Type: string
+#. Description
+#: ../xserver-xorg.templates:34001
+msgid ""
+"Please enter either a comma-separated list of discrete values (for fixed-"
+"frequency displays), or a pair of values separated by a dash (all modern "
+"CRT's).  This information should be available in the monitor's manual.  "
+"Values lower than 50 or higher than 160 are extremely rare."
+msgstr ""
+"Veuillez indiquer soit une liste de fréquences séparées par des virgules "
+"(pour les écrans à fréquences fixes), soit une paire de valeurs séparées par "
+"un tiret « - » (cas de la plupart des écrans à tube cathodique récents). Ces "
+"renseignements doivent être disponibles dans le manuel de l'écran. Des "
+"valeurs inférieures à 50 ou supérieures à 160 sont extrêmement rares."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:35001
+msgid "Incorrect values entered"
+msgstr "Valeurs incorrectes pour ce paramètre"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:35001
+msgid ""
+"The valid syntax is a comma-separated list of discrete values, or a pair of "
+"values separated by a dash."
+msgstr ""
+"La syntaxe valide est une liste de valeurs séparées par des virgules ou une "
+"paire de nombres séparés par un tiret."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:36001
+msgid "Desired default color depth in bits:"
+msgstr "Profondeur de couleur par défaut (en bits) :"
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:36001
+msgid ""
+"Usually 24-bit color is desirable, but on graphics cards with limited "
+"amounts of framebuffer memory, higher resolutions may be achieved at the "
+"expense of higher color depth.  Also, some cards support hardware 3D "
+"acceleration only for certain depths.  Consult your video card manual for "
+"more information."
+msgstr ""
+"Habituellement, une profondeur de 24 bits est souhaitable, mais sur "
+"certaines cartes dont la quantité de mémoire est limitée, il est parfois "
+"possible d'obtenir de meilleures résolutions aux dépens de la profondeur de "
+"couleur. De plus certaines cartes ne gèrent l'accélération 3D que pour "
+"certaines profondeurs. Consultez le manuel de votre carte pour plus "
+"d'informations."
+
+#. Type: select
+#. Description
+#: ../xserver-xorg.templates:36001
+msgid ""
+"So-called \"32-bit color\" is actually 24 bits of color information plus 8 "
+"bits of alpha channel or simple zero padding; the X Window System can handle "
+"both.  If you want either, select 24 bits."
+msgstr ""
+"Les prétendues « couleurs sur 32 bits » contiennent en réalité 24 bits "
+"d'informations relatives à la couleur plus 8 bits de canal alpha ou un "
+"simple remplissage par des zéros ; le système X Window peut gérer les deux. "
+"Si vous n'avez pas de préférence, choisissez 24 bits."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:37001
+msgid "Empty value"
+msgstr "Valeur obligatoire"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:37001
+msgid "A null entry is not permitted for this value."
+msgstr "Une valeur vide n'est pas autorisée pour ce paramètre."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:38001
+msgid "Invalid double-quote characters"
+msgstr "Guillemets prohibés pour cette entrée"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:38001
+msgid "Double-quote (\") characters are not permitted in the entry value."
+msgstr "Aucun guillemet (\") ne doit être mis dans cette valeur."
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:39001
+msgid "Numerical value needed"
+msgstr "Valeur numérique obligatoire"
+
+#. Type: note
+#. Description
+#: ../xserver-xorg.templates:39001
+msgid "Characters other than digits are not allowed in the entry."
+msgstr "Les caractères autres que des chiffres ne sont pas autorisés."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:40001
+msgid "Autodetect keyboard layout?"
+msgstr "Détecter automatiquement la disposition du clavier ?"
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:40001
+msgid ""
+"The default keyboard layout selection for the Xorg server will be based on a "
+"combination of the language and the keyboard layout selected in the "
+"installer."
+msgstr ""
+"La disposition par défaut du clavier pour le serveur Xorg sera déterminée à "
+"partir d'une combinaison de la langue et de la disposition de clavier "
+"choisies dans l'installateur."
+
+#. Type: boolean
+#. Description
+#: ../xserver-xorg.templates:40001
+msgid ""
+"Choose this option if you want the keyboard layout to be redetected.  Do not "
+"choose it if you want to keep your current layout."
+msgstr ""
+"Choisissez cette option si vous souhaitez que la disposition du clavier soit "
+"détectée à nouveau. Ne la choisissez pas si vous souhaitez conserver la "
+"disposition actuelle."
+
+#. Type: select
+#. Choices
+#: ../x11-common.templates:2001
+msgid "Root Only"
+msgstr "Superutilisateur seulement"
+
+#. Type: select
+#. Choices
+#: ../x11-common.templates:2001
+msgid "Console Users Only"
+msgstr "Depuis la console"
+
+#. Type: select
+#. Choices
+#: ../x11-common.templates:2001
+msgid "Anybody"
+msgstr "N'importe qui"
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:2002
+msgid "Users allowed to start the X server:"
+msgstr "Utilisateurs autorisés à lancer un serveur X :"
+
+#. Type: select
+#. Description
+#: ../x11-common.templates:2002
+msgid ""
+"Because the X server runs with superuser privileges, it may be unwise to "
+"permit any user to start it, for security reasons.  On the other hand, it is "
+"even more unwise to run general-purpose X client programs as root, which is "
+"what may happen if only root is permitted to start the X server.  A good "
+"compromise is to permit the X server to be started only by users logged in "
+"to one of the virtual consoles."
+msgstr ""
+"Le serveur X étant lancé avec des droits privilégiés, il n'est pas très "
+"prudent pour des raisons de sécurité de permettre à n'importe qui de le "
+"lancer. D'un autre côté, il est encore moins prudent de lancer les logiciels "
+"clients X en tant que superutilisateur, ce qui risque d'arriver si seul le "
+"superutilisateur est autorisé à lancer un serveur X. Un bon compromis est "
+"que seuls les utilisateurs connectés sur une des consoles virtuelles "
+"puissent lancer un serveur X."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:4001
+msgid "Nice value for the X server:"
+msgstr "Priorité du serveur X :"
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:4001
+msgid ""
+"When using operating system kernels with a particular scheduling strategy, "
+"it has been widely noted that the X server's performance improves when it is "
+"run at a higher process priority than the default; a process's priority is "
+"known as its \"nice\" value.  These values range from -20 (extremely high "
+"priority, or \"not nice\" to other processes) to 19 (extremely low "
+"priority).  The default nice value for ordinary processes is 0, and this is "
+"also the recommend value for the X server."
+msgstr ""
+"Lorsqu'on utilise un système d'exploitation ayant un noyau avec une "
+"stratégie spéciale d'ordonnancement, les performances du serveur X sont "
+"largement améliorées s'il est exécuté avec une priorité plus haute que celle "
+"par défaut. Elle prend des valeurs entre -20 (priorité extrêmement haute) et "
+"19 (priorité très faible). La priorité par défaut d'un processus quelconque "
+"est de 0, c'est également la valeur recommandée pour le serveur X."
+
+#. Type: string
+#. Description
+#: ../x11-common.templates:4001
+msgid ""
+"Values outside the range of -10 to 0 are not recommended; too negative, and "
+"the X server will interfere with important system tasks.  Too positive, and "
+"the X server will be sluggish and unresponsive."
+msgstr ""
+"Choisir une valeur en dehors de la fourchette de -10 à 0 n'est pas "
+"recommandé ; une valeur inférieure et le serveur X interférera avec des "
+"tâches importantes du système, une valeur trop grande et son fonctionnement "
+"sera lent et peu réactif."
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:5001
+msgid "Incorrect nice value"
+msgstr "Valeur de priorité non valable"
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:5001
+msgid "Please enter an integer between -20 and 19."
+msgstr "Veuillez entrer un nombre entier entre -20 et 19."
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:6001
+msgid "Major possible upgrade issues"
+msgstr "Difficultés possibles lors de la mise à jour majeure"
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:6001
+msgid ""
+"Some users have reported that upon upgrade to the current package set, their "
+"xserver package was no longer installed. Because there is no easy way around "
+"this problem, you should be sure to check that the xserver-xorg package is "
+"installed after upgrade. If it is not installed and you require it, it is "
+"recommended that you install the xorg package to make sure you have a fully "
+"functional X setup."
+msgstr ""
+"Certains utilisateurs ont indiqué que lors de la mise à jour vers l'ensemble "
+"actuel de paquets pour X, le paquet du serveur X n'était plus installé. "
+"Comme il n'existe pas de méthode simple pour contourner ce problème, vous "
+"devriez vérifier si le paquet xserver-xorg est toujours installé après la "
+"mise à jour. Si ce n'est pas le cas et que vous en avez besoin, vous devriez "
+"installer le paquet « xorg » pour garantir une configuration opérationnelle "
+"de X."
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:7001
+msgid "Cannot remove /usr/X11R6/bin directory"
+msgstr "Impossible de supprimer le répertoire /usr/X11R6/bin"
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:7001
+msgid ""
+"This upgrade requires that the /usr/X11R6/bin directory be removed and "
+"replaced with a symlink. An attempt was made to do so, but it failed, most "
+"likely because the directory is not yet empty. You must move the files that "
+"are currently in the directory out of the way so that the installation can "
+"complete. If you like, you may move them back after the symlink is in place."
+msgstr ""
+"La mise à jour rend indispensable la suppression du répertoire /usr/X11R6/"
+"bin afin de le remplacer par un lien symbolique. Cette opération a échoué, "
+"très probablement parce que ce répertoire n'est pas vide. Il est nécessaire "
+"de déplacer les fichiers qui y restent afin que l'installation puisse se "
+"terminer. Il sera possible de les remettre en place une fois que le lien "
+"symbolique aura été créé."
+
+#. Type: note
+#. Description
+#: ../x11-common.templates:7001
+msgid ""
+"This package installation will now fail and exit so that you can do this. "
+"Please re-run your upgrade procedure after you have cleaned out the "
+"directory."
+msgstr ""
+"L'installation du paquet va s'interrompre afin de vous permettre d'effectuer "
+"cette opération. Veuillez relancer la procédure de mise à jour après avoir "
+"nettoyé le répertoire."
+
