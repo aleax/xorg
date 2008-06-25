@@ -1,67 +1,67 @@
 xorg (1:7.3+12ubuntu1) intrepid; urgency=low
   
   * Merge from debian unstable, remaining changes:
-      - apport/xorg-server-core.py, x11-common.install:
-        + apport hook for xorg-server crashes
-      - control:
-        + Change maintainer address.
-        + xserver-xorg: Recommends displayconfig-gtk and laptop-detect
-        + Move xorg-docs Recommends to Suggests, because xorg-docs is in
-          universe.
-        + Add a dependency to xserver-xorg for each binary built to save
-          disk/livecd space.
-        + Add xqbiff (<= 0.75-4) to the list of x11-common Conflicts.
-        + Add replaces for xinit since we now ship Xsession from x11-common.
-          Ditto for xrgb as we ship rgb.txt in x11-common.
-        + Add an epoch to the "x11-common Replaces xrgb" version.
-          (LP: #212672)
-        + xserver-xorg needs to Depend on mdetect instead of Recommends.
-      - local/Failsafe/*, x11-common.install:
-        + Bulletproof-X.
-      - local/Xsession:
-        + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
-          0.5MiB to avoid having it grow indefinitively. (This does not happen
-          with gdm anyway since gdm cleans the file on login).
-      - local/dexconf:
-        + Added support for vmmouse_detect (if present) to override mouse
-          driver with vmware. Depends on mdetect.
-          (LP: #216667, #216276, #197337)
-        + Add extra bits for ps3fb xorg.conf. (LP: #230091)
-        + Add CorePointer to the default mouse section, otherwise
-          the server defaults are used. (LP: #197337)
-        + dexconf: Bring Device back to the Screen-section, nvidia-settings
-          and aticonfig need that. (LP: #181405)
-        + Add customizations to detect if running in KVM environment
-          (CPU = "QEMU") and specify the H/V rates, DefaultDepth, etc.
-      - local/xserver-wrapper.c:
-        + Stop handling -config specifically in the wrapper, as Xorg now
-          handles this itself.
-      - rules:
-        + Symlink the doc directories to xserver-xorg, explicitly remove the
-          doc directories on upgrade for the now symlinked doc
-          directories, to save disk/livecd space.
-      - scripts/vars.amd64:
-        + Add vmmouse.
-      - scripts/vars.i386:
-        + Add vmmouse.
-        + Add xserver-xorg-video-psb.
-      - scripts/vars.lpia:
-        + Copied from vars.i386.
-      - x11-common.install:
-        + Add installation of apport hooks and bulletproof-X scripts
-      - xserver-xorg.postinst.in:
-        + Skip video card autodetection if xforcevesa is set.
-    * control:
-      - Drop Ubuntu addition of xserver-xorg-driver-all (obsolete)
-    * local/dexconf:
-      + Drop synaptics section and ServerLayout line to re-enable
-        input-hotplug (Reverts LP: #173411)
-    * x11-common.preinst.in, x11-common.templates:
-      + Drop ubuntu addition to not fail if /usr/X11R6/bin is not empty
-        but move it away instead and tell the user about it 
-        since it was only needed for Dapper->Hardy upgrades. (LP: 217724)
+    - apport/xorg-server-core.py, x11-common.install:
+      + apport hook for xorg-server crashes
+    - control:
+      + Change maintainer address.
+      + xserver-xorg: Recommends displayconfig-gtk and laptop-detect
+      + Move xorg-docs Recommends to Suggests, because xorg-docs is in
+        universe.
+      + Add a dependency to xserver-xorg for each binary built to save
+        disk/livecd space.
+      + Add xqbiff (<= 0.75-4) to the list of x11-common Conflicts.
+      + Add replaces for xinit since we now ship Xsession from x11-common.
+        Ditto for xrgb as we ship rgb.txt in x11-common.
+      + Add an epoch to the "x11-common Replaces xrgb" version.
+        (LP: #212672)
+      + xserver-xorg needs to Depend on mdetect instead of Recommends.
+    - local/Failsafe/*, x11-common.install:
+      + Bulletproof-X.
+    - local/Xsession:
+      + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+        0.5MiB to avoid having it grow indefinitively. (This does not happen
+        with gdm anyway since gdm cleans the file on login).
+    - local/dexconf:
+      + Added support for vmmouse_detect (if present) to override mouse
+        driver with vmware. Depends on mdetect.
+        (LP: #216667, #216276, #197337)
+      + Add extra bits for ps3fb xorg.conf. (LP: #230091)
+      + Add CorePointer to the default mouse section, otherwise
+        the server defaults are used. (LP: #197337)
+      + dexconf: Bring Device back to the Screen-section, nvidia-settings
+        and aticonfig need that. (LP: #181405)
+      + Add customizations to detect if running in KVM environment
+        (CPU = "QEMU") and specify the H/V rates, DefaultDepth, etc.
+    - local/xserver-wrapper.c:
+      + Stop handling -config specifically in the wrapper, as Xorg now
+        handles this itself.
+    - rules:
+      + Symlink the doc directories to xserver-xorg, explicitly remove the
+        doc directories on upgrade for the now symlinked doc
+        directories, to save disk/livecd space.
+    - scripts/vars.amd64:
+      + Add vmmouse.
+    - scripts/vars.i386:
+      + Add vmmouse.
+      + Add xserver-xorg-video-psb.
+    - scripts/vars.lpia:
+      + Copied from vars.i386.
+    - x11-common.install:
+      + Add installation of apport hooks and bulletproof-X scripts
+    - xserver-xorg.postinst.in:
+      + Skip video card autodetection if xforcevesa is set.
+  * control:
+    - Drop Ubuntu addition of xserver-xorg-driver-all (obsolete)
+  * local/dexconf:
+    + Drop synaptics section and ServerLayout line to re-enable
+      input-hotplug (Reverts LP: #173411)
+  * x11-common.preinst.in, x11-common.templates:
+    + Drop ubuntu addition to not fail if /usr/X11R6/bin is not empty
+      but move it away instead and tell the user about it 
+      since it was only needed for Dapper->Hardy upgrades. (LP: 217724)
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 24 Jun 2008 19:36:06 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 24 Jun 2008 20:58:58 -0700
 
 xorg (1:7.3+12) unstable; urgency=low
 
