@@ -199,7 +199,7 @@ discover_sparc_video () {
     if [ -n "${model}" ]; then
       card="${card} (${model})"
     fi
-    echo -e "${card}\t${server}\t${driver}"
+    printf "${card}\t${server}\t${driver}\n"
   done
 }
 
@@ -868,10 +868,6 @@ MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil low)" xser
 
 MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
 
-
-auto_answer db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/mouse/emulate3buttons true || debug_report_status "db_input $(priority_ceil low) xserver-xorg/config/inputdevice/mouse/emulate3buttons" "$?"
-db_go
-
 # files and dri sections
 if [ -e "$CONFIG_AUX_DIR/.migrateconfig" ]; then
   AUTODETECT_VIDEO="yes"
@@ -918,6 +914,7 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
                         "xserver-xorg/config/display/default_depth" \
                         "xserver-xorg/config/inputdevice/mouse/port" \
                         "xserver-xorg/config/inputdevice/mouse/protocol" \
+                        "xserver-xorg/config/inputdevice/mouse/emulate3buttons" \
                         "xserver-xorg/config/modules" \
                         "xserver-xorg/config/monitor/default-identifier" \
                         "xserver-xorg/config/monitor/identifier" \
@@ -1006,6 +1003,14 @@ if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
 fi
+
+case "$1" in
+  configure)
+    if dpkg --compare-versions "$2" lt-nl "1:7.3+11"; then
+      remove_conffile_commit "/etc/init.d/xserver-xorg"
+    fi
+    ;;
+esac
 
 exit 0
 

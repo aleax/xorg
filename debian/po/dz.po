@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xorg.pot\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
 "PO-Revision-Date: 2006-09-17 22:58+0530\n"
 "Last-Translator: Jurmey Rabgay <jur_gay@yahoo.com>\n"
 "Language-Team: dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -162,15 +162,14 @@ msgstr ""
 "ཨེགསི་སར་བར་གྱི་དོན་ལུ་ ལྡེ་སྒྲོམ་འདི་མ་འཛོལ་བ་ལེགས་ཤོམ་སྦེ་ལེགས་སྐྱོང་འཐབ་ནི་ལུ་ ཨེགསི་ཀེ་བི་ལམ་ལུགས་གཞི་"
 "སྒྲིག་ཅིག་ གདམ་དགོ"
 
+# | msgid ""
+# | "Users of U.S. English keyboards should generally leave this entry blank."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
-msgstr ""
-"ལྡེ་སྒྲོམ་མང་ཤོས་ཅིག་གི་ལག་ལེན་པ་ཚུ་གིས་ \"xorg\"བཙུགས་དགོ སཱན་ དབྱེ་བ་༤དང་དབྱེ་བ་༥འི་ལྡེ་སྒྲོམ་ལག་"
-"ལེན་པ་ཚུ་གིས་ ག་དེ་འབད་རུང་རང་\"sun\"བཙུགས་དགོ"
+#, fuzzy
+msgid "Users of most keyboards should enter \"xorg\"."
+msgstr "ཡུ་ཨེསི་ཨིང་ལིཤ་ལྡེ་སྒྲོམ་གྱི་ལག་ལེན་པ་ཚུ་གིས་ ཐོ་འགོད་སྟོངམ་འདི་མང་ཆེ་བ་སྦེ་བཞག་དགོ"
 
 #. Type: string
 #. Description
@@ -206,9 +205,26 @@ msgstr ""
 "ཨེགསི་སར་བར་གྱི་དོན་ལུ་ ལྡེ་སྒྲོམ་འདི་ངེས་ལྡན་སྦེ་ལེགས་སྐྱོང་འཐབ་ནིའི་དོན་ལས་ ལྡེ་སྒྲོམ་གྱི་དཔེ་ཅིག་བཙུགས་དགོཔ་"
 "ཨིན། ཨེགསི་ཀེ་བི་ལམ་ལུགས་གཞི་སྒྲིག་འབད་དེ་ཡོད་མི་གུ་བརྟེན་པའི་འཐོབ་ཚུགས་པའི་དཔེ་ཚུ་ ལག་ལེན་འཐབ་སྟེ་ཡོད།"
 
+# | msgid ""
+# | " With the \"xorg\" rule set:\n"
+# | " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+# | "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+# | " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+# | "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+# | " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+# | "              keycodes;\n"
+# | " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+# | " With the \"sun\" rule set:\n"
+# | " - type4: Sun Type4 keyboards;\n"
+# | " - type5: Sun Type5 keyboards."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -221,8 +237,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -622,17 +637,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr " /usr/X11R6/bin སྣོད་ཐོ་འདི་རྩ་བསྐྲད་གཏང་མི་ཚུགས།"
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -657,13 +668,48 @@ msgstr ""
 "ཐུམ་སྒྲིལ་གཞི་བཙུགས་འདི་འཐུས་ཤོར་དང་ཕྱིར་འཐོན་འབད་ནི་ཨིནམ་ལས་ཁྱོད་ཀྱིས་འབད་ཚུགས། ཁྱོད་ཀྱིས་སྣོད་ཐོ་འདི་"
 "ཧིང་སང་སང་བཟོ་བའི་ཤུལ་ལས་ ཡར་བསྐྱེད་འབད་བའི་ལས་སྦྱོར་འདི་ལོག་གཡོག་བཀོལ།"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "ལྡེ་སྒྲོམ་མང་ཤོས་ཅིག་གི་ལག་ལེན་པ་ཚུ་གིས་ \"xorg\"བཙུགས་དགོ སཱན་ དབྱེ་བ་༤དང་དབྱེ་བ་༥འི་ལྡེ་སྒྲོམ་"
+#~ "ལག་ལེན་པ་ཚུ་གིས་ ག་དེ་འབད་རུང་རང་\"sun\"བཙུགས་དགོ"
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " \"xorg\"ལམ་ལུགས་གཞི་སྒྲིག་གི་ཐོག་ལས་:\n"
+#~ " - པི་སི་ ༡༠༡: ༡༠༡ལྡེ་མིག་ཚུ་དང་བཅས་ སྔར་སྲོལ་གྱི་ ཨའི་བི་ཨེམ་ པི་སི་/ཨེ་ཊི་བཟོ་རྣམ་ལྡེ་མིག་ཚུ་ ཡུ་"
+#~ "ན་ཡེ་ཊེཊི་ སིཊེཊིསི་ནང་ལུ་\n"
+#~ "           སྤྱི་ཁྱབ་སྦེ་ཡོདཔ་ཨིན། འདི་ལུ་  \"logo\" ཡང་ན་ \"menu\" ལྡེ་སྒྲོམ་མེད་\n"
+#~ " - པི་སི་ ༡༠༤: པི་སི་༡༠༡ གི་དཔེ་དང་ཅོག་འཐདཔ་སྦེ་ ཁ་སྐོང་ཅན་གྱི་ལྡེ་མིག་དང་བཅས་དུས་རྒྱུན་ "
+#~ "\"logo\"བརྡ་མཚོན་ཅིག་དང་  \"menu\"               བརྡ་མཚོན་ཅིག་གི་གུ་\n"
+#~ "བརྐོསཔ་ཨིན་ \n"
+#~ " - པི་སི་ ༡༠༢: པི་སི་ ༡༠༡ དང་ཅོག་འཐདཔ་དང་ དེ་ཚུ་འཕྲལ་འཕྲལ་ཡུ་རོཔ་ནང་ཐོབ་ནི་ཡོད། \"< >\" "
+#~ "ལྡེ་མིག་ཅིག་གྲངས་སུ་ཚུདཔ་ཨིན་ \n"
+#~ " - པི་སི་ ༡༠༥: པི་སི་ ༡༠༤ དང་ཅོག་འཐདཔ་དང་ དེ་ཚུ་ འཕྲལ་འཕྲལ་ཡུ་རོཔ་ནང་ཐོབ་ནི་ཡོད། \"< >"
+#~ "\" ལྡེ་མིག་ཅིག་གྲངས་སུ་ཚུདཔ་ཨིན་ \n"
+#~ " - མེཀ་ཨིན་ཏོཤ་: མེཀ་ཨིན་ཏོཤ་གིས་ ལི་ནགསི་\n"
+#~ "ལྡེ་ཨང་དང་གཅིག་ཁར་ ཨིན་པུཊི་བང་རིམ་གསརཔ་ ལག་ལེན་འཐབ་པའི་བསྒང་\n"
+#~ " - མེཀ་ཨིན་ཏོཤ་རྙིངམ་: མེཀ་ཨིན་ཏོཤ་ལྡེ་སྒྲོམ་ཚུ་གིས་ ཨིན་པུཊི་བང་རིམ་གསརཔ་ ལག་ལེན་འཐབ་ནི་མིན་"
+#~ "འདུག\n"
+#~ "                                \"sun\"ལམ་ལུགས་གཞི་སྒྲིག་གི་ཐོག་ལས་ \n"
+#~ " - དབྱེ་བ་ ༤: སཱན་དབྱེ་བ་ ༤ ལྡེ་སྒྲོམ་ཚུ་ \n"
+#~ " - དབྱེ་བ་ ༥: སཱན་དབྱེ་བ་ ༥ ལྡེ་སྒྲོམ་ཚུ།"
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "ཝི་ཌིའོ་སྲ་ཆས་ རང་བཞིན་སྐྱོན་འཛིན་གྱི་དོན་ལུ་དཔའ་བཅམས་ནི་ཨིན་ན་?"

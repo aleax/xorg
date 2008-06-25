@@ -29,8 +29,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11 6.8.2.dfsg.1-10\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
 "PO-Revision-Date: 2007-04-25 21:37+0200\n"
 "Last-Translator: Stefano Canepa <sc@linux.it>\n"
 "Language-Team: debian-l10n-italian <debian-l10n-italian@lists.debian.org>\n"
@@ -173,15 +173,19 @@ msgstr ""
 "Perché il server X funzioni correttamente, occorre selezionare il set di "
 "regole XKB."
 
+# NdT: Con le versioni di X da woody in poi, anche gli italiani dovrebbero
+# lasciare vuoto questo campo.
+# "questo campo."
+# | msgid ""
+# | "Users of U.S. English keyboards should generally leave this entry blank."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
+#, fuzzy
+msgid "Users of most keyboards should enter \"xorg\"."
 msgstr ""
-"La scelta adatta alla maggior parte delle tastiere è «xorg»; invece per le "
-"tastiere Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
+"Gli utenti di tastiere italiane possono in genere lasciare vuoto questo "
+"campo."
 
 #. Type: string
 #. Description
@@ -218,9 +222,26 @@ msgstr ""
 "un modello di tastiera. I modelli disponibili dipendono dal set di regole "
 "XKB è in uso."
 
+# | msgid ""
+# | " With the \"xorg\" rule set:\n"
+# | " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+# | "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+# | " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+# | "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+# | " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+# | "              keycodes;\n"
+# | " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+# | " With the \"sun\" rule set:\n"
+# | " - type4: Sun Type4 keyboards;\n"
+# | " - type5: Sun Type5 keyboards."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -233,8 +254,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -647,17 +667,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr "Impossibile rimuovere la directory /usr/X11R6/bin"
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -683,13 +699,48 @@ msgstr ""
 "L'installazione di questo pacchetto fallirà e uscirà in modo che si possa "
 "farlo. Eseguire nuovamente la procedura dopo aver ripulito la directory."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "La scelta adatta alla maggior parte delle tastiere è «xorg»; invece per le "
+#~ "tastiere Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ "Con il set di regole \"xorg\":\n"
+#~ " - pc101: tastiera stile IBM PC/AT tradizionale con 101 tasti, comune "
+#~ "negli\n"
+#~ "          Stati Uniti.  Non ha i tasti \"logo\" o \"menu\";\n"
+#~ " - pc104: simile al modello pc101, con tasti addizionali, normalmente\n"
+#~ "          appesantita dal tasto \"logo\" e \" menu\";\n"
+#~ " - pc102: simile alla pc101 e comune in Europa. Include un tasto \"< >"
+#~ "\";\n"
+#~ " - pc105: simile alla pc104 e comune in Europa. Include un tasto \"< >"
+#~ "\";\n"
+#~ " - macintosh: tastiere Macintosh che usano il nuovo modello di input con "
+#~ "i\n"
+#~ "              codice dei tasti di Linux;\n"
+#~ " - macintosh_old: tastiere Macintosh che non usano il nuovo modello di "
+#~ "input.\n"
+#~ "Con il set di regole \"sun\":\n"
+#~ " - type4: tastiere Sun Type4;\n"
+#~ " - type5: tastiere Sun Type5."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Rilevare automaticamente l'hardware video?"

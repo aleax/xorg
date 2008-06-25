@@ -8,11 +8,11 @@ Standards-Version: 3.7.3.0
 Build-Depends: dpkg (>= 1.7.0), po-debconf, debhelper (>= 4.1.16)
 
 Package: x11-common
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, debianutils (>= 1.13), lsb-base (>= 1.3-9ubuntu2)
+Architecture: all
+Depends: ${misc:Depends}, debianutils (>= 1.13), lsb-base (>= 1.3-9ubuntu2)
 Pre-Depends: debconf | debconf-2.0
 Conflicts: xfree86-common, xorg-common, xserver-common, x-common,
- xserver-xorg (<< 1:7.0.12), xserver-xfree86 (<< 1:7.0),
+ xserver-xorg (<< 1:7.3+11), xserver-xfree86 (<< 1:7.0),
  libxft-dev (<= 2.1.8.2-5),  aee (<= 2.2.15b-1), ascd (<= 0.13.2-3),
  bibview (<= 2.2-8), fvwm1 (<= 1.24r-46), grace (<= 1:5.1.18-1),
  groff (<= 1.18.1.1-7), hfsutils-tcltk (<= 3.2.6-7), login.app (<= 1.2.1-18),
@@ -79,11 +79,10 @@ Description: X Window System (X.Org) infrastructure
  terms are functionally interchangeable in an Debian system.
 
 Package: xserver-xorg
-Architecture: all
-Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common
-Replaces: xserver-common
-Pre-Depends: x11-common (>= 1:7.3+3)
-Depends: xserver-xorg-core (>= 2:1.4-3), xserver-xorg-video-all | xserver-xorg-video-2, xserver-xorg-input-all | xserver-xorg-input-2, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils, mdetect
+Architecture: any
+Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common, x11-common (<< 1:7.3+11)
+Replaces: xserver-common, x11-common (<< 1:7.3+11)
+Depends: xserver-xorg-core (>= 2:1.4-3), xserver-xorg-video-all | xserver-xorg-video-2, xserver-xorg-input-all | xserver-xorg-input-2, ${shlibs:Depends}, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils, mdetect
 Recommends: libgl1-mesa-dri, udev, ${F:XServer-Xorg-Detect-Depends}, displayconfig-gtk, laptop-detect
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
@@ -96,14 +95,6 @@ Architecture: any
 Depends: ${F:XServer-Xorg-Video-Depends}, x11-common
 Replaces: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
- This package depends on the full suite of output drivers for the X.Org X server
- (Xorg).  It does not provide any drivers itself, and may be removed if you wish
- to only have certain drivers installed.
-
-Package: xserver-xorg-driver-all
-Architecture: any
-Depends: ${F:XServer-Xorg-Video-Depends}
-Description: the X.Org X server -- output driver transitional metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
  to only have certain drivers installed.
@@ -147,26 +138,6 @@ Description: the X.Org X Window System development libraries
  .
  Note that this is a convenience package for users and is not a package for
  Debian developers to have their package depend on.
-
-Package: xlibs-data
-Architecture: all
-Section: libs
-Depends: xbitmaps, xcursor-themes, libx11-6 (>= 2:1.0.0-2), x11-common
-Description: transitional package for X11 client data
- This package is provided to ease upgrades from Debian 3.1 ("sarge"). It
- may be safely removed from your system.
-
-Package: xlibs-static-dev
-Architecture: all
-Section: oldlibs
-Depends: libxfont-dev, libfontenc-dev, x11-common
-Description: transitional metapackage
- This package depends on the individual libraries that used to be contained
- within the package of this name. These libraries used to be static
- libraries, but have since become shared libraries with their own packages
- and can be depended on by themselves. This package is for transitional
- purposes to prevent disruptions during automated package builds, and my be
- safely removed from your system.
 
 Package: xlibmesa-gl
 Section: libs

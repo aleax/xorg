@@ -26,16 +26,10 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   # We need to remove /usr/X11R6/bin so we can replace it with a symlink
   if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
     if ! rmdir "/usr/X11R6/bin"; then
-      run db_fset x11-common/x11r6_bin_not_empty_move seen false
-      run db_input critical x11-common/x11r6_bin_not_empty_move
+      run db_fset x11-common/x11r6_bin_not_empty seen false
+      run db_input critical x11-common/x11r6_bin_not_empty
       run db_go
-      if [ -d "/usr/X11R6/bin-move-by-upgrade" ]; then
-	  run db_fset x11-common/x11r6_bin_not_empty seen false
-	  run db_input critical x11-common/x11r6_bin_not_empty
-	  run db_go
-	  exit 1
-      fi
-      mv /usr/X11R6/bin /usr/X11R6/bin-move-by-upgrade
+      exit 1
     fi
   fi
 

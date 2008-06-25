@@ -28,11 +28,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
 "PO-Revision-Date: 2007-04-10 13:57+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,15 +174,13 @@ msgstr ""
 "För att X-servern ska hantera ditt tangentbord korrekt måste en XKB-"
 "regeluppsättning väljas."
 
+# | msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
-msgstr ""
-"Användare av de flesta tangentbord bör välja \"xorg\".  Användare av Sun "
-"Type 4 och Type 5-tangentbord bör dock välja \"sun\"."
+#, fuzzy
+msgid "Users of most keyboards should enter \"xorg\"."
+msgstr "Användare med U.S English-tangentbord ska allmänt ange \"pc104\""
 
 #. Type: string
 #. Description
@@ -219,9 +217,26 @@ msgstr ""
 "tangentbordsmodell anges.  Tillgängliga modeller är beroende på vilken XKB-"
 "regeluppsättning som används."
 
+# | msgid ""
+# | " With the \"xorg\" rule set:\n"
+# | " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+# | "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+# | " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+# | "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+# | " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+# | "              keycodes;\n"
+# | " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+# | " With the \"sun\" rule set:\n"
+# | " - type4: Sun Type4 keyboards;\n"
+# | " - type5: Sun Type5 keyboards."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -234,8 +249,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -638,17 +652,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr "Kan inte ta bort katalogen /usr/X11R6/bin"
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -675,13 +685,49 @@ msgstr ""
 "göra detta. Kör uppgraderingsprocessen igen efter att du har rensat ut "
 "katalogen."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "Användare av de flesta tangentbord bör välja \"xorg\".  Användare av Sun "
+#~ "Type 4 och Type 5-tangentbord bör dock välja \"sun\"."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Med regeluppsättningen \"xorg\":\n"
+#~ " - pc101: traditionellt tangentbord av IBM PC/AT-stil med 101 tangenter,\n"
+#~ "           vanligen i Amerika.  Har inga \"logo\" eller \"menu\"-"
+#~ "tangenter;\n"
+#~ " - pc104: liknande pc101-modellen, men med ytterligare tangenter, "
+#~ "normalt\n"
+#~ "          markerade med en \"logo\"-symbol och en \"menu\"-symbol;\n"
+#~ " - pc102: liknande pc101 och hittas ofta i Europa. Inkluderar en \"< >\"-"
+#~ "tangent;\n"
+#~ " - pc105: liknande pc104 och hittas ofta i Europa. Inkluderar en \"< >\"-"
+#~ "tangent;\n"
+#~ " - macintosh: Macintosh-tangentbord som använder det nya "
+#~ "inmatningslagret\n"
+#~ "              med Linux-tangentkoder;\n"
+#~ " - macintosh_old: Macintosh-tangentbord som inte använder det nya "
+#~ "lagret.\n"
+#~ " Med regeluppsättningen \"sun\":\n"
+#~ " - type4: Sun Type4-tangentbord;\n"
+#~ " - type5: Sun Type5-tangentbord."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Försök att automatiskt identifiera grafikhårdvaran?"
@@ -1685,9 +1731,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Användare av maskiner andra än PowerPC eller SGI Indigo2 XL med bara ett "
 #~ "grafikkort bör lämna detta blankt."
-
-#~ msgid "Users of U.S. English keyboards should generally enter \"pc104\"."
-#~ msgstr "Användare med U.S English-tangentbord ska allmänt ange \"pc104\""
 
 #~ msgid ""
 #~ "Advanced users can use any layout supported by the selected XKB rule "

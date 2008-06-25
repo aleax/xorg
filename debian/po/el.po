@@ -27,8 +27,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_po_el\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
 "PO-Revision-Date: 2006-10-25 14:49+0300\n"
 "Last-Translator: QUAD-nrg.net <yodesy@quad-nrg.net>\n"
 "Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
@@ -179,16 +179,16 @@ msgstr ""
 "Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
 "πρέπει να επιλεχθεί ένα σύνολο κανόνων XKB."
 
+# | msgid ""
+# | "Users of U.S. English keyboards should generally leave this entry blank."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
+#, fuzzy
+msgid "Users of most keyboards should enter \"xorg\"."
 msgstr ""
-"Οι χρήστες των περισσότερων τύπων πληκτρολογίων θα πρέπει να εισάγουν \"xorg"
-"\".  Ωστόσο, οι χρήστες των πληκτρολογίων Sun Type 4 και Type 5 θα πρέπει να "
-"εισάγουν \"sun\"."
+"Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ), μπορούν να αφήσουν το πεδίο "
+"κενό."
 
 #. Type: string
 #. Description
@@ -225,9 +225,26 @@ msgstr ""
 "πρέπει να δηλώσετε ένα μοντέλο πληκτρολογίου. Τα διαθέσιμα μοντέλα "
 "εξαρτώνται από το σύνολο κανόνων XKB που χρησιμοποιείται."
 
+# | msgid ""
+# | " With the \"xorg\" rule set:\n"
+# | " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+# | "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+# | " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+# | "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+# | " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+# | "              keycodes;\n"
+# | " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+# | " With the \"sun\" rule set:\n"
+# | " - type4: Sun Type4 keyboards;\n"
+# | " - type5: Sun Type5 keyboards."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -240,8 +257,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -665,17 +681,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr "Δεν μπορώ να αφαιρέσω τον κατάλογο /usr/X11R6/bin"
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -703,13 +715,50 @@ msgstr ""
 "μπορέσετε να το κάνετε αυτό. Παρακαλώ, ξανατρέξτε τξν διαδικασία αναβάθμισης "
 "αφού έχετε απομακρύνει τον κατάλογο."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "Οι χρήστες των περισσότερων τύπων πληκτρολογίων θα πρέπει να εισάγουν "
+#~ "\"xorg\".  Ωστόσο, οι χρήστες των πληκτρολογίων Sun Type 4 και Type 5 θα "
+#~ "πρέπει να εισάγουν \"sun\"."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Με το σύνολο κανόνων \"xorg\" :\n"
+#~ " - pc101: παραδοσιακού τύπου πληκτρολόγιο IBM PC/AT με 101 πλήκτρα, "
+#~ "συνηθισμένο στις\n"
+#~ "          ΗΠΑ. Δεν έχει πλήκτρα \"logo\" ή \"menu\";\n"
+#~ " - pc104: παρόμοιο με το μοντέλο pc101, με επιπλέον πλήκτρα, συνήθως "
+#~ "εγχάρακτα\n"
+#~ "          με τα σύμβολα \"logo\" και \"menu\";\n"
+#~ " - pc102: παρόμοιο με το pc101 και συνήθως απαντώμενο στην Ευρώπη. "
+#~ "Περιλαμβάνει ένα πλήκτρο \"< >\";\n"
+#~ " - pc105: παρόμοιο με το pc104 και συνήθως απαντώμενο στην Ευρώπηan. "
+#~ "Περιλαμβάνει ένα πλήκτρο \"< >\" ;\n"
+#~ " - macintosh: πληκτρολόγια Macintosh που χρησιμοποιούν το καινούριο layer "
+#~ "εισόδου με το κωδικούς πλήκτρων για το\n"
+#~ "              Linux;\n"
+#~ " - macintosh_old: πληκτρολόγια Macintosh που δεν χρησιμοποιούν το "
+#~ "καινούριο layer εισόδου.\n"
+#~ " Με το σύνολο κανόνων \"sun\" :\n"
+#~ " - type4: πληλτρολόγια Sun Type4;\n"
+#~ " - type5: πληκτρολόγια Sun Type5."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Να γίνει προσπάθεια αυτόματης ανίχνευσης του υλικού οθόνης;"

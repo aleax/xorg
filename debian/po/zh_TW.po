@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
 "PO-Revision-Date: 2006-09-20 22:54+0800\n"
 "Last-Translator: Tetralet <tetralet@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
@@ -157,15 +157,14 @@ msgid ""
 "chosen."
 msgstr "為了讓 X Server 能正確控制鍵盤，您必須選擇一個 XKB 規則集。"
 
+# | msgid ""
+# | "Users of U.S. English keyboards should generally leave this entry blank."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
-msgstr ""
-"絕大部分鍵盤的使用者都應該在此輸入“xorg，但是 Sun Type 4 和 Type 5 鍵盤的使用"
-"者則應該輸入“sun。"
+#, fuzzy
+msgid "Users of most keyboards should enter \"xorg\"."
+msgstr "美語鍵盤的使用者通常應該在此欄留白。"
 
 #. Type: string
 #. Description
@@ -200,9 +199,26 @@ msgstr ""
 "為了讓 X Server 能正確控制鍵盤，您必須輸入一個鍵盤型號。可用的型號端看使用了"
 "哪種 XKB 規則集。"
 
+# | msgid ""
+# | " With the \"xorg\" rule set:\n"
+# | " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+# | "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+# | " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+# | "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+# | " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+# | "              keycodes;\n"
+# | " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+# | " With the \"sun\" rule set:\n"
+# | " - type4: Sun Type4 keyboards;\n"
+# | " - type5: Sun Type5 keyboards."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -215,8 +231,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -594,17 +609,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr "無法移除 /usr/X11R6/bin 目錄"
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -628,13 +639,42 @@ msgstr ""
 "本套件安裝程序失敗並將退出，以便能讓您完成上述工作。請在清除目錄後重新執行這"
 "個升級程序。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "絕大部分鍵盤的使用者都應該在此輸入“xorg，但是 Sun Type 4 和 Type 5 鍵盤的"
+#~ "使用者則應該輸入“sun。"
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " 搭配“xorg”規則集：\n"
+#~ " - pc101：傳統 101 鍵 IBM PC/AT 樣式鍵盤，常見於美國。沒"
+#~ "有“[Logo]”和“[Menu]          鍵；\n"
+#~ " - pc104：類似於 pc101 型號，但還包括了一些上面通常會印上 [Logo] 和 "
+#~ "[Menu]          符號的附加鍵；\n"
+#~ " - pc102：類似於 pc101，常見於歐洲。但包含了一個“< >”鍵；\n"
+#~ " - pc105：類似於 pc104，常見於歐洲。但包含了一個“< >”鍵；\n"
+#~ " - macintosh：使用新的輸入排列方式並搭配了 Linux 鍵碼的麥金塔鍵盤；\n"
+#~ " - macintosh_old：未使用新的輸入排列方式的麥金塔鍵盤；\n"
+#~ " 搭配 “sun”規則集：\n"
+#~ " - type4：Sun Type4 鍵盤；\n"
+#~ " - type5：Sun Type5 鍵盤。"
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "是否要試著自動偵測顯示裝置？"

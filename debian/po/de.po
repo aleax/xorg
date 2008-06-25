@@ -15,29 +15,18 @@
 # Andreas Metzler, 2002
 # Alwin Meschede <ameschede@gmx.de>, 2004, 2005.
 # Jens Seidel <jensseidel@users.sf.net>, 2006, 2007.
+# Helge Kreutzmann <debian@helgefjell.de>, 2008.
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
 #
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
-#
-#    Developers do not need to manually edit POT or PO files.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: xorg-x11_6.8.2.dfsg.1-2_de\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
-"PO-Revision-Date: 2007-04-21 01:07+0200\n"
-"Last-Translator: Jens Seidel <jensseidel@users.sf.net>\n"
+"Project-Id-Version: xorg 1:7.3+12\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
+"PO-Revision-Date: 2008-06-09 18:54+0200\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,12 +170,8 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
-msgstr ""
-"Meistens ist »xorg« korrekt. Benutzer von Sun Typ 4 und Type 5 Tastaturen "
-"sollten aber »sun« eingeben."
+msgid "Users of most keyboards should enter \"xorg\"."
+msgstr "Benutzer der meisten Tastaturen sollten »xorg« eingeben."
 
 #. Type: string
 #. Description
@@ -238,8 +223,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -257,7 +241,6 @@ msgstr ""
 "              Linux-Tastaturcodes verwenden;\n"
 " - macintosh_old: Macintosh-Tastaturen, die die neue Eingabeschicht\n"
 "                  nicht verwenden;\n"
-" Mit dem Regelsatz »sun«:\n"
 " - type4: Sun Type4-Tastaturen;\n"
 " - type5: Sun Type5-Tastaturen."
 
@@ -653,18 +636,14 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr "Kann das Verzeichnis /usr/X11R6/bin nicht entfernen"
 
 # FIXME: Check first sentence
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -692,13 +671,47 @@ msgstr ""
 "tun können. Bitte starten Sie die Aktualisierung neu, nachdem Sie das "
 "Verzeichnis geleert haben."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "Meistens ist »xorg« korrekt. Benutzer von Sun Typ 4 und Type 5 Tastaturen "
+#~ "sollten aber »sun« eingeben."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Mit dem Regelsatz »xorg«:\n"
+#~ " - pc101: traditionelle IBM PC/AT-artige Tastatur mit 101 Tasten,\n"
+#~ "          gebräuchlich in den Vereinigten Staaten. Sie hat keine Logo-\n"
+#~ "          oder Menütasten;\n"
+#~ " - pc104: ähnlich zum pc101-Modell mit zusätzlichen Tasten, meist mit\n"
+#~ "          einem Logo- und Menüsymbol versehen;\n"
+#~ " - pc102: ähnlich zu pc101 und oft in Europa gefunden. Enthält eine\n"
+#~ "          »< >«-Taste;\n"
+#~ " - pc105: ähnlich zu pc104 und oft in Europa gefunden. Enthält eine\n"
+#~ "          »< >«-Taste;\n"
+#~ " - macintosh: Macintosh-Tastaturen, die die neue Eingabeschicht mit\n"
+#~ "              Linux-Tastaturcodes verwenden;\n"
+#~ " - macintosh_old: Macintosh-Tastaturen, die die neue Eingabeschicht\n"
+#~ "                  nicht verwenden;\n"
+#~ " Mit dem Regelsatz »sun«:\n"
+#~ " - type4: Sun Type4-Tastaturen;\n"
+#~ " - type5: Sun Type5-Tastaturen."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Versuchen, die Grafikkarte automatisch zu erkennen?"

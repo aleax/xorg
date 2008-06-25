@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer xserver-xorg\n"
-"Report-Msgid-Bugs-To: Source: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-04-15 17:12+0200\n"
+"Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
+"POT-Creation-Date: 2008-06-24 18:55-0700\n"
 "PO-Revision-Date: 2006-09-27 11:15+0300\n"
 "Last-Translator: Tapio Lehtonen <tale@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -150,15 +150,15 @@ msgstr ""
 "Jokin XKB-näppäinasettelu on valittava, jotta X-palvelin käsittelisi "
 "näppäimistöä oikein."
 
+# | msgid ""
+# | "Users of U.S. English keyboards should generally leave this entry blank."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
+#, fuzzy
+msgid "Users of most keyboards should enter \"xorg\"."
 msgstr ""
-"Useimmille näppäimistöille pitäisi valita \"xorg\".  Sun Type 4 ja Type 5 -"
-"näppäimistöille pitäisi kuitenkin valita \"sun\"."
+"Jos näppäimistö on U.S. English, olisi tämä kohta yleensä jätettävä tyhjäksi."
 
 #. Type: string
 #. Description
@@ -195,9 +195,26 @@ msgstr ""
 "näppäimistöä oikein. Käytettävissä olevat näppäimistömallit riippuvat "
 "käytössä olevasta XKB-näppäinasettelusta."
 
+# | msgid ""
+# | " With the \"xorg\" rule set:\n"
+# | " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+# | "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+# | " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+# | "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+# | " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+# | "key;\n"
+# | " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+# | "              keycodes;\n"
+# | " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+# | " With the \"sun\" rule set:\n"
+# | " - type4: Sun Type4 keyboards;\n"
+# | " - type5: Sun Type5 keyboards."
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
+#, fuzzy
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -210,8 +227,7 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
@@ -613,17 +629,13 @@ msgstr ""
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
 msgstr "Hakemistoa /usr/X11R6/bin ei voi poistaa"
 
 #. Type: note
 #. Description
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001 ../x11-common.templates:8001
+#: ../x11-common.templates:7001
 msgid ""
 "This upgrade requires that the /usr/X11R6/bin directory be removed and "
 "replaced with a symlink. An attempt was made to do so, but it failed, most "
@@ -648,13 +660,47 @@ msgstr ""
 "Tämän paketin asennus päättyy nyt virheeseen, jotta tuo voidaan tehdä. "
 "Käynnistä päivitys uudestaan, kun hakemisto on siivottu."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:8001
-msgid ""
-"This package installation will now rename /usr/X11R6/bin to  /usr/X11R6/bin-"
-"move-by-upgrade and continue the upgrade."
-msgstr ""
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr ""
+#~ "Useimmille näppäimistöille pitäisi valita \"xorg\".  Sun Type 4 ja Type 5 "
+#~ "-näppäimistöille pitäisi kuitenkin valita \"sun\"."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~ " With the \"sun\" rule set:\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ "Käytössä on \"xorg\" näppäinasettelu:\n"
+#~ " - pc101: perinteinen IBM PC/AT -tyylinen 101-näppäiminen näppäimistö,\n"
+#~ "          yleinen Yhdysvalloissa. Ei ole \"logo\"- tai \"valikko\"-"
+#~ "näppäimiä;\n"
+#~ " - pc104: samantapainen kuin pc101-malli, mutta lisänäppäimiä, joissa\n"
+#~ "          tavallisesti \"logo\"- ja \"valikko\"-symbolit;\n"
+#~ " - pc102: samantapainen kuin pc101, yleinen Euroopassa. Mukana \"< >\" -"
+#~ "näppäin;\n"
+#~ " - pc105: samantapainen kuin pc104, yleinen Euroopassa. Mukana \"< >\" -"
+#~ "näppäin;\n"
+#~ " - macintosh: Macintosh-näppäimistö, joka käyttää uutta syöttökerrosta\n"
+#~ "              Linuxin näppäinkoodeilla;\n"
+#~ " - macintosh_old: Macintosh-näppäimistö, joka ei käytä uutta "
+#~ "syöttökerrosta.\n"
+#~ " Käytössä \"sun\" näppäinasettelu:\n"
+#~ " - type4: Sun Type4 -näppäimistöt;\n"
+#~ " - type5: Sun Type5 -näppäimistöt."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Yritetäänkö tunnistaa näyttölaitteisto automaattisesti?"

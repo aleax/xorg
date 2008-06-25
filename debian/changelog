@@ -1,12 +1,173 @@
-xorg (1:7.3+10ubuntu12) intrepid; urgency=low
+xorg (1:7.3+12ubuntu1) intrepid; urgency=low
+  
+  * Merge from debian unstable, remaining changes:
+      - apport/xorg-server-core.py, x11-common.install:
+        + apport hook for xorg-server crashes
+      - control:
+        + Change maintainer address.
+        + xserver-xorg: Recommends displayconfig-gtk and laptop-detect
+        + Move xorg-docs Recommends to Suggests, because xorg-docs is in
+          universe.
+        + Add a dependency to xserver-xorg for each binary built to save
+          disk/livecd space.
+        + Add xqbiff (<= 0.75-4) to the list of x11-common Conflicts.
+        + Add replaces for xinit since we now ship Xsession from x11-common.
+          Ditto for xrgb as we ship rgb.txt in x11-common.
+        + Add an epoch to the "x11-common Replaces xrgb" version.
+          (LP: #212672)
+        + xserver-xorg needs to Depend on mdetect instead of Recommends.
+      - local/Failsafe/*, x11-common.install:
+        + Bulletproof-X.
+      - local/Xsession:
+        + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+          0.5MiB to avoid having it grow indefinitively. (This does not happen
+          with gdm anyway since gdm cleans the file on login).
+      - local/dexconf:
+        + Added support for vmmouse_detect (if present) to override mouse
+          driver with vmware. Depends on mdetect.
+          (LP: #216667, #216276, #197337)
+        + Add extra bits for ps3fb xorg.conf. (LP: #230091)
+        + Add CorePointer to the default mouse section, otherwise
+          the server defaults are used. (LP: #197337)
+        + dexconf: Bring Device back to the Screen-section, nvidia-settings
+          and aticonfig need that. (LP: #181405)
+        + Add customizations to detect if running in KVM environment
+          (CPU = "QEMU") and specify the H/V rates, DefaultDepth, etc.
+      - local/xserver-wrapper.c:
+        + Stop handling -config specifically in the wrapper, as Xorg now
+          handles this itself.
+      - rules:
+        + Symlink the doc directories to xserver-xorg, explicitly remove the
+          doc directories on upgrade for the now symlinked doc
+          directories, to save disk/livecd space.
+      - scripts/vars.amd64:
+        + Add vmmouse.
+      - scripts/vars.i386:
+        + Add vmmouse.
+        + Add xserver-xorg-video-psb.
+      - scripts/vars.lpia:
+        + Copied from vars.i386.
+      - x11-common.install:
+        + Add installation of apport hooks and bulletproof-X scripts
+      - xserver-xorg.postinst.in:
+        + Skip video card autodetection if xforcevesa is set.
+    * control:
+      - Drop Ubuntu addition of xserver-xorg-driver-all (obsolete)
+    * local/dexconf:
+      + Drop synaptics section and ServerLayout line to re-enable
+        input-hotplug (Reverts LP: #173411)
+    * x11-common.preinst.in, x11-common.templates:
+      + Drop ubuntu addition to not fail if /usr/X11R6/bin is not empty
+        but move it away instead and tell the user about it 
+        since it was only needed for Dapper->Hardy upgrades. (LP: 217724)
 
-  * scripts/vars.i386:
-    - xserver-xorg-video-all should stop depending on the transitional
-      -amd and instead depend on -geode. 
-  * local/dexconf:
-    - Remove qemu/kvm quirking.  (LP: #237164)
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 24 Jun 2008 19:36:06 -0700
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 03 Jun 2008 12:53:55 -0700
+xorg (1:7.3+12) unstable; urgency=low
+
+  [ Debconf translations]
+  * Belarusian. Closes: #483697
+  * French
+  * Basque. Closes: #485293
+  * Galician. Closes: #485292
+  * Tamil. Closes: #485376
+  * Thai. Closes: #485385
+  * Simplified Chinese. Closes: #485389
+  * Hebrew. Closes: #485390
+  * Bulgarian. Closes: #485391
+  * Catalan. Closes: #485394
+  * Vietnamese. Closes: #485404
+  * Belarusian. Closes: #485405
+  * German. Closes: #485461
+  * Portuguese. Closes: #485486
+  * Indonesian. Closes: #485746
+  * Arabic. Closes: #485865
+  * Russian. Closes: #485976
+  * Slovak. Closes: #486186
+  * Hungarian. Closes: #486189
+  * Korean. Closes: #486279
+  * Japanese. Closes: #486281
+  * Brazilian Portuguese. Closes: #486294
+  * Czech. Closes: #486358, #486456, #486472
+  * Dutch. Closes: #486459
+  * Turkish. Closes: #486462
+
+  [ Julien Cristau ]
+  * Don't recommend the 'sun' xkb rule set, they're handled by 'xorg' now,
+    with the type4 and type5 models (closes: #483946).  Thanks, Bernhard R.
+    Link!
+  * Re-add the xutils-dev dependency to xutils.  There are still too many
+    packages build-depending on xutils and expecting imake to be available.
+    We'll drop it again after the lenny release (closes: #485184).
+  * Debconf translations:
+  * xserver-xorg-video-all: don't depend on the via driver on non-x86
+    architectures; change the via dependency on x86 to openchrome | via.
+
+  [ Brice Goglin ]
+  * Add SH4 support script, thanks Nobuhiro Iwamatsu, closes: #473582.
+
+  [ Christian Perrier ]
+  * Romanian. Closes: #486636
+
+ -- Brice Goglin <bgoglin@debian.org>  Tue, 17 Jun 2008 21:56:20 +0200
+
+xorg (1:7.3+11) unstable; urgency=low
+
+  [ David Nusinow ]
+  * Add radeonhd to the -video-all depends
+
+  [ Brice Goglin ]
+  * Remove $named from the Should-Start/Stop LSB dependency info of the
+    x11-common init script, closes: #463630.
+  * Remove $remote_fs from Required-Start/Stop LSB dependency info of
+    the x11-common init script, closes: #470940.
+  * Remove the dependency of xutils against xutils-dev, it was only useful
+    for transitional purpose in Etch, closes: #418123.
+  * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
+  * Add xutils preinst to drop obsolete /etc/X11/rstart/ files,
+    closes: #382360.
+
+  [ David Nusinow ]
+  * Ship the X server wrapper in xserver-xorg rather than x11-common. This
+    avoids having an unnecessary SUID binary on some systems. Thanks Stephen
+    Frost. closes: #400632
+    + Have x11-common conflict with older xserver-xorg and vice-versa. Also
+      have xserver-xorg replace older x11-common
+    + Set x11-common to arch: all and xserver-xorg to arch: any
+    + Move ${shlib:Depends} from x11-common to xserver-xorg
+
+  [ Julien Cristau ]
+  * Use root:root instead of 0:0 in chown calls in x11-common's init script.
+    This should prevent remote nss lookups and timeouts in some environments.
+    Closes: #407788.
+  * Add Kurdish debconf translation from Erdal Ronahi (closes: #477492).
+  * Move dexconf and its manpage from x11-common to xserver-xorg.
+  * Remove pre-dependency on x11-common from xserver-xorg.
+  * Drop the xlibs-data and xlibs-static-dev transitional packages.  These
+    were kept around for the sarge->etch upgrade, so it's past time they went
+    away (closes: #477547, #477550).
+  * xserver-xorg-video-newport is mips-only, don't depend on it on other
+    architectures.
+  * dexconf, xserver-xorg.postinst: the emulate3buttons question is gone,
+    don't ask about it and don't add the corresponding option in the generated
+    xorg.conf.  The option is on by default, and the only thing we used to do
+    in dexconf is to explicitly enable it anyway.
+  * Run dh_installman in binary-indep as well, as x11-common is now built
+    there.
+  * Use the XSF shell library to remove obsolete conffiles.  It seems less
+    fragile than the version recommended on
+    http://wiki.debian.org/DpkgConffileHandling and should handle failed
+    upgrades.
+
+  [ Christian Perrier ]
+  * Debconf translations:
+    - Indonesian added. Closes: #469972
+    - Polish. Closes: #478035
+
+  [ Raphael Geissert ]
+  * Fix bashism in xserver-xorg postinst script, closes: #473701.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 30 May 2008 15:15:33 +0200
 
 xorg (1:7.3+10ubuntu11) intrepid; urgency=low
 
@@ -1482,6 +1643,7 @@ xorg (1:7.1.0-17) unstable; urgency=high
     by Lennart Sorensen.
 
  -- Julien Cristau <jcristau@debian.org>  Fri, 06 Apr 2007 01:45:17 +0200
+
 xorg (1:7.1.0-16) unstable; urgency=high
 
   [ Christian Perrier ]
@@ -3002,3 +3164,4 @@ xorg (7.0.0-0ubuntu1) dapper; urgency=low
   CAN-2004-0106, CAN-2003-0690, CAN-2003-0730, CAN-2003-0690, CAN-2003-0063,
   CAN-2003-0071, CAN-2004-0093, CAN-2004-0094, CAN-2004-0093, CAN-2004-0094.
   These should all be moved to their respective source packages. -daniels
+
