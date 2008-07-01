@@ -1,3 +1,104 @@
+xorg (1:7.4~0ubuntu1) UNRELEASED; urgency=low
+  
+  [ Bryce Harrington ]
+  * Merge from debian unstable, remaining changes:
+    - apport/xorg-server-core.py, x11-common.install:
+      + apport hook for xorg-server crashes
+    - control:
+      + Change maintainer address.
+      + xserver-xorg: Recommends displayconfig-gtk and laptop-detect
+      + Move xorg-docs Recommends to Suggests, because xorg-docs is in
+        universe.
+      + Add a dependency to x11-common for each binary built to save
+        disk/livecd space.
+      + Add xqbiff (<= 0.75-4) to the list of x11-common Conflicts.
+      + Add replaces for xinit since we now ship Xsession from x11-common.
+      + xserver-xorg needs to Depend on mdetect instead of Recommends.
+    - local/Failsafe/*, x11-common.install:
+      + Bulletproof-X.
+    - local/Xsession:
+      + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+        0.5MiB to avoid having it grow indefinitively. (This does not happen
+        with gdm anyway since gdm cleans the file on login).
+    - local/dexconf:
+      + Added support for vmmouse_detect (if present) to override mouse
+        driver with vmware. Depends on mdetect.
+        (LP: #216667, #216276, #197337)
+      + Add extra bits for ps3fb xorg.conf. (LP: #230091)
+      + Add CorePointer to the default mouse section, otherwise
+        the server defaults are used. (LP: #197337)
+      + dexconf: Bring Device back to the Screen-section, nvidia-settings
+        and aticonfig need that. (LP: #181405)
+      + Add customizations to detect if running in KVM environment
+        (CPU = "QEMU") and specify the H/V rates, DefaultDepth, etc.
+    - local/xserver-wrapper.c:
+      + Stop handling -config specifically in the wrapper, as Xorg now
+        handles this itself.
+    - rules:
+      + Symlink the doc directories to x11-common, explicitly remove the
+        doc directories on upgrade for the now symlinked doc
+        directories, to save disk/livecd space.
+    - scripts/vars.amd64:
+      + Add vmmouse.
+    - scripts/vars.i386:
+      + Add vmmouse.
+      + Add xserver-xorg-video-psb.
+    - scripts/vars.lpia:
+      + Copied from vars.i386.
+    - x11-common.install:
+      + Add installation of apport hooks and bulletproof-X scripts
+    - xserver-xorg.postinst.in:
+      + Skip video card autodetection if xforcevesa is set.
+  * control:
+    - Drop Ubuntu addition of xserver-xorg-driver-all (obsolete)
+  * local/dexconf:
+    + Drop synaptics section and ServerLayout line to re-enable
+      input-hotplug (Reverts LP: #173411)
+  * x11-common.preinst.in, x11-common.templates:
+    + Drop ubuntu addition to not fail if /usr/X11R6/bin is not empty
+      but move it away instead and tell the user about it 
+      since it was only needed for Dapper->Hardy upgrades. (LP: 217724)
+
+  [ Timo Aaltonen ]
+  * control:
+    - Drop x11-common Replaces on xrgb, since rgb.txt is obsolete with the
+      new xserver and thus not shipped anymore.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 01 Jul 2008 22:12:29 +0300
+
+xorg (1:7.4~1) UNRELEASED; urgency=low
+
+  [ Debconf translations]
+  * Malayalam. Closes: #486830
+  * Italian. Closes: #487877
+  * Swedish. Closes: #488550
+  * Dzongkha.
+
+  [ Julien Cristau ]
+  * X.Org 7.4 release candidate
+  * Drop the vga, glint and dummy drivers from xserver-xorg-video-all Depends
+    (except dummy on s390).
+  * Bump videoabi to 2.9, inputabi to 2.1.
+  * xserver 1.5 doesn't use an external rgb database, don't bother installing
+    it.
+  * Move dexconf from x11-common to xserver-xorg.
+  * Remove pre-dependency on x11-common from xserver-xorg.
+  * Bump x11-common's conflict with xserver-xorg to << 1:7.4~.
+
+  [ Brice Goglin ]
+  * Remove obsolete xserver-xorg startup links, closes: #487453.
+  * Remove the dependency of xutils against xutils-dev, it was only useful
+    for transitional purpose in Etch, closes: #418123.
+  * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
+  * Add xutils preinst to drop obsolete /etc/X11/rstart/ files,
+    closes: #382360.
+
+  [ Timo Aaltonen ]
+  * Split the variables in vars.* files to span multiple lines. Makes
+    them a lot easier to read and merge.
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 01 Jul 2008 21:42:13 +0300
+
 xorg (1:7.3+12ubuntu2) intrepid; urgency=low
 
   * scripts/vars.i386:  Add xserver-xorg-video-geode
@@ -97,6 +198,10 @@ xorg (1:7.3+12) unstable; urgency=low
   * Czech. Closes: #486358, #486456, #486472
   * Dutch. Closes: #486459
   * Turkish. Closes: #486462
+<<<<<<< HEAD:debian/changelog
+=======
+  * Romanian. Closes: #486636
+>>>>>>> e1b955ed653e7d5d926448fef4369482b6648813:debian/changelog
 
   [ Julien Cristau ]
   * Don't recommend the 'sun' xkb rule set, they're handled by 'xorg' now,
@@ -105,16 +210,22 @@ xorg (1:7.3+12) unstable; urgency=low
   * Re-add the xutils-dev dependency to xutils.  There are still too many
     packages build-depending on xutils and expecting imake to be available.
     We'll drop it again after the lenny release (closes: #485184).
+<<<<<<< HEAD:debian/changelog
   * Debconf translations:
+=======
+>>>>>>> e1b955ed653e7d5d926448fef4369482b6648813:debian/changelog
   * xserver-xorg-video-all: don't depend on the via driver on non-x86
     architectures; change the via dependency on x86 to openchrome | via.
 
   [ Brice Goglin ]
   * Add SH4 support script, thanks Nobuhiro Iwamatsu, closes: #473582.
 
+<<<<<<< HEAD:debian/changelog
   [ Christian Perrier ]
   * Romanian. Closes: #486636
 
+=======
+>>>>>>> e1b955ed653e7d5d926448fef4369482b6648813:debian/changelog
  -- Brice Goglin <bgoglin@debian.org>  Tue, 17 Jun 2008 21:56:20 +0200
 
 xorg (1:7.3+11) unstable; urgency=low
@@ -175,6 +286,7 @@ xorg (1:7.3+11) unstable; urgency=low
 
  -- Julien Cristau <jcristau@debian.org>  Fri, 30 May 2008 15:15:33 +0200
 
+<<<<<<< HEAD:debian/changelog
 xorg (1:7.3+10ubuntu11) intrepid; urgency=low
 
   * dexconf:
@@ -302,6 +414,8 @@ xorg (1:7.3+10ubuntu1) hardy; urgency=low
 
  -- Timo Aaltonen <tepsipakki@ubuntu.com>  Mon, 07 Jan 2008 18:10:18 +0200
 
+=======
+>>>>>>> e1b955ed653e7d5d926448fef4369482b6648813:debian/changelog
 xorg (1:7.3+10) unstable; urgency=low
 
   * Just write a default video card identifier
