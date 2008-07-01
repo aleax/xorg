@@ -93,9 +93,13 @@ binary-indep: build install
 	dh_installdirs
 	dh_installdocs
 	dh_installchangelogs
+	dh_installinit -px11-common -u'start 70 S .'
+	dh_installman
 	dh_link
 	dh_compress
 	dh_fixperms
+	chown root:root debian/x11-common/etc/X11/Xsession
+	chmod 755 debian/x11-common/etc/X11/Xsession
 	dh_installdeb
 	dh_gencontrol -- -VF:XServer-Xorg-Detect-Depends=$(XSERVER_XORG_DETECT_DEPENDS)
 	dh_md5sums
@@ -111,14 +115,11 @@ binary-arch: build install
 	dh_installdirs
 	dh_installdocs
 	dh_installman
-	dh_installinit -px11-common -u'start 70 S .'
 	dh_installchangelogs
 	dh_link
 	dh_strip
 	dh_compress
 	dh_fixperms
-	chown root:root debian/x11-common/etc/X11/Xsession
-	chmod 755 debian/x11-common/etc/X11/Xsession
 	chown root:root debian/xserver-xorg/usr/bin/X
 	chmod ug+s debian/xserver-xorg/usr/bin/X
 	dh_installdeb

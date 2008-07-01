@@ -10,6 +10,7 @@
 # Luca Monducci, 2004
 # Danilo Piazzalunga, 2004-2005
 # Stefano Canepa, 2006, 2007
+# Milo Casagrande, 2008
 #
 # This file is distributed under the same license as the xorg-x11 package.
 # Please see debian/copyright.
@@ -30,9 +31,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11 6.8.2.dfsg.1-10\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-01-05 19:04-0500\n"
-"PO-Revision-Date: 2007-04-25 21:37+0200\n"
-"Last-Translator: Stefano Canepa <sc@linux.it>\n"
+"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"PO-Revision-Date: 2008-06-17 22:22+0200\n"
+"Last-Translator: Milo Casagrande <milo_casagrande@yahoo.it>\n"
 "Language-Team: debian-l10n-italian <debian-l10n-italian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,9 +51,7 @@ msgstr "Driver per il server X:"
 msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
-msgstr ""
-"Perché l'interfaccia grafica del sistema X Window funzioni correttamente, è "
-"necessario scegliere un driver della scheda video per il server X."
+msgstr "Affinché l'interfaccia grafica del sistema X Window funzioni correttamente, è necessario scegliere un driver della scheda video per il server X."
 
 #. Type: select
 #. Description
@@ -108,10 +107,7 @@ msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
-msgstr ""
-"Gli utenti di macchine PowerPC o di qualsiasi computer con dispositivi video "
-"multipli devono specificare il BusID della scheda video in un formato "
-"specifico, diverso a seconda del tipo di bus."
+msgstr "Gli utenti di computer PowerPC o di qualsiasi computer con molteplici dispositivi video devono specificare il BusID della scheda video in un formato specifico basato sul tipo di bus."
 
 #. Type: string
 #. Description
@@ -137,9 +133,7 @@ msgstr ""
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"Si può usare il comando «lspci» per determinare la collocazione sul bus della "
-"scheda video PCI, AGP o PCI-Express."
+msgstr "È possibile usare il comando «lspci» per determinare il bus della scheda video PCI, AGP o PCI-Express."
 
 #. Type: string
 #. Description
@@ -169,19 +163,13 @@ msgstr "Set di regole XKB da usare:"
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
-msgstr ""
-"Perché il server X funzioni correttamente, occorre selezionare il set di "
-"regole XKB."
+msgstr "Affinché il server X funzioni correttamente, occorre selezionare il set di regole XKB."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-msgid ""
-"Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and Type "
-"5 keyboards, however, should enter \"sun\"."
-msgstr ""
-"La scelta adatta alla maggior parte delle tastiere è «xorg»; invece per le "
-"tastiere Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
+msgid "Users of most keyboards should enter \"xorg\"."
+msgstr "La scelta adatta alla maggior parte delle tastiere è «xorg»."
 
 #. Type: string
 #. Description
@@ -213,10 +201,7 @@ msgstr "Modello della tastiera:"
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Perché il server X gestisca correttamente la tastiera, deve venire inserito "
-"un modello di tastiera. I modelli disponibili dipendono dal set di regole "
-"XKB è in uso."
+msgstr "Affinché il server X gestisca correttamente la tastiera, deve essere inserito un modello di tastiera. I modelli disponibili dipendono dal set di regole XKB in uso."
 
 #. Type: string
 #. Description
@@ -233,23 +218,20 @@ msgid ""
 "key;\n"
 " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
 "              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-" With the \"sun\" rule set:\n"
+" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
 "Con il set di regole \"xorg\":\n"
 " - pc101: tastiera stile IBM PC/AT tradizionale con 101 tasti, comune negli\n"
-"          Stati Uniti.  Non ha i tasti \"logo\" o \"menu\";\n"
+"          Stati Uniti. Non ha i tasti \"logo\" o \"menu\";\n"
 " - pc104: simile al modello pc101, con tasti addizionali, normalmente\n"
-"          appesantita dal tasto \"logo\" e \" menu\";\n"
+"          appesantita dai tasti \"logo\" e \"menu\";\n"
 " - pc102: simile alla pc101 e comune in Europa. Include un tasto \"< >\";\n"
 " - pc105: simile alla pc104 e comune in Europa. Include un tasto \"< >\";\n"
 " - macintosh: tastiere Macintosh che usano il nuovo modello di input con i\n"
-"              codice dei tasti di Linux;\n"
-" - macintosh_old: tastiere Macintosh che non usano il nuovo modello di "
-"input.\n"
-"Con il set di regole \"sun\":\n"
+"              codici dei tasti di Linux;\n"
+" - macintosh_old: tastiere Macintosh che non usano il nuovo modello di input.\n"
 " - type4: tastiere Sun Type4;\n"
 " - type5: tastiere Sun Type5."
 
@@ -300,11 +282,7 @@ msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
 "were previously selected."
-msgstr ""
-"Per fare in modo che il server X gestisca correttamente la tastiera, si deve "
-"scegliere una disposizione di tastiera. Le disposizioni disponibili "
-"dipendono dal set di regole XKB e dal modello di tastiera scelti "
-"precedentemente."
+msgstr "Affinché il server X gestisca correttamente la tastiera, è necessario scegliere una disposizione della tastiera. Le disposizioni disponibili dipendono dal set di regole XKB e dal modello di tastiera scelti precedentemente."
 
 #. Type: string
 #. Description
@@ -328,8 +306,8 @@ msgid ""
 msgstr ""
 "Per le tastiere italiane, la scelta adatta è «it». Gli utenti di tastiere "
 "localizzate per altri paesi dovrebbero generalmente inserire il loro codice "
-"di nazione ISO 3166. Per esempio, gli Stati Uniti usano «us» e la Francia usa "
-"«fr»."
+"di nazione ISO 3166. Per esempio, gli Stati Uniti usano «us» e la Francia "
+"usa «fr»."
 
 #. Type: string
 #. Description
@@ -344,11 +322,7 @@ msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
-msgstr ""
-"Per fare in modo che il server X gestisca la tastiera come desiderato, è "
-"possibile selezionare una variante di tastiera. Le varianti disponibili "
-"dipendono da quale set di regole XKB, modello e disposizione sono stati "
-"scelti precedentemente."
+msgstr "Affinché il server X gestisca la tastiera come desiderato, è possibile selezionare una variante di tastiera. Le varianti disponibili dipendono da quale set di regole XKB, modello e disposizione sono stati scelti precedentemente."
 
 #. Type: string
 #. Description
@@ -357,10 +331,7 @@ msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Molte disposizioni della tastiera hanno un'opzione per trattare i tasti "
-"«morti» (ad es. i segni di accento o le dieresi) come tasti normali; se "
-"questo è il comportamento desiderato scegliere «nodeadkeys»."
+msgstr "Molte disposizioni della tastiera hanno un'opzione per trattare i tasti «morti» (per es. i segni di accento o le dieresi) come tasti normali; se questo è il comportamento desiderato scegliere «nodeadkeys»."
 
 #. Type: string
 #. Description
@@ -401,11 +372,7 @@ msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Perché il server X gestisca la tastiera come si desidera, si possono "
-"inserire opzioni per la tastiera. Le opzioni disponibili dipendono da quali "
-"regole XKB sono state scelte precedentemente. Non tutte le opzioni "
-"funzioneranno con ogni modello e disposizione della tastiera."
+msgstr "Affinché il server X gestisca la tastiera come desiderato, è possibile inserire delle opzioni per la tastiera. Le opzioni disponibili dipendono da quali regole XKB sono state scelte precedentemente. Non tutte le opzioni funzioneranno con ogni modello e disposizione della tastiera."
 
 #. Type: string
 #. Description
@@ -414,10 +381,7 @@ msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Per esempio, se si vuole che il tasto Caps Lock funzioni come un tasto "
-"Control addizionale, si può inserire «ctrl:nocaps»; se si vuole scambiare i "
-"tasti Caps Lock e Control sinistro, si può inserire «ctrl:swapcaps»."
+msgstr "Per esempio, per fare in modo che il tasto Bloc Maiusc funzioni come un tasto Control addizionale, bisogna inserire «ctrl:nocaps»; per scambiare i tasti Bloc Maiusc e Control sinistro, bisogna inserire «ctrl:swapcaps»."
 
 #. Type: string
 #. Description
@@ -428,12 +392,7 @@ msgid ""
 "having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
-msgstr ""
-"Un altro esempio: alcune persone preferiscono avere i tasti Meta disponibili "
-"sui tasti Alt della tastiera (questa è l'impostazione predefinita) invece "
-"altre persone preferiscono avere i tasti Meta sui tasti Windows o «logo». Se "
-"si preferisce usare i tasti Windows o logo come tasti Meta, si può inserire "
-"«altwin:meta_win»."
+msgstr "Un altro esempio: alcune persone preferiscono avere i tasti Meta disponibili sui tasti Alt della tastiera (questa è l'impostazione predefinita) mentre altre persone preferiscono avere i tasti Meta sui tasti Windows o «logo». Per poter usare i tasti Windows o logo come tasti Meta, bisogna inserire «altwin:meta_win»."
 
 #. Type: string
 #. Description
@@ -441,9 +400,7 @@ msgstr ""
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
-msgstr ""
-"Si posso combinare le opzioni separandole con una virgola, per esempio «ctrl,"
-"nocaps,altwin:meta_win»."
+msgstr "È possibile combinare le opzioni separandole con una virgola, per esempio «ctrl,nocaps,altwin:meta_win»."
 
 #. Type: string
 #. Description
@@ -483,7 +440,7 @@ msgstr "Caratteri virgolette non validi"
 #. Description
 #: ../xserver-xorg.templates:12001
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Le virgolette (\") non sono permesse nella risposta."
+msgstr "Le virgolette (\" o «») non sono permesse nella risposta."
 
 #. Type: note
 #. Description
@@ -510,10 +467,7 @@ msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
 "installer."
-msgstr ""
-"La disposizione predefinita della tastiera per il server Xorg sarà basata su "
-"una combinazione di lingua e disposizione della tastiera selezionata nel "
-"programma di installazione."
+msgstr "La disposizione predefinita della tastiera per il server Xorg sarà basata su una combinazione di lingua e disposizione della tastiera selezionate nel programma di installazione."
 
 #. Type: boolean
 #. Description
@@ -521,10 +475,7 @@ msgstr ""
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
-msgstr ""
-"Selezionare questa opzione se si desidera che la disposizione della tastiera "
-"sia scoperta nuovamente. Non selezionarla se si vuole mantenere l'attuale "
-"disposizione."
+msgstr "Selezionare questa opzione se si desidera che la disposizione della tastiera sia scoperta nuovamente, non selezionarla per mantenere l'attuale disposizione."
 
 #. Type: select
 #. Choices
@@ -560,20 +511,13 @@ msgid ""
 "what may happen if only root is permitted to start the X server.  A good "
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
-msgstr ""
-"Dato che il server X viene eseguito con i privilegi di super utente, può "
-"essere poco consigliabile, per ragioni di sicurezza, permettere a qualsiasi "
-"utente di eseguirlo. D'altra parte, se solo a root fosse permesso di avviare "
-"il server X, sarebbe necessario eseguire come root i programmi client X (e "
-"ciò sarebbe ancora peggio). Un buon compromesso consiste nel permettere che "
-"il server X possa essere avviato solo dagli utenti collegati ad una delle "
-"console virtuali."
+msgstr "Dato che il server X viene eseguito con i privilegi di super utente, può essere poco consigliabile, per ragioni di sicurezza, permettere a qualsiasi utente di eseguirlo. D'altra parte, se solo a root fosse permesso di avviare il server X, sarebbe necessario eseguire come root i programmi client X (e ciò sarebbe ancora peggio). Un buon compromesso consiste nel permettere che il server X possa essere avviato solo dagli utenti collegati a una delle console virtuali."
 
 #. Type: string
 #. Description
 #: ../x11-common.templates:4001
 msgid "Nice value for the X server:"
-msgstr "Valore di nice per il server X."
+msgstr "Valore di nice per il server X:"
 
 # NEW-TRANSLATION
 #. Type: string
@@ -604,10 +548,7 @@ msgid ""
 "Values outside the range of -10 to 0 are not recommended; too negative, and "
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
-msgstr ""
-"I valori fuori dalla gamma tra -10 e 0 non sono raccomandati; per uno troppo "
-"negativo, il server X interferirebbe con processi di sistema importanti. Per "
-"uno troppo positivo, il server X sarebbe lento e poco reattivo."
+msgstr "Valori al di fuori dal'intervallo tra -10 e 0 non sono raccomandati. Per uno troppo negativo, il server X interferirebbe con processi di sistema importanti, per uno troppo positivo, il server X sarebbe lento e poco reattivo."
 
 #. Type: note
 #. Description
@@ -637,13 +578,7 @@ msgid ""
 "installed after upgrade. If it is not installed and you require it, it is "
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
-msgstr ""
-"Alcuni utenti hanno riportato che durante l'aggiornamento all'attuale "
-"insieme di pacchetti, il loro pacchetto xserver non era più installato. Dato "
-"che non c'è una soluzione facile a questo problema, si prega di verificare "
-"che il pacchetto xserver-xorg sia ancora installato dopo l'aggiornamento. Se "
-"non è installato ed è necessario si raccomanda di installare il pacchetto "
-"xorg per essere sicuri di avere un setup di X completamente funzionante."
+msgstr "Alcuni utenti hanno riportato che durante l'aggiornamento all'attuale insieme di pacchetti, il loro pacchetto xserver non era più installato. Dato che non c'è una soluzione facile a questo problema, verificare che il pacchetto xserver-xorg sia ancora installato dopo l'aggiornamento. Se così non fosse ed è necessario, installare il pacchetto xorg per essere sicuri di avere una configurazione di X completamente funzionante."
 
 #. Type: note
 #. Description
@@ -660,13 +595,7 @@ msgid ""
 "likely because the directory is not yet empty. You must move the files that "
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Questo aggiornamento richiede che la directory /usr/X11R6/bin venga rimossa "
-"e sostituita da un link simbolico. È stato fatto un tentativo ma è fallito, "
-"molto probabilmente perché la directory non è vuota. Si prega di spostare i "
-"file che sono nella directory fuori da questa in modo che l'installazione "
-"possa essere completata. Se si vuole si possono spostare nuovamente i file "
-"dopo che il link simbolico è stato creato."
+msgstr "Questo aggiornamento richiede che la directory /usr/X11R6/bin venga rimossa e sostituita da un collegamento simbolico. È stato fatto un tentativo ma non è riuscito, molto probabilmente perché la directory non è vuota. Spostare i file che sono nella directory in modo che l'installazione possa essere completata. Una volta creato il collegamento simbolico è possibile spostare nuovamente i file."
 
 #. Type: note
 #. Description
@@ -675,9 +604,12 @@ msgid ""
 "This package installation will now fail and exit so that you can do this. "
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
-msgstr ""
-"L'installazione di questo pacchetto fallirà e uscirà in modo che si possa "
-"farlo. Eseguire nuovamente la procedura dopo aver ripulito la directory."
+msgstr "L'installazione di questo pacchetto sarà terminata in modo che si possa farlo. Eseguire nuovamente la procedura dopo aver ripulito la directory."
+
+#~ msgid ""
+#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
+#~ "Type 5 keyboards, however, should enter \"sun\"."
+#~ msgstr "La scelta adatta alla maggior parte delle tastiere è «xorg»; invece per le tastiere Sun Type 4 e Type 5 si dovrebbe comunque scegliere «sun»."
 
 #~ msgid "Attempt to autodetect video hardware?"
 #~ msgstr "Rilevare automaticamente l'hardware video?"
@@ -814,8 +746,8 @@ msgstr ""
 #~ "mode you wish to use (and that you know the monitor is capable of)."
 #~ msgstr ""
 #~ "L'opzione «medium» presenterà una lista di risoluzioni e frequenze di "
-#~ "refresh, come «800x600 @ 85Hz»; si dovrebbe scegliere la modalità migliore "
-#~ "che si vuole usare (e che si sa che il monitor può supportare)."
+#~ "refresh, come «800x600 @ 85Hz»; si dovrebbe scegliere la modalità "
+#~ "migliore che si vuole usare (e che si sa che il monitor può supportare)."
 
 #~ msgid ""
 #~ "The \"advanced\" option will let you specify the monitor's horizontal "
@@ -860,14 +792,14 @@ msgstr ""
 #~ "if in doubt, use the video mode recommended by the manufacturer of your "
 #~ "LCD."
 #~ msgstr ""
-#~ "Scegliere la «migliore» risoluzione e frequenza di refresh di cui si crede "
-#~ "capace il monitor: le risoluzioni e le frequenze di refresh più alte sono "
-#~ "considerate migliori. Se si usa un monitor CRT, se lo si desidera, è "
-#~ "perfettamente accettabile scegliere una modalità video «peggiore» del "
-#~ "meglio che il monitor è capace di fare. Anche gli utenti di display LCD "
-#~ "potrebbero essere in grado di farlo, ma solamente se sia il chipset video "
-#~ "che il driver lo supportano; se si hanno dei dubbi, usare la modalità "
-#~ "video raccomandata dal produttore del vostro LCD."
+#~ "Scegliere la «migliore» risoluzione e frequenza di refresh di cui si "
+#~ "crede capace il monitor: le risoluzioni e le frequenze di refresh più "
+#~ "alte sono considerate migliori. Se si usa un monitor CRT, se lo si "
+#~ "desidera, è perfettamente accettabile scegliere una modalità video "
+#~ "«peggiore» del meglio che il monitor è capace di fare. Anche gli utenti "
+#~ "di display LCD potrebbero essere in grado di farlo, ma solamente se sia "
+#~ "il chipset video che il driver lo supportano; se si hanno dei dubbi, "
+#~ "usare la modalità video raccomandata dal produttore del vostro LCD."
 
 #~ msgid "Generic Monitor"
 #~ msgstr "Monitor Generico"
@@ -952,7 +884,8 @@ msgstr ""
 #~ "sistema X Window può gestirli entrambi, è sufficiente scegliere 24 bit."
 
 #~ msgid "Write default Files section to configuration file?"
-#~ msgstr "Scrivere una sezione «Files» predefinita nel file di configurazione?"
+#~ msgstr ""
+#~ "Scrivere una sezione «Files» predefinita nel file di configurazione?"
 
 #~ msgid ""
 #~ "The Files section of the X server configuration file tells the X server "
@@ -1061,9 +994,9 @@ msgstr ""
 #~ "\"clicks\") are not yet supported with this configuration tool."
 #~ msgstr ""
 #~ "Notare che i tasti in eccesso a cinque (contando per la rotella due "
-#~ "tasti, uno per «su» e l'altro per «giù», e un terzo se la rotella funziona "
-#~ "anche da tasto) non sono ancora supportati da questo programma di "
-#~ "configurazione."
+#~ "tasti, uno per «su» e l'altro per «giù», e un terzo se la rotella "
+#~ "funziona anche da tasto) non sono ancora supportati da questo programma "
+#~ "di configurazione."
 
 #~ msgid "Attempt mouse device autodetection?"
 #~ msgstr "Tentare di rilevare automaticamente il mouse?"
