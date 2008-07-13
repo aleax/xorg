@@ -1005,7 +1005,7 @@ case "$1" in
       remove_conffile_commit "/etc/init.d/xserver-xorg"
     fi
     if dpkg --compare-versions "$2" lt-nl "1:7.3+13"; then
-      update-rc.d xserver-xorg remove
+      update-rc.d xserver-xorg remove || true
     fi
     ;;
 esac
