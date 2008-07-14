@@ -693,6 +693,7 @@ elif [ -n "$DOKBDETECT" ]; then
     br) XMAP="us"; VARIANT="intl"; MODEL="pc104";;
     br-abnt2) XMAP="br"; VARIANT="abnt2"; MODEL="abnt2";;
     by) XMAP="by";;
+    ca-multi) XMAP="ca"; VARIANT="multi";;
     cf) XMAP="ca"; VARIANT="fr";;
     croat) XMAP="hr";;
     cz-lat2) XMAP="cz";;
@@ -1004,7 +1005,7 @@ case "$1" in
       remove_conffile_commit "/etc/init.d/xserver-xorg"
     fi
     if dpkg --compare-versions "$2" lt-nl "1:7.3+13"; then
-      update-rc.d -f xserver-xorg remove
+      update-rc.d xserver-xorg remove || true
     fi
     ;;
 esac

@@ -1,11 +1,5 @@
 xorg (1:7.4~1) UNRELEASED; urgency=low
 
-  [ Debconf translations]
-  * Malayalam. Closes: #486830
-  * Italian. Closes: #487877
-  * Swedish. Closes: #488550
-  * Dzongkha.
-
   [ Julien Cristau ]
   * X.Org 7.4 release candidate
   * Drop the vga, glint and dummy drivers from xserver-xorg-video-all Depends
@@ -18,7 +12,6 @@ xorg (1:7.4~1) UNRELEASED; urgency=low
   * Bump x11-common's conflict with xserver-xorg to << 1:7.4~.
 
   [ Brice Goglin ]
-  * Remove obsolete xserver-xorg startup links, closes: #487453.
   * Remove the dependency of xutils against xutils-dev, it was only useful
     for transitional purpose in Etch, closes: #418123.
   * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
@@ -30,6 +23,30 @@ xorg (1:7.4~1) UNRELEASED; urgency=low
     them a lot easier to read and merge.
 
  -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 01 Jul 2008 21:42:13 +0300
+
+xorg (1:7.3+14) unstable; urgency=low
+
+  * Ignore errors from update-rc.d remove (closes: #490595).
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 13 Jul 2008 10:42:05 +0200
+
+xorg (1:7.3+13) unstable; urgency=low
+
+  [ Debconf translations]
+  * Malayalam. Closes: #486830
+  * Italian. Closes: #487877
+  * Swedish. Closes: #488550
+  * Dzongkha.
+  * Traditional Chinese. Closes: #486490
+
+  [ Brice Goglin ]
+  * Remove obsolete xserver-xorg startup links, closes: #487453.
+
+  [ Julien Cristau ]
+  * Map the ca-multi d-i keymap to XkbLayout "ca", XkbVariant "multi"
+    (closes: #466226).
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 12 Jul 2008 16:38:55 +0200
 
 xorg (1:7.3+12) unstable; urgency=low
 
