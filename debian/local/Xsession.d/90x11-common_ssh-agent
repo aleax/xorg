@@ -18,7 +18,7 @@ if grep -qs ^use-ssh-agent "$OPTIONFILE"; then
 fi
 
 if [ -n "$STARTSSH" ]; then
-  STARTUP="$SSHAGENT $SSHAGENTARGS $STARTUP"
+  STARTUP="$SSHAGENT $SSHAGENTARGS ${TMPDIR:+env TMPDIR=$TMPDIR} $STARTUP"
 fi
 
 # vim:set ai et sts=2 sw=2 tw=80:
