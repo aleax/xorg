@@ -104,12 +104,6 @@ if [ -n "$EARLYEXIT" ]; then
     exit 0
 fi
 
-if which laptop-detect >/dev/null 2>&1; then
-  if laptop-detect > /dev/null ; then
-    LAPTOP=true
-  fi
-fi
-
 DEXCONFTMPDIR=
 
 trap 'if [ -e "$DEXCONFTMPDIR/backup" ] && [ -n "$XF86CONFIG" ]; then \
@@ -309,16 +303,6 @@ SUBSECTION
 fi
 printf "EndSection\n" >&4
 
-### SERVERLAYOUT
-
-exec 4>"$DEXCONFTMPDIR/ServerLayout"
-cat >&4 <<SECTION
-Section "ServerLayout"
-	Identifier	"Default Layout"
-	Screen		"Default Screen"
-EndSection
-SECTION
-
 # Close file descriptor 4 before we delete temporary files
 exec 4<&-
 
@@ -334,7 +318,7 @@ umask 022
 
 SPACER=
 for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ServerLayout; do
+               Device Monitor Screen; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
