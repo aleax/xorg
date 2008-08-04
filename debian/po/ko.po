@@ -1,12 +1,13 @@
 # Sunjae Park <darehanl@gmail.com>, 2006.
+# Changwoo Ryu <cwryu@debian.org>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
 "POT-Creation-Date: 2008-06-08 22:20+0200\n"
-"PO-Revision-Date: 2008-06-14 18:00-0400\n"
-"Last-Translator: Sunjae Park <darehanl@gmail.com>\n"
+"PO-Revision-Date: 2008-07-20 12:34+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: Korean <debian-l10n-korean@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,14 +37,14 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
-"드라이버는 비디오카드나 칩셋 제작회사나, 특정 모델, 칩셋군 등에서 이름을 주"
-"로 따옵니다."
+"드라이버는 비디오카드나 칩셋 제조사나, 특정 모델, 칩셋군 등에서 이름을 주로 "
+"따옵니다."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:3001
 msgid "Use kernel framebuffer device interface?"
-msgstr "커널의 프레임버퍼 디바이스 인터페이스를 사용할까요?"
+msgstr "커널의 프레임버퍼 디바이스 인터페이스를 사용하시겠습니까?"
 
 #. Type: boolean
 #. Description
@@ -53,8 +54,8 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
-"X 서버는 비디오카드와 직접 통신하기보다 커널의 프레임버퍼를 통해 비디오 모드 "
-"변경 등의 작업을 일부 수행할 수 있습니다."
+"X 서버는 비디오카드와 직접 통신하지 않고 커널의 프레임버퍼를 통해 비디오 모"
+"드 변경 등의 일부 작업을 수행할 수 있습니다."
 
 #. Type: boolean
 #. Description
@@ -64,15 +65,15 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
-"이론적으로는 어느 쪽을 선택해도 상관없지만, 한 쪽만 동작하고 다른 쪽을 선택"
-"할 경우에는 동작하지 않는 경우도 있습니다. 이 옵션을 활성화하는 것이 안전할테"
-"지만, 문제가 발생할 경우에는 이 옵션을 끄셔도 됩니다."
+"이론상 둘 다 동작해야 하지만, 실제로는 한 쪽은 동작하고 한쪽은 동작하지 않는 "
+"경우가 발생합니다. 이 옵션을 활성화하는 것이 안전하지만, 문제가 발생한다면 "
+"이 옵션을 끄셔도 됩니다."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:4001
 msgid "Video card's bus identifier:"
-msgstr "비디오카드의 버스 식별자:"
+msgstr "비디오카드의 버스 ID:"
 
 #. Type: string
 #. Description
@@ -82,8 +83,8 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
-"PowerPC 사용자들과 비디오 장치를 여러 개 사용하는 사용자들은 버스별로 사용하"
-"는 정식 형식에 맞춰서 비디오카드의 BusID를 지정해야 합니다."
+"PowerPC 사용자 및 비디오 장치를 여러 개 사용하는 사용자는 버스별로 사용하는 "
+"정식 형식에 맞춰서 비디오카드의 버스 ID를 지정해야 합니다."
 
 #. Type: string
 #. Description
@@ -126,13 +127,13 @@ msgstr ""
 #. Description
 #: ../xserver-xorg.templates:5001
 msgid "Incorrect format for the bus identifier"
-msgstr "버스 식별자의 형식이 잘못되었습니다"
+msgstr "버스 ID의 형식이 잘못되었습니다"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
 msgid "XKB rule set to use:"
-msgstr "사용할 XKB 규칙셋:"
+msgstr "사용할 XKB 규칙 모음:"
 
 #. Type: string
 #. Description
@@ -141,7 +142,7 @@ msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
 msgstr ""
-"X 서버에서 키보드를 제대로 다루기 위해서는 XKB 규칙셋을 지정하셔야 합니다."
+"X 서버에서 키보드를 제대로 다루기 위해서는 XKB 규칙 모음을 지정하셔야 합니다."
 
 #. Type: string
 #. Description
@@ -157,9 +158,9 @@ msgid ""
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
-"고급 사용자들은 정의된 XKB 규칙셋을 아무거나 사용하셔도 됩니다. xkb-data 꾸러"
-"미를 풀었을 경우, /usr/share/X11/xkb/rules 디렉토리에 사용할 수 있는 규칙셋들"
-"을 찾아보실 수 있습니다."
+"고급 사용자는 정의된 XKB 규칙 모음을 아무거나 사용하셔도 됩니다. xkb-data 패"
+"키지를 풀었을 경우, /usr/share/X11/xkb/rules 디렉토리에 사용할 수 있는 규칙 "
+"셋을 찾아보실 수 있습니다."
 
 #. Type: string
 #. Description
@@ -181,7 +182,7 @@ msgid ""
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
 "X 서버가 키보드를 제대로 다루기 위해서는 키보드 모델을 입력하셔야 합니다. 사"
-"용할 수 있는 모델은 선택하신 XKB 규칙셋에 따라 달라집니다."
+"용할 수 있는 모델은 선택하신 XKB 규칙 모음에 따라 달라집니다."
 
 #. Type: string
 #. Description
@@ -202,17 +203,17 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
-"\"xorg\" 규칙셋을 사용할 경우:\n"
+"\"xorg\" 규칙 모음을 사용할 경우:\n"
 " - pc101: 키가 101개인 전통적인 IBM PC/AT 형식 키보드로, 미국에서 \n"
-"          널리 사용됩니다. \"로고\"가 있는 키나 \"메뉴\"키가 없습니다;\n"
+"          널리 사용됩니다. \"로고\"가 있는 키나 \"메뉴\"키가 없습니다.\n"
 " - pc104: pc101 모델과 비슷하지만 \"로고\" 심볼이나 \"메뉴\" 심볼이 \n"
-"          새겨진 키가 몇 개 더 있습니다;\n"
-" - pc102: pc101과 비슷하며 유럽에서 많이 사용합니다. \"< >\" 키가 있습니다;\n"
-" - pc105: pc104과 비슷하며 유럽에서 많이 사용합니다. \"< >\" 키가 있습니다;\n"
+"          새겨진 키가 몇 개 더 있습니다.\n"
+" - pc102: pc101과 비슷하며 유럽에서 많이 사용합니다. \"< >\" 키가 있습니다.\n"
+" - pc105: pc104과 비슷하며 유럽에서 많이 사용합니다. \"< >\" 키가 있습니다.\n"
 " - macintosh: 새로운 입력 레이어를 사용하는 매킨토시 키보드로, 리눅스 키 \n"
-"              코드를 사용합니다;\n"
+"              코드를 사용합니다.\n"
 " - macintosh_old: 새 입력 레이어를 사용하지 않는 매킨토시 키보드.\n"
-" - type4: Sun Type4 키보드;\n"
+" - type4: Sun Type4 키보드.\n"
 " - type5: Sun Type5 키보드."
 
 #. Type: string
@@ -224,7 +225,7 @@ msgid ""
 "above."
 msgstr ""
 "노트북용 키보드는 일반 키보드에 비해 키가 적은 경우가 많으므로, 노트북 사용자"
-"들은 위 중에서 가장 근접한 모델을 선택하시기 바랍니다."
+"는 위 중에서 가장 근접한 모델을 선택하시기 바랍니다."
 
 #. Type: string
 #. Description
@@ -234,9 +235,9 @@ msgid ""
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
-"고급 사용자들은 선택한 XKB 규칙셋에 맞는 키보드 모델을 아무거나 선택하실 수 "
-"있습니다. xkb-data 꾸러미를 풀었을 경우, /usr/share/X11/xkb/rules 디렉토리에 "
-"사용할 수 있는 규칙셋들을 찾아보실 수 있습니다."
+"고급 사용자는 선택한 XKB 규칙 모음에 맞는 키보드 모델을 아무거나 선택하실 수 "
+"있습니다. xkb-data 패키지를 풀었을 경우, /usr/share/X11/xkb/rules 디렉토리에 "
+"사용할 수 있는 규칙 셋을 찾아보실 수 있습니다."
 
 #. Type: string
 #. Description
@@ -245,8 +246,8 @@ msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"미국식 키보드를 사용하는 사용자들은 대부분 \"pc104\"를 입력하시면 됩니다. 다"
-"른 키보드를 사용하는 사용자들은 대부분 \"pc105\"를 입력하시면 됩니다."
+"미국식 키보드를 사용하는 사용자는 대부분 \"pc104\"를 입력하시면 됩니다. 다른 "
+"키보드를 사용하는 사용자는 대부분 \"pc105\"를 입력하시면 됩니다."
 
 #. Type: string
 #. Description
@@ -263,7 +264,7 @@ msgid ""
 "were previously selected."
 msgstr ""
 "X 서버가 키보드를 제대로 다루기 위해서는 키보드 구성을 입력하셔야 합니다. 사"
-"용할 수 있는 구성은 선택하신 XKB 규칙셋과 키보드 모델에 따라 달라집니다."
+"용할 수 있는 구성은 선택하신 XKB 규칙 모음과 키보드 모델에 따라 달라집니다."
 
 #. Type: string
 #. Description
@@ -273,9 +274,9 @@ msgid ""
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"고급 사용자들은 선택한 XKB 규칙셋에 맞는 키보드 구성을 아무거나 선택하실 수 "
-"있습니다. xkb-data 꾸러미를 풀었을 경우, /usr/share/X11/xkb/rules 디렉토리에 "
-"사용할 수 있는 규칙셋들을 찾아보실 수 있습니다."
+"고급 사용자는 선택한 XKB 규칙 모음에 맞는 키보드 구성을 아무거나 선택하실 수 "
+"있습니다. xkb-data 패키지를 풀었을 경우, /usr/share/X11/xkb/rules 디렉토리에 "
+"사용할 수 있는 규칙 셋은 찾아보실 수 있습니다."
 
 #. Type: string
 #. Description
@@ -285,9 +286,9 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"미국식 키보드를 사용하는 사용자들은 대부분 \"us\"을 입력하시면 됩니다. 자국"
-"에 맞는 키보드가 있는 경우에는 대부분 ISO 3166 국가 코드를 입력하시면 됩니"
-"다. 예를 들어 프랑스는 \"fr\", 독일은 \"de\"를 사용합니다."
+"미국식 키보드를 사용하는 사용자는 대부분 \"us\"을 입력하시면 됩니다. 자국에 "
+"맞는 키보드가 있는 경우에는 대부분 ISO 3166 국가 코드를 입력하시면 됩니다. 예"
+"를 들어 프랑스는 \"fr\", 독일은 \"de\"를 사용합니다."
 
 #. Type: string
 #. Description
@@ -304,8 +305,8 @@ msgid ""
 "layout were previously selected."
 msgstr ""
 "X 서버가 키보드를 제대로 다루기 위해서는 키보드 변종을 입력해야할 필요가 있기"
-"도 합니다. 사용할 수 있는 변종은 선택하신 XKB 규칙셋과 모델, 구성에 따라 달라"
-"집니다."
+"도 합니다. 사용할 수 있는 변종은 선택하신 XKB 규칙 모음과 모델, 구성에 따라 "
+"달라집니다."
 
 #. Type: string
 #. Description
@@ -316,7 +317,7 @@ msgid ""
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
 "띄움 없는 액센트마크나 분음기호 등의 데드키를 일반적인 띄움키로 다루도록하는 "
-"옵션을 지원하는 키보드구성들이 있으며, 이를 사용하고자 한다면 \"deadkeys\"를 "
+"옵션을 지원하는 키보드 구성이 있으며, 이를 사용하고자 한다면 \"deadkeys\"를 "
 "입력하십시오."
 
 #. Type: string
@@ -328,17 +329,16 @@ msgid ""
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
-"고급 사용자들은 정의된 XKB 구성 변종을 아무거나 사용하셔도 됩니다. xkb-data "
-"꾸러미를 풀었을 경우, /usr/share/X11/xkb/symbols 디렉토리에 사용할 수 있는 구"
-"성의 변종에 해당하는 파일들을 찾아보실 수 있습니다."
+"고급 사용자는 정의된 XKB 구성 변종을 아무거나 사용하셔도 됩니다. xkb-data 패"
+"키지를 풀었을 경우, /usr/share/X11/xkb/symbols 디렉토리에 사용할 수 있는 구성"
+"의 변종에 해당하는 파일을 찾아보실 수 있습니다."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:9001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"미국식 키보드를 사용하는 사용자들은 대부분 이 항목을 비워두시면 됩니다."
+msgstr "미국식 키보드를 사용하는 사용자는 대부분 이 항목을 비워두시면 됩니다."
 
 #. Type: string
 #. Description
@@ -355,7 +355,7 @@ msgid ""
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
 "X 서버가 키보드를 제대로 다루기 위해서 키보드 옵션을 입력할 수 있습니다. 사용"
-"할 수 있는 옵션은 선택하신 XKB 규쳑셋에 따라 달라집니다. 키보드 모델과 구성"
+"할 수 있는 옵션은 선택하신 XKB 규칙 셋에 따라 달라집니다. 키보드 모델과 구성"
 "에 따라 사용할 수 없는 옵션도 있습니다."
 
 #. Type: string
@@ -366,9 +366,9 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
-"예를 들어 Caps Lock 키를 또 하나의 컨트롤키로 사용하고 싶다면 \"ctrl:nocaps"
-"\"를 입력하시면 됩니다. Caps Lock키와 왼쪽 컨트롤키를 바꾸고자 한다면 \"ctrl:"
-"swapcaps\"를 입력하십시오."
+"예를 들어 Caps Lock 키를 또 하나의 Ctrl 키로 사용하려면 \"ctrl:nocaps\"를 입"
+"력하시면 됩니다. Caps Lock 키와 왼쪽 Ctrl 키를 바꾸려면 \"ctrl:swapcaps\"를 "
+"입력하십시오."
 
 #. Type: string
 #. Description
@@ -380,10 +380,10 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
-"또 다른 예로 키보드의 Alt키를 메타키로 사용하고자 하는 사람들도 있고 (이것이 "
-"기본 설정입니다), 윈도우키, 또는 로고키를 메타키로 사용하고자 하는 사람들도 "
-"있습니다. 윈도우키, 또는 로고키를 메타키로 사용하고자 한다면 \"altwin:"
-"meta_win\"을 입력하십시오."
+"또 다른 예로 키보드의 Alt 키를 메타키로 사용하고자 하는 사람도 있고 (이것이 "
+"기본 설정입니다), 윈도우키, 또는 로고키를 메타키로 사용하고자 하는 사람도 있"
+"습니다. 윈도우키, 또는 로고키를 메타키로 사용하고자 한다면 \"altwin:meta_win"
+"\"을 입력하십시오."
 
 #. Type: string
 #. Description
@@ -401,8 +401,8 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
-"고급 사용자들은 선택하신 XKB 모델, 구성과 변종에 맞는 옵션을 아무거나 선택하"
-"실 수 있습니다."
+"고급 사용자는 선택하신 XKB 모델, 구성과 변종에 맞는 옵션을 아무거나 선택하실 "
+"수 있습니다."
 
 #. Type: string
 #. Description
@@ -432,7 +432,7 @@ msgstr "큰 따옴표는 사용할 수 없음"
 #. Description
 #: ../xserver-xorg.templates:12001
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "이 항목의 값으로는 큰 따옴표(\") 글자를 사용할 수 없습니다."
+msgstr "이 항목의 값에는 큰 따옴표 (\") 글자를 사용할 수 없습니다."
 
 #. Type: note
 #. Description
@@ -450,7 +450,7 @@ msgstr "이 항목에는 숫자 이외의 다른 값은 사용할 수 없습니�
 #. Description
 #: ../xserver-xorg.templates:14001
 msgid "Autodetect keyboard layout?"
-msgstr "키보드 구성을 자동으로 감지할까요?"
+msgstr "키보드 구성을 자동으로 감지하시겠습니까?"
 
 #. Type: boolean
 #. Description
@@ -470,8 +470,8 @@ msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
-"키보드 구성을 다시 검색하고자 할 경우 이 옵션을 선택하여 주십시오. 현재 구성"
-"을 그대로 유지하고자 할 경우에는 선택하지 마십시오."
+"키보드 구성을 다시 검색하려면 이 옵션을 선택하여 주십시오. 현재 구성을 그대"
+"로 유지하려면 선택하지 마십시오."
 
 #. Type: select
 #. Choices
@@ -483,7 +483,7 @@ msgstr "루트 사용자만"
 #. Choices
 #: ../x11-common.templates:2001
 msgid "Console Users Only"
-msgstr "콘솔 사용자들만"
+msgstr "콘솔 사용자만"
 
 #. Type: select
 #. Choices
@@ -495,7 +495,7 @@ msgstr "아무나"
 #. Description
 #: ../x11-common.templates:2002
 msgid "Users allowed to start the X server:"
-msgstr "X 서버를 띄울 권한이 있는 사용자들:"
+msgstr "X 서버를 띄울 권한이 있는 사용자:"
 
 #. Type: select
 #. Description
@@ -510,9 +510,9 @@ msgid ""
 msgstr ""
 "X 서버는 수퍼유저 권한을 가진 채로 실행되기 때문에 보안상 아무 사용자나 X 서"
 "버를 실행시킬 수 있도록 하는 것이 안 좋을 수 있습니다. 반면, 루트 사용자만 X "
-"서버를 실행시킬 수 있을 경우 일반적인 X 클라이언트 프로그램들도 루트 사용자"
-"로 실행되기 때문에 더 안 좋을 수 있습니다. 버추얼 콘솔로 로그인된 사용자만 X "
-"서버를 실행시킬 수 있도록 하는 것이 적당할 수 있습니다."
+"서버를 실행시킬 수 있을 경우 일반적인 X 클라이언트 프로그램도 루트 사용자로 "
+"실행되기 때문에 더 안 좋을 수 있습니다. 버추얼 콘솔로 로그인된 사용자만 X 서"
+"버를 실행시킬 수 있도록 하는 것이 적당할 수 있습니다."
 
 #. Type: string
 #. Description
@@ -580,10 +580,10 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
-"현재 꾸러미 세트로 업그레이드를 하자 xserver 꾸러미가 더 이상 설치되지 않게 "
+"현재 패키지 세트로 업그레이드를 하자 xserver 패키지가 더 이상 설치되지 않게 "
 "된 사용자 보고가 일부 있었습니다. 이 문제를 해결하기가 쉽지 않기 때문에 업그"
-"레이드 후 xserver-xorg 꾸러미가 설치되어있는지 확인해주십시오. 필요한데도 설"
-"치되어있지 않을 경우, X 설정이 온전히 동작하도록 하기 위해서는 xorg 꾸러미를 "
+"레이드 후 xserver-xorg 패키지가 설치되어있는지 확인해주십시오. 필요한데도 설"
+"치되어있지 않을 경우, X 설정이 온전히 동작하도록 하기 위해서는 xorg 패키지를 "
 "설치할 것을 권장합니다."
 
 #. Type: note
@@ -604,9 +604,9 @@ msgid ""
 msgstr ""
 "이 업그레이드를 하기 위해서는 /usr/X11R6/bin 디렉토리를 지우고 symlink로 대체"
 "해야 합니다. 대체하려고 했으나 실패했으며, 디렉토리가 아직 비어있지 않아서 실"
-"패했을 가능성이 높습니다. 그 디렉토리에 있는 파일들을 다른 곳으로 옮겨야 설치"
-"가 끝날 수 있습니다. 원하신다면 symlink로 대체한 후 그 파일들을 다시 원위치"
-"로 옮기실 수 있습니다."
+"패했을 가능성이 높습니다. 그 디렉토리에 있는 파일을 다른 곳으로 옮겨야 설치"
+"가 끝날 수 있습니다. 원하신다면 symlink로 대체한 후 그 파일을 다시 원위치로 "
+"옮기실 수 있습니다."
 
 #. Type: note
 #. Description
@@ -616,509 +616,5 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
-"이 작업을 할 수 있도록 꾸러미 설치는 이제 실패로 끝냅니다. 디렉토리를 모두 정"
-"리한 후에 업그레이드 작업을 다시 실행시켜 주십시오."
-
-#~ msgid ""
-#~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
-#~ "Type 5 keyboards, however, should enter \"sun\"."
-#~ msgstr ""
-#~ "대부분의 키보드는 \"xorg\"를 입력하시면 됩니다. 하지만 Sun Type 4나 Type "
-#~ "5 사용자들은 \"sun\"을 입력하십시오."
-
-#~ msgid "Attempt to autodetect video hardware?"
-#~ msgstr "비디오 하드웨어의 자동 검색을 시도할까요?"
-
-#~ msgid ""
-#~ "You should choose this option if you would like to attempt to autodetect "
-#~ "the recommended X server and driver module for your video card.  If the "
-#~ "autodetection fails, you will be asked to specify the desired X server "
-#~ "and/or driver module.  If it succeeds, further configuration questions "
-#~ "about your video hardware will be pre-answered."
-#~ msgstr ""
-#~ "비디오 카드에 권장하는 X 서버와 드라이버를 자동으로 검색하고자 할 경우 이 "
-#~ "옵션을 사용하십시오. 자동 검색에 실패하면 사용하고자 하는 X 서버와 드라이"
-#~ "버 모듈을 선택하실 수 있습니다. 성공하면 비디오 하드웨어에 관한 질문 사항"
-#~ "들의 대답들이 자동으로 채워집니다."
-
-#~ msgid ""
-#~ "If you would rather select the X server and driver module yourself, do "
-#~ "not choose this option.  You will not be asked to select the X server if "
-#~ "there is only one available."
-#~ msgstr ""
-#~ "X 서버와 드라이버 모듈을 직접 선택하고자 한다면 이 옵션을 선택하지 마십시"
-#~ "오. 사용할 수 있는 X 서버가 하나 뿐이라면 사용자가 따로 선택할 필요는 없습"
-#~ "니다."
-
-#~ msgid "Multiple potential default X.Org server drivers for the hardware"
-#~ msgstr "하드웨어에 맞을만한 X.Org 서버 드라이버가 여러 개 있습니다."
-
-#~ msgid ""
-#~ "Multiple video cards have been detected, and different X servers are "
-#~ "required to support the various devices.  It is thus not possible to "
-#~ "automatically select a default X server."
-#~ msgstr ""
-#~ "검색된 비디오 카드가 여러개이며, 이들을 모두 지원하기 위해서는 X 서버가 여"
-#~ "러개 필요합니다. 그렇기 때문에 기본 X 서버를 결정할 수 없습니다."
-
-#~ msgid ""
-#~ "Please configure the device that will serve as this computer's \"primary "
-#~ "head\"; this is generally the video card and monitor used for display "
-#~ "when the computer is booted up."
-#~ msgstr ""
-#~ "이 컴퓨터의 \"주된 장치\"의 역할을 할 장치를 설정해주십시오. 주로 컴퓨터"
-#~ "를 부팅할 때 영상을 표시하기 위해 사용하는 비디오 카드와 모니터를 말합니"
-#~ "다."
-
-#~ msgid ""
-#~ "The configuration process currently only supports single-headed setups; "
-#~ "however, the X server configuration files can be edited later to support "
-#~ "a multi-head configuration."
-#~ msgstr ""
-#~ "설정 과정은 현재 단일 헤드 구성만을 지원합니다. 하지만 나중에 X 서버의 설"
-#~ "정 파일을 수정해서 멀티헤드 구성을 지원하록 변경할 수 있습니다."
-
-#~ msgid "Identifier for your video card:"
-#~ msgstr "비디오카드가 사용할 식별자:"
-
-#~ msgid ""
-#~ "The X server configuration file associates your video card with a name "
-#~ "that you may provide.  This is usually the vendor or brand name followed "
-#~ "by the model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA "
-#~ "GeForce 6600\"."
-#~ msgstr ""
-#~ "X 서버 설정 파일은 식별자와 비디오카드를 연관시켜서 취급합니다. 이 식별자"
-#~ "는 주로 제작회사나 브랜드명 뒤에 모델명을 붙여서 만듭니다. 예를 들어, "
-#~ "\"Intel i915\"나 \"ATI RADEON X800\", \"NVIDIA GeForce 6600\"등이 있습니"
-#~ "다."
-
-#~ msgid "Generic Video Card"
-#~ msgstr "일반 비디오카드"
-
-#~ msgid "Video modes to be used by the X server:"
-#~ msgstr "X 서버에서 사용할 비디오 모드:"
-
-#~ msgid ""
-#~ "Please keep only the resolutions you would like the X server to use.  "
-#~ "Removing all of them is the same as removing none, since in both cases "
-#~ "the X server will attempt to use the highest possible resolution."
-#~ msgstr ""
-#~ "X 서버에서 사용할 화면 해상도만 놔두십시오. 해상도 선택을 전부 해제하든지 "
-#~ "전부 선택하든지 상관없이 X 서버는 사용할 수 있는 해상도 중에서 가장 높은 "
-#~ "것을 선택하므로 결과는 같습니다."
-
-#~ msgid "Attempt monitor autodetection?"
-#~ msgstr "모니터를 자동으로 감지할까요?"
-
-#~ msgid ""
-#~ "Many monitors (including LCD's) and video cards support a communication "
-#~ "protocol that allows the monitor's technical characteristics to be "
-#~ "communicated back to the computer.  If the monitor and video card support "
-#~ "this protocol, further configuration questions about the monitor will be "
-#~ "pre-answered."
-#~ msgstr ""
-#~ "많은 모니터들(LCD 포함)과 비디오카드들은 모니터의 기술적 특성을 컴퓨터로 "
-#~ "전송할 수 있도록 하는 통신 프로토콜을 지원합니다. 모니터와 비디오 카드가 "
-#~ "이 프로토콜을 지원할 경우, 모니터에 관한 설정 질의는 미리 채워지게 됩니다."
-
-#~ msgid ""
-#~ "If autodetection fails, you will be asked for information about the "
-#~ "monitor."
-#~ msgstr "자동 감지가 실패할 경우에는 모니터에 관한 정보를 입력하셔야 합니다."
-
-#~ msgid "Method for selecting the monitor characteristics:"
-#~ msgstr "모니터의 특성을 선택하는 방식:"
-
-#~ msgid ""
-#~ "For the X Window System graphical user interface to operate correctly, "
-#~ "certain characteristics of the monitor must be known."
-#~ msgstr ""
-#~ "X 윈도우 시스템 그래픽 사용자 인터페이스가 제대로 동작하기 위해서는 모니터"
-#~ "의 특성들이 필요합니다."
-
-#~ msgid ""
-#~ "The \"simple\" option will prompt about the monitor's physical size; this "
-#~ "will set some configuration values appropriate for a typical CRT of the "
-#~ "corresponding size, but may be suboptimal for high-quality CRT's."
-#~ msgstr ""
-#~ "\"단순\" 옵션은 모니터의 물리적인 크기를 물어볼 것입니다. 이 정보를 이용해"
-#~ "서 일반적인 CRT의 해당 크기에 걸맞는 설정값을 설정할 것이지만, 이 값들은 "
-#~ "고급 CRT에는 별로 적합하지 않을 수 있습니다."
-
-#~ msgid ""
-#~ "The \"medium\" option will present you with a list of resolutions and "
-#~ "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best "
-#~ "mode you wish to use (and that you know the monitor is capable of)."
-#~ msgstr ""
-#~ "\"중간\" 옵션은 \"800x600 @ 85Hz\"처럼 해상도와 주파수의 목록을 제공합니"
-#~ "다. 모니터가 사용할 수 있으면서 사용하고자 하는 가장 좋은 모드를 입력하십"
-#~ "시오. "
-
-#~ msgid ""
-#~ "The \"advanced\" option will let you specify the monitor's horizontal "
-#~ "sync and vertical refresh tolerances directly."
-#~ msgstr ""
-#~ "\"고급\" 옵션을 사용하면 모니터의 수평 동기화값과 수직 주파수를 지정할 수 "
-#~ "있습니다."
-
-#~ msgid "Up to 14 inches (355 mm)"
-#~ msgstr "14인치(355mm)까지"
-
-#~ msgid "15 inches (380 mm)"
-#~ msgstr "15인치(380 mm)"
-
-#~ msgid "17 inches (430 mm)"
-#~ msgstr "17인치(430mm)"
-
-#~ msgid "19-20 inches (480-510 mm)"
-#~ msgstr "19-20인치(480-510 mm)"
-
-#~ msgid "21 inches (530 mm) or more"
-#~ msgstr "21인치(530 mm) 이상"
-
-#~ msgid "Approximate monitor size:"
-#~ msgstr "모니터의 대략적인 크기:"
-
-#~ msgid ""
-#~ "High-quality CRT's may be able to use the next highest size category."
-#~ msgstr "고급 CRT 모니터들은 그 다음 단계의 크기를 사용할 수도 있습니다."
-
-#~ msgid "Monitor's best video mode:"
-#~ msgstr "모니터의 가장 좋은 비디오 모드:"
-
-#~ msgid ""
-#~ "Choose the \"best\" resolution and refresh rate the monitor is capable "
-#~ "of.  Larger resolutions and refresh rates are better.  With a CRT "
-#~ "monitor, it is perfectly acceptable to select a \"worse\" video mode than "
-#~ "the monitor's best if you wish.  Users of LCD displays may also be able "
-#~ "to do this, but only if both the video chipset and the driver support it; "
-#~ "if in doubt, use the video mode recommended by the manufacturer of your "
-#~ "LCD."
-#~ msgstr ""
-#~ "모니터가 사용할 수 있는 \"가장 좋은\" 해상도와 주파수를 선택하십시오. 더 "
-#~ "높은 해상도와 주파수일수록 좋습니다. CRT 모니터를 사용할 경우 모니터가 사"
-#~ "용할 수 있는 비디오 모드보다 \"더 낮은\" 비디오 모드를 사용하셔도 상관 없"
-#~ "습니다. LCD 모니터를 사용할 경우에도 더 낮은 모드를 사용할 수 있긴 하겠지"
-#~ "만, 비디오 칩셋과 드라이버가 이를 지원할 경우에만 사용하십시오. 잘 모르겠"
-#~ "으면 LCD 제작사가 권장하는 비디오 모드를 사용하십시오."
-
-#~ msgid "Generic Monitor"
-#~ msgstr "일반 모니터"
-
-#~ msgid "Write monitor sync ranges to the configuration file?"
-#~ msgstr "모니터의 동기화 범위를 설정 파일에 쓸까요?"
-
-#~ msgid ""
-#~ "The monitor synchronization ranges should be autodetected by the X server "
-#~ "in most cases, but sometimes it needs hinting.  This option is for "
-#~ "experienced users, and should be left at its default."
-#~ msgstr ""
-#~ "모니터의 동기화 범위는 대부분 X 서버에서 자동으로 감지하겠지만, 도움을 필"
-#~ "요로 하는 경우가 있습니다. 이 옵션은 고급 사용자들을 위해서 있는 옵션이며 "
-#~ "대부분 그대로 두시길 권장합니다."
-
-#~ msgid "Monitor's horizontal sync range:"
-#~ msgstr "모니터의 수평 동기화 범위:"
-
-#~ msgid ""
-#~ "Please enter either a comma-separated list of discrete values (for fixed-"
-#~ "frequency displays), or a pair of values separated by a dash (all modern "
-#~ "CRT's).  This information should be available in the monitor's manual.  "
-#~ "Values lower than 30 or higher than 130 are extremely rare."
-#~ msgstr ""
-#~ "(주파수가 고정된 화면의 경우에는) 쉼표로 구분된 정수값이나, (대부분의 CRT "
-#~ "모니터의 경우에는) 대시로 연결한 한 쌍의 값을 입력하십시오. 이 정보는 모니"
-#~ "터의 설명서에서 찾으실 수 있습니다. 30보다 낮은 값이나 130보다 높은 값을 "
-#~ "사용하는 경우는 극히 드믑니다."
-
-#~ msgid "Monitor's vertical refresh range:"
-#~ msgstr "모니터의 수직 주파수:"
-
-#~ msgid ""
-#~ "Please enter either a comma-separated list of discrete values (for fixed-"
-#~ "frequency displays), or a pair of values separated by a dash (all modern "
-#~ "CRT's).  This information should be available in the monitor's manual.  "
-#~ "Values lower than 50 or higher than 160 are extremely rare."
-#~ msgstr ""
-#~ "(주파수가 고정된 화면의 경우에는) 쉼표로 구분된 정수값이나, (대부분의 CRT "
-#~ "모니터의 경우에는) 대시로 연결한 한 쌍의 값을 입력하십시오. 이 정보는 모니"
-#~ "터의 설명서에서 찾으실 수 있습니다. 50보다 낮은 값이나 160보다 높은 값을 "
-#~ "사용하는 경우는 극히 드믑니다."
-
-#~ msgid "Incorrect values entered"
-#~ msgstr "잘못된 값을 입력하셨습니다"
-
-#~ msgid ""
-#~ "The valid syntax is a comma-separated list of discrete values, or a pair "
-#~ "of values separated by a dash."
-#~ msgstr ""
-#~ "사용할 수 있는 형식은 정수값들을 쉼표로 구분한 목록이나 대시로 연결한 한 "
-#~ "쌍의 값입니다."
-
-#~ msgid "Desired default color depth in bits:"
-#~ msgstr "사용하고자하는 색채 깊이를 비트수로:"
-
-#~ msgid ""
-#~ "Usually 24-bit color is desirable, but on graphics cards with limited "
-#~ "amounts of framebuffer memory, higher resolutions may be achieved at the "
-#~ "expense of higher color depth.  Also, some cards support hardware 3D "
-#~ "acceleration only for certain depths.  Consult your video card manual for "
-#~ "more information."
-#~ msgstr ""
-#~ "대부분 24비트 색채를 사용하는 것이 좋습니다만, 프레임버퍼 메모리가 한정된 "
-#~ "그래픽 카드 중에서 색채 깊이를 줄이는 대신 더 높은 해상도를 얻을 수 있는 "
-#~ "것들도 있습니다. 또한 모든 색채 깊이에서 3차원 가속을 지원하지 않는 카드"
-#~ "도 있습니다. 더 자세한 정보는 비디오 카드 설명서를 참조하십시오."
-
-#~ msgid ""
-#~ "So-called \"32-bit color\" is actually 24 bits of color information plus "
-#~ "8 bits of alpha channel or simple zero padding; the X Window System can "
-#~ "handle both.  If you want either, select 24 bits."
-#~ msgstr ""
-#~ "소외 말하는 \"32비트 색채\"는 사실 색채 정보 24비트에 알파채널 정보 8비트"
-#~ "나 정보를 담지 않는 채움문자 8비트를 추가한 것입니다. X 원도우 시스템은 "
-#~ "두 가지 모두 다룰 수 있습니다. 이를 사용하고자 한다면 24비트를 선택하십시"
-#~ "오."
-
-#~ msgid "Write default Files section to configuration file?"
-#~ msgstr "설정 파일에 기본 Files 구역을 입력할까요?"
-
-#~ msgid ""
-#~ "The Files section of the X server configuration file tells the X server "
-#~ "where to find server modules, the RGB color database, and font files.  "
-#~ "This option is recommended to experienced users only.  In most cases, it "
-#~ "should be enabled."
-#~ msgstr ""
-#~ "X 서버 설정 파일의 Files 구역은 X 서버가 서버 모듈이나 RGB 색 데이터베이"
-#~ "스, 글꼴 파일을 찾을 때 사용합니다. 이 옵션은 고급 사용자들만을 위한 옵션"
-#~ "입니다. 대부분의 경우 이 옵션을 활성화하십시오."
-
-#~ msgid ""
-#~ "Disable this option if you want to maintain a custom Files section into "
-#~ "the X.Org server configuration file.  This may be needed to remove the "
-#~ "reference to the local font server, add a reference to a different font "
-#~ "server, or rearrange the default set of local font paths."
-#~ msgstr ""
-#~ "X.Org 서버 설정 파일의 Files 구역을 직접 관리하고 싶을 경우에는 이 옵션을 "
-#~ "해제하십시오. 이 작업을 로컬에 있는 글꼴 서버 관련 내용을 빼든지, 다른 글"
-#~ "꼴 서버를 추가하든지, 로컬에 있는 글꼴 경로들을 재구성할 때 필요할 수 있습"
-#~ "니다."
-
-#~ msgid "No X server known for your video hardware"
-#~ msgstr "비디오 하드웨어에 맞는 X 서버를 알 수 없습니다."
-
-#~ msgid ""
-#~ "There is either no video hardware installed on this machine (e.g. serial "
-#~ "console only), or the \"discover\" program was unable to determine which "
-#~ "X server is appropriate for the video hardware.  This could be due to "
-#~ "incomplete information in discover's hardware database, or because your "
-#~ "video hardware is not supported by the available X servers."
-#~ msgstr ""
-#~ "이 시스템에 설치된 비디오 하드웨어가 없거나(시리얼 콘솔 등의 이유로), "
-#~ "\"discover\" 프로그램에서 비디오 하드웨어에 맞는 X 서버를 찾지 못했습니"
-#~ "다. discover의 비디오 하드웨어 데이터베이스에 있는 정보가 충분하지 않아서 "
-#~ "그럴 수도 있고, 사용할 수 있는 X 서버들은 이 비디오 하드웨어를 지원하지 않"
-#~ "아서 그럴 수도 있습니다."
-
-#~ msgid "Multiple potential default X servers for your hardware"
-#~ msgstr "하드웨어에 맞는 기본 X 서버가 여러 개 있습니다."
-
-#~ msgid "Mouse port:"
-#~ msgstr "마우스 포트:"
-
-#~ msgid ""
-#~ "For the X Window System graphical user interface to operate correctly, "
-#~ "certain characteristics of the mouse (or other pointing device, such as a "
-#~ "trackball) must be known."
-#~ msgstr ""
-#~ "X 윈도우 시스템 그래핌 사용자 인터페이스가 제대로 동작하기 위해서는 마우스"
-#~ "(또는 트랙볼 등의 커서 장치)의 특성들이 필요합니다."
-
-#~ msgid ""
-#~ "It is necessary to determine which port (connection type) is used by the "
-#~ "mouse. Serial ports use D-shaped connectors with 9 or 25 pins (a.k.a. DB-"
-#~ "9 or DB-25); the mouse connector is female (has holes) and the computer "
-#~ "connector is male (has pins).  PS/2 ports are small round connectors "
-#~ "(DIN) with 6 pins; the mouse connector is male and the computer side "
-#~ "female.  You may alternatively use a USB mouse, a bus/inport (very old) "
-#~ "mouse, or be using the gpm program as a repeater.  If you need to attach "
-#~ "or remove PS/2 or bus/inport devices from your computer, please do so "
-#~ "with the computer's power off."
-#~ msgstr ""
-#~ "마우스가 사용하는 포트(연결 종류)가 어떤 것인지를 확인할 필요가 있습니다. "
-#~ "시리얼 포트는 D자처럼 생겼으며 핀을 9개나 25개 가지고 있습니다(소위 DB-9, "
-#~ "DB-25). 마우스쪽 연결자에는 구멍이 있으며 컴퓨터쪽 연결자에는 핀이 있습니"
-#~ "다. PS/2 포트는 작고 둥글게 생긴 연결자이며(DIN) 핀을 6개 가지고 있습니"
-#~ "다. 마우스쪽 연결자에 핀이 있으며 컴퓨터쪽 연결자에 구멍이 있습니다. 또한 "
-#~ "USB 마우스나 bus/inport 마우스(굉장히 오래된 종류임)를 사용할 수도 있고, "
-#~ "gpm 프로그램을 repeater로 사용할 수도 있습니다. PS/2 장치나 bus/inport 장"
-#~ "치를 컴퓨터에 연결하거나 컴퓨터에서 빼야할 경우 컴퓨터 전원을 내린 상태에"
-#~ "서 작업하시기 바랍니다."
-
-#~ msgid "Mouse protocol:"
-#~ msgstr "마우스 프로토콜:"
-
-#~ msgid "Emulate 3 button mouse?"
-#~ msgstr "3 버튼식 마우스를 에뮬레이트할까요?"
-
-#~ msgid ""
-#~ "Most programs in the X Window System expect the mouse to have 3 buttons "
-#~ "(left, right, and middle).  Mice with only 2 buttons can emulate the "
-#~ "presence of a middle button by treating simultaneous clicks or drags of "
-#~ "the left and right buttons as middle button events."
-#~ msgstr ""
-#~ "X 윈도우 시스템 프로그램의 대부분은 마우스에 버튼이 3개(왼쪽, 오른쪽, 가운"
-#~ "데) 있을 것으로 예상합니다. 버튼이 2개 뿐인 마우스를 사용할 경우 왼쪽과 오"
-#~ "른쪽 버튼을 동시에 클릭하거나 드래그할 경우를 가운데 버튼으로 취급하도록 "
-#~ "할 수 있습니다."
-
-#~ msgid ""
-#~ "This option may also be used on mice with 3 or more buttons; the middle "
-#~ "button will continue to work normally."
-#~ msgstr ""
-#~ "이 옵션은 버튼이 3개 이상인 마우스라도 사용할 수 있습니다. 가운데 버튼은 "
-#~ "그대로 정상 동작할 것입니다."
-
-#~ msgid ""
-#~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
-#~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
-#~ "\"clicks\") are not yet supported with this configuration tool."
-#~ msgstr ""
-#~ "참고로 버튼이 5개 이상인 마우스(스크롤휠은 \"위\", \"아래\" 2가지 버튼이 "
-#~ "있는 것으로 취급되며, 휠을 클릭할 수 있는 경우에는 3가지로 취급)는 이 설정"
-#~ "도구에서 아직 지원하지 않습니다."
-
-#~ msgid "Attempt mouse device autodetection?"
-#~ msgstr "마우스를 자동으로 감지해볼까요?"
-
-#~ msgid ""
-#~ "If a mouse is attached to the computer, autodetection can be attempted; "
-#~ "it may help to move the mouse while detection is attempted (the gpm "
-#~ "program should be stopped if it is used).  Plugging  a PS/2 or bus/inport "
-#~ "mouse now requires rebooting."
-#~ msgstr ""
-#~ "컴퓨터에 마우스가 연결되어 있을 경우 자동으로 감지해볼 수 있습니다. 감지"
-#~ "가 시도중일 때 마우스를 움직여보면 도움이 될 수 있습니다(gpm 프로그램을 사"
-#~ "용중이라면 중단시키십시오. 지금 PS/2 마우스나 bus/inport 마우스를 연결할 "
-#~ "경우에는 재부팅을 해야 합니다."
-
-#~ msgid ""
-#~ "Do not choose this option if you wish to select a mouse type manually."
-#~ msgstr "마우스 종류를 직접 입력하고자 할 경우 이 옵션을 선택하지 마십시오."
-
-#~ msgid ""
-#~ "If you choose it and autodetection fails, you will be asked this question "
-#~ "again.  Autodetection can be attempted as many times as desired.  If it "
-#~ "succeeds, further configuration questions about the mouse will be pre-"
-#~ "answered."
-#~ msgstr ""
-#~ "자동 감지를 선택했는데 실패할 경우, 이 질문을 다시 받습니다. 원하는 횟수만"
-#~ "큼 자동 감지를 시도해볼 수 있습니다. 성공할 경우 마우스에 관한 설정 질의"
-#~ "는 미리 채워지게 됩니다."
-
-#~ msgid "Identifier for the monitor:"
-#~ msgstr "모니터의 식별자:"
-
-#~ msgid ""
-#~ "The X server configuration file associates the monitor with a name that "
-#~ "you may provide.  This is usually the vendor or brand name followed by "
-#~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
-#~ msgstr ""
-#~ "X 서버 설정 파일은 식별자와 모니터를 연관시켜서 취급합니다. 이 식별자는 주"
-#~ "로 제작회사나 브랜드명 뒤에 모델명을 붙여서 만듭니다. 예를 들어, \"Sony "
-#~ "E200\"나 \"Dell E770s\", 등이 있습니다."
-
-#~ msgid "Amount of memory (kB) to be used by the video card:"
-#~ msgstr "비디오카드에서 사용할 메모리의 용량(kB):"
-
-#~ msgid ""
-#~ "Typically, the amount of dedicated memory used by the video card is "
-#~ "autodetected by the X server, but some integrated video chips (such as "
-#~ "the Intel i810) have little or no video memory of their own, and instead "
-#~ "borrow main system memory for their needs."
-#~ msgstr ""
-#~ "일반적으로는 비디오카드가 전용으로 사용할 메모리의 용량은 X 서버에서 자동"
-#~ "으로 감지하지만, 인텔 i810 등의 내장형 비디오칩 중에서 자체 메모리가 없거"
-#~ "나 거의 없는 경우가 있으며 이 경우 시스템 주 메모리에서 빌려씁니다."
-
-#~ msgid ""
-#~ "This parameter should usually be left blank and specified only if the "
-#~ "video card lacks RAM, or if the X server has trouble autodetecting the "
-#~ "RAM size."
-#~ msgstr ""
-#~ "이 항목은 비디오카드에 RAM이 없거나, X 서버가 RAM의 크기를 자동으로 감지하"
-#~ "는데 문제가 발생할 경우에만 지정하십시오."
-
-#~ msgid "Desired default X server:"
-#~ msgstr "사용하고자 하는 기본 X 서버:"
-
-#~ msgid ""
-#~ "The X server is the hardware interface of the X Window System.  It "
-#~ "communicates with the video display and input devices, providing a "
-#~ "foundation for the chosen Graphical User Interface (GUI)."
-#~ msgstr ""
-#~ "X 서버는 X 윈도우 시스템의 하드웨어 인터페이스입니다. 비디오 영상 장치와 "
-#~ "입력 장치와 통신을 하여 사용하고자 하는 그래픽 사용자 인터페이스(GUI)를 위"
-#~ "한 기초 역할을 합니다."
-
-#~ msgid ""
-#~ "Several X servers may be available; the default is selected via the /etc/"
-#~ "X11/X symbolic link.  Some X servers may not work with some particular "
-#~ "graphics hardware."
-#~ msgstr ""
-#~ "사용할 수 있는 X 서버가 여러개일 수 있습니다. 기본적으로 선택된 X 서버는 "
-#~ "심볼릭 연결 /etc/X11/X를 통해 선택됩니다. 일부 그래픽 하드웨어와 동작하지 "
-#~ "못하는 X 서버도 있습니다."
-
-#~ msgid "X.Org server modules that should be loaded by default:"
-#~ msgstr "기본적으로 로드할 X.Org 서버 모듈 목록:"
-
-#~ msgid ""
-#~ "This option is recommended to experienced users only.  In most cases, all "
-#~ "of these modules should be enabled."
-#~ msgstr ""
-#~ "이 옵션은 고급 사용자들만 사용하기를 권장합니다. 대부분의 경우 모듈 전부"
-#~ "를 사용하는 것이 좋습니다."
-
-#~ msgid ""
-#~ " - glx   : support for OpenGL rendering;\n"
-#~ " - dri   : support in the X server for DRI (Direct Rendering "
-#~ "Infrastructure);\n"
-#~ " - vbe   : support for VESA BIOS Extensions. Allows querying\n"
-#~ "           the monitor capabilities via the video card;\n"
-#~ " - ddc   : support for Data Display Channel. Allows querying\n"
-#~ "           the monitor capabilities via the video card;\n"
-#~ " - int10 : real-mode x86 emulator used to softboot secondary VGA cards.\n"
-#~ "           Should be enabled if vbe is enabled;\n"
-#~ " - dbe   : enables the double-buffering extension in the server.\n"
-#~ "           Useful for animation and video operations;\n"
-#~ " - extmod: enables many traditional and commonly used extensions, such "
-#~ "as\n"
-#~ "           shaped windows, shared memory, video mode switching, DGA, and "
-#~ "Xv;\n"
-#~ " - record: implements the RECORD extension, often used in server "
-#~ "testing;\n"
-#~ " - bitmap: font rasterizer (so are freetype, and type1 modules)."
-#~ msgstr ""
-#~ " - glx   : OpenGL 렌더링 지원;\n"
-#~ " - dri   : X 서버에서 DRI(Direct Rendering Infrastructure) 지원;\n"
-#~ " - vbe   : VESA BIOS 확장 기능 지원. 비디오 카드를 통해 모니터의 \n"
-#~ "           능력을 얻어낼 수 있음;\n"
-#~ " - ddc   : Data Display Channel 기능 지원. 비디오 카드를 통해 모니터의 \n"
-#~ "           능력을 얻어낼 수 있음;\n"
-#~ " - int10 : 부차적인 VGA 카드를 부팅할 때 리얼모드 x86 에뮬레이터를 사용.\n"
-#~ "           vbe를 활성화할 경우 활성화해야 함;\n"
-#~ " - dbe   : 서버의 더블버퍼링 기능을 활성화.\n"
-#~ "           애니메이션이나 비디오 작업에 유용;\n"
-#~ " - extmod: 모양난 창이라든지 공유 메모리, 비디오 모드 변경 기능 등 전통적"
-#~ "으로 \n"
-#~ "           자주 사용되는 확장 기능들을 활성화;\n"
-#~ " - record: 서버 테스트할 때 자주 사용되는 RECORD 확장 기능을 활성화;\n"
-#~ " - bitmap: font rasterizer (freetype 모듈과 type1 모듈도 같음)."
-
-#~ msgid ""
-#~ "For further information about these modules, please consult the X.Org "
-#~ "documentation."
-#~ msgstr ""
-#~ "이 모듈들에 관한 더 자세한 정보를 얻고자 할 경우 X.Org 문서를 참조해주십시"
-#~ "오."
+"이 작업을 할 수 있도록 패키지 설치는 이제 실패로 끝냅니다. 디렉토리를 모두 정"
+"리한 후에 업그레이드 작업을 다시 실행하십시오."

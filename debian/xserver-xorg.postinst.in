@@ -102,6 +102,7 @@ THIS_SERVER=/usr/bin/Xorg
 NCARDS=0
 NSERVERS=0
 NDRIVERS=0
+DRIVERS_LIST=
 MULTIHEAD=
 
 # get machine architecture
@@ -526,7 +527,6 @@ if [ "$ARCH" = "sparc" ]; then
   if which $DISCOVER_PROG > /dev/null 2>&1; then
     DISCOVERED_VIDEO=$($DISCOVER_FUNC)
     MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
-    DISCOVERED_VIDEO=$(echo "$DISCOVERED_VIDEO" | head -n 1)
     if [ -n "$DISCOVERED_VIDEO" ]; then
       NCARDS=$(echo "$DISCOVERED_VIDEO" | wc -l)
       SERVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $2}' | grep -v unknown | sort | uniq)
@@ -536,10 +536,14 @@ if [ "$ARCH" = "sparc" ]; then
       DRIVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $NF}' | grep -v unknown | sort | uniq)
       if [ -n "$DRIVERS" ]; then
         NDRIVERS=$(echo "$DRIVERS" | wc -l)
+        DRIVERS_LIST=$(echo "$DRIVERS" | awk 'BEGIN {ORS="";FS="\t"} {if(NR > 1){print last ","};last=$0} END {print last}')
       fi
       if [ $MULTIHEAD -gt 1 ]; then
         MULTIHEAD=yes
       fi
+      DISCOVERED_VIDEO=$(echo "$DRIVERS" | head -n 1)
+    else
+      DISCOVERED_VIDEO=""
     fi
   else
     DISCOVERED_VIDEO=""
@@ -553,7 +557,7 @@ if [ -n "$XFORCEVESA" ] || [ -n "$(grep xforcevesa /proc/cmdline)" ]; then
   DISCOVERED_VIDEO="vesa"
 fi
 
-db_subst xserver-xorg/config/device/driver choices "$DISCOVERED_VIDEO"
+db_subst xserver-xorg/config/device/driver choices "$DRIVERS_LIST"
 auto_answer db_input low xserver-xorg/config/device/driver "$DISCOVERED_VIDEO"
 
 if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
@@ -699,6 +703,7 @@ elif [ -n "$DOKBDETECT" ]; then
     br) XMAP="us"; VARIANT="intl"; MODEL="pc104";;
     br-abnt2) XMAP="br"; VARIANT="abnt2"; MODEL="abnt2";;
     by) XMAP="by";;
+    ca-multi) XMAP="ca"; VARIANT="multi";;
     cf) XMAP="ca"; VARIANT="fr";;
     croat) XMAP="hr";;
     cz-lat2) XMAP="cz";;
@@ -1010,7 +1015,7 @@ case "$1" in
       remove_conffile_commit "/etc/init.d/xserver-xorg"
     fi
     if dpkg --compare-versions "$2" lt-nl "1:7.3+13"; then
-      update-rc.d -f xserver-xorg remove
+      update-rc.d xserver-xorg remove || true
     fi
     ;;
 esac

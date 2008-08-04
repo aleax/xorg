@@ -1,3 +1,29 @@
+xorg (1:7.4~1) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * X.Org 7.4 release candidate
+  * Drop the vga, glint and dummy drivers from xserver-xorg-video-all Depends
+    (except dummy on s390).
+  * Bump videoabi to 2.9, inputabi to 2.1.
+  * xserver 1.5 doesn't use an external rgb database, don't bother installing
+    it.
+  * Move dexconf from x11-common to xserver-xorg.
+  * Remove pre-dependency on x11-common from xserver-xorg.
+  * Bump x11-common's conflict with xserver-xorg to << 1:7.4~.
+
+  [ Brice Goglin ]
+  * Remove the dependency of xutils against xutils-dev, it was only useful
+    for transitional purpose in Etch, closes: #418123.
+  * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
+  * Add xutils preinst to drop obsolete /etc/X11/rstart/ files,
+    closes: #382360.
+
+  [ Timo Aaltonen ]
+  * Split the variables in vars.* files to span multiple lines. Makes
+    them a lot easier to read and merge.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 14 Jul 2008 02:34:00 +0200
+
 xorg (1:7.4~0ubuntu2) intrepid; urgency=low
 
   * debian/control: Moving displayconfig-gtk to Suggests.  We are
@@ -75,38 +101,44 @@ xorg (1:7.4~0ubuntu1) intrepid; urgency=low
 
  -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 08 Jul 2008 10:03:15 +0300
 
-xorg (1:7.4~1) UNRELEASED; urgency=low
+xorg (1:7.3+15) unstable; urgency=low
+
+  [ Debconf translations]
+  * Finnish. Closes: #491323
+  * Korean. Closes: #491519
+  * Gujarati. Closes: #492097
+
+  [ Julien Cristau ]
+  * If the TMPDIR environment variable is set, preserve it across the
+    invocation of ssh-agent (closes: #355923).  Thanks, Sam Morris!
+  * On sparc, don't put the driver description in the Driver field, using
+    patch from Bernhard R. Link (closes: #469299).
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 02 Aug 2008 23:13:25 +0200
+
+xorg (1:7.3+14) unstable; urgency=low
+
+  * Ignore errors from update-rc.d remove (closes: #490595).
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 13 Jul 2008 10:42:05 +0200
+
+xorg (1:7.3+13) unstable; urgency=low
 
   [ Debconf translations]
   * Malayalam. Closes: #486830
   * Italian. Closes: #487877
   * Swedish. Closes: #488550
   * Dzongkha.
-
-  [ Julien Cristau ]
-  * X.Org 7.4 release candidate
-  * Drop the vga, glint and dummy drivers from xserver-xorg-video-all Depends
-    (except dummy on s390).
-  * Bump videoabi to 2.9, inputabi to 2.1.
-  * xserver 1.5 doesn't use an external rgb database, don't bother installing
-    it.
-  * Move dexconf from x11-common to xserver-xorg.
-  * Remove pre-dependency on x11-common from xserver-xorg.
-  * Bump x11-common's conflict with xserver-xorg to << 1:7.4~.
+  * Traditional Chinese. Closes: #486490
 
   [ Brice Goglin ]
   * Remove obsolete xserver-xorg startup links, closes: #487453.
-  * Remove the dependency of xutils against xutils-dev, it was only useful
-    for transitional purpose in Etch, closes: #418123.
-  * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
-  * Add xutils preinst to drop obsolete /etc/X11/rstart/ files,
-    closes: #382360.
 
-  [ Timo Aaltonen ]
-  * Split the variables in vars.* files to span multiple lines. Makes
-    them a lot easier to read and merge.
+  [ Julien Cristau ]
+  * Map the ca-multi d-i keymap to XkbLayout "ca", XkbVariant "multi"
+    (closes: #466226).
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Tue, 01 Jul 2008 21:42:13 +0300
+ -- Julien Cristau <jcristau@debian.org>  Sat, 12 Jul 2008 16:38:55 +0200
 
 xorg (1:7.3+12ubuntu2) intrepid; urgency=low
 
