@@ -175,60 +175,6 @@ cat >&4 <<SECTION
 #   sudo dpkg-reconfigure -phigh xserver-xorg
 SECTION
 
-### KEYBOARD / INPUTDEVICE
-
-fetch xserver-$SERVER/config/inputdevice/keyboard/rules
-XKB_RULES="$RET"
-fetch xserver-$SERVER/config/inputdevice/keyboard/model
-XKB_MODEL="$RET"
-fetch xserver-$SERVER/config/inputdevice/keyboard/layout
-XKB_LAYOUT="$RET"
-# XkbVariant and XkbOptions are permitted to be null.
-db_get xserver-$SERVER/config/inputdevice/keyboard/variant
-XKB_VARIANT="$RET"
-db_get xserver-$SERVER/config/inputdevice/keyboard/options
-XKB_OPTIONS="$RET"
-
-exec 4>"$DEXCONFTMPDIR/InputDeviceKeyboard"
-cat >&4 <<SECTION
-Section "InputDevice"
-	Identifier	"Generic Keyboard"
-	Driver		"kbd"
-	Option		"XkbRules"	"$XKB_RULES"
-	Option		"XkbModel"	"$XKB_MODEL"
-	Option		"XkbLayout"	"$XKB_LAYOUT"
-SECTION
-if [ -n "$XKB_VARIANT" ]; then
-  printf "\tOption\t\t\"XkbVariant\"\t\"$XKB_VARIANT\"\n" >&4
-fi
-if [ -n "$XKB_OPTIONS" ]; then
-  printf "\tOption\t\t\"XkbOptions\"\t\"$XKB_OPTIONS\"\n" >&4
-fi
-printf "EndSection\n" >&4
-
-### MOUSE / INPUTDEVICE
-
-MOUSE_DRIVER=mouse
-IS_VIRT=
-if which vmmouse_detect >/dev/null 2>&1; then
-  if vmmouse_detect > /dev/null ; then
-    MOUSE_DRIVER=vmmouse
-    IS_VIRT=true
-  fi
-fi
-
-exec 4>"$DEXCONFTMPDIR/InputDeviceMouse"
-cat >&4 <<SECTION
-Section "InputDevice"
-	Identifier	"Configured Mouse"
-	Driver		"$MOUSE_DRIVER"
-	Option		"CorePointer"
-SECTION
-if [ -n "$IS_VIRT" ]; then
-  printf "\tOption\t\t\"Device\"\t\"/dev/input/mice\"\n" >&4
-fi
-printf "EndSection\n" >&4
-
 ### DEVICE
 
 db_get xserver-$SERVER/config/device/driver
