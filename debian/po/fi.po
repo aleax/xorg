@@ -6,15 +6,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Debian Installer xserver-xorg\n"
+"Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
 "POT-Creation-Date: 2008-06-08 22:20+0200\n"
-"PO-Revision-Date: 2006-09-27 11:15+0300\n"
-"Last-Translator: Tapio Lehtonen <tale@debian.org>\n"
+"PO-Revision-Date: 2008-07-18 18:15-0000\n"
+"Last-Translator: Esko Araj√§rvi <edu@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Country: FINLAND\n"
 
 #. Type: select
 #. Description
@@ -29,8 +30,8 @@ msgid ""
 "For the X Window System graphical user interface to operate correctly, it is "
 "necessary to select a video card driver for the X server."
 msgstr ""
-"Jotta X-ikkunointij‰rjestelm‰n graafinen k‰yttˆliittym‰ toimisi oikein, on "
-"valittava X-palvelimen k‰ytt‰m‰ n‰ytˆnohjaimen ajuri."
+"X-ikkunointij√§rjestelm√§n graafinen k√§ytt√∂liittym√§ toimii oikein vain, jos X-"
+"palvelinta varten on valittu (oikea) n√§yt√∂nohjaimen ajuri."
 
 #. Type: select
 #. Description
@@ -39,14 +40,14 @@ msgid ""
 "Drivers are typically named for the video card or chipset manufacturer, or "
 "for a specific model or family of chipsets."
 msgstr ""
-"Ajurit tavataan nimet‰ n‰ytˆnohjaimen tai piirisarjan valmistajan mukaan, "
-"tai piirisarjan tietyn mallin tai malliperheen mukaan."
+"Ajurit nimet√§√§n yleens√§ n√§yt√∂nohjaimen tai piirisarjan valmistajan, mallin "
+"tai malliperheen mukaan."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:3001
 msgid "Use kernel framebuffer device interface?"
-msgstr "K‰ytet‰‰nkˆ ytimen ruutupuskuroitua (framebuffer) laiterajapintaa?"
+msgstr "K√§ytet√§√§nk√∂ ytimen kehyspuskuroitua (framebuffer) laiterajapintaa?"
 
 #. Type: boolean
 #. Description
@@ -56,9 +57,9 @@ msgid ""
 "be configured to perform some operations, such as video mode switching, via "
 "the kernel's framebuffer driver."
 msgstr ""
-"N‰yttˆlaitteiston suoran k‰ytˆn sijaan X-palvelimen asetukset voidaan tehd‰ "
-"siten, ett‰ se tekee jotkin toimenpiteet, kuten n‰yttˆtilan vaihdon, ytimen "
-"kehyspuskuroidun ajurin kautta."
+"N√§ytt√∂laitteiston suoran k√§yt√∂n sijaan X-palvelin voidaan asettaa "
+"suorittamaan tietyt toimenpiteet k√§ytt√§en ytimen kehyspuskuroitua ajuria. "
+"Esimerkiksi n√§ytt√∂tilan vaihto on t√§llainen toimenpide."
 
 #. Type: boolean
 #. Description
@@ -68,15 +69,16 @@ msgid ""
 "and the other does not.  Enabling this option is the safe bet, but feel free "
 "to turn it off if it appears to cause problems."
 msgstr ""
-"Periaatteessa kummankin tavan pit‰isi toimia, mutta k‰yt‰nnˆss‰ joskus "
-"toinen toimii ja toinen ei. T‰m‰n valitseminen on turvallinen vaihtoehto, "
-"mutta sen voi halutessaan ottaa pois, jos siit‰ n‰ytt‰isi olevan harmia."
+"Periaatteessa kummankin tavan pit√§isi toimia, mutta k√§yt√§nn√∂ss√§ joskus "
+"toinen toimii ja toinen ei. T√§m√§n vaihtoehdon pit√§isi olla turvallinen "
+"valinta. Se voidaan kuitenkin ottaa pois k√§yt√∂st√§, jos valinnasta n√§ytt√§√§ "
+"aiheutuvan ongelmia."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:4001
 msgid "Video card's bus identifier:"
-msgstr "N‰ytˆnohjaimen tunniste v‰yl‰ll‰:"
+msgstr "N√§yt√∂nohjaimen v√§yl√§tunniste:"
 
 #. Type: string
 #. Description
@@ -86,15 +88,14 @@ msgid ""
 "devices, should specify the BusID of the video card in an accepted bus-"
 "specific format."
 msgstr ""
-"PowerPC-koneiden k‰ytt‰jien ja kaikkien, joiden on tietokoneessa enemm‰n "
-"kuin yksi n‰ytˆnohjain olisi annettava n‰ytˆnohjaimen BusID kelvollisessa "
-"v‰yl‰kohtaisessa muodossa."
+"N√§yt√∂nohjaimen BusID tulisi antaa kelvollisessa v√§yl√§kohtaisessa muodossa, "
+"jos kone on tyypilt√§√§n PowerPC tai koneessa on useampi n√§yt√∂nohjain."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:4001
 msgid "Examples:"
-msgstr "Esimerkkej‰:"
+msgstr "Esimerkkej√§:"
 
 #. Type: string
 #. Description
@@ -104,9 +105,9 @@ msgid ""
 "heads.  Further configuration will have to be done manually in the X server "
 "configuration file, /etc/X11/xorg.conf."
 msgstr ""
-"Monen n‰ytˆn k‰ytt‰jien kannattaa huomata t‰m‰n tekev‰n asetukset vain "
-"yhdelle n‰ytˆlle. Enemm‰t asetukset on teht‰v‰ itse X-palvelimen "
-"asetustiedostossa /etc/X11/xorg.conf."
+"Useaa n√§ytt√∂√§ samanaikaisesti k√§ytt√§vien kannattaa huomata, ett√§ t√§m√§ tekee "
+"vain yhden n√§yt√∂n asetukset. Muut asetukset on teht√§v√§ k√§sin X-palvelimen "
+"asetustiedostoon /etc/X11/xorg.conf."
 
 #. Type: string
 #. Description
@@ -115,8 +116,8 @@ msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
 msgstr ""
-"Komennolla \"lspci\" voidaan katsoa PCI-, AGP- tai PCI-Express-"
-"n‰ytˆnohjaimen v‰yl‰tunniste."
+"Komennolla ‚Äùlspci‚Äù voidaan selvitt√§√§ PCI-, AGP- tai PCI-Express-"
+"n√§yt√∂nohjaimen v√§yl√§tunniste."
 
 #. Type: string
 #. Description
@@ -125,20 +126,20 @@ msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
 msgstr ""
-"Jos mahdollista, on t‰h‰n kysymykseen t‰ytetty valmis vastaus ja t‰m‰ oletus "
-"olisi hyv‰ksytt‰v‰, paitsi jos tiedet‰‰n ettei se toimi."
+"T√§h√§n kysymykseen annetaan valmis vastaus, jos mahdollista, ja se kannattaa "
+"hyv√§ksy√§, paitsi jos tiet√§√§ ettei se toimi."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:5001
 msgid "Incorrect format for the bus identifier"
-msgstr "V‰‰r‰n muotoinen arvo n‰ytˆnohjaimen tunnisteelle v‰yl‰ll‰"
+msgstr "V√§√§r√§n muotoinen arvo n√§yt√∂nohjaimen v√§yl√§tunnisteelle"
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
 msgid "XKB rule set to use:"
-msgstr "K‰ytett‰v‰ XKB-n‰pp‰inasettelu:"
+msgstr "K√§ytett√§v√§ XKB-s√§√§nn√∂st√∂:"
 
 #. Type: string
 #. Description
@@ -147,18 +148,14 @@ msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
 msgstr ""
-"Jokin XKB-n‰pp‰inasettelu on valittava, jotta X-palvelin k‰sittelisi "
-"n‰pp‰imistˆ‰ oikein."
+"Jotta X-palvelin k√§sittelisi n√§pp√§imist√∂√§ oikein, sille on m√§√§ritelt√§v√§ XKB-"
+"s√§√§nn√∂st√∂."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
 msgid "Users of most keyboards should enter \"xorg\"."
-msgstr ""
-"Jos n‰pp‰imistˆ on U.S. English, olisi t‰m‰ kohta yleens‰ j‰tett‰v‰ tyhj‰ksi."
+msgstr "Useimpien n√§pp√§imist√∂jen kohdalla oikea valinta on ‚Äùxorg‚Äù."
 
 #. Type: string
 #. Description
@@ -168,21 +165,21 @@ msgid ""
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
 "rule sets."
 msgstr ""
-"Kokeneet k‰ytt‰j‰t voivat k‰ytt‰‰ mit‰ tahansa m‰‰ritelty‰ XKB-"
-"n‰pp‰inasettelua. Jos paketti xkb-data on purettu, katso hakemistosta /usr/"
-"share/X11/xkb/rules k‰ytett‰viss‰ olevat n‰pp‰inasettelut."
+"Kokeneet k√§ytt√§j√§t voivat k√§ytt√§√§ mit√§ tahansa m√§√§ritelty√§ XKB-s√§√§nn√∂st√∂√§. "
+"Jos paketti xkb-data on purettu, k√§ytett√§viss√§ olevat s√§√§nn√∂st√∂t l√∂ytyv√§t "
+"hakemistosta /usr/share/X11/xkb/rules."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:6001
 msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Jos et ole varma, t‰h‰n kannattaa asettaa arvoksi \"xorg\"."
+msgstr "Jos olet ep√§varma, anna arvoksi ‚Äùxorg‚Äù."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
 msgid "Keyboard model:"
-msgstr "N‰pp‰imistˆn malli:"
+msgstr "N√§pp√§imist√∂n malli:"
 
 #. Type: string
 #. Description
@@ -191,30 +188,13 @@ msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
 msgstr ""
-"On annettava jokin n‰pp‰imistˆn malli, jotta X-palvelin k‰sittelisi "
-"n‰pp‰imistˆ‰ oikein. K‰ytett‰viss‰ olevat n‰pp‰imistˆmallit riippuvat "
-"k‰ytˆss‰ olevasta XKB-n‰pp‰inasettelusta."
+"Jotta X-palvelin k√§sittelisi n√§pp√§imist√∂√§ oikein, sille on m√§√§ritelt√§v√§ "
+"n√§pp√§imist√∂n malli. K√§ytett√§viss√§ olevat mallit riippuvat k√§yt√∂ss√§ olevasta "
+"XKB-s√§√§nn√∂st√∂st√§."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:7001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -231,23 +211,22 @@ msgid ""
 " - type4: Sun Type4 keyboards;\n"
 " - type5: Sun Type5 keyboards."
 msgstr ""
-"K‰ytˆss‰ on \"xorg\" n‰pp‰inasettelu:\n"
-" - pc101: perinteinen IBM PC/AT -tyylinen 101-n‰pp‰iminen n‰pp‰imistˆ,\n"
-"          yleinen Yhdysvalloissa. Ei ole \"logo\"- tai \"valikko\"-"
-"n‰pp‰imi‰;\n"
-" - pc104: samantapainen kuin pc101-malli, mutta lis‰n‰pp‰imi‰, joissa\n"
-"          tavallisesti \"logo\"- ja \"valikko\"-symbolit;\n"
-" - pc102: samantapainen kuin pc101, yleinen Euroopassa. Mukana \"< >\" -"
-"n‰pp‰in;\n"
-" - pc105: samantapainen kuin pc104, yleinen Euroopassa. Mukana \"< >\" -"
-"n‰pp‰in;\n"
-" - macintosh: Macintosh-n‰pp‰imistˆ, joka k‰ytt‰‰ uutta syˆttˆkerrosta\n"
-"              Linuxin n‰pp‰inkoodeilla;\n"
-" - macintosh_old: Macintosh-n‰pp‰imistˆ, joka ei k‰yt‰ uutta "
-"syˆttˆkerrosta.\n"
-" K‰ytˆss‰ \"sun\" n‰pp‰inasettelu:\n"
-" - type4: Sun Type4 -n‰pp‰imistˆt;\n"
-" - type5: Sun Type5 -n‰pp‰imistˆt."
+" Jos k√§yt√∂ss√§ on ‚Äùxorg‚Äù-s√§√§nn√∂st√∂:\n"
+"  - pc101: perinteinen IBM PC/AT -tyylinen 101-n√§pp√§iminen n√§pp√§imist√∂,\n"
+"           yleinen Yhdysvalloissa. Ei ‚Äùlogo‚Äù- tai ‚Äùvalikko‚Äù-n√§pp√§imi√§\n"
+"  - pc104: samantapainen kuin pc101-malli, mutta lis√§n√§pp√§imi√§, joissa\n"
+"           tavallisesti ‚Äùlogo‚Äù- ja ‚Äùvalikko‚Äù-symbolit\n"
+"  - pc102: samantapainen kuin pc101, yleinen Euroopassa. Mukana ‚Äù< >‚Äù-"
+"n√§pp√§in\n"
+"  - pc105: samantapainen kuin pc104, yleinen Euroopassa. Mukana ‚Äù< >‚Äù-"
+"n√§pp√§in\n"
+"  - macintosh: Macintosh-n√§pp√§imist√∂, joka k√§ytt√§√§ uutta sy√∂tt√∂kerrosta\n"
+"               Linuxin n√§pp√§inkoodeilla\n"
+"  - macintosh_old: Macintosh-n√§pp√§imist√∂, joka ei k√§yt√§ uutta "
+"sy√∂tt√∂kerrosta\n"
+" Jos k√§yt√∂ss√§ on ‚Äùsun‚Äù-s√§√§nn√∂st√∂:\n"
+"  - type4: Sun Type4 -n√§pp√§imist√∂t\n"
+"  - type5: Sun Type5 -n√§pp√§imist√∂t"
 
 #. Type: string
 #. Description
@@ -257,9 +236,8 @@ msgid ""
 "users should select the keyboard model most closely approximated by the "
 "above."
 msgstr ""
-"Kannettavien n‰pp‰imistˆiss‰ ei useinkaan ole yht‰ paljon n‰pp‰imi‰ kuin "
-"ulkoisissa n‰pp‰imistˆiss‰; kannettavissa tulisi valita l‰hinn‰ vastaava "
-"yll‰ olevista."
+"Kannettavien n√§pp√§imist√∂iss√§ on usein v√§hemm√§n n√§pp√§imi√§ kuin ulkoisissa "
+"n√§pp√§imist√∂iss√§. Kannettavissa tulisi valita yll√§ olevista l√§hinn√§ vastaava."
 
 #. Type: string
 #. Description
@@ -269,9 +247,9 @@ msgid ""
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
 "directory for available rule sets."
 msgstr ""
-"Kokeneet k‰ytt‰j‰t voivat valita mink‰ tahansa valitun XKB-n‰pp‰inasettelun "
-"m‰‰ritt‰mist‰ malleista. Jos paketti xkb on purettu, katso hakemistosta /usr/"
-"share/X11/xkb/rules k‰ytett‰viss‰ olevat n‰pp‰inasettelut."
+"Kokeneet k√§ytt√§j√§t voivat valita mink√§ tahansa valitun XKB-s√§√§nn√∂st√∂n "
+"m√§√§ritt√§mist√§ malleista. Jos paketti xkb on purettu, k√§ytett√§viss√§ olevat "
+"s√§√§nn√∂st√∂t l√∂ytyv√§t hakemistosta /usr/share/X11/xkb/rules."
 
 #. Type: string
 #. Description
@@ -280,14 +258,14 @@ msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
 msgstr ""
-"Jos n‰pp‰imistˆ on U.S. English, pit‰isi yleens‰ kirjoittaa \"pc104\". Jos "
-"n‰pp‰imistˆ on jokin muu, pit‰isi useimmiten kirjoittaa \"pc105\"."
+"U.S. English -n√§pp√§imist√∂jen kohdalla oikea valinta on yleens√§ ‚Äùpc104‚Äù. "
+"Muiden n√§pp√§imist√∂jen kohdalla oikea valinta on yleens√§ ‚Äùpc105‚Äù."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:8001
 msgid "Keyboard layout:"
-msgstr "N‰pp‰inasettelu:"
+msgstr "N√§pp√§inasettelu:"
 
 #. Type: string
 #. Description
@@ -297,9 +275,9 @@ msgid ""
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
 "were previously selected."
 msgstr ""
-"On annettava jokin n‰pp‰inasettelu, jotta X-palvelin k‰sittelisi "
-"n‰pp‰imistˆ‰ oikein. Aiemmit valittu XKB-n‰pp‰inasettelu ja n‰pp‰imistˆn "
-"malli m‰‰r‰‰v‰t k‰ytett‰viss‰ olevat n‰pp‰inasettelut."
+"Jotta X-palvelin k√§sittelisi n√§pp√§imist√∂√§ oikein, sille on m√§√§ritelt√§v√§ "
+"n√§pp√§imist√∂asettelu. Aiemmit valittu XKB-s√§√§nn√∂st√∂ ja n√§pp√§imist√∂n malli "
+"m√§√§r√§√§v√§t k√§ytett√§viss√§ olevat n√§pp√§inasettelut."
 
 #. Type: string
 #. Description
@@ -309,9 +287,9 @@ msgid ""
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
 "rules directory for available rule sets."
 msgstr ""
-"Kokeneet k‰ytt‰j‰t voivat k‰ytt‰‰ mit‰ tahansa valitun XKB-n‰pp‰inasettelun "
-"tukemaa n‰pp‰inasettelua. Jos paketti xkb-data on purettu, katso "
-"hakemistosta /usr/share/X11/xkb/rules k‰ytett‰viss‰ olevat n‰pp‰inasettelut."
+"Kokeneet k√§ytt√§j√§t voivat k√§ytt√§√§ mit√§ tahansa valitun XKB-s√§√§nn√∂st√∂n "
+"tukemaa n√§pp√§inasettelua. Jos paketti xkb-data on purettu, k√§ytett√§viss√§ "
+"olevat s√§√§nn√∂st√∂t l√∂ytyv√§t hakemistosta /usr/share/X11/xkb/rules."
 
 #. Type: string
 #. Description
@@ -321,15 +299,15 @@ msgid ""
 "localized for other countries should generally enter their ISO 3166 country "
 "code.  E.g., France uses \"fr\", and Germany uses \"de\"."
 msgstr ""
-"Jos n‰pp‰imistˆ on U.S. English pit‰isi kirjoittaa \"us\". Muiden maiden "
-"kotoistettujen n‰pp‰imistˆjen k‰ytt‰jien olisi yleens‰ kirjoitettava ISO "
-"3166 mukainen maakoodi. Esim. Suomi on \"fi\" ja Saksa on \"de\"."
+"U.S. English -n√§pp√§imist√∂ille oikea valinta on ‚Äùus‚Äù. Muiden maiden "
+"kotoistetuille n√§pp√§imist√∂ille oikea valinta on yleens√§ ISO 3166 -standardin "
+"mukainen maakoodi. Esimerkiksi Suomen koodi on ‚Äùfi‚Äù ja Saksan ‚Äùde‚Äù."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:9001
 msgid "Keyboard variant:"
-msgstr "N‰pp‰imistˆn muunnelma:"
+msgstr "N√§pp√§imist√∂n muunnelma:"
 
 #. Type: string
 #. Description
@@ -339,9 +317,9 @@ msgid ""
 "be entered.  Available variants depend on which XKB rule set, model, and "
 "layout were previously selected."
 msgstr ""
-"Jotta X-palvelin k‰sittelisi n‰pp‰imistˆ‰ halutulla tavalla, voidaan antaa "
-"n‰pp‰imistˆn muunnelma. K‰ytett‰viss‰ olevat muunnelmat riippuvat valitusta "
-"XKB-n‰pp‰inasettelusta, mallista ja n‰pp‰inasettelusta."
+"Jotta X-palvelin k√§sittelisi n√§pp√§imist√∂√§ halutulla tavalla, voidaan sille "
+"m√§√§ritell√§ n√§pp√§imist√∂n muunnelma. K√§ytett√§viss√§ olevat muunnelmat riippuvat "
+"valitusta XKB-s√§√§nn√∂st√∂st√§, mallista ja n√§pp√§inasettelusta."
 
 #. Type: string
 #. Description
@@ -351,9 +329,9 @@ msgid ""
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
 "the preferred behavior, enter \"nodeadkeys\"."
 msgstr ""
-"Useissa n‰pp‰inasetteluissa on valinnaisesti tuki tarken‰pp‰imien (dead "
-"keys) kuten korkomerkkien ja sirkumfleksin k‰ytˆlle tavallisina merkin "
-"tuottavina n‰pp‰imin‰, ja jos t‰t‰ halutaan kirjoitetaan \"nodeadkeys\"."
+"Monissa n√§pp√§inasetteluissa on mahdollisuus k√§sitell√§ tarken√§pp√§imi√§ (dead "
+"keys), kuten korkomerkkej√§ ja erokepisteit√§, tavallisina merkin tuottavina "
+"n√§pp√§imin√§. T√§m√§ saadaan aikaan sy√∂tt√§m√§ll√§ ‚Äùnodeadkeys‚Äù."
 
 #. Type: string
 #. Description
@@ -364,10 +342,10 @@ msgid ""
 "symbols directory for the file corresponding to your selected layout for "
 "available variants."
 msgstr ""
-"Kokeneet k‰ytt‰j‰t voivat k‰ytt‰‰ mit‰ tahansa valitun XKB-n‰pp‰inasettelun "
-"tukemaa muunnelmaa. Jos paketti xkb-data on purettu, katso hakemistosta /usr/"
-"share/X11/xkb/symbols/ valittua n‰pp‰inasettelua vastaavasta tiedostosta "
-"k‰ytett‰viss‰ olevat muunnelmat."
+"Kokeneet k√§ytt√§j√§t voivat k√§ytt√§√§ mit√§ tahansa valitun XKB-n√§pp√§inasettelun "
+"tukemaa muunnelmaa. Jos paketti xkb-data on purettu, valitun "
+"n√§pp√§inasettelun k√§ytett√§viss√§ olevat muunnelmat l√∂ytyv√§t hakemistossa /usr/"
+"share/X11/xkb/symbols olevasta n√§pp√§inasettelua vastaavasta tiedostosta."
 
 #. Type: string
 #. Description
@@ -375,13 +353,13 @@ msgstr ""
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
-"Jos n‰pp‰imistˆ on U.S. English, olisi t‰m‰ kohta yleens‰ j‰tett‰v‰ tyhj‰ksi."
+"U.S. English -n√§pp√§imist√∂jen kohdalla t√§m√§ tulisi yleens√§ j√§tt√§√§ tyhj√§ksi."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:10001
 msgid "Keyboard options:"
-msgstr "N‰pp‰imistˆn valitsimia:"
+msgstr "N√§pp√§imist√∂valitsimet:"
 
 #. Type: string
 #. Description
@@ -391,10 +369,10 @@ msgid ""
 "entered.  Available options depend on which XKB rule set was previously "
 "selected.  Not all options will work with every keyboard model and layout."
 msgstr ""
-"N‰pp‰imistˆlle voidaan k‰ytt‰‰ valitsimia, jotta X-palvelin k‰sittelisi "
-"n‰pp‰imistˆ‰ halutulla tavalla. K‰ytett‰viss‰ olevat valitsimet riippuvat "
-"aiemmin valitusta XKB-n‰pp‰inasettelusta. Kaikki valitsimet eiv‰t toimi "
-"jokaisen n‰pp‰imistˆmallin ja n‰pp‰inasettelun kanssa."
+"Jotta X-palvelin k√§sittelisi n√§pp√§imist√∂√§ halutulla tavalla, sille voidaan "
+"antaa n√§pp√§imist√∂valitsimia. K√§ytett√§viss√§ olevat valitsimet riippuvat "
+"aiemmin valitusta XKB-s√§√§nn√∂st√∂st√§. Kaikki valitsimet eiv√§t toimi kaikkien "
+"n√§pp√§imist√∂mallien ja n√§pp√§inasettelujen kanssa."
 
 #. Type: string
 #. Description
@@ -404,9 +382,10 @@ msgid ""
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
 "Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
 msgstr ""
-"Jos esimerkiksi halutaan Caps Lock -n‰pp‰imen toimivan toisena Control-"
-"n‰pp‰imen‰, kirjoitetaan \"ctrl:nocaps\"; haluttaessa vaihtaa Caps Lock ja "
-"vasen Control kesken‰‰n kirjoitetaan \"ctrl:swapcaps\"."
+"Jos esimerkiksi Caps Lock -n√§pp√§imen halutaan toimivan ylim√§√§r√§isen√§ Control-"
+"n√§pp√§imen√§, t√§m√§ saadaan aikaan sy√∂tt√§m√§ll√§ ‚Äùctrl:nocaps‚Äù. Jos Caps Lockin "
+"ja vasemman Controlin toiminnot halutaan vaihtaa toisin p√§in, t√§m√§ saadaan "
+"aikaan sy√∂tt√§m√§ll√§ ‚Äùctrl:swapcaps‚Äù."
 
 #. Type: string
 #. Description
@@ -418,10 +397,10 @@ msgid ""
 "to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
 "meta_win\"."
 msgstr ""
-"Toinen esimerkki: jotkut haluavat Meta-n‰pp‰imet n‰pp‰imistˆn Alt-n‰pp‰imiin "
-"(t‰m‰ on oletusarvo), kun taas muut haluavat Meta-n‰pp‰imet Windows- tai "
-"\"logo\"-n‰pp‰imiin. Haluttaessa Windows- tai logo-n‰pp‰imien toimivan Meta-"
-"n‰pp‰imin‰, kirjoitetaan \"altwin:meta_win\"."
+"Toinen esimerkki: Jotkut haluavat Alt-n√§pp√§imien toimivan Meta-n√§pp√§imin√§ "
+"(t√§m√§ on oletus), kun taas toiset haluavat Windows- ja ‚Äùlogo‚Äù-n√§pp√§imien "
+"toimivan Meta-n√§pp√§imin√§. Windows- ja logo-n√§pp√§imet saadaan toimimaan Meta-"
+"n√§pp√§imin√§ sy√∂tt√§m√§ll√§ ‚Äùaltwin:meta_win‚Äù."
 
 #. Type: string
 #. Description
@@ -430,8 +409,8 @@ msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
 msgstr ""
-"Valitsimia voi yhdistell‰ erottamalla ne pilkulla, esimerkiksi \"ctrl:nocaps,"
-"altwin:meta_win\"."
+"Valitsimia voidaan yhdistell√§ erottamalla ne pilkulla, esimerkiksi ‚Äùctrl:"
+"nocaps,altwin:meta_win‚Äù."
 
 #. Type: string
 #. Description
@@ -440,56 +419,56 @@ msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
 msgstr ""
-"Kokeneet k‰ytt‰j‰t voivat k‰ytt‰‰ mit‰ tahansa valitun XKB-asettelun, "
-"n‰pp‰inasettelun ja muunnelman kanssa yhteensopivia valitsimia."
+"Kokeneet k√§ytt√§j√§t voivat k√§ytt√§√§ mit√§ tahansa valitun XKB-mallin, "
+"n√§pp√§inasettelun ja muunnelman kanssa yhteensopivia valitsimia."
 
 #. Type: string
 #. Description
 #: ../xserver-xorg.templates:10001
 msgid "When in doubt, this value should be left blank."
-msgstr "Jos on ep‰varma, olisi t‰m‰ arvo j‰tett‰v‰ tyhj‰ksi."
+msgstr "Jos olet ep√§varma, j√§t√§ t√§m√§ kentt√§ tyhj√§ksi."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:11001
 msgid "Empty value"
-msgstr "Tyhj‰ arvo"
+msgstr "Tyhj√§ arvo"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:11001
 msgid "A null entry is not permitted for this value."
-msgstr "T‰m‰ arvo ei saa olla tyhj‰."
+msgstr "T√§m√§ arvo ei saa olla tyhj√§."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:12001
 msgid "Invalid double-quote characters"
-msgstr "Ei saa kirjoittaa lainausmerkkej‰"
+msgstr "Lainausmerkit eiv√§t ole sallittuja"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:12001
 msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Lainausmerkit (\") eiv‰t ole sallittuja arvossa."
+msgstr "Kent√§n arvossa ei saa olla lainausmerkkej√§ (\")."
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:13001
 msgid "Numerical value needed"
-msgstr "Tarvitaan numero"
+msgstr "Tarvitaan numeerinen arvo"
 
 #. Type: note
 #. Description
 #: ../xserver-xorg.templates:13001
 msgid "Characters other than digits are not allowed in the entry."
-msgstr "Arvossa saa olla vain numeromerkkej‰."
+msgstr "Kent√§n arvossa saa olla vain numeromerkkej√§."
 
 #. Type: boolean
 #. Description
 #: ../xserver-xorg.templates:14001
 msgid "Autodetect keyboard layout?"
-msgstr "Tunnistetaanko n‰pp‰inasettelu automaattisesti?"
+msgstr "Tunnistetaanko n√§pp√§inasettelu automaattisesti?"
 
 #. Type: boolean
 #. Description
@@ -499,8 +478,8 @@ msgid ""
 "combination of the language and the keyboard layout selected in the "
 "installer."
 msgstr ""
-"Xorg-palvelimen valitsee oletuksen n‰pp‰inasettelulle asentimessa valitun "
-"kielen ja n‰pp‰inasettelun perusteella."
+"Xorg-palvelin valitsee n√§pp√§inasettelun oletusarvon asennusohjelmassa "
+"valitun kielen ja n√§pp√§inasettelun perusteella."
 
 #. Type: boolean
 #. Description
@@ -509,20 +488,20 @@ msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
 msgstr ""
-"Valitse t‰m‰ jos n‰pp‰inasettelu halutaan tunnistaa automaattisesti "
-"uudestaan. ƒl‰ valitse jos nykyinen n‰pp‰inasettelu halutaan s‰ilytt‰‰."
+"Valitse t√§m√§, jos haluat, ett√§ n√§pp√§inasettelun tunnistus tehd√§√§n uudelleen. "
+"√Ñl√§ valitse t√§t√§, jos haluat s√§ilytt√§√§ nykyisen n√§pp√§inasettelun."
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:2001
 msgid "Root Only"
-msgstr "Vain p‰‰k‰ytt‰j‰"
+msgstr "Vain p√§√§k√§ytt√§j√§"
 
 #. Type: select
 #. Choices
 #: ../x11-common.templates:2001
 msgid "Console Users Only"
-msgstr "Vain konsolik‰ytt‰j‰t"
+msgstr "Vain konsolik√§ytt√§j√§t"
 
 #. Type: select
 #. Choices
@@ -534,7 +513,7 @@ msgstr "Kaikki"
 #. Description
 #: ../x11-common.templates:2002
 msgid "Users allowed to start the X server:"
-msgstr "K‰ytt‰j‰t jotka saavat k‰ynnist‰‰ X-palvelimen:"
+msgstr "K√§ytt√§j√§t, jotka saavat k√§ynnist√§√§ X-palvelimen:"
 
 #. Type: select
 #. Description
@@ -547,12 +526,12 @@ msgid ""
 "compromise is to permit the X server to be started only by users logged in "
 "to one of the virtual consoles."
 msgstr ""
-"Tietoturvasyist‰ saattaa olla huono ajatus sallia kenen tahansa k‰ynnist‰‰ X-"
-"palvelin, koska se toimii p‰‰k‰ytt‰j‰n oikeuksilla. Toisaalta on viel‰ "
-"huonompi ajatus suorittaa yleisk‰yttˆisi‰ X:n asiakasohjelmia p‰‰k‰ytt‰j‰n‰, "
-"mik‰ saattaa olla tilanne jos vain p‰‰k‰ytt‰j‰ saa k‰ynnist‰‰ X-palvelimen. "
-"Hyv‰ sovitteluratkaisu on sallia X-palvelimen k‰ynnistys ainoastaan "
-"k‰ytt‰jille jotka ovat kirjautuneet sis‰‰n jollekin virtuaalikonsolille."
+"Tietoturvasyist√§ on huono ajatus antaa kaikille oikeudet X-palvelimen "
+"k√§ynnist√§miseen, koska sit√§ ajetaan p√§√§k√§ytt√§j√§n oikeuksilla. Toisaalta on "
+"viel√§ huonompi ajatus suorittaa yleisk√§ytt√∂isi√§ X:n asiakasohjelmia "
+"p√§√§k√§ytt√§j√§n√§, mik√§ on tilanne, jos vain p√§√§k√§ytt√§j√§ saa k√§ynnist√§√§ X-"
+"palvelimen. Hyv√§ ratkaisu on sallia X-palvelimen k√§ynnistys ainoastaan "
+"k√§ytt√§jille, jotka ovat kirjautuneet jollekin virtuaalikonsolille."
 
 #. Type: string
 #. Description
@@ -572,12 +551,12 @@ msgid ""
 "priority).  The default nice value for ordinary processes is 0, and this is "
 "also the recommend value for the X server."
 msgstr ""
-"K‰ytett‰ess‰ erilaisia skeduloijia k‰yttˆj‰rjestelm‰n ytimess‰ on havaittu X-"
-"palvelimen suorituskyvyn paranevan kun sen prioriteetti on suurempi kuin "
-"prosessien oletusarvo; prosessin prioriteetti ilmaistaan sen \"nice\"-"
-"arvolla. Mahdolliset arvot ovat -20:st‰ (hyvin korkea prioriteetti) arvoon "
-"19 (hyvin alhainen prioriteetti). Tavallisten prosessien oletusarvo nicelle "
-"on 0, ja t‰m‰ on myˆs X-palvelimelle suositeltu arvo."
+"X-palvelimen suorituskyky√§ voidaan tiettyj√§ vuorotusj√§rjestelmi√§ k√§ytt√§vi√§ "
+"k√§ytt√∂j√§rjestelm√§n ytimi√§ k√§ytett√§ess√§ parantaa ajamalla sit√§ oletusarvoa "
+"korkeammalla prioriteetilla. Prosessin prioriteetti ilmaistaan sen ‚Äùnice‚Äù-"
+"arvolla. Arvoalueen √§√§rip√§√§t ovat -20 (eritt√§in korkea prioriteetti) ja 19 "
+"(eritt√§in alhainen prioriteetti). Tavallisten prosessien oletusarvo on 0 ja "
+"se on my√∂s X-palvelimelle suositeltu arvo."
 
 #. Type: string
 #. Description
@@ -587,27 +566,28 @@ msgid ""
 "the X server will interfere with important system tasks.  Too positive, and "
 "the X server will be sluggish and unresponsive."
 msgstr ""
-"V‰lin -10 - 0 ulkopuolella olevia arvoja ei suositella; liian negatiivinen "
-"arvo saa X-palvelimen h‰iritsem‰‰n j‰rjestelm‰n t‰rkeit‰ prosesseja. Liian "
-"suuri positiivinen arvo tekee X-palvelimesta j‰hme‰n ja hitaan reagoimaan."
+"Lukua -10 pienempi√§ tai lukua 0 suurempia arvoja ei suositella, koska liian "
+"negatiivisella arvolla X-palvelin h√§iritsee t√§rkeit√§ j√§rjestelm√§prosesseja "
+"ja liian suuret positiiviset arvot tekev√§t X-palvelimesta j√§hme√§n ja hitaan "
+"reagoimaan."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:5001
 msgid "Incorrect nice value"
-msgstr "Nice-arvo ei kelpaa"
+msgstr "Virheellinen nice-arvo"
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:5001
 msgid "Please enter an integer between -20 and 19."
-msgstr "Kirjoita kokonaisluku v‰lilt‰ -20 - 19."
+msgstr "Anna kokonaisluku lukujen -20 ja 19 v√§lilt√§."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:6001
 msgid "Major possible upgrade issues"
-msgstr "Mahdollisesti vakavia p‰ivityspulmia"
+msgstr "Vakavat p√§ivitysongelmat mahdollisia"
 
 #. Type: note
 #. Description
@@ -620,18 +600,18 @@ msgid ""
 "recommended that you install the xorg package to make sure you have a fully "
 "functional X setup."
 msgstr ""
-"Jotkut k‰ytt‰j‰t ovat ilmoittaneet ettei paketti xserver ole en‰‰ "
-"asennettuna kun on p‰ivitetty t‰m‰nhetkiseen pakettijoukkoon. Koska t‰m‰n "
-"ongelman kiert‰miseen ei ole helppoa keinoa, olisi varmistettava ett‰ "
-"paketti xserver-xorg on asennettuna p‰ivityksen j‰lkeen. Jos se ei ole ja "
-"sit‰ tarvitaan, suositellaan asennettavaksi paketti xorg, jotta varmasti "
-"olisi asennettuna toimiva X-j‰rjestelm‰."
+"Er√§√§t k√§ytt√§j√§t ovat raportoineet, ett√§ paketti xserver ei ollut en√§√§ "
+"asennettuna heid√§n p√§ivitetty√§√§n nykyiseen pakettijoukkoon. T√§t√§ ongelmaa ei "
+"voida helposti ratkaista. Tarkista p√§ivityksen j√§lkeen, ett√§ paketti xserver-"
+"xorg on asennettuna. Jos paketti ei ole asennettuna ja sit√§ tarvitaan, on "
+"suositeltavaa asentaa paketti xorg. T√§m√§ varmistaa, ett√§ k√§yt√∂ss√§ on toimiva "
+"X-j√§rjestelm√§."
 
 #. Type: note
 #. Description
 #: ../x11-common.templates:7001
 msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Hakemistoa /usr/X11R6/bin ei voi poistaa"
+msgstr "Hakemistoa /usr/X11R6/bin ei voida poistaa"
 
 #. Type: note
 #. Description
@@ -643,11 +623,12 @@ msgid ""
 "are currently in the directory out of the way so that the installation can "
 "complete. If you like, you may move them back after the symlink is in place."
 msgstr ""
-"T‰m‰ asennus vaatii hakemiston /usr/X11R6/bin poistettavaksi ja "
-"korvattavaksi symbolisella linkill‰. T‰t‰ yritettiin, mutta se ep‰onnistui, "
-"luultavimmin koska  hakemisto ei ole viel‰ tyhj‰. Hakemistossa nyt olevat "
-"tiedostot on siirrett‰v‰ pois tielt‰, jotta asennus p‰‰see loppuun. "
-"Haluttaessa ne voidaan siirt‰‰ takaisin, kun symbolinen linkki on paikallaan."
+"T√§m√§ asennus vaatii, ett√§ hakemisto /usr/X11R6/bin poistetaan ja korvataan "
+"symbolisella linkill√§. T√§t√§ yritettiin, mutta yritys ep√§onnistui. "
+"Todenn√§k√∂isin syy on se, ett√§ hakemisto ei ole viel√§ tyhj√§. Hakemistossa nyt "
+"olevat tiedostot on siirrett√§v√§ pois tielt√§, jotta asennus voidaan saattaa "
+"loppuun. Haluttaessa tiedostot voidaan siirt√§√§ takaisin, kun symbolinen "
+"linkki on luotu."
 
 #. Type: note
 #. Description
@@ -657,18 +638,18 @@ msgid ""
 "Please re-run your upgrade procedure after you have cleaned out the "
 "directory."
 msgstr ""
-"T‰m‰n paketin asennus p‰‰ttyy nyt virheeseen, jotta tuo voidaan tehd‰. "
-"K‰ynnist‰ p‰ivitys uudestaan, kun hakemisto on siivottu."
+"T√§m√§n paketin asennus p√§√§ttyy nyt virheeseen, jotta edell√§mainittu voidaan "
+"tehd√§. K√§ynnist√§ p√§ivitys uudestaan, kun hakemisto on siivottu."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
 #~ "Type 5 keyboards, however, should enter \"sun\"."
 #~ msgstr ""
-#~ "Useimmille n‰pp‰imistˆille pit‰isi valita \"xorg\".  Sun Type 4 ja Type 5 "
-#~ "-n‰pp‰imistˆille pit‰isi kuitenkin valita \"sun\"."
+#~ "Useimmille n√§pp√§imist√∂ille pit√§isi valita \"xorg\".  Sun Type 4 ja Type 5 "
+#~ "-n√§pp√§imist√∂ille pit√§isi kuitenkin valita \"sun\"."
 
 #~ msgid "Attempt to autodetect video hardware?"
-#~ msgstr "Yritet‰‰nkˆ tunnistaa n‰yttˆlaitteisto automaattisesti?"
+#~ msgstr "Yritet√§√§nk√∂ tunnistaa n√§ytt√∂laitteisto automaattisesti?"
 
 #~ msgid ""
 #~ "You should choose this option if you would like to attempt to autodetect "
@@ -677,10 +658,10 @@ msgstr ""
 #~ "and/or driver module.  If it succeeds, further configuration questions "
 #~ "about your video hardware will be pre-answered."
 #~ msgstr ""
-#~ "Valitse t‰m‰ toiminto, jos haluat laitetunnistuksen automaattisesti "
-#~ "valitsevan suositellun X-palvelimen ja n‰yttˆkortin ajurimoduulin. Jos "
-#~ "automaattinen laitetunnistus ep‰onnistuu, pit‰‰ haluttu X-palvelin ja/tai "
-#~ "ajurimoduuli valita itse. Jos se onnistuu, on n‰yttˆlaitteistoa koskeviin "
+#~ "Valitse t√§m√§ toiminto, jos haluat laitetunnistuksen automaattisesti "
+#~ "valitsevan suositellun X-palvelimen ja n√§ytt√∂kortin ajurimoduulin. Jos "
+#~ "automaattinen laitetunnistus ep√§onnistuu, pit√§√§ haluttu X-palvelin ja/tai "
+#~ "ajurimoduuli valita itse. Jos se onnistuu, on n√§ytt√∂laitteistoa koskeviin "
 #~ "jatkokysymyksiin valmis vastaus."
 
 #~ msgid ""
@@ -688,9 +669,9 @@ msgstr ""
 #~ "not choose this option.  You will not be asked to select the X server if "
 #~ "there is only one available."
 #~ msgstr ""
-#~ "Jos mieluummin valitaan X-palvelin ja ajurimoduuli itse, tulee t‰m‰ kohta "
-#~ "j‰tt‰‰ valitsematta. X-palvelinta ei tarvitse valita, jos niit‰ on "
-#~ "k‰ytett‰viss‰ vain yksi."
+#~ "Jos mieluummin valitaan X-palvelin ja ajurimoduuli itse, tulee t√§m√§ kohta "
+#~ "j√§tt√§√§ valitsematta. X-palvelinta ei tarvitse valita, jos niit√§ on "
+#~ "k√§ytett√§viss√§ vain yksi."
 
 #~ msgid "Multiple potential default X.Org server drivers for the hardware"
 #~ msgstr ""
@@ -702,8 +683,8 @@ msgstr ""
 #~ "required to support the various devices.  It is thus not possible to "
 #~ "automatically select a default X server."
 #~ msgstr ""
-#~ "Havaittiin useita n‰ytˆnohjaimia, ja tarvitaan eri X-palvelimet tukemaan "
-#~ "eri laitteita. Niinp‰ ei ole mahdollista valita oletusta X-palvelimeksi "
+#~ "Havaittiin useita n√§yt√∂nohjaimia, ja tarvitaan eri X-palvelimet tukemaan "
+#~ "eri laitteita. Niinp√§ ei ole mahdollista valita oletusta X-palvelimeksi "
 #~ "automaattisesti."
 
 #~ msgid ""
@@ -711,21 +692,21 @@ msgstr ""
 #~ "head\"; this is generally the video card and monitor used for display "
 #~ "when the computer is booted up."
 #~ msgstr ""
-#~ "Tee asetukset laitteelle, joka on t‰m‰n tietokoneen \"ensisijainen n‰yttˆ"
-#~ "\"; tavallisesti se n‰ytˆnohjain ja n‰yttˆ, jota k‰ytet‰‰n kun tietokone "
-#~ "k‰ynnistyy."
+#~ "Tee asetukset laitteelle, joka on t√§m√§n tietokoneen \"ensisijainen n√§ytt√∂"
+#~ "\"; tavallisesti se n√§yt√∂nohjain ja n√§ytt√∂, jota k√§ytet√§√§n kun tietokone "
+#~ "k√§ynnistyy."
 
 #~ msgid ""
 #~ "The configuration process currently only supports single-headed setups; "
 #~ "however, the X server configuration files can be edited later to support "
 #~ "a multi-head configuration."
 #~ msgstr ""
-#~ "Asetusprosessi ymm‰rt‰‰ t‰ll‰ hetkell‰ vain yhden n‰ytˆn k‰ytˆn; X-"
-#~ "palvelimen asetustiedotoja voi kuitenkin myˆhemmin muokata jos halutaan "
-#~ "tukea usean n‰ytˆn k‰ytˆ‰."
+#~ "Asetusprosessi ymm√§rt√§√§ t√§ll√§ hetkell√§ vain yhden n√§yt√∂n k√§yt√∂n; X-"
+#~ "palvelimen asetustiedotoja voi kuitenkin my√∂hemmin muokata jos halutaan "
+#~ "tukea usean n√§yt√∂n k√§yt√∂√§."
 
 #~ msgid "Identifier for your video card:"
-#~ msgstr "N‰ytˆnohjaimen tunniste:"
+#~ msgstr "N√§yt√∂nohjaimen tunniste:"
 
 #~ msgid ""
 #~ "The X server configuration file associates your video card with a name "
@@ -733,29 +714,29 @@ msgstr ""
 #~ "by the model name, e.g., \"Intel i915\", \"ATI RADEON X800\", or \"NVIDIA "
 #~ "GeForce 6600\"."
 #~ msgstr ""
-#~ "X-palvelimen asetustiedostossa voidaan n‰ytˆnohjaimelle antaa nimi. Nimi "
-#~ "on tavallisesti valmistajan tai merkin nimi, jonka j‰lkeen tulee "
+#~ "X-palvelimen asetustiedostossa voidaan n√§yt√∂nohjaimelle antaa nimi. Nimi "
+#~ "on tavallisesti valmistajan tai merkin nimi, jonka j√§lkeen tulee "
 #~ "mallinimi, esim. \"Intel i915\", \"ATI RADEON X800\", tai \"NVIDIA "
 #~ "GeForce 6600\"."
 
 #~ msgid "Generic Video Card"
-#~ msgstr "Tyypillinen n‰ytˆnohjain"
+#~ msgstr "Tyypillinen n√§yt√∂nohjain"
 
 #~ msgid "Video modes to be used by the X server:"
-#~ msgstr "N‰yttˆtilat joita X-palvelimen halutaan k‰ytt‰v‰n:"
+#~ msgstr "N√§ytt√∂tilat joita X-palvelimen halutaan k√§ytt√§v√§n:"
 
 #~ msgid ""
 #~ "Please keep only the resolutions you would like the X server to use.  "
 #~ "Removing all of them is the same as removing none, since in both cases "
 #~ "the X server will attempt to use the highest possible resolution."
 #~ msgstr ""
-#~ "S‰ilyt‰ vain ne n‰yttˆtarkkuudet joita X-palvelimen halutaan k‰ytt‰v‰n. "
-#~ "Kaikkien poistaminen ja ei yht‰‰n poistamista johtaa samaan "
-#~ "lopputulokseen: X-palvelin yritt‰‰ k‰ytt‰‰ suurinta mahdollista "
+#~ "S√§ilyt√§ vain ne n√§ytt√∂tarkkuudet joita X-palvelimen halutaan k√§ytt√§v√§n. "
+#~ "Kaikkien poistaminen ja ei yht√§√§n poistamista johtaa samaan "
+#~ "lopputulokseen: X-palvelin yritt√§√§ k√§ytt√§√§ suurinta mahdollista "
 #~ "tarkkuutta."
 
 #~ msgid "Attempt monitor autodetection?"
-#~ msgstr "Yritet‰‰nkˆ tunnistaa n‰yttˆ automaattisesti?"
+#~ msgstr "Yritet√§√§nk√∂ tunnistaa n√§ytt√∂ automaattisesti?"
 
 #~ msgid ""
 #~ "Many monitors (including LCD's) and video cards support a communication "
@@ -764,61 +745,61 @@ msgstr ""
 #~ "this protocol, further configuration questions about the monitor will be "
 #~ "pre-answered."
 #~ msgstr ""
-#~ "Useat n‰ytˆt (mukaan lukien nestekiden‰ytˆt) ja n‰ytˆnohjaimet tukevat "
-#~ "yhteysk‰yt‰ntˆ‰ jonka avulla n‰ytˆn tekniset tiedot voidaan v‰litt‰‰ "
-#~ "tietokoneelle. Jos n‰yttˆ ja n‰ytˆnohjain tukevat t‰t‰ yhteysk‰yt‰ntˆ‰, "
-#~ "on n‰yttˆ‰ koskeviin jatkokysymyksiin valmis vastaus."
+#~ "Useat n√§yt√∂t (mukaan lukien nestekiden√§yt√∂t) ja n√§yt√∂nohjaimet tukevat "
+#~ "yhteysk√§yt√§nt√∂√§ jonka avulla n√§yt√∂n tekniset tiedot voidaan v√§litt√§√§ "
+#~ "tietokoneelle. Jos n√§ytt√∂ ja n√§yt√∂nohjain tukevat t√§t√§ yhteysk√§yt√§nt√∂√§, "
+#~ "on n√§ytt√∂√§ koskeviin jatkokysymyksiin valmis vastaus."
 
 #~ msgid ""
 #~ "If autodetection fails, you will be asked for information about the "
 #~ "monitor."
 #~ msgstr ""
-#~ "N‰ytˆn tiedot kysyt‰‰n jos automaattinen laitetunnistus ep‰onnistuu."
+#~ "N√§yt√∂n tiedot kysyt√§√§n jos automaattinen laitetunnistus ep√§onnistuu."
 
 #~ msgid "Method for selecting the monitor characteristics:"
-#~ msgstr "Tapa jolla n‰ytˆn ominaisuudet kysyt‰‰n:"
+#~ msgstr "Tapa jolla n√§yt√∂n ominaisuudet kysyt√§√§n:"
 
 #~ msgid ""
 #~ "For the X Window System graphical user interface to operate correctly, "
 #~ "certain characteristics of the monitor must be known."
 #~ msgstr ""
-#~ "Jotkin n‰ytˆn ominaisuudet on tunnettava, jotta X-ikkunointij‰rjestelm‰n "
-#~ "graafinen k‰yttˆliittym‰ toimisi oikein."
+#~ "Jotkin n√§yt√∂n ominaisuudet on tunnettava, jotta X-ikkunointij√§rjestelm√§n "
+#~ "graafinen k√§ytt√∂liittym√§ toimisi oikein."
 
 #~ msgid ""
 #~ "The \"simple\" option will prompt about the monitor's physical size; this "
 #~ "will set some configuration values appropriate for a typical CRT of the "
 #~ "corresponding size, but may be suboptimal for high-quality CRT's."
 #~ msgstr ""
-#~ "\"Yksinkertainen\" kysyy n‰ytˆn l‰pimitan; t‰m‰n perusteella tehd‰‰n "
-#~ "asetukset sopiviksi tyypilliselle sen kokoiselle kuvaputkin‰ytˆlle. "
-#~ "Asetukset eiv‰t ehk‰ ole parhaat mahdolliset laatun‰ytˆlle."
+#~ "\"Yksinkertainen\" kysyy n√§yt√∂n l√§pimitan; t√§m√§n perusteella tehd√§√§n "
+#~ "asetukset sopiviksi tyypilliselle sen kokoiselle kuvaputkin√§yt√∂lle. "
+#~ "Asetukset eiv√§t ehk√§ ole parhaat mahdolliset laatun√§yt√∂lle."
 
 #~ msgid ""
 #~ "The \"medium\" option will present you with a list of resolutions and "
 #~ "refresh rates, such as \"800x600 @ 85Hz\"; you should choose the best "
 #~ "mode you wish to use (and that you know the monitor is capable of)."
 #~ msgstr ""
-#~ "\"Keskitaso\" n‰ytt‰‰ luettelon n‰ytˆn tarkkuuksista ja "
+#~ "\"Keskitaso\" n√§ytt√§√§ luettelon n√§yt√∂n tarkkuuksista ja "
 #~ "virkistystaajuuksista, kuten \"800x600 @ 85Hz\"; olisi valittava paras "
-#~ "n‰yttˆtila jota halutaan k‰ytt‰‰ (ja joka tiedet‰‰n toimivaksi n‰ytˆn "
+#~ "n√§ytt√∂tila jota halutaan k√§ytt√§√§ (ja joka tiedet√§√§n toimivaksi n√§yt√∂n "
 #~ "kanssa)."
 
 #~ msgid ""
 #~ "The \"advanced\" option will let you specify the monitor's horizontal "
 #~ "sync and vertical refresh tolerances directly."
 #~ msgstr ""
-#~ "\"Hankalampi\" valinta tarkoittaa n‰ytˆn vaaka- ja "
+#~ "\"Hankalampi\" valinta tarkoittaa n√§yt√∂n vaaka- ja "
 #~ "pystypoikkeutustaajuusaalueiden kirjoittamista."
 
 #~ msgid "Up to 14 inches (355 mm)"
-#~ msgstr "Enint‰‰n 14 tuumaa (355 mm)"
+#~ msgstr "Enint√§√§n 14 tuumaa (355 mm)"
 
 #~ msgid "15 inches (380 mm)"
-#~ msgstr "Enint‰‰n 15 tuumaa (380 mm)"
+#~ msgstr "Enint√§√§n 15 tuumaa (380 mm)"
 
 #~ msgid "17 inches (430 mm)"
-#~ msgstr "Enint‰‰n 17 tuumaa (430 mm)"
+#~ msgstr "Enint√§√§n 17 tuumaa (430 mm)"
 
 #~ msgid "19-20 inches (480-510 mm)"
 #~ msgstr "19 - 20 tuumaa (480 - 510 mm)"
@@ -827,16 +808,16 @@ msgstr ""
 #~ msgstr "Yli 21 tuumaa (530 mm)"
 
 #~ msgid "Approximate monitor size:"
-#~ msgstr "N‰ytˆn koko suunnilleen:"
+#~ msgstr "N√§yt√∂n koko suunnilleen:"
 
 #~ msgid ""
 #~ "High-quality CRT's may be able to use the next highest size category."
 #~ msgstr ""
-#~ "Laadukas kuvaputkin‰yttˆ saattaa pysty‰ k‰ytt‰m‰‰n seuraavaksi paremman "
+#~ "Laadukas kuvaputkin√§ytt√∂ saattaa pysty√§ k√§ytt√§m√§√§n seuraavaksi paremman "
 #~ "kokoluokan asetuksia."
 
 #~ msgid "Monitor's best video mode:"
-#~ msgstr "N‰ytˆn paras n‰yttˆtila:"
+#~ msgstr "N√§yt√∂n paras n√§ytt√∂tila:"
 
 #~ msgid ""
 #~ "Choose the \"best\" resolution and refresh rate the monitor is capable "
@@ -847,19 +828,19 @@ msgstr ""
 #~ "if in doubt, use the video mode recommended by the manufacturer of your "
 #~ "LCD."
 #~ msgstr ""
-#~ "Valitse \"paras\" tarkkuus ja virkistystaajuus johon n‰yttˆ pystyy. "
-#~ "Isommat tarkkuudet ja virkistystaajuudet ovat parempia. Kuvaputkin‰ytˆlle "
-#~ "voi haluttaessa aivan hyvin valita \"huonomman\" n‰yttˆtilan. "
-#~ "Littun‰yttˆillekin voi ehk‰ valita huonomman n‰yttˆtilan, mutta vain jos "
-#~ "sek‰ n‰ytˆnohjaimen piirisarja ett‰ ajuri tukevat sit‰; jos ei ole varma, "
-#~ "k‰ytet‰‰n littun‰ytˆn valmistajan suosittelemaa n‰yttˆtilaa."
+#~ "Valitse \"paras\" tarkkuus ja virkistystaajuus johon n√§ytt√∂ pystyy. "
+#~ "Isommat tarkkuudet ja virkistystaajuudet ovat parempia. Kuvaputkin√§yt√∂lle "
+#~ "voi haluttaessa aivan hyvin valita \"huonomman\" n√§ytt√∂tilan. "
+#~ "Littun√§ytt√∂illekin voi ehk√§ valita huonomman n√§ytt√∂tilan, mutta vain jos "
+#~ "sek√§ n√§yt√∂nohjaimen piirisarja ett√§ ajuri tukevat sit√§; jos ei ole varma, "
+#~ "k√§ytet√§√§n littun√§yt√∂n valmistajan suosittelemaa n√§ytt√∂tilaa."
 
 #~ msgid "Generic Monitor"
-#~ msgstr "Tyypillinen n‰yttˆ"
+#~ msgstr "Tyypillinen n√§ytt√∂"
 
 #~ msgid "Write monitor sync ranges to the configuration file?"
 #~ msgstr ""
-#~ "Kirjoitetaanko n‰ytˆn vaaka- ja pystypoikkeutustaajuusalueet "
+#~ "Kirjoitetaanko n√§yt√∂n vaaka- ja pystypoikkeutustaajuusalueet "
 #~ "asetustiedostoon?"
 
 #~ msgid ""
@@ -867,13 +848,13 @@ msgstr ""
 #~ "in most cases, but sometimes it needs hinting.  This option is for "
 #~ "experienced users, and should be left at its default."
 #~ msgstr ""
-#~ "X-palvelimen pit‰isi useimmissa tapauksissa pysty‰ tunnistamaan n‰ytˆn "
+#~ "X-palvelimen pit√§isi useimmissa tapauksissa pysty√§ tunnistamaan n√§yt√∂n "
 #~ "vaaka- ja pystypoikkeutustaajuusalueet automaattisesti, mutta joskus "
-#~ "tarvitaan vihjeit‰. T‰m‰ valinta on kokeneille k‰ytt‰jille, ja pit‰isi "
-#~ "j‰tt‰‰ oletusarvoonsa."
+#~ "tarvitaan vihjeit√§. T√§m√§ valinta on kokeneille k√§ytt√§jille, ja pit√§isi "
+#~ "j√§tt√§√§ oletusarvoonsa."
 
 #~ msgid "Monitor's horizontal sync range:"
-#~ msgstr "N‰ytˆn vaakapoikkeutustaajuusalue:"
+#~ msgstr "N√§yt√∂n vaakapoikkeutustaajuusalue:"
 
 #~ msgid ""
 #~ "Please enter either a comma-separated list of discrete values (for fixed-"
@@ -881,14 +862,14 @@ msgstr ""
 #~ "CRT's).  This information should be available in the monitor's manual.  "
 #~ "Values lower than 30 or higher than 130 are extremely rare."
 #~ msgstr ""
-#~ "Kirjoita joko pilkuilla eroteltu luettelo erillisi‰ arvoja "
-#~ "(kiinte‰taajuuksisille n‰ytˆille) tai tavuviivalla eroteltu arvopari "
-#~ "(kaikki nykyaikaiset kuvaputkin‰ytˆt). Tarvittavat tiedot pit‰isi "
-#~ "lˆytym‰n n‰ytˆn ohjekirjasta. Arvot alle 30 tai yli 130 ovat hyvin "
+#~ "Kirjoita joko pilkuilla eroteltu luettelo erillisi√§ arvoja "
+#~ "(kiinte√§taajuuksisille n√§yt√∂ille) tai tavuviivalla eroteltu arvopari "
+#~ "(kaikki nykyaikaiset kuvaputkin√§yt√∂t). Tarvittavat tiedot pit√§isi "
+#~ "l√∂ytym√§n n√§yt√∂n ohjekirjasta. Arvot alle 30 tai yli 130 ovat hyvin "
 #~ "harvinaisia."
 
 #~ msgid "Monitor's vertical refresh range:"
-#~ msgstr "N‰ytˆn pystypoikkeutustaajuusalue:"
+#~ msgstr "N√§yt√∂n pystypoikkeutustaajuusalue:"
 
 #~ msgid ""
 #~ "Please enter either a comma-separated list of discrete values (for fixed-"
@@ -896,24 +877,24 @@ msgstr ""
 #~ "CRT's).  This information should be available in the monitor's manual.  "
 #~ "Values lower than 50 or higher than 160 are extremely rare."
 #~ msgstr ""
-#~ "Kirjoita joko pilkuilla eroteltu luettelo erillisi‰ arvoja "
-#~ "(kiinte‰taajuuksisille n‰ytˆille) tai tavuviivalla eroteltu arvopari "
-#~ "(kaikki nykyaikaiset kuvaputkin‰ytˆt). Tarvittavat tiedot pit‰isi "
-#~ "lˆytym‰n n‰ytˆn ohjekirjasta. Arvot alle 50 tai yli 160 ovat hyvin "
+#~ "Kirjoita joko pilkuilla eroteltu luettelo erillisi√§ arvoja "
+#~ "(kiinte√§taajuuksisille n√§yt√∂ille) tai tavuviivalla eroteltu arvopari "
+#~ "(kaikki nykyaikaiset kuvaputkin√§yt√∂t). Tarvittavat tiedot pit√§isi "
+#~ "l√∂ytym√§n n√§yt√∂n ohjekirjasta. Arvot alle 50 tai yli 160 ovat hyvin "
 #~ "harvinaisia."
 
 #~ msgid "Incorrect values entered"
-#~ msgstr "Annetut arvot olivat v‰‰rin"
+#~ msgstr "Annetut arvot olivat v√§√§rin"
 
 #~ msgid ""
 #~ "The valid syntax is a comma-separated list of discrete values, or a pair "
 #~ "of values separated by a dash."
 #~ msgstr ""
-#~ "Kelvollinen muoto on pilkuilla eroteltu luettelo erillisi‰ arvoja tai "
+#~ "Kelvollinen muoto on pilkuilla eroteltu luettelo erillisi√§ arvoja tai "
 #~ "tavuviivalla eroteltu arvopari."
 
 #~ msgid "Desired default color depth in bits:"
-#~ msgstr "Haluttu oletus v‰risyvyydelle bittein‰:"
+#~ msgstr "Haluttu oletus v√§risyvyydelle bittein√§:"
 
 #~ msgid ""
 #~ "Usually 24-bit color is desirable, but on graphics cards with limited "
@@ -922,20 +903,20 @@ msgstr ""
 #~ "acceleration only for certain depths.  Consult your video card manual for "
 #~ "more information."
 #~ msgstr ""
-#~ "Kannattaa k‰ytt‰‰ 24-bittist‰ v‰risyvyytt‰, mutta jos n‰ytˆnohjaimella ei "
-#~ "ole tarpeeksi n‰yttˆmuistia, saattaa olla mahdollista k‰ytt‰‰ parempia "
-#~ "tarkkuuksia pienent‰m‰ll‰ v‰risyvyytt‰. Lis‰ksi joissain n‰ytˆnohjaimissa "
-#~ "laitetason 3D-kiihdytys toimii vain tietyill‰ v‰risyvyyksill‰. Etsi "
-#~ "lis‰tietoja n‰ytˆnohjaimen ohjekirjasta."
+#~ "Kannattaa k√§ytt√§√§ 24-bittist√§ v√§risyvyytt√§, mutta jos n√§yt√∂nohjaimella ei "
+#~ "ole tarpeeksi n√§ytt√∂muistia, saattaa olla mahdollista k√§ytt√§√§ parempia "
+#~ "tarkkuuksia pienent√§m√§ll√§ v√§risyvyytt√§. Lis√§ksi joissain n√§yt√∂nohjaimissa "
+#~ "laitetason 3D-kiihdytys toimii vain tietyill√§ v√§risyvyyksill√§. Etsi "
+#~ "lis√§tietoja n√§yt√∂nohjaimen ohjekirjasta."
 
 #~ msgid ""
 #~ "So-called \"32-bit color\" is actually 24 bits of color information plus "
 #~ "8 bits of alpha channel or simple zero padding; the X Window System can "
 #~ "handle both.  If you want either, select 24 bits."
 #~ msgstr ""
-#~ "Niin sanottu \"32-bittinen v‰ri\" on oikeastaan 24-bitti‰ v‰ritietoa ja 8 "
-#~ "bitti‰ alfakanavaa tai nollaa; X-ikkunointij‰rjestelm‰ osaa molemmat. "
-#~ "Haluttaessa jompi kumpi valitaan 24 bitti‰."
+#~ "Niin sanottu \"32-bittinen v√§ri\" on oikeastaan 24-bitti√§ v√§ritietoa ja 8 "
+#~ "bitti√§ alfakanavaa tai nollaa; X-ikkunointij√§rjestelm√§ osaa molemmat. "
+#~ "Haluttaessa jompi kumpi valitaan 24 bitti√§."
 
 #~ msgid "Write default Files section to configuration file?"
 #~ msgstr "Kirjoitetaanko Files-osan oletusarvo asetustiedostoon?"
@@ -946,10 +927,10 @@ msgstr ""
 #~ "This option is recommended to experienced users only.  In most cases, it "
 #~ "should be enabled."
 #~ msgstr ""
-#~ "X-palvelimen asetustiedoston Files-osa kertoo X-palvelimelle mist‰ "
-#~ "lˆytyv‰t palvelimen moduulit, RGB-v‰ritietokanta ja kirjasintiedostot. "
-#~ "T‰t‰ valintaa suositellaan vain kokeneille k‰ytt‰jille. Useimmissa "
-#~ "tapauksissa t‰m‰n pit‰isi olla valittuna."
+#~ "X-palvelimen asetustiedoston Files-osa kertoo X-palvelimelle mist√§ "
+#~ "l√∂ytyv√§t palvelimen moduulit, RGB-v√§ritietokanta ja kirjasintiedostot. "
+#~ "T√§t√§ valintaa suositellaan vain kokeneille k√§ytt√§jille. Useimmissa "
+#~ "tapauksissa t√§m√§n pit√§isi olla valittuna."
 
 #~ msgid ""
 #~ "Disable this option if you want to maintain a custom Files section into "
@@ -957,14 +938,14 @@ msgstr ""
 #~ "reference to the local font server, add a reference to a different font "
 #~ "server, or rearrange the default set of local font paths."
 #~ msgstr ""
-#~ "T‰m‰ valinta otetaan pois p‰‰lt‰ jos halutaan itse yll‰pit‰‰ muokattua "
-#~ "Files-osaa X.Org-palvelimen asetustiedostossa. T‰t‰ saatetaan tarvita "
-#~ "jotta viittaus paikalliseen kirjasinpalvelimeen saadaan pois, lis‰tt‰ess‰ "
-#~ "viittaus johonkin muuhun kirjasinpalvelimeen tai j‰rjestett‰ess‰ "
+#~ "T√§m√§ valinta otetaan pois p√§√§lt√§ jos halutaan itse yll√§pit√§√§ muokattua "
+#~ "Files-osaa X.Org-palvelimen asetustiedostossa. T√§t√§ saatetaan tarvita "
+#~ "jotta viittaus paikalliseen kirjasinpalvelimeen saadaan pois, lis√§tt√§ess√§ "
+#~ "viittaus johonkin muuhun kirjasinpalvelimeen tai j√§rjestett√§ess√§ "
 #~ "paikallisten kirjasinpolkujen oletusjoukko."
 
 #~ msgid "No X server known for your video hardware"
-#~ msgstr "Koneen n‰yttˆlaitteistolle sopivaa X-palvelinta ei ole tiedossa"
+#~ msgstr "Koneen n√§ytt√∂laitteistolle sopivaa X-palvelinta ei ole tiedossa"
 
 #~ msgid ""
 #~ "There is either no video hardware installed on this machine (e.g. serial "
@@ -973,11 +954,11 @@ msgstr ""
 #~ "incomplete information in discover's hardware database, or because your "
 #~ "video hardware is not supported by the available X servers."
 #~ msgstr ""
-#~ "T‰ss‰ tietokoneessa joko ei ole mit‰‰n n‰ytˆnohjainta asennettuna (esim. "
-#~ "vain p‰‰te sarjaportissa) tai ohjelma \"discover\" ei pystynyt p‰‰tt‰m‰‰n "
-#~ "mik‰ X-palvelin sopisi n‰yttˆlaitteistolle. T‰m‰ voi johtua discoverin "
-#~ "laitetietokannan vajavaisuudesta tai koneen n‰yttˆlaitteisto ei ole "
-#~ "tuettu k‰ytett‰viss‰ olevissa X-palvelimissa."
+#~ "T√§ss√§ tietokoneessa joko ei ole mit√§√§n n√§yt√∂nohjainta asennettuna (esim. "
+#~ "vain p√§√§te sarjaportissa) tai ohjelma \"discover\" ei pystynyt p√§√§tt√§m√§√§n "
+#~ "mik√§ X-palvelin sopisi n√§ytt√∂laitteistolle. T√§m√§ voi johtua discoverin "
+#~ "laitetietokannan vajavaisuudesta tai koneen n√§ytt√∂laitteisto ei ole "
+#~ "tuettu k√§ytett√§viss√§ olevissa X-palvelimissa."
 
 #~ msgid "Multiple potential default X servers for your hardware"
 #~ msgstr ""
@@ -992,8 +973,8 @@ msgstr ""
 #~ "trackball) must be known."
 #~ msgstr ""
 #~ "Tietyt hiiren (tai muun osoitinlaitteen, kuten paikannuspallon) "
-#~ "ominaisuudet on tunntettava, jotta X-ikkunointij‰rjestelm‰n graafinen "
-#~ "k‰yttˆliittym‰ toimisi oikein."
+#~ "ominaisuudet on tunntettava, jotta X-ikkunointij√§rjestelm√§n graafinen "
+#~ "k√§ytt√∂liittym√§ toimisi oikein."
 
 #~ msgid ""
 #~ "It is necessary to determine which port (connection type) is used by the "
@@ -1006,21 +987,21 @@ msgstr ""
 #~ "or remove PS/2 or bus/inport devices from your computer, please do so "
 #~ "with the computer's power off."
 #~ msgstr ""
-#~ "On selvitett‰v‰ mit‰ porttia (liitintyyppi‰) hiiri k‰ytt‰‰. "
+#~ "On selvitett√§v√§ mit√§ porttia (liitintyyppi√§) hiiri k√§ytt√§√§. "
 #~ "Sarjaporteissa on D:n muotoinen 9- tai 25-piikkinen liitin (eli DB-9 tai "
-#~ "DB-25); hiiren tˆpseli on naaras (siin‰ on rei‰t) ja tietokoneen liitin "
-#~ "on uros (siin‰ on piikit). PS/2-portti on pieni pyˆre‰ (DIN) "
-#~ "kuusipiikkinen; hiiren tˆpseli on uros ja tietokoneen liitin naaras. "
-#~ "Mahdollista on myˆs k‰ytt‰‰ USB-hiirt‰, v‰yl‰hiirt‰ (hyvin vanha malli) "
-#~ "tai ohjelmaa gpm toistimena. Jos PS/2- tai v‰yl‰hiiri on irrotettava tai "
-#~ "kytkett‰v‰ tietokoneeseen, se olisi teht‰v‰ kun tietokoneen virta ei ole "
-#~ "kytkettyn‰."
+#~ "DB-25); hiiren t√∂pseli on naaras (siin√§ on rei√§t) ja tietokoneen liitin "
+#~ "on uros (siin√§ on piikit). PS/2-portti on pieni py√∂re√§ (DIN) "
+#~ "kuusipiikkinen; hiiren t√∂pseli on uros ja tietokoneen liitin naaras. "
+#~ "Mahdollista on my√∂s k√§ytt√§√§ USB-hiirt√§, v√§yl√§hiirt√§ (hyvin vanha malli) "
+#~ "tai ohjelmaa gpm toistimena. Jos PS/2- tai v√§yl√§hiiri on irrotettava tai "
+#~ "kytkett√§v√§ tietokoneeseen, se olisi teht√§v√§ kun tietokoneen virta ei ole "
+#~ "kytkettyn√§."
 
 #~ msgid "Mouse protocol:"
 #~ msgstr "Hiiren protokolla:"
 
 #~ msgid "Emulate 3 button mouse?"
-#~ msgstr "Emuloidaanko 3-n‰pp‰imist‰ hiirt‰?"
+#~ msgstr "Emuloidaanko 3-n√§pp√§imist√§ hiirt√§?"
 
 #~ msgid ""
 #~ "Most programs in the X Window System expect the mouse to have 3 buttons "
@@ -1028,29 +1009,29 @@ msgstr ""
 #~ "presence of a middle button by treating simultaneous clicks or drags of "
 #~ "the left and right buttons as middle button events."
 #~ msgstr ""
-#~ "Useimmat X-ikkunointij‰rjestelm‰n ohjelmat edellytt‰v‰t hiiress‰ olevan 3 "
-#~ "nappulaa (vasen, oikea ja keskimm‰inen). Hiiret joissa on vain 2 nappulaa "
-#~ "voivat emuloida keskimm‰isen nappulan tulkitsemalla molempien nappuloiden "
-#~ "napsautus tai painaminen keskimm‰isen nappulan toiminnoiksi."
+#~ "Useimmat X-ikkunointij√§rjestelm√§n ohjelmat edellytt√§v√§t hiiress√§ olevan 3 "
+#~ "nappulaa (vasen, oikea ja keskimm√§inen). Hiiret joissa on vain 2 nappulaa "
+#~ "voivat emuloida keskimm√§isen nappulan tulkitsemalla molempien nappuloiden "
+#~ "napsautus tai painaminen keskimm√§isen nappulan toiminnoiksi."
 
 #~ msgid ""
 #~ "This option may also be used on mice with 3 or more buttons; the middle "
 #~ "button will continue to work normally."
 #~ msgstr ""
-#~ "T‰t‰ valintaa voi k‰ytt‰‰ myˆs hiirille joissa on 3 nappulaa tai enemm‰n; "
-#~ "keskimm‰inen nappula toimii normaalisti."
+#~ "T√§t√§ valintaa voi k√§ytt√§√§ my√∂s hiirille joissa on 3 nappulaa tai enemm√§n; "
+#~ "keskimm√§inen nappula toimii normaalisti."
 
 #~ msgid ""
 #~ "Note that mouse buttons in excess of five (counting a scroll wheel as two "
 #~ "buttons, one each for \"up\" and \"down\", and a third if the wheel "
 #~ "\"clicks\") are not yet supported with this configuration tool."
 #~ msgstr ""
-#~ "Huomaa ettei t‰m‰ asetustyˆkalu viel‰ tue hiiri‰ joissa on enemm‰n kuin "
-#~ "viisi nappulaa (rulla on kaksi nappulaa, \"ylˆs\" ja \"alas\" ja kolme "
+#~ "Huomaa ettei t√§m√§ asetusty√∂kalu viel√§ tue hiiri√§ joissa on enemm√§n kuin "
+#~ "viisi nappulaa (rulla on kaksi nappulaa, \"yl√∂s\" ja \"alas\" ja kolme "
 #~ "jos rullalla voi \"napsauttaakin\")."
 
 #~ msgid "Attempt mouse device autodetection?"
-#~ msgstr "Yritet‰‰nkˆ tunnistaa hiiri automaattisesti?"
+#~ msgstr "Yritet√§√§nk√∂ tunnistaa hiiri automaattisesti?"
 
 #~ msgid ""
 #~ "If a mouse is attached to the computer, autodetection can be attempted; "
@@ -1058,14 +1039,14 @@ msgstr ""
 #~ "program should be stopped if it is used).  Plugging  a PS/2 or bus/inport "
 #~ "mouse now requires rebooting."
 #~ msgstr ""
-#~ "Jos hiiri on kytkettyn‰ tietokoneesseen, voidaan yritt‰‰ automaattista "
-#~ "laitetunnistusta; voi olla eduksi liikutella hiirt‰ tunnistuksen aikana "
-#~ "(ohjelma gpm olisi sammutettava jos se on k‰ytˆss‰). Jos PS/2- tai "
-#~ "v‰yl‰hiiri kytket‰‰n nyt, tarvitaan tietokoneen uudelleenk‰ynnistys."
+#~ "Jos hiiri on kytkettyn√§ tietokoneesseen, voidaan yritt√§√§ automaattista "
+#~ "laitetunnistusta; voi olla eduksi liikutella hiirt√§ tunnistuksen aikana "
+#~ "(ohjelma gpm olisi sammutettava jos se on k√§yt√∂ss√§). Jos PS/2- tai "
+#~ "v√§yl√§hiiri kytket√§√§n nyt, tarvitaan tietokoneen uudelleenk√§ynnistys."
 
 #~ msgid ""
 #~ "Do not choose this option if you wish to select a mouse type manually."
-#~ msgstr "T‰t‰ ei pid‰ valita jos hiiren tyyppi halutaan antaa itse."
+#~ msgstr "T√§t√§ ei pid√§ valita jos hiiren tyyppi halutaan antaa itse."
 
 #~ msgid ""
 #~ "If you choose it and autodetection fails, you will be asked this question "
@@ -1073,25 +1054,25 @@ msgstr ""
 #~ "succeeds, further configuration questions about the mouse will be pre-"
 #~ "answered."
 #~ msgstr ""
-#~ "Jos t‰m‰ valittiin ja automaattinen laitetunnistus ep‰onnistuu, kysyt‰‰n "
-#~ "t‰m‰ kysymys uudestaan. Automaattista laitetunnistusta voidaan yritt‰‰ "
-#~ "kuinka monta kertaa vaan. Jos se onnistuu, enemm‰t hiirt‰ koskevat "
+#~ "Jos t√§m√§ valittiin ja automaattinen laitetunnistus ep√§onnistuu, kysyt√§√§n "
+#~ "t√§m√§ kysymys uudestaan. Automaattista laitetunnistusta voidaan yritt√§√§ "
+#~ "kuinka monta kertaa vaan. Jos se onnistuu, enemm√§t hiirt√§ koskevat "
 #~ "kysymykset saavat valmiin vastauksen."
 
 #~ msgid "Identifier for the monitor:"
-#~ msgstr "N‰ytˆn tunniste:"
+#~ msgstr "N√§yt√∂n tunniste:"
 
 #~ msgid ""
 #~ "The X server configuration file associates the monitor with a name that "
 #~ "you may provide.  This is usually the vendor or brand name followed by "
 #~ "the model name, e.g., \"Sony E200\" or \"Dell E770s\"."
 #~ msgstr ""
-#~ "X-palvelimen asetustiedostoissa voidaan n‰ytˆlle antaa nimi. Nimi on "
-#~ "tavallisesti valmistajan tai merkin nimi jonka j‰lkeen tulee mallinimi, "
+#~ "X-palvelimen asetustiedostoissa voidaan n√§yt√∂lle antaa nimi. Nimi on "
+#~ "tavallisesti valmistajan tai merkin nimi jonka j√§lkeen tulee mallinimi, "
 #~ "esim. \"Sony E200\" tai \"Dell E770s\"."
 
 #~ msgid "Amount of memory (kB) to be used by the video card:"
-#~ msgstr "N‰ytˆnohjaimen k‰ytt‰m‰n muistin m‰‰r‰ (kt):"
+#~ msgstr "N√§yt√∂nohjaimen k√§ytt√§m√§n muistin m√§√§r√§ (kt):"
 
 #~ msgid ""
 #~ "Typically, the amount of dedicated memory used by the video card is "
@@ -1099,18 +1080,18 @@ msgstr ""
 #~ "the Intel i810) have little or no video memory of their own, and instead "
 #~ "borrow main system memory for their needs."
 #~ msgstr ""
-#~ "Tavallisesti X-palvelin tunnistaa automaattisesti n‰ytˆnohjaimen k‰yttˆˆn "
-#~ "varatun muistin m‰‰r‰n, mutta joillain yhdysrakenteisilla "
-#~ "n‰ytˆnohjainpiireill‰ (kuten Intel i810) on v‰h‰n tai ei ollenkaan omaa "
-#~ "muistia, ja ne lainaavat keskusmuistia omaan k‰yttˆˆns‰."
+#~ "Tavallisesti X-palvelin tunnistaa automaattisesti n√§yt√∂nohjaimen k√§ytt√∂√∂n "
+#~ "varatun muistin m√§√§r√§n, mutta joillain yhdysrakenteisilla "
+#~ "n√§yt√∂nohjainpiireill√§ (kuten Intel i810) on v√§h√§n tai ei ollenkaan omaa "
+#~ "muistia, ja ne lainaavat keskusmuistia omaan k√§ytt√∂√∂ns√§."
 
 #~ msgid ""
 #~ "This parameter should usually be left blank and specified only if the "
 #~ "video card lacks RAM, or if the X server has trouble autodetecting the "
 #~ "RAM size."
 #~ msgstr ""
-#~ "T‰m‰ parametri olisi yleens‰ j‰tett‰v‰ tyhj‰ksi. Arvo annetaan vain, jos "
-#~ "n‰ytˆnohjaimella ei ole muistia, tai X-palvelin ei osaa tunnistaa muistin "
+#~ "T√§m√§ parametri olisi yleens√§ j√§tett√§v√§ tyhj√§ksi. Arvo annetaan vain, jos "
+#~ "n√§yt√∂nohjaimella ei ole muistia, tai X-palvelin ei osaa tunnistaa muistin "
 #~ "kokoa automaattisesti."
 
 #~ msgid "Desired default X server:"
@@ -1121,18 +1102,18 @@ msgstr ""
 #~ "communicates with the video display and input devices, providing a "
 #~ "foundation for the chosen Graphical User Interface (GUI)."
 #~ msgstr ""
-#~ "X-palvelin on X-ikkunointij‰rjestelm‰n laiterajapinta. Se keskustelee "
-#~ "n‰ytˆn ja syˆttˆlaitteiden kanssa, muodostaen perustan valitulle "
-#~ "graafiselle k‰yttˆliittym‰lle (GUI)."
+#~ "X-palvelin on X-ikkunointij√§rjestelm√§n laiterajapinta. Se keskustelee "
+#~ "n√§yt√∂n ja sy√∂tt√∂laitteiden kanssa, muodostaen perustan valitulle "
+#~ "graafiselle k√§ytt√∂liittym√§lle (GUI)."
 
 #~ msgid ""
 #~ "Several X servers may be available; the default is selected via the /etc/"
 #~ "X11/X symbolic link.  Some X servers may not work with some particular "
 #~ "graphics hardware."
 #~ msgstr ""
-#~ "K‰ytett‰viss‰ saattaa olla useita X-palvelimia; oletuspalvelin valitaan "
-#~ "symbolisella linkill‰ /etc/X11/X. Jotkin X-palvelimet eiv‰t ehk‰ toimi "
-#~ "jonkin nimenomaisen n‰ytˆnohjaimen kanssa. "
+#~ "K√§ytett√§viss√§ saattaa olla useita X-palvelimia; oletuspalvelin valitaan "
+#~ "symbolisella linkill√§ /etc/X11/X. Jotkin X-palvelimet eiv√§t ehk√§ toimi "
+#~ "jonkin nimenomaisen n√§yt√∂nohjaimen kanssa. "
 
 #~ msgid "X.Org server modules that should be loaded by default:"
 #~ msgstr "Oletuksena ladattavat X.Org-palvelimen moduulit:"
@@ -1141,8 +1122,8 @@ msgstr ""
 #~ "This option is recommended to experienced users only.  In most cases, all "
 #~ "of these modules should be enabled."
 #~ msgstr ""
-#~ "T‰t‰ valintaa suositellaan vain kokeneille k‰ytt‰jille. Useimmissa "
-#~ "tapauksissa olisi valittava kaikki n‰m‰ moduulit."
+#~ "T√§t√§ valintaa suositellaan vain kokeneille k√§ytt√§jille. Useimmissa "
+#~ "tapauksissa olisi valittava kaikki n√§m√§ moduulit."
 
 #, fuzzy
 #~ msgid ""
@@ -1168,23 +1149,23 @@ msgstr ""
 #~ " - glx   : tuki OpenGL-hahmonnukselle;\n"
 #~ " - dri   : tuki X-palvelimessa DRI:lle (Direct Rendering "
 #~ "Infrastructure);\n"
-#~ " - vbe   : tuki VESA BIOS -laajennoksille. Sallii n‰ytˆn\n"
-#~ "           ominaisuuksien kyselyn n‰ytˆnohjaimen kautta;\n"
-#~ " - ddc   : tuki Data Display Channelille. Sallii n‰ytˆn\n"
-#~ "           ominaisuuksien kyselyn n‰ytˆnohjaimen kautta;\n"
-#~ " - int10 : reaalitilan x86-emulaattori toissijaisten VGA-n‰ytˆnohjainten\n"
-#~ "           k‰ynnist‰miseen. Olisi valittava, jos vbe on valittuna;\n"
-#~ " - dbe   : valitsee kaksoispuskuroinnin k‰ytˆn palvelimessa.\n"
-#~ "           Hyˆdyllinen animaatioissa ja videotoiminnoissa;\n"
-#~ " - extmod: valitsee useita perinteisi‰ ja usein k‰ytettyj‰ laajennoksia,\n"
-#~ "           kuten muotoillut ikkunat, jaetun muistin, n‰yttˆtilan "
+#~ " - vbe   : tuki VESA BIOS -laajennoksille. Sallii n√§yt√∂n\n"
+#~ "           ominaisuuksien kyselyn n√§yt√∂nohjaimen kautta;\n"
+#~ " - ddc   : tuki Data Display Channelille. Sallii n√§yt√∂n\n"
+#~ "           ominaisuuksien kyselyn n√§yt√∂nohjaimen kautta;\n"
+#~ " - int10 : reaalitilan x86-emulaattori toissijaisten VGA-n√§yt√∂nohjainten\n"
+#~ "           k√§ynnist√§miseen. Olisi valittava, jos vbe on valittuna;\n"
+#~ " - dbe   : valitsee kaksoispuskuroinnin k√§yt√∂n palvelimessa.\n"
+#~ "           Hy√∂dyllinen animaatioissa ja videotoiminnoissa;\n"
+#~ " - extmod: valitsee useita perinteisi√§ ja usein k√§ytettyj√§ laajennoksia,\n"
+#~ "           kuten muotoillut ikkunat, jaetun muistin, n√§ytt√∂tilan "
 #~ "vaihdon, \n"
 #~ "           DGA ja Xv;\n"
-#~ " - record: toteuttaa RECORD-laajennoksen, jota k‰ytet‰‰n usein palvelimen "
+#~ " - record: toteuttaa RECORD-laajennoksen, jota k√§ytet√§√§n usein palvelimen "
 #~ "testauksessa;\n"
 #~ " - bitmap: kirjasinten rasteroija (kuten freetype, ja type1-moduulit)."
 
 #~ msgid ""
 #~ "For further information about these modules, please consult the X.Org "
 #~ "documentation."
-#~ msgstr "Lis‰tietoja n‰ist‰ moduleista lˆytyy X.Orgin ohjeista."
+#~ msgstr "Lis√§tietoja n√§ist√§ moduleista l√∂ytyy X.Orgin ohjeista."
