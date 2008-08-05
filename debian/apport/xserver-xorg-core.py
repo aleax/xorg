@@ -2,7 +2,7 @@
 
 '''Xorg Apport interface
 
-Copyright (C) 2007 Canonical Ltd.
+Copyright (C) 2007, 2008 Canonical Ltd.
 Author: Bryce Harrington <bryce.harrington@ubuntu.com>
 
 This program is free software; you can redistribute it and/or modify it
@@ -15,19 +15,14 @@ the full text of the license.
 import os.path
 import subprocess
 
-XORG_CONF = '/etc/X11/xorg.conf'
-XORG_LOG  = '/var/log/Xorg.0.log'
-
 def add_info(report):
-    # xorg.conf
     try:
-        report['XorgConf'] = open(XORG_CONF).read()
+        report['XorgConf'] = open('/etc/X11/xorg.conf').read()
     except IOError:
         pass
 
-    # Xorg.0.log
     try:
-        report['XorgLog']  = open(XORG_LOG).read()
+        report['XorgLog']  = open('/var/log/Xorg.0.log').read()
     except IOError:
         pass
 
@@ -37,14 +32,8 @@ def add_info(report):
         pass
 
     try:
-        script = subprocess.Popen(['lspci'], stdout=subprocess.PIPE)
+        script = subprocess.Popen(['lspci', '-vvnn'], stdout=subprocess.PIPE)
         report['LsPci'] = script.communicate()[0]
-    except OSError:
-        pass
-
-    try:
-        script = subprocess.Popen(['lspci', '-vmm'], stdout=subprocess.PIPE)
-        report['LsPciVVM'] = script.communicate()[0]
     except OSError:
         pass
 
@@ -54,8 +43,16 @@ def add_info(report):
     except OSError:
         pass
 
-# TODO:
-#
-# xrandr --verbose
+    try:
+        script = subprocess.Popen(['xrandr --verbose'], stdout=subprocess.PIPE)
+        report['Xrandr'] = script.communicate()[0]
+    except OSError:
+        pass
+
+    try:
+        script = subprocess.Popen(['xdpyinfo'], stdout=subprocess.PIPE)
+        report['xdpyinfo'] = script.communicate()[0]
+    except OSError:
+        pass
 
 
