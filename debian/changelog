@@ -1,8 +1,15 @@
+xorg (1:7.4~1ubuntu2) UNRELEASED; urgency=low
+
+  * apport/source_xorg.py: Add Xorg.0.log.old and setxkbmap for keyboard
+    bugs.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 15 Aug 2008 15:28:20 -0700
+
 xorg (1:7.4~1ubuntu1) intrepid; urgency=low
 
   [ Bryce Harrington ]
-  * apport/xserver-xorg-core.py:  Cleanup, add xdpyinfo, xrandr, fix
-    lspci args.
+  * apport/source_xorg.py:  Cleanup, add xdpyinfo, xrandr, fix
+    lspci args.  Renamed from xserver-xorg-core.py.
   * x11-common.install, x11-common.links:  Add symlinks for using apport
     across the major X source pkgs.
 

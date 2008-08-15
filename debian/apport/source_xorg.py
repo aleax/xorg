@@ -27,6 +27,11 @@ def add_info(report):
         pass
 
     try:
+        report['XorgLogOld']  = open('/var/log/Xorg.0.log.old').read()
+    except IOError:
+        pass
+
+    try:
         report['ProcVersion']  = open('/proc/version').read()
     except IOError:
         pass
@@ -52,6 +57,18 @@ def add_info(report):
     try:
         script = subprocess.Popen(['xdpyinfo'], stdout=subprocess.PIPE)
         report['xdpyinfo'] = script.communicate()[0]
+    except OSError:
+        pass
+
+    try:
+        script = subprocess.Popen(['setxkbmap -print'], stdout=subprocess.PIPE)
+        report['setxkbmap'] = script.communicate()[0]
+    except OSError:
+        pass
+
+    try:
+        script = subprocess.Popen(['xkbcomp :0 -'], stdout=subprocess.PIPE)
+        report['xkbcomp'] = script.communicate()[0]
     except OSError:
         pass
 
