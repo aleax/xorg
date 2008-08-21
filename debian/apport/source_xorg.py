@@ -49,7 +49,7 @@ def add_info(report):
         pass
 
     try:
-        script = subprocess.Popen(['xrandr --verbose'], stdout=subprocess.PIPE)
+        script = subprocess.Popen(['xrandr', '--verbose'], stdout=subprocess.PIPE)
         report['Xrandr'] = script.communicate()[0]
     except OSError:
         pass
@@ -61,14 +61,20 @@ def add_info(report):
         pass
 
     try:
-        script = subprocess.Popen(['setxkbmap -print'], stdout=subprocess.PIPE)
+        script = subprocess.Popen(['setxkbmap', '-print'], stdout=subprocess.PIPE)
         report['setxkbmap'] = script.communicate()[0]
     except OSError:
         pass
 
     try:
-        script = subprocess.Popen(['xkbcomp :0 -'], stdout=subprocess.PIPE)
+        script = subprocess.Popen(['xkbcomp', ':0 -'], stdout=subprocess.PIPE)
         report['xkbcomp'] = script.communicate()[0]
+    except OSError:
+        pass
+
+    try:
+        script = subprocess.Popen(['intel_reg_dumper'], stdout=subprocess.PIPE)
+        report['intel_reg_dumper'] = script.communicate()[0]
     except OSError:
         pass
 
