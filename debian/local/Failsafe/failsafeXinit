@@ -1,9 +1,10 @@
+#!/bin/bash
 # This provides a stripped down 'failsafe' mode for situations
 # where X is failing to start up.
 
 # Author: Bryce W. Harrington <bryce@canonical.com>
 
-# Copyright 2007 Canonical, Ltd
+# Copyright 2007, 2008 Canonical, Ltd
 #
 # This is free software; you may redistribute it and/or modify
 # it under the terms of the GNU General Public License as
@@ -20,23 +21,155 @@
 # not, write to the Free Software Foundation, Inc., 59 Temple Place,
 # Suite 330, Boston, MA 02111-1307 USA
 
-BULLETPROOF_X_PATH="/etc/gdm"
-
 xorg_conf=$1
 with_gdm=$2
 
-if [ ! -x /usr/bin/xfailsafedialog ] ; then
-   if [ ! -x /usr/bin/displayconfig-gtk ]; then
-      zenity --error --text "Cannot launch graphical configuration tool\nbecause displayconfig-gtk is not installed.\nSorry, without this tool installed you must manually\nconfigure Xorg."
-   else
-      zenity --error --text "Cannot launch graphical configuration tool\nbecause the installed version of displayconfig-gtk\nis too old.  Sorry, without this tool installed\nyou must manually configure Xorg."
-   fi
+display=0
+xorg_log="/var/log/Xorg.${display}.log"
+gdm_log="/var/log/gdm/:${display}.log"
+apport_hook="/usr/share/apport/xserver_hook"
 
-else
-    /usr/bin/gksu -u root "/usr/bin/xfailsafedialog"
+app_width=300
+app_height=300
+app_title="Ubuntu Failsafe-X"
 
-    if [ "x$with_gdm" = "xwith-gdm" ]; then
-        export XORGCONFIG=${xorg_conf}
-        /etc/init.d/gdm restart
+timestamp=$(date +%y%m%d%H%M%S)
+
+display_main_menu() {
+    zenity --list \
+        --radiolist \
+        --title "$app_title" \
+        --width $app_width --height $app_height \
+        --text "What would you like to do?" \
+        --column "" --column "Choice" --column "" \
+          1 RECONFIGURE "Reconfigure graphics" \
+          2 TROUBLESHOOT "Troubleshoot the error" \
+          3 FILE_BUG "Report a bug about this failure" \
+        --hide-column 2
+}
+
+display_reconfigure_menu() {
+    # TODO:  Only display SELECT_BACKUP if backups are available
+
+    zenity --list \
+        --radiolist \
+        --title "$app_title : Reconfiguration" \
+        --text "How would you like to reconfigure your display?" \
+        --width $app_width --height $app_height \
+        --column "" --column "Choice" --column "" \
+          1 RUN_DEXCONF "Use default (generic) configuration" \
+          2 RUN_XORGCONF "Create new configuration for this hardware" \
+          3 SELECT_BACKUP "Use your backed-up configuration" \
+        --hide-column 2
+}
+
+display_troubleshooting_menu() {
+    zenity --list \
+        --radiolist \
+        --title "$app_title : Troubleshooting" \
+        --text "What information would you like to review?" \
+        --width $app_width --height $app_height \
+        --column "" --column "Choice" --column "" \
+          1 VIEW_LOG "Review the log file" \
+          2 VIEW_ERRORS "Review console error messages " \
+          3 EDIT_CONFIG "Edit configuration file" \
+          4 EXIT_TO_CONSOLE "Exit to console" \
+        --hide-column 2
+}
+
+# TODO:  Should we just go ahead and file a bug for them without presenting an option?
+display_filebug_menu() {
+    # Run apport to file a bug
+    if [ -e $apport_hook ]; then
+        $apport_hook
+        if [ $? == 0]; then
+            zenity --info --text "A bug report has been written.\nYou can send it next time you log in."
+        else 
+            zenity --error --text "Your bug could not be recorded successfully.\n"
+        fi        
+    else
+        zenity --error --text "Cannot file bug:  $apport_hook is not present."
     fi
+}
+
+backup_xorg_conf() {
+    # TODO: backup xorg.conf more elegantly...
+    xorg_conf_backup=${xorg_conf}-backup-${timestamp}
+    cp ${xorg_conf} ${xorg_conf_backup}
+    if [ ! $? ]; then
+        return zenity --question --text "Your config could not be backed up.\nDo you want to continue anyway?\n"
+    fi
+}
+
+run_dexconf() {
+    backup_xorg_conf || return 1
+
+    dexconf
+    if [ $? == 0 ]; then
+        zenity --info --text "Your configuration has been restored to default,\nand your old configuration backed up."
+    else
+        # TODO:  Copy $xorg_conf_backup to $xorg_conf if it exists
+        zenity --error --text "Failure restoring configuration to default.\nYour config has not been changed."
+    fi
+}
+
+run_xorgconf() {
+    backup_xorg_conf || return 1
+#   -> run Xorg :99 -configure
+    zenity --error --text "Sorry, this option is not implemented yet"
+}
+
+view_xorg_log() {
+    gedit $xorg_log
+}
+
+view_gdm_log() {
+    gedit $gdm_log
+}
+
+verify_xorgconf() {
+    # Run Alberto's xorg.conf checker
+    zenity --error --text "Sorry, this option is not implemented yet"
+}
+
+edit_config() {
+    backup_xorg_conf || return 1
+
+    gksu gedit $xorg_conf
+}
+
+
+zenity --warning --text "<big><b>Ubuntu is running in low-graphics mode</b></big>\n\nYour screen, graphics card, and input device settings\ncould not be detected correctly.  You will need to configure these yourself."
+
+# TODO: Add --window-icon "$app_icon" to all zenity windows
+
+while : ; do
+    case "$choice" in
+        ## Main Menu ##
+        RECONFIGURE )     choice=$(display_reconfigure_menu) ;;
+        TROUBLESHOOT )    choice=$(display_troubleshooting_menu) ;;
+        FILE_BUG )        choice=$(display_filebug_menu) ;;
+
+        ## Reconfigure Menu ##
+        RUN_DEXCONF )     choice="RECONFIGURE"; run_dexconf ;;
+        RUN_XORGCONF )    choice="RECONFIGURE"; run_xorgconf ;;
+        SELECT_BACKUP )   choice="RECONFIGURE"; ;;
+
+        ## Troubleshooting Menu ##
+        VIEW_LOG )        choice="TROUBLESHOOT"; view_log ;;
+        VIEW_ERRORS )     choice="TROUBLESHOOT"; view_errors ;;
+        VERIFY_XORGCONF ) choice="TROUBLESHOOT"; verify_xorgconf ;;
+        EDIT_CONFIG )     choice="TROUBLESHOOT"; edit_config ;;
+        EXIT_TO_CONSOLE ) with_gdm=""; break ;;
+
+        EXIT )          break ;;
+        *)              choice=$(display_main_menu) || break ;;
+    esac
+done
+
+# TODO:  Will I still need this?
+if [ "x$with_gdm" = "xwith-gdm" ]; then
+    export XORGCONFIG=${xorg_conf}
+    /etc/init.d/gdm restart
 fi
+
