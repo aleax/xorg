@@ -23,6 +23,14 @@ XWRAPPER_CONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_CHECKSUM_BASE"
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
 
+  if dpkg --compare-versions "$2" lt-nl "1:7.4~1ubuntu1"; then
+    remove_conffile_lookup xinit "/etc/X11/Xsession.d/20xorg-common_process-args"
+    remove_conffile_lookup xinit "/etc/X11/Xsession.d/30xorg-common_xresources"
+    remove_conffile_lookup xinit "/etc/X11/Xsession.d/50xorg-common_determine-startup"
+    remove_conffile_lookup xinit "/etc/X11/Xsession.d/90xorg-common_ssh-agent"
+    remove_conffile_lookup xinit "/etc/X11/Xsession.d/99xorg-common_start"
+  fi
+
   # We need to remove /usr/X11R6/bin so we can replace it with a symlink
   if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
     if ! rmdir "/usr/X11R6/bin"; then

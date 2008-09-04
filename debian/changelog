@@ -1,5 +1,6 @@
 xorg (1:7.4~2ubuntu1) UNRELEASED; urgency=low
 
+  [ Bryce Harrington ]
   * local/Failsafe/failsafeXinit:  Replace use of displayconfig-gtk with
     a simple troubleshooting/reconfiguration menu.
   * apport/source_xorg.py:
@@ -9,7 +10,12 @@ xorg (1:7.4~2ubuntu1) UNRELEASED; urgency=low
   * control:
     - Add xinput to xorg Depends so xinput is included in main
 
- -- Bryce Harrington <bryce@ubuntu.com>  Mon, 01 Sep 2008 12:14:45 -0700
+  [ Timo Aaltonen ]
+  * x11-common.{preinst.in,postrm.in,postinstall.in}
+    - Remove old conffiles that used to be in our xinit but have been
+      left behind on upgrade. (LP: #243690)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Thu, 04 Sep 2008 13:01:47 +0300
 
 xorg (1:7.4~2) experimental; urgency=low
 

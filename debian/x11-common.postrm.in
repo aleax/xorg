@@ -18,6 +18,17 @@ XWRAPPER_CONFIG_ROSTER="$CONFIG_AUX_DIR/${XWRAPPER_CONFIG##*/}.roster"
 
 #INCLUDE_SHELL_LIB#
 
+case "$1" in
+abort-install|abort-upgrade)
+  if dpkg --compare-versions "$2" lt-nl "1:7.4~1ubuntu1"; then
+    remove_conffile_rollback xinit "/etc/X11/Xsession.d/20xorg-common_process-args"
+    remove_conffile_rollback xinit "/etc/X11/Xsession.d/30xorg-common_xresources"
+    remove_conffile_rollback xinit "/etc/X11/Xsession.d/50xorg-common_determine-startup"
+    remove_conffile_rollback xinit "/etc/X11/Xsession.d/90xorg-common_ssh-agent"
+    remove_conffile_rollback xinit "/etc/X11/Xsession.d/99xorg-common_start"
+  fi
+esac
+
 # clean up non-conffile configuration files and related materials on purge
 if [ "$1" = "purge" ]; then
   # de-register this package as a handler of the X server wrapper config file
