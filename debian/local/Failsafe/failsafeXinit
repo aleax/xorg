@@ -71,9 +71,9 @@ display_troubleshooting_menu() {
         --text "What information would you like to review?" \
         --width $app_width --height $app_height \
         --column "" --column "Choice" --column "" \
-          1 VIEW_LOG "Review the log file" \
-          2 VIEW_ERRORS "Review console error messages " \
-          3 EDIT_CONFIG "Edit configuration file" \
+          1 VIEW_XORG_LOG "Review the xserver log file" \
+          2 VIEW_GDM_LOG  "Review the startup errors" \
+          3 EDIT_CONFIG   "Edit configuration file" \
         --hide-column 2
 # TODO:          4 VERIFY_XORGCONF "Check configuration file"
 # TODO:          5 EXIT_TO_CONSOLE "Exit to console" \
@@ -163,8 +163,8 @@ while : ; do
         SELECT_BACKUP )   choice="RECONFIGURE"; ;;
 
         ## Troubleshooting Menu ##
-        VIEW_LOG )        choice="TROUBLESHOOT"; view_log ;;
-        VIEW_ERRORS )     choice="TROUBLESHOOT"; view_errors ;;
+        VIEW_XORG_LOG )   choice="TROUBLESHOOT"; view_xorg_log ;;
+        VIEW_GDM_LOG )    choice="TROUBLESHOOT"; view_gdm_log ;;
         VERIFY_XORGCONF ) choice="TROUBLESHOOT"; verify_xorgconf ;;
         EDIT_CONFIG )     choice="TROUBLESHOOT"; edit_config ;;
         EXIT_TO_CONSOLE ) with_gdm=""; break ;;
