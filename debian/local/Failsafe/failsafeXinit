@@ -44,8 +44,9 @@ display_main_menu() {
         --column "" --column "Choice" --column "" \
           1 RECONFIGURE "Reconfigure graphics" \
           2 TROUBLESHOOT "Troubleshoot the error" \
-          3 FILE_BUG "Report a bug about this failure" \
         --hide-column 2
+
+# TODO:          3 FILE_BUG "Report a bug about this failure" \
 }
 
 display_reconfigure_menu() {
@@ -73,8 +74,9 @@ display_troubleshooting_menu() {
           1 VIEW_LOG "Review the log file" \
           2 VIEW_ERRORS "Review console error messages " \
           3 EDIT_CONFIG "Edit configuration file" \
-          4 EXIT_TO_CONSOLE "Exit to console" \
         --hide-column 2
+# TODO:          4 VERIFY_XORGCONF "Check configuration file"
+# TODO:          5 EXIT_TO_CONSOLE "Exit to console" \
 }
 
 # TODO:  Should we just go ahead and file a bug for them without presenting an option?
@@ -106,7 +108,7 @@ run_dexconf() {
 
     dexconf
     if [ $? == 0 ]; then
-        zenity --info --text "Your configuration has been restored to default,\nand your old configuration backed up."
+        zenity --info --text "Your configuration has been restored to default,\nand your old configuration backed up.\nPlease restart.\n"
     else
         # TODO:  Copy $xorg_conf_backup to $xorg_conf if it exists
         zenity --error --text "Failure restoring configuration to default.\nYour config has not been changed."
@@ -115,8 +117,13 @@ run_dexconf() {
 
 run_xorgconf() {
     backup_xorg_conf || return 1
-#   -> run Xorg :99 -configure
-    zenity --error --text "Sorry, this option is not implemented yet"
+
+    Xorg :99 -configure
+    if [ $? == 0 ]; then
+        zenity --info --text "A new configuration has been generated,\nand your old configuration backed up.\nPlease restart.\n"
+    else
+        zenity --error --text "Could not generate a new configuration"
+    fi
 }
 
 view_xorg_log() {
@@ -128,7 +135,7 @@ view_gdm_log() {
 }
 
 verify_xorgconf() {
-    # Run Alberto's xorg.conf checker
+    # Run Alberto's xorg.conf checker (once it's available in main)
     zenity --error --text "Sorry, this option is not implemented yet"
 }
 
@@ -167,7 +174,7 @@ while : ; do
     esac
 done
 
-# TODO:  Will I still need this?
+
 if [ "x$with_gdm" = "xwith-gdm" ]; then
     export XORGCONFIG=${xorg_conf}
     /etc/init.d/gdm restart
