@@ -24,11 +24,11 @@ XWRAPPER_CONFIG_ROSTER="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_ROSTER_BASE"
 case "$1" in
 configure)
   if dpkg --compare-versions "$2" lt-nl "1:7.4~2ubuntu1"; then
-    remove_conffile_commit xinit "/etc/X11/Xsession.d/20xorg-common_process-args"
-    remove_conffile_commit xinit "/etc/X11/Xsession.d/30xorg-common_xresources"
-    remove_conffile_commit xinit "/etc/X11/Xsession.d/50xorg-common_determine-startup"
-    remove_conffile_commit xinit "/etc/X11/Xsession.d/90xorg-common_ssh-agent"
-    remove_conffile_commit xinit "/etc/X11/Xsession.d/99xorg-common_start"
+    remove_conffile_commit "/etc/X11/Xsession.d/20xorg-common_process-args"
+    remove_conffile_commit "/etc/X11/Xsession.d/30xorg-common_xresources"
+    remove_conffile_commit "/etc/X11/Xsession.d/50xorg-common_determine-startup"
+    remove_conffile_commit "/etc/X11/Xsession.d/90xorg-common_ssh-agent"
+    remove_conffile_commit "/etc/X11/Xsession.d/99xorg-common_start"
   fi
 esac
 
