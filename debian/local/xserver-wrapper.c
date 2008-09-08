@@ -107,7 +107,7 @@
 #endif
 
 #if defined(__linux__)
-#define VT_MAJOR_DEV 4
+#define TTY_MAJOR_DEV 4
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 #include <sys/consio.h>
 #endif
@@ -158,7 +158,7 @@ onConsole()
     return FALSE;
   }
   if (S_ISCHR(s.st_mode) &&
-      ((s.st_rdev >> 8) & 0xff) == VT_MAJOR_DEV &&
+      ((s.st_rdev >> 8) & 0xff) == TTY_MAJOR_DEV &&
       (s.st_rdev & 0xff) < 64) {
     return TRUE;
   }
