@@ -159,8 +159,11 @@ onConsole()
     return FALSE;
   }
   if (S_ISCHR(s.st_mode) &&
-      ((s.st_rdev >> 8) & 0xff) == TTY_MAJOR_DEV &&
-      (s.st_rdev & 0xff) < 64) {
+        ((((s.st_rdev >> 8) & 0xff) == TTY_MAJOR_DEV &&
+          (s.st_rdev & 0xff) < 64) ||
+        (((s.st_rdev >> 8) & 0xff) == ALT_TTY_MAJOR_DEV &&
+          (s.st_rdev & 0xff) < 64)
+        )) {
     return TRUE;
   }
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
