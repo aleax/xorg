@@ -108,6 +108,7 @@
 
 #if defined(__linux__)
 #define TTY_MAJOR_DEV 4
+#define ALT_TTY_MAJOR_DEV 5
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 #include <sys/consio.h>
 #endif
