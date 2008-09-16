@@ -1,4 +1,13 @@
-xorg (1:7.4~2ubuntu1) UNRELEASED; urgency=low
+xorg (1:7.4~2ubuntu2) UNRELEASED; urgency=low
+
+  [Loic Minier]
+  * local/xserver-wrapper.c: Add support for /dev/console and other
+    alternate TTY devices such as /dev/console, /dev/tty, or all other
+    char devices with major 5 and minur < 64 for the onConsole() check.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 16 Sep 2008 14:22:57 -0700
+
+xorg (1:7.4~2ubuntu1) intrepid; urgency=low
 
   [ Bryce Harrington ]
   * local/Failsafe/failsafeXinit:  Replace use of displayconfig-gtk with
@@ -16,7 +25,7 @@ xorg (1:7.4~2ubuntu1) UNRELEASED; urgency=low
       left behind on upgrade. (LP: #243690)
   * control: move xfonts-scalable to Recommends (LP: #84938)
 
- -- Timo Aaltonen <tepsipakki@ubuntu.com>  Thu, 04 Sep 2008 13:52:33 +0300
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 11 Sep 2008 17:33:40 -0700
 
 xorg (1:7.4~2) experimental; urgency=low
 
