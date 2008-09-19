@@ -26,15 +26,8 @@
 
 xorg_conf_failsafe=${BPX_XORG_CONF_FAILSAFE:-"/etc/X11/xorg.conf.failsafe"}
 xorg_conf=${BPX_XORG_CONF:-"/etc/X11/xorg.conf"}
-
 run_dexconf=${BPX_RUN_DEXCONF:-"yes"}
-
-# TODO:  This should be set to "vga", however I have been unable to
-#        succeed in getting the vga driver running in anything over
-#        320x200, which is unusable.  So fallback is disabled for now.
-#fallback_driver="vga"
 fallback_driver=${BPX_FALLBACK_DRIVER:-"vesa"}
-
 client=${BPX_CLIENT:-"/etc/gdm/failsafeXinit"}
 clientargs=${BPX_CLIENTARGS:-$xorg_conf_failsafe}
 blacklist=${BPX_BLACKLIST:-"/etc/gdm/failsafeBlacklist"}
@@ -86,7 +79,16 @@ pciids_in_order() {
 }
 
 get_driver() {
-    echo $fallback_driver
+    machine=$(uname -m)
+    if [ $machine = "ppc" ]; then
+        echo "fbdev"
+    elif [ $machine = "powerpc" ]; then
+        echo "fbdev"
+    elif [ $machine = "ppc64" ]; then
+        echo "fbdev"
+    else
+        echo $fallback_driver
+    fi
     return 0
 }
 

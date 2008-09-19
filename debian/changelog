@@ -1,3 +1,12 @@
+xorg (1:7.4~2ubuntu4) UNRELEASED; urgency=low
+
+  * local/Failsafe/failsafeXServer: 'discover' is no longer used, so
+    disable the pci-id based detection of alternate fallback driver, since
+    without discover it just uses 'vesa'.  Going forward, we'll probably
+    just have the X server do the fallback on its own.  (LP: 272086)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 19 Sep 2008 13:28:43 -0700
+
 xorg (1:7.4~2ubuntu3) intrepid; urgency=low
 
   [Michael Larabel]
@@ -6,7 +15,7 @@ xorg (1:7.4~2ubuntu3) intrepid; urgency=low
 
  -- Bryce Harrington <bryce@ubuntu.com>  Fri, 19 Sep 2008 12:17:46 -0700
 
-xorg (1:7.4~2ubuntu2) UNRELEASED; urgency=low
+xorg (1:7.4~2ubuntu2) intrepid; urgency=low
 
   [Loic Minier]
   * local/xserver-wrapper.c: Add support for /dev/console and other
