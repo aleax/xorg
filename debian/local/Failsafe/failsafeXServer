@@ -85,75 +85,8 @@ pciids_in_order() {
     return 0
 }
 
-get_edid() {
-    # Retrieve EDID (if get-edid is installed)
-    is_installed get-edid "retrieve EDID" || return 1
-
-    # Discard stderr, which is text data about the card
-    get-edid 2>/dev/null
-}
-
-get_pciids() {
-    # Retrieve PCI IDs from discover
-    is_installed discover "retreive PCI IDs" || return 1
-
-    discover --enable-all video --format="%i\n"
-}
-
 get_driver() {
-    EDID=$(get_edid)
-    PCIIDS=$(get_pciids)
-
-    if [ "x$EDID" = "x" ]; then
-	echo $fallback_driver
-	return 1
-    elif [ "x$PCIIDS" = "x" ]; then
-	echo $fallback_driver
-	return 2
-    fi
-
-    # TODO:  What if we have multiple pciids?  Assume first for now.
-    pciid=$(echo $PCIIDS | head -n 1)
-
-    EDID_MD5=$(echo $EDID | md5sum | head -n1 | cut -d" " -f1)
-    matches=$(egrep "^$EDID_MD5|^ANY" $blacklist)
-    found="no"
-    for line in "$matches"; do
-	line=$(echo $line | sed -e "s/ \+/ /")
-	range=$(echo $line | cut -d' ' -f 2)
-	driver=$(echo $line | cut -d' ' -f 3)
-	pciid1=$(echo $range | cut -d- -f 1)
-	pciid2=$(echo $range | cut -d- -f 2)
-
-	if [ "x$pciid1" = "x" ]; then
-            continue
-	elif [ "x$pciid1" = "xANY" ]; then
-	    found="yes"
-	    break
-	elif [ "$pciid1" = "$pciid" ]; then
-	    found="yes"
-	    break
-	elif [ "x$pciid2" = "x" ]; then
-            continue
-	elif pciids_in_order $pciid1 $pciid $pciid2 ; then
-	    found="yes"
-	    break
-	fi
-    done
-
-    if [ $found = "no" ]; then
-	echo $main_driver
-
-    else
-	# No driver was specified - assume vga
-	if [ "x$driver" = "x" ]; then
-	    warn "System is blacklisted, but no driver specified; assuming fallback"
-	    driver=$fallback_driver
-	fi
-
-	echo $driver
-    fi
-
+    echo $fallback_driver
     return 0
 }
 
