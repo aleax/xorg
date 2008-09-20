@@ -42,8 +42,9 @@ display_main_menu() {
         --width $app_width --height $app_height \
         --text "What would you like to do?" \
         --column "" --column "Choice" --column "" \
-          1 RECONFIGURE "Reconfigure graphics" \
-          2 TROUBLESHOOT "Troubleshoot the error" \
+          TRUE   LOW_RES_MODE "Run Ubuntu in low-graphics mode for just this session" \
+          FALSE  RECONFIGURE "Reconfigure graphics" \
+          FALSE  TROUBLESHOOT "Troubleshoot the error" \
         --hide-column 2
 
 # TODO:          3 FILE_BUG "Report a bug about this failure" \
@@ -58,9 +59,9 @@ display_reconfigure_menu() {
         --text "How would you like to reconfigure your display?" \
         --width $app_width --height $app_height \
         --column "" --column "Choice" --column "" \
-          1 RUN_DEXCONF "Use default (generic) configuration" \
-          2 RUN_XORGCONF "Create new configuration for this hardware" \
-          3 SELECT_BACKUP "Use your backed-up configuration" \
+          TRUE   RUN_DEXCONF "Use default (generic) configuration" \
+          FALSE  RUN_XORGCONF "Create new configuration for this hardware" \
+          FALSE  SELECT_BACKUP "Use your backed-up configuration" \
         --hide-column 2
 }
 
@@ -71,10 +72,10 @@ display_troubleshooting_menu() {
         --text "What information would you like to review?" \
         --width $app_width --height $app_height \
         --column "" --column "Choice" --column "" \
-          1 VIEW_XORG_LOG "Review the xserver log file" \
-          2 VIEW_GDM_LOG  "Review the startup errors" \
-          3 EDIT_CONFIG   "Edit configuration file" \
-          4 SAVE_CONFIG_LOGS   "Archive configuration and logs" \
+          TRUE   VIEW_XORG_LOG "Review the xserver log file" \
+          FALSE  VIEW_GDM_LOG  "Review the startup errors" \
+          FALSE  EDIT_CONFIG   "Edit configuration file" \
+          FALSE  SAVE_CONFIG_LOGS   "Archive configuration and logs" \
         --hide-column 2
 # TODO:          5 VERIFY_XORGCONF "Check configuration file"
 # TODO:          6 EXIT_TO_CONSOLE "Exit to console" \
@@ -175,6 +176,7 @@ fi
 while : ; do
     case "$choice" in
         ## Main Menu ##
+        LOW_RES_MODE )    with_gdm="low-res"; break ;;
         RECONFIGURE )     choice=$(display_reconfigure_menu) ;;
         TROUBLESHOOT )    choice=$(display_troubleshooting_menu) ;;
         FILE_BUG )        choice=$(display_filebug_menu) ;;
@@ -197,9 +199,13 @@ while : ; do
     esac
 done
 
+zenity --info --text "Standby one minute while the display restarts..."
 
 if [ "x$with_gdm" = "xwith-gdm" ]; then
     export XORGCONFIG="/etc/X11/xorg.conf"
+    /etc/init.d/gdm restart
+elif [ "x$with_gdm" = "xlow-res" ]; then
+    export XORGCONFIG=${xorg_conf}
     /etc/init.d/gdm restart
 fi
 
