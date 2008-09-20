@@ -97,8 +97,8 @@ display_filebug_menu() {
 
 backup_xorg_conf() {
     # TODO: backup xorg.conf more elegantly...
-    xorg_conf_backup=${xorg_conf}-backup-${timestamp}
-    cp ${xorg_conf} ${xorg_conf_backup}
+    xorg_conf_backup="/etc/X11/xorg.conf-backup-${timestamp}"
+    cp /etc/X11/xorg_conf ${xorg_conf_backup}
     if [ ! $? ]; then
         return zenity --question --text "Your config could not be backed up.\nDo you want to continue anyway?\n"
     fi
@@ -143,7 +143,7 @@ verify_xorgconf() {
 edit_config() {
     backup_xorg_conf || return 1
 
-    gksu gedit $xorg_conf
+    gksu gedit "/etc/X11/xorg.conf"
 }
 
 save_config_logs() {
@@ -199,7 +199,7 @@ done
 
 
 if [ "x$with_gdm" = "xwith-gdm" ]; then
-    export XORGCONFIG=${xorg_conf}
+    export XORGCONFIG="/etc/X11/xorg.conf"
     /etc/init.d/gdm restart
 fi
 
