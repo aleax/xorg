@@ -74,7 +74,7 @@ display_troubleshooting_menu() {
           1 VIEW_XORG_LOG "Review the xserver log file" \
           2 VIEW_GDM_LOG  "Review the startup errors" \
           3 EDIT_CONFIG   "Edit configuration file" \
-          4 SAVE_CONFIG_LOGS   "Save configuration and logs" \
+          4 SAVE_CONFIG_LOGS   "Archive configuration and logs" \
         --hide-column 2
 # TODO:          5 VERIFY_XORGCONF "Check configuration file"
 # TODO:          6 EXIT_TO_CONSOLE "Exit to console" \
@@ -158,7 +158,7 @@ save_config_logs() {
     tar -cf $xorg_backup_file $xorg_backup_dir
     rm -rf $xorg_backup_dir
 
-    zenity --info --text "Relevant configuration and log files have been saved to:\n$xorg_backup_file\nBug reports can be submitted at http://www.launchpad.net/.\n"
+    zenity --info --text "Relevant configuration and log files have been saved to:\n$xorg_backup_file\nBug reports can be submitted at http://www.launchpad.net/ubuntu/.\n"
 }
 
 # Scan Xorg.0.log for errors
