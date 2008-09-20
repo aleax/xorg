@@ -37,11 +37,7 @@ failsafe_log=${BPX_LOG:-"/var/log/gdm/failsafe.log"}
 
 server=${BPX_SERVER:-/usr/bin/X}
 serverargs=${BPX_SERVERARGS:-"$*"}
-if [ -z "$serverargs" ]; then
-    # Use :10 to avoid overwriting the (failed) Xorg.0.log
-    serverargs=":10"
-fi
-serverargs="${serverargs} -br -once -config $xorg_conf_failsafe"
+serverargs="${serverargs} -br -once -config $xorg_conf_failsafe -logfile /var/log/Xorg.failsafe.log"
    # -br:      Black background
    # -once:    Terminate server after one session
    # -config:  Specify location of xorg.conf file to use
