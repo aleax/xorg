@@ -161,8 +161,14 @@ save_config_logs() {
     zenity --info --text "Relevant configuration and log files have been saved to:\n$xorg_backup_file\nBug reports can be submitted at http://www.launchpad.net/.\n"
 }
 
+# Scan Xorg.0.log for errors
+LOG_ERRORS=$(grep -e "^(EE)" $xorg_log)
 
-zenity --warning --text "<big><b>Ubuntu is running in low-graphics mode</b></big>\n\nYour screen, graphics card, and input device settings\ncould not be detected correctly.  You will need to configure these yourself."
+if [ -z "$LOG_ERRORS" ]; then
+    zenity --warning --text "<big><b>Ubuntu is running in low-graphics mode</b></big>\n\nYour screen, graphics card, and input device settings\ncould not be detected correctly.  You will need to configure these yourself."
+else
+    zenity --warning --text "<big><b>Ubuntu is running in low-graphics mode</b></big>\n\nThe following error was encountered.  You may need\nto update your configuration to solve this.\n\n${LOG_ERRORS}"
+fi
 
 # TODO: Add --window-icon "$app_icon" to all zenity windows
 

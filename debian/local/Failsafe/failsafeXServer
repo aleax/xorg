@@ -42,6 +42,7 @@ serverargs="${serverargs} -br -once -config $xorg_conf_failsafe -logfile /var/lo
    # -once:    Terminate server after one session
    # -config:  Specify location of xorg.conf file to use
    #           Note: Only root can specify absolute paths
+   # -logfile: Don't overwrite Xorg.0.log
 
 warn() {
     echo "Warning:  $1" 1>&2
