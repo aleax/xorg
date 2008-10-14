@@ -934,76 +934,57 @@ fi
 
 # Don't touch the config on upgrades except to deal with known issues with old
 # configs.
-if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
-  # compare the current and stored checksums; if they do not match, assume
-  # that's the way the user wants it.  if we're reconfiguring, overwrite
-  # it regardless and back it up.
-  if [ "$(md5sum "$XORGCONFIG")" = "$(cat "$XORGCONFIG_CHECKSUM")" ] || \
-     ! [ -e "$XORGCONFIG" ] || [ -n "$RECONFIGURE" ]; then
-    # they match or user deleted the file or they're running dpkg-reconfigure; 
-    # prepare a new version
-    NEW_XORGCONFIG="$XORGCONFIG.dpkg-new"
-    if [ -n "$RECONFIGURE" ] && [ -e "$XORGCONFIG" ]; then
-      BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
-      if [ -e "$BACKUP_XORGCONFIG" ]; then
-        bomb "backup xorg.conf file $BACKUP_XORGCONFIG already" \
-             "exists; please remove it and try again"
-      fi
-      cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
-      warn "overwriting possibly-customised configuration file; backup" \
-           "in $BACKUP_XORGCONFIG"
-    fi
-    if dexconf -o "$NEW_XORGCONFIG"; then
-      if ! cmp -s "$XORGCONFIG" "$NEW_XORGCONFIG"; then
-        mv "$NEW_XORGCONFIG" "$XORGCONFIG"
-        md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
-      fi
-    else
-      warn "error while preparing new Xorg X server configuration" \
-           "file in $NEW_XORGCONFIG; not attempting to update existing" \
-           "configuration"
-    fi
-    rm -f "$NEW_XORGCONFIG"
-  else
-    # I'm going to get in so much shit for this...
+if [ -n "$RECONFIGURE" ]; then
+  # prepare a new version
+  NEW_XORGCONFIG="$XORGCONFIG.dpkg-new"
+  if [ -n "$RECONFIGURE" ] && [ -e "$XORGCONFIG" ]; then
     BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
-    warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
-      cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
+    if [ -e "$BACKUP_XORGCONFIG" ]; then
+      bomb "backup xorg.conf file $BACKUP_XORGCONFIG already" \
+           "exists; please remove it and try again"
+    fi
+    cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
+    warn "overwriting possibly-customised configuration file; backup" \
+         "in $BACKUP_XORGCONFIG"
+  fi
+  if dexconf -o "$NEW_XORGCONFIG"; then
+    if ! cmp -s "$XORGCONFIG" "$NEW_XORGCONFIG"; then
+      mv "$NEW_XORGCONFIG" "$XORGCONFIG"
+      md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
+    fi
+  else
+    warn "error while preparing new Xorg X server configuration" \
+         "file in $NEW_XORGCONFIG; not attempting to update existing" \
+         "configuration"
+  fi
+  rm -f "$NEW_XORGCONFIG"
+elif dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
+  # We're upgrading from pre-7.4.  We need to replace i810 with intel, and
+  # via with openchrome.
+  if [ -e "$XORGCONFIG" ]; then
     sed -e'
-	# Dump obsolete modules
-	/^[[:space:]]*Section[[:space:]]\+"Module"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ { /^[[:space:]]*Load[[:space:]]\+"GLcore"[[:space:]]*$/d
-		/^[[:space:]]*Load[[:space:]]\+"speedo"[[:space:]]*$/d
-		/^[[:space:]]*Load[[:space:]]\+"type1"[[:space:]]*$/d
-	}
-	/^[[:space:]]*Section[[:space:]]\+"Files"[[:space:]]*$/,/*[[:space:]]*EndSection[[:space:]]*$/ {
-		# Delete the module path
-		/^[[:space:]]*ModulePath[[:space:]]\+/d
-		# Delete the rgb path
-		/^[[:space:]]*RgbPath[[:space:]]\+/d
-		# Change font paths for the fonts xorg-x11 used to ship
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/misc"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/cyrillic"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/100dpi"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/75dpi"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Type1"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/CID"[[:space:]]*$/d
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Speedo"[[:space:]]*$/d
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/misc"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/misc"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/cyrillic"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/cyrillic"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/100dpi"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/100dpi"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/75dpi"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/75dpi"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/Type1"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/Type1"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/d
+	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
+	/^[[:space:]]*Driver[[:space:]]\+"i810"[[:space:]]*$/s/i810/intel/
+	/^[[:space:]]*Driver[[:space:]]\+"via"[[:space:]]*$/s/via/openchrome/
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
-	chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
-	chmod --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
-	mv ${XORGCONFIG}.madwizard-new $XORGCONFIG
+    if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
+      # compare the current and stored checksums; if they do not match, assume
+      # that's the way the user wants it.
+      if [ "$(md5sum "$XORGCONFIG")" != "$(cat "$XORGCONFIG_CHECKSUM")" ]; then
+        BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
+        warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
+        cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
+      else
+        # checksums match, update the checksum
+        md5sum "${XORGCONFIG}.madwizard-new" > "$XORGCONFIG_CHECKSUM"
+      fi
+      chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
+      chmod --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
+      mv ${XORGCONFIG}.madwizard-new $XORGCONFIG
+    else
+      rm ${XORGCONFIG}.madwizard-new
+    fi
   fi
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
