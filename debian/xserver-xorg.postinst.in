@@ -964,8 +964,8 @@ elif dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
   if [ -e "$XORGCONFIG" ]; then
     sed -e'
 	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
-	/^[[:space:]]*Driver[[:space:]]\+"i810"[[:space:]]*$/s/i810/intel/
-	/^[[:space:]]*Driver[[:space:]]\+"via"[[:space:]]*$/s/via/openchrome/
+	/^[[:space:]]*Driver[[:space:]]\+"i810"/s/i810/intel/
+	/^[[:space:]]*Driver[[:space:]]\+"via"/s/via/openchrome/
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
     if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
