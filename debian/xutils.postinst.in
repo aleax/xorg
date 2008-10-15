@@ -21,10 +21,10 @@ configure)
     remove_conffile_commit "/etc/X11/rstart/contexts/x11r6"
     remove_conffile_commit "/etc/X11/rstart/config"
     remove_conffile_commit "/etc/X11/rstart/rstartd.real"
-    rmdir /etc/X11/rstart/commands/x11r6/ || true
-    rmdir /etc/X11/rstart/commands/ || true
-    rmdir /etc/X11/rstart/contexts/ || true
-    rmdir /etc/X11/rstart/ || true
+    rmdir /etc/X11/rstart/commands/x11r6/ 2>/dev/null || true
+    rmdir /etc/X11/rstart/commands/ 2>/dev/null || true
+    rmdir /etc/X11/rstart/contexts/ 2>/dev/null || true
+    rmdir /etc/X11/rstart/ 2>/dev/null || true
   fi
 esac
 
