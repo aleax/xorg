@@ -958,14 +958,15 @@ if [ -n "$RECONFIGURE" ]; then
          "configuration"
   fi
   rm -f "$NEW_XORGCONFIG"
-elif dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
-  # We're upgrading from pre-7.4.  We need to replace i810 with intel, and
-  # via with openchrome.
+elif dpkg --compare-versions "$2" lt-nl "1:7.4~5ubuntu1"; then
+  # We're upgrading from pre-7.4.  We need to replace i810 with intel,
+  # via with openchrome, and psb with vesa.
   if [ -e "$XORGCONFIG" ]; then
     sed -e'
 	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
 	/^[[:space:]]*Driver[[:space:]]\+"i810"/s/i810/intel/
 	/^[[:space:]]*Driver[[:space:]]\+"via"/s/via/openchrome/
+	/^[[:space:]]*Driver[[:space:]]\+"psb"/s/psb/vesa/
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
     if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
