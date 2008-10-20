@@ -554,6 +554,7 @@ fi
 
 if [ -n "$XFORCEVESA" ] || [ -n "$(grep xforcevesa /proc/cmdline)" ]; then
   # don't let the server autodetect the video card, but always use vesa instead
+  DRIVERS_LIST="vesa"
   DISCOVERED_VIDEO="vesa"
 fi
 

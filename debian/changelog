@@ -1,3 +1,12 @@
+xorg (1:7.4~5ubuntu2) intrepid; urgency=low
+
+  * debian/xserver-xorg.postinst.in: If xforcevesa is set on the kernel
+    cmdline, feed DRIVERS_LIST with vesa so that setting the DRIVER works.
+    Debconf refuses to obey if the list of choices is empty.
+    (LP: #285562)
+
+ -- Timo Aaltonen <tepsipakki@ubuntu.com>  Mon, 20 Oct 2008 09:53:29 +0300
+
 xorg (1:7.4~5ubuntu1) intrepid; urgency=low
 
   * Fix leftover conflicts in debian/changelog.
