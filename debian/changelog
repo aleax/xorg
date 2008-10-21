@@ -1,3 +1,12 @@
+xorg (1:7.4~5ubuntu3) intrepid; urgency=low
+
+  * debian/control: Depend on -evdev so it will get installed on upgrades.
+    Otherwise, in certain upgrade scenarios this can result in
+    non-functioning keyboard/mouse.
+    (LP: #271138)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 21 Oct 2008 16:10:01 -0700
+
 xorg (1:7.4~5ubuntu2) intrepid; urgency=low
 
   * debian/xserver-xorg.postinst.in: If xforcevesa is set on the kernel

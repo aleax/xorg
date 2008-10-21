@@ -82,7 +82,7 @@ Package: xserver-xorg
 Architecture: any
 Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common (<< 7), x11-common (<< 1:7.3+11)
 Replaces: xserver-common (<< 7), x11-common (<< 1:7.3+11)
-Depends: xserver-xorg-core (>= 2:1.5), xserver-xorg-video-all | xserver-xorg-video-4, xserver-xorg-input-all | xserver-xorg-input-2.1, ${shlibs:Depends}, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils, mdetect
+Depends: xserver-xorg-core (>= 2:1.5), xserver-xorg-video-all | xserver-xorg-video-4, xserver-xorg-input-all | xserver-xorg-input-2.1, xserver-xorg-input-evdev, ${shlibs:Depends}, ${misc:Depends}, xkb-data | xkb-data-legacy, x11-xkb-utils, mdetect
 Recommends: libgl1-mesa-dri, udev, ${F:XServer-Xorg-Detect-Depends}
 Suggests: displayconfig-gtk
 Description: the X.Org X server
