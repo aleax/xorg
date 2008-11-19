@@ -1,11 +1,21 @@
+xorg (1:7.4~5ubuntu4) jaunty; urgency=low
+
+  * Depend on hal.  Otherwise, if launching X without hal installed you
+    won't get any input devices.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 19 Nov 2008 10:26:14 -0800
+
 xorg (1:7.4~5ubuntu3) intrepid; urgency=low
 
-  * debian/control: Depend on -evdev so it will get installed on upgrades.
-    Otherwise, in certain upgrade scenarios this can result in
-    non-functioning keyboard/mouse.
-    (LP: #271138)
+  * debian/control:
+    - Depend on -evdev so it will get installed on upgrades.
+      Otherwise, in certain upgrade scenarios this can result in
+      non-functioning keyboard/mouse.
+      (LP: #271138)
+    - Remove displayconfig-gtk from Suggests since it is no longer present
+      in the archive anyway
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 21 Oct 2008 16:10:01 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 21 Oct 2008 16:16:10 -0700
 
 xorg (1:7.4~5ubuntu2) intrepid; urgency=low
 
