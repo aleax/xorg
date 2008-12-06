@@ -45,6 +45,7 @@ display_main_menu() {
           TRUE   LOW_RES_MODE "Run Ubuntu in low-graphics mode for just this session" \
           FALSE  RECONFIGURE "Reconfigure graphics" \
           FALSE  TROUBLESHOOT "Troubleshoot the error" \
+          FALSE  TERMINAL "Open a terminal" \
         --hide-column 2
 
 # TODO:          3 FILE_BUG "Report a bug about this failure" \
@@ -105,6 +106,10 @@ backup_xorg_conf() {
     fi
 }
 
+run_terminal() {
+    gnome-terminal
+}
+
 run_dexconf() {
     backup_xorg_conf || return 1
 
@@ -154,8 +159,13 @@ save_config_logs() {
 
     # cp $xorg_conf $xorg_backup_dir
     cp /etc/X11/xorg.conf $xorg_backup_dir
-    cp $xorg_log $xorg_backup_dir
-    cp $gdm_log $xorg_backup_dir
+    cp ${xorg_log} $xorg_backup_dir
+    cp ${xorg_log}.old $xorg_backup_dir
+    cp ${gdm_log} $xorg_backup_dir
+    cp ${gdm_log}.1 $xorg_backup_dir
+    cp ${gdm_log}.2 $xorg_backup_dir
+    lspci -vvnn > ${xorg_backup_dir}/lspci-vvnn.txt
+    xrandr --verbose > ${xorg_backup_dir}/xrandr-verbose.txt
     tar -cf $xorg_backup_file $xorg_backup_dir
     rm -rf $xorg_backup_dir
 
@@ -180,6 +190,7 @@ while : ; do
         RECONFIGURE )     choice=$(display_reconfigure_menu) ;;
         TROUBLESHOOT )    choice=$(display_troubleshooting_menu) ;;
         FILE_BUG )        choice=$(display_filebug_menu) ;;
+        TERMINAL )        run_terminal ;;
 
         ## Reconfigure Menu ##
         RUN_DEXCONF )     choice="RECONFIGURE"; run_dexconf ;;
@@ -199,13 +210,14 @@ while : ; do
     esac
 done
 
-zenity --info --text "Stand by one minute while the display restarts..."
-
 if [ "x$with_gdm" = "xwith-gdm" ]; then
     export XORGCONFIG="/etc/X11/xorg.conf"
-    /etc/init.d/gdm restart
 elif [ "x$with_gdm" = "xlow-res" ]; then
     export XORGCONFIG=${xorg_conf}
-    /etc/init.d/gdm restart
+else
+    exit
 fi
+
+/etc/init.d/gdm restart | \
+    zenity --progress --pulsate --text "Stand by one minute while the display restarts..."
 
