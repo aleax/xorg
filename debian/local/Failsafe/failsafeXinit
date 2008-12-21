@@ -45,9 +45,9 @@ display_main_menu() {
           TRUE   LOW_RES_MODE "Run Ubuntu in low-graphics mode for just this session" \
           FALSE  RECONFIGURE "Reconfigure graphics" \
           FALSE  TROUBLESHOOT "Troubleshoot the error" \
-          FALSE  TERMINAL "Open a terminal" \
         --hide-column 2
 
+#          FALSE  TERMINAL "Open a terminal" \
 # TODO:          3 FILE_BUG "Report a bug about this failure" \
 }
 
@@ -107,7 +107,8 @@ backup_xorg_conf() {
 }
 
 run_terminal() {
-    gnome-terminal
+# Causes bug #310126
+#    gnome-terminal
 }
 
 run_dexconf() {
