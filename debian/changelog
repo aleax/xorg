@@ -1,3 +1,24 @@
+xorg (1:7.4~5ubuntu10) UNRELEASED; urgency=low
+
+  * apport/source_xorg.py:  Fix arg list to prevent error
+    'Error: Cannot open display ":0 -"'
+    (LP: #311442)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 06 Jan 2009 01:56:25 -0800
+
+xorg (1:7.4~5ubuntu9) jaunty; urgency=low
+
+  * Disable terminal function entirely
+  * Add x11fnc.sh to provide several general purpose X bash functions
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 22 Dec 2008 00:22:22 -0800
+
+xorg (1:7.4~5ubuntu8) jaunty; urgency=low
+
+  * Disable terminal to prevent root access (LP: #310126)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Sun, 21 Dec 2008 00:05:19 -0800
+
 xorg (1:7.4~5ubuntu7) jaunty; urgency=low
 
   * debian/scripts: Drop vmmouse from -input-all for now, doesn't build
