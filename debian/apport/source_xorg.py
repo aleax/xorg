@@ -61,6 +61,12 @@ def add_info(report):
         pass
 
     try:
+        script = subprocess.Popen(['glxinfo'], stdout=subprocess.PIPE)
+        report['glxinfo'] = script.communicate()[0]
+    except OSError:
+        pass
+
+    try:
         script = subprocess.Popen(['setxkbmap', '-print'], stdout=subprocess.PIPE)
         report['setxkbmap'] = script.communicate()[0]
     except OSError:
