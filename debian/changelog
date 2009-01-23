@@ -1,11 +1,17 @@
 xorg (1:7.4~5ubuntu11) UNRELEASED; urgency=low
 
+  [ Bryce Harrington ]
   * apport/source_xorg.py:
     - Adding system environment items recommended at
       http://intellinuxgraphics.org/how_to_report_bug.html
     - Add lshal
     - Add debug test code
     - Drop use of intel_reg_dumper since it requires root (LP: #311560)
+
+  [ Timo Aaltonen ]
+  * Merge with Debian experimental.
+  * debian/control: xserver-xorg doesn't need to depend on mdetect
+    anymore.
 
  -- Bryce Harrington <bryce@ubuntu.com>  Thu, 22 Jan 2009 17:00:31 -0800
 
@@ -90,13 +96,22 @@ xorg (1:7.4~5ubuntu1) intrepid; urgency=low
 
  -- Loic Minier <lool@dooz.org>  Wed, 15 Oct 2008 22:13:23 +0200
 
-xorg (1:7.4~5) UNRELEASED; urgency=low
+xorg (1:7.4~5) experimental; urgency=low
 
+  [ Loic Minier ]
   * Also upgrade Driver i810 or via lines which have trailing comments.
   * Shut up rmdir errors with 2>/dev/null in all maintainer scripts when
     trying to remove dirs; this might confuse debconf.
 
- -- Loic Minier <lool@dooz.org>  Wed, 15 Oct 2008 21:52:39 +0200
+  [ Julien Cristau ]
+  * xserver-xorg Depends on hal.
+  * xserver-xorg Depends on xserver-xorg-input-evdev on Linux (except for
+    s390).
+  * Update input (4) and video (5) ABIs for xserver 1.6.
+  * xserver-xorg Depends on xkb-data >= 1.4.
+  * xserver-xorg Depends on xserver-xorg-core 1.6 rc1.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 21 Jan 2009 22:41:41 +0100
 
 xorg (1:7.4~4ubuntu2) intrepid; urgency=low
 
