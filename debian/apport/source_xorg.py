@@ -127,12 +127,6 @@ def add_info(report):
     except OSError:
         pass
 
-    try:
-        script = subprocess.Popen(['intel_reg_dumper'], stdout=subprocess.PIPE)
-        report['intel_reg_dumper'] = script.communicate()[0]
-    except OSError:
-        pass
-
 ## DEBUGING ##
 if __name__ == '__main__':
     report = {}
