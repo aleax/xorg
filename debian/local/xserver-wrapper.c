@@ -70,6 +70,10 @@
  *                messages at build and run time to allow the user to know
  *                what failed on unsupported systems
  *                (30 Mar 2007)
+ * Brice Goglin: drop privileges on alternate config file given with
+ *               -xf86config (14 Jun 2007)
+ * Loïc Minier: on Linux, also consider alternate tty devices (major 5 and
+ *              minor < 64) as consoles (24 Sep 2008)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
