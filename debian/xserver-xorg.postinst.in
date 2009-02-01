@@ -51,10 +51,6 @@ XORGCONFIG_CHECKSUM="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.md5sum"
 XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.roster"
 THIS_SERVER=/usr/bin/Xorg
 
-NCARDS=0
-NSERVERS=0
-NDRIVERS=0
-DRIVERS_LIST=
 MULTIHEAD=
 
 # get machine architecture
@@ -63,89 +59,6 @@ ARCH=$(dpkg --print-installation-architecture)
 debug_report_status () {
   # Syntax: debug_report_status command exit_status
   debug_echo "$1 exited with status $2"
-}
-
-discover_sparc_video () {
-  # Detect video cards on sparc by parsing prtconf output
-  prtconf -p -v | awk '
-  BEGIN {
-          display_node = 0; 
-          model = ""; 
-          name = ""; 
-  }
-  /Node/ {
-           if(display_node == 1) {
-             printf "model=\"%s\" name=\"%s\"\n", model, name
-             display_node = 0;
-           };
-           model = "";
-           name = ""
-  }
-  /device_type:/ {
-                   if(index($2, "display") != 0) {
-                     display_node = 1
-                   }
-  }
-  /model:/ { l=length($2); model = substr($2, 2, l-2) }
-  /name:/  { l=length($2); name = substr($2, 2, l-2) }
-  END{
-       if(display_node == 1) {
-         printf "model=\"%s\" name=\"%s\"\n", model, name
-       }; 
-  }' | \
-  while read line
-  do
-    eval "${line}"
-#   Match the name and the model to the driver.
-    test -z "${name}" && continue
-#   The model stored in the prom is usually not too
-#   informative, so that we need to provide some
-#   sensible human-readable card identification as well.
-    server='XFree86'
-    case "${name}" in
-      'cgsix' )
-        card='Sun CG6 framebuffer'
-        driver='suncg6' 
-	;;
-      'SUNW,sx' )
-        card='Sun CG14 framebuffer'
-        driver='suncg14'
-        ;;
-      'SUNW,leo' )
-        card='Sun LEO framebuffer'
-        driver='sunleo'
-        ;;
-      'SUNW,tcx' )
-        card='Sun TCX framebuffer' 
-        driver='suntcx'
-	;;
-      'SUNW,m64B' )
-        card='ATI Technologies 3D Rage Pro or similar'
-        driver='ati'
-        ;;
-      'SUNW,ffb' )
-        card='Sun Creator3D framebuffer or similar'
-        driver='sunffb'
-        ;;
-      'SUNW,afb' )
-        card='Sun Elite3D framebuffer or similar'
-        driver='sunffb'
-        ;;
-      'TSI,gfxp' )
-        card='PGX32 framebuffer or similar'
-        driver='glint'
-        ;;
-      * )
-        card='Unknown'
-        server='unknown'
-        driver='unknown'
-        ;;
-    esac
-    if [ -n "${model}" ]; then
-      card="${card} (${model})"
-    fi
-    printf "${card}\t${server}\t${driver}\n"
-  done
 }
 
 validate_string_db_input () {
@@ -462,41 +375,6 @@ if [ -z "$2" ]; then
 fi
 
 debug_echo "Configuring $THIS_PACKAGE."
-
-# collect information about installed video card(s), if possible
-if [ "$ARCH" = "sparc" ]; then
-  DISCOVER_PROG='prtconf'
-  DISCOVER_FUNC='discover_sparc_video'
-
-  if which $DISCOVER_PROG > /dev/null 2>&1; then
-    DISCOVERED_VIDEO=$($DISCOVER_FUNC)
-    MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
-    if [ -n "$DISCOVERED_VIDEO" ]; then
-      NCARDS=$(echo "$DISCOVERED_VIDEO" | wc -l)
-      SERVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $2}' | grep -v unknown | sort | uniq)
-      if [ -n "$SERVERS" ]; then
-        NSERVERS=$(echo "$SERVERS" | wc -l)
-      fi
-      DRIVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $NF}' | grep -v unknown | sort | uniq)
-      if [ -n "$DRIVERS" ]; then
-        NDRIVERS=$(echo "$DRIVERS" | wc -l)
-        DRIVERS_LIST=$(echo "$DRIVERS" | awk 'BEGIN {ORS="";FS="\t"} {if(NR > 1){print last ","};last=$0} END {print last}')
-      fi
-      if [ $MULTIHEAD -gt 1 ]; then
-        MULTIHEAD=yes
-      fi
-      DISCOVERED_VIDEO=$(echo "$DRIVERS" | head -n 1)
-    else
-      DISCOVERED_VIDEO=""
-    fi
-  else
-    DISCOVERED_VIDEO=""
-  fi
-else
-  DISCOVERED_VIDEO=""
-fi
-db_subst xserver-xorg/config/device/driver choices "$DRIVERS_LIST"
-auto_answer db_input low xserver-xorg/config/device/driver "$DISCOVERED_VIDEO"
 
 if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # BusID
@@ -865,6 +743,10 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
                         "xserver-xorg/multiple_possible_x-drivers"; do
           db_unregister "$QUESTION" || true
         done
+fi
+
+if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" lt 1:7.4+6; then
+  db_unregister xserver-xorg/config/device/driver || true
 fi
 
 # no debconf interaction should be done after this point

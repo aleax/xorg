@@ -4,16 +4,6 @@
 # Please consider interacting with the team if you intend
 # to modify the templates or add new templates
 
-Template: xserver-xorg/config/device/driver
-Type: select
-Choices: ${choices}
-_Description: X server driver:
- For the X Window System graphical user interface to operate correctly, it is
- necessary to select a video card driver for the X server.
- .
- Drivers are typically named for the video card or chipset manufacturer, or
- for a specific model or family of chipsets.
-
 Template: xserver-xorg/config/device/use_fbdev
 Type: boolean
 _Description: Use kernel framebuffer device interface?
