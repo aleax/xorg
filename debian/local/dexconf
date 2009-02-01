@@ -218,8 +218,6 @@ SECTION
 
 ### DEVICE
 
-db_get xserver-$SERVER/config/device/driver
-DEVICE_DRIVER="$RET"
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
 db_get xserver-$SERVER/config/device/use_fbdev
@@ -229,9 +227,6 @@ cat >&4 <<SECTION
 Section "Device"
 	Identifier	"Configured Video Device"
 SECTION
-if [ -n "$DEVICE_DRIVER" ]; then
-  printf "\tDriver\t\t\"$DEVICE_DRIVER\"\n" >&4
-fi
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
 fi
