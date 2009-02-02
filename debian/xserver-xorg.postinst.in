@@ -40,54 +40,6 @@ debug_echo () {
   fi
 }
 
-validate_string_db_input () {
-  # Syntax: validate_string_db_input priority template
-  #
-  # validate string input; can't have doublequotes
-  # If $MAY_BE_NULL is a non-null value (e.g., "yes"), the string may be null.
-  if [ $# -ne 2 ]; then
-    echo "internal error: validate_string_db_input() called with wrong number of arguments: $*" >&2
-    exit 1
-  fi
-  PRIORITY="$1"
-  TEMPLATE="$2"
-  db_get "$TEMPLATE"
-  SAFE="$RET"
-  set +e
-  while :; do
-    db_input "$PRIORITY" "$TEMPLATE"
-    # is the question going to be asked?
-    if [ $? -eq 30 ]; then
-      break # no; bail out of validation loop
-    fi
-    db_go
-    db_get "$TEMPLATE"
-    if [ -n "$RET" ]; then
-      if ! expr "$RET" : '.*".*' > /dev/null 2>&1; then
-        break # valid input
-      else
-        ERROR="xserver-xorg/config/doublequote_in_string_error"
-      fi
-    else
-      if [ -n "$MAY_BE_NULL" ]; then
-        break # valid (null) input
-      else
-        ERROR="xserver-xorg/config/null_string_error"
-      fi
-    fi
-    # we only get to this point if the input was invalid; restore the known
-    # good value in case we are interrupted before the user provides a valid
-    # one
-    db_set "$TEMPLATE" "$SAFE"
-    db_fset "$TEMPLATE" seen false
-    # now show the user the error message
-    db_fset "$ERROR" seen false
-    db_input critical "$ERROR"
-    db_go
-  done
-  set -e
-}
-
 CONFIG_DIR="/etc/X11"
 CONFIG_AUX_DIR=/var/lib/x11
 SERVER_SYMLINK="$CONFIG_DIR/X"
@@ -107,14 +59,6 @@ MULTIHEAD=
 
 # get machine architecture
 ARCH=$(dpkg --print-installation-architecture)
-
-debug_echo () {
-  # Syntax: debug_echo message ...
-  if [ -n "$DEBUG_XORG_DEBCONF" ] || [ "$DEBCONF_DEBUG" = "user" ] \
-    || [ "$DEBCONF_DEBUG" = '.*' ]; then
-    DEBUG_XORG_PACKAGE=yes observe "$*"
-  fi
-}
 
 debug_report_status () {
   # Syntax: debug_report_status command exit_status

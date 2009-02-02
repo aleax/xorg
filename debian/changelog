@@ -13,6 +13,8 @@ xorg (1:7.4~6) UNRELEASED; urgency=low
   * Xwrapper.config(5): X is installed as /usr/bin/X, not /usr/bin/X11R6/X.
   * Use case-insensitive matching when trying to replace obsolete drivers in
     xorg.conf.  Use the C locale to make sure this works as expected.
+  * xserver-xorg.postinst: drop duplicate definitions of the debug_echo and
+    validate_string_db_input shell functions.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 23 Jan 2009 14:53:45 +0200
 
