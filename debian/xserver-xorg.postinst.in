@@ -956,10 +956,10 @@ elif dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
   # We're upgrading from pre-7.4.  We need to replace i810 with intel, and
   # via with openchrome.
   if [ -e "$XORGCONFIG" ]; then
-    sed -e'
-	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ {
-	/^[[:space:]]*Driver[[:space:]]\+"i810"/s/i810/intel/
-	/^[[:space:]]*Driver[[:space:]]\+"via"/s/via/openchrome/
+    LC_ALL=C sed -e'
+	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/I,/^[[:space:]]*EndSection[[:space:]]*$/I {
+	/^[[:space:]]*Driver[[:space:]]\+"i810"/I s/i810/intel/I
+	/^[[:space:]]*Driver[[:space:]]\+"via"/I s/via/openchrome/I
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
     if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
