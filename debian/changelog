@@ -21,6 +21,8 @@ xorg (1:7.4~6) UNRELEASED; urgency=low
   * As a result of the previous change, remove the
     xserver-xorg/config/device/driver debconf template, and unregister it on
     upgrade.
+  * We don't use dmidecode and fbset anymore (they were used for hardware
+    detection), so stop adding Recommends on them.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 23 Jan 2009 14:53:45 +0200
 

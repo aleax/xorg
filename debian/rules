@@ -23,9 +23,6 @@ endif
 # debhelper
 export DH_OPTIONS
 
-# Default list of detection packages
-XSERVER_XORG_DETECT_DEPENDS = ""
-
 include debian/xsfbs/xsfbs.mk
 
 # Get package version info.
@@ -99,7 +96,7 @@ binary-indep: build install
 	chown root:root debian/x11-common/etc/X11/Xsession
 	chmod 755 debian/x11-common/etc/X11/Xsession
 	dh_installdeb
-	dh_gencontrol -- -VF:XServer-Xorg-Detect-Depends=$(XSERVER_XORG_DETECT_DEPENDS)
+	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
 	touch stamp-$@
