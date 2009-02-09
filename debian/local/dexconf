@@ -137,15 +137,15 @@ else
 fi
 
 # xorg.conf sections:
-#   Files          File pathnames
+#   Files          File pathnames                    NOT USED BY DEXCONF
 #   ServerFlags    Server flags                      NOT USED BY DEXCONF
 #   Module         Dynamic module loading            NOT USED BY DEXCONF
 #   InputDevice    Input device description
 #   Device         Graphics device description
 #   VideoAdaptor   Xv video adaptor description      NOT USED BY DEXCONF
-#   Monitor        Monitor description
+#   Monitor        Monitor description               NOT USED BY DEXCONF
 #   Modes          Video modes descriptions          NOT USED BY DEXCONF
-#   Screen         Screen configuration
+#   Screen         Screen configuration              NOT USED BY DEXCONF
 #   ServerLayout   Overall layout                    NOT USED BY DEXCONF
 #   DRI            DRI-specific configuration        NOT USED BY DEXCONF
 #   Vendor         Vendor-specific configuration     NOT USED BY DEXCONF
@@ -235,25 +235,6 @@ if [ "$DEVICE_USE_FBDEV" = "true" ]; then
 fi
 printf "EndSection\n" >&4
 
-### MONITOR
-
-exec 4>"$DEXCONFTMPDIR/Monitor"
-cat >&4 <<SECTION
-Section "Monitor"
-	Identifier	"Configured Monitor"
-EndSection
-SECTION
-
-### SCREEN
-
-exec 4>"$DEXCONFTMPDIR/Screen"
-cat >&4 <<SECTION
-Section "Screen"
-	Identifier	"Default Screen"
-	Monitor		"Configured Monitor"
-SECTION
-printf "EndSection\n" >&4
-
 # Close file descriptor 4 before we delete temporary files
 exec 4<&-
 
@@ -268,8 +249,7 @@ umask 022
 : >"$OUTFILE"
 
 SPACER=
-for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ; do
+for SECTION in Header InputDeviceKeyboard InputDeviceMouse Device ; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
