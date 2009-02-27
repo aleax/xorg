@@ -1,3 +1,12 @@
+xorg (1:7.4~5ubuntu13) jaunty; urgency=low
+
+  * debian/xserver-xorg.postinst.in: Set USE_FBDEV to false by default on lpia
+    as well (just like on i386, amd64 etc.); should fix vesa usage on Poulsbo
+    systems, it would work fine in the live session but not after install;
+    LP: #335308.
+
+ -- Loic Minier <lool@dooz.org>  Fri, 27 Feb 2009 08:19:27 +0100
+
 xorg (1:7.4~5ubuntu12) jaunty; urgency=low
 
   * control: Reverse the -evdev /-input-all Depends order, hopefully
