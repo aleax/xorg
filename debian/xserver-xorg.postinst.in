@@ -87,14 +87,6 @@ validate_bus_id_db_input () {
         # An empty string is valid.
         break
         ;;
-      ISA:*)
-        # Looks like an ISA bus ID specification string.  At least up to a
-        # point; upstream (xf86ParseIsaBusString() in
-        # xc/programs/Xserver/hw/xfree86/common/xf86isaBus.c) doesn't actually
-        # *supply* a specification.  So if the user's gotten this far, it's good
-        # enough.
-        break
-        ;;
       PCI:*)
         # Looks like a PCI bus ID specification; validate it.  (We can use &&
         # outside a conditional here because of the "set +e" above.)
