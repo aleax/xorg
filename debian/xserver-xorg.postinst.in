@@ -90,8 +90,9 @@ validate_bus_id_db_input () {
       PCI:*)
         # Looks like a PCI bus ID specification; validate it.  (We can use &&
         # outside a conditional here because of the "set +e" above.)
-        expr "$RET" : "PCI:[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null \
-          2>&1 && break
+        (expr "$RET" : "PCI:[0-9]\{1,3\}@[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null 2>&1 \
+        || expr "$RET" : "PCI:[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null 2>&1) \
+        && break
         ;;
       SBUS:*)
         # Looks like an SBUS bus ID specification; validate it.  (We can use &&
@@ -292,12 +293,12 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
         # Recent versions of lspci report a four-digit domain as the first field.
         if expr "$VIDEO_CARD" : ".*:.*:.*\..*" >/dev/null 2>&1; then
           # We have an entry in "hex:hex:hex.hex" format; we need
-          # "PCI:decimal:decimal:decimal" (we don't use the domain).
+          # "PCI:decimal@decimal:decimal:decimal".
           DOMAIN=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f1) )
           BUS=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f2) )
           DEVICE=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f3 | cut -d. -f1) )
           FUNCTION=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d. -f2) )
-          DEFAULT="PCI:$BUS:$DEVICE:$FUNCTION"
+          DEFAULT="PCI:$BUS@$DOMAIN:$DEVICE:$FUNCTION"
         elif expr "$VIDEO_CARD" : ".*:.*\..*" >/dev/null 2>&1; then
           # We have an entry in "hex:hex.hex" format; we need
           # "PCI:decimal:decimal:decimal".
