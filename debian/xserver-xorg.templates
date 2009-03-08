@@ -4,17 +4,6 @@
 # Please consider interacting with the team if you intend
 # to modify the templates or add new templates
 
-Template: xserver-xorg/config/device/use_fbdev
-Type: boolean
-_Description: Use kernel framebuffer device interface?
- Rather than communicating directly with the video hardware, the X server may
- be configured to perform some operations, such as video mode switching, via
- the kernel's framebuffer driver.
- .
- In theory, either approach should work, but in practice, sometimes one does
- and the other does not.  Enabling this option is the safe bet, but feel free
- to turn it off if it appears to cause problems.
-
 Template: xserver-xorg/config/device/bus_id
 Type: string
 #flag:translate!:4

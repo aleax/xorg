@@ -179,8 +179,6 @@ SECTION
 
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
-db_get xserver-$SERVER/config/device/use_fbdev
-DEVICE_USE_FBDEV="$RET"
 exec 4>"$DEXCONFTMPDIR/Device"
 cat >&4 <<SECTION
 Section "Device"
@@ -188,9 +186,6 @@ Section "Device"
 SECTION
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
-fi
-if [ "$DEVICE_USE_FBDEV" = "true" ]; then
-  printf "\tOption\t\t\"UseFBDev\"\t\t\"$DEVICE_USE_FBDEV\"\n" >&4
 fi
 printf "EndSection\n" >&4
 

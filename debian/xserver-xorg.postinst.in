@@ -422,44 +422,6 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   else
     db_set xserver-xorg/config/device/bus_id ""
   fi
-
-  # use fbcon kernel functions?
-
-  case "$ARCH" in
-    alpha|hurd-i386|i386|amd64)
-      USE_FBDEV=false
-      ;;
-    *)
-      USE_FBDEV=true
-      ;;
-  esac
-
-  if [ -e /proc/fb ]; then
-    FB_TYPE="$(grep '^0 ' /proc/fb | sed 's/[^[:space:]] //')"
-    # did we actually get back anything?
-    if [ -n "$FB_TYPE" ]; then
-      if echo "$FB_TYPE" | grep -Eiq '(OFfb|VESA|VGA16)'; then
-        USE_FBDEV=false
-      else
-        # other framebuffers do support UseFBDEV
-        USE_FBDEV=true
-      fi
-    fi
-  else
-    USE_FBDEV=false
-  fi
-
-  if [ -n "$XORG_USE_FBDEV" ] && [ "$XORG_USE_FBDEV" = "no" ]; then
-    USE_FBDEV=false
-  fi
-
-  db_get xserver-xorg/config/device/use_fbdev || debug_report_status "db_get xserver-xorg/config/device/use_fbdev"
-  if [ "$RET" = "true" ] && [ "$USE_FBDEV" = "false" ]; then
-    debug_echo "xserver-xorg/config/device/use_fbdev is \"true\" but /proc/fb does not exist, is empty, or reports a framebuffer type with which UseFBDev cannot be used; setting template to \"false\""
-    db_set xserver-xorg/config/device/use_fbdev false
-  fi
-
-  auto_answer db_input "$(priority_ceil medium)" xserver-xorg/config/device/use_fbdev "$USE_FBDEV"
 fi
 
 # files and dri sections
@@ -520,6 +482,7 @@ if [ -n "$UPGRADE" ]; then
     fi
     if dpkg --compare-versions "$2" lt-nl 1:7.4; then
       for QUESTION in \
+	xserver-xorg/config/device/use_fbdev \
 	xserver-xorg/config/inputdevice/keyboard/rules \
 	xserver-xorg/config/inputdevice/keyboard/model \
 	xserver-xorg/config/inputdevice/keyboard/layout \
