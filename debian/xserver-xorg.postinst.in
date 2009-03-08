@@ -274,6 +274,10 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   PRIORITY=low
   DEFAULT=
 
+  if [ `lspci -n 2>/dev/null | grep ' 0300: '| wc -l` -gt 1 ]; then
+    MULTIHEAD=yes
+  fi
+
   # Some PowerPCs need to be told where to find the video card even if there is
   # only one in the machine (broken PCI bus code in the XFree86 X server, most
   # likely).  If there are multiple video cards, we need to configure one as the

@@ -35,6 +35,9 @@ xorg (1:7.4~6) UNRELEASED; urgency=low
     xserver-xorg.postinst, kill the debconf template and unregister it.
   * xserver-xorg.postinst: remove unused input validation functions.  Also
     remove the corresponding debconf templates.
+  * Set the BusID in xorg.conf if we find more than one graphics card, to work
+    around breakage in post-pciaccess xserver (can't find the primary PCI
+    device).
 
   [ David Nusinow ]
   * Add an example xorg.conf to /usr/share/doc/xserver-xorg/examples. 
