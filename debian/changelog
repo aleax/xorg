@@ -32,6 +32,8 @@ xorg (1:7.4~6) UNRELEASED; urgency=low
     ISA support has been removed from the server.
   * Don't set the UseFBDev option.  Remove the detection code from
     xserver-xorg.postinst, kill the debconf template and unregister it.
+  * xserver-xorg.postinst: remove unused input validation functions.  Also
+    remove the corresponding debconf templates.
 
   [ David Nusinow ]
   * Add an example xorg.conf to /usr/share/doc/xserver-xorg/examples. 
