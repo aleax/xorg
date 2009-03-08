@@ -206,16 +206,6 @@ if [ -n "$XKB_OPTIONS" ]; then
 fi
 printf "EndSection\n" >&4
 
-### MOUSE / INPUTDEVICE
-
-exec 4>"$DEXCONFTMPDIR/InputDeviceMouse"
-cat >&4 <<SECTION
-Section "InputDevice"
-	Identifier	"Configured Mouse"
-	Driver		"mouse"
-EndSection
-SECTION
-
 ### DEVICE
 
 db_get xserver-$SERVER/config/device/bus_id
@@ -249,7 +239,7 @@ umask 022
 : >"$OUTFILE"
 
 SPACER=
-for SECTION in Header InputDeviceKeyboard InputDeviceMouse Device ; do
+for SECTION in Header InputDeviceKeyboard Device ; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"
