@@ -389,23 +389,20 @@ if [ -n "$UPGRADE" ]; then
     fi
     if dpkg --compare-versions "$2" lt-nl 1:7.4; then
       for QUESTION in \
-	xserver-xorg/config/null_string_error \
-	xserver-xorg/config/doublequote_in_string_error \
-	xserver-xorg/config/nonnumeric_string_error \
-	xserver-xorg/config/device/use_fbdev \
-	xserver-xorg/config/inputdevice/keyboard/rules \
-	xserver-xorg/config/inputdevice/keyboard/model \
-	xserver-xorg/config/inputdevice/keyboard/layout \
-	xserver-xorg/config/inputdevice/keyboard/variant \
-	xserver-xorg/config/inputdevice/keyboard/options \
-	xserver-xorg/autodetect_keyboard; do
+        xserver-xorg/config/null_string_error \
+        xserver-xorg/config/doublequote_in_string_error \
+        xserver-xorg/config/nonnumeric_string_error \
+        xserver-xorg/config/device/use_fbdev \
+        xserver-xorg/config/device/driver \
+        xserver-xorg/config/inputdevice/keyboard/rules \
+        xserver-xorg/config/inputdevice/keyboard/model \
+        xserver-xorg/config/inputdevice/keyboard/layout \
+        xserver-xorg/config/inputdevice/keyboard/variant \
+        xserver-xorg/config/inputdevice/keyboard/options \
+        xserver-xorg/autodetect_keyboard; do
 	db_unregister $QUESTION || true
       done
     fi
-fi
-
-if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" lt 1:7.4+6; then
-  db_unregister xserver-xorg/config/device/driver || true
 fi
 
 # no debconf interaction should be done after this point
