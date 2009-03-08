@@ -488,7 +488,8 @@ elif [ `readlink "$SERVER_SYMLINK"` = "/bin/true" ]; then
   ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 fi
 
-if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
+if [ -n "$UPGRADE" ]; then
+    if dpkg --compare-versions "$2" le "1:7.3+5"; then
         # Clean up our old crap
         rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
         for QUESTION in "shared/default-x-server" \
@@ -516,6 +517,18 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
                         "xserver-xorg/multiple_possible_x-drivers"; do
           db_unregister "$QUESTION" || true
         done
+    fi
+    if dpkg --compare-versions "$2" lt-nl 1:7.4; then
+      for QUESTION in \
+	xserver-xorg/config/inputdevice/keyboard/rules \
+	xserver-xorg/config/inputdevice/keyboard/model \
+	xserver-xorg/config/inputdevice/keyboard/layout \
+	xserver-xorg/config/inputdevice/keyboard/variant \
+	xserver-xorg/config/inputdevice/keyboard/options \
+	xserver-xorg/autodetect_keyboard; do
+	db_unregister $QUESTION || true
+      done
+    fi
 fi
 
 if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" lt 1:7.4+6; then
