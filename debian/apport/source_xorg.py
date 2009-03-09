@@ -98,6 +98,12 @@ def add_info(report):
         pass
 
     try:
+        script = subprocess.Popen(['sh', '-c', 'grep fglrx /var/log/kern.log'], stdout=subprocess.PIPE)
+        report['fglrx-loaded'] = script.communicate()[0]
+    except OSError:
+        pass
+
+    try:
         script = subprocess.Popen(['xrandr', '--verbose'], stdout=subprocess.PIPE)
         report['Xrandr'] = script.communicate()[0]
     except OSError:
