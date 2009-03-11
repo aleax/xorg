@@ -1,4 +1,19 @@
-xorg (1:7.4~5ubuntu14) UNRELEASED; urgency=low
+xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
+
+  * x11-common.links: Add apport support for a several more packages.
+  * local/Xsession.d/60x11-localhost: Also redirect stderr in an sh-safe
+    fashion
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 11 Mar 2009 09:43:37 -0700
+
+xorg (1:7.4~5ubuntu15) jaunty; urgency=low
+
+  * local/Xsession.d/60x11-localhost: Change redirection to fix bashism
+    (LP: #340676)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 10 Mar 2009 11:39:40 -0700
+
+xorg (1:7.4~5ubuntu14) jaunty; urgency=low
 
   * Add local/Xsession.d/60x11-localhost: Allow X connections from local
     unix domain sockets instead of forcing TCP since hostname validation
@@ -6,7 +21,7 @@ xorg (1:7.4~5ubuntu14) UNRELEASED; urgency=low
     (LP: #276357)
   * apport/source_xorg.py: Detect presence of fglrx loaded in kernel
 
- -- Bryce Harrington <bryce@ubuntu.com>  Mon, 09 Mar 2009 16:34:27 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 10 Mar 2009 09:56:15 -0700
 
 xorg (1:7.4~5ubuntu13) jaunty; urgency=low
 
