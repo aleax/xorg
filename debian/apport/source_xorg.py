@@ -98,8 +98,10 @@ def add_info(report):
         pass
 
     try:
-        script = subprocess.Popen(['sh', '-c', 'grep fglrx /var/log/kern.log'], stdout=subprocess.PIPE)
-        report['fglrx-loaded'] = script.communicate()[0]
+        script = subprocess.Popen(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'], stdout=subprocess.PIPE)
+        matches = script.communicate()[0]
+        if (matches):
+            report['fglrx-loaded'] = matches
     except OSError:
         pass
 
