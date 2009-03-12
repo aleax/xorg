@@ -1,14 +1,16 @@
 xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
 
   [Tormod Volden]
-  * apport/source_xorg.py: Use grep directly instead of shelling out
+  * apport/source_xorg.py: Use grep directly instead of shelling out, and
+    look in /proc/modules as well.  Also only set 'fglrx-installed' if
+    there was a definite match.
 
   [Bryce Harrington]
   * x11-common.links: Add apport support for a several more packages.
   * local/Xsession.d/60x11-localhost: Also redirect stderr in an sh-safe
     fashion
 
- -- Bryce Harrington <bryce@ubuntu.com>  Thu, 12 Mar 2009 10:43:30 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 12 Mar 2009 16:21:48 -0700
 
 xorg (1:7.4~5ubuntu15) jaunty; urgency=low
 
