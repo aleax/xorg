@@ -29,7 +29,7 @@ xorg_log="/var/log/Xorg.${display}.log"
 gdm_log="/var/log/gdm/:${display}.log.1"
 apport_hook="/usr/share/apport/xserver_hook"
 
-app_width=300
+app_width=600
 app_height=300
 app_title="Ubuntu Failsafe-X"
 
@@ -45,9 +45,9 @@ display_main_menu() {
           TRUE   LOW_RES_MODE "Run Ubuntu in low-graphics mode for just this session" \
           FALSE  RECONFIGURE "Reconfigure graphics" \
           FALSE  TROUBLESHOOT "Troubleshoot the error" \
+          FALSE  TERMINAL "Open a terminal" \
         --hide-column 2
 
-#          FALSE  TERMINAL "Open a terminal" \
 # TODO:          3 FILE_BUG "Report a bug about this failure" \
 }
 
@@ -106,10 +106,9 @@ backup_xorg_conf() {
     fi
 }
 
-#run_terminal() {
-# Causes bug #310126
-#    gnome-terminal
-#}
+run_terminal() {
+    gksudo gnome-terminal
+}
 
 run_dexconf() {
     backup_xorg_conf || return 1
@@ -135,11 +134,11 @@ run_xorgconf() {
 }
 
 view_xorg_log() {
-    gedit $xorg_log
+    zenity --text-info --filename=$xorg_log --width=640 --height=480
 }
 
 view_gdm_log() {
-    gedit $gdm_log
+    zenity --text-info --filename=$gdm_log --width=640 --height=480
 }
 
 verify_xorgconf() {
@@ -150,7 +149,9 @@ verify_xorgconf() {
 edit_config() {
     backup_xorg_conf || return 1
 
-    gksu gedit "/etc/X11/xorg.conf"
+    xorg_conf_tmp=$(mktmp "/tmp/xorg.conf.XXXXXXXX")
+    cp /etc/X11/xorg_conf ${xorg_conf_tmp}
+    zenity --text-info --editable --filename=${xorg_conf_tmp} --width=640 --height=480 > "/etc/X11/xorg.conf"
 }
 
 save_config_logs() {
