@@ -42,10 +42,10 @@ display_main_menu() {
         --width $app_width --height $app_height \
         --text "What would you like to do?" \
         --column "" --column "Choice" --column "" \
-          TRUE   LOW_RES_MODE "Run Ubuntu in low-graphics mode for just this session" \
+          TRUE   LOW_RES_MODE "Run Ubuntu in low-graphics mode for just one session" \
           FALSE  RECONFIGURE "Reconfigure graphics" \
           FALSE  TROUBLESHOOT "Troubleshoot the error" \
-          FALSE  TERMINAL "Open a terminal" \
+          FALSE  EXIT_TO_CONSOLE "Exit to console login" \
         --hide-column 2
 
 # TODO:          3 FILE_BUG "Report a bug about this failure" \
@@ -79,7 +79,6 @@ display_troubleshooting_menu() {
           FALSE  SAVE_CONFIG_LOGS   "Archive configuration and logs" \
         --hide-column 2
 # TODO:          5 VERIFY_XORGCONF "Check configuration file"
-# TODO:          6 EXIT_TO_CONSOLE "Exit to console" \
 }
 
 # TODO:  Should we just go ahead and file a bug for them without presenting an option?
@@ -104,10 +103,6 @@ backup_xorg_conf() {
     if [ ! $? ]; then
         return zenity --question --text "Your config could not be backed up.\nDo you want to continue anyway?\n"
     fi
-}
-
-run_terminal() {
-    gksudo gnome-terminal
 }
 
 run_dexconf() {
@@ -192,7 +187,6 @@ while : ; do
         RECONFIGURE )     choice=$(display_reconfigure_menu) ;;
         TROUBLESHOOT )    choice=$(display_troubleshooting_menu) ;;
         FILE_BUG )        choice=$(display_filebug_menu) ;;
-        TERMINAL )        run_terminal ;;
 
         ## Reconfigure Menu ##
         RUN_DEXCONF )     choice="RECONFIGURE"; run_dexconf ;;
@@ -217,6 +211,7 @@ if [ "x$with_gdm" = "xwith-gdm" ]; then
 elif [ "x$with_gdm" = "xlow-res" ]; then
     export XORGCONFIG=${xorg_conf}
 else
+    chvt 2
     exit
 fi
 
