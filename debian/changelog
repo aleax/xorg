@@ -9,10 +9,13 @@ xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
   * x11-common.links: Add apport support for a several more packages.
   * local/Xsession.d/60x11-localhost: Also redirect stderr in an sh-safe
     fashion
-  * local/Failsafe/failsafeXinit: Use zenity for viewing logs, and vt2 for
-    console login
+  * local/dexconf, local/Failsafe/failsafeDexconf:
+    - Add hooks for Sun's virtualbox (LP: #319373)
+  * local/Failsafe/failsafeXinit:
+    - Use zenity for viewing logs, and vt2 for console login
+    - Make translatable (LP #335678)
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 17 Mar 2009 01:07:44 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 17 Mar 2009 02:02:42 -0700
 
 xorg (1:7.4~5ubuntu15) jaunty; urgency=low
 
