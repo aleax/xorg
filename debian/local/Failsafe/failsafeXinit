@@ -26,7 +26,9 @@ with_gdm=$2
 
 display=0
 xorg_log="/var/log/Xorg.${display}.log"
-gdm_log="/var/log/gdm/:${display}.log.1"
+gdm_log="/var/log/gdm/:${display}.log"
+gdm_log_1="/var/log/gdm/:${display}.log.1"
+gdm_log_2="/var/log/gdm/:${display}.log.2"
 apport_hook="/usr/share/apport/xserver_hook"
 
 app_width=600
@@ -133,7 +135,7 @@ view_xorg_log() {
 }
 
 view_gdm_log() {
-    zenity --text-info --filename=$gdm_log --width=640 --height=480
+    zenity --text-info --filename=${gdm_log_1} --width=640 --height=480
 }
 
 verify_xorgconf() {
@@ -159,12 +161,12 @@ save_config_logs() {
     cp ${xorg_log} $xorg_backup_dir
     cp ${xorg_log}.old $xorg_backup_dir
     cp ${gdm_log} $xorg_backup_dir
-    cp ${gdm_log}.1 $xorg_backup_dir
-    cp ${gdm_log}.2 $xorg_backup_dir
+    cp ${gdm_log_1} $xorg_backup_dir
+    cp ${gdm_log_2} $xorg_backup_dir
     lspci -vvnn > ${xorg_backup_dir}/lspci-vvnn.txt
     xrandr --verbose > ${xorg_backup_dir}/xrandr-verbose.txt
-    tar -cf $xorg_backup_file $xorg_backup_dir
-    rm -rf $xorg_backup_dir
+    tar -cf ${xorg_backup_file} ${xorg_backup_dir}
+    rm -rf ${xorg_backup_dir}
 
     zenity --info --text "Relevant configuration and log files have been saved to:\n$xorg_backup_file\nBug reports can be submitted at http://www.launchpad.net/ubuntu/.\n"
 }
