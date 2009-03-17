@@ -130,7 +130,7 @@ def add_info(report):
         pass
 
     try:
-        script = subprocess.Popen(['xkbcomp', ':0', '-'], stdout=subprocess.PIPE)
+        script = subprocess.Popen(['xkbcomp', ':0', '-w0', '-'], stdout=subprocess.PIPE)
         report['xkbcomp'] = script.communicate()[0]
     except OSError:
         pass
