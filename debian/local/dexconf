@@ -192,6 +192,10 @@ QEMU_KVM=$(grep "QEMU Virtual CPU" /proc/cpuinfo || true)
 if [ -n "$QEMU_KVM" ]; then
     DEVICE_DRIVER="cirrus"
 fi
+VBOX_VIDEO=$(grep -e "^vbox " /proc/modules || true)
+if [ -n "$VBOX_VIDEO" ]; then
+    DEVICE_DRIVER="vboxvideo"
+fi
 
 exec 4>"$DEXCONFTMPDIR/Device"
 cat >&4 <<SECTION
