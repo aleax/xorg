@@ -27,6 +27,9 @@ abort-install|abort-upgrade)
     remove_conffile_rollback "/etc/X11/Xsession.d/90xorg-common_ssh-agent"
     remove_conffile_rollback "/etc/X11/Xsession.d/99xorg-common_start"
   fi
+  if dpkg --compare-versions "$2" lt-nl "1:7.4~5ubuntu16"; then
+    remove_conffile_rollback "/etc/X11/Xsession.d/60x11-localhost"
+  fi
 esac
 
 # clean up non-conffile configuration files and related materials on purge
