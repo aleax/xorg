@@ -1,4 +1,4 @@
-xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
+xorg (1:7.4~5ubuntu16) jaunty; urgency=low
 
   [Tormod Volden]
   * apport/source_xorg.py: Use grep directly instead of shelling out, and
@@ -10,17 +10,18 @@ xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
   * local/Xsession.d/60x11-common_localhost:
     - Rename from 60x11-localhost for consistency (LP: #340807)
     - Redirect stderr in an sh-safe fashion
-  * x11-common.postinst.in:
-    - Remove renamed 60x11-localhost
+  * x11-common.postinst.in, x11-common.preinst.in, x11-common.postrm.in:
+    - Remove renamed 60x11-localhost; handle upgrade failures gracefully
   * local/dexconf, local/Failsafe/failsafeDexconf:
     - Add hooks for Sun's virtualbox (LP: #319373)
   * local/Failsafe/failsafeXinit:
     - Use zenity for viewing logs, and vt2 for console login
-    - Make translatable (LP #335678)
+      (LP: #310126)
+    - Make translatable (LP: #335678)
   * apport/source_xorg.py: Suppress warning about keyboard geometry on :0
     (LP: #315777)
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 17 Mar 2009 21:25:57 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 18 Mar 2009 13:54:27 -0700
 
 xorg (1:7.4~5ubuntu15) jaunty; urgency=low
 
