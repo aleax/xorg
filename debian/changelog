@@ -39,6 +39,11 @@ xorg (1:7.4~6) UNRELEASED; urgency=low
     around breakage in post-pciaccess xserver (can't find the primary PCI
     device).
   * xserver-xorg.postinst: allow setting the PCI domain in the BusID string.
+  * Install a callout and an fdi file to read the configured keymap from
+    /etc/default/console-setup, and set the corresponding keymap for keyboards
+    in hal.  Both stolen from Ubuntu's hal package.
+  * Depend on hal (>= 0.5.12~git20090406) for hal-set-property --direct.
+  * Depend on console-setup (>= 1.29) to handle upgrades from lenny.
 
   [ David Nusinow ]
   * Add an example xorg.conf to /usr/share/doc/xserver-xorg/examples. 
