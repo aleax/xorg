@@ -7,8 +7,11 @@ xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
 
   [Bryce Harrington]
   * x11-common.links: Add apport support for a several more packages.
-  * local/Xsession.d/60x11-localhost: Also redirect stderr in an sh-safe
-    fashion
+  * local/Xsession.d/60x11-common_localhost:
+    - Rename from 60x11-localhost for consistency (LP: #340807)
+    - Redirect stderr in an sh-safe fashion
+  * x11-common.postinst.in:
+    - Remove renamed 60x11-localhost
   * local/dexconf, local/Failsafe/failsafeDexconf:
     - Add hooks for Sun's virtualbox (LP: #319373)
   * local/Failsafe/failsafeXinit:
@@ -17,7 +20,7 @@ xorg (1:7.4~5ubuntu16) UNRELEASED; urgency=low
   * apport/source_xorg.py: Suppress warning about keyboard geometry on :0
     (LP: #315777)
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 17 Mar 2009 02:15:37 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 17 Mar 2009 21:25:57 -0700
 
 xorg (1:7.4~5ubuntu15) jaunty; urgency=low
 
