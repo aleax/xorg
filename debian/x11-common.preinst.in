@@ -31,7 +31,7 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
     remove_conffile_lookup xinit "/etc/X11/Xsession.d/99xorg-common_start"
   fi
   if dpkg --compare-versions "$2" lt-nl "1:7.4~5ubuntu16"; then
-    remove_conffile_lookup xinit "/etc/X11/Xsession.d/60x11-localhost"
+    remove_conffile_lookup x11-common "/etc/X11/Xsession.d/60x11-localhost"
   fi
 
   # We need to remove /usr/X11R6/bin so we can replace it with a symlink
