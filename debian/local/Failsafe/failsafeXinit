@@ -146,8 +146,9 @@ verify_xorgconf() {
 edit_config() {
     backup_xorg_conf || return 1
 
-    xorg_conf_tmp=$(mktemp -t "/tmp/xorg.conf.XXXXXXXX")
+    xorg_conf_tmp=$(mktemp -t xorg.conf.XXXXXXXX)
     zenity --text-info --editable --filename=/etc/X11/xorg.conf --width=640 --height=480 > "${xorg_conf_tmp}" && mv "${xorg_conf_tmp}" /etc/X11/xorg.conf
+    chmod 644 /etc/X11/xorg.conf
 }
 
 save_config_logs() {
@@ -167,7 +168,7 @@ save_config_logs() {
     tar -cf ${xorg_backup_file} ${xorg_backup_dir}
     rm -rf ${xorg_backup_dir}
 
-    zenity --info --text "$(gettext 'Relevant configuration and log files have been saved to:\n')"$xorg_backup_file\n"$(gettext 'Bug reports can be submitted at http://www.launchpad.net/ubuntu/.\n')"
+    zenity --info --text "$(gettext 'Relevant configuration and log files have been saved to:\n')"$xorg_backup_file"\n$(gettext 'Bug reports can be submitted at http://www.launchpad.net/ubuntu/.\n')"
 }
 
 # Scan Xorg.0.log for errors
