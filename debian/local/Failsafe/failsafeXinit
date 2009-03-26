@@ -88,7 +88,7 @@ display_filebug_menu() {
     # Run apport to file a bug
     if [ -e $apport_hook ]; then
         $apport_hook
-        if [ $? == 0]; then
+        if [ $? == 0 ]; then
             zenity --info --text "$(gettext 'A bug report has been written.\nYou can send it next time you log in.')"
         else
             zenity --error --text "$(gettext 'Your bug could not be recorded successfully.\n')"
@@ -102,7 +102,7 @@ backup_xorg_conf() {
     # TODO: backup xorg.conf more elegantly...
     xorg_conf_backup="/etc/X11/xorg.conf-backup-${timestamp}"
     cp /etc/X11/xorg.conf ${xorg_conf_backup}
-    if [ ! $? ]; then
+    if [ $? != 0 ]; then
         return zenity --question --text "$(gettext 'Your config could not be backed up.\nDo you want to continue anyway?\n')"
     fi
 }
@@ -146,8 +146,7 @@ verify_xorgconf() {
 edit_config() {
     backup_xorg_conf || return 1
 
-    xorg_conf_tmp=$(mktmp "/tmp/xorg.conf.XXXXXXXX")
-    cp /etc/X11/xorg.conf ${xorg_conf_tmp}
+    xorg_conf_tmp=$(mktemp -t "/tmp/xorg.conf.XXXXXXXX")
     zenity --text-info --editable --filename=/etc/X11/xorg.conf --width=640 --height=480 > "${xorg_conf_tmp}" && mv "${xorg_conf_tmp}" /etc/X11/xorg.conf
 }
 
