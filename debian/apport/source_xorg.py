@@ -112,6 +112,12 @@ def add_info(report):
         pass
 
     try:
+        monitors_config = os.path.join(os.environ['HOME'], '.config/monitors.xml')
+        report['monitors.xml']  = open(monitors_config).read()
+    except IOError:
+        pass
+
+    try:
         script = subprocess.Popen(['xdpyinfo'], stdout=subprocess.PIPE)
         report['xdpyinfo'] = script.communicate()[0]
     except OSError:
