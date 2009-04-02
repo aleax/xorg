@@ -1,10 +1,10 @@
-xorg (1:7.4~5ubuntu17) UNRELEASED; urgency=low
+xorg (1:7.4~5ubuntu17) jaunty; urgency=low
 
   * apport/source_xorg.py:
     - Include monitors.xml in apport reports.
   * local/Failsafe/failsafeXinit:
-    - Fix typo in xorg.conf filename
-    - Fix mismatched quotes
+    - Fix typo in xorg.conf filename (LP: #348639)
+    - Fix mismatched quotes (Ref. 335678)
     - Handle ESC key hits in zenity to not create a 0-length xorg.conf
 
  -- Bryce Harrington <bryce@ubuntu.com>  Sun, 29 Mar 2009 14:13:23 -0700
