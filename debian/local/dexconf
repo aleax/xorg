@@ -191,6 +191,10 @@ DEVICE_USE_FBDEV="$RET"
 QEMU_KVM=$(grep "QEMU Virtual CPU" /proc/cpuinfo || true)
 if [ -n "$QEMU_KVM" ]; then
     DEVICE_DRIVER="cirrus"
+    QEMU_VGA=$(lspci -v |grep "Technical Corp. Device 1111" || true)
+    if [ -n "$QEMU_VGA" ]; then
+      DEVICE_DRIVER="vesa"
+    fi
 fi
 VBOX_VIDEO=$(grep -e "^vbox " /proc/modules || true)
 if [ -n "$VBOX_VIDEO" ]; then
