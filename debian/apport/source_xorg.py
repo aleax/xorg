@@ -98,6 +98,14 @@ def add_info(report):
         pass
 
     try:
+        script = subprocess.Popen(['mount', '-t', 'ext4'], stdout=subprocess.PIPE)
+        matches = script.communicate()[0]
+        if (matches):
+            report['ext4'] = matches
+    except OSError:
+        pass
+
+    try:
         script = subprocess.Popen(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'], stdout=subprocess.PIPE)
         matches = script.communicate()[0]
         if (matches):
