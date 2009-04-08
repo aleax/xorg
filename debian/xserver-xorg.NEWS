@@ -1,3 +1,17 @@
+xserver-xorg (1:7.4+1) UNRELEASED; urgency=low
+
+  Starting from this version, input devices are no longer configured
+  statically in /etc/X11/xorg.conf.  Instead, input devices are detected at
+  runtime (and can be hotplugged) and configured individually.  The default
+  keyboard layout is shared with the console and is configured in
+  /etc/default/console-setup.  As a result, devices configured to use the
+  mouse or kbd driver are ignored by the X server by default.
+  For more details, see:
+  http://who-t.blogspot.com/2008/12/evdev-xorgconf-hal-and-other-fud.html
+  http://who-t.blogspot.com/2008/10/new-keyboard-configuration-handling.html
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 25 Mar 2009 03:40:18 +0100
+
 xserver-xorg (1:7.0.15) unstable; urgency=low
 
   * As of this release, we now begin actively modifying customized
@@ -17,4 +31,4 @@ xserver-xorg (1:7.0.15) unstable; urgency=low
     file, that is not handled either and you'll want to remove this line by
     hand.
 
-  -- David Nusinow <dnusinow@debian.org>  Mon, 24 Apr 2006 22:39:08 -0400
+ -- David Nusinow <dnusinow@debian.org>  Mon, 24 Apr 2006 22:39:08 -0400

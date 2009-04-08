@@ -137,15 +137,15 @@ else
 fi
 
 # xorg.conf sections:
-#   Files          File pathnames
+#   Files          File pathnames                    NOT USED BY DEXCONF
 #   ServerFlags    Server flags                      NOT USED BY DEXCONF
 #   Module         Dynamic module loading            NOT USED BY DEXCONF
-#   InputDevice    Input device description
+#   InputDevice    Input device description          NOT USED BY DEXCONF
 #   Device         Graphics device description
 #   VideoAdaptor   Xv video adaptor description      NOT USED BY DEXCONF
-#   Monitor        Monitor description
+#   Monitor        Monitor description               NOT USED BY DEXCONF
 #   Modes          Video modes descriptions          NOT USED BY DEXCONF
-#   Screen         Screen configuration
+#   Screen         Screen configuration              NOT USED BY DEXCONF
 #   ServerLayout   Overall layout                    NOT USED BY DEXCONF
 #   DRI            DRI-specific configuration        NOT USED BY DEXCONF
 #   Vendor         Vendor-specific configuration     NOT USED BY DEXCONF
@@ -175,88 +175,18 @@ cat >&4 <<SECTION
 #   sudo dpkg-reconfigure -phigh xserver-xorg
 SECTION
 
-### KEYBOARD / INPUTDEVICE
-
-fetch xserver-$SERVER/config/inputdevice/keyboard/rules
-XKB_RULES="$RET"
-fetch xserver-$SERVER/config/inputdevice/keyboard/model
-XKB_MODEL="$RET"
-fetch xserver-$SERVER/config/inputdevice/keyboard/layout
-XKB_LAYOUT="$RET"
-# XkbVariant and XkbOptions are permitted to be null.
-db_get xserver-$SERVER/config/inputdevice/keyboard/variant
-XKB_VARIANT="$RET"
-db_get xserver-$SERVER/config/inputdevice/keyboard/options
-XKB_OPTIONS="$RET"
-
-exec 4>"$DEXCONFTMPDIR/InputDeviceKeyboard"
-cat >&4 <<SECTION
-Section "InputDevice"
-	Identifier	"Generic Keyboard"
-	Driver		"kbd"
-	Option		"XkbRules"	"$XKB_RULES"
-	Option		"XkbModel"	"$XKB_MODEL"
-	Option		"XkbLayout"	"$XKB_LAYOUT"
-SECTION
-if [ -n "$XKB_VARIANT" ]; then
-  printf "\tOption\t\t\"XkbVariant\"\t\"$XKB_VARIANT\"\n" >&4
-fi
-if [ -n "$XKB_OPTIONS" ]; then
-  printf "\tOption\t\t\"XkbOptions\"\t\"$XKB_OPTIONS\"\n" >&4
-fi
-printf "EndSection\n" >&4
-
-### MOUSE / INPUTDEVICE
-
-exec 4>"$DEXCONFTMPDIR/InputDeviceMouse"
-cat >&4 <<SECTION
-Section "InputDevice"
-	Identifier	"Configured Mouse"
-	Driver		"mouse"
-EndSection
-SECTION
-
 ### DEVICE
 
-db_get xserver-$SERVER/config/device/driver
-DEVICE_DRIVER="$RET"
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
-db_get xserver-$SERVER/config/device/use_fbdev
-DEVICE_USE_FBDEV="$RET"
 exec 4>"$DEXCONFTMPDIR/Device"
 cat >&4 <<SECTION
 Section "Device"
 	Identifier	"Configured Video Device"
 SECTION
-if [ -n "$DEVICE_DRIVER" ]; then
-  printf "\tDriver\t\t\"$DEVICE_DRIVER\"\n" >&4
-fi
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
 fi
-if [ "$DEVICE_USE_FBDEV" = "true" ]; then
-  printf "\tOption\t\t\"UseFBDev\"\t\t\"$DEVICE_USE_FBDEV\"\n" >&4
-fi
-printf "EndSection\n" >&4
-
-### MONITOR
-
-exec 4>"$DEXCONFTMPDIR/Monitor"
-cat >&4 <<SECTION
-Section "Monitor"
-	Identifier	"Configured Monitor"
-EndSection
-SECTION
-
-### SCREEN
-
-exec 4>"$DEXCONFTMPDIR/Screen"
-cat >&4 <<SECTION
-Section "Screen"
-	Identifier	"Default Screen"
-	Monitor		"Configured Monitor"
-SECTION
 printf "EndSection\n" >&4
 
 # Close file descriptor 4 before we delete temporary files
@@ -273,8 +203,7 @@ umask 022
 : >"$OUTFILE"
 
 SPACER=
-for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen ; do
+for SECTION in Header Device ; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"

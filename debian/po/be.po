@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg_be\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-02-09 15:14+0100\n"
 "PO-Revision-Date: 2008-06-09 12:18+0300\n"
 "Last-Translator: Pavel Piatruk <piatruk.p@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -14,41 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "Драйвер X-сервера:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"Для работы графічнага інтэрфейсу X Window System трэба выбраць драйвер відэа-"
-"карты для X сервера."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Назвы драйвераў звычайна паходзяць ад відэа-карты ці вытворцы мікрасхем, або "
-"ад найменавання дакладнай модели ці сямейства мікрасхем."
-
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Use kernel framebuffer device interface?"
 msgstr "Ці выкарыстоўваць framebuffer ядра?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Rather than communicating directly with the video hardware, the X server may "
 "be configured to perform some operations, such as video mode switching, via "
@@ -60,7 +34,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "In theory, either approach should work, but in practice, sometimes one does "
 "and the other does not.  Enabling this option is the safe bet, but feel free "
@@ -72,13 +46,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Video card's bus identifier:"
 msgstr "Ідэнтыфікатар шыны відэа-карты:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -89,13 +63,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Examples:"
 msgstr "Узоры:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -106,7 +80,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -116,7 +90,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -126,19 +100,19 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:4001
 msgid "Incorrect format for the bus identifier"
 msgstr "Некарэктны фармат ідэнтыфікатара шыны"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "XKB rule set to use:"
 msgstr "Набор правілаў XKB для выкарыстання."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "For the X server to handle the keyboard correctly, an XKB rule set must be "
 "chosen."
@@ -147,13 +121,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "Users of most keyboards should enter \"xorg\"."
 msgstr "Карыстальнікі бальшыні клавіятур могуць увесці \"xorg\"."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid ""
 "Experienced users can use any defined XKB rule set.  If the xkb-data package "
 "has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
@@ -165,19 +139,19 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:6001
+#: ../xserver-xorg.templates:5001
 msgid "When in doubt, this value should be set to \"xorg\"."
 msgstr "Калі сумняецеся, выберыце \"xorg\"."
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid "Keyboard model:"
 msgstr "Мадэль клавіятуры:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard model must be "
 "entered.  Available models depend on which XKB rule set is in use."
@@ -187,7 +161,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 " With the \"xorg\" rule set:\n"
 " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
@@ -219,7 +193,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Laptop keyboards often do not have as many keys as standalone models; laptop "
 "users should select the keyboard model most closely approximated by the "
@@ -230,7 +204,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Experienced users can use any model defined by the selected XKB rule set.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
@@ -242,7 +216,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:7001
+#: ../xserver-xorg.templates:6001
 msgid ""
 "Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
 "most other keyboards should generally enter \"pc105\"."
@@ -252,13 +226,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid "Keyboard layout:"
 msgstr "Клавіятурная раскладка:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "For the X server to handle the keyboard correctly, a keyboard layout must be "
 "entered.  Available layouts depend on which XKB rule set and keyboard model "
@@ -270,7 +244,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Experienced users can use any layout supported by the selected XKB rule "
 "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -282,7 +256,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:8001
+#: ../xserver-xorg.templates:7001
 msgid ""
 "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
 "localized for other countries should generally enter their ISO 3166 country "
@@ -295,13 +269,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid "Keyboard variant:"
 msgstr "Варыянт клавіятуры:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "For the X server to handle the keyboard as desired, a keyboard variant may "
 "be entered.  Available variants depend on which XKB rule set, model, and "
@@ -313,7 +287,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Many keyboard layouts support an option to treat \"dead\" keys such as non-"
 "spacing accent marks and diaereses as normal spacing keys, and if this is "
@@ -326,7 +300,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Experienced users can use any variant supported by the selected XKB layout.  "
 "If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
@@ -340,7 +314,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:9001
+#: ../xserver-xorg.templates:8001
 msgid ""
 "Users of U.S. English keyboards should generally leave this entry blank."
 msgstr ""
@@ -348,13 +322,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "Keyboard options:"
 msgstr "Налады клявіятуры:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For the X server to handle the keyboard as desired, keyboard options may be "
 "entered.  Available options depend on which XKB rule set was previously "
@@ -367,7 +341,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "For example, if you wish the Caps Lock key to behave as an additional "
 "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
@@ -379,7 +353,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "As another example, some people prefer having the Meta keys available on "
 "their keyboard's Alt keys (this is the default), while other people prefer "
@@ -393,7 +367,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "You can combine options by separating them with a comma, for instance \"ctrl:"
 "nocaps,altwin:meta_win\"."
@@ -403,7 +377,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid ""
 "Experienced users can use any options compatible with the selected XKB "
 "model, layout and variant."
@@ -413,55 +387,55 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:10001
+#: ../xserver-xorg.templates:9001
 msgid "When in doubt, this value should be left blank."
 msgstr "Калі сумняецеся, пакіньце пустым."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "Empty value"
 msgstr "Пустое значэнне"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:11001
+#: ../xserver-xorg.templates:10001
 msgid "A null entry is not permitted for this value."
 msgstr "Пустое значэнне не дазволена."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "Invalid double-quote characters"
 msgstr "Няслушныя сімвалы двухкоссяў"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:12001
+#: ../xserver-xorg.templates:11001
 msgid "Double-quote (\") characters are not permitted in the entry value."
 msgstr "Двухкоссі (\") не дазволены ў значэнні пункту."
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Numerical value needed"
 msgstr "Патрэбна лічбавае значэнне"
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:13001
+#: ../xserver-xorg.templates:12001
 msgid "Characters other than digits are not allowed in the entry."
 msgstr "Сімвалы, акрамя лічбаў, не дазволены ў пункце."
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid "Autodetect keyboard layout?"
 msgstr "Аўтаматычна вызначыць раскладку клавіятуры?"
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "The default keyboard layout selection for the Xorg server will be based on a "
 "combination of the language and the keyboard layout selected in the "
@@ -472,7 +446,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../xserver-xorg.templates:14001
+#: ../xserver-xorg.templates:13001
 msgid ""
 "Choose this option if you want the keyboard layout to be redetected.  Do not "
 "choose it if you want to keep your current layout."
@@ -626,3 +600,20 @@ msgid ""
 msgstr ""
 "Усталяванне пакета лічыцца няўдалым і будзе скончана. Пасля ачысткі каталога "
 "зноў запусціце працэдуру абнаўлення."
+
+#~ msgid "X server driver:"
+#~ msgstr "Драйвер X-сервера:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "Для работы графічнага інтэрфейсу X Window System трэба выбраць драйвер "
+#~ "відэа-карты для X сервера."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Назвы драйвераў звычайна паходзяць ад відэа-карты ці вытворцы мікрасхем, "
+#~ "або ад найменавання дакладнай модели ці сямейства мікрасхем."

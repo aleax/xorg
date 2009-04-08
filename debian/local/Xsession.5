@@ -29,9 +29,9 @@ is a Bourne shell
 .RB ( sh (1))
 script which is run when an X Window System
 session is begun by
-.BR startx (1x)
+.BR startx (1)
 or a display manager such as
-.BR xdm (1x).
+.BR xdm (1).
 (Some display managers only invoke
 .I Xsession
 when specifically directed to so by the user; see the documentation for
@@ -48,7 +48,7 @@ needs to run in a special environment associated with X server
 initialization.
 .BR startx ,
 .BR xdm ,
-.BR xinit (1x),
+.BR xinit (1),
 and other similar programs handle this.
 .PP
 By default on a Debian system,
@@ -265,7 +265,7 @@ by
 Here is an example of how one might write a script, named
 .IR 40custom_load\-xmodmap ,
 to invoke
-.BR xmodmap (1x):
+.BR xmodmap (1):
 .PP
 .nf
 SYSMODMAP="/etc/X11/Xmodmap"
@@ -302,7 +302,7 @@ sent to standard error.
 If the
 .I DISPLAY
 environment variable is set and the
-.BR xmessage (1x)
+.BR xmessage (1)
 program is available,
 .B xmessage
 is also used to display the message.
@@ -377,7 +377,7 @@ should be used instead.
 .TP
 .I $HOME/.xsession
 is a sequence of commands invoking X clients (or a session manager such as
-.BR xsm (1x)).
+.BR xsm (1)).
 See the manual page for
 .B xinit
 for tips on writing an
@@ -402,14 +402,14 @@ session handling scripts.
 Branden Robinson wrote this manual page.
 .SH "SEE ALSO"
 .BR Xsession.options (5),
-.BR X (7x),
+.BR X (7),
 .BR run\-parts (1),
 .BR ssh\-agent (1),
-.BR startx (1x),
+.BR startx (1),
 .BR tempfile (1),
-.BR xdm (1x),
-.BR xmessage (1x),
-.BR xmodmap (1x),
-.BR xrdb (1x),
+.BR xdm (1),
+.BR xmessage (1),
+.BR xmodmap (1),
+.BR xrdb (1),
 .BR sh (1)
 .\" vim:set et tw=80:

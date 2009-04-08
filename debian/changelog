@@ -1,11 +1,146 @@
-xorg (1:7.3+19) UNRELEASED; urgency=low
+xorg (1:7.4+1) UNRELEASED; urgency=low
+
+  [ Timo Aaltonen ]
+  * scripts/vars.sparc: Remove sunbw2 from video-all, since monochrome
+    support has been deleted from xserver 1.6.
+  * scripts/vars.*: Drop mouse & kbd from input-all except for non-Linux
+    archs.
+  * scripts/vars, rules: Remove scripts/vars, hasn't been used since
+    it was split.
+
+  [ Julien Cristau ]
+  * Xsession(5): fix the manpage references.
+  * Xwrapper.config(5): X is installed as /usr/bin/X, not /usr/bin/X11R6/X.
+  * Use case-insensitive matching when trying to replace obsolete drivers in
+    xorg.conf.  Use the C locale to make sure this works as expected.
+  * xserver-xorg.postinst: drop duplicate definitions of the debug_echo and
+    validate_string_db_input shell functions.
+  * dexconf: don't try to get the driver from debconf.
+  * xserver-xorg.postinst: drop the code to pick a driver on sparc.  The
+    server now autoconfigures sbus devices.
+  * As a result of the previous change, remove the
+    xserver-xorg/config/device/driver debconf template, and unregister it on
+    upgrade.
+  * We don't use dmidecode and fbset anymore (they were used for hardware
+    detection), so stop adding Recommends on them.
+  * dexconf: don't write empty Monitor and Screen sections.
+  * dexconf: don't output an InputDevice section for mice.
+  * dexconf: don't output an InputDevice section for keyboards.
+  * xserver-xorg.postinst: don't configure the keyboard layout.
+  * remove keyboard-related debconf templates; unregister them on upgrade.
+  * xserver-xorg.templates: don't give an ISA example for the BusID question,
+    ISA support has been removed from the server.
+  * xserver-xorg.postinst: don't accept BusID values matching "ISA:*".
+  * Don't set the UseFBDev option.  Remove the detection code from
+    xserver-xorg.postinst, kill the debconf template and unregister it.
+  * xserver-xorg.postinst: remove unused input validation functions.  Also
+    remove the corresponding debconf templates.
+  * Set the BusID in xorg.conf if we find more than one graphics card, to work
+    around breakage in post-pciaccess xserver (can't find the primary PCI
+    device).
+  * xserver-xorg.postinst: allow setting the PCI domain in the BusID string.
+  * Install a callout and an fdi file to read the configured keymap from
+    /etc/default/console-setup, and set the corresponding keymap for keyboards
+    in hal.  Both stolen from Ubuntu's hal package.
+  * Depend on hal (>= 0.5.12~git20090406) for hal-set-property --direct.
+  * Depend on console-setup (>= 1.29) to handle upgrades from lenny.
+  * Add a NEWS entry to document the changes regarding configuration of input
+    devices.
+
+  [ David Nusinow ]
+  * Add an example xorg.conf to /usr/share/doc/xserver-xorg/examples. 
+    This will give people something to copy from and modify for their own
+    configurations
 
   [ Debconf translations ]
   * Esperanto. Closes: #503039
   * Asturian. Closes: #511623
   * Kazakh added. Closes: #521001
 
- -- Christian Perrier <bubulle@debian.org>  Wed, 22 Oct 2008 19:25:56 +0200
+ -- David Nusinow <dnusinow@debian.org>  Sun, 15 Feb 2009 21:36:49 -0500
+
+xorg (1:7.4~5) experimental; urgency=low
+
+  [ Loic Minier ]
+  * Also upgrade Driver i810 or via lines which have trailing comments.
+  * Shut up rmdir errors with 2>/dev/null in all maintainer scripts when
+    trying to remove dirs; this might confuse debconf.
+
+  [ Julien Cristau ]
+  * xserver-xorg Depends on hal.
+  * xserver-xorg Depends on xserver-xorg-input-evdev on Linux (except for
+    s390).
+  * Update input (4) and video (5) ABIs for xserver 1.6.
+  * xserver-xorg Depends on xkb-data >= 1.4.
+  * xserver-xorg Depends on xserver-xorg-core 1.6 rc1.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 21 Jan 2009 22:41:41 +0100
+
+xorg (1:7.4~4) experimental; urgency=low
+
+  [ Loic Minier ]
+  * Allow alternate tty devices as consoles; fixes usage of startx in upstart.
+
+  [ Julien Cristau ]
+  * Merge changes from 1:7.3+18.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 11 Oct 2008 02:24:19 +0200
+
+xorg (1:7.4~3) experimental; urgency=low
+
+  [ Timo Aaltonen ]
+  * vars.*: Drop cyrix, imstt from video-all. Not ported to pciaccess.
+
+  [ Julien Cristau ]
+  * vars.*: Drop nsc from video-all.  It was only ever useful on i386 anyway,
+    and should get integrated into geode at some point.
+  * vars.*: Drop the via alternative, it's dead upstream and we have
+    openchrome now.
+  * xserver-xorg.postinst:
+    - drop support for upgrades from X11R6;
+    - when upgrading from a version earlier than 1:7.4~3, replace uses of the
+      "i810" and "via" drivers with "intel" and "openchrome", respectively
+      (closes: #492913).
+  * Pull changes from 1:7.3+17 (debconf translation updates).
+  * vars.*: Drop the -i810 alternatives, only -intel is left these days.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 15 Sep 2008 13:57:52 +0200
+
+xorg (1:7.4~2) experimental; urgency=low
+
+  * Drop the tga driver from xserver-xorg-video-all Depends on !alpha.
+  * Bump xserver-xorg's dependency on xserver-xorg-core, to make sure we're
+    at least on 1.5.
+  * Merge changes from the unstable branch up to 1:7.3+16.
+  * Update for 1.5 final: require xserver-xorg-video-4.
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 04 Sep 2008 02:24:54 +0200
+
+xorg (1:7.4~1) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * X.Org 7.4 release candidate
+  * Drop the vga, glint and dummy drivers from xserver-xorg-video-all Depends
+    (except dummy on s390).
+  * Bump videoabi to 2.9, inputabi to 2.1.
+  * xserver 1.5 doesn't use an external rgb database, don't bother installing
+    it.
+  * Move dexconf from x11-common to xserver-xorg.
+  * Remove pre-dependency on x11-common from xserver-xorg.
+  * Bump x11-common's conflict with xserver-xorg to << 1:7.4~.
+
+  [ Brice Goglin ]
+  * Remove the dependency of xutils against xutils-dev, it was only useful
+    for transitional purpose in Etch, closes: #418123.
+  * Remove the obsolete /etc/init.d/xserver-xorg, closes: #459507.
+  * Add xutils preinst to drop obsolete /etc/X11/rstart/ files,
+    closes: #382360.
+
+  [ Timo Aaltonen ]
+  * Split the variables in vars.* files to span multiple lines. Makes
+    them a lot easier to read and merge.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 14 Jul 2008 02:34:00 +0200
 
 xorg (1:7.3+18) unstable; urgency=low
 
@@ -1709,3 +1844,4 @@ xorg (7.0.0-0ubuntu1) dapper; urgency=low
   CAN-2004-0106, CAN-2003-0690, CAN-2003-0730, CAN-2003-0690, CAN-2003-0063,
   CAN-2003-0071, CAN-2004-0093, CAN-2004-0094, CAN-2004-0093, CAN-2004-0094.
   These should all be moved to their respective source packages. -daniels
+

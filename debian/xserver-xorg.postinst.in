@@ -40,54 +40,6 @@ debug_echo () {
   fi
 }
 
-validate_string_db_input () {
-  # Syntax: validate_string_db_input priority template
-  #
-  # validate string input; can't have doublequotes
-  # If $MAY_BE_NULL is a non-null value (e.g., "yes"), the string may be null.
-  if [ $# -ne 2 ]; then
-    echo "internal error: validate_string_db_input() called with wrong number of arguments: $*" >&2
-    exit 1
-  fi
-  PRIORITY="$1"
-  TEMPLATE="$2"
-  db_get "$TEMPLATE"
-  SAFE="$RET"
-  set +e
-  while :; do
-    db_input "$PRIORITY" "$TEMPLATE"
-    # is the question going to be asked?
-    if [ $? -eq 30 ]; then
-      break # no; bail out of validation loop
-    fi
-    db_go
-    db_get "$TEMPLATE"
-    if [ -n "$RET" ]; then
-      if ! expr "$RET" : '.*".*' > /dev/null 2>&1; then
-        break # valid input
-      else
-        ERROR="xserver-xorg/config/doublequote_in_string_error"
-      fi
-    else
-      if [ -n "$MAY_BE_NULL" ]; then
-        break # valid (null) input
-      else
-        ERROR="xserver-xorg/config/null_string_error"
-      fi
-    fi
-    # we only get to this point if the input was invalid; restore the known
-    # good value in case we are interrupted before the user provides a valid
-    # one
-    db_set "$TEMPLATE" "$SAFE"
-    db_fset "$TEMPLATE" seen false
-    # now show the user the error message
-    db_fset "$ERROR" seen false
-    db_input critical "$ERROR"
-    db_go
-  done
-  set -e
-}
-
 CONFIG_DIR="/etc/X11"
 CONFIG_AUX_DIR=/var/lib/x11
 SERVER_SYMLINK="$CONFIG_DIR/X"
@@ -99,194 +51,14 @@ XORGCONFIG_CHECKSUM="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.md5sum"
 XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/${XORGCONFIG##*/}.roster"
 THIS_SERVER=/usr/bin/Xorg
 
-NCARDS=0
-NSERVERS=0
-NDRIVERS=0
-DRIVERS_LIST=
 MULTIHEAD=
 
 # get machine architecture
 ARCH=$(dpkg --print-installation-architecture)
 
-debug_echo () {
-  # Syntax: debug_echo message ...
-  if [ -n "$DEBUG_XORG_DEBCONF" ] || [ "$DEBCONF_DEBUG" = "user" ] \
-    || [ "$DEBCONF_DEBUG" = '.*' ]; then
-    DEBUG_XORG_PACKAGE=yes observe "$*"
-  fi
-}
-
 debug_report_status () {
   # Syntax: debug_report_status command exit_status
   debug_echo "$1 exited with status $2"
-}
-
-discover_sparc_video () {
-  # Detect video cards on sparc by parsing prtconf output
-  prtconf -p -v | awk '
-  BEGIN {
-          display_node = 0; 
-          model = ""; 
-          name = ""; 
-  }
-  /Node/ {
-           if(display_node == 1) {
-             printf "model=\"%s\" name=\"%s\"\n", model, name
-             display_node = 0;
-           };
-           model = "";
-           name = ""
-  }
-  /device_type:/ {
-                   if(index($2, "display") != 0) {
-                     display_node = 1
-                   }
-  }
-  /model:/ { l=length($2); model = substr($2, 2, l-2) }
-  /name:/  { l=length($2); name = substr($2, 2, l-2) }
-  END{
-       if(display_node == 1) {
-         printf "model=\"%s\" name=\"%s\"\n", model, name
-       }; 
-  }' | \
-  while read line
-  do
-    eval "${line}"
-#   Match the name and the model to the driver.
-    test -z "${name}" && continue
-#   The model stored in the prom is usually not too
-#   informative, so that we need to provide some
-#   sensible human-readable card identification as well.
-    server='XFree86'
-    case "${name}" in
-      'cgsix' )
-        card='Sun CG6 framebuffer'
-        driver='suncg6' 
-	;;
-      'SUNW,sx' )
-        card='Sun CG14 framebuffer'
-        driver='suncg14'
-        ;;
-      'SUNW,leo' )
-        card='Sun LEO framebuffer'
-        driver='sunleo'
-        ;;
-      'SUNW,tcx' )
-        card='Sun TCX framebuffer' 
-        driver='suntcx'
-	;;
-      'SUNW,m64B' )
-        card='ATI Technologies 3D Rage Pro or similar'
-        driver='ati'
-        ;;
-      'SUNW,ffb' )
-        card='Sun Creator3D framebuffer or similar'
-        driver='sunffb'
-        ;;
-      'SUNW,afb' )
-        card='Sun Elite3D framebuffer or similar'
-        driver='sunffb'
-        ;;
-      'TSI,gfxp' )
-        card='PGX32 framebuffer or similar'
-        driver='glint'
-        ;;
-      * )
-        card='Unknown'
-        server='unknown'
-        driver='unknown'
-        ;;
-    esac
-    if [ -n "${model}" ]; then
-      card="${card} (${model})"
-    fi
-    printf "${card}\t${server}\t${driver}\n"
-  done
-}
-
-validate_string_db_input () {
-  # Syntax: validate_string_db_input priority template
-  #
-  # validate string input; can't have doublequotes
-  # If $MAY_BE_NULL is a non-null value (e.g., "yes"), the string may be null.
-  if [ $# -ne 2 ]; then
-    echo "internal error: validate_string_db_input() called with wrong number of arguments: $*" >&2
-    exit 1
-  fi
-  PRIORITY=$1
-  TEMPLATE=$2
-  db_get "$TEMPLATE"
-  SAFE="$RET"
-  set +e
-  while :; do
-    db_input "$PRIORITY" "$TEMPLATE"
-    # is the question going to be asked?
-    if [ $? -eq 30 ]; then
-      break # no; bail out of validation loop
-    fi
-    db_go
-    db_get "$TEMPLATE"
-    if [ -n "$RET" ]; then
-      if ! expr "$RET" : '.*".*' > /dev/null 2>&1; then
-        break # valid input
-      else
-        ERROR=xserver-xorg/config/doublequote_in_string_error
-      fi
-    else
-      if [ -n "$MAY_BE_NULL" ]; then
-        break # valid (null) input
-      else
-        ERROR=xserver-xorg/config/null_string_error
-      fi
-    fi
-    # we only get to this point if the input was invalid; restore the known
-    # good value in case we are interrupted before the user provides a valid
-    # one
-    db_set "$TEMPLATE" "$SAFE"
-    db_fset "$TEMPLATE" seen false
-    # now show the user the error message
-    db_fset "$ERROR" seen false
-    db_input critical "$ERROR"
-    db_go
-  done
-  set -e
-}
-
-validate_numeric_db_input () {
-  # Syntax: validate_numeric_db_input priority template
-  #
-  # validate numeric input; must have only digits, can be null
-  if [ $# -ne 2 ]; then
-    echo "internal error: validate_numeric_db_input() called with wrong number of arguments: $*" >&2
-    exit 1
-  fi
-  PRIORITY=$1
-  TEMPLATE=$2
-  db_get "$TEMPLATE"
-  SAFE="$RET"
-  set +e
-  while :; do
-    db_input "$PRIORITY" "$TEMPLATE"
-    # is the question going to be asked?
-    if [ $? -eq 30 ]; then
-      break # no; bail out of validation loop
-    fi
-    db_go
-    db_get "$TEMPLATE"
-    if [ -z "$RET" ] || expr "$RET" : "[0-9]\+$" > /dev/null 2>&1; then
-      break # valid input
-    fi
-    # we only get to this point if the input was invalid; restore the known
-    # good value in case we are interrupted before the user provides a valid
-    # one
-    db_set "$TEMPLATE" "$SAFE"
-    db_fset "$TEMPLATE" seen false
-    # now show the user the error message
-    db_fset xserver-xorg/config/nonnumeric_string_error seen false
-    db_input critical xserver-xorg/config/nonnumeric_string_error
-    db_go
-  done
-  set -e
 }
 
 validate_bus_id_db_input () {
@@ -315,19 +87,12 @@ validate_bus_id_db_input () {
         # An empty string is valid.
         break
         ;;
-      ISA:*)
-        # Looks like an ISA bus ID specification string.  At least up to a
-        # point; upstream (xf86ParseIsaBusString() in
-        # xc/programs/Xserver/hw/xfree86/common/xf86isaBus.c) doesn't actually
-        # *supply* a specification.  So if the user's gotten this far, it's good
-        # enough.
-        break
-        ;;
       PCI:*)
         # Looks like a PCI bus ID specification; validate it.  (We can use &&
         # outside a conditional here because of the "set +e" above.)
-        expr "$RET" : "PCI:[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null \
-          2>&1 && break
+        (expr "$RET" : "PCI:[0-9]\{1,3\}@[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null 2>&1 \
+        || expr "$RET" : "PCI:[0-9]\{1,3\}:[0-9]\{1,3\}:[0-9]\{1,3\}$" >/dev/null 2>&1) \
+        && break
         ;;
       SBUS:*)
         # Looks like an SBUS bus ID specification; validate it.  (We can use &&
@@ -492,20 +257,6 @@ priority_ceil() {
   esac
 }
 
-non_latin_keyboard () {
-  NONLATINMAPS="am ar bg by cs el gr il ir iu lo lt mk ml mm mn ru th tj ua"
-  for i in $NONLATINMAPS; do
-    if [ "$XMAP" = "$i" ]; then
-      NON_LATIN="true"
-    fi
-  done
-
-  # Turkish F keyboards are non-Latin; Turkish Q aren't.
-  if [ "$XMAP" = "tr" ] && [ "$VARIANT" = "f" ]; then
-    NON_LATIN="true"
-  fi
-}
-
 # analyze arguments; used by auto_answer()
 if [ "$1" = "reconfigure" ] || [ -n "$DEBCONF_RECONFIGURE" ]; then
   RECONFIGURE=true
@@ -519,45 +270,14 @@ fi
 
 debug_echo "Configuring $THIS_PACKAGE."
 
-# collect information about installed video card(s), if possible
-if [ "$ARCH" = "sparc" ]; then
-  DISCOVER_PROG='prtconf'
-  DISCOVER_FUNC='discover_sparc_video'
-
-  if which $DISCOVER_PROG > /dev/null 2>&1; then
-    DISCOVERED_VIDEO=$($DISCOVER_FUNC)
-    MULTIHEAD=$(echo "$DISCOVERED_VIDEO" | wc -l)
-    if [ -n "$DISCOVERED_VIDEO" ]; then
-      NCARDS=$(echo "$DISCOVERED_VIDEO" | wc -l)
-      SERVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $2}' | grep -v unknown | sort | uniq)
-      if [ -n "$SERVERS" ]; then
-        NSERVERS=$(echo "$SERVERS" | wc -l)
-      fi
-      DRIVERS=$(echo "$DISCOVERED_VIDEO" | awk 'BEGIN { FS="\t" } {print $NF}' | grep -v unknown | sort | uniq)
-      if [ -n "$DRIVERS" ]; then
-        NDRIVERS=$(echo "$DRIVERS" | wc -l)
-        DRIVERS_LIST=$(echo "$DRIVERS" | awk 'BEGIN {ORS="";FS="\t"} {if(NR > 1){print last ","};last=$0} END {print last}')
-      fi
-      if [ $MULTIHEAD -gt 1 ]; then
-        MULTIHEAD=yes
-      fi
-      DISCOVERED_VIDEO=$(echo "$DRIVERS" | head -n 1)
-    else
-      DISCOVERED_VIDEO=""
-    fi
-  else
-    DISCOVERED_VIDEO=""
-  fi
-else
-  DISCOVERED_VIDEO=""
-fi
-db_subst xserver-xorg/config/device/driver choices "$DRIVERS_LIST"
-auto_answer db_input low xserver-xorg/config/device/driver "$DISCOVERED_VIDEO"
-
 if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   # BusID
   PRIORITY=low
   DEFAULT=
+
+  if [ `lspci -n 2>/dev/null | grep ' 0300: '| wc -l` -gt 1 ]; then
+    MULTIHEAD=yes
+  fi
 
   # Some PowerPCs need to be told where to find the video card even if there is
   # only one in the machine (broken PCI bus code in the XFree86 X server, most
@@ -573,12 +293,12 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
         # Recent versions of lspci report a four-digit domain as the first field.
         if expr "$VIDEO_CARD" : ".*:.*:.*\..*" >/dev/null 2>&1; then
           # We have an entry in "hex:hex:hex.hex" format; we need
-          # "PCI:decimal:decimal:decimal" (we don't use the domain).
+          # "PCI:decimal@decimal:decimal:decimal".
           DOMAIN=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f1) )
           BUS=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f2) )
           DEVICE=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d: -f3 | cut -d. -f1) )
           FUNCTION=$(printf "%d" 0x$(echo $VIDEO_CARD | cut -d. -f2) )
-          DEFAULT="PCI:$BUS:$DEVICE:$FUNCTION"
+          DEFAULT="PCI:$BUS@$DOMAIN:$DEVICE:$FUNCTION"
         elif expr "$VIDEO_CARD" : ".*:.*\..*" >/dev/null 2>&1; then
           # We have an entry in "hex:hex.hex" format; we need
           # "PCI:decimal:decimal:decimal".
@@ -614,258 +334,7 @@ if [ -n "$FIRSTINST" ] || [ -n "$RECONFIGURE" ]; then
   else
     db_set xserver-xorg/config/device/bus_id ""
   fi
-
-  # use fbcon kernel functions?
-
-  case "$ARCH" in
-    alpha|hurd-i386|i386|amd64)
-      USE_FBDEV=false
-      ;;
-    *)
-      USE_FBDEV=true
-      ;;
-  esac
-
-  if [ -e /proc/fb ]; then
-    FB_TYPE="$(grep '^0 ' /proc/fb | sed 's/[^[:space:]] //')"
-    # did we actually get back anything?
-    if [ -n "$FB_TYPE" ]; then
-      if echo "$FB_TYPE" | grep -Eiq '(OFfb|VESA|VGA16)'; then
-        USE_FBDEV=false
-      else
-        # other framebuffers do support UseFBDEV
-        USE_FBDEV=true
-      fi
-    fi
-  else
-    USE_FBDEV=false
-  fi
-
-  if [ -n "$XORG_USE_FBDEV" ] && [ "$XORG_USE_FBDEV" = "no" ]; then
-    USE_FBDEV=false
-  fi
-
-  db_get xserver-xorg/config/device/use_fbdev || debug_report_status "db_get xserver-xorg/config/device/use_fbdev"
-  if [ "$RET" = "true" ] && [ "$USE_FBDEV" = "false" ]; then
-    debug_echo "xserver-xorg/config/device/use_fbdev is \"true\" but /proc/fb does not exist, is empty, or reports a framebuffer type with which UseFBDev cannot be used; setting template to \"false\""
-    db_set xserver-xorg/config/device/use_fbdev false
-  fi
-
-  auto_answer db_input "$(priority_ceil medium)" xserver-xorg/config/device/use_fbdev "$USE_FBDEV"
 fi
-
-# keyboard setup
-PRIORITY="medium"
-
-if [ -n "$FIRSTINST" ]; then
-  AUTODETECT_KB="true"
-else
-  AUTODETECT_KB="false"
-fi
-
-auto_answer db_input "$(priority_ceil $PRIORITY)" xserver-xorg/autodetect_keyboard "$AUTODETECT_KB" || debug_echo "db_input xserver-xorg/autodetect_keyboard"
-db_get xserver-xorg/autodetect_keyboard || debug_report_status "db_get server-xorg/autodetect_keyboard"
-if [ "$RET" = "true" ]; then
-  DOKBDETECT="true"
-  debug_echo "Redetecting keyboard layout; resetting flag to false."
-  db_set xserver-xorg/autodetect_keyboard false
-fi
-
-if [ -n "$DOKBDETECT" ] && [ -f /etc/default/console-setup ]; then
-  # Hmm. At least for now, none of the variables in this file will clash
-  # with our own variables ...
-  . /etc/default/console-setup
-fi
-
-if [ "$XKBLAYOUT" ]; then
-  debug_echo "Fetched keyboard layout from console configuration:"
-  debug_echo "layout: '$XKBLAYOUT', options: '$XKBOPTIONS', variant: '$XKBVARIANT', model: '$XKBMODEL'"
-  PRIORITY=low
-elif [ -n "$DOKBDETECT" ]; then
-  # generated by a small bit of Perl from a static list of keymaps provided
-  # by Matthias Urlichs
-  REALLANG=${LANG%%@*}
-  REALLANG=${REALLANG%%.*}
-
-  db_get debian-installer/keymap || debug_report_status "db_get debian-installer/keymap"
-  DI_KEYMAP="${RET##mac-usb-}"
-  DI_KEYMAP="${DI_KEYMAP%%-latin1}"
-
-  case "$DI_KEYMAP" in
-    be2) XMAP="be";;
-    bg) XMAP="bg"; VARIANT="bds";;
-    br) XMAP="us"; VARIANT="intl"; MODEL="pc104";;
-    br-abnt2) XMAP="br"; VARIANT="abnt2"; MODEL="abnt2";;
-    by) XMAP="by";;
-    ca-multi) XMAP="ca"; VARIANT="multi";;
-    cf) XMAP="ca"; VARIANT="fr";;
-    croat) XMAP="hr";;
-    cz-lat2) XMAP="cz";;
-    de-latin1-nodeadkeys) XMAP="de"; VARIANT="nodeadkeys";;
-    de) XMAP="de";;
-    dvorak) XMAP="us"; VARIANT="dvorak"; MODEL="pc104";;
-    dk) XMAP="dk";;
-    es) XMAP="es";;
-    et) XMAP="ee";;
-    fi) XMAP="fi";;
-    fr) XMAP="fr"; VARIANT="oss";;
-    fr_CH) XMAP="ch"; VARIANT="fr";;
-    fr-latin9) XMAP="fr"; VARIANT="latin9";;
-    gb) XMAP="gb";;
-    gr) XMAP="gr";;
-    hebrew) XMAP="il";;
-    hu) XMAP="hu";;
-    is) XMAP="is";;
-    it) XMAP="it";;
-    jp106) XMAP="jp"; MODEL="jp106";;
-    la) XMAP="latam";;
-    lfc-cat) XMAP="es"; VARIANT="cat";;
-    lt) XMAP="lt";;
-    lv-latin4) XMAP="lv";;
-    # XXX should these be MODEL="macintosh"?
-    mac-us-std) XMAP="us";;
-    mac-de2-ext) XMAP="de"; VARIANT="nodeadkeys";;
-    mac-fr2-ext) XMAP="fr";;
-    mac-fr3) XMAP="fr";;
-    mac-es) XMAP="es";;
-    mac-usb-de_CH) XMAP="ch"; VARIANT="de";;
-    mk) XMAP="mk";;
-    nl) XMAP="nl";;
-    no) XMAP="no";;
-    pl) XMAP="pl";;
-    pt) XMAP="pt";;
-    ro) XMAP="ro";;
-    ru) XMAP="ru";;
-    se) XMAP="se";;
-    sg) XMAP="ch"; VARIANT="de";;
-    sk-qwerty) XMAP="sk"; VARIANT="qwerty";;
-    slovene) XMAP="si";;
-    sr-cy) XMAP="cs";;
-    trf|trfu) XMAP="tr"; VARIANT="f";;
-    trq|trqu) XMAP="tr";;
-    ua) XMAP="ua";;
-    uk) XMAP="gb";;
-    us) XMAP="us"; MODEL="pc104";;
-    *) XMAP="UNKNOWN";;
-  esac
-
-  if [ "$XMAP" = "us" ] && [ "${DI_LANG}" = "ko_KR" ]; then
-    XMAP=kr # Uses US keyboard on the console.
-    MODEL=
-  fi
-
-  if [ "$XMAP" = "UNKNOWN" ]; then
-    warn "failed to infer keyboard layout from layout/lang '$DI_KEYMAP--$REALLANG'"
-    PRIORITY=medium
-    XMAP="us"
-    MODEL="pc104"
-  # prompt for layout if we ended up with French Canadian; apparently having
-  # US-layout keyboards is common there
-  elif [ "$XMAP" = "ca" ] && [ "$VARIANT" = "fr" ]; then
-    PRIORITY=high
-  else
-    PRIORITY=low
-  fi
-
-  # we can't do non-Latin usernames, so people with Latin layouts need a US
-  # layout so they can log in, and then switch to writing native text.  Bit hard
-  # to work out which one should be the default.
-  non_latin_keyboard
-  if [ -n "$NON_LATIN" ]; then
-    warn "selected layout '$XMAP' from '$DI_KEYMAP--$REALLANG' is non-Latin; " \
-         "adding us to the layout list, Alt+Shift toggles"
-    if [ -z "$OPTIONS" ]; then
-      OPTIONS="grp:alt_shift_toggle"
-    else
-      OPTIONS="$OPTIONS,grp:alt_shift_toggle"
-    fi
-    XMAP="us,$XMAP"
-  fi
-  
-  if [ -n "$LEVEL2" ]; then
-    warn "selected layout '$XMAP' from '$DI_KEYMAP--$REALLANG' is l2-only"
-  fi
-
-  XKBLAYOUT="$XMAP"
-  XKBOPTIONS="$OPTIONS"
-  XKBVARIANT="$VARIANT"
-  XKBMODEL="$MODEL"
-else
-  db_get xserver-xorg/config/inputdevice/keyboard/layout || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/layout"
-  XKBLAYOUT="$RET"
-  db_get xserver-xorg/config/inputdevice/keyboard/options || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/options"
-  XKBOPTIONS="$RET"
-  db_get xserver-xorg/config/inputdevice/keyboard/variant || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/variant"
-  XKBVARIANT="$RET"
-  db_get xserver-xorg/config/inputdevice/keyboard/model || debug_report_status "db_get xserver-xorg/config/inputdevice/keyboard/model"
-  XKBMODEL="$RET"
-  PRIORITY=low
-fi
-
-MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/layout "$XKBLAYOUT"
-
-# these questions require input validation
-PRIORITY=medium
-
-DEFAULT=xorg
-MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/rules "$DEFAULT"
-
-if [ -z "$XKBMODEL" ]; then
-  db_get xserver-xorg/config/inputdevice/keyboard/rules
-  if [ "$RET" = "sun" ]; then
-    db_set xserver-xorg/config/inputdevice/keyboard/rules "xorg"
-    XKBMODEL=pc105
-  elif [ "$RET" = "xorg" ]; then
-    if [ "$ARCH" = "powerpc" ] && \
-        [ -e /proc/sys/dev/mac_hid/keyboard_sends_linux_keycodes ] && \
-        [ "$(cat /proc/sys/dev/mac_hid/keyboard_sends_linux_keycodes)" = "0" ]; then
-      XKBMODEL=macintosh_old
-    else
-      XKBMODEL=pc105
-    fi
-  fi
-fi
-MAY_BE_NULL= auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/model "$XKBMODEL"
-
-# ugly kludge, I know; map Apple->AltGr for most European Macs
-db_get xserver-xorg/config/inputdevice/keyboard/model
-if [ "$ARCH" = "powerpc" ] && [ "$RET" = "pc105" ]; then
-  if [ -n "$XKBOPTIONS" ]; then
-    if ! echo "$XKBOPTIONS" | grep -q "lv3:"; then
-      XKBOPTIONS="$XKBOPTIONS,lv3:lwin_switch"
-    fi
-  else
-    XKBOPTIONS="lv3:lwin_switch"
-  fi
-fi
-
-# kill me now.
-if echo "$XKBOPTIONS" | grep -q "nodeadkeys"; then
-  if [ -z "$XKBVARIANT" ]; then
-    XKBVARIANT="nodeadkeys"
-    NEWOPTIONS=""
-    IFS_SAVE="$IFS"
-    IFS=","
-    for i in $XKBOPTIONS; do
-      IFS="$IFS_SAVE"
-      if [ "$i" != "nodeadkeys" ]; then
-        NEWOPTIONS="${NEWOPTIONS:+$NEWOPTIONS,}$i"
-      fi
-      IFS=","
-    done
-    IFS="$IFS_SAVE"
-    XKBOPTIONS="$NEWOPTIONS"
-    db_set xserver-xorg/config/inputdevice/keyboard/variant "$XKBVARIANT"
-    db_set xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
-  else
-    warn "wanted to migrate nodeadkeys from options -> variant, but variant" \
-         "is already $XKBVARIANT; not migrating"
-  fi
-fi
-
-MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil low)" xserver-xorg/config/inputdevice/keyboard/variant "$XKBVARIANT"
-
-MAY_BE_NULL=yes auto_answer validate_string_db_input "$(priority_ceil $PRIORITY)" xserver-xorg/config/inputdevice/keyboard/options "$XKBOPTIONS"
 
 # files and dri sections
 if [ -e "$CONFIG_AUX_DIR/.migrateconfig" ]; then
@@ -893,7 +362,8 @@ elif [ `readlink "$SERVER_SYMLINK"` = "/bin/true" ]; then
   ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 fi
 
-if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
+if [ -n "$UPGRADE" ]; then
+    if dpkg --compare-versions "$2" le "1:7.3+5"; then
         # Clean up our old crap
         rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
         for QUESTION in "shared/default-x-server" \
@@ -921,6 +391,23 @@ if [ -n "$UPGRADE" ] && dpkg --compare-versions "$2" le "1:7.3+5"; then
                         "xserver-xorg/multiple_possible_x-drivers"; do
           db_unregister "$QUESTION" || true
         done
+    fi
+    if dpkg --compare-versions "$2" lt-nl 1:7.4; then
+      for QUESTION in \
+        xserver-xorg/config/null_string_error \
+        xserver-xorg/config/doublequote_in_string_error \
+        xserver-xorg/config/nonnumeric_string_error \
+        xserver-xorg/config/device/use_fbdev \
+        xserver-xorg/config/device/driver \
+        xserver-xorg/config/inputdevice/keyboard/rules \
+        xserver-xorg/config/inputdevice/keyboard/model \
+        xserver-xorg/config/inputdevice/keyboard/layout \
+        xserver-xorg/config/inputdevice/keyboard/variant \
+        xserver-xorg/config/inputdevice/keyboard/options \
+        xserver-xorg/autodetect_keyboard; do
+	db_unregister $QUESTION || true
+      done
+    fi
 fi
 
 # no debconf interaction should be done after this point
@@ -928,76 +415,57 @@ fi
 
 # Don't touch the config on upgrades except to deal with known issues with old
 # configs.
-if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
-  # compare the current and stored checksums; if they do not match, assume
-  # that's the way the user wants it.  if we're reconfiguring, overwrite
-  # it regardless and back it up.
-  if [ "$(md5sum "$XORGCONFIG")" = "$(cat "$XORGCONFIG_CHECKSUM")" ] || \
-     ! [ -e "$XORGCONFIG" ] || [ -n "$RECONFIGURE" ]; then
-    # they match or user deleted the file or they're running dpkg-reconfigure; 
-    # prepare a new version
-    NEW_XORGCONFIG="$XORGCONFIG.dpkg-new"
-    if [ -n "$RECONFIGURE" ] && [ -e "$XORGCONFIG" ]; then
-      BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
-      if [ -e "$BACKUP_XORGCONFIG" ]; then
-        bomb "backup xorg.conf file $BACKUP_XORGCONFIG already" \
-             "exists; please remove it and try again"
-      fi
-      cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
-      warn "overwriting possibly-customised configuration file; backup" \
-           "in $BACKUP_XORGCONFIG"
-    fi
-    if dexconf -o "$NEW_XORGCONFIG"; then
-      if ! cmp -s "$XORGCONFIG" "$NEW_XORGCONFIG"; then
-        mv "$NEW_XORGCONFIG" "$XORGCONFIG"
-        md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
-      fi
-    else
-      warn "error while preparing new Xorg X server configuration" \
-           "file in $NEW_XORGCONFIG; not attempting to update existing" \
-           "configuration"
-    fi
-    rm -f "$NEW_XORGCONFIG"
-  else
-    # I'm going to get in so much shit for this...
+if [ -n "$RECONFIGURE" ]; then
+  # prepare a new version
+  NEW_XORGCONFIG="$XORGCONFIG.dpkg-new"
+  if [ -n "$RECONFIGURE" ] && [ -e "$XORGCONFIG" ]; then
     BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
-    warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
-      cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
-    sed -e'
-	# Dump obsolete modules
-	/^[[:space:]]*Section[[:space:]]\+"Module"[[:space:]]*$/,/^[[:space:]]*EndSection[[:space:]]*$/ { /^[[:space:]]*Load[[:space:]]\+"GLcore"[[:space:]]*$/d
-		/^[[:space:]]*Load[[:space:]]\+"speedo"[[:space:]]*$/d
-		/^[[:space:]]*Load[[:space:]]\+"type1"[[:space:]]*$/d
-	}
-	/^[[:space:]]*Section[[:space:]]\+"Files"[[:space:]]*$/,/*[[:space:]]*EndSection[[:space:]]*$/ {
-		# Delete the module path
-		/^[[:space:]]*ModulePath[[:space:]]\+/d
-		# Delete the rgb path
-		/^[[:space:]]*RgbPath[[:space:]]\+/d
-		# Change font paths for the fonts xorg-x11 used to ship
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/misc"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/cyrillic"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/100dpi"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/75dpi"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Type1"[[:space:]]*$/d
-		#/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/CID"[[:space:]]*$/d
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/share\/fonts\/X11\/Speedo"[[:space:]]*$/d
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/misc"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/misc"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/cyrillic"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/cyrillic"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/100dpi"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/100dpi"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/75dpi"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/75dpi"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/Type1"[[:space:]]*$/i\
-	FontPath	"/usr/share/fonts/X11/Type1"
-		/^[[:space:]]*FontPath[[:space:]]\+"\/usr\/lib\/X11\/fonts\/CID"[[:space:]]*$/d
+    if [ -e "$BACKUP_XORGCONFIG" ]; then
+      bomb "backup xorg.conf file $BACKUP_XORGCONFIG already" \
+           "exists; please remove it and try again"
+    fi
+    cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
+    warn "overwriting possibly-customised configuration file; backup" \
+         "in $BACKUP_XORGCONFIG"
+  fi
+  if dexconf -o "$NEW_XORGCONFIG"; then
+    if ! cmp -s "$XORGCONFIG" "$NEW_XORGCONFIG"; then
+      mv "$NEW_XORGCONFIG" "$XORGCONFIG"
+      md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
+    fi
+  else
+    warn "error while preparing new Xorg X server configuration" \
+         "file in $NEW_XORGCONFIG; not attempting to update existing" \
+         "configuration"
+  fi
+  rm -f "$NEW_XORGCONFIG"
+elif dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
+  # We're upgrading from pre-7.4.  We need to replace i810 with intel, and
+  # via with openchrome.
+  if [ -e "$XORGCONFIG" ]; then
+    LC_ALL=C sed -e'
+	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/I,/^[[:space:]]*EndSection[[:space:]]*$/I {
+	/^[[:space:]]*Driver[[:space:]]\+"i810"/I s/i810/intel/I
+	/^[[:space:]]*Driver[[:space:]]\+"via"/I s/via/openchrome/I
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
-	chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
-	chmod --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
-	mv ${XORGCONFIG}.madwizard-new $XORGCONFIG
+    if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
+      # compare the current and stored checksums; if they do not match, assume
+      # that's the way the user wants it.
+      if [ "$(md5sum "$XORGCONFIG")" != "$(cat "$XORGCONFIG_CHECKSUM")" ]; then
+        BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
+        warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
+        cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
+      else
+        # checksums match, update the checksum
+        md5sum "${XORGCONFIG}.madwizard-new" > "$XORGCONFIG_CHECKSUM"
+      fi
+      chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
+      chmod --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
+      mv ${XORGCONFIG}.madwizard-new $XORGCONFIG
+    else
+      rm ${XORGCONFIG}.madwizard-new
+    fi
   fi
 else
   debug_echo "not updating $XORGCONFIG; we're upgrading"
