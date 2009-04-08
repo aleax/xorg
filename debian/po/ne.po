@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ne\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2007-04-06 05:41+0545\n"
 "Last-Translator: Shiva Pokharel <shiva@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -19,44 +19,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; nplural(n!=1)\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "कर्नल फ्रेमबफर यन्त्र इन्टरफेस प्रयोग गर्नुहुन्छ ?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"भिडियो हार्डवेयर संग प्रत्यक्ष सञ्चार गर्नु भन्दा, एक्स सर्भर केहि सञ्चालनहरू कार्यसम्पादन "
-"गर्न कन्फिगर हुन सक्छ , जस्तै भिडियो मोड स्विचिङ्, कर्नलको फ्रेमबफर चालक हुदै ।"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"सिद्धान्तमा, या सम्पर्कले काम गर्नुपर्दछ, तर व्यवहारमा, कहिले काहि एउटाले गर्दछ र अन्यले "
-"गर्दैन ।  यो विकल्प सक्षम पार्नु सुरक्षित बेट हो, तर यो समस्याको कारण भएमा बन्द गर्न "
-"स्वतन्त्र महशुस गर्नुहोस् ।"
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "भिडियो कार्डको बस परिचायक:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -67,13 +38,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "उदाहरणहरू:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -85,7 +56,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -95,7 +66,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -105,381 +76,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "बस परिचायकका लागि गलत ढाँचा"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "XKB नियम प्रयोग गर्न सेट गर्नुहोस्:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"कुज्जीपाटी सहिरुपमा ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा XKB नियम सेट छनौट हुनु पर्दछ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "U. S. अग्रेजी कुज्जीपाटीको प्रयोगकर्ताहरुले प्राय यो प्रविष्टि खाली छोड्दछन् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"अनुभवी प्रयोगकर्ताले कुनै परिभाषित XKB नियम सेट प्रयोग गर्न सक्दछ ।  यदि xkb-डेटा प्याकेज "
-"अनप्याक गरिएको छ भने, उपलब्ध नियम सेटहरुका लागि /usr/share/X11/xkb/rules डाइरेक्टरी "
-"हेर्नुहोस् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "जब दुबिधा हुनुहुन्छ, यो मान \"xorg\"मा सेट हुनु पर्दछ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "कुञ्जीपाटी नमूना:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"कुज्जीपाटी सहिरुपमा ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा कुज्जीपाटी नमूना प्रविष्ट "
-"गरिएको हुनुपर्दछ ।  उपलब्ध नमूनाहरू XKB नियम सेट प्रयोग हुनेमा निर्भर रहन्छ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" नियम सेट संग \"xorg\" :\n"
-" - pc101:  101 कुज्जीहरू संग परम्परागत IBM PC/AT शैली कुज्जीपाटी, मा समान\n"
-"          सयुक्त अधिराज्य अमेरिका.  संग कुनै पनि \"logo\" वा \"menu\" कुज्जीहरू छैन;\n"
-" - pc104: pc101 नमूना संग समान, थप कुज्जीहरू सहित, प्राय इनग्रेफ गरिएको\n"
-"          एउटा संकेत \"logo\" संग र एउटा \"menu\" संकेत;\n"
-" - pc102: pc101 जस्तै र धेरैजसो युरोपमा फेला परेको । एउटा \"< >\" कुज्जी समावेश गर्दछ;\n"
-" - pc105: pc104 जस्तै र धेरैजसो युरोपमा फेला पेरको । एउटा \"< >\" कुज्जी समावेश गर्दछ;\n"
-" - मासिनटोस: लिनक्स संग नयाँ आगत तह प्रयोग गर्दै मासिनटोस कुज्जीपाटीहरू\n"
-"              कुज्जीकोडहरू;\n"
-" - पुरानो मासिनटोस: नयाँ मासिनटोस आगत तह प्रयोग नगर्ने मासिनटोस कुज्जीपाटीहरू\n"
-" नियम सेट \"sun\" संग:\n"
-" - प्रकार ४: सन प्रकार ४ कुज्जीपाटीहरू;\n"
-" - प्रकार ५: सन प्रकार ५ कुज्जीपाटीहरू ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"प्रायजसो ल्याबटप कुज्जीपाटीहरू संग स्ट्यान्डलोन नमूनाहरुको जस्तो धेरै कुज्जीहरू हुदैन; ल्याबटप "
-"प्रयोगकर्ताले माथिको भन्दा लगभग धेरै नजिक कुज्जीपाटी चयन गर्नु पर्दछ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"अनुभवि प्रयोगकर्ताले XKB नियम सेट चयन गरिएको द्धारा परिभाषित कुनै नमूना प्रयोग गर्न "
-"सक्दछन् ।  यदि xkb-डेटा प्याकेज अनप्याक गरिएको छ भने, उपलब्ध नियम सेटहरू /usr/share/"
-"X11/xkb/rules डाइरेक्टरी हेर्नुहोस् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"प्राय जसो यु एस अग्रेजी कुज्जीपाटीहरुको प्रयोगकर्ताले \"pc104\" प्रविष्ट गर्नु पर्दछ ।  अन्य "
-"धेरै कुज्जीपाटीहरुको प्रयोगकर्ताले साधारणतया \"pc105\" प्रविष्ट गर्नु प्रर्दछ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "कुञ्जीपाटी सजावट:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"कुज्जीपाटी सहि रुपमा ह्यान्डल गर्नका लागि एक्स सर्भर , एउटा कुज्जीपाटी सजावट प्रविष्ट हुनु "
-"पर्दछ ।  XKB सेट भएको मा उपलब्ध सजावटहरू निर्भर छ र कुज्जीपाटी नमूना पहिले नै चयन "
-"गरिएको छ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"अनुभवि प्रयोगरकर्ताले चयन गरिएको XKB नियम सेटद्धारा समर्थन गर्ने कुनै पनि सजावट प्रयोग "
-"गर्न सक्दछ ।  यदि xkb-डेटा प्याकेज अनप्याक गरिएको छ भने, उपलब्ध नियम सेटहरुका लागि /"
-"usr/share/X11/xkb/ नियम डाइरेक्टरीहरू हेर्नुहोस् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"U.S. अग्रेजी कुज्जीपाटीहरुको  प्रयोगकर्ताहरुले \"us\" प्रविष्ट गर्नु पर्दछ ।  कुज्जीपाटी "
-"स्थानियकरण गरिएको अन्य देशहरुको प्रयोगकर्ताहरुले प्राय तिनिहुरुको देशको कोड ISO 3166 "
-"प्रविष्ट गर्नु पर्दछ ।  उदाहरणहरू., फ्रान्सले \"fr\" प्रयोग गर्दछ, र जर्मनले \"de\" प्रयोग "
-"गर्दछ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "कुञ्जीपाटी चल:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"आवश्यकता अनुरुप कुज्जीपाटीहरु ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा कुज्जीपाटी चल प्रविष्ट "
-"गरिनु पर्दछ ।  उपलब्ध चलहरू XKB नियम सेट भएको मा निर्भर गर्दछ, र सजावट पहिले नै चयन "
-"गरिएको थियो ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"धेरै कुज्जीपाटी सजावटहरुले एउटा विकल्प \"dead\" कुज्जीहरू व्यवहार गर्नलाई समर्थन गर्दछन् "
-"जस्तै स्पेसिङ् बिहिन जोर चिन्हहरको रुपमा र सामान्य स्पेसिङ् कज्जीहरुको रुपा डाएरेसिस, र यदि "
-"यो रुचाइएको व्यवहार हो भने,\"nodeadkeys\" प्रविष्ट गर्नुहोस् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"अनुभवि प्रयोगकर्ताहरुले चयन गरिएको XKB सजावटद्धारा समर्थन गर्ने कुनै चल समर्थनहरू प्रयोग "
-"गर्न सक्दछन् ।  यदि xkb-डेटा प्याकेज अनप्याक गरिएको छ भने, उपलब्ध चलहरुका लागि तपाईँको "
-"चयन गरिएको सजावटमा फाइल संगत फाइलहरुका लागि  /usr/share/X11/xkb/ प्रतिक "
-"डाइरेक्टरी हेर्नुहोस् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "U. S. अग्रेजी कुज्जीपाटीको प्रयोगकर्ताहरुले प्राय यो प्रविष्टि खाली छोड्दछन् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "कुञ्जीपाटी विकल्पहरू:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"आवश्यकता अनुरुप कुज्जीपाटीहरू ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा कुज्जीपाटी विकल्पहरू "
-"प्रविष्ट गरिनु पर्दछ ।  उपलब्ध विकल्पहरू XKB नियम सेट भएकोमा निर्भर गर्दछ, र सजावट "
-"पहिले नै चयन गरिएको थियो ।  सबै विकल्पहरू प्रत्येक कुज्जीपाटी नमूना र सजावटसंग काम गर्दैनन् "
-"।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"उदहरणका लागि, यदि तपाईँले क्याप्स लक कुज्जीलाई थप नियन्त्रण कुज्जीको रुपमा व्यवहार गरेको "
-"रुपमा हेर्न चाहनुहुन्छ भने, तपाईँले \"ctrl:nocaps\" प्रविष्ट गर्नु पर्दछ; यदि तपाईँले क्याप्स "
-"लक र बाँया नियन्त्रण कुज्जीहरू स्विच गर्न चाहनुहुन्छ भने, तपाईँले \"ctrl:swapcaps\" प्रविष्ट "
-"गर्न सक्नुहुन्छ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"अन्य उदाहरणको रुपमा, केहि मानिसहरुले तिनिहरुको कुज्जीपाटीको Alt कुज्जीहरू (यो "
-"पूर्वानिर्धारित हो) मा मेटा कुज्जी उपलब्ध भएको रुचाउदछन्, जब अन्य मानिसहरुले सञ्झ्यालहरू वा "
-"\"logo\" कुज्जीहरू सट्टामा मेटा कुज्जीहरू भएको रुचाउदछन् ।  यदि तपाईँले तपाईँको सञ्झ्यालहरू "
-"वा लोगो कुज्जीहरू मेटा कुज्जीको रुपमा प्रयोग गर्न चाहनुहुन्छ भने, तपाईँले \"altwin:meta_win"
-"\" प्रविष्ट गर्न सक्नुहुन्छ ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"तपाईँले तिनिहरुलाई अल्पविरामले छुट्टाएर विकल्पहरू संयोजन गर्न सक्नुहुन्छ, दृष्टांतका लागि "
-"\"ctrl:nocaps,altwin:meta_win\" ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"अनुभवि प्रयोगकर्ताहरुले चयन गरिएको XKB नमूना, सजावट र चलसंग मिल्ने कुनै विकल्पहरू प्रयोग "
-"गर्न सक्दछन् ।"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "दोधार भएको बेलामा, यो मान खाली छोड्न सक्नुहुन्छ ।"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "रित्तो मान"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "यो मानका लागि एउटा शुन्य प्रविष्टि स्विकार गरिदैन ।"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "अवैध डबल-उद्धरण क्यारेक्टरहरू"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "डबल-उद्धरण (\") क्यारेक्टरहरू प्रविष्ट मानमा स्विकार गरिदैन ।"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "सङ्ख्यात्मक मान आवश्यक"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "अङ्कहरू भन्दा अन्य क्यारेक्टरहरुलाई प्रविष्टिमा अनुमति दिइदैन ।"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "कुञ्जीपाटी सजावट स्वत पत्तालगाउनु हुन्छ ?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"एक्स अर्ग सर्भरका लागि पूर्वनिर्धारित कुज्जीपाटी सजावट चयन स्थापना गर्नेवालामा चयन "
-"गरिएको भाषा र कुज्जीपाटीको संयोजनमा आधारित हुनेछ ।"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"यदि तपाईँले कुज्जीपाटी सजावट पुन पत्ता लगाउन चाहनुहुन्छ भने यो विकल्प छनौट गर्नुहोस् ।  "
-"यदि तपाईँले हालको सजावट राख्न चाहनुहुन्छ भने छनौट नगर्नुहोस् ।"
 
 #. Type: select
 #. Choices
@@ -626,6 +225,296 @@ msgid ""
 msgstr ""
 "यो प्याकेज स्थापना असफल हुनेछ र बाहिर निस्कने छ त्यसैले तपाईँले यो गर्न सक्नुहुन्छ । कृपया "
 "तपाईँले डाइरेक्टरी खाली गरे पछि स्तरबृद्धि कार्य बिधि पुन चलाउनुहोस् ।"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "कर्नल फ्रेमबफर यन्त्र इन्टरफेस प्रयोग गर्नुहुन्छ ?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "भिडियो हार्डवेयर संग प्रत्यक्ष सञ्चार गर्नु भन्दा, एक्स सर्भर केहि सञ्चालनहरू कार्यसम्पादन "
+#~ "गर्न कन्फिगर हुन सक्छ , जस्तै भिडियो मोड स्विचिङ्, कर्नलको फ्रेमबफर चालक हुदै ।"
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "सिद्धान्तमा, या सम्पर्कले काम गर्नुपर्दछ, तर व्यवहारमा, कहिले काहि एउटाले गर्दछ र "
+#~ "अन्यले गर्दैन ।  यो विकल्प सक्षम पार्नु सुरक्षित बेट हो, तर यो समस्याको कारण भएमा बन्द "
+#~ "गर्न स्वतन्त्र महशुस गर्नुहोस् ।"
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "XKB नियम प्रयोग गर्न सेट गर्नुहोस्:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "कुज्जीपाटी सहिरुपमा ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा XKB नियम सेट छनौट हुनु "
+#~ "पर्दछ ।"
+
+#, fuzzy
+#~| msgid ""
+#~| "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "U. S. अग्रेजी कुज्जीपाटीको प्रयोगकर्ताहरुले प्राय यो प्रविष्टि खाली छोड्दछन् ।"
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "अनुभवी प्रयोगकर्ताले कुनै परिभाषित XKB नियम सेट प्रयोग गर्न सक्दछ ।  यदि xkb-डेटा "
+#~ "प्याकेज अनप्याक गरिएको छ भने, उपलब्ध नियम सेटहरुका लागि /usr/share/X11/xkb/rules "
+#~ "डाइरेक्टरी हेर्नुहोस् ।"
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "जब दुबिधा हुनुहुन्छ, यो मान \"xorg\"मा सेट हुनु पर्दछ ।"
+
+#~ msgid "Keyboard model:"
+#~ msgstr "कुञ्जीपाटी नमूना:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "कुज्जीपाटी सहिरुपमा ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा कुज्जीपाटी नमूना प्रविष्ट "
+#~ "गरिएको हुनुपर्दछ ।  उपलब्ध नमूनाहरू XKB नियम सेट प्रयोग हुनेमा निर्भर रहन्छ ।"
+
+#, fuzzy
+#~| msgid ""
+#~| " With the \"xorg\" rule set:\n"
+#~| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~| " - pc104: similar to pc101 model, with additional keys, usually "
+#~| "engraved\n"
+#~| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~| "              keycodes;\n"
+#~| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~| " With the \"sun\" rule set:\n"
+#~| " - type4: Sun Type4 keyboards;\n"
+#~| " - type5: Sun Type5 keyboards."
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " नियम सेट संग \"xorg\" :\n"
+#~ " - pc101:  101 कुज्जीहरू संग परम्परागत IBM PC/AT शैली कुज्जीपाटी, मा समान\n"
+#~ "          सयुक्त अधिराज्य अमेरिका.  संग कुनै पनि \"logo\" वा \"menu\" कुज्जीहरू "
+#~ "छैन;\n"
+#~ " - pc104: pc101 नमूना संग समान, थप कुज्जीहरू सहित, प्राय इनग्रेफ गरिएको\n"
+#~ "          एउटा संकेत \"logo\" संग र एउटा \"menu\" संकेत;\n"
+#~ " - pc102: pc101 जस्तै र धेरैजसो युरोपमा फेला परेको । एउटा \"< >\" कुज्जी समावेश "
+#~ "गर्दछ;\n"
+#~ " - pc105: pc104 जस्तै र धेरैजसो युरोपमा फेला पेरको । एउटा \"< >\" कुज्जी समावेश "
+#~ "गर्दछ;\n"
+#~ " - मासिनटोस: लिनक्स संग नयाँ आगत तह प्रयोग गर्दै मासिनटोस कुज्जीपाटीहरू\n"
+#~ "              कुज्जीकोडहरू;\n"
+#~ " - पुरानो मासिनटोस: नयाँ मासिनटोस आगत तह प्रयोग नगर्ने मासिनटोस कुज्जीपाटीहरू\n"
+#~ " नियम सेट \"sun\" संग:\n"
+#~ " - प्रकार ४: सन प्रकार ४ कुज्जीपाटीहरू;\n"
+#~ " - प्रकार ५: सन प्रकार ५ कुज्जीपाटीहरू ।"
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "प्रायजसो ल्याबटप कुज्जीपाटीहरू संग स्ट्यान्डलोन नमूनाहरुको जस्तो धेरै कुज्जीहरू हुदैन; "
+#~ "ल्याबटप प्रयोगकर्ताले माथिको भन्दा लगभग धेरै नजिक कुज्जीपाटी चयन गर्नु पर्दछ ।"
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "अनुभवि प्रयोगकर्ताले XKB नियम सेट चयन गरिएको द्धारा परिभाषित कुनै नमूना प्रयोग गर्न "
+#~ "सक्दछन् ।  यदि xkb-डेटा प्याकेज अनप्याक गरिएको छ भने, उपलब्ध नियम सेटहरू /usr/share/"
+#~ "X11/xkb/rules डाइरेक्टरी हेर्नुहोस् ।"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "प्राय जसो यु एस अग्रेजी कुज्जीपाटीहरुको प्रयोगकर्ताले \"pc104\" प्रविष्ट गर्नु पर्दछ ।  "
+#~ "अन्य धेरै कुज्जीपाटीहरुको प्रयोगकर्ताले साधारणतया \"pc105\" प्रविष्ट गर्नु प्रर्दछ ।"
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "कुञ्जीपाटी सजावट:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "कुज्जीपाटी सहि रुपमा ह्यान्डल गर्नका लागि एक्स सर्भर , एउटा कुज्जीपाटी सजावट प्रविष्ट "
+#~ "हुनु पर्दछ ।  XKB सेट भएको मा उपलब्ध सजावटहरू निर्भर छ र कुज्जीपाटी नमूना पहिले नै "
+#~ "चयन गरिएको छ ।"
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "अनुभवि प्रयोगरकर्ताले चयन गरिएको XKB नियम सेटद्धारा समर्थन गर्ने कुनै पनि सजावट "
+#~ "प्रयोग गर्न सक्दछ ।  यदि xkb-डेटा प्याकेज अनप्याक गरिएको छ भने, उपलब्ध नियम सेटहरुका "
+#~ "लागि /usr/share/X11/xkb/ नियम डाइरेक्टरीहरू हेर्नुहोस् ।"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "U.S. अग्रेजी कुज्जीपाटीहरुको  प्रयोगकर्ताहरुले \"us\" प्रविष्ट गर्नु पर्दछ ।  कुज्जीपाटी "
+#~ "स्थानियकरण गरिएको अन्य देशहरुको प्रयोगकर्ताहरुले प्राय तिनिहुरुको देशको कोड ISO 3166 "
+#~ "प्रविष्ट गर्नु पर्दछ ।  उदाहरणहरू., फ्रान्सले \"fr\" प्रयोग गर्दछ, र जर्मनले \"de\" "
+#~ "प्रयोग गर्दछ ।"
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "कुञ्जीपाटी चल:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "आवश्यकता अनुरुप कुज्जीपाटीहरु ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा कुज्जीपाटी चल "
+#~ "प्रविष्ट गरिनु पर्दछ ।  उपलब्ध चलहरू XKB नियम सेट भएको मा निर्भर गर्दछ, र सजावट "
+#~ "पहिले नै चयन गरिएको थियो ।"
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "धेरै कुज्जीपाटी सजावटहरुले एउटा विकल्प \"dead\" कुज्जीहरू व्यवहार गर्नलाई समर्थन गर्दछन् "
+#~ "जस्तै स्पेसिङ् बिहिन जोर चिन्हहरको रुपमा र सामान्य स्पेसिङ् कज्जीहरुको रुपा डाएरेसिस, र "
+#~ "यदि यो रुचाइएको व्यवहार हो भने,\"nodeadkeys\" प्रविष्ट गर्नुहोस् ।"
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "अनुभवि प्रयोगकर्ताहरुले चयन गरिएको XKB सजावटद्धारा समर्थन गर्ने कुनै चल समर्थनहरू "
+#~ "प्रयोग गर्न सक्दछन् ।  यदि xkb-डेटा प्याकेज अनप्याक गरिएको छ भने, उपलब्ध चलहरुका "
+#~ "लागि तपाईँको चयन गरिएको सजावटमा फाइल संगत फाइलहरुका लागि  /usr/share/X11/"
+#~ "xkb/ प्रतिक डाइरेक्टरी हेर्नुहोस् ।"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "U. S. अग्रेजी कुज्जीपाटीको प्रयोगकर्ताहरुले प्राय यो प्रविष्टि खाली छोड्दछन् ।"
+
+#~ msgid "Keyboard options:"
+#~ msgstr "कुञ्जीपाटी विकल्पहरू:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "आवश्यकता अनुरुप कुज्जीपाटीहरू ह्यान्डल गर्नका लागि एक्स सर्भर, एउटा कुज्जीपाटी विकल्पहरू "
+#~ "प्रविष्ट गरिनु पर्दछ ।  उपलब्ध विकल्पहरू XKB नियम सेट भएकोमा निर्भर गर्दछ, र सजावट "
+#~ "पहिले नै चयन गरिएको थियो ।  सबै विकल्पहरू प्रत्येक कुज्जीपाटी नमूना र सजावटसंग काम "
+#~ "गर्दैनन् ।"
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "उदहरणका लागि, यदि तपाईँले क्याप्स लक कुज्जीलाई थप नियन्त्रण कुज्जीको रुपमा व्यवहार "
+#~ "गरेको रुपमा हेर्न चाहनुहुन्छ भने, तपाईँले \"ctrl:nocaps\" प्रविष्ट गर्नु पर्दछ; यदि "
+#~ "तपाईँले क्याप्स लक र बाँया नियन्त्रण कुज्जीहरू स्विच गर्न चाहनुहुन्छ भने, तपाईँले \"ctrl:"
+#~ "swapcaps\" प्रविष्ट गर्न सक्नुहुन्छ ।"
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "अन्य उदाहरणको रुपमा, केहि मानिसहरुले तिनिहरुको कुज्जीपाटीको Alt कुज्जीहरू (यो "
+#~ "पूर्वानिर्धारित हो) मा मेटा कुज्जी उपलब्ध भएको रुचाउदछन्, जब अन्य मानिसहरुले सञ्झ्यालहरू "
+#~ "वा \"logo\" कुज्जीहरू सट्टामा मेटा कुज्जीहरू भएको रुचाउदछन् ।  यदि तपाईँले तपाईँको "
+#~ "सञ्झ्यालहरू वा लोगो कुज्जीहरू मेटा कुज्जीको रुपमा प्रयोग गर्न चाहनुहुन्छ भने, तपाईँले "
+#~ "\"altwin:meta_win\" प्रविष्ट गर्न सक्नुहुन्छ ।"
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "तपाईँले तिनिहरुलाई अल्पविरामले छुट्टाएर विकल्पहरू संयोजन गर्न सक्नुहुन्छ, दृष्टांतका लागि "
+#~ "\"ctrl:nocaps,altwin:meta_win\" ।"
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "अनुभवि प्रयोगकर्ताहरुले चयन गरिएको XKB नमूना, सजावट र चलसंग मिल्ने कुनै विकल्पहरू "
+#~ "प्रयोग गर्न सक्दछन् ।"
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "दोधार भएको बेलामा, यो मान खाली छोड्न सक्नुहुन्छ ।"
+
+#~ msgid "Empty value"
+#~ msgstr "रित्तो मान"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "यो मानका लागि एउटा शुन्य प्रविष्टि स्विकार गरिदैन ।"
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "अवैध डबल-उद्धरण क्यारेक्टरहरू"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "डबल-उद्धरण (\") क्यारेक्टरहरू प्रविष्ट मानमा स्विकार गरिदैन ।"
+
+#~ msgid "Numerical value needed"
+#~ msgstr "सङ्ख्यात्मक मान आवश्यक"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "अङ्कहरू भन्दा अन्य क्यारेक्टरहरुलाई प्रविष्टिमा अनुमति दिइदैन ।"
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "कुञ्जीपाटी सजावट स्वत पत्तालगाउनु हुन्छ ?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "एक्स अर्ग सर्भरका लागि पूर्वनिर्धारित कुज्जीपाटी सजावट चयन स्थापना गर्नेवालामा चयन "
+#~ "गरिएको भाषा र कुज्जीपाटीको संयोजनमा आधारित हुनेछ ।"
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "यदि तपाईँले कुज्जीपाटी सजावट पुन पत्ता लगाउन चाहनुहुन्छ भने यो विकल्प छनौट गर्नुहोस् ।  "
+#~ "यदि तपाईँले हालको सजावट राख्न चाहनुहुन्छ भने छनौट नगर्नुहोस् ।"
 
 #~ msgid "X server driver:"
 #~ msgstr "X सर्भर चालक:"

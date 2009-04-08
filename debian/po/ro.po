@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2008-06-17 14:03+0300\n"
 "Last-Translator: Eddy Petrișor <eddy.petrisor@gmail.com>\n"
 "Language-Team: Română <debian-l10n-romanian@lists.debian.org>\n"
@@ -39,46 +39,15 @@ msgstr ""
 "Plural-Forms: nplurals=3;plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1))\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Se folosește interfața de tampon de cadre din nucleu?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Prioritar comunicării cu componentele video, serverul X poate fi configurat "
-"să execute câteva operații, de exemplu, comutarea modului video, prin "
-"modulul \"tampon de cadre\" al nucleului (framebuffer)."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"În teorie, oricare abordare ar putea să funcționeze dar, în practică, câte "
-"odată una merge și celaltă nu. Activarea acestei opțiuni e cel mai sigur "
-"pariu, dar simțiți-vă liberi să o dezactivați dacă pare să vă cauzeze "
-"probleme."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "Identificatorul plăcii video pe magistrală:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -90,14 +59,14 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "Exemple:"
 
 # aceași problemă, multi-head și heads.
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -110,7 +79,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -120,7 +89,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -131,372 +100,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "Format incorect pentru identificatorul de magistrală"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "Setul de reguli XKB folosit:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Pentru ca serverul X să manipuleze corect tastatura, trebuie ales un set de "
-"reguli XKB."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Majoritatea utilizatorilor ar trebui să scrie „xorg”."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Utilizatorii avansați pot utiliza orice set de reguli XKB definit. Dacă "
-"pachetul xkb-data a fost despachetat, a se vedea în directorul /etc/X11/xkb/"
-"rules seturile de reguli disponibile."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Dacă aveți dubii, atunci această valoare ar trebui să fie „xorg”."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "Modelul de tastaură:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Pentru ca serverul X să manipuleze corect tastatura, trebuie introdus un "
-"model de tastatură. Modelele disponibile depind de setul de reguli XKB "
-"utilizat."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Cu setul de reguli „xorg”:\n"
-" - pc101: tipul tradițional de tastatură IBM PC/AT cu 101 taste, comun în\n"
-"          the Statele Unite. Nu are tastele „logo” sau „meniu”;\n"
-" - pc104: similar cu modeleul pc101, cu taste adiționale, de obicei, cu \n"
-"          simbolurile „logo” și „meniu”;\n"
-" - pc102: similar cu pc101 și adesea găsit în Europa. Include tasta „< >”;\n"
-" - pc105: similar cu pc104 și adesea găsit în Europa. Include tasta „< >”;\n"
-" - macintosh: Tastauri Macintosh care folosesc noul strat pentru intrare\n"
-"              cu coduri de taste Linux;\n"
-" - macintosh_old: Tastauri Macintosh care nu folosesc noul strat pentru "
-"intrare\n"
-" - type4: Tastaturi Sun Type4;\n"
-" - type5: Tastaturi Sun Type5."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Tastaturile laptopurilor, de obicei, nu au atâtea taste ca modelele detașate "
-"detastaturi; utilizatorii de laptop trebuie să selecteze modelul de "
-"tastatură cel mai apropiat din cele care urmează."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Utilizatorii avansați pot folosi orice model definit de setul de reguli XKB "
-"selectat. Dacă pachetul xkb-data a fost despachetat, a se vedea directorul "
-"în /usr/share/X11/xkb/rules seturile de reguli disponibile."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Utilizatorii de tastaturi U.S. English trebuie în general să introducă "
-"\"pc104\". Utilizatorii altor tastaturi, de cele mai multe ori, ar trebui să "
-"introducă \"pc105\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "Aranjamentul de tastatură:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Pentru ca serverul X să poată manipula corect tastatura, trebuie introdus un "
-"aranjament de tastatură. Aranjamentele disponibile depind de setul de reguli "
-"XKB și modelul de tastatură selectate anterior."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Utilizatorii avansați pot folosi orice model suportat de setul de reguli XKB "
-"selectat. Dacă pachetul xkb-data a fost despachetat, a se vedea directorul "
-"în /usr/share/X11/xkb/rules seturile de reguli disponibile."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Utilizatorii tastaturilor U.S. English trebuie să introducă \"us\". "
-"Utilizatorii tastaturilor localizate pentru alte țări trebuie în general să "
-"introducă codul țări conform ISO 3166. De exemplu, Franța folosește \"fr\" "
-"și Germania \"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "Varianta de tastatură:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Pentru ca serverul X să poată manipula tastatura în modul dorit trebuie "
-"introdusă o variantă de tastatură. Variantele disponibile depind de setul de "
-"reguli XKB, modelul și formatul anterior selectat."
-
-# netraduse: non-spacing accent marks și diaereses
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Multe aranjamente de tastatură suportă o opțiune care tratează tastele "
-"\"moarte\" - accent fară spațiere și semne precum trema - ca taste cu "
-"spațiere normală; dacă acesta este comportamentul preferat, introduceți "
-"\"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Utilizatorii avansați pot utiliza orice variantă suportată de aranjamentul "
-"XKB selectat. Dacă pachetul xkb-data a fost despachetat, a se vedea în "
-"directorul /usr/share/X11/xkb/symbols, fișierul corespunzător aranjamentului "
-"selectat de dvs. pentru variantele disponibile."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Utilizatorii tastaturilor U.S. English ar trebui în general să lase această "
-"intrare necompletată."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "Opțiuni pentru tastatură:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Pentru ca severul X să manipuleze tastatura așa cum doriți, este posibil să "
-"fie necesară introducerea de opțiuni pentru tastatură. Opțiunile disponibile "
-"depind de setul de reguli XKB selectat anterior. Nu toate opțiunile vor "
-"funcționa cu orice model și aranjament de tastatură."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"De exemplu, dacă doriți ca tasta Caps Lock să se comporte ca o tastă Control "
-"suplimentară, trebuie să introduceți \"ctrl:nocaps\"; dacă doriți să "
-"schimbați între ele tastele Caps Lock și Control stânga, trebuie să "
-"introduceți \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Ca un alt exemplu, unii oameni preferă să aibă tastele Meta disponibile ca "
-"taste Alt (aceasta este comportamentul implicit), în timp ce alți oameni "
-"preferă tastele Meta în locul tastelor Windows sau „logo”. Dacă preferați să "
-"folosiți tastele Windows sau logo ca taste Meta, trebuie să introduceți "
-"„altwin:meta_win”."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Puteți combina opțiuni prin separarea lor cu virgule; de exemplu, „crtl:"
-"nocaps,altwin:met_win”."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Utilizatorii avansați pot utiliza orice opțiuni compatibile cu modelul, "
-"aranjamentul și varianta XKB selectată."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "Dacă aveți îndoieli, această valoare ar trebui să fie vidă."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "Valoare vidă"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "Nu este permisă o valoare nulă pentru această valoare."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "Caractere de citare nevalide"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr ""
-"Încadrarea între caracterele ghilimele (\") nu este permisă în valoarea "
-"introdusă."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "Este nevoie de o valoare numerică"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Nu sunt permise alte caractere decât cifre."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "Se detectează automat aranjamentul de tastatură?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Aranjamentul implicit selectat pentru severul Xorg va fi ales pe baza unei "
-"combinații dintre limbă și aranjamentul de tastatură selectate în programul "
-"de instalare."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Alegeți această opțiune dacă doriți să se reefectueze detecția "
-"aranjamentului. N-o alegeți dacă doriți să păstrați aranjamentul curent."
 
 #. Type: select
 #. Choices
@@ -651,6 +257,287 @@ msgstr ""
 "Acestă instalare a pachetului va eșua și se va ieși astfel încât să puteți "
 "să faceți acest lucru. Se recomandă să curățați directorul și să rulați din "
 "nou procedura de actualizare."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Se folosește interfața de tampon de cadre din nucleu?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Prioritar comunicării cu componentele video, serverul X poate fi "
+#~ "configurat să execute câteva operații, de exemplu, comutarea modului "
+#~ "video, prin modulul \"tampon de cadre\" al nucleului (framebuffer)."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "În teorie, oricare abordare ar putea să funcționeze dar, în practică, "
+#~ "câte odată una merge și celaltă nu. Activarea acestei opțiuni e cel mai "
+#~ "sigur pariu, dar simțiți-vă liberi să o dezactivați dacă pare să vă "
+#~ "cauzeze probleme."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Setul de reguli XKB folosit:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Pentru ca serverul X să manipuleze corect tastatura, trebuie ales un set "
+#~ "de reguli XKB."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Majoritatea utilizatorilor ar trebui să scrie „xorg”."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Utilizatorii avansați pot utiliza orice set de reguli XKB definit. Dacă "
+#~ "pachetul xkb-data a fost despachetat, a se vedea în directorul /etc/X11/"
+#~ "xkb/rules seturile de reguli disponibile."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Dacă aveți dubii, atunci această valoare ar trebui să fie „xorg”."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Modelul de tastaură:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Pentru ca serverul X să manipuleze corect tastatura, trebuie introdus un "
+#~ "model de tastatură. Modelele disponibile depind de setul de reguli XKB "
+#~ "utilizat."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Cu setul de reguli „xorg”:\n"
+#~ " - pc101: tipul tradițional de tastatură IBM PC/AT cu 101 taste, comun "
+#~ "în\n"
+#~ "          the Statele Unite. Nu are tastele „logo” sau „meniu”;\n"
+#~ " - pc104: similar cu modeleul pc101, cu taste adiționale, de obicei, cu \n"
+#~ "          simbolurile „logo” și „meniu”;\n"
+#~ " - pc102: similar cu pc101 și adesea găsit în Europa. Include tasta „< "
+#~ ">”;\n"
+#~ " - pc105: similar cu pc104 și adesea găsit în Europa. Include tasta „< "
+#~ ">”;\n"
+#~ " - macintosh: Tastauri Macintosh care folosesc noul strat pentru intrare\n"
+#~ "              cu coduri de taste Linux;\n"
+#~ " - macintosh_old: Tastauri Macintosh care nu folosesc noul strat pentru "
+#~ "intrare\n"
+#~ " - type4: Tastaturi Sun Type4;\n"
+#~ " - type5: Tastaturi Sun Type5."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Tastaturile laptopurilor, de obicei, nu au atâtea taste ca modelele "
+#~ "detașate detastaturi; utilizatorii de laptop trebuie să selecteze modelul "
+#~ "de tastatură cel mai apropiat din cele care urmează."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Utilizatorii avansați pot folosi orice model definit de setul de reguli "
+#~ "XKB selectat. Dacă pachetul xkb-data a fost despachetat, a se vedea "
+#~ "directorul în /usr/share/X11/xkb/rules seturile de reguli disponibile."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Utilizatorii de tastaturi U.S. English trebuie în general să introducă "
+#~ "\"pc104\". Utilizatorii altor tastaturi, de cele mai multe ori, ar trebui "
+#~ "să introducă \"pc105\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Aranjamentul de tastatură:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Pentru ca serverul X să poată manipula corect tastatura, trebuie introdus "
+#~ "un aranjament de tastatură. Aranjamentele disponibile depind de setul de "
+#~ "reguli XKB și modelul de tastatură selectate anterior."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Utilizatorii avansați pot folosi orice model suportat de setul de reguli "
+#~ "XKB selectat. Dacă pachetul xkb-data a fost despachetat, a se vedea "
+#~ "directorul în /usr/share/X11/xkb/rules seturile de reguli disponibile."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Utilizatorii tastaturilor U.S. English trebuie să introducă \"us\". "
+#~ "Utilizatorii tastaturilor localizate pentru alte țări trebuie în general "
+#~ "să introducă codul țări conform ISO 3166. De exemplu, Franța folosește "
+#~ "\"fr\" și Germania \"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Varianta de tastatură:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Pentru ca serverul X să poată manipula tastatura în modul dorit trebuie "
+#~ "introdusă o variantă de tastatură. Variantele disponibile depind de setul "
+#~ "de reguli XKB, modelul și formatul anterior selectat."
+
+# netraduse: non-spacing accent marks și diaereses
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Multe aranjamente de tastatură suportă o opțiune care tratează tastele "
+#~ "\"moarte\" - accent fară spațiere și semne precum trema - ca taste cu "
+#~ "spațiere normală; dacă acesta este comportamentul preferat, introduceți "
+#~ "\"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Utilizatorii avansați pot utiliza orice variantă suportată de "
+#~ "aranjamentul XKB selectat. Dacă pachetul xkb-data a fost despachetat, a "
+#~ "se vedea în directorul /usr/share/X11/xkb/symbols, fișierul corespunzător "
+#~ "aranjamentului selectat de dvs. pentru variantele disponibile."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Utilizatorii tastaturilor U.S. English ar trebui în general să lase "
+#~ "această intrare necompletată."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Opțiuni pentru tastatură:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Pentru ca severul X să manipuleze tastatura așa cum doriți, este posibil "
+#~ "să fie necesară introducerea de opțiuni pentru tastatură. Opțiunile "
+#~ "disponibile depind de setul de reguli XKB selectat anterior. Nu toate "
+#~ "opțiunile vor funcționa cu orice model și aranjament de tastatură."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "De exemplu, dacă doriți ca tasta Caps Lock să se comporte ca o tastă "
+#~ "Control suplimentară, trebuie să introduceți \"ctrl:nocaps\"; dacă doriți "
+#~ "să schimbați între ele tastele Caps Lock și Control stânga, trebuie să "
+#~ "introduceți \"ctrl:swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Ca un alt exemplu, unii oameni preferă să aibă tastele Meta disponibile "
+#~ "ca taste Alt (aceasta este comportamentul implicit), în timp ce alți "
+#~ "oameni preferă tastele Meta în locul tastelor Windows sau „logo”. Dacă "
+#~ "preferați să folosiți tastele Windows sau logo ca taste Meta, trebuie să "
+#~ "introduceți „altwin:meta_win”."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Puteți combina opțiuni prin separarea lor cu virgule; de exemplu, „crtl:"
+#~ "nocaps,altwin:met_win”."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Utilizatorii avansați pot utiliza orice opțiuni compatibile cu modelul, "
+#~ "aranjamentul și varianta XKB selectată."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Dacă aveți îndoieli, această valoare ar trebui să fie vidă."
+
+#~ msgid "Empty value"
+#~ msgstr "Valoare vidă"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Nu este permisă o valoare nulă pentru această valoare."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Caractere de citare nevalide"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr ""
+#~ "Încadrarea între caracterele ghilimele (\") nu este permisă în valoarea "
+#~ "introdusă."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Este nevoie de o valoare numerică"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Nu sunt permise alte caractere decât cifre."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Se detectează automat aranjamentul de tastatură?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Aranjamentul implicit selectat pentru severul Xorg va fi ales pe baza "
+#~ "unei combinații dintre limbă și aranjamentul de tastatură selectate în "
+#~ "programul de instalare."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Alegeți această opțiune dacă doriți să se reefectueze detecția "
+#~ "aranjamentului. N-o alegeți dacă doriți să păstrați aranjamentul curent."
 
 #~ msgid "X server driver:"
 #~ msgstr "Modulul pentru serverul X:"

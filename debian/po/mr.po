@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2006-08-14 11:05+0200\n"
 "Last-Translator: Priti Patil <prithisd@gmail.com>\n"
 "Language-Team:  Marathi <janabhaaratii@cdacmumbai.in>\n"
@@ -15,43 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "कर्नेल फ्रेमबफर उपकरण अंतराफलक वापरायचा?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"व्हिडिओ हार्डवेअरशी थेट दळणवळण करण्यापेक्षा कर्नेल फ्रेमबफर चालकाद्वारे व्हिडिओ मोड "
-"बदलण्यासारख्या काही प्रक्रीया करण्यासाठी एक्स परिसेवकाची संरचना करता येईल."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"तत्वतः दोन्ही पद्धती यशस्वी व्हायला पाहिजेत, पण प्रत्यक्षात होतातच असे नाही. हा पर्याय "
-"कार्यसक्षम करणे सुरक्षित आहे, पण त्यामुळे समस्या उद्भवतात असे वाटल्यास तो कार्यअक्षम करा."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "व्हिडिओ कार्डचा बस ओळखदर्शक:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -62,13 +34,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "उदाहरणे"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -80,7 +52,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 #, fuzzy
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
@@ -91,7 +63,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -101,375 +73,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "बस ओळखदर्शकाचे संरूप चुकीचे"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "वापरासाठी एक्सकेबी नियम संच:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"एक्स परिसेवकाकडून कळफलकाची योग्य हाताळणी होण्यासाठी एक्सकेबी नियम संच निवडावा लागेल."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो ही नोंद रिकामी ठेवावी."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"अनुभवी वापरकर्ते कोणतेही पूर्वनिर्धारित एक्सकेबी नियम संच वापरू शकतात. जर एक्सकेबी डेटा "
-"पॅकेज उघडलेले असेल, तर उपलब्ध नियम संचांसाठी /यूझर/शेअर/एक्स११/एक्सकेबी/नियम निर्देशिका पहा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "खात्री नसेल तर हे मूल्य \"एक्सआॅर्ग\" ठेवले पाहिजे."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "कळफलकाचे माॅडेल:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"एक्स परिसेवकाकडून कळफलकाची योग्य हाताळणी होण्यासाठी कळफलकाचे मॉडेल निवडावे लागेल. "
-"कोणती माॅडेलस् उपलब्ध आहेत हे, कोणते एक्सकेबी नियम संच वापरात आहेत यावर अवलंबून आहे."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-"  \"एक्सआॅर्ग\" नियम संच असताना:\n"
-" - पीसी१०१: १०१ कळा असलेला पारंपारिक आयबीएम पीसी/एटी शैलीतील कळफलक, युनायटेड "
-"स्टेटस्\n"
-"          मधे प्रचलित. यात \"लोगो\" किंवा \"मेन्यू\" कळा नसतात;\n"
-" - पीसी१०४: पीसी१०१ माॅडेलसारखाच, आणखी कळा असणारा, बहुतांशी \"लोगो\" चिन्ह\n"
-"          आणी \"मेन्यू\" चिन्ह कोरलेले असणारा;\n"
-" - पीसी१०२: पीसी१०१ सारखाच आणी जास्तकरून युरोपमधे आढळणारा. यात \"< >\" कळ असते;\n"
-" - पीसी१०५: पीसी१०१ सारखाच आणी जास्तकरून युरोपमधे आढळणारा. यात \"< >\" कळ असते;\n"
-" - मॅकिनटोश: लिनक्स कळकोडसह नवीन निवेश स्तर वापरणारा मॅकिनटोश\n"
-"              कळफलक;\n"
-" - मॅकिनटोश_जुना: नवीन निवेश स्तर न वापरणारे मॅकिनटोश कळफलक.\n"
-" \"सन\" नियम संचासहीत:\n"
-" - प्रकार४: सन प्रकार४ चे कळफलक;\n"
-" - प्रकार५: सन प्रकार५ चे कळफलक."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"एकेकट्या कळफलकांमधे असतात तेवढ्या कळा बहुतांश लॅपटाॅप कळफलकांमधे नसतात; वरीलपैकी आपल्या "
-"कळफलकाच्या जवळपास जाणारे माॅडेल लॅपटाॅप वापरकर्त्यांनी निवडावे."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी नियम संचात निर्धारित केलेले कोणतेही माॅडेल वापरू शकतात. "
-"जर एक्सकेबी डेटा पॅकेज उघडलेले असेल, तर उपलब्ध नियम संचांसाठी /यूझर/शेअर/एक्स११/एक्सकेबी/"
-"नियम निर्देशिका पहा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो \"पीसी१०४\" निवडावे. इतर बहुतेक सर्व "
-"कळफलकांच्या वापरदारांनी शक्यतो \"पीसी१०५\" निवडावे."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "कळफलकाचा आराखडा:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"एक्स परिसेवकाकडून कळफलकाची योग्य हाताळणी होण्यासाठी कळफलकाचा आराखडा निवडावा लागेल. "
-"कोणते आराखडे उपलब्ध आहेत, हे कोणते एक्सकेबी नियम संच व कळफलकाचे माॅडेल आधी निवडले आहे, "
-"यावर अवलंबून आहे."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी नियम संचावर आधारित कोणताही आराखडा वापरू शकतात. "
-"जर एक्सकेबी डेटा पॅकेज उघडलेले असेल, तर उपलब्ध नियम संचांसाठी /यूझर/शेअर/एक्स११/एक्सकेबी/"
-"नियम निर्देशिका पहा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो \"यूएस\" निवडावे. इतर देशांच्या स्थानिक "
-"कळफलकांच्या वापरदारांनी शक्यतो त्यांच्या देशांचे आयएसओ ३१६६ कोड निवडावे. उदा., फ्रान्स देश "
-"\"एफआर\" वापरतो, आणी जर्मनी देश \"डीई\" वापरतो."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "कळफलक बदलाव:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"एक्स परिसेवकाकडून कळफलकाची इच्छित हाताळणी होण्यासाठी कळफलकाचा बदलाव निवडावा. कोणते "
-"बदलाव उपलब्ध आहेत, हे कोणते एक्सकेबी नियम संच, आराखडा व माॅडेल आधी निवडले आहेत, यावर "
-"अवलंबून आहे."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"अ-रिक्त आघात खुणा व डायइरेझेस् सारख्या \"मृत\" कळांना सामान्य रिक्त कळा समजण्याचा पर्याय "
-"बरेच कळफलक आराखडे अंतर्भूत करतात. आपल्याला हे हवे असल्यास \"मृतकळानाही\" निवडा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी नियम संचावर आधारित कोणताही बदलाव वापरू शकतात. जर "
-"एक्सकेबी डेटा पॅकेज उघडलेले असेल, तर उपलब्ध बदलावांसाठी /यूझर/शेअर/एक्स११/एक्सकेबी/चिन्हे "
-"निर्देशिकेतील आपण निवडलेल्या आराखड्याशी निगडित फाइल पहा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो ही नोंद रिकामी ठेवावी."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "कळफलक पर्याय:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"एक्स परिसेवकाकडून कळफलकाची इच्छित हाताळणी होण्यासाठी कळफलकाचे पर्याय निवडावे. कोणते "
-"पर्याय उपलब्ध आहेत हे, कोणते एक्सकेबी नियम संच आधी निवडले आहेत यावर अवलंबून आहे. सगळेच "
-"पर्याय प्रत्येक कळफलकाच्या माॅडेल व आराखड्यासाठी चालतीलच, असे नाही."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"उदाहरणार्थ, जर आपण कॅप्सलाॅक कळ अतिरिक्त कंट्रोल कळ म्हणून वापरू इच्छित असाल, तर आपण "
-"\"कंट्रोल:नोकॅपस्\" लिहा; जर आपण कॅप्सलाॅक कळ व डावी कंट्रोल कळ यांच्यात अदलाबदल करू "
-"इच्छित असाल, तर आपण \"कंट्रोल:स्वॅपकॅपस्\" लिहा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"दुसरे उदाहरण म्हणजे, काही लोकांना मेटॅ कळा त्यांच्या कळफलकावरील अल्ट कळांवर ठेवायची इच्छा "
-"असते (हे मूलनिर्धारित आहे), तर इतरांना त्या दृश्यचौकटीत वा \"लोगो\" कळांवा हव्या असतात. "
-"जर आपण आपल्या दृश्यचौकटी वा लोगो कळांचा मेटॅ कळांसारखा वापर करू इच्छित असाल, तर आपण "
-"\"अल्टविन:मेटॅ_विन\" लिहा."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"स्वल्पविरामाने विलग करून आपण पर्याय एकत्र करू शकता, उदा. \"कंट्रोल:नोकॅपस्,अल्टविन:मेटॅ_विन"
-"\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी माॅडेल, आराखडा व बदलाव यावर आधारित कोणतेही पर्याय "
-"वापरू शकतात."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "शंका असेल, तर हे मूल्य रिकामे ठेवले पाहिजे."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "रिक्त मूल्य"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "हे मूल्य रिक्त ठेवता येणार नाही."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "अवैध द्वी-अवतरण चिन्हे"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "द्वी-अवतरण (\") चिन्हांना या नोंद मूल्यात संमती नाही."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "मूल्य अंकात देणे गरजेचे"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "या नोंदीत अंकांशिवाय अन्य चिन्हे वापरता येणार नाहीत."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "कळफलकाचा आराखडा आपोआप शोधायचा?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"एक्सआॅर्ग परिसेवकासाठी मूलनिर्धारीत कळफलक आराखड्याची निवड अधिष्ठापकामधे निवडलेल्या भाषा "
-"व कळफलक आराखडा दोन्हींवर आधारीत राहील."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"आपल्याला कळफलकाचा आराखडा पुन्हा शोधायची इच्छा असल्यास हा पर्याय निवडा. सध्याचा "
-"आराखडाच ठेवायचा असल्यास हा पर्याय निवडू नका."
 
 #. Type: select
 #. Choices
@@ -617,6 +223,291 @@ msgid ""
 msgstr ""
 "या पॅकेजची अधिष्टापना आता फसेल आणी बंद होईल, जेणेकरून आपण हे करू शकाल. निर्देशिका संपूर्ण "
 "साफ केल्यावर श्रेणीवर्धन प्रक्रिया पुन्हा चालू करा."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "कर्नेल फ्रेमबफर उपकरण अंतराफलक वापरायचा?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "व्हिडिओ हार्डवेअरशी थेट दळणवळण करण्यापेक्षा कर्नेल फ्रेमबफर चालकाद्वारे व्हिडिओ मोड "
+#~ "बदलण्यासारख्या काही प्रक्रीया करण्यासाठी एक्स परिसेवकाची संरचना करता येईल."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "तत्वतः दोन्ही पद्धती यशस्वी व्हायला पाहिजेत, पण प्रत्यक्षात होतातच असे नाही. हा "
+#~ "पर्याय कार्यसक्षम करणे सुरक्षित आहे, पण त्यामुळे समस्या उद्भवतात असे वाटल्यास तो "
+#~ "कार्यअक्षम करा."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "वापरासाठी एक्सकेबी नियम संच:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "एक्स परिसेवकाकडून कळफलकाची योग्य हाताळणी होण्यासाठी एक्सकेबी नियम संच निवडावा "
+#~ "लागेल."
+
+#, fuzzy
+#~| msgid ""
+#~| "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो ही नोंद रिकामी ठेवावी."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "अनुभवी वापरकर्ते कोणतेही पूर्वनिर्धारित एक्सकेबी नियम संच वापरू शकतात. जर एक्सकेबी डेटा "
+#~ "पॅकेज उघडलेले असेल, तर उपलब्ध नियम संचांसाठी /यूझर/शेअर/एक्स११/एक्सकेबी/नियम निर्देशिका "
+#~ "पहा."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "खात्री नसेल तर हे मूल्य \"एक्सआॅर्ग\" ठेवले पाहिजे."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "कळफलकाचे माॅडेल:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "एक्स परिसेवकाकडून कळफलकाची योग्य हाताळणी होण्यासाठी कळफलकाचे मॉडेल निवडावे लागेल. "
+#~ "कोणती माॅडेलस् उपलब्ध आहेत हे, कोणते एक्सकेबी नियम संच वापरात आहेत यावर अवलंबून आहे."
+
+#, fuzzy
+#~| msgid ""
+#~| " With the \"xorg\" rule set:\n"
+#~| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~| " - pc104: similar to pc101 model, with additional keys, usually "
+#~| "engraved\n"
+#~| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~| "              keycodes;\n"
+#~| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~| " With the \"sun\" rule set:\n"
+#~| " - type4: Sun Type4 keyboards;\n"
+#~| " - type5: Sun Type5 keyboards."
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ "  \"एक्सआॅर्ग\" नियम संच असताना:\n"
+#~ " - पीसी१०१: १०१ कळा असलेला पारंपारिक आयबीएम पीसी/एटी शैलीतील कळफलक, युनायटेड "
+#~ "स्टेटस्\n"
+#~ "          मधे प्रचलित. यात \"लोगो\" किंवा \"मेन्यू\" कळा नसतात;\n"
+#~ " - पीसी१०४: पीसी१०१ माॅडेलसारखाच, आणखी कळा असणारा, बहुतांशी \"लोगो\" चिन्ह\n"
+#~ "          आणी \"मेन्यू\" चिन्ह कोरलेले असणारा;\n"
+#~ " - पीसी१०२: पीसी१०१ सारखाच आणी जास्तकरून युरोपमधे आढळणारा. यात \"< >\" कळ "
+#~ "असते;\n"
+#~ " - पीसी१०५: पीसी१०१ सारखाच आणी जास्तकरून युरोपमधे आढळणारा. यात \"< >\" कळ "
+#~ "असते;\n"
+#~ " - मॅकिनटोश: लिनक्स कळकोडसह नवीन निवेश स्तर वापरणारा मॅकिनटोश\n"
+#~ "              कळफलक;\n"
+#~ " - मॅकिनटोश_जुना: नवीन निवेश स्तर न वापरणारे मॅकिनटोश कळफलक.\n"
+#~ " \"सन\" नियम संचासहीत:\n"
+#~ " - प्रकार४: सन प्रकार४ चे कळफलक;\n"
+#~ " - प्रकार५: सन प्रकार५ चे कळफलक."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "एकेकट्या कळफलकांमधे असतात तेवढ्या कळा बहुतांश लॅपटाॅप कळफलकांमधे नसतात; वरीलपैकी आपल्या "
+#~ "कळफलकाच्या जवळपास जाणारे माॅडेल लॅपटाॅप वापरकर्त्यांनी निवडावे."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी नियम संचात निर्धारित केलेले कोणतेही माॅडेल वापरू "
+#~ "शकतात. जर एक्सकेबी डेटा पॅकेज उघडलेले असेल, तर उपलब्ध नियम संचांसाठी /यूझर/शेअर/एक्स११/"
+#~ "एक्सकेबी/नियम निर्देशिका पहा."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो \"पीसी१०४\" निवडावे. इतर बहुतेक सर्व "
+#~ "कळफलकांच्या वापरदारांनी शक्यतो \"पीसी१०५\" निवडावे."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "कळफलकाचा आराखडा:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "एक्स परिसेवकाकडून कळफलकाची योग्य हाताळणी होण्यासाठी कळफलकाचा आराखडा निवडावा "
+#~ "लागेल. कोणते आराखडे उपलब्ध आहेत, हे कोणते एक्सकेबी नियम संच व कळफलकाचे माॅडेल आधी "
+#~ "निवडले आहे, यावर अवलंबून आहे."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी नियम संचावर आधारित कोणताही आराखडा वापरू "
+#~ "शकतात. जर एक्सकेबी डेटा पॅकेज उघडलेले असेल, तर उपलब्ध नियम संचांसाठी /यूझर/शेअर/एक्स११/"
+#~ "एक्सकेबी/नियम निर्देशिका पहा."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो \"यूएस\" निवडावे. इतर देशांच्या स्थानिक "
+#~ "कळफलकांच्या वापरदारांनी शक्यतो त्यांच्या देशांचे आयएसओ ३१६६ कोड निवडावे. उदा., फ्रान्स "
+#~ "देश \"एफआर\" वापरतो, आणी जर्मनी देश \"डीई\" वापरतो."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "कळफलक बदलाव:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "एक्स परिसेवकाकडून कळफलकाची इच्छित हाताळणी होण्यासाठी कळफलकाचा बदलाव निवडावा. "
+#~ "कोणते बदलाव उपलब्ध आहेत, हे कोणते एक्सकेबी नियम संच, आराखडा व माॅडेल आधी निवडले आहेत, "
+#~ "यावर अवलंबून आहे."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "अ-रिक्त आघात खुणा व डायइरेझेस् सारख्या \"मृत\" कळांना सामान्य रिक्त कळा समजण्याचा "
+#~ "पर्याय बरेच कळफलक आराखडे अंतर्भूत करतात. आपल्याला हे हवे असल्यास \"मृतकळानाही\" "
+#~ "निवडा."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी नियम संचावर आधारित कोणताही बदलाव वापरू शकतात. "
+#~ "जर एक्सकेबी डेटा पॅकेज उघडलेले असेल, तर उपलब्ध बदलावांसाठी /यूझर/शेअर/एक्स११/एक्सकेबी/"
+#~ "चिन्हे निर्देशिकेतील आपण निवडलेल्या आराखड्याशी निगडित फाइल पहा."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "यू.एस. इंग्लिश कळफलकाच्या वापरदारांनी शक्यतो ही नोंद रिकामी ठेवावी."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "कळफलक पर्याय:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "एक्स परिसेवकाकडून कळफलकाची इच्छित हाताळणी होण्यासाठी कळफलकाचे पर्याय निवडावे. "
+#~ "कोणते पर्याय उपलब्ध आहेत हे, कोणते एक्सकेबी नियम संच आधी निवडले आहेत यावर अवलंबून आहे. "
+#~ "सगळेच पर्याय प्रत्येक कळफलकाच्या माॅडेल व आराखड्यासाठी चालतीलच, असे नाही."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "उदाहरणार्थ, जर आपण कॅप्सलाॅक कळ अतिरिक्त कंट्रोल कळ म्हणून वापरू इच्छित असाल, तर आपण "
+#~ "\"कंट्रोल:नोकॅपस्\" लिहा; जर आपण कॅप्सलाॅक कळ व डावी कंट्रोल कळ यांच्यात अदलाबदल करू "
+#~ "इच्छित असाल, तर आपण \"कंट्रोल:स्वॅपकॅपस्\" लिहा."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "दुसरे उदाहरण म्हणजे, काही लोकांना मेटॅ कळा त्यांच्या कळफलकावरील अल्ट कळांवर ठेवायची "
+#~ "इच्छा असते (हे मूलनिर्धारित आहे), तर इतरांना त्या दृश्यचौकटीत वा \"लोगो\" कळांवा "
+#~ "हव्या असतात. जर आपण आपल्या दृश्यचौकटी वा लोगो कळांचा मेटॅ कळांसारखा वापर करू इच्छित "
+#~ "असाल, तर आपण \"अल्टविन:मेटॅ_विन\" लिहा."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "स्वल्पविरामाने विलग करून आपण पर्याय एकत्र करू शकता, उदा. \"कंट्रोल:नोकॅपस्,अल्टविन:"
+#~ "मेटॅ_विन\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "अनुभवी वापरकर्ते निवडलेल्या एक्सकेबी माॅडेल, आराखडा व बदलाव यावर आधारित कोणतेही "
+#~ "पर्याय वापरू शकतात."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "शंका असेल, तर हे मूल्य रिकामे ठेवले पाहिजे."
+
+#~ msgid "Empty value"
+#~ msgstr "रिक्त मूल्य"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "हे मूल्य रिक्त ठेवता येणार नाही."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "अवैध द्वी-अवतरण चिन्हे"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "द्वी-अवतरण (\") चिन्हांना या नोंद मूल्यात संमती नाही."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "मूल्य अंकात देणे गरजेचे"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "या नोंदीत अंकांशिवाय अन्य चिन्हे वापरता येणार नाहीत."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "कळफलकाचा आराखडा आपोआप शोधायचा?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "एक्सआॅर्ग परिसेवकासाठी मूलनिर्धारीत कळफलक आराखड्याची निवड अधिष्ठापकामधे निवडलेल्या "
+#~ "भाषा व कळफलक आराखडा दोन्हींवर आधारीत राहील."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "आपल्याला कळफलकाचा आराखडा पुन्हा शोधायची इच्छा असल्यास हा पर्याय निवडा. सध्याचा "
+#~ "आराखडाच ठेवायचा असल्यास हा पर्याय निवडू नका."
 
 #~ msgid "X server driver:"
 #~ msgstr "एक्स परिसेवक चालक:"

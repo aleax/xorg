@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg_po_el\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2008-08-24 17:39+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -38,48 +38,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr ""
-"Θέλετε να χρησιμοποιήσετε τη συσκευή πλαισίου οθόνης (framebuffer) του "
-"πυρήνα;"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Για ορισμένες εργασίες, όπως η εναλλαγή αναλύσεων οθόνης, ο εξυπηρετητής X "
-"μπορεί να ρυθμιστεί ώστε να χρησιμοποιεί τον οδηγό πλαισίου μνήμης του "
-"πυρήνα (framebuffer), αντί να επικοινωνεί απευθείας με την κάρτα οθόνης."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Θεωρητικά, και οι δύο προσεγγίσεις θα πρέπει να λειτουργούν, αλλά στην πράξη "
-"μερικές φορές λειτουργεί η μία προσέγγιση μόνο.  Η συγκεκριμένη επιλογή "
-"είναι η πιο πιθανή ότι θα λειτουργήσει, αλλά αν διαπιστώσετε προβλήματα στην "
-"αλλαγή αναλύσεων μη διστάσετε να την απενεργοποιήσετε."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "Ταυτοποίηση του διαύλου της κάρτας οθόνης σας:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -91,13 +58,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "Παραδείγματα:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -110,7 +77,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -120,7 +87,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -131,381 +98,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "Λάθος μορφή για τον ταυτοποιητή του διαύλου"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "Σύνολο κανόνων XKB που θα χρησιμοποιηθεί:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
-"πρέπει να επιλεχθεί ένα σύνολο κανόνων XKB."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr ""
-"Οι χρήστες των περισσότερων πληκτρολογίων θα πρέπει να βάλουν εδώ \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιοδήποτε ορισμένο "
-"σύνολο κανόνων XKB.  Αν το πακέτο xlibs έχει αποσυμπιεστεί, δείτε τον "
-"κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα σύνολα κανόνων."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Αν δεν είστε σίγουροι, η τιμή αυτή θα πρέπει να τεθεί σαν \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "Μοντέλο πληκτρολογίου:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
-"πρέπει να δηλώσετε ένα μοντέλο πληκτρολογίου. Τα διαθέσιμα μοντέλα "
-"εξαρτώνται από το σύνολο κανόνων XKB που χρησιμοποιείται."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Με το σύνολο κανόνων \"xorg\" :\n"
-" - pc101: παραδοσιακού τύπου πληκτρολόγιο IBM PC/AT με 101 πλήκτρα, "
-"συνηθισμένο στις\n"
-"          ΗΠΑ. Δεν έχει πλήκτρα \"logo\" ή \"menu\";\n"
-" - pc104: παρόμοιο με το μοντέλο pc101, με επιπλέον πλήκτρα, συνήθως "
-"εγχάρακτα\n"
-"          με τα σύμβολα \"logo\" και \"menu\";\n"
-" - pc102: παρόμοιο με το pc101 και συνήθως απαντώμενο στην Ευρώπη. "
-"Περιλαμβάνει ένα πλήκτρο \"< >\";\n"
-" - pc105: παρόμοιο με το pc104 και συνήθως απαντώμενο στην Ευρώπη. "
-"Περιλαμβάνει ένα πλήκτρο \"< >\" ;\n"
-" - macintosh: πληκτρολόγια Macintosh που χρησιμοποιούν το καινούριο layer "
-"εισόδου με κωδικούς πλήκτρων για το\n"
-"              Linux;\n"
-" - macintosh_old: πληκτρολόγια Macintosh που δεν χρησιμοποιούν το καινούριο "
-"layer εισόδου.\n"
-" - type4: πληλτρολόγια Sun Type4;\n"
-" - type5: πληκτρολόγια Sun Type5."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Τα πληκτρολόγια φορητών υπολογιστών συνήθως δεν έχουν τόσα πλήκτρα όσα τα "
-"κανονικά πληκτρολόγια. Οι κάτοχοι φορητών υπολογιστών θα πρέπει να επιλέξουν "
-"το μοντέλο πληκτρολόγιου που προσεγγίζεται περισσότερο από τα παραπάνω "
-"μοντέλα."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποίοδήποτε μοντέλο "
-"ορίζεται από το επιλεγμένο σύνολο κανόνων XKB. Αν το πακέτο xkb-data έχει "
-"αποσυμπιεστεί, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα "
-"σύνολα κανόνων."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ) θα πρέπει γενικά να δηλώσουν το "
-"μοντέλο \"pc104\". Οι χρήστες των περισσοτέρων άλλων πληκτρολογίων θα πρέπει "
-"γενικά να δηλώσουν το μοντέλο \"pc105\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "Διάταξη του πληκτρολογίου:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
-"πρέπει να επιλεχθεί μια διάταξη πληκτρολογίου.  Οι διαθέσιμες διατάξεις "
-"εξαρτώνται από το σύνολο κανόνων XKB και το μοντέλο πληκτρολογίου που έχουν "
-"επιλεχθεί προηγουμένως."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε διάταξη "
-"υποστηρίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xkb-data "
-"έχει αποσυμπιεστεί, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα "
-"διαθέσιμα σύνολα κανόνων."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ) θα πρέπει να εισάγουν \"us\".  "
-"Οι χρήστες πληκτρολογίων άλλων χωρών συνήθως θα πρέπει να δώσουν το κωδικό "
-"όνομα της χώρας τους κατά το πρότυπο ISO 3166.  Π.χ. η Γαλλία χρησιμοποιεί "
-"\"fr\", και η Ελλάδα το \"el\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "Ποικιλία πληκτρολογίου:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Για να διαχειριστεί το πληκτρολόγιό σας ο εξυπηρετητής X όπως εσείς "
-"επιθυμείτε, θα πρέπει να επιλέξετε μια ποικιλία για το  πληκτρολόγιο. Οι "
-"διαθέσιμες ποικιλίες εξαρτώνται από το σύνολο κανόνων XKB, το μοντέλο και τη "
-"διάταξη του πληκτρολογίου που έχουν επιλεχθεί προηγουμένως."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Πολλές διατάξεις πληκτρολογίων υποστηρίζουν την επιλογή χρήσης των \"νεκρών"
-"\" πλήκτρων (dead keys), όπως πλήκτρα τόνων και διαλυτικών, ως κανονικά "
-"πλήκτρα και αν αυτή είναι η επιθυμητή συμπεριφορά, δώστε \"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε ποικιλία "
-"υποστηρίζεται από την επιλεγμένη διάταξη XKB. Αν το πακέτο xkb-data είναι "
-"αποσυμπιεσμένο, κοιτάξτε στον κατάλογο /usr/share/X11/xkb/symbols για το "
-"αρχείο που αντιστοιχεί στην διάταξη που έχετε επιλέξει για τις διάφορες "
-"διαθέσιμες ποικιλίες."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ), μπορούν να αφήσουν το πεδίο "
-"κενό."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "Επιλογές πληκτρολογίου:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Για να διαχειριστεί το πληκτρολόγιό σας ο εξυπηρετητής X σύμφωνα όπως εσείς "
-"θέλετε, μπορείτε να εισάγετε επιλογές για το πληκτρολόγιο. Οι διαθέσιμες "
-"επιλογές εξαρτώνται από το σύνολο κανόνων XKB που έχει επιλεχθεί "
-"προηγουμένως. Δεν λειτουργούν όλες οι επιλογές με οποιοδήποτε μοντέλο και "
-"διάταξη πληκτρολογίου."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Για παράδειγμα, αν επιθυμείτε το πλήκτρο Caps Lock να συμπεριφέρεται ως ένα "
-"επιπλέον πλήκτρο Control, μπορείτε να δώσετε \"ctrl:nocaps\", ή αν "
-"επιθυμείτε να ανταλλάξετε τη λειτουργία των πλήκτρων Caps Lock και αριστερού "
-"Control, μπορείτε να δώσετε \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Ένα ακόμη παράδειγμα, κάποιοι χρήστες προτιμούν να χρησιμοποιούν τα πλήκτρα "
-"Alt ώς πλήκτρα Meta (η προκαθορισμένη επιλογή), ενώ άλλοι προτιμούν τα "
-"πλήκτρα Windows ή \"logo\" ως πλήκτρα Meta, αντίθετα.  Αν επιθυμείτε να "
-"χρησιμοποιήσετε τα πλήκτρα Windows ή logo ως Meta, μπορείτε να εισάγετε "
-"\"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Μπορείτε να συνδυάσετε επιλογές διαχωρίζοντάς τες με άνω-κάτω τελεία, για "
-"παράδειγμα \"ctrl:nocaps,altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Έμπειροι χρήστες μπορούν να χρησιμοποιούν οποιεσδήποτε επιλογές συμβατές με "
-"το επιλεγμένο μοντέλο XKB, την διάταξη και την ποικιλία του πληκτρολογίου."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "Αν δεν είστε σίγουροι, αυτή η τιμή θα πρέπει να αφεθεί κενή."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "Κενή τιμή"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "Δεν επιτρέπεται κενή εισαγωγή για την τιμή αυτή."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "Μη έγκυροι χαρακτήρες εισαγωγικών"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Διπλά εισαγωγικά (\") δεν επιτρέπονται ως τιμή στο πεδίο."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "Απαιτείται αριθμητική τιμή"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Άλλοι χαρακτήρες εκτός από ψηφία δεν είναι αποδεκτοί."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "Να γίνει αυτόματη ανίχνευση της διάταξης του πληκτρολογίου;"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Η επιλογή της προκαθορισμένης διάταξης πληκτρολογίου για τον εξυπηρετητή "
-"Xorg θα βασιστεί σε έναν συνδυασμό της γλώσσας και της διάταξης του "
-"πληκτρολογίου που επιλέχθηκαν κατά την εγκατάσταση."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Κάνετε αυτή την επιλογή αν επιθυμείτε να ανιχνευθεί ξανά η διάταξη του "
-"πληκτρολογίου. Μην την κάνετε αν θέλετε να διατηρήσετε την υπάρχουσα διάταξη."
 
 #. Type: select
 #. Choices
@@ -664,6 +259,299 @@ msgstr ""
 "Η εγκατάσταση αυτού του πακέτου θα αποτύχει τώρα και υα τερματιστεί ώστε να "
 "μπορέσετε να το κάνετε αυτό. Παρακαλώ, ξανατρέξτε τξν διαδικασία αναβάθμισης "
 "αφού έχετε απομακρύνει τον κατάλογο."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr ""
+#~ "Θέλετε να χρησιμοποιήσετε τη συσκευή πλαισίου οθόνης (framebuffer) του "
+#~ "πυρήνα;"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Για ορισμένες εργασίες, όπως η εναλλαγή αναλύσεων οθόνης, ο εξυπηρετητής "
+#~ "X μπορεί να ρυθμιστεί ώστε να χρησιμοποιεί τον οδηγό πλαισίου μνήμης του "
+#~ "πυρήνα (framebuffer), αντί να επικοινωνεί απευθείας με την κάρτα οθόνης."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Θεωρητικά, και οι δύο προσεγγίσεις θα πρέπει να λειτουργούν, αλλά στην "
+#~ "πράξη μερικές φορές λειτουργεί η μία προσέγγιση μόνο.  Η συγκεκριμένη "
+#~ "επιλογή είναι η πιο πιθανή ότι θα λειτουργήσει, αλλά αν διαπιστώσετε "
+#~ "προβλήματα στην αλλαγή αναλύσεων μη διστάσετε να την απενεργοποιήσετε."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Σύνολο κανόνων XKB που θα χρησιμοποιηθεί:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
+#~ "πρέπει να επιλεχθεί ένα σύνολο κανόνων XKB."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr ""
+#~ "Οι χρήστες των περισσότερων πληκτρολογίων θα πρέπει να βάλουν εδώ \"xorg"
+#~ "\"."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιοδήποτε ορισμένο "
+#~ "σύνολο κανόνων XKB.  Αν το πακέτο xlibs έχει αποσυμπιεστεί, δείτε τον "
+#~ "κατάλογο /usr/share/X11/xkb/rules για τα διαθέσιμα σύνολα κανόνων."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Αν δεν είστε σίγουροι, η τιμή αυτή θα πρέπει να τεθεί σαν \"xorg\"."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Μοντέλο πληκτρολογίου:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
+#~ "πρέπει να δηλώσετε ένα μοντέλο πληκτρολογίου. Τα διαθέσιμα μοντέλα "
+#~ "εξαρτώνται από το σύνολο κανόνων XKB που χρησιμοποιείται."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Με το σύνολο κανόνων \"xorg\" :\n"
+#~ " - pc101: παραδοσιακού τύπου πληκτρολόγιο IBM PC/AT με 101 πλήκτρα, "
+#~ "συνηθισμένο στις\n"
+#~ "          ΗΠΑ. Δεν έχει πλήκτρα \"logo\" ή \"menu\";\n"
+#~ " - pc104: παρόμοιο με το μοντέλο pc101, με επιπλέον πλήκτρα, συνήθως "
+#~ "εγχάρακτα\n"
+#~ "          με τα σύμβολα \"logo\" και \"menu\";\n"
+#~ " - pc102: παρόμοιο με το pc101 και συνήθως απαντώμενο στην Ευρώπη. "
+#~ "Περιλαμβάνει ένα πλήκτρο \"< >\";\n"
+#~ " - pc105: παρόμοιο με το pc104 και συνήθως απαντώμενο στην Ευρώπη. "
+#~ "Περιλαμβάνει ένα πλήκτρο \"< >\" ;\n"
+#~ " - macintosh: πληκτρολόγια Macintosh που χρησιμοποιούν το καινούριο layer "
+#~ "εισόδου με κωδικούς πλήκτρων για το\n"
+#~ "              Linux;\n"
+#~ " - macintosh_old: πληκτρολόγια Macintosh που δεν χρησιμοποιούν το "
+#~ "καινούριο layer εισόδου.\n"
+#~ " - type4: πληλτρολόγια Sun Type4;\n"
+#~ " - type5: πληκτρολόγια Sun Type5."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Τα πληκτρολόγια φορητών υπολογιστών συνήθως δεν έχουν τόσα πλήκτρα όσα τα "
+#~ "κανονικά πληκτρολόγια. Οι κάτοχοι φορητών υπολογιστών θα πρέπει να "
+#~ "επιλέξουν το μοντέλο πληκτρολόγιου που προσεγγίζεται περισσότερο από τα "
+#~ "παραπάνω μοντέλα."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποίοδήποτε μοντέλο "
+#~ "ορίζεται από το επιλεγμένο σύνολο κανόνων XKB. Αν το πακέτο xkb-data έχει "
+#~ "αποσυμπιεστεί, δείτε τον κατάλογο /usr/share/X11/xkb/rules για τα "
+#~ "διαθέσιμα σύνολα κανόνων."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ) θα πρέπει γενικά να δηλώσουν "
+#~ "το μοντέλο \"pc104\". Οι χρήστες των περισσοτέρων άλλων πληκτρολογίων θα "
+#~ "πρέπει γενικά να δηλώσουν το μοντέλο \"pc105\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Διάταξη του πληκτρολογίου:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Για τη σωστή διαχείριση του πληκτρολογίου σας από τον εξυπηρετητή X, θα "
+#~ "πρέπει να επιλεχθεί μια διάταξη πληκτρολογίου.  Οι διαθέσιμες διατάξεις "
+#~ "εξαρτώνται από το σύνολο κανόνων XKB και το μοντέλο πληκτρολογίου που "
+#~ "έχουν επιλεχθεί προηγουμένως."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε διάταξη "
+#~ "υποστηρίζεται από το επιλεγμένο σύνολο κανόνων XKB.  Αν το πακέτο xkb-"
+#~ "data έχει αποσυμπιεστεί, δείτε τον κατάλογο /usr/share/X11/xkb/rules για "
+#~ "τα διαθέσιμα σύνολα κανόνων."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ) θα πρέπει να εισάγουν \"us"
+#~ "\".  Οι χρήστες πληκτρολογίων άλλων χωρών συνήθως θα πρέπει να δώσουν το "
+#~ "κωδικό όνομα της χώρας τους κατά το πρότυπο ISO 3166.  Π.χ. η Γαλλία "
+#~ "χρησιμοποιεί \"fr\", και η Ελλάδα το \"el\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Ποικιλία πληκτρολογίου:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Για να διαχειριστεί το πληκτρολόγιό σας ο εξυπηρετητής X όπως εσείς "
+#~ "επιθυμείτε, θα πρέπει να επιλέξετε μια ποικιλία για το  πληκτρολόγιο. Οι "
+#~ "διαθέσιμες ποικιλίες εξαρτώνται από το σύνολο κανόνων XKB, το μοντέλο και "
+#~ "τη διάταξη του πληκτρολογίου που έχουν επιλεχθεί προηγουμένως."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Πολλές διατάξεις πληκτρολογίων υποστηρίζουν την επιλογή χρήσης των "
+#~ "\"νεκρών\" πλήκτρων (dead keys), όπως πλήκτρα τόνων και διαλυτικών, ως "
+#~ "κανονικά πλήκτρα και αν αυτή είναι η επιθυμητή συμπεριφορά, δώστε "
+#~ "\"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Οι πεπειραμένοι χρήστες μπορούν να χρησιμοποιήσουν οποιαδήποτε ποικιλία "
+#~ "υποστηρίζεται από την επιλεγμένη διάταξη XKB. Αν το πακέτο xkb-data είναι "
+#~ "αποσυμπιεσμένο, κοιτάξτε στον κατάλογο /usr/share/X11/xkb/symbols για το "
+#~ "αρχείο που αντιστοιχεί στην διάταξη που έχετε επιλέξει για τις διάφορες "
+#~ "διαθέσιμες ποικιλίες."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Οι χρήστες των πληκτρολογίων Αγγλικής (ΗΠΑ), μπορούν να αφήσουν το πεδίο "
+#~ "κενό."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Επιλογές πληκτρολογίου:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Για να διαχειριστεί το πληκτρολόγιό σας ο εξυπηρετητής X σύμφωνα όπως "
+#~ "εσείς θέλετε, μπορείτε να εισάγετε επιλογές για το πληκτρολόγιο. Οι "
+#~ "διαθέσιμες επιλογές εξαρτώνται από το σύνολο κανόνων XKB που έχει "
+#~ "επιλεχθεί προηγουμένως. Δεν λειτουργούν όλες οι επιλογές με οποιοδήποτε "
+#~ "μοντέλο και διάταξη πληκτρολογίου."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Για παράδειγμα, αν επιθυμείτε το πλήκτρο Caps Lock να συμπεριφέρεται ως "
+#~ "ένα επιπλέον πλήκτρο Control, μπορείτε να δώσετε \"ctrl:nocaps\", ή αν "
+#~ "επιθυμείτε να ανταλλάξετε τη λειτουργία των πλήκτρων Caps Lock και "
+#~ "αριστερού Control, μπορείτε να δώσετε \"ctrl:swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Ένα ακόμη παράδειγμα, κάποιοι χρήστες προτιμούν να χρησιμοποιούν τα "
+#~ "πλήκτρα Alt ώς πλήκτρα Meta (η προκαθορισμένη επιλογή), ενώ άλλοι "
+#~ "προτιμούν τα πλήκτρα Windows ή \"logo\" ως πλήκτρα Meta, αντίθετα.  Αν "
+#~ "επιθυμείτε να χρησιμοποιήσετε τα πλήκτρα Windows ή logo ως Meta, μπορείτε "
+#~ "να εισάγετε \"altwin:meta_win\"."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Μπορείτε να συνδυάσετε επιλογές διαχωρίζοντάς τες με άνω-κάτω τελεία, για "
+#~ "παράδειγμα \"ctrl:nocaps,altwin:meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Έμπειροι χρήστες μπορούν να χρησιμοποιούν οποιεσδήποτε επιλογές συμβατές "
+#~ "με το επιλεγμένο μοντέλο XKB, την διάταξη και την ποικιλία του "
+#~ "πληκτρολογίου."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Αν δεν είστε σίγουροι, αυτή η τιμή θα πρέπει να αφεθεί κενή."
+
+#~ msgid "Empty value"
+#~ msgstr "Κενή τιμή"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Δεν επιτρέπεται κενή εισαγωγή για την τιμή αυτή."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Μη έγκυροι χαρακτήρες εισαγωγικών"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Διπλά εισαγωγικά (\") δεν επιτρέπονται ως τιμή στο πεδίο."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Απαιτείται αριθμητική τιμή"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Άλλοι χαρακτήρες εκτός από ψηφία δεν είναι αποδεκτοί."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Να γίνει αυτόματη ανίχνευση της διάταξης του πληκτρολογίου;"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Η επιλογή της προκαθορισμένης διάταξης πληκτρολογίου για τον εξυπηρετητή "
+#~ "Xorg θα βασιστεί σε έναν συνδυασμό της γλώσσας και της διάταξης του "
+#~ "πληκτρολογίου που επιλέχθηκαν κατά την εγκατάσταση."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Κάνετε αυτή την επιλογή αν επιθυμείτε να ανιχνευθεί ξανά η διάταξη του "
+#~ "πληκτρολογίου. Μην την κάνετε αν θέλετε να διατηρήσετε την υπάρχουσα "
+#~ "διάταξη."
 
 #~ msgid "X server driver:"
 #~ msgstr "Οδηγός του εξυπηρετητή Χ:"

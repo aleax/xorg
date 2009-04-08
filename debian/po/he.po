@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2008-06-09 09:13+0300\n"
 "Last-Translator: Lior Kaplan <kaplan@debian.org>\n"
 "Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
@@ -17,44 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "להשתמש בממשק התקן ה-framebuffer של הקרנל?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"במקום תקשור ישיר עם חומרת הווידאו, ניתן להגדיר את שרת ה-X כך שיבצע פעולות "
-"מסוימות, כמו למשל החלפת מצבי וידאו, באמצעות מנהל התקן ה-framebuffer של הקרנל."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"בתיאוריה, כל אחת מהשיטות צריכה לעבוד, אבל בפועל לפעמים אחת מהן עובדת והשנייה "
-"לא.  בחירה באפשרות זו היא הימור בטוח, אבל אם ידוע לך שהיא גורמת לבעיות - אל "
-"תאפשר\\י אותה."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "מזהה ערוץ כרטיס הווידאו:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -65,13 +36,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "דוגמאות:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -83,7 +54,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -93,7 +64,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -103,355 +74,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "פורמט לא תקין של מזהה הערוץ"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "מערכת חוקי ה-XKB שייעשה בה שימוש:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"על מנת ששרת ה-X יטפל במקלדת בצורה נכונה, יש צורך לבחור במערכת חוקי XKB."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "המשתמשים של רוב המקלדות צריכים להכניס \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"משתמשים מנוסים יכולים להשתמש בכל מערכת חוקים של XKB.  אם חבילת ה-xkb-data "
-"נפתחה, ראו את הספרייה /usr/share/X11/xkb/rules למערכות חוקים זמינות."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "כאשר יש לך ספק, ערכו של שדה זה צריך להיות \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "דגם המקלדת:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"כדי ששרת ה-X יטפל נכונה במקלדת, יש להכניס את דגם המקלדת.  הדגמים הזמינים "
-"תלויים במערכת חוקי ה-XKB שנעשה בה שימוש."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" עם \"xorg\" כמערכת החוקים:\n"
-" - pc101: מקלדת IBM מסורתית בסגנון PC/AT עם 101 מקשים, נפוצה\n"
-"          בארה\"ב.  ללא מקשי \"לוגו\" או \"תפריט\";\n"
-" - pc104: דומה לדגם ה-pc101, עם מקשים נוספים, שבדר\"כ צרוב בהם\n"
-"          סמל ה-\"לוגו\" וסמל ה-\"תפריט\";\n"
-" - pc102: דומה לדגם ה-pc101 ונמצא לעתים קרובות באירופה.\n"
-"          כולל מקש \"< >\" ;\n"
-" - pc105: דומה לדגם ה-pc104 ונמצא לעתים קרובות באירופה.\n"
-"          כולל מקש \"< >\" ;\n"
-" - מקינטוש: מקלדות מקינטוש שמשתמשות בשכבת הקלט החדשה עם\n"
-"            קודי המקשים בלינוקס;\n"
-" - מקינטוש ישן: מקלדות מקינטוש שלא משתמשות בשכבת הקלט החדשה.\n"
-" עם \"sun\" כמערכת החוקים:\n"
-" - סוג4: מקלדות סאן סוג4;\n"
-" - סוג5: מקלדות סאן סוג5."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"מקלדות במחשבים ניידים מכילות מספר מקשים קטן יותר מאשר מקלדות \"רגילות\"; "
-"משתמשי מחשבים ניידים צריכים לבחור את הדגם הקרוב ביותר לזה שלמעלה."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"משתמשים מנוסים יכולים להשתמש בכל דגם שמוגדר ע\"י מערכת חוקי ה-XKB הנבחרת.  "
-"אם חבילת ה-xkb-data נפתחה, ראו את הספרייה /usr/share/X11/xkb/rules למערכות "
-"חוקים זמינות."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"משתמשי מקלדות של אנגלית-ארה\"ב צריכים בדר\"כ להכניס \"pc104\".  משתמשים של "
-"רוב המקלדות האחרות צריכים בדר\"כ להכניס \"pc105\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "פריסת מקלדת:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"כדי ששרת ה-X יטפל נכונה במקלדת, יש להכניס פריסת מקלדת.  פריסות זמינות תלויות "
-"במערכת חוקי ה-XKB ובדגם המקלדת שנבחרו קודם לכן."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"משתמשים מנוסים יכולים להשתמש בכל פריסה שנתמכת ע\"י מערכת חוקי ה-XKB הנבחרת.  "
-"אם חבילת ה-xkb-data נפתחה, ראו את הספרייה /usr/share/X11/xkb/rules למערכות "
-"חוקים זמינות."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"משתמשי מקלדות של אנגלית-ארה\"ב צריכים בדר\"כ להכניס \"us\".  משתמשים של "
-"מקלדות מקומיות של מדינות אחרות צריכים להכניס את קוד המדינה שלהם לפי תקן ה-"
-"ISO 3166.  לדוגמה: צרפת משתמשת ב-\"fr\", וגרמניה משתמשת ב-\"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "תת-פריסת מקלדת:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"כדי ששרת ה-X יטפל במקלדת כפי שרצוי, ניתן להכניס תת-פריסת מקלדת.  זמינות התת-"
-"פריסות תלויה במערכת חוקי ה-XKB, בדגם ובפריסת המקלדת שנבחרו קודם לכן."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"פריסות מקלדת רבות תומכות באפשרות לטפל במקשים \"מתים\" (כמו למשל בסימני המבטא "
-"וההטעמה הלא-מרווחים) כמקשי ריווח רגילים. אם זוהי ההתנהגות המועדפת, הכנס "
-"\"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"משתמשים מנוסים יכולים להשתמש בכל תת-פריסה הנתמכת ע\"י פריסת ה-XKB הנבחרת.  "
-"אם חבילת ה-xkb-data נפתחה, ראו את הספרייה /usr/share/X11/xkb/symbols לקובץ "
-"התואם לפריסה הנבחרת שלך לתת-סוגים הזמינים."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "משתמשי מקלדות של אנגלית-ארה\"ב צריכים בדר\"כ להשאיר שדה זה ריק."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "אפשרויות מקלדת:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"כדי ששרת ה-X יטפל במקלדת כפי שרצוי, ניתן להכניס אפשרויות מקלדת.  זמינות "
-"האפשרויות תלויה במערכת חוקי ה-XKB שנבחרה קודם לכן.  לא כל האפשרויות יעבדו עם "
-"כל דגם ופריסת מקלדת."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"לדוגמה, אם ברצונך שמקש ה-Caps Lock יתפקד כמקש Control נוסף, באפשרותך להכניס  "
-"\"ctrl:nocaps\"; אם ברצונך להחליף בין מקש ה-Caps Lock ומקש ה-Control השמאלי, "
-"באפשרותך להכניס \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"כדוגמה נוספת, חלק מהאנשים מעדיפים שמקשי ה-Alt במקלדת שלהם יתפקדו כמקשי ה- "
-"Meta (זוהי ברירת המחדל), ואילו אנשים אחרים מעדיפים שמקשי החלונות או ה-\"לוגו"
-"\" יתפקדו כמקשי ה- Meta   אם ההעדפה שלך היא האפשרות השנייה, באפשרותך להכניס "
-"\"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"באפשרותך לשלב אפשרויות שונות ע\"י הפרדתן באמצעות פסיק, לדוגמה \"ctrl:nocaps,"
-"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"משתמשים מנוסים יכולים להשתמש בכל אפשרות שתואמת את דגם, פריסה ותת-פריסת ה-XKB "
-"הנבחרים."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "כאשר יש לך ספק, יש להשאיר שדה זה ריק."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "שדה ריק"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "שדה זה לא יכול להיות ריק."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "תווי מירכאות כפולות לא מתאימים"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "תווי מירכאות כפולות (\") לא מתאימים לערך של שדה זה."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "דרוש ערך מספרי"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "תווים שאינם ספרות לא מתאימים לשדה זה."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "לבצע אבחון אוטומטי של המקלדת?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"בחירת ברירת המחדל לפריסת המקלדת של שרת ה-X תתבסס על שילוב של השפה ופריסת "
-"המקלדת שנבחרו בתוכנית ההתקנה."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"יש לבחור באפשרות זאת אם ברצונך לבצע זיהוי מחדש של פריסת המקלדת.  אין לבחור "
-"בה אם ברצונך לשמור על הפריסה הנוכחית שלך."
 
 #. Type: select
 #. Choices
@@ -595,6 +220,266 @@ msgid ""
 msgstr ""
 "תהליך התקנת חבילה זו ייכשל עכשיו ויסתיים כדי שיהיה באפשרותך לעשות זאת. יש "
 "להריץ מחדש את הליך השדרוג אחרי שניקית את הספרייה כנדרש."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "להשתמש בממשק התקן ה-framebuffer של הקרנל?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "במקום תקשור ישיר עם חומרת הווידאו, ניתן להגדיר את שרת ה-X כך שיבצע פעולות "
+#~ "מסוימות, כמו למשל החלפת מצבי וידאו, באמצעות מנהל התקן ה-framebuffer של "
+#~ "הקרנל."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "בתיאוריה, כל אחת מהשיטות צריכה לעבוד, אבל בפועל לפעמים אחת מהן עובדת "
+#~ "והשנייה לא.  בחירה באפשרות זו היא הימור בטוח, אבל אם ידוע לך שהיא גורמת "
+#~ "לבעיות - אל תאפשר\\י אותה."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "מערכת חוקי ה-XKB שייעשה בה שימוש:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "על מנת ששרת ה-X יטפל במקלדת בצורה נכונה, יש צורך לבחור במערכת חוקי XKB."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "המשתמשים של רוב המקלדות צריכים להכניס \"xorg\"."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "משתמשים מנוסים יכולים להשתמש בכל מערכת חוקים של XKB.  אם חבילת ה-xkb-data "
+#~ "נפתחה, ראו את הספרייה /usr/share/X11/xkb/rules למערכות חוקים זמינות."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "כאשר יש לך ספק, ערכו של שדה זה צריך להיות \"xorg\"."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "דגם המקלדת:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "כדי ששרת ה-X יטפל נכונה במקלדת, יש להכניס את דגם המקלדת.  הדגמים הזמינים "
+#~ "תלויים במערכת חוקי ה-XKB שנעשה בה שימוש."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " עם \"xorg\" כמערכת החוקים:\n"
+#~ " - pc101: מקלדת IBM מסורתית בסגנון PC/AT עם 101 מקשים, נפוצה\n"
+#~ "          בארה\"ב.  ללא מקשי \"לוגו\" או \"תפריט\";\n"
+#~ " - pc104: דומה לדגם ה-pc101, עם מקשים נוספים, שבדר\"כ צרוב בהם\n"
+#~ "          סמל ה-\"לוגו\" וסמל ה-\"תפריט\";\n"
+#~ " - pc102: דומה לדגם ה-pc101 ונמצא לעתים קרובות באירופה.\n"
+#~ "          כולל מקש \"< >\" ;\n"
+#~ " - pc105: דומה לדגם ה-pc104 ונמצא לעתים קרובות באירופה.\n"
+#~ "          כולל מקש \"< >\" ;\n"
+#~ " - מקינטוש: מקלדות מקינטוש שמשתמשות בשכבת הקלט החדשה עם\n"
+#~ "            קודי המקשים בלינוקס;\n"
+#~ " - מקינטוש ישן: מקלדות מקינטוש שלא משתמשות בשכבת הקלט החדשה.\n"
+#~ " עם \"sun\" כמערכת החוקים:\n"
+#~ " - סוג4: מקלדות סאן סוג4;\n"
+#~ " - סוג5: מקלדות סאן סוג5."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "מקלדות במחשבים ניידים מכילות מספר מקשים קטן יותר מאשר מקלדות \"רגילות\"; "
+#~ "משתמשי מחשבים ניידים צריכים לבחור את הדגם הקרוב ביותר לזה שלמעלה."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "משתמשים מנוסים יכולים להשתמש בכל דגם שמוגדר ע\"י מערכת חוקי ה-XKB "
+#~ "הנבחרת.  אם חבילת ה-xkb-data נפתחה, ראו את הספרייה /usr/share/X11/xkb/"
+#~ "rules למערכות חוקים זמינות."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "משתמשי מקלדות של אנגלית-ארה\"ב צריכים בדר\"כ להכניס \"pc104\".  משתמשים "
+#~ "של רוב המקלדות האחרות צריכים בדר\"כ להכניס \"pc105\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "פריסת מקלדת:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "כדי ששרת ה-X יטפל נכונה במקלדת, יש להכניס פריסת מקלדת.  פריסות זמינות "
+#~ "תלויות במערכת חוקי ה-XKB ובדגם המקלדת שנבחרו קודם לכן."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "משתמשים מנוסים יכולים להשתמש בכל פריסה שנתמכת ע\"י מערכת חוקי ה-XKB "
+#~ "הנבחרת.  אם חבילת ה-xkb-data נפתחה, ראו את הספרייה /usr/share/X11/xkb/"
+#~ "rules למערכות חוקים זמינות."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "משתמשי מקלדות של אנגלית-ארה\"ב צריכים בדר\"כ להכניס \"us\".  משתמשים של "
+#~ "מקלדות מקומיות של מדינות אחרות צריכים להכניס את קוד המדינה שלהם לפי תקן ה-"
+#~ "ISO 3166.  לדוגמה: צרפת משתמשת ב-\"fr\", וגרמניה משתמשת ב-\"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "תת-פריסת מקלדת:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "כדי ששרת ה-X יטפל במקלדת כפי שרצוי, ניתן להכניס תת-פריסת מקלדת.  זמינות "
+#~ "התת-פריסות תלויה במערכת חוקי ה-XKB, בדגם ובפריסת המקלדת שנבחרו קודם לכן."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "פריסות מקלדת רבות תומכות באפשרות לטפל במקשים \"מתים\" (כמו למשל בסימני "
+#~ "המבטא וההטעמה הלא-מרווחים) כמקשי ריווח רגילים. אם זוהי ההתנהגות המועדפת, "
+#~ "הכנס \"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "משתמשים מנוסים יכולים להשתמש בכל תת-פריסה הנתמכת ע\"י פריסת ה-XKB "
+#~ "הנבחרת.  אם חבילת ה-xkb-data נפתחה, ראו את הספרייה /usr/share/X11/xkb/"
+#~ "symbols לקובץ התואם לפריסה הנבחרת שלך לתת-סוגים הזמינים."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "משתמשי מקלדות של אנגלית-ארה\"ב צריכים בדר\"כ להשאיר שדה זה ריק."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "אפשרויות מקלדת:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "כדי ששרת ה-X יטפל במקלדת כפי שרצוי, ניתן להכניס אפשרויות מקלדת.  זמינות "
+#~ "האפשרויות תלויה במערכת חוקי ה-XKB שנבחרה קודם לכן.  לא כל האפשרויות יעבדו "
+#~ "עם כל דגם ופריסת מקלדת."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "לדוגמה, אם ברצונך שמקש ה-Caps Lock יתפקד כמקש Control נוסף, באפשרותך "
+#~ "להכניס  \"ctrl:nocaps\"; אם ברצונך להחליף בין מקש ה-Caps Lock ומקש ה-"
+#~ "Control השמאלי, באפשרותך להכניס \"ctrl:swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "כדוגמה נוספת, חלק מהאנשים מעדיפים שמקשי ה-Alt במקלדת שלהם יתפקדו כמקשי ה- "
+#~ "Meta (זוהי ברירת המחדל), ואילו אנשים אחרים מעדיפים שמקשי החלונות או ה-"
+#~ "\"לוגו\" יתפקדו כמקשי ה- Meta   אם ההעדפה שלך היא האפשרות השנייה, "
+#~ "באפשרותך להכניס \"altwin:meta_win\"."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "באפשרותך לשלב אפשרויות שונות ע\"י הפרדתן באמצעות פסיק, לדוגמה \"ctrl:"
+#~ "nocaps,altwin:meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "משתמשים מנוסים יכולים להשתמש בכל אפשרות שתואמת את דגם, פריסה ותת-פריסת ה-"
+#~ "XKB הנבחרים."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "כאשר יש לך ספק, יש להשאיר שדה זה ריק."
+
+#~ msgid "Empty value"
+#~ msgstr "שדה ריק"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "שדה זה לא יכול להיות ריק."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "תווי מירכאות כפולות לא מתאימים"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "תווי מירכאות כפולות (\") לא מתאימים לערך של שדה זה."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "דרוש ערך מספרי"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "תווים שאינם ספרות לא מתאימים לשדה זה."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "לבצע אבחון אוטומטי של המקלדת?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "בחירת ברירת המחדל לפריסת המקלדת של שרת ה-X תתבסס על שילוב של השפה ופריסת "
+#~ "המקלדת שנבחרו בתוכנית ההתקנה."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "יש לבחור באפשרות זאת אם ברצונך לבצע זיהוי מחדש של פריסת המקלדת.  אין "
+#~ "לבחור בה אם ברצונך לשמור על הפריסה הנוכחית שלך."
 
 #~ msgid "X server driver:"
 #~ msgstr "מנהל התקן לשרת ה-X:"

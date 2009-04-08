@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2006-11-01 01:17+0100\n"
 "Last-Translator: Safir Secerovic <sapphire@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
@@ -25,45 +25,15 @@ msgstr ""
 "Plural-Forms: 3\n"
 "X-Poedit-Country: BOSNIA AND HERZEGOVINA\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Koristiti interfejs kernel framebuffer uređaja?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Umjesto komunikacije direkto sa video hardware-om, X server može biti "
-"podešen da obavlja neke operacije, poput video mode switching-a, preko "
-"kernel-ovog framebuffer driver-a."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"U teoriji, oba pristupa trebaju raditi, ali u praksi, ponekad jedan radi a "
-"drugi ne.  Uključivanje ove opcije se sigurno, ali slobodno ju isključite "
-"ako bude uzrokovala probleme."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "Oznaka sabirnice video kartice:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -75,13 +45,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "Primjeri:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -93,7 +63,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -103,7 +73,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -113,387 +83,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "Neispravan oblike oznake za sabirnicu"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "XKB skup pravila koji će se koristiti:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Kako bi X server ispravno upravljao tastaturom, XKB skup pravila mora biti "
-"odabran."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr ""
-"Korisnici U.S. English tastatura trebaju generalno ostaviti ovo polje prazno."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Iskusni korisnici mogu koristiti bilo koji definisani XKB set pravila.  Ako "
-"je xkb-data paket raspakovan, pogledajte /usr/share/X11/xkb/rules direktorij "
-"za dostupne skupove pravila."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr ""
-"Ako ste u nedoumici, ova vrijednost treba biti postavljena na \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "Model tastature:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Kako bi X server ispravno upravljao tastaturom, model tastature mora biti "
-"unešen.  Dostupni modeli zavise o korištenom XKB skupu pravila."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" S \"xorg\" skupom pravila:\n"
-" - pc101: tradicionalni IBM PC/AT stil tastatura sa 101 tipkom, uobičajena "
-"u\n"
-"          Sjedinjenim Državama.  Nema \"logo\" ili \"meni\" tipki;\n"
-" - pc104: slična pc101 modelu, s dodatnim tipkama, obično s ugraviranim\n"
-"          \"logo\" i \"meni\" simbolima;\n"
-" - pc102: slična pc101 i dosta zastupljena u Evropi. Dolazi s \"< >\" "
-"tipkama;\n"
-" - pc105: slična pc104 i takođe dosta zastupljena u Evropi. Dolazi s\"< >\" "
-"tipkama;\n"
-" - macintosh: Macintosh tastature koristeći novi ulazni sloj s Linux\n"
-"              kodovima za tastere;\n"
-" - macintosh_old: Macintosh tastature koje ne koriste novi ulazni sloj.\n"
-" S \"sun\" skupom pravila:\n"
-" - type4: Sun Type4 tastature;\n"
-" - type5: Sun Type5 tastature."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Laptop tastature često nemaju toliko tipki kao zasebne; korisnici laptopa "
-"trebaju odabrati najbliži model tastature od gore ponuđenih."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Iskusni korisnici mogu koristiti bilo koji definisani XKB set pravila.  Ako "
-"je xkb-data paket raspakovan, pogledajte /usr/share/X11/xkb/rules direktorij "
-"za dostupne skupove pravila."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Korisnici U.S. English tastatura obično trebaju unijeti \"pc104\". Korisnici "
-"većine ostalih tastatura obično trebaju unijeti \"pc105\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "Raspored tastature:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Kako bi X server ispravno upravljao tastaturom, model tastature mora biti "
-"unešen.  Dostupni modeli zavise o korištenom XKB skupu pravila i prethodno "
-"odabranom modelu tastature."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Iskusni korisnici mogu koristiti bilo koji definisani XKB set pravila.  Ako "
-"je xkb-data paket raspakovan, pogledajte /usr/share/X11/xkb/rules direktorij "
-"za dostupne skupove pravila."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Korisnici U.S. English tastatura trebaju unijeti \"us\".  Korisnici tastaura "
-"lokalizovanih za druge zemlje obično trebaju unijeti dvoslovnu oznaku (prema "
-"ISO 3166 standardu) svoje zemlje.  Npr., za Francusku se koristi \"fr\", a "
-"za Njemačku \"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "Varijanta rasporeda:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Kako bi X server ispravno upravljao tastaturom, model tastature mora biti "
-"unešen.  Dostupni modeli zavise o korištenom XKB skupu pravila, modelu i "
-"prethodno odabranom rasporedu tastature."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Mnogi rasporedi tastatura podržavaju opciju tretmana \"mrtvih\" tipki poput "
-"nerazdvojenih znakova akcentacije i diakritika kao normalnih razdvojenih "
-"tipki i ako je ovo preferirana osobina, unesite \"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Iskusni korisnici mogu koristiti bilo koju varijantu podržanu od odabranog "
-"XKB rasporeda.  Ako je xkb-data paket raspakovan, pogledajte /usr/share/X11/"
-"xkb/symbols direktorij za datotekom koja odgovara Vašem odabranom rasporedu "
-"za dostupne varijante."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Korisnici U.S. English tastatura trebaju generalno ostaviti ovo polje prazno."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "Opcije tastature:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Da bi X server upravljao tastaturom na željeni način, opcije tastature se "
-"mogu unijeti.  Dostupne opcije zavise o tome koji je prethodno odabrani XKB "
-"skup pravila.  Neće sve opcije raditi sa svakim modelom tastature i "
-"rasporedom."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Na primjer, ako želite da se Caps Lock tipka ponaša kao dodatna Control "
-"tipka, unesite \"ctrl:nocaps\"; ako biste željeli da zamijenite Caps Lock i "
-"lijevi Control tipke, unesite \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Kao još jedan primjer, neki ljudi preferiraju da imaju Meta tipke dostupne "
-"na Alt tipkama tastature (ovo je podrazumijevano), dok drugi preferiraju da "
-"imaju Meta tipke na Windows ili \"logo\" tipkama.  Ako preferirate da "
-"koristite vaše Windows ili logo tipke kao Meta tipke, unesite \"altwin:"
-"meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Možete kombinovati opcije njihovim razdvajanjem zarezom, na primjer \"crl:"
-"nocaps,altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Iskusni korisnici mogu koristite sve opcije kompatibilne s odabranim XKB "
-"modelom, rasporedom i varijantom."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "Ako ste u nedoumici, ovu vrijednost ostavite praznu."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "Prazna vrijednost"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "Prazan unos nije dozvoljen za ovu vrijednost."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "Neispravni znaci dvostrukih navodnika"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Znaci dvostrukih navodnika (\") nisu dozvoljeni u vrijednosti unosa."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "Potrebna brojna vrijednost"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Drugi znaci osim cifara nisu dozvoljeni u ovom unosu."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "Autodetektovati raspored tastature?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Odabir podrazumijevanog rasporeda tastature za Xorg server će biti zasnovan "
-"na kombinaciji jezika i rasporeda tastature odabranih u instalateru."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Odaberite ovu opciju ako želite da raspored tastature bude ponovo "
-"detektovan.  Nemojte ju odabirati ako želite zadržati vaš trenutni raspored."
 
 #. Type: select
 #. Choices
@@ -646,6 +238,305 @@ msgstr ""
 "Instalacija ovog paketa će se sada prekinuti tako da možete uraditi to. "
 "Molim ponovo pokrenite postupak nadogradnje (upgrade) nakon što očistite "
 "direktorij."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Koristiti interfejs kernel framebuffer uređaja?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Umjesto komunikacije direkto sa video hardware-om, X server može biti "
+#~ "podešen da obavlja neke operacije, poput video mode switching-a, preko "
+#~ "kernel-ovog framebuffer driver-a."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "U teoriji, oba pristupa trebaju raditi, ali u praksi, ponekad jedan radi "
+#~ "a drugi ne.  Uključivanje ove opcije se sigurno, ali slobodno ju "
+#~ "isključite ako bude uzrokovala probleme."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "XKB skup pravila koji će se koristiti:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Kako bi X server ispravno upravljao tastaturom, XKB skup pravila mora "
+#~ "biti odabran."
+
+#, fuzzy
+#~| msgid ""
+#~| "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr ""
+#~ "Korisnici U.S. English tastatura trebaju generalno ostaviti ovo polje "
+#~ "prazno."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Iskusni korisnici mogu koristiti bilo koji definisani XKB set pravila.  "
+#~ "Ako je xkb-data paket raspakovan, pogledajte /usr/share/X11/xkb/rules "
+#~ "direktorij za dostupne skupove pravila."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr ""
+#~ "Ako ste u nedoumici, ova vrijednost treba biti postavljena na \"xorg\"."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Model tastature:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Kako bi X server ispravno upravljao tastaturom, model tastature mora biti "
+#~ "unešen.  Dostupni modeli zavise o korištenom XKB skupu pravila."
+
+#, fuzzy
+#~| msgid ""
+#~| " With the \"xorg\" rule set:\n"
+#~| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~| " - pc104: similar to pc101 model, with additional keys, usually "
+#~| "engraved\n"
+#~| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~| "              keycodes;\n"
+#~| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~| " With the \"sun\" rule set:\n"
+#~| " - type4: Sun Type4 keyboards;\n"
+#~| " - type5: Sun Type5 keyboards."
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " S \"xorg\" skupom pravila:\n"
+#~ " - pc101: tradicionalni IBM PC/AT stil tastatura sa 101 tipkom, "
+#~ "uobičajena u\n"
+#~ "          Sjedinjenim Državama.  Nema \"logo\" ili \"meni\" tipki;\n"
+#~ " - pc104: slična pc101 modelu, s dodatnim tipkama, obično s ugraviranim\n"
+#~ "          \"logo\" i \"meni\" simbolima;\n"
+#~ " - pc102: slična pc101 i dosta zastupljena u Evropi. Dolazi s \"< >\" "
+#~ "tipkama;\n"
+#~ " - pc105: slična pc104 i takođe dosta zastupljena u Evropi. Dolazi s\"< >"
+#~ "\" tipkama;\n"
+#~ " - macintosh: Macintosh tastature koristeći novi ulazni sloj s Linux\n"
+#~ "              kodovima za tastere;\n"
+#~ " - macintosh_old: Macintosh tastature koje ne koriste novi ulazni sloj.\n"
+#~ " S \"sun\" skupom pravila:\n"
+#~ " - type4: Sun Type4 tastature;\n"
+#~ " - type5: Sun Type5 tastature."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Laptop tastature često nemaju toliko tipki kao zasebne; korisnici laptopa "
+#~ "trebaju odabrati najbliži model tastature od gore ponuđenih."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Iskusni korisnici mogu koristiti bilo koji definisani XKB set pravila.  "
+#~ "Ako je xkb-data paket raspakovan, pogledajte /usr/share/X11/xkb/rules "
+#~ "direktorij za dostupne skupove pravila."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Korisnici U.S. English tastatura obično trebaju unijeti \"pc104\". "
+#~ "Korisnici većine ostalih tastatura obično trebaju unijeti \"pc105\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Raspored tastature:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Kako bi X server ispravno upravljao tastaturom, model tastature mora biti "
+#~ "unešen.  Dostupni modeli zavise o korištenom XKB skupu pravila i "
+#~ "prethodno odabranom modelu tastature."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Iskusni korisnici mogu koristiti bilo koji definisani XKB set pravila.  "
+#~ "Ako je xkb-data paket raspakovan, pogledajte /usr/share/X11/xkb/rules "
+#~ "direktorij za dostupne skupove pravila."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Korisnici U.S. English tastatura trebaju unijeti \"us\".  Korisnici "
+#~ "tastaura lokalizovanih za druge zemlje obično trebaju unijeti dvoslovnu "
+#~ "oznaku (prema ISO 3166 standardu) svoje zemlje.  Npr., za Francusku se "
+#~ "koristi \"fr\", a za Njemačku \"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Varijanta rasporeda:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Kako bi X server ispravno upravljao tastaturom, model tastature mora biti "
+#~ "unešen.  Dostupni modeli zavise o korištenom XKB skupu pravila, modelu i "
+#~ "prethodno odabranom rasporedu tastature."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Mnogi rasporedi tastatura podržavaju opciju tretmana \"mrtvih\" tipki "
+#~ "poput nerazdvojenih znakova akcentacije i diakritika kao normalnih "
+#~ "razdvojenih tipki i ako je ovo preferirana osobina, unesite \"nodeadkeys"
+#~ "\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Iskusni korisnici mogu koristiti bilo koju varijantu podržanu od "
+#~ "odabranog XKB rasporeda.  Ako je xkb-data paket raspakovan, pogledajte /"
+#~ "usr/share/X11/xkb/symbols direktorij za datotekom koja odgovara Vašem "
+#~ "odabranom rasporedu za dostupne varijante."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Korisnici U.S. English tastatura trebaju generalno ostaviti ovo polje "
+#~ "prazno."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Opcije tastature:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Da bi X server upravljao tastaturom na željeni način, opcije tastature se "
+#~ "mogu unijeti.  Dostupne opcije zavise o tome koji je prethodno odabrani "
+#~ "XKB skup pravila.  Neće sve opcije raditi sa svakim modelom tastature i "
+#~ "rasporedom."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Na primjer, ako želite da se Caps Lock tipka ponaša kao dodatna Control "
+#~ "tipka, unesite \"ctrl:nocaps\"; ako biste željeli da zamijenite Caps Lock "
+#~ "i lijevi Control tipke, unesite \"ctrl:swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Kao još jedan primjer, neki ljudi preferiraju da imaju Meta tipke "
+#~ "dostupne na Alt tipkama tastature (ovo je podrazumijevano), dok drugi "
+#~ "preferiraju da imaju Meta tipke na Windows ili \"logo\" tipkama.  Ako "
+#~ "preferirate da koristite vaše Windows ili logo tipke kao Meta tipke, "
+#~ "unesite \"altwin:meta_win\"."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Možete kombinovati opcije njihovim razdvajanjem zarezom, na primjer \"crl:"
+#~ "nocaps,altwin:meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Iskusni korisnici mogu koristite sve opcije kompatibilne s odabranim XKB "
+#~ "modelom, rasporedom i varijantom."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Ako ste u nedoumici, ovu vrijednost ostavite praznu."
+
+#~ msgid "Empty value"
+#~ msgstr "Prazna vrijednost"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Prazan unos nije dozvoljen za ovu vrijednost."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Neispravni znaci dvostrukih navodnika"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr ""
+#~ "Znaci dvostrukih navodnika (\") nisu dozvoljeni u vrijednosti unosa."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Potrebna brojna vrijednost"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Drugi znaci osim cifara nisu dozvoljeni u ovom unosu."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Autodetektovati raspored tastature?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Odabir podrazumijevanog rasporeda tastature za Xorg server će biti "
+#~ "zasnovan na kombinaciji jezika i rasporeda tastature odabranih u "
+#~ "instalateru."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Odaberite ovu opciju ako želite da raspored tastature bude ponovo "
+#~ "detektovan.  Nemojte ju odabirati ako želite zadržati vaš trenutni "
+#~ "raspored."
 
 #~ msgid "X server driver:"
 #~ msgstr "X server driver:"

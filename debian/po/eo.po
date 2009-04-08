@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2008-10-19 20:00-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
@@ -16,71 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "Pelilo por la X-servilo"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"Por ke la grafika uzant-interfaco de la 'X-Fenestra Sistemo' funkciu ĝuste, "
-"estas necese elekti pelilon de video-karto por la X-servilo."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Peliloj estas ĝenerale nomitaj laŭ la video-karto aŭ fabrikanto de lablataro "
-"(chipset), aŭ laŭ specifa modelo aŭ familio de blataroj."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Ĉu uzi interfacon de kerna kadrobufra aparato?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Prefere ol rekte komunikiĝi kun la video-aparataro, la X-servilo povasesti "
-"akomodita por fari kelkajn operaciojn, kiel ŝanĝado de video-reĝimo,per la "
-"kadrobufra pelilo de la kerno."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Teorie, ambaŭ metodoj devus funkcii, sed praktike, kelkfoje unu jes kaj la "
-"alia ne. Ebligi tiun ĉi opcion estas sekura provo, tamen estu laŭvole por "
-"malaktivigi ĝin, se ŝajne ĝi kaŭzas problemojn."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "Identigilo de la video-karta datumbuso:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -92,13 +36,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "Ekzemploj:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -110,7 +54,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -120,7 +64,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -130,367 +74,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:5001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "Malĝusta formo por la bus-identigilo"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Regularo XKB por uzi:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Por ke la X-servilo ĝuste traktu la klavaron, regularo XKB devas esti "
-"elektita."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Uzantoj de plej ordinaraj klavaroj devus enmeti \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Spertaj uzantoj povas uzi iun ajn difinitan regularon XKB. Se la pako 'xkb-"
-"data' jam estas malpakita, rigardu la dosierujon '/usr/share/X11/xkb/rules' "
-"por koni la disponeblajn regularojn."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Okaze de dubo, tiu ĉi valoro devos esti \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Klavar-modelo:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Por ke la X-servilo ĝuste traktu la klavaron, klavar-modelo devas esti "
-"indikita. Disponeblaj modeloj dependas de kiu regularo XKB estas uzata."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Kun la regularo \"xorg\":\n"
-" - pc101: tradicia klavaro laŭ stilo IBM PC/AT kun 101 klavoj, ofta en\n"
-"          usono. Ĝi havas neniun klavon \"logo\" aŭ \"menu\";\n"
-" - pc104: simila al la modelo 'pc101', kun aldonitaj klavoj, ordinare "
-"markitaj\n"
-"          per simboloj \"logo\" kaj \"menu\";\n"
-" - pc102: simila al 'pc101' kaj ofte trovita en Eŭropo. Ĝi inkluzivas "
-"klavon\n"
-"\"< >\";\n"
-" - pc105: simila al 'pc104' kaj ofte trovita en Eŭropo. Ĝi inkluzivas "
-"klavon\n"
-"\"< >\";\n"
-" - macintosh: klavaroj Macintosh kiuj uzas la novan enig-tavolon kun "
-"Linuksaj\n"
-"              klav-kodoj;\n"
-" - macintosh_old: klavaroj Macintosh kiuj ne uzas la novan enig-tavolon;\n"
-" - type4: klavaroj Sun Type4;\n"
-" - type5: klavaroj Sun Type5."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Klavaroj de tek-komputiloj ofte ne havas tiom da klavoj kiom apartaj "
-"modeloj; Uzantoj de tek-komputiloj devos elekti la klavar-modelon plejeble "
-"simila al la supraj."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Spertaj uzantoj povas uzi iun ajn modelon difinitan de la elektita regularo "
-"XKB. Se la pako 'xkb-data' jam estas malpakita, rigardu la dosierujon '/usr/"
-"share/X11/xkb/rules' por koni la disponeblajn regularojn."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Uzantoj de uson-anglaj klavaroj devus ĝenerale entajpi \"pc104\". Uzantoj de "
-"ceteraj klavaroj devus ĝenerale entajpi \"pc105\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Klavar-aranĝo:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Por ke la X-servilo ĝuste traktu la klavaron, klavar-aranĝon devas esti "
-"indikita. Disponeblaj aranĝoj dependas de la regularo XKB kaj de la klavar-"
-"modeloantaŭe elektitaj."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Spertaj uzantoj povas uzi iun ajn aranĝon subtenatan de la elektita regularo "
-"XKB. Se la pako 'xkb-data' jam estas malpakita, rigardu la dosierujon'/usr/"
-"share/X11/xkb/rules' por koni la disponeblajn regularojn."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Uzantoj de uson-anglaj klavaroj devus ĝenerale entajpi \"us\". Uzantoj de "
-"klavaroj por aliaj landoj devus ĝenerale entajpi sian land-kodon, laŭ ISO "
-"3166. Tio estas, por francujo uzu \"fr\", kaj por germanujo uzu \"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Klavar-variaĵo:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Por ke la X-servilo traktu la klavaron kiel dezirate, klavar-variaĵo povos "
-"esti indikita. Disponeblaj variaĵoj dependas de kiu regularo XKB, modelo, "
-"kaj aranĝo estis antaŭe elektitaj."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Pluraj klavar-aranĝoj subtenas opcion por trakti \"senpaŝajn\" klavojn "
-"(ekzemple diakrit-markoj kaj diarezo) kiel normalajn paŝajn klavojn, kaj se "
-"tio estas la preferata maniero, entajpu \"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Spertaj uzantoj povas uzi iun ajn variaĵon subtenatan de la elektita "
-"regularo XKB. Se la pako 'xkb-data' jam estas malpakita, rigardu la "
-"dosierujon'/usr/share/X11/xkb/symbols' kaj la dosieron koncernan al la "
-"aranĝo elektita de vipor koni la disponeblajn variaĵojn."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Uzantoj de uson-anglaj klavaroj devus ĝenerale lasi tiun ĉi kampon malplena."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Klavaraj opcioj:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Por ke la X-servilo traktu la klavaron kiel dezirate, klavaraj opcioj povos "
-"esti indikitaj. Disponeblaj opcioj dependas de kiu regularo XKB estis antaŭe "
-"elektita. Ne ĉiuj opcioj funkcios kun ĉiu klavara modelo kaj aranĝo."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Ekzemple, se vi deziras ke la klavo 'Caps Lock' (majuskleco) funkciu kiel "
-"kroman klavon 'Control', vi povas entajpi \"ctrl:nocaps\"; se al vi plaĉas "
-"interŝanĝi la klavojn 'Caps Lock' kaj la maldekstra 'Control', vi povas "
-"entajpi \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Alia ekzemplo, kelkaj homoj preferas havi la klavojn 'Meta' disponeblaj ĉe "
-"la klavo 'Alt' de iliaj klavaroj (tio estas implicite), dum aliaj preferas "
-"havi la klavojn 'Meta' ĉe la klavoj 'Windows' aŭ 'Logo' anstataŭe. Se vi "
-"preferas uzi viajn klavojn 'Windows' aŭ 'Logo' kiel klavojn 'Meta', vi povas "
-"entajpi \"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Vi povas kombini opciojn apartigante ilin per komo, ekzemple \"ctrl:nocaps,"
-"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Spertaj uzantoj povas uzi iun ajn opcion kongruan kun la elektita modelo, "
-"aranĝo kaj variaĵo de XKB."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Okaze de dubo, tiu ĉi valoro devos esti lasita malplena."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Malplena valoro"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Malplenaĵo ne estas permesata por tiu ĉi valoro."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Malvalida signo duobla-citilo"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Signoj duobla-citilo (\") ne estas permesataj por la enmetita valoro."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "Cifera valoro estas bezonata"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Nur ciferaj signoj estas permesataj por tiu enmetaĵo."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "Ĉu aŭtomate detecti la klavar-aranĝon?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"La elekto de implicita klavar-aranĝo por la servilo Xorg estos surbaze de "
-"kombino inter la lingvo kaj klavar-aranĝo elektitaj dum la instalado."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Elektu tiun ĉi opcion se vi volas ke la klavar-aranĝo estu redetektita. Ne "
-"elektu ĝin se vi volas teni vian aktualan aranĝon."
 
 #. Type: select
 #. Choices
@@ -641,3 +227,295 @@ msgstr ""
 "La instalado de tiu ĉi pako fiaskos nun por ĉesiĝi, tiel ke vi povu fari "
 "tion. Bonvolu re-lanĉi vian aktualigan proceduron post kiam vi malplenigis "
 "la dosierujon."
+
+#~ msgid "X server driver:"
+#~ msgstr "Pelilo por la X-servilo"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "Por ke la grafika uzant-interfaco de la 'X-Fenestra Sistemo' funkciu "
+#~ "ĝuste, estas necese elekti pelilon de video-karto por la X-servilo."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Peliloj estas ĝenerale nomitaj laŭ la video-karto aŭ fabrikanto de "
+#~ "lablataro (chipset), aŭ laŭ specifa modelo aŭ familio de blataroj."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Ĉu uzi interfacon de kerna kadrobufra aparato?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Prefere ol rekte komunikiĝi kun la video-aparataro, la X-servilo "
+#~ "povasesti akomodita por fari kelkajn operaciojn, kiel ŝanĝado de video-"
+#~ "reĝimo,per la kadrobufra pelilo de la kerno."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Teorie, ambaŭ metodoj devus funkcii, sed praktike, kelkfoje unu jes kaj "
+#~ "la alia ne. Ebligi tiun ĉi opcion estas sekura provo, tamen estu laŭvole "
+#~ "por malaktivigi ĝin, se ŝajne ĝi kaŭzas problemojn."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Regularo XKB por uzi:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Por ke la X-servilo ĝuste traktu la klavaron, regularo XKB devas esti "
+#~ "elektita."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Uzantoj de plej ordinaraj klavaroj devus enmeti \"xorg\"."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Spertaj uzantoj povas uzi iun ajn difinitan regularon XKB. Se la pako "
+#~ "'xkb-data' jam estas malpakita, rigardu la dosierujon '/usr/share/X11/xkb/"
+#~ "rules' por koni la disponeblajn regularojn."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Okaze de dubo, tiu ĉi valoro devos esti \"xorg\"."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Klavar-modelo:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Por ke la X-servilo ĝuste traktu la klavaron, klavar-modelo devas esti "
+#~ "indikita. Disponeblaj modeloj dependas de kiu regularo XKB estas uzata."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Kun la regularo \"xorg\":\n"
+#~ " - pc101: tradicia klavaro laŭ stilo IBM PC/AT kun 101 klavoj, ofta en\n"
+#~ "          usono. Ĝi havas neniun klavon \"logo\" aŭ \"menu\";\n"
+#~ " - pc104: simila al la modelo 'pc101', kun aldonitaj klavoj, ordinare "
+#~ "markitaj\n"
+#~ "          per simboloj \"logo\" kaj \"menu\";\n"
+#~ " - pc102: simila al 'pc101' kaj ofte trovita en Eŭropo. Ĝi inkluzivas "
+#~ "klavon\n"
+#~ "\"< >\";\n"
+#~ " - pc105: simila al 'pc104' kaj ofte trovita en Eŭropo. Ĝi inkluzivas "
+#~ "klavon\n"
+#~ "\"< >\";\n"
+#~ " - macintosh: klavaroj Macintosh kiuj uzas la novan enig-tavolon kun "
+#~ "Linuksaj\n"
+#~ "              klav-kodoj;\n"
+#~ " - macintosh_old: klavaroj Macintosh kiuj ne uzas la novan enig-tavolon;\n"
+#~ " - type4: klavaroj Sun Type4;\n"
+#~ " - type5: klavaroj Sun Type5."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Klavaroj de tek-komputiloj ofte ne havas tiom da klavoj kiom apartaj "
+#~ "modeloj; Uzantoj de tek-komputiloj devos elekti la klavar-modelon "
+#~ "plejeble simila al la supraj."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Spertaj uzantoj povas uzi iun ajn modelon difinitan de la elektita "
+#~ "regularo XKB. Se la pako 'xkb-data' jam estas malpakita, rigardu la "
+#~ "dosierujon '/usr/share/X11/xkb/rules' por koni la disponeblajn regularojn."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Uzantoj de uson-anglaj klavaroj devus ĝenerale entajpi \"pc104\". Uzantoj "
+#~ "de ceteraj klavaroj devus ĝenerale entajpi \"pc105\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Klavar-aranĝo:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Por ke la X-servilo ĝuste traktu la klavaron, klavar-aranĝon devas esti "
+#~ "indikita. Disponeblaj aranĝoj dependas de la regularo XKB kaj de la "
+#~ "klavar-modeloantaŭe elektitaj."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Spertaj uzantoj povas uzi iun ajn aranĝon subtenatan de la elektita "
+#~ "regularo XKB. Se la pako 'xkb-data' jam estas malpakita, rigardu la "
+#~ "dosierujon'/usr/share/X11/xkb/rules' por koni la disponeblajn regularojn."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Uzantoj de uson-anglaj klavaroj devus ĝenerale entajpi \"us\". Uzantoj de "
+#~ "klavaroj por aliaj landoj devus ĝenerale entajpi sian land-kodon, laŭ ISO "
+#~ "3166. Tio estas, por francujo uzu \"fr\", kaj por germanujo uzu \"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Klavar-variaĵo:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Por ke la X-servilo traktu la klavaron kiel dezirate, klavar-variaĵo "
+#~ "povos esti indikita. Disponeblaj variaĵoj dependas de kiu regularo XKB, "
+#~ "modelo, kaj aranĝo estis antaŭe elektitaj."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Pluraj klavar-aranĝoj subtenas opcion por trakti \"senpaŝajn\" klavojn "
+#~ "(ekzemple diakrit-markoj kaj diarezo) kiel normalajn paŝajn klavojn, kaj "
+#~ "se tio estas la preferata maniero, entajpu \"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Spertaj uzantoj povas uzi iun ajn variaĵon subtenatan de la elektita "
+#~ "regularo XKB. Se la pako 'xkb-data' jam estas malpakita, rigardu la "
+#~ "dosierujon'/usr/share/X11/xkb/symbols' kaj la dosieron koncernan al la "
+#~ "aranĝo elektita de vipor koni la disponeblajn variaĵojn."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Uzantoj de uson-anglaj klavaroj devus ĝenerale lasi tiun ĉi kampon "
+#~ "malplena."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Klavaraj opcioj:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Por ke la X-servilo traktu la klavaron kiel dezirate, klavaraj opcioj "
+#~ "povos esti indikitaj. Disponeblaj opcioj dependas de kiu regularo XKB "
+#~ "estis antaŭe elektita. Ne ĉiuj opcioj funkcios kun ĉiu klavara modelo kaj "
+#~ "aranĝo."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Ekzemple, se vi deziras ke la klavo 'Caps Lock' (majuskleco) funkciu kiel "
+#~ "kroman klavon 'Control', vi povas entajpi \"ctrl:nocaps\"; se al vi "
+#~ "plaĉas interŝanĝi la klavojn 'Caps Lock' kaj la maldekstra 'Control', vi "
+#~ "povas entajpi \"ctrl:swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Alia ekzemplo, kelkaj homoj preferas havi la klavojn 'Meta' disponeblaj "
+#~ "ĉe la klavo 'Alt' de iliaj klavaroj (tio estas implicite), dum aliaj "
+#~ "preferas havi la klavojn 'Meta' ĉe la klavoj 'Windows' aŭ 'Logo' "
+#~ "anstataŭe. Se vi preferas uzi viajn klavojn 'Windows' aŭ 'Logo' kiel "
+#~ "klavojn 'Meta', vi povas entajpi \"altwin:meta_win\"."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Vi povas kombini opciojn apartigante ilin per komo, ekzemple \"ctrl:"
+#~ "nocaps,altwin:meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Spertaj uzantoj povas uzi iun ajn opcion kongruan kun la elektita modelo, "
+#~ "aranĝo kaj variaĵo de XKB."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Okaze de dubo, tiu ĉi valoro devos esti lasita malplena."
+
+#~ msgid "Empty value"
+#~ msgstr "Malplena valoro"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Malplenaĵo ne estas permesata por tiu ĉi valoro."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Malvalida signo duobla-citilo"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr ""
+#~ "Signoj duobla-citilo (\") ne estas permesataj por la enmetita valoro."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Cifera valoro estas bezonata"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Nur ciferaj signoj estas permesataj por tiu enmetaĵo."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Ĉu aŭtomate detecti la klavar-aranĝon?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "La elekto de implicita klavar-aranĝo por la servilo Xorg estos surbaze de "
+#~ "kombino inter la lingvo kaj klavar-aranĝo elektitaj dum la instalado."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Elektu tiun ĉi opcion se vi volas ke la klavar-aranĝo estu redetektita. "
+#~ "Ne elektu ĝin se vi volas teni vian aktualan aranĝon."

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_nn\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2007-03-11 10:07+0100\n"
 "Last-Translator: Håvard Korsvoll <korsvoll@gmail.com>\n"
 "Language-Team: Norwegian nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -25,45 +25,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Bruke kjernen sitt grensesnitt for rammebuffer?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"I staden for å kommunisere direkte med videoutstyret, kan X-tenaren bli sett "
-"opp til å utføre visse operasjonar, som å skifte videomodus, ved hjelp av "
-"kjernen sin drivar for rammebuffer."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"I teorien skal begge metodar fungere, men i praksis så er det av og til den "
-"eine verkar og den andre ikkje verkar. Å slå på dette er det tryggaste, men "
-"det er berre å prøve seg fram viss det viser seg å vere problem."
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "Grafikkortet sin buss-ID:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -75,13 +45,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "Dømer:"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -93,7 +63,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -103,7 +73,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -113,382 +83,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "Uriktig format på bussidentifikatoren."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "Regelsett som skal brukast for XKB :"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"For at X-tenaren skal handtere tastaturet riktig må det veljast eit XKB-"
-"regelsett."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Dei som brukar U.S. engelsk tastatur bør la dette vere tomt."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Erfarne brukarar kan bruke eit av dei definerte XKB-regelsetta. Viss pakka "
-"xkb-data er pakka ut finst dei tilgjengelege regelsetta i mappa /usr/share/"
-"X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Er du i tvil, så bruk «xorg»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "Tastaturmodell:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"For at X-tenaren skal handtere tastaturet riktig må ein tastaturmodell "
-"oppgjevast. Tilgjengelege modellar er avhengig av kva for XKB-regelsett som "
-"vert brukt."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Med regelsettet \"xorg\" :\n"
-" - pc101: tradisjonelt IBM PC/AT tastatur med 101 tastar, vanleg\n"
-"          i USA.  Har ingen «logo» eller «meny»-tastar;\n"
-" - pc104: liknar pc101-modellen, med fleire taster, som regel merka\n"
-"          med eit «logo»-symbol og eit «meny»-symbol;\n"
-" - pc102: liknar pc101 og ofte brukt i Europa. Har ein «< >»-tast;\n"
-" - pc105: liknar pc104 og ofte brukt i Europa. Har ein «< >»-tast;\n"
-" - macintosh: Macintosh-tastatur med bruk av eit nytt inndatalag\n"
-"              med Linux tastekodar;\n"
-" - macintosh_old: Macintosh-tastaturar utan det nye inndatalaget.\n"
-"\n"
-" Med regelsettet «sun» :\n"
-" - type4: Sun Type 4-tastatur;\n"
-" - type5: Sun Type 5-tastatur."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Tastatur for bærbare har ofte ikkje så mange tastar som skrivebordsmaskiner, "
-"her bør det veljast ein tastaturmodell som ligg nær til skildringa over."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Erfarne brukarar kan setje opp alle modellar som er definert av det valde "
-"XKB-regelsettet. Viss pakka xkb-data er pakka ut finst tilgjengelege  "
-"regelsett i mappa /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Dei som brukar engelsk tastatur i USA bør som regel oppgje «pc104». Dei som "
-"brukar dei fleste andre tastaturer bør generelt oppgje «pc105»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "Tastaturutlegg:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"For at X-tenaren skal handtere tastaturet riktig må det oppgjevast eit "
-"tastaturutlegg. Tilgjengelege utlegg er avhengig av kva for XKB-regelsett og "
-"tastaturmodell som er valt tidlegare."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Erfarne brukarar kan nytte seg av alle utlegg som er støtta av det valde XKB-"
-"regelsettet. Viss pakka xkb-data er pakka ut finst det tilgjengelege "
-"regelsett i mappa /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Dei som brukar engelsk tastatur i USA bør som regel oppgje «us». Dei som "
-"brukar tastatur laga for andre land bør generelt oppgje den landskoden som "
-"er definert i ISO 3166. T.d. Frankrike «fr», Tyskland «de», Noreg «no»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "Tastaturvariant:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"For at X-tenaren skal handtere tastaturet slik ein ynskjer kan ein oppgje "
-"ein tastaturvariant. Tilgjengelege variantar avheng av kva for XKB-"
-"regelsett, modell og utlegg som er valt tidlegare."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Mange tastaturutlegg støttar det å handtere «daude» tastar, slik som aksentar "
-"som ikkje flyttar skrivemerket, som normale tastar der skrivemerket likevel "
-"vert flytta. Dersom det er dette du ynskjer så må du skrive inn «nodeadkeys»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Erfarne brukarar kan velje mellom alle variantar som har støtte i det valde "
-"XKB-utlegget. Viss pakka xkb-data er pakka ut, sjå i mappa /usr/share/X11/"
-"xkb etter fila som tilsvarar det valde utlegget etter tilgjengelege "
-"variantar."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "Dei som brukar U.S. engelsk tastatur bør la dette vere tomt."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "Tastaturval:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Ein kan setje ulike tastaturval for å få X-tenaren til å handtere tastaturet "
-"slik ein ynskjer. Kva val som er tilgjengelege er avhengig av kva for XKB-"
-"reglar som tidlegare er valt. Der ikkje alle val som vil fungere med alle "
-"tastaturmodellar og utlegg."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Nokre døme: Viss du vil at Caps Lock-tasten skal oppføre seg som ein ekstra "
-"Ctrl-tast, så kan du skrive inn «ctrl:nocaps». Viss du vli byte om på Caps "
-"Lock-tasten og den venstre Ctrl-tasten, så kan du skrive inn «ctrl:swapcaps»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Eit anna døme: Somme likar å ha Meta-tasten tilgjengeleg på Alt-tastane på "
-"tastaturet (dette er standard). Medan somme likar å ha Meta-tasten på "
-"Windows eller «logo»-tastane i staden. Viss du helst vil bruke Windows eller "
-"logo-tastane som Meta-tastar, kan du skrive inn «altwin:meta_win»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Du kan kombinere tastaturvala ved å skilje dei med komma, til dømes «ctrl:"
-"nocaps,altwin:meta_win»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Erfarne brukarer kan bruke alle val som passar med den valde XKB-modellen, "
-"utlegg og variant."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "Er du i tvil, så la det stå tomt."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "Tom verdi"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "Denne verdien kan ikkje vere tom."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "Ugyldig dobbelt hermeteikn"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Dobble hermeteikn (\") er ikkje tillatt i denne verdien."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "Numerisk verdi trengst"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Teikn som ikkje er siffer er ikkje tillatt."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "Automatisk oppdaging av tastaturutlegg?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Standard oppsett for val av tastaturutlegg for Xorg-tenaren blir basert på "
-"ein kombinasjon av språk og det tastaturutlegget som er valt under "
-"installasjonen."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Vel dette om du vil at tastaturutlegget skal bli oppdaga på nytt. Ikkje vel "
-"dette om du vil halde på det noverande utlegget."
 
 #. Type: select
 #. Choices
@@ -637,6 +234,298 @@ msgid ""
 msgstr ""
 "Denne pakkeinstallasjonen vil no avslutte som mislukka slik at du kan gjere "
 "dette. Køyr oppgraderinga om igjen etter at du har tømt mappa."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Bruke kjernen sitt grensesnitt for rammebuffer?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "I staden for å kommunisere direkte med videoutstyret, kan X-tenaren bli "
+#~ "sett opp til å utføre visse operasjonar, som å skifte videomodus, ved "
+#~ "hjelp av kjernen sin drivar for rammebuffer."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "I teorien skal begge metodar fungere, men i praksis så er det av og til "
+#~ "den eine verkar og den andre ikkje verkar. Å slå på dette er det "
+#~ "tryggaste, men det er berre å prøve seg fram viss det viser seg å vere "
+#~ "problem."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Regelsett som skal brukast for XKB :"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "For at X-tenaren skal handtere tastaturet riktig må det veljast eit XKB-"
+#~ "regelsett."
+
+#, fuzzy
+#~| msgid ""
+#~| "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Dei som brukar U.S. engelsk tastatur bør la dette vere tomt."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Erfarne brukarar kan bruke eit av dei definerte XKB-regelsetta. Viss "
+#~ "pakka xkb-data er pakka ut finst dei tilgjengelege regelsetta i mappa /"
+#~ "usr/share/X11/xkb/rules."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Er du i tvil, så bruk «xorg»."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Tastaturmodell:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "For at X-tenaren skal handtere tastaturet riktig må ein tastaturmodell "
+#~ "oppgjevast. Tilgjengelege modellar er avhengig av kva for XKB-regelsett "
+#~ "som vert brukt."
+
+#, fuzzy
+#~| msgid ""
+#~| " With the \"xorg\" rule set:\n"
+#~| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~| " - pc104: similar to pc101 model, with additional keys, usually "
+#~| "engraved\n"
+#~| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~| "              keycodes;\n"
+#~| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~| " With the \"sun\" rule set:\n"
+#~| " - type4: Sun Type4 keyboards;\n"
+#~| " - type5: Sun Type5 keyboards."
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Med regelsettet \"xorg\" :\n"
+#~ " - pc101: tradisjonelt IBM PC/AT tastatur med 101 tastar, vanleg\n"
+#~ "          i USA.  Har ingen «logo» eller «meny»-tastar;\n"
+#~ " - pc104: liknar pc101-modellen, med fleire taster, som regel merka\n"
+#~ "          med eit «logo»-symbol og eit «meny»-symbol;\n"
+#~ " - pc102: liknar pc101 og ofte brukt i Europa. Har ein «< >»-tast;\n"
+#~ " - pc105: liknar pc104 og ofte brukt i Europa. Har ein «< >»-tast;\n"
+#~ " - macintosh: Macintosh-tastatur med bruk av eit nytt inndatalag\n"
+#~ "              med Linux tastekodar;\n"
+#~ " - macintosh_old: Macintosh-tastaturar utan det nye inndatalaget.\n"
+#~ "\n"
+#~ " Med regelsettet «sun» :\n"
+#~ " - type4: Sun Type 4-tastatur;\n"
+#~ " - type5: Sun Type 5-tastatur."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Tastatur for bærbare har ofte ikkje så mange tastar som "
+#~ "skrivebordsmaskiner, her bør det veljast ein tastaturmodell som ligg nær "
+#~ "til skildringa over."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Erfarne brukarar kan setje opp alle modellar som er definert av det valde "
+#~ "XKB-regelsettet. Viss pakka xkb-data er pakka ut finst tilgjengelege  "
+#~ "regelsett i mappa /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Dei som brukar engelsk tastatur i USA bør som regel oppgje «pc104». Dei "
+#~ "som brukar dei fleste andre tastaturer bør generelt oppgje «pc105»."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Tastaturutlegg:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "For at X-tenaren skal handtere tastaturet riktig må det oppgjevast eit "
+#~ "tastaturutlegg. Tilgjengelege utlegg er avhengig av kva for XKB-regelsett "
+#~ "og tastaturmodell som er valt tidlegare."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Erfarne brukarar kan nytte seg av alle utlegg som er støtta av det valde "
+#~ "XKB-regelsettet. Viss pakka xkb-data er pakka ut finst det tilgjengelege "
+#~ "regelsett i mappa /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Dei som brukar engelsk tastatur i USA bør som regel oppgje «us». Dei som "
+#~ "brukar tastatur laga for andre land bør generelt oppgje den landskoden "
+#~ "som er definert i ISO 3166. T.d. Frankrike «fr», Tyskland «de», Noreg «no»."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Tastaturvariant:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "For at X-tenaren skal handtere tastaturet slik ein ynskjer kan ein oppgje "
+#~ "ein tastaturvariant. Tilgjengelege variantar avheng av kva for XKB-"
+#~ "regelsett, modell og utlegg som er valt tidlegare."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Mange tastaturutlegg støttar det å handtere «daude» tastar, slik som "
+#~ "aksentar som ikkje flyttar skrivemerket, som normale tastar der "
+#~ "skrivemerket likevel vert flytta. Dersom det er dette du ynskjer så må du "
+#~ "skrive inn «nodeadkeys»."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Erfarne brukarar kan velje mellom alle variantar som har støtte i det "
+#~ "valde XKB-utlegget. Viss pakka xkb-data er pakka ut, sjå i mappa /usr/"
+#~ "share/X11/xkb etter fila som tilsvarar det valde utlegget etter "
+#~ "tilgjengelege variantar."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "Dei som brukar U.S. engelsk tastatur bør la dette vere tomt."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Tastaturval:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Ein kan setje ulike tastaturval for å få X-tenaren til å handtere "
+#~ "tastaturet slik ein ynskjer. Kva val som er tilgjengelege er avhengig av "
+#~ "kva for XKB-reglar som tidlegare er valt. Der ikkje alle val som vil "
+#~ "fungere med alle tastaturmodellar og utlegg."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Nokre døme: Viss du vil at Caps Lock-tasten skal oppføre seg som ein "
+#~ "ekstra Ctrl-tast, så kan du skrive inn «ctrl:nocaps». Viss du vli byte om "
+#~ "på Caps Lock-tasten og den venstre Ctrl-tasten, så kan du skrive inn «ctrl:"
+#~ "swapcaps»."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Eit anna døme: Somme likar å ha Meta-tasten tilgjengeleg på Alt-tastane "
+#~ "på tastaturet (dette er standard). Medan somme likar å ha Meta-tasten på "
+#~ "Windows eller «logo»-tastane i staden. Viss du helst vil bruke Windows "
+#~ "eller logo-tastane som Meta-tastar, kan du skrive inn «altwin:meta_win»."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Du kan kombinere tastaturvala ved å skilje dei med komma, til dømes «ctrl:"
+#~ "nocaps,altwin:meta_win»."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Erfarne brukarer kan bruke alle val som passar med den valde XKB-"
+#~ "modellen, utlegg og variant."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Er du i tvil, så la det stå tomt."
+
+#~ msgid "Empty value"
+#~ msgstr "Tom verdi"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Denne verdien kan ikkje vere tom."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Ugyldig dobbelt hermeteikn"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Dobble hermeteikn (\") er ikkje tillatt i denne verdien."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Numerisk verdi trengst"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Teikn som ikkje er siffer er ikkje tillatt."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Automatisk oppdaging av tastaturutlegg?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Standard oppsett for val av tastaturutlegg for Xorg-tenaren blir basert "
+#~ "på ein kombinasjon av språk og det tastaturutlegget som er valt under "
+#~ "installasjonen."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Vel dette om du vil at tastaturutlegget skal bli oppdaga på nytt. Ikkje "
+#~ "vel dette om du vil halde på det noverande utlegget."
 
 #~ msgid "X server driver:"
 #~ msgstr "Drivar for X-tenarar:"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-02-09 15:14+0100\n"
+"POT-Creation-Date: 2009-04-09 00:51+0100\n"
 "PO-Revision-Date: 2006-10-03 08:13+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team:  KhmerOS <khos-discuss@forum.org.kh>\n"
@@ -26,44 +26,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "Use kernel framebuffer device interface?"
-msgstr "ប្រើ​ចំណុចប្រទាក់​ឧបករណ៍​ខឺណែល framebuffer ឬ ?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"ជំនួស​ឲ្យ​ទំនាក់ទំនង​ផ្ទាល់ ដោយ​ផ្នែករឹង​វីដេអូ ម៉ាស៊ីន​បម្រើ​ X ប្រហែល​ជា​ត្រូវ​បាន​កំណត់​រចនាសម្ព័ន្ធ​ដើម្បី​បង្ហាញ​"
-"ប្រតិបត្តិការមួយចំនួន ដូច​ជាការ ប្តូរ​របៀប​វីដេអូ​​ តាមរយៈ​កម្មវិធី​បញ្ជា​ framebuffer របស់​ខឺណែល​ ។"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"នៅក្នុង​ទ្រឹស្តី ការចូល​ទៅជិត​និមួយ​ៗ​គួរតែ​ធ្វើការ​ ប៉ុន្តែ​ក្នុង​ការ​អនុវត្តន៍ ពេល​ខ្លះ​មួយ​អាច​ប្រើ​បាន​ និង ផ្សេង​"
-"ទៀត​មិន​អាច​ ។  ការបើកជម្រើសនេះ គឺធ្វើឲ្យមាន​​សុវត្ថភាព​ ប៉ុន្តែយល់​ថា​ អាចបិទវា​បានដោយសេរី ប្រសិនបើ​"
-"វា​លេចឡើង​ដើម្បី​បង្ក​បញ្ហា ។"
-
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Video card's bus identifier:"
 msgstr "គ្រឿង​សម្គាល់​ខ្សែ​បញ្ចូន​របស់​កាតវីដេអូ​ ៖"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "Users of PowerPC machines, and users of any computer with multiple video "
 "devices, should specify the BusID of the video card in an accepted bus-"
@@ -74,13 +45,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid "Examples:"
 msgstr "ឧទាហរណ៍ ៖"
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "For users of multi-head setups, this option will configure only one of the "
 "heads.  Further configuration will have to be done manually in the X server "
@@ -92,7 +63,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "You may wish to use the \"lspci\" command to determine the bus location of "
 "your PCI, AGP, or PCI-Express video card."
@@ -102,7 +73,7 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../xserver-xorg.templates:3001
+#: ../xserver-xorg.templates:2001
 msgid ""
 "When possible, this question has been pre-answered for you and you should "
 "accept the default unless you know it doesn't work."
@@ -112,368 +83,9 @@ msgstr ""
 
 #. Type: note
 #. Description
-#: ../xserver-xorg.templates:4001
+#: ../xserver-xorg.templates:3001
 msgid "Incorrect format for the bus identifier"
 msgstr "គ្រឿង​សម្គាល់​ខ្សែ​បញ្ចូន​តិន្ន័យ​មាន​ទ្រង់ទ្រាយ​មិន​ត្រឹមត្រូវ​"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "XKB rule set to use:"
-msgstr "XKB កំណត់​សិទ្ធ​ប្រើ​ ៖"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr "សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​ត្រឹមត្រូវ​,  XKB ត្រូវ​ជ្រើស​កំណត់​សិទ្ធ​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "ជាទូទៅ​អ្នកប្រើ​ក្តារចុច​អង់គ្លេស​ អាមេរិច​ត្រូវ​ទុក​ឲ្យ​ធាតុ​នេះទទេ​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​សំណុំក្បួន XKB ដែល​បាន​កំណត់​មួយ​ចំនួន ។  ប្រសិន​បើ​កញ្ចប់​ទិន្នន័យ xkb ត្រូវ​"
-"បាន​ពន្លា សូម​មើល​ថត /usr/share/X11/xkb/rules សម្រាប់​សំណុំក្បួន​ដែល​មាន ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "ពេល​សង្ស័យ​, តម្លៃ​នេះ​ត្រូវតែ​កំណត់​ជា​ \"xorg\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Keyboard model:"
-msgstr "ម៉ូដែល​ក្តារចុច ៖"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​ត្រឹមត្រូវ​, ត្រូវ​បញ្ចូល​ម៉ូដែល​ក្តារចុច​ ។ ម៉ូដែល​​អាច​រក​បាន​អាស្រ័យ​"
-"លើ​ XKB កំណត់​សិទ្ធ​អ្នក​ប្រើ​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" ជាមួយ​ \"xorg\" កំណត់​សិទ្ធ ៖\n"
-" - pc101 ៖ រចនាប័ទ្ម​ក្តារចុច​ IBM PC/AT ដែល​ចាស់ដែល​មាន​គ្រាប់ចុច​១០១, ធម្មតា​\n"
-"          សហរដ្ឋអាមេរិច ។  គ្មាន​ \"logo\" ឬ \"menu\" keys;\n"
-" - pc104: ស្រដៀង​នឹង​ម៉ូដែល​១០១ , ​ជាមួយ​ការ​បន្ថែម​គ្រាប់ចុច​, ជាធម្មតា​បានឆ្លាក់​ ។\n"
-"          ជាមួយ​ \"logo\" និម្មិតរូប \"menu\" និម្មិត​រូប​;\n"
-" - pc102: សដៀង​កុំព្យួទ័រ​ ១០១ ហើយ​ញឹកញាប់រក​​ឃើញ​ក្នុង​អ៊ឺរ៉ុប​ ។ រួម​មាន​សញ្ញា​ \"< >\" គ្រាប់ចុច​;\n"
-" - pc105 ៖ ស្រដៀង​កុំព្យួទ័រ ១០៤ ហើយ​ញឹកញាប់​រកឃើញ​ក្នុង​អ៊ឺរ៉ុប​ ។ រួម​មាន​សញ្ញា​ \"< >\" គ្រាប់ចុច​;\n"
-" - macintosh ៖ គ្រាប់ចុច​ Macintosh ប្រើ​ស្រទាប់​បញ្ចូល​ថ្មី​ជាមួយ​លីនុច​\n"
-"              កូដ​គ្រាប់ចុច​;\n"
-" - macintosh_old ៖ គ្រាប់ចុច​ Macintosh មិន​ប្រើ​ស្រទាប់​ក្តារចុច​ថ្មី​ទេ​ ។\n"
-" ជាមួយ​ \"sun\" កំណត់​សិទ្ធ​ ៖\n"
-" - type4 ៖ ក្តារចុច​ Sun ប្រភេទ 4 ;\n"
-" - type5 ៖ ក្តារចុច​ Sun ប្រភេទ​ 5 ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"ក្តារចុ​កុំព្យួទ័រ​យួរដៃ​ ញឹកញាប់​ពុំ​មាន​គ្រាប់ចុច​​​ម៉ូដែល​តែឯង​ទេ; អ្នក​ប្រើ​កុំព្យួទ័រ​យួរដៃ​ត្រូវតែ​ជ្រើស​ម៉ូដែល​ក្តារចុច​​ "
-"ដែល​ប្រហាក់ប្រហែលក្តារ​ចុច​ខាងលើ​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​ម៉ូដែល​ណា​មួយ​ដែល​បាន​កំណត់​ដោយ​សំណុំ​ក្បួន XKB ដែល​បាន​ជ្រើស ។ប្រសិន​បើ​"
-"កញ្ចប់​ទិន្នន័យ xkb ត្រូវ​បាន​ពន្លា សូម​មើល​ថត /usr/share/X11/xkb/rules សម្រាប់​សំណុំ​ក្បួន​ដែល​មាន ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"អ្នកប្រើក្តារចុច​អង់គ្លេស​ អាមេរិច​ ជាទូទៅ​ត្រូវ​បញ្ចូល​ \"pc104\" ។ អ្នក​ប្រើ​ក្តារចុច​ផ្សេងទៀត​ ជាទូទៅ​"
-"ត្រូវ​បញ្ចូល​ \"pc105\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard layout:"
-msgstr "ប្លង​ក្តារចុច​ ៖"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"សម្រាប់​ម៉ាស៊ីន​ម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​ត្រឹមត្រូវ​, ​ត្រូវតែ​វញ្ចូល​ប្លង់ក្តារចុច ។ ប្លង់​ដែល​អាច​រក​បាន​"
-"អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​ហើយ ម៉ូដែល​គ្រាប់ចុច​ត្រូវ​បាន​ជ្រើស​មុន​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​ប្លង់​ណា​មួយ​ដែល​បាន​គាំទ្រ​ដោយ​សំណុំ​ក្បួន XKB ដែល​បាន​ជ្រើស ។  ប្រសិន​បើ​"
-"កញ្ចប់​ទិន្នន័យ xkb ត្រូវ​បាន​ពន្លា សូម​មើល​ថត​ក្បួន /usr/share/X11/xkb/សម្រាប់​សំណុំ​ក្បួន​ដែល​មាន ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"អ្នក​ប្រើ​ក្តារចុច​អង់គ្លេស​អាមេរិច​ ត្រូវបញ្ចូល​ \"us\" ។​  អ្នក​ប្រើ​ក្តារចុចកំណត់​កន្លែង​សម្រាប់​ប្រទេស​ដទៃ​"
-"ជាទូទៅ​ ត្រូវតែ​បញ្ចូល​កូដ​តំបន់​  ISO 3166 របស់ពួកគេ​ ។  ឧទាហរណ៍., បារាំ​ង​ប្រើ \"fr\", ហើយ​អាឡឺម៉ង់​"
-"ប្រើ​ \"de\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard variant:"
-msgstr "វ៉ារ្យង់​ក្តារចុច​ ៖"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ​ដើម្បី​គ្រប់គ្រង​ក្តារចុច​តាម​បំណង, បញ្ចូល​ វ៉ារ្យង់​ក្តារចុច​ ។ វ៉ារ្យង់​ដែល​អាច​រក​បាន​"
-"អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​, ម៉ូដែល​, ហើយ​ប្លង់​មុន​ត្រូវ​បាន​ជ្រើស​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"មាន​ប្លង់​ក្តារចុច​ជាច្រើន​គាំទ្រ​ជ្រើស​ចំពោះគ្រាប់ចុច​​ \"dead\" ដូចជា​របាំងសញ្ញា​​គ្មាន​ចន្លោះ​​ និង​ "
-"diaereses ជា​គ្រាប់ចុច​ចន្លោះ​ធម្មតា​, ហើយ​បើ នេះ​ជាឥរិយាបទ​ដែល​ចូលចិត្ត, បញ្ចូល \"nodeadkeys"
-"\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​វ៉ារ្យង់​ដែល​បាន​គាំទ្រ​ដោយ​ប្លង់ XKB ដែល​បាន​ជ្រើស ។ប្រសិន​បើ​កញ្ចប់​"
-"ទិន្នន័យ xkb ត្រូវ​បាន​ពន្លា សូម​មើល​ថត​និមិត្ត​សញ្ញា /usr/share/X11/xkb/សម្រាប់​ឯកសារ​ដែល​ទាក់ទង​នឹង​"
-"ប្លង់​ដែល​បាន​ជ្រើស​របស់​អ្នក សម្រាប់​វ៉ារ្យង់​ដែល​មាន ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "ជាទូទៅ​អ្នកប្រើ​ក្តារចុច​អង់គ្លេស​ អាមេរិច​ត្រូវ​ទុក​ឲ្យ​ធាតុ​នេះទទេ​ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard options:"
-msgstr "ជ្រើស​​ក្តារចុច ៖"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​តាម​បំណង​, បញ្ចូល​ជម្រើស​ក្តារចុច​ ។ ជម្រើស​ដែល​អាច​រក​បាន​"
-"អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​បាន​ជ្រើស​មុន​ ។  គ្មាន​ជម្រើស​ទាំងអស់​ដែល​ធ្វើការជាមួយ​​ម៉ូដែល​ក្តារចុច​និង ប្លង់​ ​។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"ឧទារហណ៍​​, បើ​អ្នក​ចង់​ប្រើ​គ្រាប់ចុច​ប្តូរជាប់​ជា​ការបន្ថែម​គ្រាប់ចុច​វត្ថុបញ្ជា​ ,អ្នក​អាច​បញ្ចូល​ \"ctrl:"
-"nocaps\"; បើ​អ្នក​ចង់​ប្តូរ​ប្តូរជាប់​និង គ្រាប់ចុច​វត្ថុបញ្ជា​ឆ្វេង​ , អ្នក​អាច​បញ្ចូល​ \"ctrl:swapcaps"
-"\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"ជាឧទាហរណ៍​ផ្សេងទៀត​, អ្នក​ប្រើ​ខ្លះ ចូលចិត្ត​ប្រើ​គ្រាប់ចុច Meta ដែល​អាច​ប្រើ​គ្រាប់ចុច​ Alt របស់​ក្តារចុច "
-"(នេះ​ជាលំនៃដើម​), ខណៈពេល​មនុស្ស​ផ្សេងទៀត​កំពុង​ប្រើ​គ្រាប់ចុច ​Meta លើ​ Windows ឬគ្រាប់ចុច​ \"logo"
-"\"  ជំនួស​ ។ បើ​អ្នក​ចូលចិត្ត​ប្រើ​ Windows ឬ គ្រាប់ចុច​ឡូហ្គោរបស់​អ្នក​ជា​គ្រាប់ចុច​ Meta, អ្នក​ត្រូវ​បញ្ចូល​ "
-"\"altwin:meta_win\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"អ្នក​អាច​ផ្សំ​ជម្រើស​តាម​ការបំបែក​ដោយ​សញ្ញា​(,), ដូចជា​ \"ctrl:nocaps,altwin:meta_win\" ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"អ្នក​ប្រើ​ដែល​មាន​បទពិសោធ​អាច​ប្រើ​ជម្រើស​ជាច្រើន​​​មាន​សមត្ថភាពដែល​បាន​ជ្រើស​ម៉ូដែល​ XKB , ប្លង់​និង "
-"វ៉ារ្យង់ ។"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "When in doubt, this value should be left blank."
-msgstr "ពេលសង្ស័យ​, តម្លៃ​នេះ​គួរ​រូវ​ទទេ  ។"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Empty value"
-msgstr "តម្លៃ​ទទេ​"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "A null entry is not permitted for this value."
-msgstr "ធាតុ​គ្មាន​តម្លៃ​មិន​បាន​អនុញ្ញាត​សម្រាប់​តម្លៃ​នេះ​ទេ​ ។"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Invalid double-quote characters"
-msgstr "តួអក្សរ​ដកស្រង់​ទ្វេរ​ដង​មិន​ត្រឹមត្រូវ​"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "ដកស្រង់​ទ្វេរ​ដង​ (\") តួអក្សរ​ដែល​មិន​អនុញ្ញាត​ក្នុង​តម្លៃ​ធាតុ​ ។"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Numerical value needed"
-msgstr "ត្រូវ​ការ​តម្លៃ​ជាលេខ​"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "តួអក្សរ​ក្រៅ​ពី​តួលេខ​មិន​អនុញ្ញាត​មាន​ក្នុង​ធាតុ​ ។"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Autodetect keyboard layout?"
-msgstr "​រក​ឃើញ​ប្លង់​ក្តារចុច​ស្វ័យ​ប្រវត្តិឬ ?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"ការជ្រើស​ប្លង់​ក្តារចុច​លំនាំដើម​សម្រាប់​ម៉ាស៊ីន​បម្រើ​ Xorg ដែល​នឹង​អាស្រ័យ​លើ​ការ​​បញ្ចូល​គ្នានៃ​ភាសា​និង "
-"ប្លង់ក្តារចុច​ដែល​បាន​ជ្រើស​ក្នុង​កម្មវិធី​ដំឡើង​ ។"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"ជ្រើស​ជម្រើស​នេះ​ បើ​អ្នកចង់​បាន​ប្លង់​ក្តារចុចដែល​បាន​រកឃើញ​ឡើង​វិញ​ ។  កុំ​ជ្រើស​វា​ បើ​អ្នក​ចង់​រក្សារ​ប្លង់​"
-"ក្តារចុច​បច្ចុប្បន្ន​ ។​"
 
 #. Type: select
 #. Choices
@@ -618,6 +230,284 @@ msgid ""
 msgstr ""
 "ការ​ដំឡើង​កញ្ចប់​នេះ​ឥឡូវ​នឹង​បរាជ័យ និង​បិទ ដូច្នេះ​អ្នក​អាច​ធ្វើ​ដូច​នេះ​បាន ។ សូម​រត់​បែបបទ​ធ្វើ​ឲ្យ​ប្រសើរ​ម្ដង​"
 "ទៀត បន្ទាប់​ពី​អ្នក​បាន​សម្អាត​ថត ។"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "ប្រើ​ចំណុចប្រទាក់​ឧបករណ៍​ខឺណែល framebuffer ឬ ?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "ជំនួស​ឲ្យ​ទំនាក់ទំនង​ផ្ទាល់ ដោយ​ផ្នែករឹង​វីដេអូ ម៉ាស៊ីន​បម្រើ​ X ប្រហែល​ជា​ត្រូវ​បាន​កំណត់​រចនាសម្ព័ន្ធ​ដើម្បី​"
+#~ "បង្ហាញ​ប្រតិបត្តិការមួយចំនួន ដូច​ជាការ ប្តូរ​របៀប​វីដេអូ​​ តាមរយៈ​កម្មវិធី​បញ្ជា​ framebuffer របស់​"
+#~ "ខឺណែល​ ។"
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "នៅក្នុង​ទ្រឹស្តី ការចូល​ទៅជិត​និមួយ​ៗ​គួរតែ​ធ្វើការ​ ប៉ុន្តែ​ក្នុង​ការ​អនុវត្តន៍ ពេល​ខ្លះ​មួយ​អាច​ប្រើ​បាន​ និង "
+#~ "ផ្សេង​ទៀត​មិន​អាច​ ។  ការបើកជម្រើសនេះ គឺធ្វើឲ្យមាន​​សុវត្ថភាព​ ប៉ុន្តែយល់​ថា​ អាចបិទវា​បានដោយសេរី "
+#~ "ប្រសិនបើ​វា​លេចឡើង​ដើម្បី​បង្ក​បញ្ហា ។"
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "XKB កំណត់​សិទ្ធ​ប្រើ​ ៖"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr "សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​ត្រឹមត្រូវ​,  XKB ត្រូវ​ជ្រើស​កំណត់​សិទ្ធ​ ។"
+
+#, fuzzy
+#~| msgid ""
+#~| "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "ជាទូទៅ​អ្នកប្រើ​ក្តារចុច​អង់គ្លេស​ អាមេរិច​ត្រូវ​ទុក​ឲ្យ​ធាតុ​នេះទទេ​ ។"
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​សំណុំក្បួន XKB ដែល​បាន​កំណត់​មួយ​ចំនួន ។  ប្រសិន​បើ​កញ្ចប់​ទិន្នន័យ xkb "
+#~ "ត្រូវ​បាន​ពន្លា សូម​មើល​ថត /usr/share/X11/xkb/rules សម្រាប់​សំណុំក្បួន​ដែល​មាន ។"
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "ពេល​សង្ស័យ​, តម្លៃ​នេះ​ត្រូវតែ​កំណត់​ជា​ \"xorg\" ។"
+
+#~ msgid "Keyboard model:"
+#~ msgstr "ម៉ូដែល​ក្តារចុច ៖"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​ត្រឹមត្រូវ​, ត្រូវ​បញ្ចូល​ម៉ូដែល​ក្តារចុច​ ។ ម៉ូដែល​​អាច​រក​បាន​"
+#~ "អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​អ្នក​ប្រើ​ ។"
+
+#, fuzzy
+#~| msgid ""
+#~| " With the \"xorg\" rule set:\n"
+#~| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~| " - pc104: similar to pc101 model, with additional keys, usually "
+#~| "engraved\n"
+#~| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~| "              keycodes;\n"
+#~| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~| " With the \"sun\" rule set:\n"
+#~| " - type4: Sun Type4 keyboards;\n"
+#~| " - type5: Sun Type5 keyboards."
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " ជាមួយ​ \"xorg\" កំណត់​សិទ្ធ ៖\n"
+#~ " - pc101 ៖ រចនាប័ទ្ម​ក្តារចុច​ IBM PC/AT ដែល​ចាស់ដែល​មាន​គ្រាប់ចុច​១០១, ធម្មតា​\n"
+#~ "          សហរដ្ឋអាមេរិច ។  គ្មាន​ \"logo\" ឬ \"menu\" keys;\n"
+#~ " - pc104: ស្រដៀង​នឹង​ម៉ូដែល​១០១ , ​ជាមួយ​ការ​បន្ថែម​គ្រាប់ចុច​, ជាធម្មតា​បានឆ្លាក់​ ។\n"
+#~ "          ជាមួយ​ \"logo\" និម្មិតរូប \"menu\" និម្មិត​រូប​;\n"
+#~ " - pc102: សដៀង​កុំព្យួទ័រ​ ១០១ ហើយ​ញឹកញាប់រក​​ឃើញ​ក្នុង​អ៊ឺរ៉ុប​ ។ រួម​មាន​សញ្ញា​ \"< >\" គ្រាប់ចុច​;\n"
+#~ " - pc105 ៖ ស្រដៀង​កុំព្យួទ័រ ១០៤ ហើយ​ញឹកញាប់​រកឃើញ​ក្នុង​អ៊ឺរ៉ុប​ ។ រួម​មាន​សញ្ញា​ \"< >\" គ្រាប់ចុច​"
+#~ ";\n"
+#~ " - macintosh ៖ គ្រាប់ចុច​ Macintosh ប្រើ​ស្រទាប់​បញ្ចូល​ថ្មី​ជាមួយ​លីនុច​\n"
+#~ "              កូដ​គ្រាប់ចុច​;\n"
+#~ " - macintosh_old ៖ គ្រាប់ចុច​ Macintosh មិន​ប្រើ​ស្រទាប់​ក្តារចុច​ថ្មី​ទេ​ ។\n"
+#~ " ជាមួយ​ \"sun\" កំណត់​សិទ្ធ​ ៖\n"
+#~ " - type4 ៖ ក្តារចុច​ Sun ប្រភេទ 4 ;\n"
+#~ " - type5 ៖ ក្តារចុច​ Sun ប្រភេទ​ 5 ។"
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "ក្តារចុ​កុំព្យួទ័រ​យួរដៃ​ ញឹកញាប់​ពុំ​មាន​គ្រាប់ចុច​​​ម៉ូដែល​តែឯង​ទេ; អ្នក​ប្រើ​កុំព្យួទ័រ​យួរដៃ​ត្រូវតែ​ជ្រើស​ម៉ូដែល​"
+#~ "ក្តារចុច​​ ដែល​ប្រហាក់ប្រហែលក្តារ​ចុច​ខាងលើ​ ។"
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​ម៉ូដែល​ណា​មួយ​ដែល​បាន​កំណត់​ដោយ​សំណុំ​ក្បួន XKB ដែល​បាន​ជ្រើស ។ប្រសិន​បើ​"
+#~ "កញ្ចប់​ទិន្នន័យ xkb ត្រូវ​បាន​ពន្លា សូម​មើល​ថត /usr/share/X11/xkb/rules សម្រាប់​សំណុំ​ក្បួន​ដែល​"
+#~ "មាន ។"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "អ្នកប្រើក្តារចុច​អង់គ្លេស​ អាមេរិច​ ជាទូទៅ​ត្រូវ​បញ្ចូល​ \"pc104\" ។ អ្នក​ប្រើ​ក្តារចុច​ផ្សេងទៀត​ "
+#~ "ជាទូទៅ​ត្រូវ​បញ្ចូល​ \"pc105\" ។"
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "ប្លង​ក្តារចុច​ ៖"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "សម្រាប់​ម៉ាស៊ីន​ម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​ត្រឹមត្រូវ​, ​ត្រូវតែ​វញ្ចូល​ប្លង់ក្តារចុច ។ ប្លង់​ដែល​អាច​រក​បាន​"
+#~ "អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​ហើយ ម៉ូដែល​គ្រាប់ចុច​ត្រូវ​បាន​ជ្រើស​មុន​ ។"
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​ប្លង់​ណា​មួយ​ដែល​បាន​គាំទ្រ​ដោយ​សំណុំ​ក្បួន XKB ដែល​បាន​ជ្រើស ។  ប្រសិន​"
+#~ "បើ​កញ្ចប់​ទិន្នន័យ xkb ត្រូវ​បាន​ពន្លា សូម​មើល​ថត​ក្បួន /usr/share/X11/xkb/សម្រាប់​សំណុំ​ក្បួន​ដែល​"
+#~ "មាន ។"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "អ្នក​ប្រើ​ក្តារចុច​អង់គ្លេស​អាមេរិច​ ត្រូវបញ្ចូល​ \"us\" ។​  អ្នក​ប្រើ​ក្តារចុចកំណត់​កន្លែង​សម្រាប់​ប្រទេស​"
+#~ "ដទៃ​ជាទូទៅ​ ត្រូវតែ​បញ្ចូល​កូដ​តំបន់​  ISO 3166 របស់ពួកគេ​ ។  ឧទាហរណ៍., បារាំ​ង​ប្រើ \"fr\", ហើយ​"
+#~ "អាឡឺម៉ង់​ប្រើ​ \"de\" ។"
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "វ៉ារ្យង់​ក្តារចុច​ ៖"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ​ដើម្បី​គ្រប់គ្រង​ក្តារចុច​តាម​បំណង, បញ្ចូល​ វ៉ារ្យង់​ក្តារចុច​ ។ វ៉ារ្យង់​ដែល​អាច​រក​"
+#~ "បាន​អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​, ម៉ូដែល​, ហើយ​ប្លង់​មុន​ត្រូវ​បាន​ជ្រើស​ ។"
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "មាន​ប្លង់​ក្តារចុច​ជាច្រើន​គាំទ្រ​ជ្រើស​ចំពោះគ្រាប់ចុច​​ \"dead\" ដូចជា​របាំងសញ្ញា​​គ្មាន​ចន្លោះ​​ និង​ "
+#~ "diaereses ជា​គ្រាប់ចុច​ចន្លោះ​ធម្មតា​, ហើយ​បើ នេះ​ជាឥរិយាបទ​ដែល​ចូលចិត្ត, បញ្ចូល \"nodeadkeys"
+#~ "\" ។"
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "អ្នក​ប្រើ​ដែល​មាន​បទពិសោធន៍ អាច​ប្រើ​វ៉ារ្យង់​ដែល​បាន​គាំទ្រ​ដោយ​ប្លង់ XKB ដែល​បាន​ជ្រើស ។ប្រសិន​បើ​កញ្ចប់​"
+#~ "ទិន្នន័យ xkb ត្រូវ​បាន​ពន្លា សូម​មើល​ថត​និមិត្ត​សញ្ញា /usr/share/X11/xkb/សម្រាប់​ឯកសារ​ដែល​ទាក់ទង​"
+#~ "នឹង​ប្លង់​ដែល​បាន​ជ្រើស​របស់​អ្នក សម្រាប់​វ៉ារ្យង់​ដែល​មាន ។"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "ជាទូទៅ​អ្នកប្រើ​ក្តារចុច​អង់គ្លេស​ អាមេរិច​ត្រូវ​ទុក​ឲ្យ​ធាតុ​នេះទទេ​ ។"
+
+#~ msgid "Keyboard options:"
+#~ msgstr "ជ្រើស​​ក្តារចុច ៖"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "សម្រាប់​ម៉ាស៊ីន​បម្រើ​ X ដើម្បី​គ្រប់គ្រង​ក្តារចុច​តាម​បំណង​, បញ្ចូល​ជម្រើស​ក្តារចុច​ ។ ជម្រើស​ដែល​អាច​រក​បាន​"
+#~ "អាស្រ័យ​លើ​ XKB កំណត់​សិទ្ធ​បាន​ជ្រើស​មុន​ ។  គ្មាន​ជម្រើស​ទាំងអស់​ដែល​ធ្វើការជាមួយ​​ម៉ូដែល​ក្តារចុច​និង ប្លង់​"
+#~ " ​។"
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "ឧទារហណ៍​​, បើ​អ្នក​ចង់​ប្រើ​គ្រាប់ចុច​ប្តូរជាប់​ជា​ការបន្ថែម​គ្រាប់ចុច​វត្ថុបញ្ជា​ ,អ្នក​អាច​បញ្ចូល​ \"ctrl:"
+#~ "nocaps\"; បើ​អ្នក​ចង់​ប្តូរ​ប្តូរជាប់​និង គ្រាប់ចុច​វត្ថុបញ្ជា​ឆ្វេង​ , អ្នក​អាច​បញ្ចូល​ \"ctrl:"
+#~ "swapcaps\" ។"
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "ជាឧទាហរណ៍​ផ្សេងទៀត​, អ្នក​ប្រើ​ខ្លះ ចូលចិត្ត​ប្រើ​គ្រាប់ចុច Meta ដែល​អាច​ប្រើ​គ្រាប់ចុច​ Alt របស់​"
+#~ "ក្តារចុច (នេះ​ជាលំនៃដើម​), ខណៈពេល​មនុស្ស​ផ្សេងទៀត​កំពុង​ប្រើ​គ្រាប់ចុច ​Meta លើ​ Windows "
+#~ "ឬគ្រាប់ចុច​ \"logo\"  ជំនួស​ ។ បើ​អ្នក​ចូលចិត្ត​ប្រើ​ Windows ឬ គ្រាប់ចុច​ឡូហ្គោរបស់​អ្នក​ជា​គ្រាប់ចុច​ "
+#~ "Meta, អ្នក​ត្រូវ​បញ្ចូល​ \"altwin:meta_win\" ។"
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "អ្នក​អាច​ផ្សំ​ជម្រើស​តាម​ការបំបែក​ដោយ​សញ្ញា​(,), ដូចជា​ \"ctrl:nocaps,altwin:meta_win\" ។"
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "អ្នក​ប្រើ​ដែល​មាន​បទពិសោធ​អាច​ប្រើ​ជម្រើស​ជាច្រើន​​​មាន​សមត្ថភាពដែល​បាន​ជ្រើស​ម៉ូដែល​ XKB , ប្លង់​និង "
+#~ "វ៉ារ្យង់ ។"
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "ពេលសង្ស័យ​, តម្លៃ​នេះ​គួរ​រូវ​ទទេ  ។"
+
+#~ msgid "Empty value"
+#~ msgstr "តម្លៃ​ទទេ​"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "ធាតុ​គ្មាន​តម្លៃ​មិន​បាន​អនុញ្ញាត​សម្រាប់​តម្លៃ​នេះ​ទេ​ ។"
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "តួអក្សរ​ដកស្រង់​ទ្វេរ​ដង​មិន​ត្រឹមត្រូវ​"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "ដកស្រង់​ទ្វេរ​ដង​ (\") តួអក្សរ​ដែល​មិន​អនុញ្ញាត​ក្នុង​តម្លៃ​ធាតុ​ ។"
+
+#~ msgid "Numerical value needed"
+#~ msgstr "ត្រូវ​ការ​តម្លៃ​ជាលេខ​"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "តួអក្សរ​ក្រៅ​ពី​តួលេខ​មិន​អនុញ្ញាត​មាន​ក្នុង​ធាតុ​ ។"
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "​រក​ឃើញ​ប្លង់​ក្តារចុច​ស្វ័យ​ប្រវត្តិឬ ?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "ការជ្រើស​ប្លង់​ក្តារចុច​លំនាំដើម​សម្រាប់​ម៉ាស៊ីន​បម្រើ​ Xorg ដែល​នឹង​អាស្រ័យ​លើ​ការ​​បញ្ចូល​គ្នានៃ​ភាសា​និង "
+#~ "ប្លង់ក្តារចុច​ដែល​បាន​ជ្រើស​ក្នុង​កម្មវិធី​ដំឡើង​ ។"
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "ជ្រើស​ជម្រើស​នេះ​ បើ​អ្នកចង់​បាន​ប្លង់​ក្តារចុចដែល​បាន​រកឃើញ​ឡើង​វិញ​ ។  កុំ​ជ្រើស​វា​ បើ​អ្នក​ចង់​រក្សារ​"
+#~ "ប្លង់​ក្តារចុច​បច្ចុប្បន្ន​ ។​"
 
 #~ msgid "X server driver:"
 #~ msgstr "កម្មវិធីបញ្ជា​ម៉ាស៊ីន​បម្រើ X ៖"
