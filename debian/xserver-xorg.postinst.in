@@ -479,6 +479,9 @@ case "$1" in
     if dpkg --compare-versions "$2" lt-nl "1:7.3+13"; then
       update-rc.d xserver-xorg remove || true
     fi
+    if dpkg --compare-versions "$2" lt "1:7.4"; then
+      invoke-rc.d hal restart
+    fi
     ;;
 esac
 
