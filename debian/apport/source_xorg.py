@@ -19,6 +19,7 @@ the full text of the license.
 
 import os.path
 import subprocess
+from apport.hookutils import *
 
 def installed_version(pkg):
     script = subprocess.Popen(['apt-cache', 'policy', pkg], stdout=subprocess.PIPE)
@@ -27,127 +28,54 @@ def installed_version(pkg):
 
 def add_info(report):
     # Build System Environment
-    report['system']      = " distro:             Ubuntu\n"
-    try:
-        script = subprocess.Popen(['uname', '-m'], stdout=subprocess.PIPE)
-        report['system'] += " architecture:       " + script.communicate()[0]
-    except OSError:
-        pass
-    try:
-        script = subprocess.Popen(['uname', '-r'], stdout=subprocess.PIPE)
-        report['system'] += " kernel:             " + script.communicate()[0]
-    except OSError:
-        pass
-    try:
-        report['system'] += " xserver-xorg:     " + installed_version('xserver-xorg') + "\n"
-    except OSError:
-        pass
-    try:
-        report['system'] += " mesa:             " + installed_version('libgl1-mesa-glx') + "\n"
-    except OSError:
-        pass
-    try:
-        report['system'] += " libdrm:           " + installed_version('libdrm2') + "\n"
-    except OSError:
-        pass
-    try:
-        report['system'] += " -intel:           " + installed_version('xserver-xorg-video-intel') + "\n"
-    except OSError:
-        pass
-    try:
-        report['system'] += " -ati:             " + installed_version('xserver-xorg-video-ati') + "\n"
-    except OSError:
-        pass
+    report['system']  = "distro:             Ubuntu\n"
+    report['system'] += "architecture:       " + command_output(['uname','-m'])
+    report['system'] += "kernel:             " + command_output(['uname','-r'])
 
-    try:
-        report['XorgConf'] = open('/etc/X11/xorg.conf').read()
-    except IOError:
-        pass
+    attach_related_packages(report, [
+            "xserver-xorg",
+            "libgl1-mesa-glx",
+            "libdrm2",
+            "xserver-xorg-video-intel",
+            "xserver-xorg-video-ati"
+            ])
 
-    try:
-        report['XorgLog']  = open('/var/log/Xorg.0.log').read()
-    except IOError:
-        pass
+    matches = command_output(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'])
+    if (matches):
+        report['fglrx-loaded'] = matches
 
-    try:
-        report['XorgLogOld']  = open('/var/log/Xorg.0.log.old').read()
-    except IOError:
-        pass
+    attach_file(report, '/etc/X11/xorg.conf', 'XorgConf')
+    attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
+    attach_file(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
+    attach_file_if_exists(report, '/var/log/gdm/:0.log', 'GdmLog')
+    attach_file_if_exists(report, '/var/log/gdm/:0.log.1', 'GdmLogOld')
 
-    try:
-        report['ProcVersion']  = open('/proc/version').read()
-    except IOError:
-        pass
+    # Capture hardware
+    attach_hardware(report)
+    report['PciDisplay'] = pci_devices(PCI_DISPLAY)
+    
+    # Detect proprietary drivers
+    if 'fglrx' in report['ProcModules']:
+        report['fglrx'] = recent_syslog(re.compile('fglrx'))
+    else:
+        report['fglrx'] = 'Not loaded'
 
-    try:
-        script = subprocess.Popen(['lspci', '-vvnn'], stdout=subprocess.PIPE)
-        report['LsPci'] = script.communicate()[0]
-    except OSError:
-        pass
+    # For resolution/multi-head bugs
+    report['Xrandr'] = command_output(['xrandr', '--verbose'])
+    attach_file_if_exists(report,
+                          os.path.expanduser('~/.config/monitors.xml'),
+                          'monitors.xml')
 
-    try:
-        script = subprocess.Popen(['lshal'], stdout=subprocess.PIPE)
-        report['LsHal'] = script.communicate()[0]
-    except OSError:
-        pass
 
-    try:
-        script = subprocess.Popen(['lsmod'], stdout=subprocess.PIPE)
-        report['LsMod'] = script.communicate()[0]
-    except OSError:
-        pass
+    # For font dpi bugs
+    report['xdpyinfo'] = command_output(['xdpyinfo'])
 
-    try:
-        script = subprocess.Popen(['mount', '-t', 'ext4'], stdout=subprocess.PIPE)
-        matches = script.communicate()[0]
-        if (matches):
-            report['ext4'] = matches
-    except OSError:
-        pass
+    # For 3D/Compiz/Mesa bugs
+    report['glxinfo'] = command_output(['glxinfo'])
 
-    try:
-        script = subprocess.Popen(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'], stdout=subprocess.PIPE)
-        matches = script.communicate()[0]
-        if (matches):
-            report['fglrx-loaded'] = matches
-    except OSError:
-        pass
-
-    try:
-        script = subprocess.Popen(['xrandr', '--verbose'], stdout=subprocess.PIPE)
-        report['Xrandr'] = script.communicate()[0]
-    except OSError:
-        pass
-
-    try:
-        monitors_config = os.path.join(os.environ['HOME'], '.config/monitors.xml')
-        report['monitors.xml']  = open(monitors_config).read()
-    except IOError:
-        pass
-
-    try:
-        script = subprocess.Popen(['xdpyinfo'], stdout=subprocess.PIPE)
-        report['xdpyinfo'] = script.communicate()[0]
-    except OSError:
-        pass
-
-    try:
-        script = subprocess.Popen(['glxinfo'], stdout=subprocess.PIPE)
-        report['glxinfo'] = script.communicate()[0]
-    except OSError:
-        pass
-
-    try:
-        script = subprocess.Popen(['setxkbmap', '-print'], stdout=subprocess.PIPE)
-        report['setxkbmap'] = script.communicate()[0]
-    except OSError:
-        pass
-
-    try:
-        script = subprocess.Popen(['xkbcomp', ':0', '-w0', '-'], stdout=subprocess.PIPE)
-        report['xkbcomp'] = script.communicate()[0]
-    except OSError:
-        pass
+    # For keyboard bugs
+    report['setxkbmap'] = command_output(['setxkbmap', '-print'])
+    report['xkbcomp'] = command_output(['xkbcomp', ':0', '-w0', '-'])
 
 ## DEBUGING ##
 if __name__ == '__main__':
