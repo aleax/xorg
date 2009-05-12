@@ -5,6 +5,9 @@ xorg (1:7.4+2) UNRELEASED; urgency=low
     It remains tied to -core at this point. (closes: #523630).
   * Add libgl1-mesa-dri to the depends of the xorg package to ensure that
     it gets pulled in even if Recommends are disabled
+  * Make xorg depend on xorg-docs-core and move xorg-docs to be a
+    suggests.  This makes for a slimmer default while providing the
+    necessary manpages that we expect to be present on every install.
 
   [ Julien Cristau ]
   * Update the NEWS entry for xserver-xorg 1:7.4+1 to include a warning about
