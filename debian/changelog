@@ -16,6 +16,8 @@ xorg (1:7.4+2) UNRELEASED; urgency=low
   * Restart hal from xserver-xorg.postinst.  hal's trigger gets run too early,
     when console-setup is not yet configured, so it doesn't pick up the keymap
     correctly.
+  * Mention the requirement for a CONFIG_INPUT_EVDEV-enabled kernel in
+    xserver-xorg.NEWS.
 
   [ Debconf translations ]
   * Bengali added

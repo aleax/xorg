@@ -20,6 +20,12 @@ xserver-xorg (1:7.4+1) unstable; urgency=low
   Xmodmaps relying on the old keycodes. You'll need to re-configure these
   custom maps with the new keycodes.
 
+  * Linux kernel configuration requirement
+
+  The evdev X driver can't work if the CONFIG_INPUT_EVDEV option is disabled
+  in your kernel configuration.  You'll have to either enable this kernel
+  option, or disable the "AutoAddDevices" option in xorg.conf.
+
  -- Julien Cristau <jcristau@debian.org>  Thu, 16 Apr 2009 17:01:11 +0200
 
 xserver-xorg (1:7.0.15) unstable; urgency=low
