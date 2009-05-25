@@ -175,10 +175,10 @@ discover_sparc_video () {
         card='Sun TCX framebuffer' 
         driver='suntcx'
 	;;
-      'SUNW,m64B' )
-        card='ATI Technologies 3D Rage Pro or similar'
-        driver='ati'
-        ;;
+#      'SUNW,m64B' )
+#        card='ATI Technologies 3D Rage Pro or similar'
+#        driver='ati'
+#        ;;
       'SUNW,ffb' )
         card='Sun Creator3D framebuffer or similar'
         driver='sunffb'
@@ -187,10 +187,10 @@ discover_sparc_video () {
         card='Sun Elite3D framebuffer or similar'
         driver='sunffb'
         ;;
-      'TSI,gfxp' )
-        card='PGX32 framebuffer or similar'
-        driver='glint'
-        ;;
+#      'TSI,gfxp' )
+#        card='PGX32 framebuffer or similar'
+#        driver='glint'
+#        ;;
       * )
         card='Unknown'
         server='unknown'
@@ -537,6 +537,8 @@ if [ "$ARCH" = "sparc" ]; then
       if [ -n "$DRIVERS" ]; then
         NDRIVERS=$(echo "$DRIVERS" | wc -l)
         DRIVERS_LIST=$(echo "$DRIVERS" | awk 'BEGIN {ORS="";FS="\t"} {if(NR > 1){print last ","};last=$0} END {print last}')
+      else
+        DRIVERS=fbdev
       fi
       if [ $MULTIHEAD -gt 1 ]; then
         MULTIHEAD=yes
