@@ -18,6 +18,9 @@ xorg (1:7.4+2) UNRELEASED; urgency=low
     correctly.
   * Mention the requirement for a CONFIG_INPUT_EVDEV-enabled kernel in
     xserver-xorg.NEWS.
+  * Get rid of the remaining xserver-xorg debconf question (Bus ID).
+    Detection of the primary device should happen in the kernel and/or X
+    server.  With this change, we don't generate any xorg.conf anymore.
 
   [ Debconf translations ]
   * Bengali added
