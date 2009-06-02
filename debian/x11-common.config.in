@@ -16,7 +16,6 @@ THIS_SCRIPT=config
 
 CONFIG_DIR=/etc/X11
 XWRAPPER_CONFIG="$CONFIG_DIR/Xwrapper.config"
-OLD_CONFIG_FILE="$CONFIG_DIR/Xserver"
 
 allowed_users_english_to_actual () {
   case "$1" in
@@ -58,33 +57,12 @@ allowed_users_actual_to_english () {
   esac
 }
 
-validate_nice_value () {
-  _retval=1
-  # first, try to subtract number from itself to validate numeric input
-  # (expr is noisy, always throw away its output)
-  set +e
-  expr "$1" - "$1" > /dev/null 2>&1
-  if [ $? -eq 1 ]; then
-    # now check for valid range
-    if expr "$1" ">=" "-20" > /dev/null 2>&1 &&
-       expr "$1" "<=" "19" > /dev/null 2>&1; then
-       _retval=0
-    fi
-  fi
-  set -e
-  return $_retval
-}
-
 CURRENT_ALLOWED_USERS=
-CURRENT_NICE_VALUE=
 
 # scan the X wrapper config file for existing settings, if it exists
 if [ -e "$XWRAPPER_CONFIG" ]; then
   if MATCHES=$(grep "^allowed_users=.\+" "$XWRAPPER_CONFIG"); then
     CURRENT_ALLOWED_USERS=$(echo "${MATCHES##*=}" | head -n 1)
-  fi
-  if MATCHES=$(grep "^nice_value=.\+" "$XWRAPPER_CONFIG"); then
-    CURRENT_NICE_VALUE=$(echo "${MATCHES##*=}" | head -n 1)
   fi
 fi
 
@@ -94,14 +72,6 @@ if [ -n "$CURRENT_ALLOWED_USERS" ]; then
   run db_set x11-common/xwrapper/allowed_users \
                       $(allowed_users_actual_to_english \
                       "$CURRENT_ALLOWED_USERS")
-fi
-
-if [ -n "$CURRENT_NICE_VALUE" ]; then
-  observe "setting x11-common/xwrapper/nice_value from configuration file"
-  if validate_nice_value "$CURRENT_NICE_VALUE"; then
-    run db_set x11-common/xwrapper/nice_value \
-                        "$CURRENT_NICE_VALUE"
-  fi
 fi
 
 run db_input low x11-common/xwrapper/allowed_users
@@ -114,53 +84,6 @@ if db_get x11-common/xwrapper/allowed_users; then
                         $(allowed_users_english_to_actual "$RET")
   fi
 fi
-
-# next question requires input validation; assume safe valid value already
-# present (possibly the template default)
-SAFE=
-if db_get x11-common/xwrapper/nice_value; then
-  SAFE="$RET"
-fi
-
-# make sure it's really safe; if not, use the default
-if ! validate_nice_value "$RET"; then
-  SAFE="0"
-  run db_set x11-common/xwrapper/nice_value "$SAFE"
-fi
-
-set +e
-while :; do
-  db_input low x11-common/xwrapper/nice_value
-  # is the question going to be asked?
-  if [ $? -eq 30 ]; then
-    break # no; bail out of validation loop
-  fi
-  run db_go
-  RET=
-  if db_get x11-common/xwrapper/nice_value; then
-    # string, needs input validation
-    if validate_nice_value "$RET"; then
-      # valid input from user
-      break
-    else
-      # the input was invalid; restore the known good value in case we are
-      # interrupted before the user provides a valid one
-      run db_set x11-common/xwrapper/nice_value "$SAFE"
-      run db_fset x11-common/xwrapper/nice_value seen false
-      # now display the error message
-      run db_fset x11-common/xwrapper/nice_value/error seen false
-      run db_input critical x11-common/xwrapper/nice_value/error
-      run db_go
-    fi
-  fi
-done
-set -e
-
-if [ "$1" = "configure" ] && dpkg --compare-versions "$2" lt "1:7.0.11"; then
-      run db_input medium x11-common/upgrade_issues
-      run db_go
-fi
-
 exit 0
 
 # vim:set ai et sts=2 sw=2 tw=0:

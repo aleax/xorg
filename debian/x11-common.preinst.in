@@ -23,16 +23,6 @@ XWRAPPER_CONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_CHECKSUM_BASE"
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
 
-  # We need to remove /usr/X11R6/bin so we can replace it with a symlink
-  if [ -d "/usr/X11R6/bin" ] && [ ! -L /usr/X11R6/bin ]; then
-    if ! rmdir "/usr/X11R6/bin" 2>/dev/null; then
-      run db_fset x11-common/x11r6_bin_not_empty seen false
-      run db_input critical x11-common/x11r6_bin_not_empty
-      run db_go
-      exit 1
-    fi
-  fi
-
   # create the configuration files' main and auxiliary directories if they
   # don't exist
   for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
@@ -41,72 +31,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
       mkdir --mode=755 --parents "$DIR"
     fi
   done
-
-  # symlink -> dir transition
-  for i in include share lib; do
-    if [ -L "/usr/${i}/X11" ]; then
-      rm /usr/${i}/X11
-    fi
-  done
-  # We provided this as a symlink in versions between 7.0.0 and 7.0.11. We want
-  # to be sure this is a directory after install to allow font packages to
-  # install properly even if they haven't transitioned
-  if [ -L "/usr/X11R6/lib/X11/fonts" ]; then
-    rm /usr/X11R6/lib/X11/fonts
-  fi
-
-  # migration hilarity
-  if [ -n "$FIRSTINST" ]; then
-    for i in allowed_users actual_allowed_users nice_value; do
-      _TEMPLATE=xwrapper/$i
-      db_fget x11-common/$_TEMPLATE seen
-      if [ "$RET" = "false" ]; then
-        if db_fget xserver-common/$_TEMPLATE seen && [ "$RET" = "true" ]; then
-          if db_get xserver-common/$_TEMPLATE; then
-            _VALUE="$RET"
-            observe "migrating debconf question $_TEMPLATE from xserver-common"
-            db_set x11-common/$_TEMPLATE $_VALUE
-          fi
-        fi
-      fi
-    done
-
-    if [ -e "/var/lib/xfree86" ]; then
-      if [ -e "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE" ] && \
-         [ -e "/var/lib/xfree86/$XWRAPPER_CONFIG_CHECKSUM_BASE" ]; then
-        if fgrep -qx "xserver-common" \
-           "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE"; then
-          # construct temporary roster file with our package name removed, ignoring
-          # failure
-          fgrep -vx "xserver-common" \
-            "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE" > \
-            "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
-            || true
-
-          # is there anything left?
-          if [ -s "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp" ]; then
-            # yes, replace the roster file
-            mv "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp" \
-               "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE"
-          else
-            # no; remove both the original and our temporary copy
-            rm -f "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE" \
-                  "/var/lib/xfree86/$XWRAPPER_CONFIG_ROSTER_BASE.dpkg-tmp"
-
-            # migrate the checksum if it doesn't exist
-            if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ]; then
-              rm "/var/lib/xfree86/$XWRAPPER_CONFIG_CHECKSUM_BASE"
-            else
-              mv "/var/lib/xfree86/$XWRAPPER_CONFIG_CHECKSUM_BASE" \
-                 "$XWRAPPER_CONFIG_CHECKSUM"
-            fi
-          fi
-        fi
-      fi
-
-      rmdir /var/lib/xfree86 2>/dev/null || true
-    fi
-  fi
 
   # place config files under management if they do *not* already exist
   if ! [ -e "$XWRAPPER_CONFIG" ]; then
