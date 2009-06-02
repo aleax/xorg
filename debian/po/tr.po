@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-15 18:21+0200\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
@@ -80,114 +80,86 @@ msgstr ""
 "da yanlış  olacaktır.  Makul bir seçim, X sunucusunu sadece sanal konsollara "
 "giriş yapmış kullanıcılar tarafından kullanılacak şekilde ayarlamaktır."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "X sunucusu için öncelik değeri (nice):"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "X sunucusu için öncelik değeri (nice):"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Belirli bir zamanlama (scheduling) stratejisi kullanan işletim sistemi "
-"çekirdeklerinde X sunucusunun öntanımlı değerden daha yüksek bir öncelikte "
-"(bu öncelik \"nice\" değeri olarak da bilinir) çalışması halinde başarımın "
-"arttığı gözlenmiştir.  \"nice\" değeri -20 (en yüksek öncelik veya diğer "
-"işlemlere göre \"not nice\") ile 19 değerleri (en düşük öncelik) arasında "
-"olabilir.  Sıradan süreçler için öntanımlı 'nice' değeri 0'dır ve X sunucu "
-"için de bu değer önerilir."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Belirli bir zamanlama (scheduling) stratejisi kullanan işletim sistemi "
+#~ "çekirdeklerinde X sunucusunun öntanımlı değerden daha yüksek bir "
+#~ "öncelikte (bu öncelik \"nice\" değeri olarak da bilinir) çalışması "
+#~ "halinde başarımın arttığı gözlenmiştir.  \"nice\" değeri -20 (en yüksek "
+#~ "öncelik veya diğer işlemlere göre \"not nice\") ile 19 değerleri (en "
+#~ "düşük öncelik) arasında olabilir.  Sıradan süreçler için öntanımlı 'nice' "
+#~ "değeri 0'dır ve X sunucu için de bu değer önerilir."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"-10'dan 0'a kadar olan aralığın dışına çıkmak tavsiye edilmez; çok negatif "
-"bir değer verirseniz X sunucusu önemli sistem görevleriyle karışabilir, çok "
-"pozitif bir değer ise X sunucusunu yavaşlatacak ve tepkisiz hale "
-"getirecektir."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "-10'dan 0'a kadar olan aralığın dışına çıkmak tavsiye edilmez; çok "
+#~ "negatif bir değer verirseniz X sunucusu önemli sistem görevleriyle "
+#~ "karışabilir, çok pozitif bir değer ise X sunucusunu yavaşlatacak ve "
+#~ "tepkisiz hale getirecektir."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Geçersiz öncelik değeri"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Geçersiz öncelik değeri"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Lütfen -20 ve 19 arasında bir tam sayı girin."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Lütfen -20 ve 19 arasında bir tam sayı girin."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Önde gelen muhtemel yükseltme sorunları"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Önde gelen muhtemel yükseltme sorunları"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Bazı kullanıcılar yeni paketlere yükseltme sonrasında xserver paketinin "
-"artık kurulmadığını bildirmişlerdir.  Bu sorunun kolay bir çözümü "
-"olmadığından yükseltme sonrasında xserver-xorg paketinin kurulduğuna emin "
-"olun.  Eğer siz belirttiğiniz halde bu paket kurulmamışsa sorunsuz bir X "
-"yapılandırmasına sahip olmak için xorg paketini kurmanız önerilir."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Bazı kullanıcılar yeni paketlere yükseltme sonrasında xserver paketinin "
+#~ "artık kurulmadığını bildirmişlerdir.  Bu sorunun kolay bir çözümü "
+#~ "olmadığından yükseltme sonrasında xserver-xorg paketinin kurulduğuna emin "
+#~ "olun.  Eğer siz belirttiğiniz halde bu paket kurulmamışsa sorunsuz bir X "
+#~ "yapılandırmasına sahip olmak için xorg paketini kurmanız önerilir."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "/usr/X11R6/bin dizini silinemiyor"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "/usr/X11R6/bin dizini silinemiyor"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Bu yükseltme işlemi, /usr/X11R6/bin dizininin silinerek bir sembolik bağla "
-"değiştirilmesini gerektirmektedir.  Bu şartı sağlamak için bir girişimde "
-"bulunulmuş fakat büyük olasılıkla bu dizin boş olmadığından girişim "
-"başarısızlıkla sonuçlanmıştır.  Kurulumun tamamlanabilmesi için dizindeki "
-"bütün dosyaları başka bir yere taşımalısınız.  Sembolik bağ oluşturulduktan "
-"sonra dilerseniz bu dosyaları tekrar eski yerine taşıyabilirsiniz."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Bu yükseltme işlemi, /usr/X11R6/bin dizininin silinerek bir sembolik "
+#~ "bağla değiştirilmesini gerektirmektedir.  Bu şartı sağlamak için bir "
+#~ "girişimde bulunulmuş fakat büyük olasılıkla bu dizin boş olmadığından "
+#~ "girişim başarısızlıkla sonuçlanmıştır.  Kurulumun tamamlanabilmesi için "
+#~ "dizindeki bütün dosyaları başka bir yere taşımalısınız.  Sembolik bağ "
+#~ "oluşturulduktan sonra dilerseniz bu dosyaları tekrar eski yerine "
+#~ "taşıyabilirsiniz."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Bu paketin kurulumu başarısızlıkla sonlanacak ve kurulumdan çıkılacaktır, "
-"böylece bunu yapabileceksiniz. Lütfen, dizini sildikten sonra güncelleme "
-"işleminizi yeniden başlatın."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Bu paketin kurulumu başarısızlıkla sonlanacak ve kurulumdan çıkılacaktır, "
+#~ "böylece bunu yapabileceksiniz. Lütfen, dizini sildikten sonra güncelleme "
+#~ "işleminizi yeniden başlatın."
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "Ekran kartının veriyolu tanımlayıcısı:"

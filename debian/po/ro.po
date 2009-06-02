@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-17 14:03+0300\n"
 "Last-Translator: Eddy Petrișor <eddy.petrisor@gmail.com>\n"
 "Language-Team: Română <debian-l10n-romanian@lists.debian.org>\n"
@@ -81,117 +81,89 @@ msgstr ""
 "doar ca root să pornească serverul X. Un bun compromis este permiterea "
 "pornirii pentru utilizatorii autentificați la una din consolele virtuale."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Introduceți valoarea nice pe care doriți să o folosească serverul X:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr ""
+#~ "Introduceți valoarea nice pe care doriți să o folosească serverul X:"
 
 #  Hmm, oare cum s-ar putea traduce mai bine nice?
 #  E bine să fie tradus? Dacă nu, atunci faza cu bădăran nu are sens.
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"S-a observat că, în general, atunci când se folosesc nuclee de sisteme de "
-"operare cu anumite strategii de programare, performanțele serverului X se "
-"îmbunătățesc atunci când este rulat la o prioritate mai mare decât cea "
-"implicită; prioritatea unui proces este cunoscută sub numele de valoarea sa "
-"\"nice\". Ea poate lua valori între -20 (prioritate extrem de ridicată, sau "
-"bădăran cu celelalte procese) până la 19 (prioritate extrem de scăzută). "
-"Valoarea implicită nice pentru procesele obișnuite este 0, iar aceasta e "
-"valoarea recomandată și pentru serverul X."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "S-a observat că, în general, atunci când se folosesc nuclee de sisteme de "
+#~ "operare cu anumite strategii de programare, performanțele serverului X se "
+#~ "îmbunătățesc atunci când este rulat la o prioritate mai mare decât cea "
+#~ "implicită; prioritatea unui proces este cunoscută sub numele de valoarea "
+#~ "sa \"nice\". Ea poate lua valori între -20 (prioritate extrem de "
+#~ "ridicată, sau bădăran cu celelalte procese) până la 19 (prioritate extrem "
+#~ "de scăzută). Valoarea implicită nice pentru procesele obișnuite este 0, "
+#~ "iar aceasta e valoarea recomandată și pentru serverul X."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Valorile din afara plajei -10, 0 nu sunt recomandate; prea negativ, serverul "
-"X va interfera cu sarcini importante ale sistemului. Prea pozitiv, serverul "
-"X se va mișca greu și nu va fi prompt."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Valorile din afara plajei -10, 0 nu sunt recomandate; prea negativ, "
+#~ "serverul X va interfera cu sarcini importante ale sistemului. Prea "
+#~ "pozitiv, serverul X se va mișca greu și nu va fi prompt."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Valoare \"nice\" incorectă"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Valoare \"nice\" incorectă"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Sunteți rugat/rugată să introduceți un întreg între -20 și 19."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Sunteți rugat/rugată să introduceți un întreg între -20 și 19."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Posibile probleme majore la actualizare"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Posibile probleme majore la actualizare"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Unii utilizatori au raportat că după actualizarea cu setul curent de "
-"pachete, pachetul lor pentru xserver nu mai era instalat. Deoarece nu există "
-"nici o soluție facilă de ocolire a acestei probleme, ar trebui să vă "
-"asigurați că pachetul xserver-xorg este instalat după actualizare. Dacă nu "
-"este instalat și aveți nevoie de el, se recomandă să instalați pachetul xorg "
-"pentru a asigura o configurație X funcțională."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Unii utilizatori au raportat că după actualizarea cu setul curent de "
+#~ "pachete, pachetul lor pentru xserver nu mai era instalat. Deoarece nu "
+#~ "există nici o soluție facilă de ocolire a acestei probleme, ar trebui să "
+#~ "vă asigurați că pachetul xserver-xorg este instalat după actualizare. "
+#~ "Dacă nu este instalat și aveți nevoie de el, se recomandă să instalați "
+#~ "pachetul xorg pentru a asigura o configurație X funcțională."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Directorul /usr/X11R6/bin nu poate fi șters"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Directorul /usr/X11R6/bin nu poate fi șters"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Această actualizare necesită ca directorul /usr/X11R6/bin să fie șters și "
-"înlocuit cu o legătură simbolică. Acest lucru a fost încercat, dar nu a "
-"reușit, cel mai probabil din pricina faptului că directorul nu e încă gol. "
-"Trebuie să mutați fișierele care se află acum în director astfel încât "
-"instalarea să fie finalizată. Dacă doriți, acestea pot fi mutate înapoi după "
-"ce legătura simbolică va fi fost creată."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Această actualizare necesită ca directorul /usr/X11R6/bin să fie șters și "
+#~ "înlocuit cu o legătură simbolică. Acest lucru a fost încercat, dar nu a "
+#~ "reușit, cel mai probabil din pricina faptului că directorul nu e încă "
+#~ "gol. Trebuie să mutați fișierele care se află acum în director astfel "
+#~ "încât instalarea să fie finalizată. Dacă doriți, acestea pot fi mutate "
+#~ "înapoi după ce legătura simbolică va fi fost creată."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Acestă instalare a pachetului va eșua și se va ieși astfel încât să puteți "
-"să faceți acest lucru. Se recomandă să curățați directorul și să rulați din "
-"nou procedura de actualizare."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Acestă instalare a pachetului va eșua și se va ieși astfel încât să "
+#~ "puteți să faceți acest lucru. Se recomandă să curățați directorul și să "
+#~ "rulați din nou procedura de actualizare."
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "Identificatorul plăcii video pe magistrală:"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2006-09-20 22:54+0800\n"
 "Last-Translator: Tetralet <tetralet@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
@@ -71,106 +71,77 @@ msgstr ""
 "智的做法。折衷的方案是只允許那些能登入到虛擬主控台 (Virtual console) 的使用者"
 "才能啟動 X Server。"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "X Server 的 nice（優先）值："
+#~ msgid "Nice value for the X server:"
+#~ msgstr "X Server 的 nice（優先）值："
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"在作業系統的 Kernel 和特定的調度策略搭配運作時，一個很普遍的看法是讓 X "
-"Server 以比預設值更高的程序優先權來運行時將能提高它的效能；而程序的優先權也就"
-"是它的“nice”值。優先值的範圍從 -20（極高的優先級，或者說對其它程序“不 nice）"
-"到 19 (極低的優先級)。一般程序的預設 nice 值是 0，而這也同時是 X Server 的推"
-"薦值。"
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "在作業系統的 Kernel 和特定的調度策略搭配運作時，一個很普遍的看法是讓 X "
+#~ "Server 以比預設值更高的程序優先權來運行時將能提高它的效能；而程序的優先權"
+#~ "也就是它的“nice”值。優先值的範圍從 -20（極高的優先級，或者說對其它程序“不 "
+#~ "nice）到 19 (極低的優先級)。一般程序的預設 nice 值是 0，而這也同時是 X "
+#~ "Server 的推薦值。"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"推薦使用介於 -10 到 0 之間的值。如果設置太小，X Server 會干擾到其它重要的系統"
-"工作；如果設置得太大，X Server 就會變得既緩慢又遲鈍。"
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "推薦使用介於 -10 到 0 之間的值。如果設置太小，X Server 會干擾到其它重要的"
+#~ "系統工作；如果設置得太大，X Server 就會變得既緩慢又遲鈍。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "不正確的 nice 值"
+#~ msgid "Incorrect nice value"
+#~ msgstr "不正確的 nice 值"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "請輸入一個介於 -20 到 19 間的整數。"
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "請輸入一個介於 -20 到 19 間的整數。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "可能會遇到的重大升級問題"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "可能會遇到的重大升級問題"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"有些使用者回報說，在將相關套件升級到當前最新版本後，他們的 xserver 套件卻沒有"
-"被安裝到。但對於這個問題卻沒有什麼簡單的解決辦法，您應該在升級後檢查是否有安"
-"裝到 xserver-xorg 套件。如果真沒有安裝但您有需要，推薦您安裝 xorg 套件以確保"
-"您擁有全功能的 X 設置。"
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "有些使用者回報說，在將相關套件升級到當前最新版本後，他們的 xserver 套件卻"
+#~ "沒有被安裝到。但對於這個問題卻沒有什麼簡單的解決辦法，您應該在升級後檢查是"
+#~ "否有安裝到 xserver-xorg 套件。如果真沒有安裝但您有需要，推薦您安裝 xorg 套"
+#~ "件以確保您擁有全功能的 X 設置。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "無法移除 /usr/X11R6/bin 目錄"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "無法移除 /usr/X11R6/bin 目錄"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"在升級過程中需要將 /usr/X11R6/bin 目錄刪除並將其替換為一個符號連結。雖已試著"
-"這麼做，但卻失敗了，很可能是因為這個目錄並不是空的。您必須移走目前位於該目錄"
-"下的所有的檔案，讓安裝程序可以順利完成。如有必要，您也可以在符號連結建立之後"
-"再將這些檔案移回來。"
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "在升級過程中需要將 /usr/X11R6/bin 目錄刪除並將其替換為一個符號連結。雖已試"
+#~ "著這麼做，但卻失敗了，很可能是因為這個目錄並不是空的。您必須移走目前位於該"
+#~ "目錄下的所有的檔案，讓安裝程序可以順利完成。如有必要，您也可以在符號連結建"
+#~ "立之後再將這些檔案移回來。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"本套件安裝程序失敗並將退出，以便能讓您完成上述工作。請在清除目錄後重新執行這"
-"個升級程序。"
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "本套件安裝程序失敗並將退出，以便能讓您完成上述工作。請在清除目錄後重新執行"
+#~ "這個升級程序。"
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "請輸入顯示卡的匯流排識別碼："

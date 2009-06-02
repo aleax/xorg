@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg 7.3\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-15 07:33+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -78,113 +78,85 @@ msgstr ""
 "り、これも好ましくありません。よりよい妥協点は、 仮想コンソールのうちの 1 つ"
 "にログインしたユーザにのみ X サーバの起動を許可することでしょう。"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "X サーバの nice 値:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "X サーバの nice 値:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"特別なスケジューリング戦略を持つオペレーティングシステムカーネルを使っている"
-"場合、「nice」値として知られているプロセスの優先度をデフォルトより高い値に設"
-"定することで、X サーバのパフォーマンスが向上することは広く知られています。"
-"「nice」値の範囲は -20 (非常に高い優先度、もしくはほかのプロセスにとって「よ"
-"くない (『not nice』な)」優先度) から 19 まで (非常に低い優先度)  です。通常"
-"のプロセスに対するデフォルトの nice 値は 0 であり、これは X サーバでの推奨値"
-"でもあります。"
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "特別なスケジューリング戦略を持つオペレーティングシステムカーネルを使ってい"
+#~ "る場合、「nice」値として知られているプロセスの優先度をデフォルトより高い値"
+#~ "に設定することで、X サーバのパフォーマンスが向上することは広く知られていま"
+#~ "す。「nice」値の範囲は -20 (非常に高い優先度、もしくはほかのプロセスにとっ"
+#~ "て「よくない (『not nice』な)」優先度) から 19 まで (非常に低い優先度)  で"
+#~ "す。通常のプロセスに対するデフォルトの nice 値は 0 であり、これは X サーバ"
+#~ "での推奨値でもあります。"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"-10 から 0 の範囲以外の値を与えるのは推奨しません。小さすぎる値を用いると、X "
-"サーバは重要なシステムタスクの邪魔をするでしょう。大きすぎる値を用いると、X "
-"サーバは活発に動作せず反応が悪くなるでしょう。"
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "-10 から 0 の範囲以外の値を与えるのは推奨しません。小さすぎる値を用いる"
+#~ "と、X サーバは重要なシステムタスクの邪魔をするでしょう。大きすぎる値を用い"
+#~ "ると、X サーバは活発に動作せず反応が悪くなるでしょう。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "無効な nice 値です"
+#~ msgid "Incorrect nice value"
+#~ msgstr "無効な nice 値です"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "-20 〜 19 の間の整数を入力して下さい。"
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "-20 〜 19 の間の整数を入力して下さい。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "アップグレードに関する問題の主な可能性"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "アップグレードに関する問題の主な可能性"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"複数のユーザが、彼らの X サーバパッケージがもうインストールされていない現在の"
-"パッケージセットへのアップグレードについて報告しています。この問題に対する簡"
-"単な方法はないため、xserver-xorg パッケージがアップグレード後にインストールさ"
-"れているかどうかよく確認すべきです。もしこれがインストールされておらず、かつ"
-"必要なのであれば、完全に機能する X セットアップを保有していることを確認するた"
-"めに、xorg パッケージをインストールすることをお勧めします。"
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "複数のユーザが、彼らの X サーバパッケージがもうインストールされていない現"
+#~ "在のパッケージセットへのアップグレードについて報告しています。この問題に対"
+#~ "する簡単な方法はないため、xserver-xorg パッケージがアップグレード後にイン"
+#~ "ストールされているかどうかよく確認すべきです。もしこれがインストールされて"
+#~ "おらず、かつ必要なのであれば、完全に機能する X セットアップを保有している"
+#~ "ことを確認するために、xorg パッケージをインストールすることをお勧めしま"
+#~ "す。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "/usr/X11R6/bin ディレクトリを削除できません"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "/usr/X11R6/bin ディレクトリを削除できません"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"この更新では /usr/X11R6/bin ディレクトリが削除されていて、シンボリックリンク"
-"で置き換えられていることを前提としています。そのように試行が行われましたが、"
-"失敗しました。もっとも考えられる理由は、ディレクトリが空でないことです。イン"
-"ストールが完了するように、ディレクトリ内に現在あるファイルを別の場所に移動す"
-"る必要があります。望むなら、シンボリックリンクを張ったあとにこの場所に戻すこ"
-"とができます。"
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "この更新では /usr/X11R6/bin ディレクトリが削除されていて、シンボリックリン"
+#~ "クで置き換えられていることを前提としています。そのように試行が行われました"
+#~ "が、失敗しました。もっとも考えられる理由は、ディレクトリが空でないことで"
+#~ "す。インストールが完了するように、ディレクトリ内に現在あるファイルを別の場"
+#~ "所に移動する必要があります。望むなら、シンボリックリンクを張ったあとにこの"
+#~ "場所に戻すことができます。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"このパッケージのインストールは、上記の作業ができるよう、ただちに失敗し、終了"
-"します。ディレクトリを清掃したあと、更新処理を再実行してください。"
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "このパッケージのインストールは、上記の作業ができるよう、ただちに失敗し、終"
+#~ "了します。ディレクトリを清掃したあと、更新処理を再実行してください。"
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "ビデオカードのバス識別子:"

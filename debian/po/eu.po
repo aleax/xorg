@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-eu\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-08 22:57+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
@@ -79,112 +79,86 @@ msgstr ""
 "gertatzen dena.  Gomendagarriena X zerbitzaria kontsola birtual batetan "
 "saioa abiarazirik duen edozeini abiarazten uztea da."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "X zerbitzariaren balio egokia:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "X zerbitzariaren balio egokia:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Programaketa berezi bat duen sistema eragile kernel bat erabiltzean, "
-"Kontutan izan behar da X zerbitzariaren performantzia hobetzen dela "
-"lehenetsirikoa baino prozesu lehentasun handiagoa ezartzen; prozesu "
-"lehentasuna balio \"zuzena\" bezala ezagutzen da.  Hau -02 (lehentasun "
-"handiena edo \"ez egokia\" beste prozesuentzat) eta 19 (lehentasun oso "
-"txikia) tartean egon behar da.  Prozesu arruntentzat lehenetsiriko "
-"lehentasuna 0 da, hau izaten ere X zerbitzariarentzat balio gomendatua."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Programaketa berezi bat duen sistema eragile kernel bat erabiltzean, "
+#~ "Kontutan izan behar da X zerbitzariaren performantzia hobetzen dela "
+#~ "lehenetsirikoa baino prozesu lehentasun handiagoa ezartzen; prozesu "
+#~ "lehentasuna balio \"zuzena\" bezala ezagutzen da.  Hau -02 (lehentasun "
+#~ "handiena edo \"ez egokia\" beste prozesuentzat) eta 19 (lehentasun oso "
+#~ "txikia) tartean egon behar da.  Prozesu arruntentzat lehenetsiriko "
+#~ "lehentasuna 0 da, hau izaten ere X zerbitzariarentzat balio gomendatua."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"-10 eta 0 eremuz kanpoko balioak ez dira gomendagarriak; negatiboegiaz, X "
-"zerbitzaria sistema ataza garrantzitsuekin elkar jo daiteke. Positiboegiaz, "
-"ordea X zerbitzaria geldoegi eta erantzungakoa gerta daiteke."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "-10 eta 0 eremuz kanpoko balioak ez dira gomendagarriak; negatiboegiaz, X "
+#~ "zerbitzaria sistema ataza garrantzitsuekin elkar jo daiteke. "
+#~ "Positiboegiaz, ordea X zerbitzaria geldoegi eta erantzungakoa gerta "
+#~ "daiteke."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Okerreko balio egokia"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Okerreko balio egokia"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Mesedez sar -20 eta 19 arteko zenbaki oso bat."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Mesedez sar -20 eta 19 arteko zenbaki oso bat."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Eguneraketa arazo aukera handiak"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Eguneraketa arazo aukera handiak"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Zenbait erabiltzailek ohartu digutenez pakete bilduma honetara eguneratzean, "
-"beren xserver paketea ez zela instalatu. Ez Denez erraza arazo hau kokatzea "
-"eguneraketa ondoren xserver-xorg paketea instalatua dagoela ziurtatu. "
-"Instalaturik ez badago eta zuk honen beharra baduzu gomendagarria da xorg "
-"paketea instalatzea funtzionatuko duen X konfigurazio bat duzula ziurtatzeko."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Zenbait erabiltzailek ohartu digutenez pakete bilduma honetara "
+#~ "eguneratzean, beren xserver paketea ez zela instalatu. Ez Denez erraza "
+#~ "arazo hau kokatzea eguneraketa ondoren xserver-xorg paketea instalatua "
+#~ "dagoela ziurtatu. Instalaturik ez badago eta zuk honen beharra baduzu "
+#~ "gomendagarria da xorg paketea instalatzea funtzionatuko duen X "
+#~ "konfigurazio bat duzula ziurtatzeko."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Ezin da/usr/X11R6/bin direktorioa ezabatu"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Ezin da/usr/X11R6/bin direktorioa ezabatu"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Eguneraketa honek /usr/X11R6/bin direktorioa eta lotura sinboliko bategatik "
-"ordeztea behar du. Hau egiteko saiakera bat egin da, baina huts egin du, "
-"ziurrenik direktorioa ez dagoelako hutsik. Direktorio horretan dauden "
-"fitxategiak hortik kanpora mugitu behar dituzu instalazioa aurrera "
-"eramateko . Nahi izan ezkero berri hor ipini ditzakezu behin lotura "
-"sinbolikoa sortua izan denean."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Eguneraketa honek /usr/X11R6/bin direktorioa eta lotura sinboliko "
+#~ "bategatik ordeztea behar du. Hau egiteko saiakera bat egin da, baina huts "
+#~ "egin du, ziurrenik direktorioa ez dagoelako hutsik. Direktorio horretan "
+#~ "dauden fitxategiak hortik kanpora mugitu behar dituzu instalazioa aurrera "
+#~ "eramateko . Nahi izan ezkero berri hor ipini ditzakezu behin lotura "
+#~ "sinbolikoa sortua izan denean."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Pakete instalazioa orain huts egin eta irten egingo da. Mesedez eguneraketa "
-"prozedura berriz abiarazi behin direktorio hori hustu duzunean."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Pakete instalazioa orain huts egin eta irten egingo da. Mesedez "
+#~ "eguneraketa prozedura berriz abiarazi behin direktorio hori hustu "
+#~ "duzunean."
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "Bideo txartel bus identifikatzailea:"

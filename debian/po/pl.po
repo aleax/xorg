@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 6.9.0.dfsg.1-2+SVN\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-08-31 22:49+0200\n"
 "Last-Translator: Bartosz Fenski <fenio@debian.org>\n"
 "Language-Team: Polish <pddp@debian.linux.org.pl>\n"
@@ -63,112 +63,83 @@ msgstr ""
 "Dobrym kompromisem jest zezwolenie na uruchamianie serwera X tylko "
 "u¿ytkownikom zalogowanym na jednej z wirtualnych konsol (u¿ytkownik konsoli)."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Warto¶æ nice dla serwera X."
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Warto¶æ nice dla serwera X."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Powszechnie wiadomo, ¿e wydajno¶æ X serwera jest lepsza, je¶li jest on "
-"uruchomiony z wy¿szym od standardowego priorytetem. Priorytet jest okre¶lany "
-"przez tzw. warto¶æ \"nice\" (ang. uprzejmy). Mo¿e ona przyjmowaæ warto¶ci od "
-"-20 (najwy¿szy priorytet, czyli najmniej \"uprzejmy\" dla innych procesów) "
-"do 19 (najni¿szy priorytet). Standardow± warto¶ci± \"nice\" jest 0 i to jest "
-"zalecana warto¶æ dla serwera X."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Powszechnie wiadomo, ¿e wydajno¶æ X serwera jest lepsza, je¶li jest on "
+#~ "uruchomiony z wy¿szym od standardowego priorytetem. Priorytet jest "
+#~ "okre¶lany przez tzw. warto¶æ \"nice\" (ang. uprzejmy). Mo¿e ona "
+#~ "przyjmowaæ warto¶ci od -20 (najwy¿szy priorytet, czyli najmniej \"uprzejmy"
+#~ "\" dla innych procesów) do 19 (najni¿szy priorytet). Standardow± "
+#~ "warto¶ci± \"nice\" jest 0 i to jest zalecana warto¶æ dla serwera X."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Nie s± zalecane warto¶ci spoza zakresu -10 do 0; zbyt du¿a warto¶æ ujemna "
-"spowoduje, i¿ serwer X bêdzie zak³óca³ pracê innych wa¿nych procesów "
-"systemowych. Zbyt du¿a warto¶æ dodatnia sprawi, ¿e serwer X bêdzie powolny i "
-"nie bêdzie odpowiada³ na ¿±dania u¿ytkownika."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Nie s± zalecane warto¶ci spoza zakresu -10 do 0; zbyt du¿a warto¶æ ujemna "
+#~ "spowoduje, i¿ serwer X bêdzie zak³óca³ pracê innych wa¿nych procesów "
+#~ "systemowych. Zbyt du¿a warto¶æ dodatnia sprawi, ¿e serwer X bêdzie "
+#~ "powolny i nie bêdzie odpowiada³ na ¿±dania u¿ytkownika."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Nieprawid³owa warto¶æ nice"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Nieprawid³owa warto¶æ nice"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Wprowad¼ liczbê pomiêdzy -20 a 19."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Wprowad¼ liczbê pomiêdzy -20 a 19."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Mo¿liwe powa¿ne problemy podczas aktualizacji"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Mo¿liwe powa¿ne problemy podczas aktualizacji"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Czê¶æ u¿ytkowników zg³osi³a, ¿e podczas aktualizacji zestawów pakietów ich "
-"pakiet xserver przesta³ byæ dostêpny w systemie. Poniewa¿ nie istnieje "
-"prosty sposób na ominiêcie tego problemu, upewnij siê, ¿e po aktualizacji "
-"Twój system zawiera pakiet xserver-xorg. Je¶li go nie ma, a potrzebujesz go, "
-"zalecane jest samodzielne go zainstalowanie."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Czê¶æ u¿ytkowników zg³osi³a, ¿e podczas aktualizacji zestawów pakietów "
+#~ "ich pakiet xserver przesta³ byæ dostêpny w systemie. Poniewa¿ nie "
+#~ "istnieje prosty sposób na ominiêcie tego problemu, upewnij siê, ¿e po "
+#~ "aktualizacji Twój system zawiera pakiet xserver-xorg. Je¶li go nie ma, a "
+#~ "potrzebujesz go, zalecane jest samodzielne go zainstalowanie."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Nie mogê usun±æ katalogu /usr/X11R6/bin"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Nie mogê usun±æ katalogu /usr/X11R6/bin"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Proces aktualizacji wymaga usuniêcia katalogu /usr/X11R6/bin i utworzenia w "
-"jego miejsce dowi±zania symbolicznego. Nast±pi³a próba wykonania tej "
-"operacji, ale siê nie powiod³a (najprawdopodobniej dlatego, ¿e katalog nie "
-"by³ pusty). Musisz przenie¶æ pliki znajduj±ce siê w tym katalogu, by mo¿na "
-"by³o kontynuowaæ instalacjê. Po tej operacji mo¿esz je przenie¶æ w tê "
-"lokalizacjê z powrotem."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Proces aktualizacji wymaga usuniêcia katalogu /usr/X11R6/bin i utworzenia "
+#~ "w jego miejsce dowi±zania symbolicznego. Nast±pi³a próba wykonania tej "
+#~ "operacji, ale siê nie powiod³a (najprawdopodobniej dlatego, ¿e katalog "
+#~ "nie by³ pusty). Musisz przenie¶æ pliki znajduj±ce siê w tym katalogu, by "
+#~ "mo¿na by³o kontynuowaæ instalacjê. Po tej operacji mo¿esz je przenie¶æ w "
+#~ "tê lokalizacjê z powrotem."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Instalacja pakietu zostanie teraz przerwana by mo¿na by³o wykonaæ tê "
-"operacjê. Uruchom ponownie aktualizacjê gdy wyczy¶cisz ten katalog."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Instalacja pakietu zostanie teraz przerwana by mo¿na by³o wykonaæ tê "
+#~ "operacjê. Uruchom ponownie aktualizacjê gdy wyczy¶cisz ten katalog."
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "Identyfikator magistrali karty graficznej:"

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg-1:7.1.0-15_debian_po_ru\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2009-05-25 15:28+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-12 22:32+0400\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -84,112 +84,85 @@ msgstr ""
 "Наилучшее решение заключается в том, чтобы позволять запускать сервер X "
 "только пользователям, зарегистрированным на одной из виртуальных консолей."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Значение параметра nice для работы X сервера:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Значение параметра nice для работы X сервера:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Многими было замечено, что при использовании ядер операционной системы с "
-"определённой стратегией планировщика производительность X сервера повышается "
-"при установке уровня приоритета его процесса выше, чем приоритет по "
-"умолчанию; приоритет процесса известен как значение \"nice\". Интервал этих "
-"значений от -20 (высший приоритет или \"not nice\" для других процессов) до "
-"19 (низший приоритет). Значение по умолчанию для обычных процессов 0, и "
-"также оно рекомендуется для X сервера)."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Многими было замечено, что при использовании ядер операционной системы с "
+#~ "определённой стратегией планировщика производительность X сервера "
+#~ "повышается при установке уровня приоритета его процесса выше, чем "
+#~ "приоритет по умолчанию; приоритет процесса известен как значение \"nice"
+#~ "\". Интервал этих значений от -20 (высший приоритет или \"not nice\" для "
+#~ "других процессов) до 19 (низший приоритет). Значение по умолчанию для "
+#~ "обычных процессов 0, и также оно рекомендуется для X сервера)."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Значения вне диапазона от -10 до 0 не рекомендуются; при слишком низких "
-"сервер X будет мешать важным системным процессам. А слишком большие значения "
-"приведут к тому, что сервер будет медленно работать и плохо отзываться."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Значения вне диапазона от -10 до 0 не рекомендуются; при слишком низких "
+#~ "сервер X будет мешать важным системным процессам. А слишком большие "
+#~ "значения приведут к тому, что сервер будет медленно работать и плохо "
+#~ "отзываться."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Неверное значение nice"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Неверное значение nice"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Пожалуйста, введите целое число между -20 и 19."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Пожалуйста, введите целое число между -20 и 19."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Возможные проблемы при обновлении"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Возможные проблемы при обновлении"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Некоторые пользователи сообщают, что при обновлении до текущей версии пакет "
-"xserver не остаётся установленным. Так как такую проблему не легко "
-"отследить, после обновления вы должны убедиться, что пакет xserver-xorg "
-"установился. Если он не установлен и он вам необходим, рекомендуется "
-"установить пакет xorg, чтобы получить полностью функциональную установку X "
-"сервера."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Некоторые пользователи сообщают, что при обновлении до текущей версии "
+#~ "пакет xserver не остаётся установленным. Так как такую проблему не легко "
+#~ "отследить, после обновления вы должны убедиться, что пакет xserver-xorg "
+#~ "установился. Если он не установлен и он вам необходим, рекомендуется "
+#~ "установить пакет xorg, чтобы получить полностью функциональную установку "
+#~ "X сервера."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Не удалось удалить каталог /usr/X11R6/bin"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Не удалось удалить каталог /usr/X11R6/bin"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Для данного обновления требуется удаление каталога /usr/X11R6/bin и замена "
-"на символическую ссылку. Попытка сделать это не удалась, скорее всего из-за "
-"того, что этот каталог всё ещё не пустой. Вы должны переместить файлы из "
-"этого каталога для завершения установки. Если нужно, вы можете переместить "
-"их обратно, после того как будет создана символическая ссылка."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Для данного обновления требуется удаление каталога /usr/X11R6/bin и "
+#~ "замена на символическую ссылку. Попытка сделать это не удалась, скорее "
+#~ "всего из-за того, что этот каталог всё ещё не пустой. Вы должны "
+#~ "переместить файлы из этого каталога для завершения установки. Если нужно, "
+#~ "вы можете переместить их обратно, после того как будет создана "
+#~ "символическая ссылка."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Пока установка считается неудачной и прерывается, чтобы вы могли сделать "
-"это. После очистки каталога запустите процедуру обновления ещё раз."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Пока установка считается неудачной и прерывается, чтобы вы могли сделать "
+#~ "это. После очистки каталога запустите процедуру обновления ещё раз."
 
 #~ msgid "Video card's bus identifier:"
 #~ msgstr "Идентификатор шины видеокарты:"
