@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+THIS_PACKAGE=xbase-clients
+THIS_SCRIPT=postinst
+
+#INCLUDE_SHELL_LIB#
+
+case $1 in
+  configure)
+  if dpkg --compare-versions "$2" lt-nl 1:7.4+2; then
+    remove_conffile_commit /etc/X11/app-defaults/Beforelight
+  fi
+  ;;
+esac
+
+#DEBHELPER#
+
+# vim:set ai et sw=2 ts=2 tw=80:
