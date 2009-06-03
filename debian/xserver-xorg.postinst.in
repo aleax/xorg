@@ -539,6 +539,7 @@ if [ "$ARCH" = "sparc" ]; then
         DRIVERS_LIST=$(echo "$DRIVERS" | awk 'BEGIN {ORS="";FS="\t"} {if(NR > 1){print last ","};last=$0} END {print last}')
       else
         DRIVERS=fbdev
+        DRIVERS_LIST=fbdev
       fi
       if [ $MULTIHEAD -gt 1 ]; then
         MULTIHEAD=yes
