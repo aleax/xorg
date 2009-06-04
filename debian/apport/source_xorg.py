@@ -40,10 +40,6 @@ def add_info(report):
             "xserver-xorg-video-ati"
             ])
 
-    matches = command_output(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'])
-    if (matches):
-        report['fglrx-loaded'] = matches
-
     attach_file(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
