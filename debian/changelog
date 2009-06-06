@@ -1,9 +1,13 @@
 xorg (1:7.4+4) UNRELEASED; urgency=low
 
+  [ Timo Aaltonen ]
   * debian-x11-keymap.fdi: Check for input.keys from info.capabilities.
     (closes: #535291)
   * control: Move xserver-xorg dependency on evdev after -input-all.
     Otherwise only evdev is installed by default.
+
+  [ Julien Cristau ]
+  * xserver-wrapper: recognize /usr/bin/X as a path to the wrapper.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Thu, 02 Jul 2009 17:23:57 +0300
 

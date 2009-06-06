@@ -75,6 +75,7 @@
  * Loïc Minier: on Linux, also consider alternate tty devices (major 5 and
  *              minor < 64) as consoles (24 Sep 2008)
  * Julien Cristau: remove the nice_value option
+ * Julien Cristau: recognize /usr/bin/X as a path to this wrapper (6 Jun 2009)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -265,8 +266,9 @@ main(int argc, char **argv)
 
   xserver[i] = '\0'; /* readlink() does not null-terminate the string */
 
-  if ((strncmp(xserver, "/usr/bin/X11/X", 1024) == 0) ||
-      (strncmp(xserver, "/usr/X11R6/bin/X", 1024) == 0)) {
+  if ((strcmp(xserver, "/usr/bin/X11/X") == 0) ||
+      (strcmp(xserver, "/usr/X11R6/bin/X") == 0) ||
+      (strcmp(xserver, "/usr/bin/X") == 0)) {
     (void) fprintf(stderr, "X: %s points back to X wrapper executable, "
                    "aborting.\n", X_SERVER_SYMLINK);
     exit(1);
