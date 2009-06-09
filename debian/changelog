@@ -45,6 +45,8 @@ xorg (1:7.4+2) UNRELEASED; urgency=low
   * xserver-xorg.{preinst,postinst,postrm}: stop using /var/lib/x11.
   * control: xserver-xorg doesn't provide infrastructure for managing
     xorg.conf anymore, remove that from the description.
+  * Stop depending on sparc-utils.  xserver-xorg.postinst doesn't run any
+    detection programs anymore.
 
   [ Debconf translations ]
   * Bengali added
