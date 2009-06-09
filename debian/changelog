@@ -38,6 +38,10 @@ xorg (1:7.4+2) UNRELEASED; urgency=low
     2.20.7-5.
   * xserver-xorg.preinst: drop migration code from /var/lib/xfree86 to
     /var/lib/x11.
+  * xserver-xorg.{pre,post}inst: drop xorg.conf checksum handling.  Stop
+    creating an empty xorg.conf in preinst.  Now that we don't run dexconf, we
+    don't need to keep a checksum of the config file to know whether the user
+    customized it.
 
   [ Debconf translations ]
   * Bengali added

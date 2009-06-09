@@ -54,13 +54,10 @@ debug_echo "Configuring $THIS_PACKAGE."
 
 #DEBHELPER#
 
-# register this package as a (potential) handler of the X server symlink and
-# X.Org X server configuration file
-for ROSTER in "$SERVER_SYMLINK_ROSTER" "$XORGCONFIG_ROSTER"; do
-  if ! fgrep -qsx "$THIS_PACKAGE" "$ROSTER"; then
-    echo "$THIS_PACKAGE" >> "$ROSTER"
-  fi
-done
+# register this package as a (potential) handler of the X server symlink
+if ! fgrep -qsx "$THIS_PACKAGE" "$SERVER_SYMLINK_ROSTER"; then
+  echo "$THIS_PACKAGE" >> "$SERVER_SYMLINK_ROSTER"
+fi
 
 # only mess with the server symlink file if it is a symbolic link or does
 # not exist.  otherwise, assume that's the way the user wants it.
@@ -121,6 +118,7 @@ if [ -n "$UPGRADE" ]; then
     if dpkg --compare-versions "$2" lt-nl 1:7.4+2; then
       db_unregister xserver-xorg/config/device/bus_id || true
       db_unregister xserver-xorg/config/device/bus_id_error || true
+      rm -f "$XORGCONFIG_ROSTER" "$XORGCONFIG_CHECKSUM"
     fi
 fi
 
@@ -135,16 +133,6 @@ if dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
     if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
-      # compare the current and stored checksums; if they do not match, assume
-      # that's the way the user wants it.
-      if [ "$(md5sum "$XORGCONFIG")" != "$(cat "$XORGCONFIG_CHECKSUM")" ]; then
-        BACKUP_XORGCONFIG="$XORGCONFIG.$(date '+%Y%m%d%H%M%S')"
-        warn "$XORGCONFIG has been customized, but we need to make updates. Backing up your config to $BACKUP_XORGCONFIG. If we screw something up, restore using this file."
-        cp "$XORGCONFIG" "$BACKUP_XORGCONFIG"
-      else
-        # checksums match, update the checksum
-        md5sum "${XORGCONFIG}.madwizard-new" > "$XORGCONFIG_CHECKSUM"
-      fi
       chown --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
       chmod --reference=$XORGCONFIG ${XORGCONFIG}.madwizard-new
       mv ${XORGCONFIG}.madwizard-new $XORGCONFIG

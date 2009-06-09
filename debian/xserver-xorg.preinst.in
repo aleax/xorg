@@ -14,17 +14,11 @@ THIS_SCRIPT=preinst
 
 CONFIG_DIR=/etc/X11
 SERVER_SYMLINK="$CONFIG_DIR/X"
-XF86CONFIG="$CONFIG_DIR/XF86Config-4"
-XORGCONFIG="$CONFIG_DIR/xorg.conf"
 CONFIG_AUX_DIR=/var/lib/x11
 SERVER_SYMLINK_CHECKSUM_BASE="${SERVER_SYMLINK##*/}.md5sum"
 SERVER_SYMLINK_CHECKSUM="$CONFIG_AUX_DIR/$SERVER_SYMLINK_CHECKSUM_BASE"
 SERVER_SYMLINK_ROSTER_BASE="${SERVER_SYMLINK##*/}.roster"
 SERVER_SYMLINK_ROSTER="$CONFIG_AUX_DIR/$SERVER_SYMLINK_ROSTER_BASE"
-XORGCONFIG_CHECKSUM_BASE="${XORGCONFIG##*/}.md5sum"
-XORGCONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XORGCONFIG_CHECKSUM_BASE"
-XORGCONFIG_ROSTER_BASE="${XORGCONFIG##*/}.roster"
-XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/$XORGCONFIG_ROSTER_BASE"
 THIS_SERVER=/usr/bin/Xorg
 UNCONFIGURED_LINK_TARGET=$(which true)
 
@@ -37,18 +31,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
       mkdir --mode=755 --parents "$DIR"
     fi
   done
-
-  # implement (simplified) ucf-style configration file handling
-
-  # if performing a fresh install, place config files under management if they
-  # do *not* already exist
-  if [ "$1" = "install" ]; then
-    if ! [ -e "$XORGCONFIG" ]; then
-      # cheap, fork()-free version of "touch"
-      : > "$XORGCONFIG"
-      md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
-    fi
-  fi
 fi
 
 case "$1" in
