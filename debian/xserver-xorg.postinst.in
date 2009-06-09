@@ -146,7 +146,7 @@ case "$1" in
       update-rc.d xserver-xorg remove || true
     fi
     if dpkg --compare-versions "$2" lt "1:7.4"; then
-      invoke-rc.d hal restart
+      invoke-rc.d hal restart >/dev/null
     fi
     ;;
 esac
