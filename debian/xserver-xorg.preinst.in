@@ -38,49 +38,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
     fi
   done
 
-  # the transition from /var/lib/xfree86 to /var/lib/x11 occurred in
-  # 7.0.0-0ubuntu1 and 1:7.0.0
-  if [ -n "$2" ] && \
-     dpkg --compare-versions "$2" lt "1:7.0.11"; then
-    if [ -e "/var/lib/xfree86" ]; then
-      if [ -e "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" ]; then \
-        if fgrep -qx "$THIS_PACKAGE" \
-           "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"; then
-          # construct temporary roster file with our package name removed, ignoring
-          # failure
-          fgrep -vx "$THIS_PACKAGE" \
-            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" > \
-            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
-            || true
-
-          # is there anything left?
-          if [ -s "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" ]; then
-            # yes, replace the roster file
-            mv "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" \
-               "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"
-          else
-            # no; remove both the original and our temporary copy
-            rm -f "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" \
-                  "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp"
-          fi
-        fi
-      fi
-
-      if  [ -e "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" ]; then
-        # migrate the checksum if it doesn't exist
-        if [ -e "$XORGCONFIG_CHECKSUM" ]; then
-          rm "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE"
-        else
-          mv "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" \
-             "$CONFIG_AUX_DIR" || \
-                error "Could not move the xorg.conf.md5sum for some reason"
-        fi
-      fi
-
-      rmdir /var/lib/xfree86 2>/dev/null || true
-    fi
-  fi
-
   # implement (simplified) ucf-style configration file handling
 
   # if performing a fresh install, place config files under management if they
