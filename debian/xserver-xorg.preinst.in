@@ -15,22 +15,14 @@ THIS_SCRIPT=preinst
 CONFIG_DIR=/etc/X11
 SERVER_SYMLINK="$CONFIG_DIR/X"
 CONFIG_AUX_DIR=/var/lib/x11
-SERVER_SYMLINK_CHECKSUM_BASE="${SERVER_SYMLINK##*/}.md5sum"
-SERVER_SYMLINK_CHECKSUM="$CONFIG_AUX_DIR/$SERVER_SYMLINK_CHECKSUM_BASE"
-SERVER_SYMLINK_ROSTER_BASE="${SERVER_SYMLINK##*/}.roster"
-SERVER_SYMLINK_ROSTER="$CONFIG_AUX_DIR/$SERVER_SYMLINK_ROSTER_BASE"
 THIS_SERVER=/usr/bin/Xorg
-UNCONFIGURED_LINK_TARGET=$(which true)
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
-  # create the configuration files' main and auxiliary directories if they
-  # don't exist
-  for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
-    if ! [ -e "$DIR" ]; then
-      observe "creating $DIR"
-      mkdir --mode=755 --parents "$DIR"
-    fi
-  done
+  # create the configuration files directory if it doesn't exist
+  if ! [ -e "$CONFIG_DIR" ]; then
+    observe "creating $CONFIG_DIR"
+    mkdir --mode=755 --parents "$CONFIG_DIR"
+  fi
 fi
 
 case "$1" in

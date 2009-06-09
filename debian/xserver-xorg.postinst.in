@@ -54,13 +54,8 @@ debug_echo "Configuring $THIS_PACKAGE."
 
 #DEBHELPER#
 
-# register this package as a (potential) handler of the X server symlink
-if ! fgrep -qsx "$THIS_PACKAGE" "$SERVER_SYMLINK_ROSTER"; then
-  echo "$THIS_PACKAGE" >> "$SERVER_SYMLINK_ROSTER"
-fi
-
-# only mess with the server symlink file if it is a symbolic link or does
-# not exist.  otherwise, assume that's the way the user wants it.
+# only mess with the server symlink file if it does not exist.  otherwise,
+# assume that's the way the user wants it.
 if ! [ -e "$SERVER_SYMLINK" ]; then
   ln -s "$THIS_SERVER" "$SERVER_SYMLINK"
 # recover from an old bug
@@ -72,7 +67,6 @@ fi
 if [ -n "$UPGRADE" ]; then
     if dpkg --compare-versions "$2" le "1:7.3+5"; then
         # Clean up our old crap
-        rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
         for QUESTION in "shared/default-x-server" \
                         "xserver-xorg/autodetect_mouse" \
                         "xserver-xorg/autodetect_monitor" \
@@ -119,6 +113,7 @@ if [ -n "$UPGRADE" ]; then
       db_unregister xserver-xorg/config/device/bus_id || true
       db_unregister xserver-xorg/config/device/bus_id_error || true
       rm -f "$XORGCONFIG_ROSTER" "$XORGCONFIG_CHECKSUM"
+      rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
     fi
 fi
 
