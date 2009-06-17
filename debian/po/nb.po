@@ -4,12 +4,12 @@
 #
 # Bjørn Steensrud <bjornst@powertech.no>, 2006.
 # Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2008.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_nb\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-08-31 22:50+0200\n"
 "Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -17,472 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "Driver for X-tjeneren:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"Det må velges en grafikk-kortdriver for X-tjeneren for at den grafiske "
-"brukerflaten til X Window System skal virke på riktig måte."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Drivere har som regel navn etter leverandøren av grafikk-kortet eller "
-"chipsettet, eller etter en bestemt modell eller chipsett -familie."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Bruke kjernens rammebuffer som grensesnitt?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Heller enn å kommunisere direkte med grafikkutstyret kan X-tjeneren settes "
-"opp til å utføre noen handlinger, slik som bytte mellom video-moduser, via "
-"kjernens rammebuffer-driver."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Teoretisk skulle begge arbeidsmåter fungere, men i praksis virker noen "
-"ganger den ene og ikke den andre. Det er trygt å slå på dette, men slå det "
-"gjerne av hvis det ser ut til å skape problemer."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "Grafikk-kortets buss-ID:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"Brukere på PowerPC-maskiner, og maskiner med flere grafikkenheter, bør oppgi "
-"BusID for grafikk-kortet på et format som godtas for maskinens buss-system."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "Eksempler:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"For maskiner med flere hoder vil dette bare sette opp ett av hodene. Videre "
-"innstilling må gjøres manuelt i oppsettsfila for X-tjeneren, /etc/X11/xorg."
-"conf."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"Kanskje du vil bruke kommandoen «lspci» for å finne buss-adressen til PCI, "
-"AGP eller PCI-Express grafikk-kort."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"Når det er mulig har dette spørsmålet fått et forhåndsdefinert svar, og du "
-"bør godta standarden med mindre du vet at det ikke virker."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "Feil format for buss-identifikasjonen."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Regelsett som skal brukes for XKB :"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"For at X-tjeneren skal håndtere tastaturet riktig må det velges et XKB-"
-"regelsett."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Brukere av de fleste tastatur bør fylle inn «xorg»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Erfarne brukere kan bruke alle definerte XKB-regelsett.  Hvis pakka xkb-data "
-"er pakket ut finnes tilgjengelige regelsett i mappa /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Er du i tvil, så oppgi «xorg»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Tastaturmodell:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"For at X-tjeneren skal håndtere tastaturet riktig må det oppgis en "
-"tastaturmodell. Tilgjengelige modeller avhenger av hvilket XKB-regelsett som "
-"brukes."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Med regelsettet «xorg»:\n"
-" - pc101: tradisjonelt IBM PC/AT tastatur med 101 taster, vanlig\n"
-"          i USA.  Har ingen «logo» eller «meny»-taster;\n"
-" - pc104: ligner pc101-modellen, med flere taster, som regel merket\n"
-"          med et «logo» symbol og et «meny» symbol;\n"
-" - pc102: ligner pc101 og ofte brukt i Europa. Har en «< >»-tast;\n"
-" - pc105: ligner pc104 og ofte brukt i Europa. Har en «< >»-tast;\n"
-" - macintosh: Macintosh-tastaturer med nye inndata-lag med Linux\n"
-"              tastekoder;\n"
-" - macintosh_old: Macintosh-tastaturer uten nye inndata-lag;\n"
-" - type4: Sun Type 4-tastaturer;\n"
-" - type5: Sun Type 5-tastaturer."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Tastaturer for bærbare har ikke så mange taster som skrivebordsmaskiner, her "
-"bør det velges tastaturmodell som ligger nærmest til beskrivelsen over."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Erfarne brukere kan sette opp alle modeller som er definert av det valgte "
-"XKB-regelsettet. Hvis pakka xkb-data er pakket ut finnes tilgjengelige  "
-"regelsett i mappa /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"De som bruker engelsk tastatur i USA bør som regel oppgi «pc104». De som "
-"bruker de fleste andre tastaturer bør generelt oppgi «pc105»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Tastaturutseende:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"For at X-tjeneren skal håndtere tastaturet riktig må det oppgis et "
-"tastaturutseende. Tilgjengelige utseender avhenger av hvilket XKB-regelsett "
-"og tastaturmodell som er valgt tidligere."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Erfarne brukere kan sette opp alle utseender som støttes av det valgte XKB-"
-"regelsettet. Hvis pakka xkb-data er pakket ut finnes tilgjengelige  "
-"regelsett i mappa /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"De som bruker engelsk tastatur i USA bør som regel oppgi «us»De som bruker "
-"tastaturer laget for andre land bør generelt oppgi den landskoden som er "
-"definert i ISO 3166. F.eks. Frankrike «fr», Tyskland «de», Norge «no»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Tastaturvariant:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"For at X-tjeneren skal håndtere tastaturet slik det ønskes kan det oppgis en "
-"tastaturvariant.Tilgjengelige varianter avhenger av hvilket XKB-regelsett, "
-"modell og utseender som er valgt tidligere."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Mange tastaturutseender støtter muligheten for å behandle «døde» taster, "
-"slik som aksenter som ikke flytter skrivemerket, som normale taster der "
-"skrivemerket flyttes, og hvis dette er det som ønskes, oppgi «nodeadkeys». "
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Erfarne brukere kan velge blant alle varianter som har støtte i det valgte "
-"XKB-utseendet. Hvis pakka xkb-data er pakket ut, se i mappa /usr/share/X11/"
-"xkb etter fila som tilsvarer det valgte utseendet og angir tilgjengelige "
-"varianter."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "De som bruker U.S. engelsk tastatur bør la dette være tomt."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Tastaturvalg:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Det kan oppgis tastaturvalg slik at X-tjeneren håndterer tastaturet slik det "
-"ønskes. Hvilke valg som er mulige avhenger av hvilket XKB-regelsett som er "
-"valgt. Ikke alle valg vil virke med alle tastaturmodeller og utseender."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"For eksempel: Caps Lock-tasten kan fungere som en ekstra Control-tast, hvis "
-"du oppgir «ctrl:nocaps», eller Caps Lock og venstre Control-tast kan bytte "
-"plass med «ctrl:swapcaps»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Et annet eksempel: noen vil gjerne ha Meta-taster tilordnet Alt-tastene "
-"(dette er standard) mens andre foretrekker å ha dem på Windows - eller "
-"«logo»-tastene i stedet. Hvis du vil bruke Windows eller logo-tastene som "
-"Meta-taster kan du oppgi «altwin:meta_win»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Valg kan kombineres med komma i mellom, for eksempel «ctrl:nocaps,altwin:"
-"meta_win»."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Erfarne bruker kan bruke alle valg som passer med den valgte XKB-modellen, "
-"utseendet og varianten."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Er du i tvil, så la det stå åpent."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Tom verdi"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Denne verdien kan ikke være tom."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Ugyldig anførselstegn"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Anførselstegn (\") er ikke tillatt i denne verdien."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "Numerisk verdi trengs"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Tegn som ikke er sifre er ikke tillatt."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "Oppdage tastaturutlegg automatisk?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Standard oppsett for valg av tastaturutforming for Xorg-tjeneren blir basert "
-"på en kombinasjon av språk og det tastaturutseendet som er valgt under "
-"installasjonen."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Velg dette om du vil at tastaturutseendet skal bli oppdaget på nytt. Ikke "
-"velg dette om du vil beholde nåværende utseende."
 
 #. Type: select
 #. Choices
@@ -526,111 +60,406 @@ msgstr ""
 "tillate bare brukere som er logget inn på et av de virtuelle konsollene å "
 "starte X-tjeneren."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Nice-verdi for X-tjeneren:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Nice-verdi for X-tjeneren:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Når det brukes operativsystemer der kjernen har en bestemt strategi for "
-"tidstildeling, er det velkjent at X-tjeneren får bedre ytelse når den får en "
-"høyere prosessprioritet enn standarden. Prioriteten til en prosess kalles "
-"dens «nice»-verdi. Verdien kan settes fra -20 (meget høy prioritet, eller "
-"ikke vennlig - «nice» - mot andre prosesser)  til 19 (meget lav prioritet). "
-"Standardverdien for vanlige prosesser er 0, og det er også anbefalt verdi "
-"for X-tjeneren."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Når det brukes operativsystemer der kjernen har en bestemt strategi for "
+#~ "tidstildeling, er det velkjent at X-tjeneren får bedre ytelse når den får "
+#~ "en høyere prosessprioritet enn standarden. Prioriteten til en prosess "
+#~ "kalles dens «nice»-verdi. Verdien kan settes fra -20 (meget høy prioritet, "
+#~ "eller ikke vennlig - «nice» - mot andre prosesser)  til 19 (meget lav "
+#~ "prioritet). Standardverdien for vanlige prosesser er 0, og det er også "
+#~ "anbefalt verdi for X-tjeneren."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Verdier utenfor området -10 til 0 anbefales ikke - er det for negativt vil X-"
-"tjeneren lage vansker for viktige systemoppgaver, er det for positivt blir X-"
-"tjeneren treg og reagerer sent."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Verdier utenfor området -10 til 0 anbefales ikke - er det for negativt "
+#~ "vil X-tjeneren lage vansker for viktige systemoppgaver, er det for "
+#~ "positivt blir X-tjeneren treg og reagerer sent."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Ukorrekt nice-verdi"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Ukorrekt nice-verdi"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Oppgi et heltall mellom -20 og 19."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Oppgi et heltall mellom -20 og 19."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Muligens store problemer med oppgradering"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Muligens store problemer med oppgradering"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Noen brukere har meldt at ved oppgradering til siste pakkesett ble ikke "
-"xserver-pakken installert. Fordi det ikke er lett å omgå dette problemet, "
-"bør du passe på at pakka xserver-xorg er installert etter oppgradering. Hvis "
-"den ikke er installert og du trenger den, så anbefales det at du installerer "
-"xorg-pakka for å sikre at du har et fullstendig X-oppsett."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Noen brukere har meldt at ved oppgradering til siste pakkesett ble ikke "
+#~ "xserver-pakken installert. Fordi det ikke er lett å omgå dette problemet, "
+#~ "bør du passe på at pakka xserver-xorg er installert etter oppgradering. "
+#~ "Hvis den ikke er installert og du trenger den, så anbefales det at du "
+#~ "installerer xorg-pakka for å sikre at du har et fullstendig X-oppsett."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Kan ikke slette mappa /usr/X11R6/bin"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Kan ikke slette mappa /usr/X11R6/bin"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Denne oppgraderingen krever at mappa /usr/X11R6/bin slettes og erstattes med "
-"en symbolsk lenke. Det ble forsøkt gjort, men lyktes ikke, mest trolig fordi "
-"mappa ikke er tom ennå. Du må flytte de filene som er igjen i mappa ut av "
-"veien slik at installasjonen kan fortsette. Hvis du vil kan du flytte dem "
-"tilbake etter at lenka er på plass."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Denne oppgraderingen krever at mappa /usr/X11R6/bin slettes og erstattes "
+#~ "med en symbolsk lenke. Det ble forsøkt gjort, men lyktes ikke, mest "
+#~ "trolig fordi mappa ikke er tom ennå. Du må flytte de filene som er igjen "
+#~ "i mappa ut av veien slik at installasjonen kan fortsette. Hvis du vil kan "
+#~ "du flytte dem tilbake etter at lenka er på plass."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Denne pakkeinstallasjonen vil nå avslutte som mislykket slik at du kan gjøre "
-"dette. Kjør oppgraderingen om igjen etter at du har tømt mappa."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Denne pakkeinstallasjonen vil nå avslutte som mislykket slik at du kan "
+#~ "gjøre dette. Kjør oppgraderingen om igjen etter at du har tømt mappa."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "Grafikk-kortets buss-ID:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "Brukere på PowerPC-maskiner, og maskiner med flere grafikkenheter, bør "
+#~ "oppgi BusID for grafikk-kortet på et format som godtas for maskinens buss-"
+#~ "system."
+
+#~ msgid "Examples:"
+#~ msgstr "Eksempler:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "For maskiner med flere hoder vil dette bare sette opp ett av hodene. "
+#~ "Videre innstilling må gjøres manuelt i oppsettsfila for X-tjeneren, /etc/"
+#~ "X11/xorg.conf."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "Kanskje du vil bruke kommandoen «lspci» for å finne buss-adressen til PCI, "
+#~ "AGP eller PCI-Express grafikk-kort."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "Når det er mulig har dette spørsmålet fått et forhåndsdefinert svar, og "
+#~ "du bør godta standarden med mindre du vet at det ikke virker."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "Feil format for buss-identifikasjonen."
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Bruke kjernens rammebuffer som grensesnitt?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Heller enn å kommunisere direkte med grafikkutstyret kan X-tjeneren "
+#~ "settes opp til å utføre noen handlinger, slik som bytte mellom video-"
+#~ "moduser, via kjernens rammebuffer-driver."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Teoretisk skulle begge arbeidsmåter fungere, men i praksis virker noen "
+#~ "ganger den ene og ikke den andre. Det er trygt å slå på dette, men slå "
+#~ "det gjerne av hvis det ser ut til å skape problemer."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Regelsett som skal brukes for XKB :"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "For at X-tjeneren skal håndtere tastaturet riktig må det velges et XKB-"
+#~ "regelsett."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Brukere av de fleste tastatur bør fylle inn «xorg»."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Erfarne brukere kan bruke alle definerte XKB-regelsett.  Hvis pakka xkb-"
+#~ "data er pakket ut finnes tilgjengelige regelsett i mappa /usr/share/X11/"
+#~ "xkb/rules."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Er du i tvil, så oppgi «xorg»."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Tastaturmodell:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "For at X-tjeneren skal håndtere tastaturet riktig må det oppgis en "
+#~ "tastaturmodell. Tilgjengelige modeller avhenger av hvilket XKB-regelsett "
+#~ "som brukes."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Med regelsettet «xorg»:\n"
+#~ " - pc101: tradisjonelt IBM PC/AT tastatur med 101 taster, vanlig\n"
+#~ "          i USA.  Har ingen «logo» eller «meny»-taster;\n"
+#~ " - pc104: ligner pc101-modellen, med flere taster, som regel merket\n"
+#~ "          med et «logo» symbol og et «meny» symbol;\n"
+#~ " - pc102: ligner pc101 og ofte brukt i Europa. Har en «< >»-tast;\n"
+#~ " - pc105: ligner pc104 og ofte brukt i Europa. Har en «< >»-tast;\n"
+#~ " - macintosh: Macintosh-tastaturer med nye inndata-lag med Linux\n"
+#~ "              tastekoder;\n"
+#~ " - macintosh_old: Macintosh-tastaturer uten nye inndata-lag;\n"
+#~ " - type4: Sun Type 4-tastaturer;\n"
+#~ " - type5: Sun Type 5-tastaturer."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Tastaturer for bærbare har ikke så mange taster som skrivebordsmaskiner, "
+#~ "her bør det velges tastaturmodell som ligger nærmest til beskrivelsen "
+#~ "over."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Erfarne brukere kan sette opp alle modeller som er definert av det valgte "
+#~ "XKB-regelsettet. Hvis pakka xkb-data er pakket ut finnes tilgjengelige  "
+#~ "regelsett i mappa /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "De som bruker engelsk tastatur i USA bør som regel oppgi «pc104». De som "
+#~ "bruker de fleste andre tastaturer bør generelt oppgi «pc105»."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Tastaturutseende:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "For at X-tjeneren skal håndtere tastaturet riktig må det oppgis et "
+#~ "tastaturutseende. Tilgjengelige utseender avhenger av hvilket XKB-"
+#~ "regelsett og tastaturmodell som er valgt tidligere."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Erfarne brukere kan sette opp alle utseender som støttes av det valgte "
+#~ "XKB-regelsettet. Hvis pakka xkb-data er pakket ut finnes tilgjengelige  "
+#~ "regelsett i mappa /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "De som bruker engelsk tastatur i USA bør som regel oppgi «us»De som bruker "
+#~ "tastaturer laget for andre land bør generelt oppgi den landskoden som er "
+#~ "definert i ISO 3166. F.eks. Frankrike «fr», Tyskland «de», Norge «no»."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Tastaturvariant:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "For at X-tjeneren skal håndtere tastaturet slik det ønskes kan det oppgis "
+#~ "en tastaturvariant.Tilgjengelige varianter avhenger av hvilket XKB-"
+#~ "regelsett, modell og utseender som er valgt tidligere."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Mange tastaturutseender støtter muligheten for å behandle «døde» taster, "
+#~ "slik som aksenter som ikke flytter skrivemerket, som normale taster der "
+#~ "skrivemerket flyttes, og hvis dette er det som ønskes, oppgi «nodeadkeys». "
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Erfarne brukere kan velge blant alle varianter som har støtte i det "
+#~ "valgte XKB-utseendet. Hvis pakka xkb-data er pakket ut, se i mappa /usr/"
+#~ "share/X11/xkb etter fila som tilsvarer det valgte utseendet og angir "
+#~ "tilgjengelige varianter."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "De som bruker U.S. engelsk tastatur bør la dette være tomt."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Tastaturvalg:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Det kan oppgis tastaturvalg slik at X-tjeneren håndterer tastaturet slik "
+#~ "det ønskes. Hvilke valg som er mulige avhenger av hvilket XKB-regelsett "
+#~ "som er valgt. Ikke alle valg vil virke med alle tastaturmodeller og "
+#~ "utseender."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "For eksempel: Caps Lock-tasten kan fungere som en ekstra Control-tast, "
+#~ "hvis du oppgir «ctrl:nocaps», eller Caps Lock og venstre Control-tast kan "
+#~ "bytte plass med «ctrl:swapcaps»."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Et annet eksempel: noen vil gjerne ha Meta-taster tilordnet Alt-tastene "
+#~ "(dette er standard) mens andre foretrekker å ha dem på Windows - eller "
+#~ "«logo»-tastene i stedet. Hvis du vil bruke Windows eller logo-tastene som "
+#~ "Meta-taster kan du oppgi «altwin:meta_win»."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Valg kan kombineres med komma i mellom, for eksempel «ctrl:nocaps,altwin:"
+#~ "meta_win»."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Erfarne bruker kan bruke alle valg som passer med den valgte XKB-"
+#~ "modellen, utseendet og varianten."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Er du i tvil, så la det stå åpent."
+
+#~ msgid "Empty value"
+#~ msgstr "Tom verdi"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Denne verdien kan ikke være tom."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Ugyldig anførselstegn"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Anførselstegn (\") er ikke tillatt i denne verdien."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Numerisk verdi trengs"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Tegn som ikke er sifre er ikke tillatt."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Oppdage tastaturutlegg automatisk?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Standard oppsett for valg av tastaturutforming for Xorg-tjeneren blir "
+#~ "basert på en kombinasjon av språk og det tastaturutseendet som er valgt "
+#~ "under installasjonen."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Velg dette om du vil at tastaturutseendet skal bli oppdaget på nytt. Ikke "
+#~ "velg dette om du vil beholde nåværende utseende."
+
+#~ msgid "X server driver:"
+#~ msgstr "Driver for X-tjeneren:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "Det må velges en grafikk-kortdriver for X-tjeneren for at den grafiske "
+#~ "brukerflaten til X Window System skal virke på riktig måte."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Drivere har som regel navn etter leverandøren av grafikk-kortet eller "
+#~ "chipsettet, eller etter en bestemt modell eller chipsett -familie."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
@@ -687,9 +516,9 @@ msgstr ""
 #~ "however, the X server configuration files can be edited later to support "
 #~ "a multi-head configuration."
 #~ msgstr ""
-#~ "Innstillingsprosessen støtter for tiden bare oppsett med ett «hode» - "
-#~ "kort og skjerm - men oppsettsfilene for X-tjeneren kan redigeres senere "
-#~ "for å gi støtte til flere «hoder»."
+#~ "Innstillingsprosessen støtter for tiden bare oppsett med ett «hode» - kort "
+#~ "og skjerm - men oppsettsfilene for X-tjeneren kan redigeres senere for å "
+#~ "gi støtte til flere «hoder»."
 
 #~ msgid "Identifier for your video card:"
 #~ msgstr "Hva heter grafikk-kortet:"
@@ -757,8 +586,8 @@ msgstr ""
 #~ "will set some configuration values appropriate for a typical CRT of the "
 #~ "corresponding size, but may be suboptimal for high-quality CRT's."
 #~ msgstr ""
-#~ "Valget «enkel» vil spørre etter skjermens fysiske størrelse, dette "
-#~ "stiller inn noen oppsettsverdier som passer for en typisk skjerm av denne "
+#~ "Valget «enkel» vil spørre etter skjermens fysiske størrelse, dette stiller "
+#~ "inn noen oppsettsverdier som passer for en typisk skjerm av denne "
 #~ "størrelsen, men utnytter kanskje ikke høykvalitetsskjermer."
 
 #~ msgid ""
@@ -895,9 +724,9 @@ msgstr ""
 #~ "8 bits of alpha channel or simple zero padding; the X Window System can "
 #~ "handle both.  If you want either, select 24 bits."
 #~ msgstr ""
-#~ "Såkalt «32-bit farge» er egentlig 24 bit fargeinformasjon pluss 8 bit "
-#~ "alfa-kanal, eller enkel nullutfylling. X Window System kan håndtere "
-#~ "begge. Velg 24 bits om du vil ha en av delene."
+#~ "Såkalt «32-bit farge» er egentlig 24 bit fargeinformasjon pluss 8 bit alfa-"
+#~ "kanal, eller enkel nullutfylling. X Window System kan håndtere begge. "
+#~ "Velg 24 bits om du vil ha en av delene."
 
 #~ msgid "Write default Files section to configuration file?"
 #~ msgstr "Skal standard Files-avsnitt skrives til oppsettsfila?"
@@ -908,10 +737,9 @@ msgstr ""
 #~ "This option is recommended to experienced users only.  In most cases, it "
 #~ "should be enabled."
 #~ msgstr ""
-#~ "«Files»-avsnittet i oppsettsfila for X-tjeneren viser hvor X-tjeneren "
-#~ "skal finne tjenermoduler, RGB-fargedatabasen og skriftfiler. Dette "
-#~ "anbefales bare for erfarne brukere.  I de fleste tilfeller bør dette være "
-#~ "slått på."
+#~ "«Files»-avsnittet i oppsettsfila for X-tjeneren viser hvor X-tjeneren skal "
+#~ "finne tjenermoduler, RGB-fargedatabasen og skriftfiler. Dette anbefales "
+#~ "bare for erfarne brukere.  I de fleste tilfeller bør dette være slått på."
 
 #~ msgid ""
 #~ "Disable this option if you want to maintain a custom Files section into "
@@ -919,11 +747,10 @@ msgstr ""
 #~ "reference to the local font server, add a reference to a different font "
 #~ "server, or rearrange the default set of local font paths."
 #~ msgstr ""
-#~ "Slå av dette om du vil beholde et tilpasset «Files»-avsnitt i "
-#~ "oppsettsfila for X.Org-tjeneren. Dette kan være nødvendig for å ta bort "
-#~ "referanser til den lokale skrift-tjeneren, legge til en referanse til en "
-#~ "annen skrifttjener, eller omordne standardoppsettet for lokale "
-#~ "skriftstier."
+#~ "Slå av dette om du vil beholde et tilpasset «Files»-avsnitt i oppsettsfila "
+#~ "for X.Org-tjeneren. Dette kan være nødvendig for å ta bort referanser til "
+#~ "den lokale skrift-tjeneren, legge til en referanse til en annen "
+#~ "skrifttjener, eller omordne standardoppsettet for lokale skriftstier."
 
 #~ msgid "No X server known for your video hardware"
 #~ msgstr "Ingen kjent X-tjener for ditt video-utstyr."

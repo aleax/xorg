@@ -23,9 +23,6 @@ endif
 # debhelper
 export DH_OPTIONS
 
-# Default list of detection packages
-XSERVER_XORG_DETECT_DEPENDS = ""
-
 include debian/xsfbs/xsfbs.mk
 
 # Get package version info.
@@ -41,8 +38,6 @@ else
  endif
 endif
 
-# Read in important variables.
-#include debian/scripts/vars
 # Read in architecture-specific variables of importance.
 include debian/scripts/vars.$(ARCH)
 
@@ -82,6 +77,7 @@ stamp-install: stamp-build
 	dh_testroot
 	umask 022
 	dh_clean -k
+	chmod 755 debian/local/debian-setup-keyboard
 	touch $@
 
 binary-indep: DH_OPTIONS=-i
@@ -112,7 +108,7 @@ binary-indep: build install
 	chown root:root debian/x11-common/etc/X11/Xsession
 	chmod 755 debian/x11-common/etc/X11/Xsession
 	dh_installdeb
-	dh_gencontrol -- -VF:XServer-Xorg-Detect-Depends=$(XSERVER_XORG_DETECT_DEPENDS)
+	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
 	touch stamp-$@
@@ -125,6 +121,7 @@ binary-arch: build install
 	dh_installdebconf
 	dh_installdirs
 	dh_installdocs
+	dh_installexamples
 	dh_installman
 	dh_installchangelogs
 	dh_link

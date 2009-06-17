@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 6.8.2.dfsg.1-4+SVN\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-09 13:20+0800\n"
 "Last-Translator: Kov Chai <tchaikov@gmail.com>\n"
 "Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
@@ -37,450 +37,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "X 服务器驱动："
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"要正确显示和使用 X 窗口系统的图形用户界面，您必须为 X 服务器选择一个显示卡驱"
-"动。"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"驱动通常都被命名为显示卡或显示芯片厂商，或者是某个特定型号或芯片族的名称。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "是否使用内核帧缓冲设备接口？"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"X 服务器还可以被配置为通过内核的帧缓冲驱动来执行某些操作 (例如视频模式切换)，"
-"而非直接与视频硬件进行通讯。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"在理论上，两种途径都应该能工作。但在实践中，常常是一个可以而另一个不行。开启"
-"此选项可以看作是安全保险，但如果它造成了某些问题，您完全可以将其关闭。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "请输入显示卡的通道标识符 (bus identifier)："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"PowerPC 机器用户，以及任何带有多个视频显示设备的计算机用户，都应该使用可被接"
-"受的 bus 专用格式来设定显示卡的 BusID，。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "例如："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"对于使用多头设定的用户，此选项将仅仅配置其中一个显示设备。接下来，您还需要手"
-"动编辑 X 的配置文件，/etc/X11/xorg.conf。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"您也许会想使用“lspci”命令来确定您的 PCI、AGP 或 PCI-Express 显示卡的通道位"
-"置。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"如果可能的话，此问题应该已经被预设好了答案。除非您知道该设置不能工作，否则您"
-"应该接受之。"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "通道号 (bus identifier) 的格式错误"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "请选择要使用的 XKB 规则集："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr "要使 X 服务器能正确处理您的键盘，您必须选择一个 XKB 规则集。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "绝大部分键盘的用户都应该输入“xorg”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"有经验的用户可以使用任何已定义的 XKB 规则集。如果 xkb-data 软件包已被解包，请"
-"到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "如果您有所疑惑，此项值应该被设为“xorg”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "键盘型号："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"要使 X 服务器能正确处理您的键盘，您必须输入一个键盘型号。可用的型号依赖于使用"
-"哪种 XKB 规则集。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" “xorg”规则集：\n"
-" - pc101：传统 101 键 IBM PC/AT 式样键盘，常见于美国。不带“徽标”和“菜"
-"单”键；\n"
-" - pc104：类似于 pc101 型号，带有附加键，通常刻有一个“徽标”和一个“菜单”符"
-"号；\n"
-" - pc102：类似于 pc101，常见于欧洲。包含一个“< >”键；\n"
-" - pc105：类似于 pc104，常见于欧洲。包含一个“< >”键；\n"
-" - macintosh：使用 linux 键码 (keycodes) 的新输入布局的麦金塔键盘；\n"
-" - macintosh_old：未使用新输入布局的麦金塔键盘；\n"
-" - type4：Sun Type4 键盘；\n"
-" - type5：Sun Type5 键盘。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"笔记本电脑键盘通常没有标准键盘那么多键。用户应该选择一个大致上最接近以上所列"
-"键盘的型号。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"有经验的用户可以使用任何由被选 XKB 规则集所定义的键盘型号。如果 xkb-data 软件"
-"包已被解包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"美国英语键盘用户通常应该输入“pc104”。大部分其它键盘的用户通常应该输"
-"入“pc105”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "键盘布局："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"要使 X 服务器能正确处理您的键盘，您必须输入一个键盘布局。可用的布局依赖于您前"
-"面所选择的 XKB 规则集和键盘型号。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"有经验的用户可以使用任何由被选 XKB 规则集所支持布局。如果 xlibs 软件包已被解"
-"包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"美国英语键盘用户应该输入“us”。使用其它国家特有键盘的用户通常应该输入其国家的 "
-"ISO 3166 国家代码。例如，法国用户应该使用“fr”，德国用户应该使用“de”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "键盘变种 (variant)："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"要使 X 服务器能按照您的期望处理键盘，您必须输入一个键盘变种 (variant)。可用的"
-"种类依赖于您前面所选择的 XKB 规则集、键盘型号和布局。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"有许多键盘布局支持一个处理“dead”键的选项，例如将非空格的音调符号和分音符作为"
-"普通空格键使用。如果这是您期望的工作方式，请输入“nodeadkeys”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"有经验的用户可以使用任何由被选 XKB 布局所支持的变种 (variant)。如果 xkb-data "
-"软件包已被解包，请到 /usr/share/X11/xkb/symbols 目录下查找对应于您所选布局的"
-"可用变种。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "美国英语键盘用户通常应该将此栏留空。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "键盘选项："
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"要使 X 服务器能按照您的期望处理键盘，您可能需要输入键盘选项。可用的选项依赖于"
-"您前面所选择的 XKB 规则集。并不是所有的选项都能在每种键盘型号和布局上工作。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"例如，如果您想将 Caps Lock 键当成额外的 Control 键使用，就需要输入“ctrl:"
-"nocaps”；如果您想将 Caps Lock 键与左 Control 键交换使用，就需要输入“ctrl:"
-"swapcaps”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"再举一个例子，有些人喜欢将 Meta 键设到键盘的 Alt 键上 (这是默认的设置)，然而"
-"其他人可能更希望将 Meta 键放到 Windows 或“logo”键上。如果您想将 Windows 或 "
-"logo 键当成 Meta 键使用，就需要输入“altwin:meta_win”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"您可以组合多个选项，并用逗号来分隔，比如“ctrl:nocaps,altwin:meta_win”。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr "有经验的用户可以使用任何兼容于所选 XKB 型号、布局和变种的选项。"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "如果您有所疑惑，此项值应该被置空。"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "空值"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "此栏不能为空值。"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "无效的双引号字符"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "此栏的值中不能带有双引号 (\") 字符。"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "需要数字字符"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "此栏中不能有数字以外的字符。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "自动探测键盘布局？"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Xorg 服务器的默认键盘布局选择是基于安装程序 (installer) 中的语言和键盘布局选"
-"择而作出的决定。"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"如果您想重新探测键盘布局，请选中此项。如果您要保持现有布局，则不要选中它。"
 
 #. Type: select
 #. Choices
@@ -522,105 +78,376 @@ msgstr ""
 "更加愚蠢的做法，这在仅允许根(root)用户启动 X 服务器时可能会发生。较好的解决办"
 "法是允许那些能登录到虚拟控制台的用户启动 X 服务器。"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "X 服务器使用的 nice 值 (即优先值)："
+#~ msgid "Nice value for the X server:"
+#~ msgstr "X 服务器使用的 nice 值 (即优先值)："
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"如果在操作系统内核中使用某种调度策略，一个很普遍的看法是让 X 服务器在比默认优"
-"先级更高的进程中运行能够提升其表现；一个进程的优先级也叫做它的“nice”值。优先"
-"级的范围从 -20 (极高的优先级，或者说对其它进程“不 nice”) 到 19 (极低的优先"
-"级)。普通进程的默认 nice 值是 0，这也是 X 服务器的推荐值。"
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "如果在操作系统内核中使用某种调度策略，一个很普遍的看法是让 X 服务器在比默"
+#~ "认优先级更高的进程中运行能够提升其表现；一个进程的优先级也叫做它"
+#~ "的“nice”值。优先级的范围从 -20 (极高的优先级，或者说对其它进程“不 nice”) "
+#~ "到 19 (极低的优先级)。普通进程的默认 nice 值是 0，这也是 X 服务器的推荐"
+#~ "值。"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"不推荐使用超出 -10 到 0 范围的值。如果设置太小，X 服务器会干扰其它重要的系统"
-"任务；如果设置得太大，X 服务器就会变得缓慢和迟钝。"
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "不推荐使用超出 -10 到 0 范围的值。如果设置太小，X 服务器会干扰其它重要的系"
+#~ "统任务；如果设置得太大，X 服务器就会变得缓慢和迟钝。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "错误的 nice 值"
+#~ msgid "Incorrect nice value"
+#~ msgstr "错误的 nice 值"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "请输入一个大于 -20 且小于 19 的整数。"
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "请输入一个大于 -20 且小于 19 的整数。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "严重的升级问题"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "严重的升级问题"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"有些用户报告过，在升级到当前最新的软件集后，他们的 xserver 软件包却没有被安"
-"装。由于对此问题并没有一个简单的解决办法，您应该在升级后检查 xserver-xorg 软"
-"件包是否被安装。如果没有安装而且您需要它，推荐您安装 xorg 软件包以确保您拥有"
-"一个全功能的 X 设置。"
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "有些用户报告过，在升级到当前最新的软件集后，他们的 xserver 软件包却没有被"
+#~ "安装。由于对此问题并没有一个简单的解决办法，您应该在升级后检查 xserver-"
+#~ "xorg 软件包是否被安装。如果没有安装而且您需要它，推荐您安装 xorg 软件包以"
+#~ "确保您拥有一个全功能的 X 设置。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "无法移除 /usr/X11R6/bin 目录"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "无法移除 /usr/X11R6/bin 目录"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"本升级过程需要将 /usr/X11R6/bin 目录删除并将其替换为一个符号链接。程序已经尝"
-"试这样做，却遭到失败，最可能的原因是该目录并未清空。您必须将该目录下目前所有"
-"的文件移出，让安装程序可以顺利完成。如果您想的话，也可以在符号链接创建后将文"
-"件移回来。"
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "本升级过程需要将 /usr/X11R6/bin 目录删除并将其替换为一个符号链接。程序已经"
+#~ "尝试这样做，却遭到失败，最可能的原因是该目录并未清空。您必须将该目录下目前"
+#~ "所有的文件移出，让安装程序可以顺利完成。如果您想的话，也可以在符号链接创建"
+#~ "后将文件移回来。"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"本软件包安装失败并将退出，以让您完成所述的工作。请在清除目录后重新运行您的升"
-"级程序。"
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "本软件包安装失败并将退出，以让您完成所述的工作。请在清除目录后重新运行您的"
+#~ "升级程序。"
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "请输入显示卡的通道标识符 (bus identifier)："
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "PowerPC 机器用户，以及任何带有多个视频显示设备的计算机用户，都应该使用可被"
+#~ "接受的 bus 专用格式来设定显示卡的 BusID，。"
+
+#~ msgid "Examples:"
+#~ msgstr "例如："
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "对于使用多头设定的用户，此选项将仅仅配置其中一个显示设备。接下来，您还需要"
+#~ "手动编辑 X 的配置文件，/etc/X11/xorg.conf。"
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "您也许会想使用“lspci”命令来确定您的 PCI、AGP 或 PCI-Express 显示卡的通道位"
+#~ "置。"
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "如果可能的话，此问题应该已经被预设好了答案。除非您知道该设置不能工作，否则"
+#~ "您应该接受之。"
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "通道号 (bus identifier) 的格式错误"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "是否使用内核帧缓冲设备接口？"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "X 服务器还可以被配置为通过内核的帧缓冲驱动来执行某些操作 (例如视频模式切"
+#~ "换)，而非直接与视频硬件进行通讯。"
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "在理论上，两种途径都应该能工作。但在实践中，常常是一个可以而另一个不行。开"
+#~ "启此选项可以看作是安全保险，但如果它造成了某些问题，您完全可以将其关闭。"
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "请选择要使用的 XKB 规则集："
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr "要使 X 服务器能正确处理您的键盘，您必须选择一个 XKB 规则集。"
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "绝大部分键盘的用户都应该输入“xorg”。"
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "有经验的用户可以使用任何已定义的 XKB 规则集。如果 xkb-data 软件包已被解"
+#~ "包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "如果您有所疑惑，此项值应该被设为“xorg”。"
+
+#~ msgid "Keyboard model:"
+#~ msgstr "键盘型号："
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "要使 X 服务器能正确处理您的键盘，您必须输入一个键盘型号。可用的型号依赖于"
+#~ "使用哪种 XKB 规则集。"
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " “xorg”规则集：\n"
+#~ " - pc101：传统 101 键 IBM PC/AT 式样键盘，常见于美国。不带“徽标”和“菜"
+#~ "单”键；\n"
+#~ " - pc104：类似于 pc101 型号，带有附加键，通常刻有一个“徽标”和一个“菜单”符"
+#~ "号；\n"
+#~ " - pc102：类似于 pc101，常见于欧洲。包含一个“< >”键；\n"
+#~ " - pc105：类似于 pc104，常见于欧洲。包含一个“< >”键；\n"
+#~ " - macintosh：使用 linux 键码 (keycodes) 的新输入布局的麦金塔键盘；\n"
+#~ " - macintosh_old：未使用新输入布局的麦金塔键盘；\n"
+#~ " - type4：Sun Type4 键盘；\n"
+#~ " - type5：Sun Type5 键盘。"
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "笔记本电脑键盘通常没有标准键盘那么多键。用户应该选择一个大致上最接近以上所"
+#~ "列键盘的型号。"
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "有经验的用户可以使用任何由被选 XKB 规则集所定义的键盘型号。如果 xkb-data "
+#~ "软件包已被解包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "美国英语键盘用户通常应该输入“pc104”。大部分其它键盘的用户通常应该输"
+#~ "入“pc105”。"
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "键盘布局："
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "要使 X 服务器能正确处理您的键盘，您必须输入一个键盘布局。可用的布局依赖于"
+#~ "您前面所选择的 XKB 规则集和键盘型号。"
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "有经验的用户可以使用任何由被选 XKB 规则集所支持布局。如果 xlibs 软件包已被"
+#~ "解包，请到 /usr/share/X11/xkb/rules 目录下查找可用的规则集。"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "美国英语键盘用户应该输入“us”。使用其它国家特有键盘的用户通常应该输入其国家"
+#~ "的 ISO 3166 国家代码。例如，法国用户应该使用“fr”，德国用户应该使用“de”。"
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "键盘变种 (variant)："
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "要使 X 服务器能按照您的期望处理键盘，您必须输入一个键盘变种 (variant)。可"
+#~ "用的种类依赖于您前面所选择的 XKB 规则集、键盘型号和布局。"
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "有许多键盘布局支持一个处理“dead”键的选项，例如将非空格的音调符号和分音符作"
+#~ "为普通空格键使用。如果这是您期望的工作方式，请输入“nodeadkeys”。"
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "有经验的用户可以使用任何由被选 XKB 布局所支持的变种 (variant)。如果 xkb-"
+#~ "data 软件包已被解包，请到 /usr/share/X11/xkb/symbols 目录下查找对应于您所"
+#~ "选布局的可用变种。"
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr "美国英语键盘用户通常应该将此栏留空。"
+
+#~ msgid "Keyboard options:"
+#~ msgstr "键盘选项："
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "要使 X 服务器能按照您的期望处理键盘，您可能需要输入键盘选项。可用的选项依"
+#~ "赖于您前面所选择的 XKB 规则集。并不是所有的选项都能在每种键盘型号和布局上"
+#~ "工作。"
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "例如，如果您想将 Caps Lock 键当成额外的 Control 键使用，就需要输入“ctrl:"
+#~ "nocaps”；如果您想将 Caps Lock 键与左 Control 键交换使用，就需要输入“ctrl:"
+#~ "swapcaps”。"
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "再举一个例子，有些人喜欢将 Meta 键设到键盘的 Alt 键上 (这是默认的设置)，然"
+#~ "而其他人可能更希望将 Meta 键放到 Windows 或“logo”键上。如果您想将 Windows "
+#~ "或 logo 键当成 Meta 键使用，就需要输入“altwin:meta_win”。"
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "您可以组合多个选项，并用逗号来分隔，比如“ctrl:nocaps,altwin:meta_win”。"
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr "有经验的用户可以使用任何兼容于所选 XKB 型号、布局和变种的选项。"
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "如果您有所疑惑，此项值应该被置空。"
+
+#~ msgid "Empty value"
+#~ msgstr "空值"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "此栏不能为空值。"
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "无效的双引号字符"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "此栏的值中不能带有双引号 (\") 字符。"
+
+#~ msgid "Numerical value needed"
+#~ msgstr "需要数字字符"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "此栏中不能有数字以外的字符。"
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "自动探测键盘布局？"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Xorg 服务器的默认键盘布局选择是基于安装程序 (installer) 中的语言和键盘布局"
+#~ "选择而作出的决定。"
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "如果您想重新探测键盘布局，请选中此项。如果您要保持现有布局，则不要选中它。"
+
+#~ msgid "X server driver:"
+#~ msgstr "X 服务器驱动："
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "要正确显示和使用 X 窗口系统的图形用户界面，您必须为 X 服务器选择一个显示卡"
+#~ "驱动。"
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "驱动通常都被命名为显示卡或显示芯片厂商，或者是某个特定型号或芯片族的名称。"
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "

@@ -1,3 +1,130 @@
+xorg (1:7.4+3) unstable; urgency=low
+
+  * Call db_stop at the end of xserver-xorg.postinst, otherwise debconf gets
+    confused and makes the postinst hang after restarting hal
+    (closes: #532623).
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 10 Jun 2009 16:50:27 +0200
+
+xorg (1:7.4+2) unstable; urgency=low
+
+  [ David Nusinow ]
+  * Don't discuss removal of xserver-xorg in its description. 
+    It remains tied to -core at this point. (closes: #523630).
+  * Add libgl1-mesa-dri to the depends of the xorg package to ensure that
+    it gets pulled in even if Recommends are disabled
+  * Make xorg depend on xorg-docs-core and move xorg-docs to be a
+    suggests.  This makes for a slimmer default while providing the
+    necessary manpages that we expect to be present on every install
+    (closes: #388308).
+
+  [ Julien Cristau ]
+  * Update the NEWS entry for xserver-xorg 1:7.4+1 to include a warning about
+    keycode changes breaking Xmodmaps (closes: #523562).  Thanks, Manoj
+    Srivastava!
+  * Restart hal from xserver-xorg.postinst.  hal's trigger gets run too early,
+    when console-setup is not yet configured, so it doesn't pick up the keymap
+    correctly (closes: #524076).
+  * Mention the requirement for a CONFIG_INPUT_EVDEV-enabled kernel in
+    xserver-xorg.NEWS.
+  * Get rid of the remaining xserver-xorg debconf question (Bus ID).
+    Detection of the primary device should happen in the kernel and/or X
+    server.  With this change, we don't generate any xorg.conf anymore.
+  * On upgrade, remove leftover conffile from beforelight (closes: #454219).
+  * Add a console-setup-mini alternative to xserver-xorg's Depends
+    (closes: #527124).
+  * xsfbs: don't call dpkg --print-installation-architecture
+    (closes: #531294).
+  * Add README.source, and bump Standards-Version to 3.8.1.
+  * xsfbs: kill custom readlink function (closes: #498890).  Thanks, Jonas
+    Smedegaard!
+  * x11-common: drop migration code from xfree86, and related debconf
+    templates.
+  * Drop support for renicing the X server from the wrapper.  Remove related
+    debconf templates and maintainer scripts handling.
+  * Don't ship the /usr/X11R6/bin symlink in x11-common.  Break gdm <<
+    2.20.7-5.
+  * xserver-xorg.preinst: drop migration code from /var/lib/xfree86 to
+    /var/lib/x11.
+  * xserver-xorg.{pre,post}inst: drop xorg.conf checksum handling.  Stop
+    creating an empty xorg.conf in preinst.  Now that we don't run dexconf, we
+    don't need to keep a checksum of the config file to know whether the user
+    customized it.
+  * xserver-xorg.{preinst,postinst,postrm}: stop using /var/lib/x11.
+  * control: xserver-xorg doesn't provide infrastructure for managing
+    xorg.conf anymore, remove that from the description.
+  * Stop depending on sparc-utils.  xserver-xorg.postinst doesn't run any
+    detection programs anymore.
+
+  [ Debconf translations ]
+  * Bengali added
+  * Slovak updated (closes: #523448).
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 09 Jun 2009 17:32:10 +0200
+
+xorg (1:7.4+1) unstable; urgency=low
+
+  [ Timo Aaltonen ]
+  * scripts/vars.sparc: Remove sunbw2 from video-all, since monochrome
+    support has been deleted from xserver 1.6.
+  * scripts/vars.*: Drop mouse & kbd from input-all except for non-Linux
+    archs.
+  * scripts/vars, rules: Remove scripts/vars, hasn't been used since
+    it was split.
+
+  [ Julien Cristau ]
+  * Xsession(5): fix the manpage references.
+  * Xwrapper.config(5): X is installed as /usr/bin/X, not /usr/bin/X11R6/X.
+  * Use case-insensitive matching when trying to replace obsolete drivers in
+    xorg.conf.  Use the C locale to make sure this works as expected.
+  * xserver-xorg.postinst: drop duplicate definitions of the debug_echo and
+    validate_string_db_input shell functions.
+  * dexconf: don't try to get the driver from debconf.
+  * xserver-xorg.postinst: drop the code to pick a driver on sparc.  The
+    server now autoconfigures sbus devices.
+  * As a result of the previous change, remove the
+    xserver-xorg/config/device/driver debconf template, and unregister it on
+    upgrade.
+  * We don't use dmidecode and fbset anymore (they were used for hardware
+    detection), so stop adding Recommends on them.
+  * dexconf: don't write empty Monitor and Screen sections.
+  * dexconf: don't output an InputDevice section for mice.
+  * dexconf: don't output an InputDevice section for keyboards.
+  * xserver-xorg.postinst: don't configure the keyboard layout.
+  * remove keyboard-related debconf templates; unregister them on upgrade.
+  * xserver-xorg.templates: don't give an ISA example for the BusID question,
+    ISA support has been removed from the server.
+  * xserver-xorg.postinst: don't accept BusID values matching "ISA:*".
+  * Don't set the UseFBDev option.  Remove the detection code from
+    xserver-xorg.postinst, kill the debconf template and unregister it.
+  * xserver-xorg.postinst: remove unused input validation functions.  Also
+    remove the corresponding debconf templates.
+  * Set the BusID in xorg.conf if we find more than one graphics card, to work
+    around breakage in post-pciaccess xserver (can't find the primary PCI
+    device).
+  * xserver-xorg.postinst: allow setting the PCI domain in the BusID string.
+  * Install a callout and an fdi file to read the configured keymap from
+    /etc/default/console-setup, and set the corresponding keymap for keyboards
+    in hal.  Both stolen from Ubuntu's hal package.
+  * Depend on hal (>= 0.5.12~git20090406) for hal-set-property --direct.
+  * Depend on console-setup (>= 1.29) to handle upgrades from lenny.
+  * Add a NEWS entry to document the changes regarding configuration of input
+    devices.
+  * Re-add rgb.txt, some clients still use it, even though the server doesn't.
+  * Upload to unstable.
+
+  [ David Nusinow ]
+  * Add an example xorg.conf to /usr/share/doc/xserver-xorg/examples. 
+    This will give people something to copy from and modify for their own
+    configurations
+
+  [ Debconf translations ]
+  * Esperanto. Closes: #503039
+  * Asturian. Closes: #511623
+  * Kazakh added. Closes: #521001
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 09 Apr 2009 00:52:17 +0100
+
 xorg (1:7.4~5ubuntu21) karmic; urgency=low
 
   * apport/source_xorg.py: Remove some redundant fglrx detection bits

@@ -70,10 +70,15 @@
  *                messages at build and run time to allow the user to know
  *                what failed on unsupported systems
  *                (30 Mar 2007)
+ * Brice Goglin: drop privileges on alternate config file given with
+ *               -xf86config (14 Jun 2007)
  * Tollef Fog Heen: stop handling -config specifically, since newer
  *                  Xorg does that check automatically and only allows
  *                  non-root users to specify configuration files
  *                  relative to /etc/X11 (10 Aug 2007)
+ * Loïc Minier: on Linux, also consider alternate tty devices (major 5 and
+ *              minor < 64) as consoles (24 Sep 2008)
+ * Julien Cristau: remove the nice_value option
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -92,9 +97,6 @@
  *
  */
 
-/* This should be 0 for Debian 3.0 ("woody") or earlier, and 1 afterwards. */
-#define NICE_USES_SUSV2_SEMANTICS 1
-
 #include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -104,11 +106,6 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-
-#if !(NICE_USES_SUSV2_SEMANTICS)
-# include <sys/time.h>
-# include <sys/resource.h>
-#endif
 
 #if defined(__linux__)
 #define TTY_MAJOR_DEV 4
@@ -219,7 +216,6 @@ main(int argc, char **argv)
   char *val;
   mode_t mask;
   SecurityLevel level = RootOnly;
-  int niceval = 0;
 
   /* attempt to use our config file */
   cf = fopen(X_WRAPPER_CONFIG_FILE, "r");
@@ -246,11 +242,6 @@ main(int argc, char **argv)
         if (strncasecmp(var, "allowed_users", 64) == 0) {
           level = getSecLevel(value);
           /* DEBUG (void) fprintf(stderr, "security level set to %d\n", level); */
-        }
-        if (strncasecmp(var, "nice_value", 64) == 0) {
-          niceval = atoi(value);
-          if ((niceval < -20) || (niceval > 19)) niceval = 0;
-          /* DEBUG (void) fprintf(stderr, "nice value set to %d\n", niceval); */
         }
       }
       val = fgets(line, 1024, cf);
@@ -342,28 +333,6 @@ main(int argc, char **argv)
 
     /* run the X server */
     seteuid(0);
-    /* DEBUG fprintf(stderr, "X: attempting nice() with real uid = %d; euid = %d\n", getuid(), geteuid()); */
-
-#if NICE_USES_SUSV2_SEMANTICS
-    errno = 0;
-    intval = nice(niceval);
-    if (errno) perror("X: warning; nice() of process failed");
-    if (intval != niceval) (void) fprintf(stderr, "X: warning; process set to "
-        "priority %d instead of requested priority %d\n", intval, niceval);
-#else
-    errno = 0;
-    intval = nice(niceval);
-    if ((intval == -1) || (errno != 0)) perror("X: warning; nice() of process "
-        "failed");
-    errno = 0;
-    intval = getpriority(PRIO_PROCESS, 0);
-    if (errno) {
-      perror("X: warning; getpriority() of process failed");
-    } else {
-      if (intval != niceval) (void) fprintf(stderr, "X: warning; process set "
-          "to priority %d instead of requested priority %d\n", intval, niceval);
-    }
-#endif
 
     /* DEBUG exit(0); */
 

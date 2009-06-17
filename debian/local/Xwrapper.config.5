@@ -22,7 +22,7 @@ Xwrapper.config \- configuration options for X server wrapper
 .I /etc/X11/Xwrapper.config
 contains a set of flags that determine some of the behavior of Debian's X
 server wrapper, which is installed on the system as
-.IR /usr/X11R6/bin/X .
+.IR /usr/bin/X .
 The purpose of the wrapper, and of this configuration file, is twofold.
 .PP
 Firstly, it is intended to implement sound security practices.
@@ -91,12 +91,6 @@ indicates that root, or any user whose controlling TTY is a
 virtual console, may start the X server; and
 .B anybody
 indicates that any user may start the X server.
-.TP
-.B nice_value
-may be any integer in the interval [\-20,19].
-This is used to set the executing X server's process priority.
-See
-.BR nice (1).
 .SH AUTHORS
 The X server wrapper was written by Stephen Early, Mark Eichin, and Branden
 Robinson for the Debian Project, with valuable contributions from Erik
@@ -105,6 +99,5 @@ This manual page was written by Branden Robinson with sponsorship from
 Progeny Linux Systems.
 .SH SEE ALSO
 .BR debconf (7),
-.BR dpkg\-reconfigure (8),
-.BR nice (1)
+.BR dpkg\-reconfigure (8)
 .\" vim:set et tw=80:

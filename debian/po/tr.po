@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg-x11\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-15 18:21+0200\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
@@ -38,479 +38,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "X-Poedit-Language: Turkish\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "X sunucu sürücüsü:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"X Window Sisteminin, grafik kullanıcı arayüzlerini doğru işlemesi için, X "
-"sunucusu için bir ekran kartı sürücüsü seçmelisiniz."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Sürücüler genelde, ekran kartı adı, yonga seti, özel bir model veya bir "
-"yonga seti ailesiyle adlandırılır."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Çekirdek kare tamponu arayüzü kullanılsın mı?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"X sunucusu, ekran donanımına doğrudan ulaşmak yerine, çekirdek kare tamponu "
-"(framebuffer) kullanarak ekran kipi değiştirme gibi işlemleri yapmak için de "
-"yapılandırılabilir."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Teorik olarak her ikisi de çalışmalıdır.  Ancak pratikte bazen biri veya "
-"diğeri çalışmaz.  Bu seçeneği etkinleştirmekte bir sakınca yoktur, fakat "
-"sorunlara yol açtığı görülüyorsa iptal etmekten çekinmeyin."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "Ekran kartının veriyolu tanımlayıcısı:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"PowerPC kullanıcıları ve çoklu ekran aygıtı kullanan kullanıcılar, ekran "
-"kartı için veriyolu kimliğini (BusID) kullanılan veriyoluna özgü bir biçemde "
-"belirtmelidirler."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "Örnekler:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"Çok çıkışlı ekran kartı kullanan kullanıcılar için, bu seçenek sadece "
-"çıkışlardan bir tanesini yapılandıracaktır.  Diğer ayarlar /etc/X11/xorg."
-"conf X sunucu yapılandırma dosyasında elle yapılmalıdır."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"PCI, AGP veya PCI Express kartınızın veriyolunu tespit etmek için \"lspci\" "
-"komutunu kullanabilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"Eğer bu mümkünse, bu soru sizin için önceden cevaplanmış olacaktır.  "
-"Çalışmayacağına emin olmadığınız sürece öntanımlı değerleri kabul "
-"etmelisiniz."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "Geçersiz veriyolu tanımlayıcı biçimi"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Kullanılacak XKB kural kümesi:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"X sunucusunun klavyeyi doğru tanıması için, bir XKB kural seti seçilmelidir."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Çoğu kullanıcı bu alana \"xorg\" değerini girmelidir."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Uzman kullanıcılar, mevcut herhangi bir XKB kural kümesini kullanabilir.  "
-"Eğer xkb-data paketi kurulmuşsa, mevcut kural kümelerini /usr/share/X11/xkb/"
-"rules dizininde görebilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Emin değilseniz \"xorg\" olarak ayarlayın"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Klavye tipi:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"X sunucusunun klavyeyi doğru tanıması için, bir klavye tipi girilmeli.  "
-"Mevcut tipler, kullanılan XKB kural kümesine bağlıdır."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" \"xorg\" kural kümesi:\n"
-" - pc101: 101 tuşlu geleneksel IBM PC/AT stili klavye (Birleşik\n"
-"          Devletlerde çok yaygın.  \"logo\" veya \"menu\" tuşları yoktur;\n"
-" - pc104: pc101'e benzeyen ve ek bazı tuşlar içeren model; bu tuşların\n"
-"          üzerinde genellikle bir \"logo\" ve \"menu\" simgesi vardır;\n"
-" - pc102: pc101'e benzeyen ve çoğunlukla Avrupa'da bulunan bir model.\n"
-"          Bir \"< >\" tuşu içerir;\n"
-" - pc105: pc104'e benzeyen ve çoğunlukla Avrupa'da bulunan bir model.\n"
-"           Bir \"< >\" tuşu içerir;\n"
-" - macintosh: Linux tuş kodlarını kullanan yeni giriş katmanına sahip \n"
-"          Macintosh  klavyeleri;\n"
-" - macintosh_old: Yeni giriş katmanı kullanmayan eski Macintosh klavyeleri.\n"
-" - type4: Sun Type4 klavyeleri;\n"
-" - type5: Sun Type5 klavyeleri."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Dizüstü bilgisayar klavyelerinde, normal klavyelerdeki çoğu tuş yoktur.  "
-"Dizüstü bilgisayar kullanıcıları klavye modellerini yukarıdakilerden en "
-"yakın olana ayarlamalıdır."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Deneyimli kullanıcılar seçili XKB kural setinde tanımlanan herhangi bir "
-"modeli seçebilir.  Eğer xkb-data paketi kurulu ise mevcut kural kümelerini, /"
-"usr/share/X11/xkb/rules dizininde bulabilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"İngilizce klavye kullanıcıları genel olarak \"pc104\" girmelidir.  Diğer bir "
-"çok klavye için \"pc105\" girilebilir."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Klavye düzeni:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"X sunucusunun klavyeyi doğru tanıması için bir klavye düzeni girilmelidir.  "
-"Mevcut düzenler, önceki adımlarda seçilen XKB kural seti ve klavye modeline "
-"bağlıdır."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Deneyimli kullanıcılar seçili XKB kural setine göre tanımlı herhangi bir "
-"modeli seçebilir.  Eğer xkb-data paketi kurulu ise mevcut kural kümelerini, /"
-"usr/share/X11/xkb/rules dizininde bulabilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"ABD İngilizce klavye kullanıcıları \"us\" girebilirler.  Diğer ülkelere özel "
-"yerelleştirilmiş klavye kullananlar, ülkelerine ait ISO 3166 kodunu "
-"girmelidirler.  Örnek: Türk kullanıcılar için \"tr\", Alman kullanıcılar "
-"için \"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Klavye alt türü (varyant)"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"X sunucusunun klavyenizi isteğinize uygun şekilde kullanması için bir klavye "
-"alt türü (varyant) girilebilir.  Mevcut alt türler, önceki adımlarda seçilen "
-"XKB kural setine, modele ve düzene bağlıdır."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Çoğu klavye düzeni \"ölü\" tuşların aksan ve telaffuz imleri (diaeresis) "
-"gibi davranmasını destekler.  Eğer bu tercih edilen bir davranış ise bu "
-"alana \"nodeadkeys\" girin."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Deneyimli kullanıcılar XKB kural setince desteklenen herhangi bir alt türü "
-"seçebilir.  Eğer xkb-data paketi kurulu ise, seçili düzen için mevcut alt "
-"türleri /usr/share/X11/xkb/symbols dizininde görebilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"İngilizce klavye kullanıcıları genelde burayı boş bırakmalıdır.  Türkçe F "
-"klavye kullanıcıları bu alana \"f\" değerini girmelidir."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Klavye seçenekleri:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"X sunucusunun klavyeyi isteğinize uygun şekilde kullanması için klavye "
-"seçenekleri girilebilir.  Mevcut seçenekler önceki adımlarda seçilen XKB "
-"kural setine bağlıdır.  Her seçenek her klavye modeli veya düzeninde "
-"çalışmayabilir."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Örneğin; Caps Lock tuşunu ek bir Control tuşu olarak kullanmak isterseniz "
-"\"ctrl:nocaps\", Caps Lock ve sol Control tuşlarını değiştirmek isterseniz "
-"\"ctrl:swapcaps\" girebilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Başka bir örnek: bazı kullanıcılar Alt tuşlarını Meta tuşları olarak "
-"kullanmayı tercih eder (öntanımlı ayar böyledir).  Diğer bazıları ise "
-"Windows veya \"logo\" tuşlarını Meta tuşları olarak kullanmayı tercih eder.  "
-"Windows veya logo tuşlarını Meta tuşları olarak kullanmak isterseniz, "
-"\"altwin:meta_win\" girebilirsiniz."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Seçenekleri virgül ile birleştirebilirsiniz. Örneğin \"ctrl:nocaps,altwin:"
-"meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Deneyimli kullanıcılar seçilen XKB modeli, düzeni ve alt türüyle uyumlu "
-"herhangi bir seçenek girebilirler."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Emin değilseniz boş bırakın."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Boş değer"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Bu değer için boş giriş yapılamaz."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Geçersiz çift tırnak karakteri"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Tırnak işareti karakteri (\") girdi bölümünde kullanılamaz."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "Rakam değeri girmelisiniz"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Girdilerde, rakamlardan başka karakter kullanılamaz."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "Klavye düzeni otomatik denetlensin mi?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Xorg sunucusu için öntanımlı klavye düzeni seçimi kurulum programında "
-"seçilen dil ve klavye düzenine bağlı olarak belirlenecektir."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Klavye düzeninin tekrar belirlenmesini istiyorsanız bu seçeneği seçin.  "
-"Mevcut düzenin korunmasını istiyorsanız burada herhangi bir şey seçmeyin."
 
 #. Type: select
 #. Choices
@@ -553,114 +80,416 @@ msgstr ""
 "da yanlış  olacaktır.  Makul bir seçim, X sunucusunu sadece sanal konsollara "
 "giriş yapmış kullanıcılar tarafından kullanılacak şekilde ayarlamaktır."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "X sunucusu için öncelik değeri (nice):"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "X sunucusu için öncelik değeri (nice):"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Belirli bir zamanlama (scheduling) stratejisi kullanan işletim sistemi "
-"çekirdeklerinde X sunucusunun öntanımlı değerden daha yüksek bir öncelikte "
-"(bu öncelik \"nice\" değeri olarak da bilinir) çalışması halinde başarımın "
-"arttığı gözlenmiştir.  \"nice\" değeri -20 (en yüksek öncelik veya diğer "
-"işlemlere göre \"not nice\") ile 19 değerleri (en düşük öncelik) arasında "
-"olabilir.  Sıradan süreçler için öntanımlı 'nice' değeri 0'dır ve X sunucu "
-"için de bu değer önerilir."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Belirli bir zamanlama (scheduling) stratejisi kullanan işletim sistemi "
+#~ "çekirdeklerinde X sunucusunun öntanımlı değerden daha yüksek bir "
+#~ "öncelikte (bu öncelik \"nice\" değeri olarak da bilinir) çalışması "
+#~ "halinde başarımın arttığı gözlenmiştir.  \"nice\" değeri -20 (en yüksek "
+#~ "öncelik veya diğer işlemlere göre \"not nice\") ile 19 değerleri (en "
+#~ "düşük öncelik) arasında olabilir.  Sıradan süreçler için öntanımlı 'nice' "
+#~ "değeri 0'dır ve X sunucu için de bu değer önerilir."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"-10'dan 0'a kadar olan aralığın dışına çıkmak tavsiye edilmez; çok negatif "
-"bir değer verirseniz X sunucusu önemli sistem görevleriyle karışabilir, çok "
-"pozitif bir değer ise X sunucusunu yavaşlatacak ve tepkisiz hale "
-"getirecektir."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "-10'dan 0'a kadar olan aralığın dışına çıkmak tavsiye edilmez; çok "
+#~ "negatif bir değer verirseniz X sunucusu önemli sistem görevleriyle "
+#~ "karışabilir, çok pozitif bir değer ise X sunucusunu yavaşlatacak ve "
+#~ "tepkisiz hale getirecektir."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Geçersiz öncelik değeri"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Geçersiz öncelik değeri"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Lütfen -20 ve 19 arasında bir tam sayı girin."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Lütfen -20 ve 19 arasında bir tam sayı girin."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Önde gelen muhtemel yükseltme sorunları"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Önde gelen muhtemel yükseltme sorunları"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Bazı kullanıcılar yeni paketlere yükseltme sonrasında xserver paketinin "
-"artık kurulmadığını bildirmişlerdir.  Bu sorunun kolay bir çözümü "
-"olmadığından yükseltme sonrasında xserver-xorg paketinin kurulduğuna emin "
-"olun.  Eğer siz belirttiğiniz halde bu paket kurulmamışsa sorunsuz bir X "
-"yapılandırmasına sahip olmak için xorg paketini kurmanız önerilir."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Bazı kullanıcılar yeni paketlere yükseltme sonrasında xserver paketinin "
+#~ "artık kurulmadığını bildirmişlerdir.  Bu sorunun kolay bir çözümü "
+#~ "olmadığından yükseltme sonrasında xserver-xorg paketinin kurulduğuna emin "
+#~ "olun.  Eğer siz belirttiğiniz halde bu paket kurulmamışsa sorunsuz bir X "
+#~ "yapılandırmasına sahip olmak için xorg paketini kurmanız önerilir."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "/usr/X11R6/bin dizini silinemiyor"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "/usr/X11R6/bin dizini silinemiyor"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Bu yükseltme işlemi, /usr/X11R6/bin dizininin silinerek bir sembolik bağla "
-"değiştirilmesini gerektirmektedir.  Bu şartı sağlamak için bir girişimde "
-"bulunulmuş fakat büyük olasılıkla bu dizin boş olmadığından girişim "
-"başarısızlıkla sonuçlanmıştır.  Kurulumun tamamlanabilmesi için dizindeki "
-"bütün dosyaları başka bir yere taşımalısınız.  Sembolik bağ oluşturulduktan "
-"sonra dilerseniz bu dosyaları tekrar eski yerine taşıyabilirsiniz."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Bu yükseltme işlemi, /usr/X11R6/bin dizininin silinerek bir sembolik "
+#~ "bağla değiştirilmesini gerektirmektedir.  Bu şartı sağlamak için bir "
+#~ "girişimde bulunulmuş fakat büyük olasılıkla bu dizin boş olmadığından "
+#~ "girişim başarısızlıkla sonuçlanmıştır.  Kurulumun tamamlanabilmesi için "
+#~ "dizindeki bütün dosyaları başka bir yere taşımalısınız.  Sembolik bağ "
+#~ "oluşturulduktan sonra dilerseniz bu dosyaları tekrar eski yerine "
+#~ "taşıyabilirsiniz."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Bu paketin kurulumu başarısızlıkla sonlanacak ve kurulumdan çıkılacaktır, "
-"böylece bunu yapabileceksiniz. Lütfen, dizini sildikten sonra güncelleme "
-"işleminizi yeniden başlatın."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Bu paketin kurulumu başarısızlıkla sonlanacak ve kurulumdan çıkılacaktır, "
+#~ "böylece bunu yapabileceksiniz. Lütfen, dizini sildikten sonra güncelleme "
+#~ "işleminizi yeniden başlatın."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "Ekran kartının veriyolu tanımlayıcısı:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "PowerPC kullanıcıları ve çoklu ekran aygıtı kullanan kullanıcılar, ekran "
+#~ "kartı için veriyolu kimliğini (BusID) kullanılan veriyoluna özgü bir "
+#~ "biçemde belirtmelidirler."
+
+#~ msgid "Examples:"
+#~ msgstr "Örnekler:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "Çok çıkışlı ekran kartı kullanan kullanıcılar için, bu seçenek sadece "
+#~ "çıkışlardan bir tanesini yapılandıracaktır.  Diğer ayarlar /etc/X11/xorg."
+#~ "conf X sunucu yapılandırma dosyasında elle yapılmalıdır."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "PCI, AGP veya PCI Express kartınızın veriyolunu tespit etmek için \"lspci"
+#~ "\" komutunu kullanabilirsiniz."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "Eğer bu mümkünse, bu soru sizin için önceden cevaplanmış olacaktır.  "
+#~ "Çalışmayacağına emin olmadığınız sürece öntanımlı değerleri kabul "
+#~ "etmelisiniz."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "Geçersiz veriyolu tanımlayıcı biçimi"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Çekirdek kare tamponu arayüzü kullanılsın mı?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "X sunucusu, ekran donanımına doğrudan ulaşmak yerine, çekirdek kare "
+#~ "tamponu (framebuffer) kullanarak ekran kipi değiştirme gibi işlemleri "
+#~ "yapmak için de yapılandırılabilir."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Teorik olarak her ikisi de çalışmalıdır.  Ancak pratikte bazen biri veya "
+#~ "diğeri çalışmaz.  Bu seçeneği etkinleştirmekte bir sakınca yoktur, fakat "
+#~ "sorunlara yol açtığı görülüyorsa iptal etmekten çekinmeyin."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Kullanılacak XKB kural kümesi:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "X sunucusunun klavyeyi doğru tanıması için, bir XKB kural seti "
+#~ "seçilmelidir."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Çoğu kullanıcı bu alana \"xorg\" değerini girmelidir."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Uzman kullanıcılar, mevcut herhangi bir XKB kural kümesini kullanabilir.  "
+#~ "Eğer xkb-data paketi kurulmuşsa, mevcut kural kümelerini /usr/share/X11/"
+#~ "xkb/rules dizininde görebilirsiniz."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Emin değilseniz \"xorg\" olarak ayarlayın"
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Klavye tipi:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "X sunucusunun klavyeyi doğru tanıması için, bir klavye tipi girilmeli.  "
+#~ "Mevcut tipler, kullanılan XKB kural kümesine bağlıdır."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " \"xorg\" kural kümesi:\n"
+#~ " - pc101: 101 tuşlu geleneksel IBM PC/AT stili klavye (Birleşik\n"
+#~ "          Devletlerde çok yaygın.  \"logo\" veya \"menu\" tuşları "
+#~ "yoktur;\n"
+#~ " - pc104: pc101'e benzeyen ve ek bazı tuşlar içeren model; bu tuşların\n"
+#~ "          üzerinde genellikle bir \"logo\" ve \"menu\" simgesi vardır;\n"
+#~ " - pc102: pc101'e benzeyen ve çoğunlukla Avrupa'da bulunan bir model.\n"
+#~ "          Bir \"< >\" tuşu içerir;\n"
+#~ " - pc105: pc104'e benzeyen ve çoğunlukla Avrupa'da bulunan bir model.\n"
+#~ "           Bir \"< >\" tuşu içerir;\n"
+#~ " - macintosh: Linux tuş kodlarını kullanan yeni giriş katmanına sahip \n"
+#~ "          Macintosh  klavyeleri;\n"
+#~ " - macintosh_old: Yeni giriş katmanı kullanmayan eski Macintosh "
+#~ "klavyeleri.\n"
+#~ " - type4: Sun Type4 klavyeleri;\n"
+#~ " - type5: Sun Type5 klavyeleri."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Dizüstü bilgisayar klavyelerinde, normal klavyelerdeki çoğu tuş yoktur.  "
+#~ "Dizüstü bilgisayar kullanıcıları klavye modellerini yukarıdakilerden en "
+#~ "yakın olana ayarlamalıdır."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Deneyimli kullanıcılar seçili XKB kural setinde tanımlanan herhangi bir "
+#~ "modeli seçebilir.  Eğer xkb-data paketi kurulu ise mevcut kural "
+#~ "kümelerini, /usr/share/X11/xkb/rules dizininde bulabilirsiniz."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "İngilizce klavye kullanıcıları genel olarak \"pc104\" girmelidir.  Diğer "
+#~ "bir çok klavye için \"pc105\" girilebilir."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Klavye düzeni:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "X sunucusunun klavyeyi doğru tanıması için bir klavye düzeni "
+#~ "girilmelidir.  Mevcut düzenler, önceki adımlarda seçilen XKB kural seti "
+#~ "ve klavye modeline bağlıdır."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Deneyimli kullanıcılar seçili XKB kural setine göre tanımlı herhangi bir "
+#~ "modeli seçebilir.  Eğer xkb-data paketi kurulu ise mevcut kural "
+#~ "kümelerini, /usr/share/X11/xkb/rules dizininde bulabilirsiniz."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "ABD İngilizce klavye kullanıcıları \"us\" girebilirler.  Diğer ülkelere "
+#~ "özel yerelleştirilmiş klavye kullananlar, ülkelerine ait ISO 3166 kodunu "
+#~ "girmelidirler.  Örnek: Türk kullanıcılar için \"tr\", Alman kullanıcılar "
+#~ "için \"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Klavye alt türü (varyant)"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "X sunucusunun klavyenizi isteğinize uygun şekilde kullanması için bir "
+#~ "klavye alt türü (varyant) girilebilir.  Mevcut alt türler, önceki "
+#~ "adımlarda seçilen XKB kural setine, modele ve düzene bağlıdır."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Çoğu klavye düzeni \"ölü\" tuşların aksan ve telaffuz imleri (diaeresis) "
+#~ "gibi davranmasını destekler.  Eğer bu tercih edilen bir davranış ise bu "
+#~ "alana \"nodeadkeys\" girin."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Deneyimli kullanıcılar XKB kural setince desteklenen herhangi bir alt "
+#~ "türü seçebilir.  Eğer xkb-data paketi kurulu ise, seçili düzen için "
+#~ "mevcut alt türleri /usr/share/X11/xkb/symbols dizininde görebilirsiniz."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "İngilizce klavye kullanıcıları genelde burayı boş bırakmalıdır.  Türkçe F "
+#~ "klavye kullanıcıları bu alana \"f\" değerini girmelidir."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Klavye seçenekleri:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "X sunucusunun klavyeyi isteğinize uygun şekilde kullanması için klavye "
+#~ "seçenekleri girilebilir.  Mevcut seçenekler önceki adımlarda seçilen XKB "
+#~ "kural setine bağlıdır.  Her seçenek her klavye modeli veya düzeninde "
+#~ "çalışmayabilir."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Örneğin; Caps Lock tuşunu ek bir Control tuşu olarak kullanmak isterseniz "
+#~ "\"ctrl:nocaps\", Caps Lock ve sol Control tuşlarını değiştirmek "
+#~ "isterseniz \"ctrl:swapcaps\" girebilirsiniz."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Başka bir örnek: bazı kullanıcılar Alt tuşlarını Meta tuşları olarak "
+#~ "kullanmayı tercih eder (öntanımlı ayar böyledir).  Diğer bazıları ise "
+#~ "Windows veya \"logo\" tuşlarını Meta tuşları olarak kullanmayı tercih "
+#~ "eder.  Windows veya logo tuşlarını Meta tuşları olarak kullanmak "
+#~ "isterseniz, \"altwin:meta_win\" girebilirsiniz."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Seçenekleri virgül ile birleştirebilirsiniz. Örneğin \"ctrl:nocaps,altwin:"
+#~ "meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Deneyimli kullanıcılar seçilen XKB modeli, düzeni ve alt türüyle uyumlu "
+#~ "herhangi bir seçenek girebilirler."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Emin değilseniz boş bırakın."
+
+#~ msgid "Empty value"
+#~ msgstr "Boş değer"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Bu değer için boş giriş yapılamaz."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Geçersiz çift tırnak karakteri"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Tırnak işareti karakteri (\") girdi bölümünde kullanılamaz."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Rakam değeri girmelisiniz"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Girdilerde, rakamlardan başka karakter kullanılamaz."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Klavye düzeni otomatik denetlensin mi?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Xorg sunucusu için öntanımlı klavye düzeni seçimi kurulum programında "
+#~ "seçilen dil ve klavye düzenine bağlı olarak belirlenecektir."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Klavye düzeninin tekrar belirlenmesini istiyorsanız bu seçeneği seçin.  "
+#~ "Mevcut düzenin korunmasını istiyorsanız burada herhangi bir şey seçmeyin."
+
+#~ msgid "X server driver:"
+#~ msgstr "X sunucu sürücüsü:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "X Window Sisteminin, grafik kullanıcı arayüzlerini doğru işlemesi için, X "
+#~ "sunucusu için bir ekran kartı sürücüsü seçmelisiniz."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Sürücüler genelde, ekran kartı adı, yonga seti, özel bir model veya bir "
+#~ "yonga seti ailesiyle adlandırılır."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "

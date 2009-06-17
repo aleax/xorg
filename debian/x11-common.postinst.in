@@ -45,26 +45,6 @@ if ! [ -d "$CONFIG_AUX_DIR" ]; then
   mkdir --mode=755 --parents "$CONFIG_AUX_DIR"
 fi
 
-# dir -> symlink transition
-if ! [ -L "/usr/bin/X11" ] && [ -d "/usr/bin/X11" ]; then
-  # we accidentally created this link in the past
-  rm -f /usr/bin/X11/bin
-
-  if ! rmdir /usr/bin/X11 2>/dev/null; then
-    echo "/usr/bin/X11 still contains files (are they locally installed?)"
-    echo ""
-    echo "Please examine the following list and either delete these"
-    echo "files, or relocate them to /usr/bin, then reinstall x11-common:"
-    echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-    ls -1 /usr/bin/X11/*
-    echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-    exit 1
-  else
-    ln -s ../bin /usr/bin/X11 || true
-  fi
-fi
-
-
 # only mess with config file it exists; otherwise, assume that's the way the
 # user wants it, but only if upgrading
 if [ -e "$XWRAPPER_CONFIG" ] || [ -z "$UPGRADE" ]; then
@@ -81,11 +61,7 @@ if [ -e "$XWRAPPER_CONFIG" ] || [ -z "$UPGRADE" ]; then
       if db_get x11-common/xwrapper/actual_allowed_users; then
         ALLOWED_USERS="$RET"
       fi
-      NICE_VALUE=
-      if db_get x11-common/xwrapper/nice_value; then
-        NICE_VALUE="$RET"
-      fi
-      if [ -n "$ALLOWED_USERS" ] && [ -n "$NICE_VALUE" ]; then
+      if [ -n "$ALLOWED_USERS" ]; then
         NEW_XWRAPPER_CONFIG=$(tempfile)
         cat >>"$NEW_XWRAPPER_CONFIG" << EOF
 # Xwrapper.config (Debian X Window System server wrapper configuration file)
@@ -102,7 +78,6 @@ if [ -e "$XWRAPPER_CONFIG" ] || [ -z "$UPGRADE" ]; then
 # again, run the following command as root:
 #   dpkg-reconfigure x11-common
 allowed_users=$ALLOWED_USERS
-nice_value=$NICE_VALUE
 EOF
         if ! cmp -s "$XWRAPPER_CONFIG" "$NEW_XWRAPPER_CONFIG"; then
           cp "$NEW_XWRAPPER_CONFIG" "$XWRAPPER_CONFIG.dpkg-new"
@@ -124,11 +99,11 @@ else
   observe "not updating $XWRAPPER_CONFIG; file does not exist"
 fi
 
-# Clean up my idiocy
-if [ -n "$2" ] && dpkg --compare-versions "$2" eq "1:7.0.16"; then
-  if [ -e "/etc/X11/Xsession.xfree86" ] && [ ! -e "/etc/X11/Xsession" ]; then
-    mv "/etc/X11/Xsession.xfree86" "/etc/X11/Xsession"
-  fi
+if dpkg --compare-versions "$2" lt-nl 1:7.4+2; then
+  db_unregister x11-common/xwrapper/nice_value || :
+  db_unregister x11-common/xwrapper/nice_value/error || :
+  db_unregister x11-common/upgrade_issues || :
+  db_unregister x11-common/x11r6_bin_not_empty || :
 fi
 
 #DEBHELPER#

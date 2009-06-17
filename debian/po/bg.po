@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po_bg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-09 09:47+0300\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -35,490 +35,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "Драйвер за видео-картата:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"За правилната работа на системата „X Window“ е необходимо да изберете "
-"драйвер за видео-картата."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Имената на драйверите обикновено са подобни на имената на производителя на "
-"видео-картата или на серията на чипа, използван при производството ѝ."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Използване на драйвера за framebuffer на ядрото?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Вместо да работи директно с видео-картата, X-сървърът може да използва "
-"драйвера за framebuffer на ядрото за някои операции (например за "
-"превключване на видео-режимите)."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"На теория и двата подхода трябва да работят, но на практика често единият "
-"работи, а другият - не. Разрешаването на тази настройка би трябвало да е "
-"безопасно, но можете спокойно да я изключите ако се съмнявате, че може да "
-"причинява проблеми."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "Шина на видео-картата:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"Потребителите на компютри, базирани на PowerPC, както и всички потребители с "
-"повече от една видео-карта трябва да въведат (в специален формат) шината, на "
-"която е поставена видео-картата (BusID)."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "Примери:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"За потребители с няколко монитора, тази настройка се отнася само за един от "
-"тях. За използване останалите монитори е необходимо ръчно да се променят "
-"настройките в /etc/X11/xorg.conf."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"Ако видео-картата е базирана на PCI, AGP или PCI-Express, командата „lspci“ "
-"може да Ви помогне да определите шината."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"Когато е възможно, полето вече съдържа подходяща стойност и е най-добре да я "
-"използвате, освен ако сте сигурни, че трябва да е друга."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "Неправилен формат на шината"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Файл с правила за клавиатурата:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"За правилната работа на X-сървъра с клавиатурата е необходимо да въведете "
-"името на файла с правила."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Повечето потребители трябва да въведат „xorg“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Опитните потребители могат да въведат името на произволен файл с правила. "
-"Ако пакетът „xkb-data“ е инсталиран, наличните файлове са в директорията /"
-"usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Ако не сте сигурни, въведете „xorg“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Модел на клавиатурата:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"За правилната работа на X-сървъра с клавиатурата е необходимо да въведете "
-"модела на използваната клавиатура. Поддържаните модели зависят от избрания "
-"файл с правила."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" За „xorg“:\n"
-" - pc101: традиционна клавиатура за IBM PC/AT със 101 клавиша, широко \n"
-"          разпространена в САЩ. Няма клавиши „лого“ и „меню“;\n"
-" - pc104: подобна на модел pc101, но с допълнителни клавиши със символи \n"
-"          за „лого“ и „меню“;\n"
-" - pc102: подобна на модел pc101, често срещана в Европа. Има специален \n"
-"          клавиш „< >“;\n"
-" - pc105: подобна на модел pc104, но с клавиш „< >“;\n"
-" - macintosh: клавиатура Macintosh, използваща новия модул за вход в Linux;\n"
-" - macintosh_old: клавиатура Macintosh, използваща стария модул за вход в\n"
-"                  Linux.\n"
-" - type4: клавиатура „Sun Type4“;\n"
-" - type5: клавиатура „Sun Type5“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Клавиатурите на преносимите компютри обикновено имат по-малко клавиши от "
-"стандартните клавиатури. Потребителите на преносими компютри трябва да "
-"изберат модел, който е най-близък до тяхната клавиатура."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Опитните потребители могат да използват произволен модел, дефиниран във "
-"файла с правила. Ако пакетът „xkb-data“ е инсталиран, наличните файлове с "
-"правила са в директорията /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Потребителите с клавиатури тип „U.S. English“ би трябвало да изберат "
-"„pc104“. Потребителите на повечето други клавиатури - „pc105“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Подредба на клавиатурата:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"За правилната работа на X-сървъра с клавиатурата е необходимо да въведете "
-"подредба. Възможните подредби зависят от модела на клавиатурата."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Опитните потребители могат да използват произволен поддържана подредба, "
-"дефинирана във файла с правила. Ако пакетът „xkb-data“ е инсталиран, "
-"наличните файлове с правила са в директорията /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Потребителите с клавиатури „U.S. English“ би трябвало да изберат „us“. "
-"Потребителите на локализирани клавиатури в повечето случаи трябва да изберат "
-"кодът на държавата според ISO 3166. Например за Франция - „fr“, а за "
-"Германия - „de“. За българските потребители е най-подходящо да въведат „us,"
-"bg“, като по този начин осигурят поддръжката на две подредби - едната за "
-"латиница, а другата за кирилица."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Вариант на подредбата:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Вариантът на подредбата се въвежда по желание и зависи от избраната "
-"клавиатура и подредба."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Много от подредбите поддържат използването т.нар. „мъртви“ клавиши, като "
-"например ударения, умлаути и др. като нормални клавиши. Ако желаете такава "
-"поддръжка, въведете „nodeadkeys“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Ако пакетът „xkb-data“ е инсталиран, можете да прегледате наличните варианти "
-"на подредбата в директорията /usr/share/X11/xkb/symbols."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Потребителите на американски английски клавиатури би трябвало да оставят "
-"полето празно. За българските потребители са интересни настройките за "
-"вариантите на българската подредба. Въведете „bds“ за подредба по БДС и "
-"„phonetic“ за фонетична."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Допълнителни настройки:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"В това поле можете да укажете няколко допълнителни параметъра, които касаят "
-"работата на клавиатурата."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Например, за да накарате клавишът „Caps Lock“ да се държи като допълнителен "
-"клавиш „Control“, въведете „ctrl:nocaps“; ако искате да размените местата на "
-"клавиша „Caps Lock“ и левия клавиш „Control“, въведете „ctrl:swapcaps“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Друг пример: някои хора потребители предпочитат клавишите „Meta“ да са "
-"разположени на клавишите от клавиатурата „Alt“ (както е по подразбиране), "
-"докато други ги предпочитат на клавишите „Windows“ или „лого“. Ако сте от "
-"вторите, можете да въведете „altwin:meta_win“.Ако използвате българска "
-"клавиатурна подредба, в това поле можете да укажете начина на смяна на "
-"подредбата (латиница/кирилица), както и някои други параметри: \n"
-" - grp:alt_shift_toggle     промяна на подредбата с едновременно натискане \n"
-"                            на клавишите Alt и Shift; \n"
-" - grp:ctrl_shift_toggle    промяна на подредбата с едновременно натискане \n"
-"                            на клавишите Ctrl и Shift;  - grp_led:"
-"scroll           светлинният индикатор Scrol Lock ще свети когато \n"
-"                            е избрана подредба на кирилица."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Можете да комбинирате различните настройки като ги изредите разделени със "
-"запетаи. Например „grp:alt_shift_toggle,grp_led:scroll,altwin:meta_win“ "
-"указва да се използва едновременно натискане на клавишите „Alt“ и „Shift“ за "
-"превключване между подредбите, да се използва индикаторът „Scroll Lock“ при "
-"активна подредба на кирилица и че клавишите „Windows“ (или „лого“) ще играят "
-"ролята на „Meta“-клавиши вместо клавишите „Alt“."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Има още много възможности, които можете да разгледате, търсейки текста "
-"„grp:“ във файла /usr/share/X11/xkb/rules/xorg."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Ако се колебаете какво да напишете, най-добре оставете полето празно."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Празна стойност"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Въвеждането на празна стойност в това поле не е разрешено."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Не можете да въвеждате двойни кавички"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Двойните кавички („\"“) не са разрешени в това поле."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "Въведете число"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "В това поле е разрешено въвеждането единствено на цифри."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "Автоматично откриване на клавиатурната подредба?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Автоматичният избор на клавиатурна подредба се базира на избраните в "
-"инсталатора език и модел клавиатура."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Изберете тази настройка ако желаете клавиатурната подредба да бъде открита "
-"отново. Не я избирайте, ако желаете да запазите текущата подредба."
 
 #. Type: select
 #. Choices
@@ -562,109 +78,425 @@ msgstr ""
 "стартирането на X-сървъра само на потребители, които работят на системната "
 "конзола."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Стойност на параметъра „nice“ за X-сървъра:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Стойност на параметъра „nice“ за X-сървъра:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"При някои схеми на управление на задачите се забелязва подобряване на "
-"бързодействието на X-сървъра ако приоритетът му е по-висок от този на "
-"обикновените процеси. Приоритетът на даден процес се управлява от параметъра "
-"„nice“. Стойностите варират между „-20“ (най-висок приоритет) до „19“ (най-"
-"нисък приоритет). Обикновените процеси имат стойност на параметъра „nice“ 0, "
-"което е и препоръчителната стойност за X-сървъра."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "При някои схеми на управление на задачите се забелязва подобряване на "
+#~ "бързодействието на X-сървъра ако приоритетът му е по-висок от този на "
+#~ "обикновените процеси. Приоритетът на даден процес се управлява от "
+#~ "параметъра „nice“. Стойностите варират между „-20“ (най-висок приоритет) "
+#~ "до „19“ (най-нисък приоритет). Обикновените процеси имат стойност на "
+#~ "параметъра „nice“ 0, което е и препоръчителната стойност за X-сървъра."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Не се препоръчват стойности по-малки от -10 и по-големи от 0. При по-малки "
-"стойности се нарушава бързодействието на важни системни задачи. При по-"
-"големи X-сървърът започва да реагира твърде бавно."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Не се препоръчват стойности по-малки от -10 и по-големи от 0. При по-"
+#~ "малки стойности се нарушава бързодействието на важни системни задачи. При "
+#~ "по-големи X-сървърът започва да реагира твърде бавно."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Неправилна стойност за параметъра „nice“"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Неправилна стойност за параметъра „nice“"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Въведете цяло число между -20 и 19 включително."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Въведете цяло число между -20 и 19 включително."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Възможни проблеми при обновяване"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Възможни проблеми при обновяване"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"При някои комбинации от пакети е възможно след обновяване да се окаже, че "
-"пакетът, съдържащ X-сървъра е премахнат. Понеже няма лесен начин за "
-"автоматично откриване на проблема, съветваме Ви да проверите дали пакетът "
-"„xserver-xorg“ е инсталиран след обновяването."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "При някои комбинации от пакети е възможно след обновяване да се окаже, че "
+#~ "пакетът, съдържащ X-сървъра е премахнат. Понеже няма лесен начин за "
+#~ "автоматично откриване на проблема, съветваме Ви да проверите дали пакетът "
+#~ "„xserver-xorg“ е инсталиран след обновяването."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Директорията „/usr/X11R6/bin“ не може да бъде премахната"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Директорията „/usr/X11R6/bin“ не може да бъде премахната"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Обновяването изисква директорията „/usr/X11R6/bin“ да бъде премахната и на "
-"нейно място да бъде поставена символна връзка. Понеже директорията не е "
-"празна, опитът за нейното премахване не успя. За да завърши обновяването е "
-"нужно да преместите съдържанието на директорията другаде. След поставянето "
-"на символната връзка можете да върнете съдържанието обратно."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Обновяването изисква директорията „/usr/X11R6/bin“ да бъде премахната и "
+#~ "на нейно място да бъде поставена символна връзка. Понеже директорията не "
+#~ "е празна, опитът за нейното премахване не успя. За да завърши "
+#~ "обновяването е нужно да преместите съдържанието на директорията другаде. "
+#~ "След поставянето на символната връзка можете да върнете съдържанието "
+#~ "обратно."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Инсталацията на пакета ще спре за да можете да направите необходимото. След "
-"почистване на директорията стартирайте отново процеса на обновяване."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Инсталацията на пакета ще спре за да можете да направите необходимото. "
+#~ "След почистване на директорията стартирайте отново процеса на обновяване."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "Шина на видео-картата:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "Потребителите на компютри, базирани на PowerPC, както и всички "
+#~ "потребители с повече от една видео-карта трябва да въведат (в специален "
+#~ "формат) шината, на която е поставена видео-картата (BusID)."
+
+#~ msgid "Examples:"
+#~ msgstr "Примери:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "За потребители с няколко монитора, тази настройка се отнася само за един "
+#~ "от тях. За използване останалите монитори е необходимо ръчно да се "
+#~ "променят настройките в /etc/X11/xorg.conf."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "Ако видео-картата е базирана на PCI, AGP или PCI-Express, командата "
+#~ "„lspci“ може да Ви помогне да определите шината."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "Когато е възможно, полето вече съдържа подходяща стойност и е най-добре "
+#~ "да я използвате, освен ако сте сигурни, че трябва да е друга."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "Неправилен формат на шината"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Използване на драйвера за framebuffer на ядрото?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Вместо да работи директно с видео-картата, X-сървърът може да използва "
+#~ "драйвера за framebuffer на ядрото за някои операции (например за "
+#~ "превключване на видео-режимите)."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "На теория и двата подхода трябва да работят, но на практика често единият "
+#~ "работи, а другият - не. Разрешаването на тази настройка би трябвало да е "
+#~ "безопасно, но можете спокойно да я изключите ако се съмнявате, че може да "
+#~ "причинява проблеми."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Файл с правила за клавиатурата:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "За правилната работа на X-сървъра с клавиатурата е необходимо да въведете "
+#~ "името на файла с правила."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Повечето потребители трябва да въведат „xorg“."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Опитните потребители могат да въведат името на произволен файл с правила. "
+#~ "Ако пакетът „xkb-data“ е инсталиран, наличните файлове са в директорията /"
+#~ "usr/share/X11/xkb/rules."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Ако не сте сигурни, въведете „xorg“."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Модел на клавиатурата:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "За правилната работа на X-сървъра с клавиатурата е необходимо да въведете "
+#~ "модела на използваната клавиатура. Поддържаните модели зависят от "
+#~ "избрания файл с правила."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " За „xorg“:\n"
+#~ " - pc101: традиционна клавиатура за IBM PC/AT със 101 клавиша, широко \n"
+#~ "          разпространена в САЩ. Няма клавиши „лого“ и „меню“;\n"
+#~ " - pc104: подобна на модел pc101, но с допълнителни клавиши със символи \n"
+#~ "          за „лого“ и „меню“;\n"
+#~ " - pc102: подобна на модел pc101, често срещана в Европа. Има специален \n"
+#~ "          клавиш „< >“;\n"
+#~ " - pc105: подобна на модел pc104, но с клавиш „< >“;\n"
+#~ " - macintosh: клавиатура Macintosh, използваща новия модул за вход в "
+#~ "Linux;\n"
+#~ " - macintosh_old: клавиатура Macintosh, използваща стария модул за вход "
+#~ "в\n"
+#~ "                  Linux.\n"
+#~ " - type4: клавиатура „Sun Type4“;\n"
+#~ " - type5: клавиатура „Sun Type5“."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Клавиатурите на преносимите компютри обикновено имат по-малко клавиши от "
+#~ "стандартните клавиатури. Потребителите на преносими компютри трябва да "
+#~ "изберат модел, който е най-близък до тяхната клавиатура."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Опитните потребители могат да използват произволен модел, дефиниран във "
+#~ "файла с правила. Ако пакетът „xkb-data“ е инсталиран, наличните файлове с "
+#~ "правила са в директорията /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Потребителите с клавиатури тип „U.S. English“ би трябвало да изберат "
+#~ "„pc104“. Потребителите на повечето други клавиатури - „pc105“."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Подредба на клавиатурата:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "За правилната работа на X-сървъра с клавиатурата е необходимо да въведете "
+#~ "подредба. Възможните подредби зависят от модела на клавиатурата."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Опитните потребители могат да използват произволен поддържана подредба, "
+#~ "дефинирана във файла с правила. Ако пакетът „xkb-data“ е инсталиран, "
+#~ "наличните файлове с правила са в директорията /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Потребителите с клавиатури „U.S. English“ би трябвало да изберат „us“. "
+#~ "Потребителите на локализирани клавиатури в повечето случаи трябва да "
+#~ "изберат кодът на държавата според ISO 3166. Например за Франция - „fr“, а "
+#~ "за Германия - „de“. За българските потребители е най-подходящо да въведат "
+#~ "„us,bg“, като по този начин осигурят поддръжката на две подредби - едната "
+#~ "за латиница, а другата за кирилица."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Вариант на подредбата:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Вариантът на подредбата се въвежда по желание и зависи от избраната "
+#~ "клавиатура и подредба."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Много от подредбите поддържат използването т.нар. „мъртви“ клавиши, като "
+#~ "например ударения, умлаути и др. като нормални клавиши. Ако желаете "
+#~ "такава поддръжка, въведете „nodeadkeys“."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Ако пакетът „xkb-data“ е инсталиран, можете да прегледате наличните "
+#~ "варианти на подредбата в директорията /usr/share/X11/xkb/symbols."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Потребителите на американски английски клавиатури би трябвало да оставят "
+#~ "полето празно. За българските потребители са интересни настройките за "
+#~ "вариантите на българската подредба. Въведете „bds“ за подредба по БДС и "
+#~ "„phonetic“ за фонетична."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Допълнителни настройки:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "В това поле можете да укажете няколко допълнителни параметъра, които "
+#~ "касаят работата на клавиатурата."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Например, за да накарате клавишът „Caps Lock“ да се държи като "
+#~ "допълнителен клавиш „Control“, въведете „ctrl:nocaps“; ако искате да "
+#~ "размените местата на клавиша „Caps Lock“ и левия клавиш „Control“, "
+#~ "въведете „ctrl:swapcaps“."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Друг пример: някои хора потребители предпочитат клавишите „Meta“ да са "
+#~ "разположени на клавишите от клавиатурата „Alt“ (както е по подразбиране), "
+#~ "докато други ги предпочитат на клавишите „Windows“ или „лого“. Ако сте от "
+#~ "вторите, можете да въведете „altwin:meta_win“.Ако използвате българска "
+#~ "клавиатурна подредба, в това поле можете да укажете начина на смяна на "
+#~ "подредбата (латиница/кирилица), както и някои други параметри: \n"
+#~ " - grp:alt_shift_toggle     промяна на подредбата с едновременно "
+#~ "натискане \n"
+#~ "                            на клавишите Alt и Shift; \n"
+#~ " - grp:ctrl_shift_toggle    промяна на подредбата с едновременно "
+#~ "натискане \n"
+#~ "                            на клавишите Ctrl и Shift;  - grp_led:"
+#~ "scroll           светлинният индикатор Scrol Lock ще свети когато \n"
+#~ "                            е избрана подредба на кирилица."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Можете да комбинирате различните настройки като ги изредите разделени със "
+#~ "запетаи. Например „grp:alt_shift_toggle,grp_led:scroll,altwin:meta_win“ "
+#~ "указва да се използва едновременно натискане на клавишите „Alt“ и „Shift“ "
+#~ "за превключване между подредбите, да се използва индикаторът „Scroll "
+#~ "Lock“ при активна подредба на кирилица и че клавишите „Windows“ (или "
+#~ "„лого“) ще играят ролята на „Meta“-клавиши вместо клавишите „Alt“."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Има още много възможности, които можете да разгледате, търсейки текста "
+#~ "„grp:“ във файла /usr/share/X11/xkb/rules/xorg."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr ""
+#~ "Ако се колебаете какво да напишете, най-добре оставете полето празно."
+
+#~ msgid "Empty value"
+#~ msgstr "Празна стойност"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Въвеждането на празна стойност в това поле не е разрешено."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Не можете да въвеждате двойни кавички"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Двойните кавички („\"“) не са разрешени в това поле."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Въведете число"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "В това поле е разрешено въвеждането единствено на цифри."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Автоматично откриване на клавиатурната подредба?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Автоматичният избор на клавиатурна подредба се базира на избраните в "
+#~ "инсталатора език и модел клавиатура."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Изберете тази настройка ако желаете клавиатурната подредба да бъде "
+#~ "открита отново. Не я избирайте, ако желаете да запазите текущата подредба."
+
+#~ msgid "X server driver:"
+#~ msgstr "Драйвер за видео-картата:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "За правилната работа на системата „X Window“ е необходимо да изберете "
+#~ "драйвер за видео-картата."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Имената на драйверите обикновено са подобни на имената на производителя "
+#~ "на видео-картата или на серията на чипа, използван при производството ѝ."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xserver-xorg_debian_po\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-09 21:23+0100\n"
 "Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team: Portuguese <traduz@debianPT.org>\n"
@@ -20,491 +20,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "Driver do servidor de X:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"Para a interface gráfica de utilizador do X Window System funcionar "
-"correctamente, é necessário seleccionar um driver da placa gráfica para o "
-"servidor de X."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Os drivers normalmente têm o nome do fabricante da placa gráfica ou chipset, "
-"ou o nome de um modelo ou uma família de chipsets específicos."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Utilizar a interface de dispositivo \"framebuffer\" do kernel?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Em vez de comunicar directamente com o hardware de vídeo, o servidor de X "
-"pode ser configurado para realizar certas operações, tais como a mudança do "
-"modo gráfico, através do driver \"framebuffer\" do kernel."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Em teoria, ambos os métodos deverão funcionar, mas na prática, por vezes um "
-"funciona e outro não.  Activar esta opção é o mais seguro, mas esteja à "
-"vontade para a desligar se lhe parecer que causa problemas."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "Identificador do bus da placa gráfica:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"Utilizadores de máquinas PowerPC, e utilizadores de computadores com "
-"múltiplos dispositivos gráficos, devem especificar o BusID da placa gráfica "
-"num formato específico de bus aceite."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "Exemplos:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"Para utilizadores com configurações \"multi-head\", esta opção irá "
-"configurar apenas um dos \"heads\".  A configuração posterior terá de ser "
-"feita manualmente no ficheiro de configuração do servidor de X, /etc/X11/"
-"xorg.conf."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"Pode querer utilizar o comando \"lspci\" para determinar a localização do "
-"bus da sua placa gráfica PCI, AGP, ou PCI-Express."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"Quando possível, esta pergunta terá sido previamente respondida para si e "
-"deverá aceitar a omissão a menos que saiba que ela não funciona."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "Formato incorrecto do identificador do bus"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Conjunto de regras XKB a utilizar:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Para o servidor de X lidar correctamente com o teclado, é necessário "
-"escolher um conjunto de regras XKB."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Os utilizadores da maioria dos teclados devem introduzir \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Os utilizadores avançados podem utilizar qualquer conjunto de regras XKB "
-"definidas.  Se o pacote xkb-data tiver sido desempacotado, veja o "
-"directório /usr/share/X11/xkb/rules para os conjuntos de regras disponíveis."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Em caso de dúvida, este valor deve ser \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Modelo do teclado:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Para o servidor de X lidar correctamente com o teclado, tem de ser indicado "
-"um modelo de teclado.  Os modelos disponíveis dependem do conjunto de regras "
-"XKB que está a ser utilizado."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Com o conjunto de regras \"xorg\":\n"
-" - pc101: teclado tradicional de estilo IBM PC/AT com 101 teclas, comum nos\n"
-"          Estados Unidos.  Não tem as teclas \"logo\" ou \"menu\";\n"
-" - pc104: idêntico ao modelo pc101, com teclas adicionais, normalmente\n"
-"          gravadas com um símbolo \"logo\" e um símbolo \"menu\";\n"
-" - pc102: idêntico a pc101 e muitas vezes encontrado na Europa. Inclui uma\n"
-"          tecla \"< >\";\n"
-" - pc105: idêntico a pc104 e muitas vezes encontrado na Europa. Inclui uma\n"
-"          tecla \"< >\";\n"
-" - macintosh: os teclados Macintosh que utilizam a nova camada de entrada\n"
-"              com códigos de teclas Linux\n"
-" - macintosh_old: teclados Macintosh que não utilizam a nova camada de "
-"entrada.\n"
-" - type4: teclados Sun Type4;\n"
-" - type5: teclados Sun Type5."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Os teclados de computadores portáteis muitas vezes não têm tantas teclas "
-"como os modelos individuais; os utilizadores de portáteis devem seleccionar "
-"dos de cima o modelo de teclado que mais se aproxima."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Os utilizadores avançados podem utilizar qualquer modelo definido pelo "
-"conjunto de regras XKB seleccionado.  Se o pacote xkb-data tiver sido "
-"desempacotado, veja o directório /usr/share/X11/xkb/rules para os conjuntos "
-"de regras disponíveis."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Os utilizadores de teclados Português de Portugal normalmente devem "
-"introduzir \"pc105\".  Os utilizadores da maioria dos outros teclados devem "
-"introduzir \"pc104\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Disposição do teclado:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Para o servidor de X lidar correctamente com o teclado, tem de ser "
-"introduzida uma disposição de teclado.  As disposições disponíveis dependem "
-"de qual conjunto de regras XKB e que modelo de teclado foram seleccionados "
-"anteriormente."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Os utilizadores avançados podem utilizar qualquer modelo definido pelo "
-"conjunto de regras XKB seleccionado.  Se o pacote xkb-data tiver sido "
-"desempacotado, veja o directório /usr/share/X11/xkb/rules para os conjuntos "
-"de regras disponíveis."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Os utilizadores de teclados Português de Portugal devem introduzir \"pt\".  "
-"Os utilizadores de teclados localizados para outros países devem geralmente "
-"introduzir o código ISO 3166 do seu país.  E.g., a França utiliza \"fr\" e a "
-"Alemanha utiliza \"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Variante do teclado:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Para o servidor de X lidar com o teclado como é desejado, é possível "
-"introduzir uma variante de teclado.  As variantes disponíveis dependem do "
-"conjunto de regras XKB, modelo e disposição que foram seleccionados "
-"anteriormente."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Muitas disposições de teclados suportam uma opção para tratar as teclas "
-"\"mortas\" (dead), tais como as marcas de acentos ou til que não produzem um "
-"espaço, como teclas normais de espaço. Se este é o comportamento desejado, "
-"introduza \"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Os utilizadores avançados podem utilizar qualquer variante suportada pela "
-"disposição XKB seleccionada.  Se o pacote xkb-data tiver sido desempacotado, "
-"veja as variantes disponíveis no directório /usr/share/X11/xkb/symbols, no "
-"ficheiro correspondente à disposição que seleccionou."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Utilizadores de teclados Português de Portugal devem geralmente deixar esta "
-"opção em branco."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Opções do teclado:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Para o servidor de X lidar com o seu teclado como deseja, é possível "
-"introduzir opções de teclado.  As opções disponíveis dependem do conjunto de "
-"regras XKB que foi previamente seleccionado.  Nem todas as opções "
-"funcionarão com todos os modelos e disposições de teclado."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Por exemplo, se quiser que a tecla Caps Lock se comporte como uma tecla "
-"Control adicional, pode introduzir \"ctrl:nocaps\"; se quiser trocar a tecla "
-"Caps Lock com a tecla Control da esquerda, pode inserir \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Como outro exemplo, algumas pessoas preferem ter as teclas \"Meta\" "
-"associadas às teclas Alt dos seus teclados (esta é a omissão); enquanto que "
-"outras pessoas preferem ter as teclas \"Meta\" associadas às teclas Windows "
-"ou \"logotipo\".  Se preferir utilizar as suas teclas Windows ou \"logotipo"
-"\" como teclas \"Meta\", pode introduzir \"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Pode combinar opções separando-as com uma vírgula, por exemplo:\"ctrl:nocaps,"
-"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Os utilizadores avançados podem utilizar quaisquer opções compatíveis com o "
-"modelo XKB escolhido, disposição e variante."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Em caso de dúvida, este valor deve ser deixado vazio."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Valor vazio"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Não é permitida uma entrada nula para este valor."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Os caracteres aspas duplas são inválidos"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Não são permitidos caracteres de aspas duplas (\") no valor da opção."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "É necessário um valor numérico"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Não são permitidos outros caracteres que não dígitos na opção."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "Detectar automaticamente a disposição do teclado?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"A escolha por omissão da disposição do teclado para o servidor Xorg será "
-"baseada na combinação do idioma e da disposição do teclado escolhidos no "
-"instalador."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Escolha esta opção se quiser que a disposição do teclado seja novamente "
-"detectada. Não a escolha se quiser manter a actual disposição do teclado."
 
 #. Type: select
 #. Choices
@@ -549,115 +64,434 @@ msgstr ""
 "que o servidor X seja iniciado apenas por utilizadores que tenham iniciado "
 "uma sessão numa das consolas virtuais."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Valor da prioridade de execução (nice) para o servidor de X:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Valor da prioridade de execução (nice) para o servidor de X:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Quando se utilizam kernels de sistemas operativos com uma estratégia "
-"específica de 'scheduling', tem sido largamente observado que o desempenho "
-"do servidor X melhora quando executado com uma prioridade de processo maior "
-"que por omissão; a prioridade de um processo é conhecida como o seu valor "
-"\"nice\".  Estes valores Variam de -20 (prioridade extremamente alta, ou "
-"\"não simpática\" para os outros processos) a 19 (prioridade extremamente "
-"baixa).  O valor por omissão para processos comuns é 0, e este é também o "
-"valor recomendado para o servidor de X."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Quando se utilizam kernels de sistemas operativos com uma estratégia "
+#~ "específica de 'scheduling', tem sido largamente observado que o "
+#~ "desempenho do servidor X melhora quando executado com uma prioridade de "
+#~ "processo maior que por omissão; a prioridade de um processo é conhecida "
+#~ "como o seu valor \"nice\".  Estes valores Variam de -20 (prioridade "
+#~ "extremamente alta, ou \"não simpática\" para os outros processos) a 19 "
+#~ "(prioridade extremamente baixa).  O valor por omissão para processos "
+#~ "comuns é 0, e este é também o valor recomendado para o servidor de X."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Não são recomendados valores fora do intervalo de -10 a 0; demasiado "
-"negativos, e o servidor X irá interferir com tarefas importantes do "
-"sistema.  Demasiado positivos, e o servidor X apresentará uma resposta lenta."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Não são recomendados valores fora do intervalo de -10 a 0; demasiado "
+#~ "negativos, e o servidor X irá interferir com tarefas importantes do "
+#~ "sistema.  Demasiado positivos, e o servidor X apresentará uma resposta "
+#~ "lenta."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Valor de prioridade do processo (\"nice\") incorrecto"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Valor de prioridade do processo (\"nice\") incorrecto"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Por favor introduza um número inteiro entre -20 e 19."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Por favor introduza um número inteiro entre -20 e 19."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Problemas de maior possíveis com a actualização"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Problemas de maior possíveis com a actualização"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Alguns utilizadores relataram que com a actualização para o conjunto de "
-"pacotes actuais, o seu pacote xserver deixou de estar instalado. Como não "
-"existe nenhuma forma fácil de contornar este problema, assegure-se que "
-"verifica se o pacote xserver-xorg está instalado após a actualização. Se não "
-"estiver instalado e necessitar dele, é recomendado que instale o pacote xorg "
-"para ter a certeza que tem uma instalação do X completamente funcional."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Alguns utilizadores relataram que com a actualização para o conjunto de "
+#~ "pacotes actuais, o seu pacote xserver deixou de estar instalado. Como não "
+#~ "existe nenhuma forma fácil de contornar este problema, assegure-se que "
+#~ "verifica se o pacote xserver-xorg está instalado após a actualização. Se "
+#~ "não estiver instalado e necessitar dele, é recomendado que instale o "
+#~ "pacote xorg para ter a certeza que tem uma instalação do X completamente "
+#~ "funcional."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Não é possível remover o directório /usr/X11R6/bin"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Não é possível remover o directório /usr/X11R6/bin"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Esta actualização necessita que o directório /usr/X11R6/bin seja removido e "
-"substituído por um link simbólico. Foi feita uma tentativa para o fazer, mas "
-"falhou, provavelmente por o directório ainda não estar vazio. Tem de mover "
-"para fora do caminho os ficheiros que estão actualmente no directório para "
-"que a instalação possa ser completada. Se quiser, pode movê-los novamente de "
-"volta após o link simbólico estar no lugar."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Esta actualização necessita que o directório /usr/X11R6/bin seja removido "
+#~ "e substituído por um link simbólico. Foi feita uma tentativa para o "
+#~ "fazer, mas falhou, provavelmente por o directório ainda não estar vazio. "
+#~ "Tem de mover para fora do caminho os ficheiros que estão actualmente no "
+#~ "directório para que a instalação possa ser completada. Se quiser, pode "
+#~ "movê-los novamente de volta após o link simbólico estar no lugar."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Esta instalação de pacote irá agora falhar e terminar de modo a que você "
-"possa fazer isto. Por favor corra novamente o procedimento de actualização "
-"após ter limpo o directório."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Esta instalação de pacote irá agora falhar e terminar de modo a que você "
+#~ "possa fazer isto. Por favor corra novamente o procedimento de "
+#~ "actualização após ter limpo o directório."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "Identificador do bus da placa gráfica:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "Utilizadores de máquinas PowerPC, e utilizadores de computadores com "
+#~ "múltiplos dispositivos gráficos, devem especificar o BusID da placa "
+#~ "gráfica num formato específico de bus aceite."
+
+#~ msgid "Examples:"
+#~ msgstr "Exemplos:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "Para utilizadores com configurações \"multi-head\", esta opção irá "
+#~ "configurar apenas um dos \"heads\".  A configuração posterior terá de ser "
+#~ "feita manualmente no ficheiro de configuração do servidor de X, /etc/X11/"
+#~ "xorg.conf."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "Pode querer utilizar o comando \"lspci\" para determinar a localização do "
+#~ "bus da sua placa gráfica PCI, AGP, ou PCI-Express."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "Quando possível, esta pergunta terá sido previamente respondida para si e "
+#~ "deverá aceitar a omissão a menos que saiba que ela não funciona."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "Formato incorrecto do identificador do bus"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Utilizar a interface de dispositivo \"framebuffer\" do kernel?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Em vez de comunicar directamente com o hardware de vídeo, o servidor de X "
+#~ "pode ser configurado para realizar certas operações, tais como a mudança "
+#~ "do modo gráfico, através do driver \"framebuffer\" do kernel."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Em teoria, ambos os métodos deverão funcionar, mas na prática, por vezes "
+#~ "um funciona e outro não.  Activar esta opção é o mais seguro, mas esteja "
+#~ "à vontade para a desligar se lhe parecer que causa problemas."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Conjunto de regras XKB a utilizar:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Para o servidor de X lidar correctamente com o teclado, é necessário "
+#~ "escolher um conjunto de regras XKB."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Os utilizadores da maioria dos teclados devem introduzir \"xorg\"."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Os utilizadores avançados podem utilizar qualquer conjunto de regras XKB "
+#~ "definidas.  Se o pacote xkb-data tiver sido desempacotado, veja o "
+#~ "directório /usr/share/X11/xkb/rules para os conjuntos de regras "
+#~ "disponíveis."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Em caso de dúvida, este valor deve ser \"xorg\"."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Modelo do teclado:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Para o servidor de X lidar correctamente com o teclado, tem de ser "
+#~ "indicado um modelo de teclado.  Os modelos disponíveis dependem do "
+#~ "conjunto de regras XKB que está a ser utilizado."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Com o conjunto de regras \"xorg\":\n"
+#~ " - pc101: teclado tradicional de estilo IBM PC/AT com 101 teclas, comum "
+#~ "nos\n"
+#~ "          Estados Unidos.  Não tem as teclas \"logo\" ou \"menu\";\n"
+#~ " - pc104: idêntico ao modelo pc101, com teclas adicionais, normalmente\n"
+#~ "          gravadas com um símbolo \"logo\" e um símbolo \"menu\";\n"
+#~ " - pc102: idêntico a pc101 e muitas vezes encontrado na Europa. Inclui "
+#~ "uma\n"
+#~ "          tecla \"< >\";\n"
+#~ " - pc105: idêntico a pc104 e muitas vezes encontrado na Europa. Inclui "
+#~ "uma\n"
+#~ "          tecla \"< >\";\n"
+#~ " - macintosh: os teclados Macintosh que utilizam a nova camada de "
+#~ "entrada\n"
+#~ "              com códigos de teclas Linux\n"
+#~ " - macintosh_old: teclados Macintosh que não utilizam a nova camada de "
+#~ "entrada.\n"
+#~ " - type4: teclados Sun Type4;\n"
+#~ " - type5: teclados Sun Type5."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Os teclados de computadores portáteis muitas vezes não têm tantas teclas "
+#~ "como os modelos individuais; os utilizadores de portáteis devem "
+#~ "seleccionar dos de cima o modelo de teclado que mais se aproxima."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Os utilizadores avançados podem utilizar qualquer modelo definido pelo "
+#~ "conjunto de regras XKB seleccionado.  Se o pacote xkb-data tiver sido "
+#~ "desempacotado, veja o directório /usr/share/X11/xkb/rules para os "
+#~ "conjuntos de regras disponíveis."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Os utilizadores de teclados Português de Portugal normalmente devem "
+#~ "introduzir \"pc105\".  Os utilizadores da maioria dos outros teclados "
+#~ "devem introduzir \"pc104\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Disposição do teclado:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Para o servidor de X lidar correctamente com o teclado, tem de ser "
+#~ "introduzida uma disposição de teclado.  As disposições disponíveis "
+#~ "dependem de qual conjunto de regras XKB e que modelo de teclado foram "
+#~ "seleccionados anteriormente."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Os utilizadores avançados podem utilizar qualquer modelo definido pelo "
+#~ "conjunto de regras XKB seleccionado.  Se o pacote xkb-data tiver sido "
+#~ "desempacotado, veja o directório /usr/share/X11/xkb/rules para os "
+#~ "conjuntos de regras disponíveis."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Os utilizadores de teclados Português de Portugal devem introduzir \"pt"
+#~ "\".  Os utilizadores de teclados localizados para outros países devem "
+#~ "geralmente introduzir o código ISO 3166 do seu país.  E.g., a França "
+#~ "utiliza \"fr\" e a Alemanha utiliza \"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Variante do teclado:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Para o servidor de X lidar com o teclado como é desejado, é possível "
+#~ "introduzir uma variante de teclado.  As variantes disponíveis dependem do "
+#~ "conjunto de regras XKB, modelo e disposição que foram seleccionados "
+#~ "anteriormente."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Muitas disposições de teclados suportam uma opção para tratar as teclas "
+#~ "\"mortas\" (dead), tais como as marcas de acentos ou til que não produzem "
+#~ "um espaço, como teclas normais de espaço. Se este é o comportamento "
+#~ "desejado, introduza \"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Os utilizadores avançados podem utilizar qualquer variante suportada pela "
+#~ "disposição XKB seleccionada.  Se o pacote xkb-data tiver sido "
+#~ "desempacotado, veja as variantes disponíveis no directório /usr/share/X11/"
+#~ "xkb/symbols, no ficheiro correspondente à disposição que seleccionou."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Utilizadores de teclados Português de Portugal devem geralmente deixar "
+#~ "esta opção em branco."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Opções do teclado:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Para o servidor de X lidar com o seu teclado como deseja, é possível "
+#~ "introduzir opções de teclado.  As opções disponíveis dependem do conjunto "
+#~ "de regras XKB que foi previamente seleccionado.  Nem todas as opções "
+#~ "funcionarão com todos os modelos e disposições de teclado."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Por exemplo, se quiser que a tecla Caps Lock se comporte como uma tecla "
+#~ "Control adicional, pode introduzir \"ctrl:nocaps\"; se quiser trocar a "
+#~ "tecla Caps Lock com a tecla Control da esquerda, pode inserir \"ctrl:"
+#~ "swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Como outro exemplo, algumas pessoas preferem ter as teclas \"Meta\" "
+#~ "associadas às teclas Alt dos seus teclados (esta é a omissão); enquanto "
+#~ "que outras pessoas preferem ter as teclas \"Meta\" associadas às teclas "
+#~ "Windows ou \"logotipo\".  Se preferir utilizar as suas teclas Windows ou "
+#~ "\"logotipo\" como teclas \"Meta\", pode introduzir \"altwin:meta_win\"."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Pode combinar opções separando-as com uma vírgula, por exemplo:\"ctrl:"
+#~ "nocaps,altwin:meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Os utilizadores avançados podem utilizar quaisquer opções compatíveis com "
+#~ "o modelo XKB escolhido, disposição e variante."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Em caso de dúvida, este valor deve ser deixado vazio."
+
+#~ msgid "Empty value"
+#~ msgstr "Valor vazio"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Não é permitida uma entrada nula para este valor."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Os caracteres aspas duplas são inválidos"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr ""
+#~ "Não são permitidos caracteres de aspas duplas (\") no valor da opção."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "É necessário um valor numérico"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Não são permitidos outros caracteres que não dígitos na opção."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Detectar automaticamente a disposição do teclado?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "A escolha por omissão da disposição do teclado para o servidor Xorg será "
+#~ "baseada na combinação do idioma e da disposição do teclado escolhidos no "
+#~ "instalador."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Escolha esta opção se quiser que a disposição do teclado seja novamente "
+#~ "detectada. Não a escolha se quiser manter a actual disposição do teclado."
+
+#~ msgid "X server driver:"
+#~ msgstr "Driver do servidor de X:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "Para a interface gráfica de utilizador do X Window System funcionar "
+#~ "correctamente, é necessário seleccionar um driver da placa gráfica para o "
+#~ "servidor de X."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Os drivers normalmente têm o nome do fabricante da placa gráfica ou "
+#~ "chipset, ou o nome de um modelo ou uma família de chipsets específicos."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "

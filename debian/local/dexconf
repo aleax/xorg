@@ -137,10 +137,10 @@ else
 fi
 
 # xorg.conf sections:
-#   Files          File pathnames
+#   Files          File pathnames                    NOT USED BY DEXCONF
 #   ServerFlags    Server flags                      NOT USED BY DEXCONF
 #   Module         Dynamic module loading            NOT USED BY DEXCONF
-#   InputDevice    Input device description
+#   InputDevice    Input device description          NOT USED BY DEXCONF
 #   Device         Graphics device description
 #   VideoAdaptor   Xv video adaptor description      NOT USED BY DEXCONF
 #   Monitor        Monitor description
@@ -181,12 +181,8 @@ SECTION
 
 ### DEVICE
 
-db_get xserver-$SERVER/config/device/driver
-DEVICE_DRIVER="$RET"
 db_get xserver-$SERVER/config/device/bus_id
 DEVICE_BUSID="$RET"
-db_get xserver-$SERVER/config/device/use_fbdev
-DEVICE_USE_FBDEV="$RET"
 
 QEMU_KVM=$(grep "QEMU Virtual CPU" /proc/cpuinfo || true)
 if [ -n "$QEMU_KVM" ]; then
@@ -215,9 +211,6 @@ if [ -n "$PS3_FB" ]; then
 fi
 if [ -n "$DEVICE_BUSID" ]; then
   printf "\tBusID\t\t\"$DEVICE_BUSID\"\n" >&4
-fi
-if [ "$DEVICE_USE_FBDEV" = "true" ]; then
-  printf "\tOption\t\t\"UseFBDev\"\t\t\"$DEVICE_USE_FBDEV\"\n" >&4
 fi
 printf "EndSection\n" >&4
 
@@ -274,8 +267,7 @@ umask 022
 : >"$OUTFILE"
 
 SPACER=
-for SECTION in Header Files InputDeviceKeyboard InputDeviceMouse \
-               Device Monitor Screen; do
+for SECTION in Header Device Monitor Screen; do
   if [ -e "$DEXCONFTMPDIR/$SECTION" ]; then
     eval $SPACER
     cat "$DEXCONFTMPDIR/$SECTION" >>"$OUTFILE"

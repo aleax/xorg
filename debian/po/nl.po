@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2008-06-16 10:58+0100\n"
 "Last-Translator: Bart Cornelis <cobaco@skolelinux.no>\n"
 "Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -35,479 +35,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Dutch\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "X-server-stuurprogramma:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"Opdat het grafische systeem (X Window System) juist zou functioneren dient u "
-"het door de X-server voor de videokaart te gebruiken stuurprogramma aan te "
-"geven."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Stuurprogramma-namen verwijzen meestal naar de fabrikant van hetzij de "
-"videokaart, hetzij de gebruikte chipset, of naar een chipsetfamilie."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "Gebruik maken van de framebuffer-interface in de kernel?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"U kunt de X-server instellen zodat sommige operaties, zoals het wisselen van "
-"beeldmodus, via het framebufferstuurprogamma van de kernel verlopen, en dus "
-"niet via directe communicatie met de videokaart."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Theoretisch werken beide aanpakken, praktisch werkt soms de een, en soms de "
-"ander. Gebruik van deze optie is normaal een goede keus, mocht u problemen "
-"krijgen kunt u ze altijd afzetten."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "Naam voor de bus-identificatie van uw videokaart:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"Gebruikers van PowerPC's en computers met meerdere beeld-apparaten dienen de "
-"BusID van hun videokaart op te geven in een bekend bus-specifiek formaat."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "Voorbeelden:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"Voor gebruikers van configuraties met meerdere schermen zal deze optie "
-"slechts één van de schermen configureren. Verdere configuratie zal handmatig "
-"in het X-server-configuratiebestand (/etc/X11/xorg.conf) dienen te gebeuren."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"U kunt gebruik maken van het commando 'lspci' om de bus-locatie van uw PCI, "
-"PCI-express, of AGP-videokaart te bepalen."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"Waar mogelijk zal het antwoord op deze vraag reeds ingevuld zijn; tenzij u "
-"weet dat het voorgestelde antwoord niet werkt laat u dit best staan."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "Ongeldig formaat voor de bus-identificatie"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Te gebruiken XKB-regelset:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Opdat de X-server uw toetsenbord juist zou aansturen dient u een XKB-"
-"regelset aan te geven."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Voor de meeste toetsenborden dient hier 'xorg' ingevuld te worden."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Gevorderde gebruikers kunnen elke gedefinieerde XKB-regelset gebruiken. "
-"Wanneer het 'xkb-data'-pakket uitgepakt is vindt u de beschikbare regelsets "
-"in de map /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Wanneer u twijfelt kunt u deze waarde best op 'xorg' instellen."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Toetsenbordmodel:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Opdat de X-server uw toetsenbord juist zou kunnen aansturen dient u het "
-"toetsenbordmodel aan te geven. De beschikbare toetsenborden worden bepaald "
-"door de gebruikte XKB-regelset."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Met de 'xorg'-regelset:\n"
-" - pc101: traditioneel IBM PC/AT-stijl toetsenbord met 101 keys, veel\n"
-"          gebruikt in de VS.  Heeft geen 'logo' of 'menu' toetsen;\n"
-" - pc104: lijkt op pc101-model, maar met aanvullende toetsen, gewoonlijk\n"
-"          met een 'logo'-symbool of een 'menu'-symbool;\n"
-" - pc102: lijkt op pc101 en vaak gevonden in Europa. Bevat een '< >'-toets;\n"
-" - pc105: lijkt op pc104 en vaak gevonden in Europa. Bevat een '< >'-toets;\n"
-" - macintosh: Macintosh toetsenborden die de nieuwe invoerlaag met\n"
-"                      Linux-toetscodes gebruiken;\n"
-" - macintosh_old: Macintosh toetsenborden die de nieuwe invoerlaag niet "
-"gebruiken;\n"
-" - type4: Sun Type4 toetsenbord;\n"
-" - type5: Sun Type5 toetsenbord."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Vaak beschikken toetsenborden van laptops over minder toetsen dan losse "
-"toetsenbordmodellen; laptopgebruikers dienen het best overeenkomende "
-"toetsenbordmodel te kiezen."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Gevorderde gebruikers kunnen elk model gebruiken dat gedefinieerd wordt door "
-"de geselecteerde XKB-regelset. Wanneer het 'xkb-data'-pakket uitgepakt is "
-"vindt u de beschikbare regelsets in de map /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Gebruikers van VS-stijl Engelstalige toetsenborden dienen gewoonlijk 'pc104' "
-"op te geven, voor de meeste andere toetsenborden dient u 'pc105' te kiezen."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Toetsenbordindeling:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Opdat de X-server uw toetsenbord juist zou kunnen aansturen dient u de "
-"toetsenbordindeling aan te geven. De beschikbare indelingen zijn afhankelijk "
-"van de eerder aangegeven XKB-regelset en toetsenbordmodel."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Gevorderde gebruikers kunnen elk door de geselecteerde XKB-regelset "
-"ondersteunde indeling gebruiken. Wanneer het 'xkb-data'-pakket uitgepakt is "
-"vindt u de beschikbare regelsets in de map /usr/share/X11/xkb/rules."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Gebruikers van VS-stijl toetsenborden dienen \"us\" op te geven. Gebruikers "
-"van voor andere landen gelokaliseerde toetsenborden dienen over het algemeen "
-"de ISO 3166 code voor hun land in te geven (b.v. voor België is dit 'be', en "
-"voor Nederland 'nl')."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Toetsenbordvariant:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Opdat de X-server uw toetsenbord juist zou aansturen dient u de "
-"toetsenbordvariant aan te geven. De beschikbare varianten worden bepaald "
-"door de gekozen XKB-regelset, toetsenbordmodel, en toetsenbordindeling."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Veel toetsenbordindelingen ondersteunen een optie om \"dode\" toetsen zoals "
-"accenten en diaresen als normale spatie-toetsen te gebruiken. Gebruik indien "
-"u dit wenst de optie \"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Gevorderde gebruikers kunnen elke door de gebruikte toetsenbordindeling "
-"ondersteunde variant gebruiken. Wanneer het 'xkb-data'-pakket uitgepakt is "
-"vindt u de beschikbare varianten in de map /usr/share/X11/xkb/symbols."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"Gebruikers van VS-stijl Engelse toetsenborden kunnen dit best leeg laten."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Toetsenbordopties:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Om uw toetsenbord op de gewenste manier door de X-server te laten behandelen "
-"kunt u hier opties opgeven. De beschikbare opties zijn afhankelijk van de "
-"eerder geselecteerde XKB-regelset; niet alle opties werken met elk "
-"toetsenbordmodel en toetsenbordindeling."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Bijvoorbeeld, wanneer u de Caps Lock-toets als een extra control-toets wilt "
-"gebruiken, dient u \"ctrl:nocaps\" op te geven; mocht u de functie van de "
-"Caps Lock- en linker control-toets willen omdraaien dan dient u \"ctrl:"
-"swapcaps\" op te geven."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Nog een voorbeeld: sommige mensen verkiezen om de Alt-toetsen te gebruiken "
-"als Meta-toetsen (dit is het standaardgedrag), terwijl anderen verkiezen om "
-"hun Windows of \"logo\" toetsen als Meta toetsen te gebruiken. In het "
-"laatste geval dient u \"altwin:meta_win\" in te voeren."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"U kunt opties combineren door ze te scheiden met een komma. bijvoorbeeld "
-"'ctrl:nocaps,altwin:meta_win'."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Gevorderde gebruikers kunnen alle met het geselecteerde XKB-model, indeling "
-"en variant compatibele opties gebruiken."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Bij twijfel laat u deze waarde best leeg."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Lege waarde"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Een lege waarde is hier niet toegelaten."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Ongeldige (dubbele) aanhalingstekens"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Dubbele aanhalingstekens (\") zijn hier niet toegelaten."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "Er is een numerieke waarde nodig"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Enkel cijfers zijn hier toegelaten."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "Wilt u de toetsenbordindeling automatisch laten detecteren?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"De standaard selectie van toetsenbordindelingen voor de Xorg-server is "
-"gebaseerd op een combinatie van de in het installatieprogramma geselecteerde "
-"taal en toetsenbordindeling. "
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Als u de toetsenbordindeling opnieuw wilt laten detecteren kies dan deze "
-"optie. Doe dit niet als u uw huidige toetsenbordindeling wilt behouden."
 
 #. Type: select
 #. Choices
@@ -552,114 +79,419 @@ msgstr ""
 "goed compromis is om de X-server alleen te laten opstarten door gebruikers "
 "die aangemeld zijn via één van de virtuele consoles."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Hoffelijkheidswaarde (nice value) voor het grafisch systeem:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Hoffelijkheidswaarde (nice value) voor het grafisch systeem:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Bij het gebruik van bestuursysteem-kernels met een gegeven 'scheduling'-"
-"strategie is het algemeen opgemerkt dat de prestatie van de X-server "
-"verbeterd wanneer deze met een hoger dan standaard prioriteit gedraaid "
-"wordt. De prioriteit van een proces staat bekend als de hoffelijkheidswaarde "
-"en varieert van -20 (minst hoffelijk probeert altijd voor te dringen) tot 19 "
-"(extreem hoffelijk, laat alles voorgaan). De standaard hoffelijkheidswaarde "
-"voor gewone processen is 0 en is ook de aangeraden waarde voor uw X-server."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Bij het gebruik van bestuursysteem-kernels met een gegeven 'scheduling'-"
+#~ "strategie is het algemeen opgemerkt dat de prestatie van de X-server "
+#~ "verbeterd wanneer deze met een hoger dan standaard prioriteit gedraaid "
+#~ "wordt. De prioriteit van een proces staat bekend als de "
+#~ "hoffelijkheidswaarde en varieert van -20 (minst hoffelijk probeert altijd "
+#~ "voor te dringen) tot 19 (extreem hoffelijk, laat alles voorgaan). De "
+#~ "standaard hoffelijkheidswaarde voor gewone processen is 0 en is ook de "
+#~ "aangeraden waarde voor uw X-server."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Waarden buiten het -10 tot 0 bereik zijn niet aangeraden; bij een te lage "
-"waarde stoort de X-server belangrijke systeemprocessen, terwijl bij een te "
-"hoge waarde de X-server langzaam zal reageren."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Waarden buiten het -10 tot 0 bereik zijn niet aangeraden; bij een te lage "
+#~ "waarde stoort de X-server belangrijke systeemprocessen, terwijl bij een "
+#~ "te hoge waarde de X-server langzaam zal reageren."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Ongeldige hoffelijkheidswaarde"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Ongeldige hoffelijkheidswaarde"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Gelieve een geheel getal tussen -20 en 19 op te geven."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Gelieve een geheel getal tussen -20 en 19 op te geven."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Grote mogelijke opwaarderingsmoeilijkheden"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Grote mogelijke opwaarderingsmoeilijkheden"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Sommige gebruikers melden dat hun xserver-pakket na het opwaarderen naar de "
-"huidige pakketset niet meer geïnstalleerd was. Omdat er geen makkelijke "
-"manier is om dit probleem heen kunt u best na de opwaardering controleren of "
-"het xserver-xorg-pakket geïnstalleerd is. Als dit niet het geval is, is het "
-"aan te raden om het xorg-pakket te installeren en zo te verzekeren dat u een "
-"volledig werkende X-opzet heeft."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Sommige gebruikers melden dat hun xserver-pakket na het opwaarderen naar "
+#~ "de huidige pakketset niet meer geïnstalleerd was. Omdat er geen "
+#~ "makkelijke manier is om dit probleem heen kunt u best na de opwaardering "
+#~ "controleren of het xserver-xorg-pakket geïnstalleerd is. Als dit niet het "
+#~ "geval is, is het aan te raden om het xorg-pakket te installeren en zo te "
+#~ "verzekeren dat u een volledig werkende X-opzet heeft."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Kan de map /usr/X11R6/bin niet verwijderen"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Kan de map /usr/X11R6/bin niet verwijderen"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"De opwaardering vereist dat de map /usr/X11R6/bin verwijderd wordt en "
-"vervangen door een symbolische koppeling. De poging om dit uit te voeren is "
-"mislukt, waarschijnlijk omdat deze map niet leeg was. Voordat de installatie "
-"kan verdergaan dient u de bestanden in deze map uit de weg te halen; "
-"desgewenst kunt u ze eens de symbolische koppeling aangemaakt is "
-"terugplaatsen."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "De opwaardering vereist dat de map /usr/X11R6/bin verwijderd wordt en "
+#~ "vervangen door een symbolische koppeling. De poging om dit uit te voeren "
+#~ "is mislukt, waarschijnlijk omdat deze map niet leeg was. Voordat de "
+#~ "installatie kan verdergaan dient u de bestanden in deze map uit de weg te "
+#~ "halen; desgewenst kunt u ze eens de symbolische koppeling aangemaakt is "
+#~ "terugplaatsen."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Deze pakketinstallatie breekt nu af zodat u dit kunt doen. Gelieve de "
-"opwaarderingsprocedure opnieuw uit te voeren eens u deze map opgeschoond "
-"heeft."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Deze pakketinstallatie breekt nu af zodat u dit kunt doen. Gelieve de "
+#~ "opwaarderingsprocedure opnieuw uit te voeren eens u deze map opgeschoond "
+#~ "heeft."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "Naam voor de bus-identificatie van uw videokaart:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "Gebruikers van PowerPC's en computers met meerdere beeld-apparaten dienen "
+#~ "de BusID van hun videokaart op te geven in een bekend bus-specifiek "
+#~ "formaat."
+
+#~ msgid "Examples:"
+#~ msgstr "Voorbeelden:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "Voor gebruikers van configuraties met meerdere schermen zal deze optie "
+#~ "slechts één van de schermen configureren. Verdere configuratie zal "
+#~ "handmatig in het X-server-configuratiebestand (/etc/X11/xorg.conf) dienen "
+#~ "te gebeuren."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "U kunt gebruik maken van het commando 'lspci' om de bus-locatie van uw "
+#~ "PCI, PCI-express, of AGP-videokaart te bepalen."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "Waar mogelijk zal het antwoord op deze vraag reeds ingevuld zijn; tenzij "
+#~ "u weet dat het voorgestelde antwoord niet werkt laat u dit best staan."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "Ongeldig formaat voor de bus-identificatie"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "Gebruik maken van de framebuffer-interface in de kernel?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "U kunt de X-server instellen zodat sommige operaties, zoals het wisselen "
+#~ "van beeldmodus, via het framebufferstuurprogamma van de kernel verlopen, "
+#~ "en dus niet via directe communicatie met de videokaart."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Theoretisch werken beide aanpakken, praktisch werkt soms de een, en soms "
+#~ "de ander. Gebruik van deze optie is normaal een goede keus, mocht u "
+#~ "problemen krijgen kunt u ze altijd afzetten."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Te gebruiken XKB-regelset:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Opdat de X-server uw toetsenbord juist zou aansturen dient u een XKB-"
+#~ "regelset aan te geven."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "Voor de meeste toetsenborden dient hier 'xorg' ingevuld te worden."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Gevorderde gebruikers kunnen elke gedefinieerde XKB-regelset gebruiken. "
+#~ "Wanneer het 'xkb-data'-pakket uitgepakt is vindt u de beschikbare "
+#~ "regelsets in de map /usr/share/X11/xkb/rules."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Wanneer u twijfelt kunt u deze waarde best op 'xorg' instellen."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Toetsenbordmodel:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Opdat de X-server uw toetsenbord juist zou kunnen aansturen dient u het "
+#~ "toetsenbordmodel aan te geven. De beschikbare toetsenborden worden "
+#~ "bepaald door de gebruikte XKB-regelset."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Met de 'xorg'-regelset:\n"
+#~ " - pc101: traditioneel IBM PC/AT-stijl toetsenbord met 101 keys, veel\n"
+#~ "          gebruikt in de VS.  Heeft geen 'logo' of 'menu' toetsen;\n"
+#~ " - pc104: lijkt op pc101-model, maar met aanvullende toetsen, gewoonlijk\n"
+#~ "          met een 'logo'-symbool of een 'menu'-symbool;\n"
+#~ " - pc102: lijkt op pc101 en vaak gevonden in Europa. Bevat een '< >'-"
+#~ "toets;\n"
+#~ " - pc105: lijkt op pc104 en vaak gevonden in Europa. Bevat een '< >'-"
+#~ "toets;\n"
+#~ " - macintosh: Macintosh toetsenborden die de nieuwe invoerlaag met\n"
+#~ "                      Linux-toetscodes gebruiken;\n"
+#~ " - macintosh_old: Macintosh toetsenborden die de nieuwe invoerlaag niet "
+#~ "gebruiken;\n"
+#~ " - type4: Sun Type4 toetsenbord;\n"
+#~ " - type5: Sun Type5 toetsenbord."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Vaak beschikken toetsenborden van laptops over minder toetsen dan losse "
+#~ "toetsenbordmodellen; laptopgebruikers dienen het best overeenkomende "
+#~ "toetsenbordmodel te kiezen."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Gevorderde gebruikers kunnen elk model gebruiken dat gedefinieerd wordt "
+#~ "door de geselecteerde XKB-regelset. Wanneer het 'xkb-data'-pakket "
+#~ "uitgepakt is vindt u de beschikbare regelsets in de map /usr/share/X11/"
+#~ "xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Gebruikers van VS-stijl Engelstalige toetsenborden dienen gewoonlijk "
+#~ "'pc104' op te geven, voor de meeste andere toetsenborden dient u 'pc105' "
+#~ "te kiezen."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Toetsenbordindeling:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Opdat de X-server uw toetsenbord juist zou kunnen aansturen dient u de "
+#~ "toetsenbordindeling aan te geven. De beschikbare indelingen zijn "
+#~ "afhankelijk van de eerder aangegeven XKB-regelset en toetsenbordmodel."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Gevorderde gebruikers kunnen elk door de geselecteerde XKB-regelset "
+#~ "ondersteunde indeling gebruiken. Wanneer het 'xkb-data'-pakket uitgepakt "
+#~ "is vindt u de beschikbare regelsets in de map /usr/share/X11/xkb/rules."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Gebruikers van VS-stijl toetsenborden dienen \"us\" op te geven. "
+#~ "Gebruikers van voor andere landen gelokaliseerde toetsenborden dienen "
+#~ "over het algemeen de ISO 3166 code voor hun land in te geven (b.v. voor "
+#~ "België is dit 'be', en voor Nederland 'nl')."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Toetsenbordvariant:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Opdat de X-server uw toetsenbord juist zou aansturen dient u de "
+#~ "toetsenbordvariant aan te geven. De beschikbare varianten worden bepaald "
+#~ "door de gekozen XKB-regelset, toetsenbordmodel, en toetsenbordindeling."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Veel toetsenbordindelingen ondersteunen een optie om \"dode\" toetsen "
+#~ "zoals accenten en diaresen als normale spatie-toetsen te gebruiken. "
+#~ "Gebruik indien u dit wenst de optie \"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Gevorderde gebruikers kunnen elke door de gebruikte toetsenbordindeling "
+#~ "ondersteunde variant gebruiken. Wanneer het 'xkb-data'-pakket uitgepakt "
+#~ "is vindt u de beschikbare varianten in de map /usr/share/X11/xkb/symbols."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Gebruikers van VS-stijl Engelse toetsenborden kunnen dit best leeg laten."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Toetsenbordopties:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Om uw toetsenbord op de gewenste manier door de X-server te laten "
+#~ "behandelen kunt u hier opties opgeven. De beschikbare opties zijn "
+#~ "afhankelijk van de eerder geselecteerde XKB-regelset; niet alle opties "
+#~ "werken met elk toetsenbordmodel en toetsenbordindeling."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Bijvoorbeeld, wanneer u de Caps Lock-toets als een extra control-toets "
+#~ "wilt gebruiken, dient u \"ctrl:nocaps\" op te geven; mocht u de functie "
+#~ "van de Caps Lock- en linker control-toets willen omdraaien dan dient u "
+#~ "\"ctrl:swapcaps\" op te geven."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Nog een voorbeeld: sommige mensen verkiezen om de Alt-toetsen te "
+#~ "gebruiken als Meta-toetsen (dit is het standaardgedrag), terwijl anderen "
+#~ "verkiezen om hun Windows of \"logo\" toetsen als Meta toetsen te "
+#~ "gebruiken. In het laatste geval dient u \"altwin:meta_win\" in te voeren."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "U kunt opties combineren door ze te scheiden met een komma. bijvoorbeeld "
+#~ "'ctrl:nocaps,altwin:meta_win'."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Gevorderde gebruikers kunnen alle met het geselecteerde XKB-model, "
+#~ "indeling en variant compatibele opties gebruiken."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Bij twijfel laat u deze waarde best leeg."
+
+#~ msgid "Empty value"
+#~ msgstr "Lege waarde"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Een lege waarde is hier niet toegelaten."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Ongeldige (dubbele) aanhalingstekens"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Dubbele aanhalingstekens (\") zijn hier niet toegelaten."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Er is een numerieke waarde nodig"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Enkel cijfers zijn hier toegelaten."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "Wilt u de toetsenbordindeling automatisch laten detecteren?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "De standaard selectie van toetsenbordindelingen voor de Xorg-server is "
+#~ "gebaseerd op een combinatie van de in het installatieprogramma "
+#~ "geselecteerde taal en toetsenbordindeling. "
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Als u de toetsenbordindeling opnieuw wilt laten detecteren kies dan deze "
+#~ "optie. Doe dit niet als u uw huidige toetsenbordindeling wilt behouden."
+
+#~ msgid "X server driver:"
+#~ msgstr "X-server-stuurprogramma:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "Opdat het grafische systeem (X Window System) juist zou functioneren "
+#~ "dient u het door de X-server voor de videokaart te gebruiken "
+#~ "stuurprogramma aan te geven."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Stuurprogramma-namen verwijzen meestal naar de fabrikant van hetzij de "
+#~ "videokaart, hetzij de gebruikte chipset, of naar een chipsetfamilie."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "

@@ -14,83 +14,14 @@ THIS_SCRIPT=preinst
 
 CONFIG_DIR=/etc/X11
 SERVER_SYMLINK="$CONFIG_DIR/X"
-XF86CONFIG="$CONFIG_DIR/XF86Config-4"
-XORGCONFIG="$CONFIG_DIR/xorg.conf"
 CONFIG_AUX_DIR=/var/lib/x11
-SERVER_SYMLINK_CHECKSUM_BASE="${SERVER_SYMLINK##*/}.md5sum"
-SERVER_SYMLINK_CHECKSUM="$CONFIG_AUX_DIR/$SERVER_SYMLINK_CHECKSUM_BASE"
-SERVER_SYMLINK_ROSTER_BASE="${SERVER_SYMLINK##*/}.roster"
-SERVER_SYMLINK_ROSTER="$CONFIG_AUX_DIR/$SERVER_SYMLINK_ROSTER_BASE"
-XORGCONFIG_CHECKSUM_BASE="${XORGCONFIG##*/}.md5sum"
-XORGCONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XORGCONFIG_CHECKSUM_BASE"
-XORGCONFIG_ROSTER_BASE="${XORGCONFIG##*/}.roster"
-XORGCONFIG_ROSTER="$CONFIG_AUX_DIR/$XORGCONFIG_ROSTER_BASE"
 THIS_SERVER=/usr/bin/Xorg
-UNCONFIGURED_LINK_TARGET=$(which true)
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
-  # create the configuration files' main and auxiliary directories if they
-  # don't exist
-  for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
-    if ! [ -e "$DIR" ]; then
-      observe "creating $DIR"
-      mkdir --mode=755 --parents "$DIR"
-    fi
-  done
-
-  # the transition from /var/lib/xfree86 to /var/lib/x11 occurred in
-  # 7.0.0-0ubuntu1 and 1:7.0.0
-  if [ -n "$2" ] && \
-     dpkg --compare-versions "$2" lt "1:7.0.11"; then
-    if [ -e "/var/lib/xfree86" ]; then
-      if [ -e "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" ]; then \
-        if fgrep -qx "$THIS_PACKAGE" \
-           "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"; then
-          # construct temporary roster file with our package name removed, ignoring
-          # failure
-          fgrep -vx "$THIS_PACKAGE" \
-            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" > \
-            "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" 2>/dev/null \
-            || true
-
-          # is there anything left?
-          if [ -s "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" ]; then
-            # yes, replace the roster file
-            mv "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp" \
-               "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE"
-          else
-            # no; remove both the original and our temporary copy
-            rm -f "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE" \
-                  "/var/lib/xfree86/$XORGCONFIG_ROSTER_BASE.dpkg-tmp"
-          fi
-        fi
-      fi
-
-      if  [ -e "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" ]; then
-        # migrate the checksum if it doesn't exist
-        if [ -e "$XORGCONFIG_CHECKSUM" ]; then
-          rm "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE"
-        else
-          mv "/var/lib/xfree86/$XORGCONFIG_CHECKSUM_BASE" \
-             "$CONFIG_AUX_DIR" || \
-                error "Could not move the xorg.conf.md5sum for some reason"
-        fi
-      fi
-
-      rmdir /var/lib/xfree86 2>/dev/null || true
-    fi
-  fi
-
-  # implement (simplified) ucf-style configration file handling
-
-  # if performing a fresh install, place config files under management if they
-  # do *not* already exist
-  if [ "$1" = "install" ]; then
-    if ! [ -e "$XORGCONFIG" ]; then
-      # cheap, fork()-free version of "touch"
-      : > "$XORGCONFIG"
-      md5sum "$XORGCONFIG" > "$XORGCONFIG_CHECKSUM"
-    fi
+  # create the configuration files directory if it doesn't exist
+  if ! [ -e "$CONFIG_DIR" ]; then
+    observe "creating $CONFIG_DIR"
+    mkdir --mode=755 --parents "$CONFIG_DIR"
   fi
 fi
 

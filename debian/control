@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Drew Parsons <dparsons@debian.org>, Julien Cristau <jcristau@debian.org>
-Standards-Version: 3.7.3.0
+Standards-Version: 3.8.1
 Build-Depends: dpkg (>= 1.7.0), po-debconf, debhelper (>= 4.1.16)
 
 Package: x11-common
@@ -65,7 +65,8 @@ Conflicts: xfree86-common, xorg-common, xserver-common (<< 7), x-common,
  ucbmpeg-play (<< 2.3p-13), netscape-base-4, communicator-smotif-477, epan,
  navigator-smotif-477, stella (<< 2.2-1), xfractint (<< 20.3.01-1), xgobi,
  xpostitplus, xisp, vide (<= 1.21-3), xqbiff (<= 0.75-4)
-Replaces: xfree86-common, xorg-common, xserver-common (<< 7), x-common, xinit (<= 1.0.2-0ubuntu3)
+Breaks: gdm (<< 2.20.7-5)
+Replaces: xfree86-common, xorg-common, xserver-common (<< 7), x-common
 Description: X Window System (X.Org) infrastructure
  x11-common contains the filesystem infrastructure required for further
  installation of the X Window System in any configuration; it does not
@@ -84,25 +85,25 @@ Conflicts: xserver-xfree86 (<< 6.8.2.dfsg.1-1), xserver-common (<< 7), x11-commo
 Replaces: xserver-common (<< 7), x11-common (<< 1:7.3+11)
 Depends:
  xserver-xorg-core (>= 2:1.5.99.901),
+ xserver-xorg-input-evdev [alpha amd64 arm armeb armel hppa i386 ia64 lpia m32r m68k mips mipsel powerpc sparc],
  xserver-xorg-video-all | xserver-xorg-video-5,
  xserver-xorg-input-all | xserver-xorg-input-4,
- xserver-xorg-input-evdev [alpha amd64 arm armeb armel hppa i386 ia64 lpia m32r m68k mips mipsel powerpc sparc],
- hal,
+ hal (>= 0.5.12~git20090406),
+ console-setup (>= 1.29) | console-setup-mini (>= 1.29),
  ${shlibs:Depends},
  ${misc:Depends},
  xkb-data (>= 1.4),
  x11-xkb-utils
-Recommends: libgl1-mesa-dri, udev, ${F:XServer-Xorg-Detect-Depends}
+Recommends: libgl1-mesa-dri, udev
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
- X.Org X server, as well as providing a configuration infrastructure to manage
- xorg.conf.  It does not provide the actual server itself, but removing it
- is strongly discouraged.
+ X.Org X server.  It does not provide the actual server itself.
 
 Package: xserver-xorg-video-all
 Architecture: any
 Depends: ${F:XServer-Xorg-Video-Depends}, x11-common
 Replaces: xserver-xorg-driver-all
+Conflicts: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
@@ -118,10 +119,10 @@ Description: the X.Org X server -- input driver metapackage
 
 Package: xorg
 Architecture: any
-Depends: xserver-xorg, libgl1-mesa-glx | libgl1, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), x11-apps, x11-session-utils, x11-utils, x11-xfs-utils, x11-xkb-utils, x11-xserver-utils, xauth, xinit, xfonts-utils, xkb-data, xterm | x-terminal-emulator, sparc-utils [sparc], x11-common, xinput
+Depends: xserver-xorg, libgl1-mesa-glx | libgl1, libgl1-mesa-dri, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), x11-apps, x11-session-utils, x11-utils, x11-xfs-utils, x11-xkb-utils, x11-xserver-utils, xauth, xinit, xfonts-utils, xkb-data, xorg-docs-core, xterm | x-terminal-emulator, x11-common, xinput
 Recommends: xfonts-scalable (>= 1:1.0.0-1)
-Suggests: xorg-docs
 Provides: x-window-system, x-window-system-core
+Suggests: xorg-docs
 Description: X.Org X Window System
  This metapackage provides the components for a standalone
  workstation running the X Window System.  It provides the X libraries, an X

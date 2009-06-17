@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2007-04-06 15:48+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: TAMIL <ubuntu-l10n-tam@lists.ubuntu.com>\n"
@@ -25,471 +25,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "எக்ஸ் சேவையக இயக்கி:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"எக்ஸ் சாளர அமைப்பின் வரைகலை இடையகம் சரியாக வேலை செய்ய எக்ஸ் சேவையகத்துக்கு ஒரு விடியோ "
-"இயக்கியை தேர்ந்தெடுக்க வேண்டும். "
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"இயக்கிகள் வழக்கமாக விடியோ அட்டை அல்லது சில்லு உற்பத்தியாளர் குறித்து பெயரிடப் படும். "
-"அல்லது ஒரு குறிப்பிட்ட வடிவ அல்லது குடும்ப சில்லுகளை குறித்து இருக்கலாம்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "உட்கூறு சட்ட இடையக சாதன இடைமுகத்தை பயன் படுத்தவா?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"எக்ஸ் சேவையகம் விடியோ வன்பொருளுடன் நேரடியாக தொடர்பு கொள்ளாமல் ஒளித்திரை பாங்கை மாற்றுதல் "
-"போன்ற சில செயல்களை உட்கருவின் சட்ட இடையக சாதன (kernel's framebuffer) இயக்கியை பயன் "
-"படுத்தி செய்ய வடிவமைக்க இயலும்."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"ஏட்டின் படி இரண்டுமே வேலை செய்ய வேண்டும் என்றாலும் உண்மையில் இதுவோ அல்லது அதுவோதான் வேலை "
-"செய்யும்.எனவே இந்த தேர்வை செயல் படுத்துதலே உத்தமம். ஆனால் இது பிரச்சினைகளை உண்டு "
-"பண்ணுகிறது என தோன்றினால் தாராளமாக இதை செயல் நீக்கி விடுங்கள்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "விடியோ அட்டை பஸ் அடையாள காட்டி:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"பவர் பிசி கணினி உபயோகிப்போர் மற்றும் பல விடியோ சாதனங்கள் கொண்ட கணினி உபயோகிப்போர் "
-"விடியோ அட்டையின் பஸ் ஐடி (BusID) ஐ இசைவுள்ள பஸ் குறித்தவகையில் குறிப்பிட வேண்டும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "உதாரணங்கள்:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"பல முனை வடிவமைப்பு கொண்டவற்றை உபயோகிப்பவர்களுக்கு இது ஒரே ஒரு முனையை மட்டுமே "
-"வடிவமைக்கும். மேற்கொண்டு வடிவமைப்பை எக்ஸ் சேவையக வடிவமைப்பு கோப்பான /etc/X11/xorg."
-"conf. இல் கைமுறையாக திருத்த வேண்டும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"உங்கள் பிசிஐ ஏஜிபி அல்லது பிசிஐ-எக்ஸ்பிரஸ் விடியோ அட்டையை இடங் காண \"lspci\" கட்டளையை "
-"பயன் படுத்த நீங்கள் விரும்பலாம்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"எங்கு இயலுமோ அங்கு இந்த வினா முன் பதில் தரப் பட்டு விட்டது. ஆகவே நீங்கள் முன்னிருப்பு "
-"வேலை செய்யாது என அறிந்திருந்தாலே ஒழிய அதை ஏற்றுக் கொள்வது நல்லது."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "பஸ் இனம் காணிக்கு தவறான வகையமைப்பு"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "பயன்படுத்த வேண்டிய எக்ஸ்கேபி (XKB) விதி:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr "விசைப் பலகையை எக்ஸ் சேவையகம் சரியாக கையாள XKB விதியை தேர்ந்தெடுக்க வேண்டும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "அனேகமான விசை பலகைகளுக்கு \"xorg\" என் உள்ளிட வேண்டும்.."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"அனுபவமுள்ள பயனர்கள் எந்த ஒரு வரையறுத்த எக்ஸ்கேபி விதி தொகுப்பையும் பயன் படுத்தலாம். "
-"எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/xkb/rules அடைவை கிடைக்கக் "
-"கூடிய எக்ஸ்கேபி விதி தொகுப்புக்கு பார்க்கவும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "சந்தேகமாக இருக்கும் போது மதிப்பை \"xorg\" எனக் குறிக்கவும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "விசைப் பலகை வகை:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள ஒரு விசைப்பலகை வகையை உள்ளிட வேண்டும். "
-"கிடைக்கக்கூடிய விசைப்பலகைகள் பயனில் உள்ள எக்ஸ்கேபி விதித் தொகுப்பை பொறுத்தது."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-"  \"xorg\" விதிகள் அமைக்கின்:\n"
-" - pc101: பாரம்பரிய IBM PC/AT பாணி விசைப் பலகை 101 விசைகளுடன், அமெரிக்க\n"
-"          ஐக்கிய நாடுகளில் பிரபலம். இதில் \"logo\" மற்றும் \"menu\" விசைகள் இல்லை;\n"
-" - pc104: pc101 வகை போன்றது, கூடுதல் விசைகள், வழக்கமாக\n"
-"           \"logo\" குறியீடு மற்றும்  \"menu\" குறியீடு கொண்டது;\n"
-" - pc102: pc101 வகை போன்றது.   வழக்கமாக ஐரோப்பிய நாடுகளில் காணப் படுகிறது. "
-"கூடுதலாக \"<  >\" விசைகள் கொண்டது;\n"
-" - pc105: pc104 வகை போன்றது.   வழக்கமாக ஐரோப்பிய நாடுகளில் காணப் படுகிறது. "
-"கூடுதலாக \"<  >\" விசைகள் கொண்டது;\n"
-" - macintosh: மகின்டாஷ் விசைப் பலகை புதிய லீனக்ஸ் உள்ளீட்டு அடுக்கு  \n"
-"              பயன்படுத்துவது;\n"
-" - macintosh_old: மகின்டாஷ் விசைப் பலகை புதிய உள்ளீட்டு அடுக்கு பயன்படுத்தாதது.\n"
-" - type4: சன் வகை 4 விசைப் பலகைகள்;\n"
-" - type5:  சன் வகை 5 விசைப் பலகைகள்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"மடிக் கணினி விசைப் பலகைகள் மற்ற கணினிகள் போல அத்தனை விசைகளை கொண்டிருப்பதில்லை. ஆகவே "
-"மடிக்கணினி பயனாளிகள் மேல் கண்ட வகைகளில் தோராயமாக பொருந்துவதை தேர்ந்தெடுக்க வேண்டும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"அனுபவமுள்ள பயனர்கள் தேர்ந்தெடுத்த எக்ஸ்கேபி விதி தொகுப்பு வரையறுக்கும் எந்த வகையையும் பயன் "
-"படுத்தலாம். எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/xkb/rules அடைவை "
-"கிடைக்கக் கூடிய எக்ஸ்கேபி விதி தொகுப்புகளுக்கு பார்க்கவும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"யு.எஸ் ஆங்கில விசைப் பலகை பயன் படுத்துவோர் சாதாரணமாக \"pc104\" என உள்ளிட வேண்டும். "
-"அனேகமாக மற்ற விசைப் பலகைகள் பயன் படுத்துவோர் சாதாரணமாக \"pc105\" என உள்ளிட வேண்டும். "
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "விசைப்பலகை அமைப்பு:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள ஒரு விசைப்பலகை அமைப்பை உள்ளிட வேண்டும். "
-"கிடைக்கக்கூடிய விசைப்பலகை அமைப்புகள் பயனில் உள்ள எக்ஸ்கேபி விதித் தொகுப்பையும் முன் "
-"தேர்ந்தெடுத்த விசைப் பலகை வகையையும் பொறுத்தது."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"அனுபவமுள்ள பயனர்கள் தேர்ந்தெடுத்த எக்ஸ்கேபி விதி தொகுப்பு ஆதரிக்கும் எந்த அமைப்பையும் பயன் "
-"படுத்தலாம். எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/xkb/rules அடைவை "
-"கிடைக்கக் கூடிய எக்ஸ்கேபி விதி தொகுப்புகளுக்கு பார்க்கவும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"யு.எஸ் ஆங்கில விசைப் பலகை பயன் படுத்துவோர் சாதாரணமாக  \"us\"என உள்ளிட வேண்டும். மற்ற "
-"நாடுகளில் உள்ளோர் உள்ளமைத்த விசைப் பலகைகள் பயன் படுத்த ISO 3166 நாட்டு குறியீட்டை என "
-"உள்ளிட வேண்டும். எ-டு: ப்ரான்ஸ் \"fr\", இந்தியா \"in\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "மாற்று விசைப் பலகைகள்:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள ஒரு மாற்று விசைப்பலகையை உள்ளிடலாம். "
-"கிடைக்கக்கூடிய மாற்று விசைப்பலகை அமைப்புகள் பயனில் உள்ள எக்ஸ்கேபி விதித் தொகுப்பையும் முன் "
-"தேர்ந்தெடுத்த விசைப் பலகை வகையையும் அமைப்பையும் பொறுத்தது. "
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"பல விசைப் பலகை அமைப்புகள் இடம்கொள்ளா குறியீடுகள் போன்ற \"dead\" விசைகளை சாதாரண "
-"வெற்றிட விசையாக கொள்ள தேர்வை தருகின்றன. இதுவே விரும்பிய நடத்தையானால் \"nodeadkeys\" "
-"என உள்ளிடுக."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"அனுபவமுள்ள பயனர்கள் தேர்ந்தெடுத்த எக்ஸ்கேபி விதி தொகுப்பு ஆதரிக்கும் எந்த மாற்று "
-"அமைப்பையும் பயன் படுத்தலாம். எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/"
-"xkb/symbols அடைவை உங்கள் அமைப்புக்கு கிடைக்கக் கூடிய மாற்று அமைப்புக்கு பார்க்கவும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr ""
-"யுஎஸ் ஆங்கில விசைப் பலகை பயன் படுத்துவோர் இந்த உள்ளீட்டை சாதாரணமாக வெற்றாக விட வேண்டும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "விசைப்பலகை விருப்பங்கள்:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள விசைப் பலகை தேர்வுகளை உள்ளிடலாம். "
-"கிடைக்கக்கூடிய தேர்வுகள் முன் தேர்ந்தெடுத்த எக்ஸ்கேபி விதித் தொகுப்பை பொறுத்தது. எல்லா "
-"தேர்வுகளும் ஒவ்வொரு விசைப் பலகை வகை அமைப்புக்கும் வேலை செய்யாது."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"உதாரணமாக நீங்கள் கேப்ஸ் லாக் விசையை கூடுதல் கண்ட்ரோல் விசையாக நடந்து கொள்ள விரும்பினால் "
-"\"ctrl:nocaps\" என உள்ளிடலாம்; நீங்கள் கேப்ஸ் லாக் விசையையும் இடது கண்ட்ரோல் விசையும் இடம் "
-"மாற்ற விரும்பினால் \"ctrl:swapcaps\" என உள்ளிடலாம்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"மற்றொரு உதாரணமாக சிலர் ஆல்ட் விசைகளில் மெடா விசைகள் கிடைப்பதை விரும்புகிறார்கள். "
-"(இதுவே முன்னிருப்பாகும்) ஆனால் வேறு சிலர் விண்டோஸ் அல்லது \"logo\" விசைகளில் அவை "
-"கிடைப்பதை விரும்புகிறார்கள். நீங்கள் இப்படி விண்டோஸ் அல்லது \"logo\" விசைகளில் அவை "
-"கிடைப்பதை விரும்பினால் \"altwin:meta_win\". என உள்ளிடவும்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"தேர்வுகளை கமாவினால் பிரிப்பதால் அவற்றை சேர்க்கலாம். உதாரணமாக \"ctrl:nocaps,altwin:"
-"meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"அனுபவசாலிகள் தேர்ந்தெடுத்த எக்ஸ்கேபி வகை, அமைப்பு மற்றும் மாற்றுகளுடன் இசைந்த எந்த "
-"விருப்பங்களையும் பயன் படுத்தலாம்."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "சந்தேகமாக உள்ள போது இந்த மதிப்பை வெற்றாக விடவும். "
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "காலி மதிப்பு"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "இந்த மதிப்புக்கு ஒரு வெற்று உள்ளீடு தர அனுமதியில்லை."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "செல்லுபடியாகாத இரட்டை மேற்கோள் குறியீடுகள்"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "இந்த உள்ளீடுக்கு இரட்டை மேற்கோள் குறியீடுகளுக்கு (\") அனுமதியில்லை."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "எண் மதிப்பு தேவை"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "இந்த உள்ளீட்டில் எண்கள் தவிர வேறு குறியீடுகளுக்கு அனுமதியில்லை."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "தானியங்கியாக விசைப் பலகை அமைப்பை கண்டு பிடிக்கவா?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"எக்ஸ் சேவயகத்தின் முன்னிருப்பு விசைப்பலகை அமைப்பு தேர்வு நிறுவலின் போது தேர்ந்தெடுத்த "
-"மொழி மற்றும் விசைப்பலகை அமைப்பை ஆதாரமாகக் கொண்டது."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"விசைப்பலகை அமைப்பை மீண்டும் கண்டு பிடிக்க இந்த தேர்வை செய்யுங்கள். தற்போதைய அமைப்பை "
-"வைத்துக்கொள்ள விரும்பினால் தேர்வை செய்யாதீகள்."
 
 #. Type: select
 #. Choices
@@ -532,111 +67,407 @@ msgstr ""
 "அப்படித்தான் நடக்கும். ஆகவே ஒரு நல்ல வழி பயனர்களால் துவக்கப் பட்ட மெய்நிகர் முனையங்களில் "
 "ஒன்றில் எக்ஸ் சேவையகத்தை துவக்க அனுமதிப்பதுதான்."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "எக்ஸ் சேவையகத்துக்கு நல்ல மதிப்பு:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "எக்ஸ் சேவையகத்துக்கு நல்ல மதிப்பு:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"ஒரு குறிப்பிட்ட காலவரையரை திட்டத்துடன் இயங்கு தள உட்கூறுகளை பயன் படுத்தும் போது பரவலாக "
-"கவனிக்கப் படுள்ளது என்னவென்றால் முன்னிருப்பை விட அதிக செயலாக்க முன்னுரிமையுடன் வேலை "
-"செய்யும் போது எக்ஸ் சேவையகத்தின் செயல்பாடு அதிகமாகிறது. இந்த செயலாக்க முன்னுரிமை \"நல்ல"
-"\" மதிப்பு எனப் படுகிறது. இந்த மதிப்பு -20 முதல் (மிக அதிக முன்னுரிமை அல்லது மற்ற "
-"செயல்பாடுகளுக்கு \"நல்லதல்லாத\" முன்னுரிமை) முதல் 19 (மிகக் குறைந்த முன்னுரிமை) வரை "
-"இருக்கக் கூடும். இந்த நல்ல மதிப்புக்கு முன்னிருப்பு 0. எக்ஸ் சேவையகத்திற்கு இதுவே "
-"பரிந்துரைக்கப் பட்ட மதிப்பாகும்."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "ஒரு குறிப்பிட்ட காலவரையரை திட்டத்துடன் இயங்கு தள உட்கூறுகளை பயன் படுத்தும் போது "
+#~ "பரவலாக கவனிக்கப் படுள்ளது என்னவென்றால் முன்னிருப்பை விட அதிக செயலாக்க "
+#~ "முன்னுரிமையுடன் வேலை செய்யும் போது எக்ஸ் சேவையகத்தின் செயல்பாடு அதிகமாகிறது. இந்த "
+#~ "செயலாக்க முன்னுரிமை \"நல்ல\" மதிப்பு எனப் படுகிறது. இந்த மதிப்பு -20 முதல் (மிக "
+#~ "அதிக முன்னுரிமை அல்லது மற்ற செயல்பாடுகளுக்கு \"நல்லதல்லாத\" முன்னுரிமை) முதல் 19 "
+#~ "(மிகக் குறைந்த முன்னுரிமை) வரை இருக்கக் கூடும். இந்த நல்ல மதிப்புக்கு முன்னிருப்பு 0. "
+#~ "எக்ஸ் சேவையகத்திற்கு இதுவே பரிந்துரைக்கப் பட்ட மதிப்பாகும்."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"-10 முதல் 0 வரையான மதிப்பு வீச்சுக்கு வெளியே உள்ள மதிப்புகள் பரிந்துரைக்கப் படாதவை. "
-"அதிகமாக - பக்கம் சென்றால் எக்ஸ் சேவையகம் முக்கியமான கணினி அமைப்பு வேலைகளில் தலையிடும். "
-"அதிகமாக + பக்கம் சென்றால் எக்ஸ் சேவையகம் மெதுவாகவும் சோம்பேறித்தனத்துடனும் செயல் படும்."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "-10 முதல் 0 வரையான மதிப்பு வீச்சுக்கு வெளியே உள்ள மதிப்புகள் பரிந்துரைக்கப் படாதவை. "
+#~ "அதிகமாக - பக்கம் சென்றால் எக்ஸ் சேவையகம் முக்கியமான கணினி அமைப்பு வேலைகளில் "
+#~ "தலையிடும். அதிகமாக + பக்கம் சென்றால் எக்ஸ் சேவையகம் மெதுவாகவும் சோம்பேறித்தனத்துடனும் "
+#~ "செயல் படும்."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "தவறான நல்ல மதிப்பு"
+#~ msgid "Incorrect nice value"
+#~ msgstr "தவறான நல்ல மதிப்பு"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "-20 முதல் 19 வரை ஒரு முழு எண்ணை உள்ளிடவும்."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "-20 முதல் 19 வரை ஒரு முழு எண்ணை உள்ளிடவும்."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "பெரிய மேம்படுத்தல் சமாசாரங்கள் "
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "பெரிய மேம்படுத்தல் சமாசாரங்கள் "
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"சில பயனர்கள் தற்போதைய பொதி தொகுப்புக்கு மேம் படுத்தும் போது அவர்களது எக்ஸ் சேவையக பொதி "
-"நிறுவப்பட்டு இருக்கவில்லை என தெரிவித்துள்ளார்கள். இந்த பிரச்சினைக்கு சுலபமான தீர்வில்லை. "
-"ஆகவே நீங்கள் பொதி மேம்பாட்டுக்குப் பின் எக்ஸ் சேவையக- எக்ஸ் ஆர்க் (xserver-xorg) பொதி "
-"நிறுவப்பட்டு இருக்கிறதா என சோதிக்க வேண்டும். இல்லையெனில், உங்களுக்கு அது தேவை எனில் "
-"முழுமையாக வேலை செய்யும் எக்ஸ் அமைப்புக்கு நீங்கள் எக்ஸ் ஆர்க் பொதியை நிறுவ வேண்டும்."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "சில பயனர்கள் தற்போதைய பொதி தொகுப்புக்கு மேம் படுத்தும் போது அவர்களது எக்ஸ் சேவையக "
+#~ "பொதி நிறுவப்பட்டு இருக்கவில்லை என தெரிவித்துள்ளார்கள். இந்த பிரச்சினைக்கு சுலபமான "
+#~ "தீர்வில்லை. ஆகவே நீங்கள் பொதி மேம்பாட்டுக்குப் பின் எக்ஸ் சேவையக- எக்ஸ் ஆர்க் (xserver-"
+#~ "xorg) பொதி நிறுவப்பட்டு இருக்கிறதா என சோதிக்க வேண்டும். இல்லையெனில், உங்களுக்கு அது "
+#~ "தேவை எனில் முழுமையாக வேலை செய்யும் எக்ஸ் அமைப்புக்கு நீங்கள் எக்ஸ் ஆர்க் பொதியை நிறுவ "
+#~ "வேண்டும்."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "/usr/X11R6/bin அடைவை நீக்க இயலாது."
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "/usr/X11R6/bin அடைவை நீக்க இயலாது."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"இந்த மேம்பாட்டுக்கு /usr/X11R6/bin அடைவை நீக்கி பதிலாக ஒரு சிம்லிங்க் அமைக்க வேண்டும். "
-"அதை செய்ய முயன்ற போது அது தோல்வி அடைந்தது. அனேகமாக அதன் காரணம் அது காலியாக "
-"இல்லாததுதான். தற்போது அந்த அடைவில் உள்ள கோப்புகளை நீங்கள் நகர்த்த வேண்டும். அப்போதுதான் "
-"நிறுவல் முழுமையடையும். நீங்கள் விரும்பினால் பின்னல் அந்த கோப்புகளை மீண்டும் அதே இடத்துக்கு "
-"நகர்த்திக் கொள்ளலாம்."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "இந்த மேம்பாட்டுக்கு /usr/X11R6/bin அடைவை நீக்கி பதிலாக ஒரு சிம்லிங்க் அமைக்க "
+#~ "வேண்டும். அதை செய்ய முயன்ற போது அது தோல்வி அடைந்தது. அனேகமாக அதன் காரணம் அது "
+#~ "காலியாக இல்லாததுதான். தற்போது அந்த அடைவில் உள்ள கோப்புகளை நீங்கள் நகர்த்த வேண்டும். "
+#~ "அப்போதுதான் நிறுவல் முழுமையடையும். நீங்கள் விரும்பினால் பின்னல் அந்த கோப்புகளை மீண்டும் "
+#~ "அதே இடத்துக்கு நகர்த்திக் கொள்ளலாம்."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"இதை நீங்கள் செய்வதற்காக இந்த பொதி நிறுவல் இப்போது தோல்வியடைந்து வெளியேறும் அடைவை சுத்தம் "
-"செய்தபின் மேம் படுத்தும் செயலை மீண்டும் செய்க."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "இதை நீங்கள் செய்வதற்காக இந்த பொதி நிறுவல் இப்போது தோல்வியடைந்து வெளியேறும் அடைவை "
+#~ "சுத்தம் செய்தபின் மேம் படுத்தும் செயலை மீண்டும் செய்க."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "விடியோ அட்டை பஸ் அடையாள காட்டி:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "பவர் பிசி கணினி உபயோகிப்போர் மற்றும் பல விடியோ சாதனங்கள் கொண்ட கணினி உபயோகிப்போர் "
+#~ "விடியோ அட்டையின் பஸ் ஐடி (BusID) ஐ இசைவுள்ள பஸ் குறித்தவகையில் குறிப்பிட வேண்டும்."
+
+#~ msgid "Examples:"
+#~ msgstr "உதாரணங்கள்:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "பல முனை வடிவமைப்பு கொண்டவற்றை உபயோகிப்பவர்களுக்கு இது ஒரே ஒரு முனையை மட்டுமே "
+#~ "வடிவமைக்கும். மேற்கொண்டு வடிவமைப்பை எக்ஸ் சேவையக வடிவமைப்பு கோப்பான /etc/X11/xorg."
+#~ "conf. இல் கைமுறையாக திருத்த வேண்டும்."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "உங்கள் பிசிஐ ஏஜிபி அல்லது பிசிஐ-எக்ஸ்பிரஸ் விடியோ அட்டையை இடங் காண \"lspci\" "
+#~ "கட்டளையை பயன் படுத்த நீங்கள் விரும்பலாம்."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "எங்கு இயலுமோ அங்கு இந்த வினா முன் பதில் தரப் பட்டு விட்டது. ஆகவே நீங்கள் முன்னிருப்பு "
+#~ "வேலை செய்யாது என அறிந்திருந்தாலே ஒழிய அதை ஏற்றுக் கொள்வது நல்லது."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "பஸ் இனம் காணிக்கு தவறான வகையமைப்பு"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "உட்கூறு சட்ட இடையக சாதன இடைமுகத்தை பயன் படுத்தவா?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகம் விடியோ வன்பொருளுடன் நேரடியாக தொடர்பு கொள்ளாமல் ஒளித்திரை பாங்கை "
+#~ "மாற்றுதல் போன்ற சில செயல்களை உட்கருவின் சட்ட இடையக சாதன (kernel's framebuffer) "
+#~ "இயக்கியை பயன் படுத்தி செய்ய வடிவமைக்க இயலும்."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "ஏட்டின் படி இரண்டுமே வேலை செய்ய வேண்டும் என்றாலும் உண்மையில் இதுவோ அல்லது அதுவோதான் "
+#~ "வேலை செய்யும்.எனவே இந்த தேர்வை செயல் படுத்துதலே உத்தமம். ஆனால் இது பிரச்சினைகளை "
+#~ "உண்டு பண்ணுகிறது என தோன்றினால் தாராளமாக இதை செயல் நீக்கி விடுங்கள்."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "பயன்படுத்த வேண்டிய எக்ஸ்கேபி (XKB) விதி:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr "விசைப் பலகையை எக்ஸ் சேவையகம் சரியாக கையாள XKB விதியை தேர்ந்தெடுக்க வேண்டும்."
+
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr "அனேகமான விசை பலகைகளுக்கு \"xorg\" என் உள்ளிட வேண்டும்.."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "அனுபவமுள்ள பயனர்கள் எந்த ஒரு வரையறுத்த எக்ஸ்கேபி விதி தொகுப்பையும் பயன் படுத்தலாம். "
+#~ "எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/xkb/rules அடைவை கிடைக்கக் "
+#~ "கூடிய எக்ஸ்கேபி விதி தொகுப்புக்கு பார்க்கவும்."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "சந்தேகமாக இருக்கும் போது மதிப்பை \"xorg\" எனக் குறிக்கவும்."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "விசைப் பலகை வகை:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள ஒரு விசைப்பலகை வகையை உள்ளிட வேண்டும். "
+#~ "கிடைக்கக்கூடிய விசைப்பலகைகள் பயனில் உள்ள எக்ஸ்கேபி விதித் தொகுப்பை பொறுத்தது."
+
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ "  \"xorg\" விதிகள் அமைக்கின்:\n"
+#~ " - pc101: பாரம்பரிய IBM PC/AT பாணி விசைப் பலகை 101 விசைகளுடன், அமெரிக்க\n"
+#~ "          ஐக்கிய நாடுகளில் பிரபலம். இதில் \"logo\" மற்றும் \"menu\" விசைகள் "
+#~ "இல்லை;\n"
+#~ " - pc104: pc101 வகை போன்றது, கூடுதல் விசைகள், வழக்கமாக\n"
+#~ "           \"logo\" குறியீடு மற்றும்  \"menu\" குறியீடு கொண்டது;\n"
+#~ " - pc102: pc101 வகை போன்றது.   வழக்கமாக ஐரோப்பிய நாடுகளில் காணப் படுகிறது. "
+#~ "கூடுதலாக \"<  >\" விசைகள் கொண்டது;\n"
+#~ " - pc105: pc104 வகை போன்றது.   வழக்கமாக ஐரோப்பிய நாடுகளில் காணப் படுகிறது. "
+#~ "கூடுதலாக \"<  >\" விசைகள் கொண்டது;\n"
+#~ " - macintosh: மகின்டாஷ் விசைப் பலகை புதிய லீனக்ஸ் உள்ளீட்டு அடுக்கு  \n"
+#~ "              பயன்படுத்துவது;\n"
+#~ " - macintosh_old: மகின்டாஷ் விசைப் பலகை புதிய உள்ளீட்டு அடுக்கு பயன்படுத்தாதது.\n"
+#~ " - type4: சன் வகை 4 விசைப் பலகைகள்;\n"
+#~ " - type5:  சன் வகை 5 விசைப் பலகைகள்."
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "மடிக் கணினி விசைப் பலகைகள் மற்ற கணினிகள் போல அத்தனை விசைகளை கொண்டிருப்பதில்லை. "
+#~ "ஆகவே மடிக்கணினி பயனாளிகள் மேல் கண்ட வகைகளில் தோராயமாக பொருந்துவதை தேர்ந்தெடுக்க "
+#~ "வேண்டும்."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "அனுபவமுள்ள பயனர்கள் தேர்ந்தெடுத்த எக்ஸ்கேபி விதி தொகுப்பு வரையறுக்கும் எந்த வகையையும் "
+#~ "பயன் படுத்தலாம். எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/xkb/rules "
+#~ "அடைவை கிடைக்கக் கூடிய எக்ஸ்கேபி விதி தொகுப்புகளுக்கு பார்க்கவும்."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "யு.எஸ் ஆங்கில விசைப் பலகை பயன் படுத்துவோர் சாதாரணமாக \"pc104\" என உள்ளிட வேண்டும். "
+#~ "அனேகமாக மற்ற விசைப் பலகைகள் பயன் படுத்துவோர் சாதாரணமாக \"pc105\" என உள்ளிட "
+#~ "வேண்டும். "
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "விசைப்பலகை அமைப்பு:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள ஒரு விசைப்பலகை அமைப்பை உள்ளிட வேண்டும். "
+#~ "கிடைக்கக்கூடிய விசைப்பலகை அமைப்புகள் பயனில் உள்ள எக்ஸ்கேபி விதித் தொகுப்பையும் முன் "
+#~ "தேர்ந்தெடுத்த விசைப் பலகை வகையையும் பொறுத்தது."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "அனுபவமுள்ள பயனர்கள் தேர்ந்தெடுத்த எக்ஸ்கேபி விதி தொகுப்பு ஆதரிக்கும் எந்த அமைப்பையும் "
+#~ "பயன் படுத்தலாம். எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/xkb/rules "
+#~ "அடைவை கிடைக்கக் கூடிய எக்ஸ்கேபி விதி தொகுப்புகளுக்கு பார்க்கவும்."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "யு.எஸ் ஆங்கில விசைப் பலகை பயன் படுத்துவோர் சாதாரணமாக  \"us\"என உள்ளிட வேண்டும். "
+#~ "மற்ற நாடுகளில் உள்ளோர் உள்ளமைத்த விசைப் பலகைகள் பயன் படுத்த ISO 3166 நாட்டு குறியீட்டை "
+#~ "என உள்ளிட வேண்டும். எ-டு: ப்ரான்ஸ் \"fr\", இந்தியா \"in\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "மாற்று விசைப் பலகைகள்:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள ஒரு மாற்று விசைப்பலகையை உள்ளிடலாம். "
+#~ "கிடைக்கக்கூடிய மாற்று விசைப்பலகை அமைப்புகள் பயனில் உள்ள எக்ஸ்கேபி விதித் தொகுப்பையும் "
+#~ "முன் தேர்ந்தெடுத்த விசைப் பலகை வகையையும் அமைப்பையும் பொறுத்தது. "
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "பல விசைப் பலகை அமைப்புகள் இடம்கொள்ளா குறியீடுகள் போன்ற \"dead\" விசைகளை சாதாரண "
+#~ "வெற்றிட விசையாக கொள்ள தேர்வை தருகின்றன. இதுவே விரும்பிய நடத்தையானால் \"nodeadkeys"
+#~ "\" என உள்ளிடுக."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "அனுபவமுள்ள பயனர்கள் தேர்ந்தெடுத்த எக்ஸ்கேபி விதி தொகுப்பு ஆதரிக்கும் எந்த மாற்று "
+#~ "அமைப்பையும் பயன் படுத்தலாம். எக்ஸ்கேபி தரவுப் பொதியை பிரித்திருந்தால் /usr/share/X11/"
+#~ "xkb/symbols அடைவை உங்கள் அமைப்புக்கு கிடைக்கக் கூடிய மாற்று அமைப்புக்கு பார்க்கவும்."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "யுஎஸ் ஆங்கில விசைப் பலகை பயன் படுத்துவோர் இந்த உள்ளீட்டை சாதாரணமாக வெற்றாக விட "
+#~ "வேண்டும்."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "விசைப்பலகை விருப்பங்கள்:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "எக்ஸ் சேவையகம் விசைப்பலகையை சரியாக கையாள விசைப் பலகை தேர்வுகளை உள்ளிடலாம். "
+#~ "கிடைக்கக்கூடிய தேர்வுகள் முன் தேர்ந்தெடுத்த எக்ஸ்கேபி விதித் தொகுப்பை பொறுத்தது. எல்லா "
+#~ "தேர்வுகளும் ஒவ்வொரு விசைப் பலகை வகை அமைப்புக்கும் வேலை செய்யாது."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "உதாரணமாக நீங்கள் கேப்ஸ் லாக் விசையை கூடுதல் கண்ட்ரோல் விசையாக நடந்து கொள்ள விரும்பினால் "
+#~ "\"ctrl:nocaps\" என உள்ளிடலாம்; நீங்கள் கேப்ஸ் லாக் விசையையும் இடது கண்ட்ரோல் விசையும் "
+#~ "இடம் மாற்ற விரும்பினால் \"ctrl:swapcaps\" என உள்ளிடலாம்."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "மற்றொரு உதாரணமாக சிலர் ஆல்ட் விசைகளில் மெடா விசைகள் கிடைப்பதை விரும்புகிறார்கள். "
+#~ "(இதுவே முன்னிருப்பாகும்) ஆனால் வேறு சிலர் விண்டோஸ் அல்லது \"logo\" விசைகளில் அவை "
+#~ "கிடைப்பதை விரும்புகிறார்கள். நீங்கள் இப்படி விண்டோஸ் அல்லது \"logo\" விசைகளில் அவை "
+#~ "கிடைப்பதை விரும்பினால் \"altwin:meta_win\". என உள்ளிடவும்."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "தேர்வுகளை கமாவினால் பிரிப்பதால் அவற்றை சேர்க்கலாம். உதாரணமாக \"ctrl:nocaps,altwin:"
+#~ "meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "அனுபவசாலிகள் தேர்ந்தெடுத்த எக்ஸ்கேபி வகை, அமைப்பு மற்றும் மாற்றுகளுடன் இசைந்த எந்த "
+#~ "விருப்பங்களையும் பயன் படுத்தலாம்."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "சந்தேகமாக உள்ள போது இந்த மதிப்பை வெற்றாக விடவும். "
+
+#~ msgid "Empty value"
+#~ msgstr "காலி மதிப்பு"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "இந்த மதிப்புக்கு ஒரு வெற்று உள்ளீடு தர அனுமதியில்லை."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "செல்லுபடியாகாத இரட்டை மேற்கோள் குறியீடுகள்"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "இந்த உள்ளீடுக்கு இரட்டை மேற்கோள் குறியீடுகளுக்கு (\") அனுமதியில்லை."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "எண் மதிப்பு தேவை"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "இந்த உள்ளீட்டில் எண்கள் தவிர வேறு குறியீடுகளுக்கு அனுமதியில்லை."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "தானியங்கியாக விசைப் பலகை அமைப்பை கண்டு பிடிக்கவா?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "எக்ஸ் சேவயகத்தின் முன்னிருப்பு விசைப்பலகை அமைப்பு தேர்வு நிறுவலின் போது தேர்ந்தெடுத்த "
+#~ "மொழி மற்றும் விசைப்பலகை அமைப்பை ஆதாரமாகக் கொண்டது."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "விசைப்பலகை அமைப்பை மீண்டும் கண்டு பிடிக்க இந்த தேர்வை செய்யுங்கள். தற்போதைய அமைப்பை "
+#~ "வைத்துக்கொள்ள விரும்பினால் தேர்வை செய்யாதீகள்."
+
+#~ msgid "X server driver:"
+#~ msgstr "எக்ஸ் சேவையக இயக்கி:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "எக்ஸ் சாளர அமைப்பின் வரைகலை இடையகம் சரியாக வேலை செய்ய எக்ஸ் சேவையகத்துக்கு ஒரு "
+#~ "விடியோ இயக்கியை தேர்ந்தெடுக்க வேண்டும். "
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "இயக்கிகள் வழக்கமாக விடியோ அட்டை அல்லது சில்லு உற்பத்தியாளர் குறித்து பெயரிடப் படும். "
+#~ "அல்லது ஒரு குறிப்பிட்ட வடிவ அல்லது குடும்ப சில்லுகளை குறித்து இருக்கலாம்."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "

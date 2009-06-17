@@ -13,506 +13,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xorg\n"
 "Report-Msgid-Bugs-To: xorg@packages.debian.org\n"
-"POT-Creation-Date: 2008-06-08 22:20+0200\n"
+"POT-Creation-Date: 2009-06-02 20:32+0200\n"
 "PO-Revision-Date: 2007-04-09 23:45+0200\n"
 "Last-Translator: Elian Myftiu <elian.myftiu@gmail.com>\n"
 "Language-Team: Albanian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid "X server driver:"
-msgstr "Drejtues shërbyesi X:"
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"For the X Window System graphical user interface to operate correctly, it is "
-"necessary to select a video card driver for the X server."
-msgstr ""
-"Që ndërfaqja grafike e përdoruesit të Sistemit X Window të punojë saktë, "
-"është e nevojshme të zgjidhet një drejtues karte grafike për shërbyesin X."
-
-#. Type: select
-#. Description
-#: ../xserver-xorg.templates:2001
-msgid ""
-"Drivers are typically named for the video card or chipset manufacturer, or "
-"for a specific model or family of chipsets."
-msgstr ""
-"Drejtuesit zakonisht emërohen sipas kartës grafike ose prodhuesit të çipit, "
-"ose për një model apo familje të caktuar çipesh."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid "Use kernel framebuffer device interface?"
-msgstr "T'a përdor ndërfaqen e dispozitivit framebuffer?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"Rather than communicating directly with the video hardware, the X server may "
-"be configured to perform some operations, such as video mode switching, via "
-"the kernel's framebuffer driver."
-msgstr ""
-"Në vend që të komunikojë drejtpërsëdrejti me pajisjen grafike, shërbyesi X "
-"mund të konfigurohet të kryejë disa veprime, si p.sh. mënyrë kalimi video, "
-"me anë të drejtuesit framebuffer të kernelit."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:3001
-msgid ""
-"In theory, either approach should work, but in practice, sometimes one does "
-"and the other does not.  Enabling this option is the safe bet, but feel free "
-"to turn it off if it appears to cause problems."
-msgstr ""
-"Në teori, të dyja zgjedhjet duhet të punojnë, por në praktikë, ndonjëherë "
-"njëra punon dhe tjetra jo.  Duke aktivizuar këtë mundësi je më i sigurtë, "
-"por ji i lirë ta fikësh nëse ndodh të jetë ky problemi."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Video card's bus identifier:"
-msgstr "Identifikuesi i bus-it të kartës grafike:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"Users of PowerPC machines, and users of any computer with multiple video "
-"devices, should specify the BusID of the video card in an accepted bus-"
-"specific format."
-msgstr ""
-"Përdoruesit e kompjuterave PowerPC, dhe përdoruesit e çdo kompjuteri me "
-"dispozitivë grafikë të shumëfishtë, duhet të përcaktojnë BusID e kartës "
-"grafike në një format që pranon specifikën \"bus\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid "Examples:"
-msgstr "Shembuj:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"For users of multi-head setups, this option will configure only one of the "
-"heads.  Further configuration will have to be done manually in the X server "
-"configuration file, /etc/X11/xorg.conf."
-msgstr ""
-"Për përdorues të rregullimeve me shumë dalje, kjo mundësi do të konfigurojë "
-"vetëm njërën prej daljeve.  Konfigurim i mëtejshëm do duhet të kryhet dorazi "
-"në skedën e konfigurimit, /etc/X11/xorg.conf."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"You may wish to use the \"lspci\" command to determine the bus location of "
-"your PCI, AGP, or PCI-Express video card."
-msgstr ""
-"Mund të përdorësh komandën \"lspci\" për të gjetur vendndodhjen bus të "
-"kartës tënde grafike PCI, AGP apo PCI-Express."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:4001
-msgid ""
-"When possible, this question has been pre-answered for you and you should "
-"accept the default unless you know it doesn't work."
-msgstr ""
-"Kur është e mundur, kësaj pyetjeje i është përgjigjur për ty dhe duhet të "
-"pranosh të parazgjedhurën në mos po dite që nuk punon."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:5001
-msgid "Incorrect format for the bus identifier"
-msgstr "Format i pasaktë për identifikuesin bus"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "XKB rule set to use:"
-msgstr "Set rregullash XKB për përdorim:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"For the X server to handle the keyboard correctly, an XKB rule set must be "
-"chosen."
-msgstr ""
-"Që shërbyesi X të trajtojë saktë tastierën, duhet zgjedhur një set "
-"rregullash XKB."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-#, fuzzy
-#| msgid ""
-#| "Users of U.S. English keyboards should generally leave this entry blank."
-msgid "Users of most keyboards should enter \"xorg\"."
-msgstr "Përdoruesit e tastierës Amerikane zakonisht duhet ta lënë bosh këtë."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid ""
-"Experienced users can use any defined XKB rule set.  If the xkb-data package "
-"has been unpacked, see the /usr/share/X11/xkb/rules directory for available "
-"rule sets."
-msgstr ""
-"Përdoruesit ekspertë mund të përdorin çdo set rregullash XKB të caktuar.  "
-"Nëse është çpaketuar paketa xkb-data, shih dosjen /usr/share/X11/xkb/rules "
-"për sete rregullash të pranishëm."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:6001
-msgid "When in doubt, this value should be set to \"xorg\"."
-msgstr "Nëse ke dyshime, kjo vlerë duhet caktuar \"xorg\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid "Keyboard model:"
-msgstr "Modeli i tastierës:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard model must be "
-"entered.  Available models depend on which XKB rule set is in use."
-msgstr ""
-"Që shërbyesi X të trajtojë saktë tastierën, duhet futur një model tastiere.  "
-"Modele të pranishëm varen nga cili set rregullash është në përdorim."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-#, fuzzy
-#| msgid ""
-#| " With the \"xorg\" rule set:\n"
-#| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-#| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-#| " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-#| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
-#| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-#| "key;\n"
-#| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-#| "              keycodes;\n"
-#| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
-#| " With the \"sun\" rule set:\n"
-#| " - type4: Sun Type4 keyboards;\n"
-#| " - type5: Sun Type5 keyboards."
-msgid ""
-" With the \"xorg\" rule set:\n"
-" - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
-"          the United States.  Has no \"logo\" or \"menu\" keys;\n"
-" - pc104: similar to pc101 model, with additional keys, usually engraved\n"
-"          with a \"logo\" symbol and a \"menu\" symbol;\n"
-" - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
-"key;\n"
-" - macintosh: Macintosh keyboards using the new input layer with Linux\n"
-"              keycodes;\n"
-" - macintosh_old: Macintosh keyboards not using the new input layer;\n"
-" - type4: Sun Type4 keyboards;\n"
-" - type5: Sun Type5 keyboards."
-msgstr ""
-" Me setin e rregullave \"xorg\":\n"
-" - pc101: tastierë tradicionale e llojit IBM PC/AT me 101 tasta, e "
-"zakonshme\n"
-"            në Shtetet e Bashkuara.  Nuk ka tasta \"logo\" ose \"menu\";\n"
-" - pc104: e ngjashme me modelin pc101, me tasta shtesë, zakonisht me\n"
-"            thekse me simbole \"logo\" dhe \"menu\";\n"
-" - pc102: e ngjashme me pc101 dhe shpesh herë e gjetur në Evropë. Përfshin "
-"një tast \"< >\"\n"
-" - pc105: e ngjashme me pc104 dhe shpesh herë e gjetur në Evropë. Përfshin "
-"një tast \"< >\"\n"
-" - macintosh: Tastierë Macintosh që përdor hyrjen e re me kodet e tastierës\n"
-"                  Linux;\n"
-" - macintosh_old: Tastierë Macintosh që nuk përdorin hyrjen e re.\n"
-" Me setin e rregullave \"sun\";\n"
-" - type4: Tastiera Sun Type4;\n"
-" - type5: Tastiera Sun Type5"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Laptop keyboards often do not have as many keys as standalone models; laptop "
-"users should select the keyboard model most closely approximated by the "
-"above."
-msgstr ""
-"Shpesh tastierat e kompjuterave të prehërit nuk kanë shumë tasta sa modelet "
-"e zakonshme; përdoruesit e këtyre kompjuterave zgjedhin modelin e tastierës "
-"më të afërm nga të mësipërmet."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Experienced users can use any model defined by the selected XKB rule set.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/rules "
-"directory for available rule sets."
-msgstr ""
-"Përdoruesit ekspertë mund të përdorin çdo model të caktuar nga seti i "
-"rregullave XKB të zgjedhur. Nëse është çpaketuar paketa xkb-data, shih "
-"dosjen /usr/share/X11/xkb/rules për sete rregullash të pranishëm."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:7001
-msgid ""
-"Users of U.S. English keyboards should generally enter \"pc104\".  Users of "
-"most other keyboards should generally enter \"pc105\"."
-msgstr ""
-"Përdoruesit e tastierave Amerikane zakonisht duhet të shtypin \"pc104\". "
-"Përdoruesit e shumicës së tastierave të tjera duhet të futin \"pc105\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid "Keyboard layout:"
-msgstr "Skemë tastiere:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"For the X server to handle the keyboard correctly, a keyboard layout must be "
-"entered.  Available layouts depend on which XKB rule set and keyboard model "
-"were previously selected."
-msgstr ""
-"Që shërbyesi X të trajtojë saktë tastierën, një skemë tastiere duhet futur.  "
-"Skemat e pranishme varen nga cili set rregullash dhe model tastiere janë "
-"zgjedhur më parë."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Experienced users can use any layout supported by the selected XKB rule "
-"set.  If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"rules directory for available rule sets."
-msgstr ""
-"Përdoruesit ekspertë mund të përdorin çdo skemë të suportuar nga seti i "
-"rregullave XKB të zgjedhur.  Nëse është çpaketuar paketa xkb-data, shih "
-"dosjen /usr/share/X11/rules për sete rregullash të pranishëm."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:8001
-msgid ""
-"Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
-"localized for other countries should generally enter their ISO 3166 country "
-"code.  E.g., France uses \"fr\", and Germany uses \"de\"."
-msgstr ""
-"Përdoruesit e tastierave Amerikane duhet të shtypin \"us\".  Përdoruesit e "
-"tastierave të shteteve të tjerë zakonisht duhet të fusin kodin ISO-3166 për "
-"shtetin e tyre.  P.sh., Franca përdor \"fr\", dhe Gjermania përdor \"de\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid "Keyboard variant:"
-msgstr "Variant tastiere:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"For the X server to handle the keyboard as desired, a keyboard variant may "
-"be entered.  Available variants depend on which XKB rule set, model, and "
-"layout were previously selected."
-msgstr ""
-"Që shërbyesi X të trajtojë saktë tastierën siç dëshirohet, një variant "
-"tastiere mund të futet.  Variante të pranishëm varen nga cili set rregullash "
-"XKB, model dhe skemë janë zgjedhur më parë."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Many keyboard layouts support an option to treat \"dead\" keys such as non-"
-"spacing accent marks and diaereses as normal spacing keys, and if this is "
-"the preferred behavior, enter \"nodeadkeys\"."
-msgstr ""
-"Shumë skema tastierash suportojnë një mundësi për t'i trajtuar tastat e "
-"\"vdekur\" si ato të shenjave të thekseve si tasta normale hapësire, dhe "
-"nëse kjo është ajo që preferon, fut \"nodeadkeys\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Experienced users can use any variant supported by the selected XKB layout.  "
-"If the xkb-data package has been unpacked, see the /usr/share/X11/xkb/"
-"symbols directory for the file corresponding to your selected layout for "
-"available variants."
-msgstr ""
-"Përdoruesit ekspertë mund të përdorin çdo variant të suportuar duke zgjedhur "
-"skemën XKB.  Nëse është çpaketuar paketa xkb-data, shih dosjen /usr/share/"
-"X11/xkb/symbols për skedën që i korrespondon skemës tënde të zgjedhur për "
-"variantet e pranishëm."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:9001
-msgid ""
-"Users of U.S. English keyboards should generally leave this entry blank."
-msgstr "Përdoruesit e tastierës Amerikane zakonisht duhet ta lënë bosh këtë."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "Keyboard options:"
-msgstr "Mundësi tastiere:"
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For the X server to handle the keyboard as desired, keyboard options may be "
-"entered.  Available options depend on which XKB rule set was previously "
-"selected.  Not all options will work with every keyboard model and layout."
-msgstr ""
-"Që shërbyesi X të trajtojë saktë tastierën siç dëshirohet, mund të zgjidhen "
-"mundësi tastiere.  Mundësi të pranishme varen nga cili set rregullash është "
-"zgjedhur më parë.  Jo të gjitha mundësitë do të punojnë me çdo model dhe "
-"skemë tastiere."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"For example, if you wish the Caps Lock key to behave as an additional "
-"Control key, you may enter \"ctrl:nocaps\"; if you would like to switch the "
-"Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
-msgstr ""
-"Për shembull, nëse do doje që tasti Caps Lock të sillej si një tast shtesë "
-"Control, mund të fusnit \"ctrl:nocaps\", nëse do dëshironit të ndërronit "
-"tastat Caps Lock dhe Control i majtë, mund të shtypni \"ctrl:swapcaps\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"As another example, some people prefer having the Meta keys available on "
-"their keyboard's Alt keys (this is the default), while other people prefer "
-"having the Meta keys on the Windows or \"logo\" keys instead.  If you prefer "
-"to use your Windows or logo keys as Meta keys, you may enter \"altwin:"
-"meta_win\"."
-msgstr ""
-"Një shembull tjetër, disa persona parapëlqejnë të kenë tastat Meta të "
-"pranishëm në tastat Alt të tastierës (kjo është e parazgjedhura), ndërsa "
-"disa të tjerë preferojnë të kenë tastat Meta në vend të tastave Windows apo "
-"\"logo\".  Nëse preferon të përdorësh tastat Windows apo logo si tasta Meta, "
-"mund të shtypësh \"altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"You can combine options by separating them with a comma, for instance \"ctrl:"
-"nocaps,altwin:meta_win\"."
-msgstr ""
-"Mund të kombinosh mundësi duke i ndarë ato me një presje, për shembull "
-"\"ctrl:nocaps,altwin:meta_win\"."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid ""
-"Experienced users can use any options compatible with the selected XKB "
-"model, layout and variant."
-msgstr ""
-"Përdorues ekspertë mund të përdorin çdo mundësi të pranueshme me modelin "
-"XKB, skemën dhe variantin e zgjedhur."
-
-#. Type: string
-#. Description
-#: ../xserver-xorg.templates:10001
-msgid "When in doubt, this value should be left blank."
-msgstr "Nëse ke dyshime, kjo vlerë duhet lënë bosh."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "Empty value"
-msgstr "Vlerë bosh"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:11001
-msgid "A null entry is not permitted for this value."
-msgstr "Një vlerë bosh nuk lejohet."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Invalid double-quote characters"
-msgstr "Gërma me thonjëza dyshe e pavlefshme"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:12001
-msgid "Double-quote (\") characters are not permitted in the entry value."
-msgstr "Gërmat me thonjëza dyshe (\") nuk lejohen në këto vlera."
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Numerical value needed"
-msgstr "Kërkohet vlerë numerike"
-
-#. Type: note
-#. Description
-#: ../xserver-xorg.templates:13001
-msgid "Characters other than digits are not allowed in the entry."
-msgstr "Gërma të tjera veç shifrave nuk lejohen këtu."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid "Autodetect keyboard layout?"
-msgstr "T'a autozbuloj skemën e tastierës?"
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"The default keyboard layout selection for the Xorg server will be based on a "
-"combination of the language and the keyboard layout selected in the "
-"installer."
-msgstr ""
-"Zgjedhja e skemës së parazgjedhur së tastierës për shërbyesin Xorg do të "
-"mbështetet në një kombinim të gjuhës dhe skemës së zgjedhur gjatë instalimit."
-
-#. Type: boolean
-#. Description
-#: ../xserver-xorg.templates:14001
-msgid ""
-"Choose this option if you want the keyboard layout to be redetected.  Do not "
-"choose it if you want to keep your current layout."
-msgstr ""
-"Zgjidh këtë mundësi nëse dëshiron që skema e tastierës të rizbulohet.  Mos e "
-"zgjidh nëse dëshiron të mbash skemën e tanishme."
 
 #. Type: select
 #. Choices
@@ -556,112 +63,438 @@ msgstr ""
 "mirë është të lejosh shërbyesin X të niset vetëm nga përdorues të kyçur në "
 "një nga konsolet virtuale."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid "Nice value for the X server:"
-msgstr "Vlera e përparësisë për shërbyesin X:"
+#~ msgid "Nice value for the X server:"
+#~ msgstr "Vlera e përparësisë për shërbyesin X:"
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"When using operating system kernels with a particular scheduling strategy, "
-"it has been widely noted that the X server's performance improves when it is "
-"run at a higher process priority than the default; a process's priority is "
-"known as its \"nice\" value.  These values range from -20 (extremely high "
-"priority, or \"not nice\" to other processes) to 19 (extremely low "
-"priority).  The default nice value for ordinary processes is 0, and this is "
-"also the recommend value for the X server."
-msgstr ""
-"Kur përdoren kernela sistemesh operativë me një strategji të veçantë "
-"skedulimi, dihet mirë që puna e shërbyesit X përmirësohet kur xhiron me "
-"përparësi më të lartë sesa ajo e parazgjedhura, një përparësi proçesi njihet "
-"si vlera e tij \"nice\".  Këto vlera shkojnë nga -20 (shumë e lartë, ose "
-"\"jo e mirë\" për proçeset e tjerë) deri tek 19 (përparësi shumë e ulët).  "
-"Vlera \"nice\" e parazgjedhur për proçese të zakonshëm është 0, dhe kjo "
-"këshillohet për shërbyesin X."
+#~ msgid ""
+#~ "When using operating system kernels with a particular scheduling "
+#~ "strategy, it has been widely noted that the X server's performance "
+#~ "improves when it is run at a higher process priority than the default; a "
+#~ "process's priority is known as its \"nice\" value.  These values range "
+#~ "from -20 (extremely high priority, or \"not nice\" to other processes) to "
+#~ "19 (extremely low priority).  The default nice value for ordinary "
+#~ "processes is 0, and this is also the recommend value for the X server."
+#~ msgstr ""
+#~ "Kur përdoren kernela sistemesh operativë me një strategji të veçantë "
+#~ "skedulimi, dihet mirë që puna e shërbyesit X përmirësohet kur xhiron me "
+#~ "përparësi më të lartë sesa ajo e parazgjedhura, një përparësi proçesi "
+#~ "njihet si vlera e tij \"nice\".  Këto vlera shkojnë nga -20 (shumë e "
+#~ "lartë, ose \"jo e mirë\" për proçeset e tjerë) deri tek 19 (përparësi "
+#~ "shumë e ulët).  Vlera \"nice\" e parazgjedhur për proçese të zakonshëm "
+#~ "është 0, dhe kjo këshillohet për shërbyesin X."
 
-#. Type: string
-#. Description
-#: ../x11-common.templates:4001
-msgid ""
-"Values outside the range of -10 to 0 are not recommended; too negative, and "
-"the X server will interfere with important system tasks.  Too positive, and "
-"the X server will be sluggish and unresponsive."
-msgstr ""
-"Vlera jashtë intervalit -10 deri në 0 nuk këshillohen; shumë negative, dhe "
-"shërbyesi X do të ndërhyjë në detyra të rëndësishme sistemi.  Shumë "
-"pozitive, dhe shërbyesi X do të jetë i fjetur dhe i ngadaltë në përgjigje."
+#~ msgid ""
+#~ "Values outside the range of -10 to 0 are not recommended; too negative, "
+#~ "and the X server will interfere with important system tasks.  Too "
+#~ "positive, and the X server will be sluggish and unresponsive."
+#~ msgstr ""
+#~ "Vlera jashtë intervalit -10 deri në 0 nuk këshillohen; shumë negative, "
+#~ "dhe shërbyesi X do të ndërhyjë në detyra të rëndësishme sistemi.  Shumë "
+#~ "pozitive, dhe shërbyesi X do të jetë i fjetur dhe i ngadaltë në përgjigje."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Incorrect nice value"
-msgstr "Vlerë përparësie e gabuar"
+#~ msgid "Incorrect nice value"
+#~ msgstr "Vlerë përparësie e gabuar"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:5001
-msgid "Please enter an integer between -20 and 19."
-msgstr "Të lutem fut një numër të plotë midis -20 dhe 19."
+#~ msgid "Please enter an integer between -20 and 19."
+#~ msgstr "Të lutem fut një numër të plotë midis -20 dhe 19."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid "Major possible upgrade issues"
-msgstr "Probleme upgrade madhore të mundshme"
+#~ msgid "Major possible upgrade issues"
+#~ msgstr "Probleme upgrade madhore të mundshme"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:6001
-msgid ""
-"Some users have reported that upon upgrade to the current package set, their "
-"xserver package was no longer installed. Because there is no easy way around "
-"this problem, you should be sure to check that the xserver-xorg package is "
-"installed after upgrade. If it is not installed and you require it, it is "
-"recommended that you install the xorg package to make sure you have a fully "
-"functional X setup."
-msgstr ""
-"Disa përdorues kanë raportuar që gjatë freskimit të setit të tanishëm të "
-"paketave, shërbyesi i tyre xserver nuk u instalua më. Ngaqë nuk ka një "
-"zgjidhje të lehtë për këtë problem, duhet të sigurohesh që paketa xserver-"
-"xorg është instaluar pas freskimit. Nëse nuk është instaluar dhe të duhet, "
-"këshillohet që të instalosh paketin xorg për t'u siguruar që ke një ambjent "
-"X plotësisht funksional."
+#~ msgid ""
+#~ "Some users have reported that upon upgrade to the current package set, "
+#~ "their xserver package was no longer installed. Because there is no easy "
+#~ "way around this problem, you should be sure to check that the xserver-"
+#~ "xorg package is installed after upgrade. If it is not installed and you "
+#~ "require it, it is recommended that you install the xorg package to make "
+#~ "sure you have a fully functional X setup."
+#~ msgstr ""
+#~ "Disa përdorues kanë raportuar që gjatë freskimit të setit të tanishëm të "
+#~ "paketave, shërbyesi i tyre xserver nuk u instalua më. Ngaqë nuk ka një "
+#~ "zgjidhje të lehtë për këtë problem, duhet të sigurohesh që paketa xserver-"
+#~ "xorg është instaluar pas freskimit. Nëse nuk është instaluar dhe të "
+#~ "duhet, këshillohet që të instalosh paketin xorg për t'u siguruar që ke "
+#~ "një ambjent X plotësisht funksional."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid "Cannot remove /usr/X11R6/bin directory"
-msgstr "Nuk mund të fshij dosjen /usr/X11R6/bin"
+#~ msgid "Cannot remove /usr/X11R6/bin directory"
+#~ msgstr "Nuk mund të fshij dosjen /usr/X11R6/bin"
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This upgrade requires that the /usr/X11R6/bin directory be removed and "
-"replaced with a symlink. An attempt was made to do so, but it failed, most "
-"likely because the directory is not yet empty. You must move the files that "
-"are currently in the directory out of the way so that the installation can "
-"complete. If you like, you may move them back after the symlink is in place."
-msgstr ""
-"Ky freskim kërkon që dosja /usr/X11R6/bin të fshihet dhe të zëvendësohet me "
-"një lidhje simbolike. U bë një përpjekje për këtë, por dështoi, ngjan që "
-"dosja të mos jetë bosh. Duhet të lëvizësh skedat që ndodhen në dosje kështu "
-"që instalimi të përfundojë. Nëse dëshiron, mund t'i lëvizësh aty ku ishin "
-"pasi të krijohet lidhja simbolike."
+#~ msgid ""
+#~ "This upgrade requires that the /usr/X11R6/bin directory be removed and "
+#~ "replaced with a symlink. An attempt was made to do so, but it failed, "
+#~ "most likely because the directory is not yet empty. You must move the "
+#~ "files that are currently in the directory out of the way so that the "
+#~ "installation can complete. If you like, you may move them back after the "
+#~ "symlink is in place."
+#~ msgstr ""
+#~ "Ky freskim kërkon që dosja /usr/X11R6/bin të fshihet dhe të zëvendësohet "
+#~ "me një lidhje simbolike. U bë një përpjekje për këtë, por dështoi, ngjan "
+#~ "që dosja të mos jetë bosh. Duhet të lëvizësh skedat që ndodhen në dosje "
+#~ "kështu që instalimi të përfundojë. Nëse dëshiron, mund t'i lëvizësh aty "
+#~ "ku ishin pasi të krijohet lidhja simbolike."
 
-#. Type: note
-#. Description
-#: ../x11-common.templates:7001
-msgid ""
-"This package installation will now fail and exit so that you can do this. "
-"Please re-run your upgrade procedure after you have cleaned out the "
-"directory."
-msgstr ""
-"Ky instalim pakete do të ndërpritet dhe do dalësh në mënyrë që të bësh këtë. "
-"Të lutem ri-nis proçedurën e freskimit pasi të kesh pastruar dosjen."
+#~ msgid ""
+#~ "This package installation will now fail and exit so that you can do this. "
+#~ "Please re-run your upgrade procedure after you have cleaned out the "
+#~ "directory."
+#~ msgstr ""
+#~ "Ky instalim pakete do të ndërpritet dhe do dalësh në mënyrë që të bësh "
+#~ "këtë. Të lutem ri-nis proçedurën e freskimit pasi të kesh pastruar dosjen."
+
+#~ msgid "Video card's bus identifier:"
+#~ msgstr "Identifikuesi i bus-it të kartës grafike:"
+
+#~ msgid ""
+#~ "Users of PowerPC machines, and users of any computer with multiple video "
+#~ "devices, should specify the BusID of the video card in an accepted bus-"
+#~ "specific format."
+#~ msgstr ""
+#~ "Përdoruesit e kompjuterave PowerPC, dhe përdoruesit e çdo kompjuteri me "
+#~ "dispozitivë grafikë të shumëfishtë, duhet të përcaktojnë BusID e kartës "
+#~ "grafike në një format që pranon specifikën \"bus\"."
+
+#~ msgid "Examples:"
+#~ msgstr "Shembuj:"
+
+#~ msgid ""
+#~ "For users of multi-head setups, this option will configure only one of "
+#~ "the heads.  Further configuration will have to be done manually in the X "
+#~ "server configuration file, /etc/X11/xorg.conf."
+#~ msgstr ""
+#~ "Për përdorues të rregullimeve me shumë dalje, kjo mundësi do të "
+#~ "konfigurojë vetëm njërën prej daljeve.  Konfigurim i mëtejshëm do duhet "
+#~ "të kryhet dorazi në skedën e konfigurimit, /etc/X11/xorg.conf."
+
+#~ msgid ""
+#~ "You may wish to use the \"lspci\" command to determine the bus location "
+#~ "of your PCI, AGP, or PCI-Express video card."
+#~ msgstr ""
+#~ "Mund të përdorësh komandën \"lspci\" për të gjetur vendndodhjen bus të "
+#~ "kartës tënde grafike PCI, AGP apo PCI-Express."
+
+#~ msgid ""
+#~ "When possible, this question has been pre-answered for you and you should "
+#~ "accept the default unless you know it doesn't work."
+#~ msgstr ""
+#~ "Kur është e mundur, kësaj pyetjeje i është përgjigjur për ty dhe duhet të "
+#~ "pranosh të parazgjedhurën në mos po dite që nuk punon."
+
+#~ msgid "Incorrect format for the bus identifier"
+#~ msgstr "Format i pasaktë për identifikuesin bus"
+
+#~ msgid "Use kernel framebuffer device interface?"
+#~ msgstr "T'a përdor ndërfaqen e dispozitivit framebuffer?"
+
+#~ msgid ""
+#~ "Rather than communicating directly with the video hardware, the X server "
+#~ "may be configured to perform some operations, such as video mode "
+#~ "switching, via the kernel's framebuffer driver."
+#~ msgstr ""
+#~ "Në vend që të komunikojë drejtpërsëdrejti me pajisjen grafike, shërbyesi "
+#~ "X mund të konfigurohet të kryejë disa veprime, si p.sh. mënyrë kalimi "
+#~ "video, me anë të drejtuesit framebuffer të kernelit."
+
+#~ msgid ""
+#~ "In theory, either approach should work, but in practice, sometimes one "
+#~ "does and the other does not.  Enabling this option is the safe bet, but "
+#~ "feel free to turn it off if it appears to cause problems."
+#~ msgstr ""
+#~ "Në teori, të dyja zgjedhjet duhet të punojnë, por në praktikë, ndonjëherë "
+#~ "njëra punon dhe tjetra jo.  Duke aktivizuar këtë mundësi je më i sigurtë, "
+#~ "por ji i lirë ta fikësh nëse ndodh të jetë ky problemi."
+
+#~ msgid "XKB rule set to use:"
+#~ msgstr "Set rregullash XKB për përdorim:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, an XKB rule set must "
+#~ "be chosen."
+#~ msgstr ""
+#~ "Që shërbyesi X të trajtojë saktë tastierën, duhet zgjedhur një set "
+#~ "rregullash XKB."
+
+#, fuzzy
+#~| msgid ""
+#~| "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgid "Users of most keyboards should enter \"xorg\"."
+#~ msgstr ""
+#~ "Përdoruesit e tastierës Amerikane zakonisht duhet ta lënë bosh këtë."
+
+#~ msgid ""
+#~ "Experienced users can use any defined XKB rule set.  If the xkb-data "
+#~ "package has been unpacked, see the /usr/share/X11/xkb/rules directory for "
+#~ "available rule sets."
+#~ msgstr ""
+#~ "Përdoruesit ekspertë mund të përdorin çdo set rregullash XKB të caktuar.  "
+#~ "Nëse është çpaketuar paketa xkb-data, shih dosjen /usr/share/X11/xkb/"
+#~ "rules për sete rregullash të pranishëm."
+
+#~ msgid "When in doubt, this value should be set to \"xorg\"."
+#~ msgstr "Nëse ke dyshime, kjo vlerë duhet caktuar \"xorg\"."
+
+#~ msgid "Keyboard model:"
+#~ msgstr "Modeli i tastierës:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard model must "
+#~ "be entered.  Available models depend on which XKB rule set is in use."
+#~ msgstr ""
+#~ "Që shërbyesi X të trajtojë saktë tastierën, duhet futur një model "
+#~ "tastiere.  Modele të pranishëm varen nga cili set rregullash është në "
+#~ "përdorim."
+
+#, fuzzy
+#~| msgid ""
+#~| " With the \"xorg\" rule set:\n"
+#~| " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~| "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~| " - pc104: similar to pc101 model, with additional keys, usually "
+#~| "engraved\n"
+#~| "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~| " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~| "key;\n"
+#~| " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~| "              keycodes;\n"
+#~| " - macintosh_old: Macintosh keyboards not using the new input layer.\n"
+#~| " With the \"sun\" rule set:\n"
+#~| " - type4: Sun Type4 keyboards;\n"
+#~| " - type5: Sun Type5 keyboards."
+#~ msgid ""
+#~ " With the \"xorg\" rule set:\n"
+#~ " - pc101: traditional IBM PC/AT style keyboard with 101 keys, common in\n"
+#~ "          the United States.  Has no \"logo\" or \"menu\" keys;\n"
+#~ " - pc104: similar to pc101 model, with additional keys, usually engraved\n"
+#~ "          with a \"logo\" symbol and a \"menu\" symbol;\n"
+#~ " - pc102: similar to pc101 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - pc105: similar to pc104 and often found in Europe. Includes a \"< >\" "
+#~ "key;\n"
+#~ " - macintosh: Macintosh keyboards using the new input layer with Linux\n"
+#~ "              keycodes;\n"
+#~ " - macintosh_old: Macintosh keyboards not using the new input layer;\n"
+#~ " - type4: Sun Type4 keyboards;\n"
+#~ " - type5: Sun Type5 keyboards."
+#~ msgstr ""
+#~ " Me setin e rregullave \"xorg\":\n"
+#~ " - pc101: tastierë tradicionale e llojit IBM PC/AT me 101 tasta, e "
+#~ "zakonshme\n"
+#~ "            në Shtetet e Bashkuara.  Nuk ka tasta \"logo\" ose \"menu\";\n"
+#~ " - pc104: e ngjashme me modelin pc101, me tasta shtesë, zakonisht me\n"
+#~ "            thekse me simbole \"logo\" dhe \"menu\";\n"
+#~ " - pc102: e ngjashme me pc101 dhe shpesh herë e gjetur në Evropë. "
+#~ "Përfshin një tast \"< >\"\n"
+#~ " - pc105: e ngjashme me pc104 dhe shpesh herë e gjetur në Evropë. "
+#~ "Përfshin një tast \"< >\"\n"
+#~ " - macintosh: Tastierë Macintosh që përdor hyrjen e re me kodet e "
+#~ "tastierës\n"
+#~ "                  Linux;\n"
+#~ " - macintosh_old: Tastierë Macintosh që nuk përdorin hyrjen e re.\n"
+#~ " Me setin e rregullave \"sun\";\n"
+#~ " - type4: Tastiera Sun Type4;\n"
+#~ " - type5: Tastiera Sun Type5"
+
+#~ msgid ""
+#~ "Laptop keyboards often do not have as many keys as standalone models; "
+#~ "laptop users should select the keyboard model most closely approximated "
+#~ "by the above."
+#~ msgstr ""
+#~ "Shpesh tastierat e kompjuterave të prehërit nuk kanë shumë tasta sa "
+#~ "modelet e zakonshme; përdoruesit e këtyre kompjuterave zgjedhin modelin e "
+#~ "tastierës më të afërm nga të mësipërmet."
+
+#~ msgid ""
+#~ "Experienced users can use any model defined by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Përdoruesit ekspertë mund të përdorin çdo model të caktuar nga seti i "
+#~ "rregullave XKB të zgjedhur. Nëse është çpaketuar paketa xkb-data, shih "
+#~ "dosjen /usr/share/X11/xkb/rules për sete rregullash të pranishëm."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally enter \"pc104\".  Users "
+#~ "of most other keyboards should generally enter \"pc105\"."
+#~ msgstr ""
+#~ "Përdoruesit e tastierave Amerikane zakonisht duhet të shtypin \"pc104\". "
+#~ "Përdoruesit e shumicës së tastierave të tjera duhet të futin \"pc105\"."
+
+#~ msgid "Keyboard layout:"
+#~ msgstr "Skemë tastiere:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard correctly, a keyboard layout must "
+#~ "be entered.  Available layouts depend on which XKB rule set and keyboard "
+#~ "model were previously selected."
+#~ msgstr ""
+#~ "Që shërbyesi X të trajtojë saktë tastierën, një skemë tastiere duhet "
+#~ "futur.  Skemat e pranishme varen nga cili set rregullash dhe model "
+#~ "tastiere janë zgjedhur më parë."
+
+#~ msgid ""
+#~ "Experienced users can use any layout supported by the selected XKB rule "
+#~ "set.  If the xkb-data package has been unpacked, see the /usr/share/X11/"
+#~ "xkb/rules directory for available rule sets."
+#~ msgstr ""
+#~ "Përdoruesit ekspertë mund të përdorin çdo skemë të suportuar nga seti i "
+#~ "rregullave XKB të zgjedhur.  Nëse është çpaketuar paketa xkb-data, shih "
+#~ "dosjen /usr/share/X11/rules për sete rregullash të pranishëm."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should enter \"us\".  Users of keyboards "
+#~ "localized for other countries should generally enter their ISO 3166 "
+#~ "country code.  E.g., France uses \"fr\", and Germany uses \"de\"."
+#~ msgstr ""
+#~ "Përdoruesit e tastierave Amerikane duhet të shtypin \"us\".  Përdoruesit "
+#~ "e tastierave të shteteve të tjerë zakonisht duhet të fusin kodin ISO-3166 "
+#~ "për shtetin e tyre.  P.sh., Franca përdor \"fr\", dhe Gjermania përdor "
+#~ "\"de\"."
+
+#~ msgid "Keyboard variant:"
+#~ msgstr "Variant tastiere:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, a keyboard variant "
+#~ "may be entered.  Available variants depend on which XKB rule set, model, "
+#~ "and layout were previously selected."
+#~ msgstr ""
+#~ "Që shërbyesi X të trajtojë saktë tastierën siç dëshirohet, një variant "
+#~ "tastiere mund të futet.  Variante të pranishëm varen nga cili set "
+#~ "rregullash XKB, model dhe skemë janë zgjedhur më parë."
+
+#~ msgid ""
+#~ "Many keyboard layouts support an option to treat \"dead\" keys such as "
+#~ "non-spacing accent marks and diaereses as normal spacing keys, and if "
+#~ "this is the preferred behavior, enter \"nodeadkeys\"."
+#~ msgstr ""
+#~ "Shumë skema tastierash suportojnë një mundësi për t'i trajtuar tastat e "
+#~ "\"vdekur\" si ato të shenjave të thekseve si tasta normale hapësire, dhe "
+#~ "nëse kjo është ajo që preferon, fut \"nodeadkeys\"."
+
+#~ msgid ""
+#~ "Experienced users can use any variant supported by the selected XKB "
+#~ "layout.  If the xkb-data package has been unpacked, see the /usr/share/"
+#~ "X11/xkb/symbols directory for the file corresponding to your selected "
+#~ "layout for available variants."
+#~ msgstr ""
+#~ "Përdoruesit ekspertë mund të përdorin çdo variant të suportuar duke "
+#~ "zgjedhur skemën XKB.  Nëse është çpaketuar paketa xkb-data, shih dosjen /"
+#~ "usr/share/X11/xkb/symbols për skedën që i korrespondon skemës tënde të "
+#~ "zgjedhur për variantet e pranishëm."
+
+#~ msgid ""
+#~ "Users of U.S. English keyboards should generally leave this entry blank."
+#~ msgstr ""
+#~ "Përdoruesit e tastierës Amerikane zakonisht duhet ta lënë bosh këtë."
+
+#~ msgid "Keyboard options:"
+#~ msgstr "Mundësi tastiere:"
+
+#~ msgid ""
+#~ "For the X server to handle the keyboard as desired, keyboard options may "
+#~ "be entered.  Available options depend on which XKB rule set was "
+#~ "previously selected.  Not all options will work with every keyboard model "
+#~ "and layout."
+#~ msgstr ""
+#~ "Që shërbyesi X të trajtojë saktë tastierën siç dëshirohet, mund të "
+#~ "zgjidhen mundësi tastiere.  Mundësi të pranishme varen nga cili set "
+#~ "rregullash është zgjedhur më parë.  Jo të gjitha mundësitë do të punojnë "
+#~ "me çdo model dhe skemë tastiere."
+
+#~ msgid ""
+#~ "For example, if you wish the Caps Lock key to behave as an additional "
+#~ "Control key, you may enter \"ctrl:nocaps\"; if you would like to switch "
+#~ "the Caps Lock and left Control keys, you may enter \"ctrl:swapcaps\"."
+#~ msgstr ""
+#~ "Për shembull, nëse do doje që tasti Caps Lock të sillej si një tast "
+#~ "shtesë Control, mund të fusnit \"ctrl:nocaps\", nëse do dëshironit të "
+#~ "ndërronit tastat Caps Lock dhe Control i majtë, mund të shtypni \"ctrl:"
+#~ "swapcaps\"."
+
+#~ msgid ""
+#~ "As another example, some people prefer having the Meta keys available on "
+#~ "their keyboard's Alt keys (this is the default), while other people "
+#~ "prefer having the Meta keys on the Windows or \"logo\" keys instead.  If "
+#~ "you prefer to use your Windows or logo keys as Meta keys, you may enter "
+#~ "\"altwin:meta_win\"."
+#~ msgstr ""
+#~ "Një shembull tjetër, disa persona parapëlqejnë të kenë tastat Meta të "
+#~ "pranishëm në tastat Alt të tastierës (kjo është e parazgjedhura), ndërsa "
+#~ "disa të tjerë preferojnë të kenë tastat Meta në vend të tastave Windows "
+#~ "apo \"logo\".  Nëse preferon të përdorësh tastat Windows apo logo si "
+#~ "tasta Meta, mund të shtypësh \"altwin:meta_win\"."
+
+#~ msgid ""
+#~ "You can combine options by separating them with a comma, for instance "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+#~ msgstr ""
+#~ "Mund të kombinosh mundësi duke i ndarë ato me një presje, për shembull "
+#~ "\"ctrl:nocaps,altwin:meta_win\"."
+
+#~ msgid ""
+#~ "Experienced users can use any options compatible with the selected XKB "
+#~ "model, layout and variant."
+#~ msgstr ""
+#~ "Përdorues ekspertë mund të përdorin çdo mundësi të pranueshme me modelin "
+#~ "XKB, skemën dhe variantin e zgjedhur."
+
+#~ msgid "When in doubt, this value should be left blank."
+#~ msgstr "Nëse ke dyshime, kjo vlerë duhet lënë bosh."
+
+#~ msgid "Empty value"
+#~ msgstr "Vlerë bosh"
+
+#~ msgid "A null entry is not permitted for this value."
+#~ msgstr "Një vlerë bosh nuk lejohet."
+
+#~ msgid "Invalid double-quote characters"
+#~ msgstr "Gërma me thonjëza dyshe e pavlefshme"
+
+#~ msgid "Double-quote (\") characters are not permitted in the entry value."
+#~ msgstr "Gërmat me thonjëza dyshe (\") nuk lejohen në këto vlera."
+
+#~ msgid "Numerical value needed"
+#~ msgstr "Kërkohet vlerë numerike"
+
+#~ msgid "Characters other than digits are not allowed in the entry."
+#~ msgstr "Gërma të tjera veç shifrave nuk lejohen këtu."
+
+#~ msgid "Autodetect keyboard layout?"
+#~ msgstr "T'a autozbuloj skemën e tastierës?"
+
+#~ msgid ""
+#~ "The default keyboard layout selection for the Xorg server will be based "
+#~ "on a combination of the language and the keyboard layout selected in the "
+#~ "installer."
+#~ msgstr ""
+#~ "Zgjedhja e skemës së parazgjedhur së tastierës për shërbyesin Xorg do të "
+#~ "mbështetet në një kombinim të gjuhës dhe skemës së zgjedhur gjatë "
+#~ "instalimit."
+
+#~ msgid ""
+#~ "Choose this option if you want the keyboard layout to be redetected.  Do "
+#~ "not choose it if you want to keep your current layout."
+#~ msgstr ""
+#~ "Zgjidh këtë mundësi nëse dëshiron që skema e tastierës të rizbulohet.  "
+#~ "Mos e zgjidh nëse dëshiron të mbash skemën e tanishme."
+
+#~ msgid "X server driver:"
+#~ msgstr "Drejtues shërbyesi X:"
+
+#~ msgid ""
+#~ "For the X Window System graphical user interface to operate correctly, it "
+#~ "is necessary to select a video card driver for the X server."
+#~ msgstr ""
+#~ "Që ndërfaqja grafike e përdoruesit të Sistemit X Window të punojë saktë, "
+#~ "është e nevojshme të zgjidhet një drejtues karte grafike për shërbyesin X."
+
+#~ msgid ""
+#~ "Drivers are typically named for the video card or chipset manufacturer, "
+#~ "or for a specific model or family of chipsets."
+#~ msgstr ""
+#~ "Drejtuesit zakonisht emërohen sipas kartës grafike ose prodhuesit të "
+#~ "çipit, ose për një model apo familje të caktuar çipesh."
 
 #~ msgid ""
 #~ "Users of most keyboards should enter \"xorg\".  Users of Sun Type 4 and "
