@@ -1,3 +1,14 @@
+xorg (1:7.4+3ubuntu4) karmic; urgency=low
+
+  * debian/local/debian-x11-keymap.fdi: Do not check for existing 
+    input.xkb.layout property; this was only set by the previous
+    10-keymap.fdi, which got disabled together with hal-setup-keymap.
+    Directly check for input.keys capabilities, to make the fdi
+    independent. This restores proper X.org keyboard layout setting
+    from console-setup. (LP: #375618, again)
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Wed, 01 Jul 2009 00:19:16 +0300
+
 xorg (1:7.4+3ubuntu3) karmic; urgency=low
 
   * control: Change the gdm Breaks to match our version.
