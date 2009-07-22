@@ -932,7 +932,10 @@ fi
 # Don't touch the config on upgrades except to deal with known issues with old
 # configs.
 if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14" || \
-  [ "$ARCHITECTURE" = sparc ] && dpkg --compare-versions "$2" lt-nl 1:7.3+19; then
+  { [ "$ARCHITECTURE" = sparc ] && \
+      dpkg --compare-versions "$2" lt-nl 1:7.3+19; } || \
+  { [ -n "$(find "$XORGCONFIG" -maxdepth 0 -size 0 2>/dev/null)" ] &&  \
+      [ "$2" = 1:7.3+19 ]; }; then
   # compare the current and stored checksums; if they do not match, assume
   # that's the way the user wants it.  if we're reconfiguring, overwrite
   # it regardless and back it up.
