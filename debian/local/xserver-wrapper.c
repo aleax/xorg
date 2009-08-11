@@ -76,6 +76,8 @@
  *              minor < 64) as consoles (24 Sep 2008)
  * Julien Cristau: remove the nice_value option
  * Julien Cristau: recognize /usr/bin/X as a path to this wrapper (6 Jun 2009)
+ * Julien Cristau: don't print an error message if Xwrapper.config doesn't exist
+ *                 (11 Aug 2009)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -246,8 +248,8 @@ main(int argc, char **argv)
 
     (void) fclose(cf);
   } else {
-    (void) fprintf(stderr, "X: unable to open wrapper config file %s\n",
-                   X_WRAPPER_CONFIG_FILE);
+    /* DEBUG (void) fprintf(stderr, "X: unable to open wrapper config file %s\n",
+                   X_WRAPPER_CONFIG_FILE); */
   }
 
   if (lstat(X_SERVER_SYMLINK, &statbuf)) {
