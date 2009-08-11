@@ -78,6 +78,8 @@
  * Julien Cristau: recognize /usr/bin/X as a path to this wrapper (6 Jun 2009)
  * Julien Cristau: don't print an error message if Xwrapper.config doesn't exist
  *                 (11 Aug 2009)
+ * Julien Cristau: allow unprivileged -showDefaultModulePath and
+ *                 -showDefaultLibPath options (11 Aug 2009)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -359,9 +361,11 @@ main(int argc, char **argv)
       /* DEBUG fprintf(stderr, "strcmp(argv[1], \"-showconfig\") = %d, strcmp(argv[1],
         \"-version\" = %d\n", (strcmp(argv[1], "-showconfig")), (strcmp(argv[1],
         "-version"))); */
-      if (argc == 2 && ( (strncmp(argv[1], "-help", 5)        == 0) ||
-                         (strncmp(argv[1], "-showconfig", 11) == 0) ||
-                         (strncmp(argv[1], "-version", 8)     == 0) ) ) {
+      if (argc == 2 && ( (strcmp(argv[1], "-help") == 0) ||
+                         (strcmp(argv[1], "-showconfig") == 0) ||
+                         (strcmp(argv[1], "-version") == 0) ||
+                         (strcmp(argv[1], "-showDefaultModulePath") == 0) ||
+                         (strcmp(argv[1], "-showDefaultLibPath") == 0) ) ) {
           if (setuid(getuid())) {
               perror("X unable to drop setuid privileges");
               exit(1);
