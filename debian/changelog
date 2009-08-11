@@ -12,7 +12,10 @@ xorg (1:7.4+4) UNRELEASED; urgency=low
     exist.
   * xserver-wrapper: allow unprivileged -showDefaultModulePath and
     -showDefaultLibPath options
-    (closes: #540932).
+  * xserver-wrapper: don't check the mode of /dev/dri.  It leads to a spurious
+    error message in some cases, and isn't necessary.
+  Thanks to Pierre-Loup A. Griffais for pointing out the three above items
+  (closes: #540932).
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Thu, 02 Jul 2009 17:23:57 +0300
 

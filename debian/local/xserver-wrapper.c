@@ -80,6 +80,8 @@
  *                 (11 Aug 2009)
  * Julien Cristau: allow unprivileged -showDefaultModulePath and
  *                 -showDefaultLibPath options (11 Aug 2009)
+ * Julien Cristau: don't check the mode of the DRI device directory
+ *                 (11 Aug 2009)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -120,8 +122,6 @@
 #define X_SERVER_SYMLINK "/etc/X11/X"
 #define X_SOCKET_DIR "/tmp/.X11-unix"
 #define X_SOCKET_DIR_MODE (S_ISVTX | S_IRWXU | S_IRWXG | S_IRWXO)
-#define X_DRI_DEVICE_DIR "/dev/dri"
-#define X_DRI_DEVICE_DIR_MODE (S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH)
 
 #ifndef FALSE
 #define FALSE 0
@@ -310,17 +310,6 @@ main(int argc, char **argv)
       (void) fprintf(stderr, "X: %s has suspicious mode (not %o) or is not a "
                      "directory, aborting.\n", X_SOCKET_DIR, X_SOCKET_DIR_MODE);
       exit(1);
-    }
-
-    /* do a check on the directory where the DRI device is created */
-    if (stat(X_DRI_DEVICE_DIR, &statbuf)) {
-      /* do nothing if it doesn't exist -- no problem */
-    } else {
-      if (statbuf.st_mode != (S_IFDIR | X_DRI_DEVICE_DIR_MODE)) {
-        (void) fprintf(stderr, "X: warning; %s has unusual mode (not %o) or "
-                       "is not a directory.\n", X_DRI_DEVICE_DIR,
-                       X_DRI_DEVICE_DIR_MODE);
-      }
     }
 
     for (i = 1; i < argc; i++) {
