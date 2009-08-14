@@ -76,7 +76,7 @@ install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	umask 022
-	dh_clean -k
+	dh_clean
 	chmod 755 debian/local/debian-setup-keyboard
 	touch $@
 
