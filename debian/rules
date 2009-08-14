@@ -43,7 +43,7 @@ include debian/scripts/vars.$(ARCH)
 
 clean: cleanscripts
 	dh_testdir
-	dh_clean stamp-* debian/local/X debian/po/pothead
+	dh_clean debian/local/X debian/po/pothead
 	-rm -rf stampdir
 	-debconf-updatepo
 
@@ -52,17 +52,17 @@ SCRIPTS=$(shell ls debian/*.config.in debian/*.postinst.in debian/*.postrm.in de
 
 DEFAULT_DCRESOLUTIONS="1920x1440, 1920x1200, 1856x1392, 1792x1344, 1680x1050, 1600x1200, 1440x900, 1400x1050, 1280x1024, 1280x960, 1280x854, 1280x800, 1280x768, 1200x800, 1152x864, 1152x768, 1024x768, 800x600, 640x480"
 
-scripts: stamp-scripts
-stamp-scripts: genscripts validatescripts
+scripts: scripts-stamp
+scripts-stamp: genscripts validatescripts
 	touch $@
 
-validatescripts: genscripts stamp-validatescripts
-stamp-validatescripts: debian/local/dexconf
+validatescripts: genscripts validatescripts-stamp
+validatescripts-stamp: debian/local/dexconf
 	sh debian/scripts/validate-posix-sh $<
 	touch $@
 
-build: stamp-build
-stamp-build: stamp-scripts
+build: build-stamp
+build-stamp: scripts-stamp
 	dh_testdir
 	# build Debian's X server wrapper
 	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
@@ -71,8 +71,8 @@ stamp-build: stamp-scripts
 build-arch-only: build
 build-all:
 
-install: stamp-install
-stamp-install: stamp-build
+install: install-stamp
+install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	umask 022
@@ -100,7 +100,7 @@ binary-indep: build install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
-	touch stamp-$@
+	touch $@-stamp
 
 binary-arch: DH_OPTIONS=-s
 binary-arch: build install
@@ -125,7 +125,7 @@ binary-arch: build install
 	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS)
 	dh_md5sums
 	dh_builddeb
-	touch stamp-$@
+	touch $@-stamp
 
 binary: binary-indep binary-arch
 
