@@ -40,6 +40,17 @@ def add_info(report):
             "xserver-xorg-video-ati"
             ])
 
+    # Verify the bug is valid to be filed
+    version_signature = report.get('ProcVersionSignature', '')
+    if not version_signature.startswith('Ubuntu '):
+        report['UnreportableReason'] = _('The running kernel is not an Ubuntu kernel')
+        return
+
+    bios = report.get('dmi.bios.version', '')
+    if bios.startswith('VirtualBox '):
+        report['UnreportableReason'] = _('VirtualBox has installed a video driver which is incompatible with your version of X.org.')
+        return
+
     attach_file(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
