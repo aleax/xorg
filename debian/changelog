@@ -1,11 +1,18 @@
+xorg (1:7.4+3ubuntu7) karmic; urgency=low
+
+  * Remove stray 60x11-common_localhost and dexconf.patch from prior upload.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 19 Oct 2009 19:41:23 -0700
+
 xorg (1:7.4+3ubuntu6) karmic; urgency=low
 
-  [ Bryce Harrington ]
+  * apport/source_xorg.py: Do not file bug if VirtualBox is in use, since
+    it provides its own video driver.
   * vars.*: Add explicit dependency on xserver-xorg-input-vmmouse to
     ensure it stays in main.
     (LP: #407816)
 
- -- Timo Aaltonen <tjaalton@ubuntu.com>  Wed, 16 Sep 2009 11:13:53 +0300
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 19 Oct 2009 18:52:55 -0700
 
 xorg (1:7.4+3ubuntu5) karmic; urgency=low
 
