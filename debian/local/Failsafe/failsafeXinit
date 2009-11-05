@@ -209,14 +209,14 @@ while : ; do
 done
 
 if [ "x$with_gdm" = "xwith-gdm" ]; then
-    export XORGCONFIG="/etc/X11/xorg.conf"
+    XORGCONFIG="/etc/X11/xorg.conf"
 elif [ "x$with_gdm" = "xlow-res" ]; then
-    export XORGCONFIG=${xorg_conf}
+    XORGCONFIG=${xorg_conf}
 else
     chvt 2
     exit
 fi
 
-/etc/init.d/gdm restart | \
+start gdm XORGCONFIG=$XORGCONFIG | \
     zenity --progress --pulsate --text "$(gettext 'Stand by one minute while the display restarts...')"
 

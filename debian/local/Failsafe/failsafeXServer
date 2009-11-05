@@ -132,16 +132,14 @@ if pidof /usr/sbin/gdm ; then
     clientargs="${clientargs} with-gdm"
 fi
 
-echo "xinit $client $clientargs -- $server $serverargs"
-xinit $client $clientargs -- $server $serverargs &
-
-sleep 3
-
 # Stop gdm if it's running, otherwise it will attempt to manage the display
 # out from under us
 if pidof /usr/sbin/gdm ; then
     exec kill -STOP $PPID
 fi
+
+echo "xinit $client $clientargs -- $server $serverargs"
+xinit $client $clientargs -- $server $serverargs
 
 # This seems to cause gdm to attempt to start a new x session
 #exec kill -USR1 `cat /var/run/gdm.pid`

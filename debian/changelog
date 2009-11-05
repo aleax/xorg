@@ -1,4 +1,4 @@
-xorg (1:7.4+3ubuntu7.1) karmic-updates; urgency=low
+xorg (1:7.4+3ubuntu9) karmic-proposed; urgency=low
 
   * Restore 60x11-common_localhost.  I dropped this before because the
     file was not in git so assumed it was stray.  On further review I
@@ -6,6 +6,17 @@ xorg (1:7.4+3ubuntu7.1) karmic-updates; urgency=low
     (LP: #340807)
 
  -- Bryce Harrington <bryce@ubuntu.com>  Tue, 03 Nov 2009 16:14:15 -0800
+
+xorg (1:7.4+3ubuntu8) karmic-proposed; urgency=low
+
+  * debian/local/Failsafe/failsafe{XServer,Xinit},
+    debian/x11-common.failsafe-x.upstart: convert Bulletproof-X support over
+    to upstart, for compatibility with gdm in karmic.  LP: #474806.
+  * debian/rules: install the new upstart job with dh_installinit.
+  * debian/control: bump the debhelper versioned build-dependency for the
+    same
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Wed, 04 Nov 2009 18:00:49 -0800
 
 xorg (1:7.4+3ubuntu7) karmic; urgency=low
 

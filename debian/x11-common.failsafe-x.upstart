@@ -1,0 +1,13 @@
+# failsafe-x - Recovery options if gdm fails to start
+#
+# If gdm exits non-zero, something is wrong - launch the bulletproof-X
+# interface
+
+description	"Recovery options if gdm fails to start"
+
+start on stopped gdm EXIT_STATUS=[!0]
+stop on runlevel [06]
+
+task
+
+exec /etc/gdm/failsafeXServer
