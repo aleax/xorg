@@ -108,16 +108,24 @@ fi
 #      If a matching entry is found, then use VGA 640x480/16 mode
 driver=$(get_driver)
 
-if [ "x${run_dexconf}" = "xyes" ]; then
-    # Generate an appropriate xorg.conf
-    /etc/gdm/failsafeDexconf $driver $xorg_conf_failsafe
-    if [ ! -s $xorg_conf_failsafe ]; then
-        warn "Could not generate $xorg_conf_failsafe for $driver driver"
-        exit 1
-    fi
-elif [ ! -s $xorg_conf_failsafe ]; then
-    warn "Requested to use $xorg_conf_failsafe for $driver driver, but it does not exist"
-    exit 1
+# If no failsafe xorg.conf exists, generate a stock one
+if [ ! -e $xorg_conf_failsafe ]; then
+    cat > $xorg_conf_failsafe <<EOF
+Section "Device"
+	Identifier	"Configured Video Device"
+	Driver		"vesa"
+EndSection
+
+Section "Monitor"
+	Identifier	"Configured Monitor"
+EndSection
+
+Section "Screen"
+	Identifier	"Default Screen"
+	Monitor		"Configured Monitor"
+	Device		"Configured Video Device"
+EndSection
+EOF
 fi
 
 md5xorg=$(md5sum $xorg_conf)
