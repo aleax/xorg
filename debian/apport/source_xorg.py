@@ -51,6 +51,11 @@ def add_info(report):
         report['UnreportableReason'] = _('VirtualBox has installed a video driver which is incompatible with your version of X.org.')
         return
 
+    product_name = report.get('dmi.product.name', '')
+    if product_name.startswith('VMware '):
+        report['UnreportableReason'] = _('VMware is installed.  If you upgraded recently be sure to upgrade vmware to a compatible version.')
+        return
+
     attach_file(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
