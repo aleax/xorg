@@ -1,5 +1,9 @@
 xorg (1:7.5~2) UNRELEASED; urgency=low
 
+  * Drop xorg-dev dependency on libxkbui-dev, which has no users.
+  * Update xorg-dev long description.  There are no static-only X libs
+    nowadays.
+  * xorg-dev: don't depend on libxevie-dev.
   * xserver-xorg-video-all: don't depend on -intel on non-linux.
   * Switch hal dependency to a recommends, and make it kfreebsd-only.
   * Only install the hal fdi and callout on kfreebsd.
@@ -8,23 +12,14 @@ xorg (1:7.5~2) UNRELEASED; urgency=low
 
 xorg (1:7.5~1) experimental; urgency=low
 
+  [ Julien Cristau ]
   * Depend on xserver 1.7 RC.  Bump video and input driver ABI.
-
- -- Julien Cristau <jcristau@debian.org>  Tue, 29 Sep 2009 22:17:04 +0200
-
-xorg (1:7.4+5) UNRELEASED; urgency=low
 
   [ David Nusinow ]
   * Update xsfbs to 5693792171d885769e58dcccc053c08b11acd12a
   * Revert dh_clean change from last upload but use dh_prep instead
 
-  [ Julien Cristau ]
-  * Drop xorg-dev dependency on libxkbui-dev, which has no users.
-  * Update xorg-dev long description.  There are no static-only X libs
-    nowadays.
-  * xorg-dev: don't depend on libxevie-dev.
-
- -- David Nusinow <dnusinow@debian.org>  Wed, 26 Aug 2009 23:27:18 -0400
+ -- Julien Cristau <jcristau@debian.org>  Tue, 29 Sep 2009 22:17:04 +0200
 
 xorg (1:7.4+4) unstable; urgency=low
 
