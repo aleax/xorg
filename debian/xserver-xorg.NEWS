@@ -6,7 +6,7 @@ xserver-xorg (1:7.4+1) unstable; urgency=low
   statically in /etc/X11/xorg.conf.  Instead, input devices are detected at
   runtime (and can be hotplugged) and configured individually.  The default
   keyboard layout is shared with the console and is configured in
-  /etc/default/console-setup.  As a result, devices configured in xorg.conf to
+  /etc/default/keyboard.  As a result, devices configured in xorg.conf to
   use the mouse or kbd driver are ignored by the X server by default.
 
   For more details, see:
@@ -15,10 +15,10 @@ xserver-xorg (1:7.4+1) unstable; urgency=low
 
   * keycodes changes will break custom Xmodmaps
 
-  As a result of using the evdev driver for keyboards, the keycodes for some
-  keys are no longer the traditional xfree86 ones.  This will break custom
-  Xmodmaps relying on the old keycodes. You'll need to re-configure these
-  custom maps with the new keycodes.
+  As a result of using the evdev driver for keyboards on Linux, the keycodes
+  for some keys are no longer the traditional xfree86 ones.  This will break
+  custom Xmodmaps relying on the old keycodes. You'll need to re-configure
+  these custom maps with the new keycodes.
 
   * Linux kernel configuration requirement
 
