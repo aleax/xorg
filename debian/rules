@@ -25,18 +25,8 @@ export DH_OPTIONS
 
 include debian/xsfbs/xsfbs.mk
 
-# Get package version info.
-SOURCE_VERSION:=$(shell dpkg-parsechangelog -ldebian/changelog | grep '^Version:' | awk '{print $$2}')
-
-# The DEB_HOST_ARCH variable may be set per the Debian cross-compilation policy.
-ifdef DEB_HOST_ARCH
- ARCH:=$(DEB_HOST_ARCH)
-else
- # dpkg-cross sets the ARCH environment variable; if set, use it.
- ifndef ARCH
-  ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
- endif
-endif
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 # Read in architecture-specific variables of importance.
 include debian/scripts/vars.$(ARCH)
@@ -75,9 +65,7 @@ install: install-stamp
 install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
-	umask 022
 	dh_prep
-	chmod 755 debian/local/debian-setup-keyboard
 	touch $@
 
 binary-indep: DH_OPTIONS=-i
@@ -107,6 +95,12 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_install
+ifeq ($(DEB_HOST_ARCH_OS), kfreebsd)
+	install -d debian/xserver-xorg/usr/lib/hal
+	install -d debian/xserver-xorg/usr/share/hal/fdi/policy/10osvendor
+	install -m 755 debian/local/debian-setup-keyboard debian/xserver-xorg/usr/lib/hal
+	install -m 644 debian/local/debian-x11-keymap.fdi debian/xserver-xorg/usr/share/hal/fdi/policy/10osvendor
+endif
 	dh_installdebconf
 	dh_installdirs
 	dh_installdocs
