@@ -102,7 +102,9 @@ Description: the X.Org X server
 
 Package: xserver-xorg-video-all
 Architecture: any
-Depends: ${F:XServer-Xorg-Video-Depends}
+Depends:
+ ${F:XServer-Xorg-Video-Depends},
+ ${misc:Depends},
 Replaces: xserver-xorg-driver-all
 Conflicts: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
@@ -112,7 +114,9 @@ Description: the X.Org X server -- output driver metapackage
 
 Package: xserver-xorg-input-all
 Architecture: any
-Depends: ${F:XServer-Xorg-Input-Depends}
+Depends:
+ ${F:XServer-Xorg-Input-Depends},
+ ${misc:Depends},
 Description: the X.Org X server -- input driver metapackage
  This package depends on the full suite of input drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
@@ -120,7 +124,28 @@ Description: the X.Org X server -- input driver metapackage
 
 Package: xorg
 Architecture: any
-Depends: xserver-xorg, libgl1-mesa-glx | libgl1, libgl1-mesa-dri, libglu1-mesa, xfonts-base (>= 1:1.0.0-1), xfonts-100dpi (>= 1:1.0.0-1), xfonts-75dpi (>= 1:1.0.0-1), xfonts-scalable (>= 1:1.0.0-1), x11-apps, x11-session-utils, x11-utils, x11-xfs-utils, x11-xkb-utils, x11-xserver-utils, xauth, xinit, xfonts-utils, xkb-data, xorg-docs-core, xterm | x-terminal-emulator
+Depends:
+ xserver-xorg,
+ libgl1-mesa-glx | libgl1,
+ libgl1-mesa-dri,
+ libglu1-mesa,
+ xfonts-base (>= 1:1.0.0-1),
+ xfonts-100dpi (>= 1:1.0.0-1),
+ xfonts-75dpi (>= 1:1.0.0-1),
+ xfonts-scalable (>= 1:1.0.0-1),
+ x11-apps,
+ x11-session-utils,
+ x11-utils,
+ x11-xfs-utils,
+ x11-xkb-utils,
+ x11-xserver-utils,
+ xauth,
+ xinit,
+ xfonts-utils,
+ xkb-data,
+ xorg-docs-core,
+ xterm | x-terminal-emulator,
+ ${misc:Depends},
 Provides: x-window-system, x-window-system-core
 Suggests: xorg-docs
 Description: X.Org X Window System
@@ -136,7 +161,8 @@ Description: X.Org X Window System
 
 Package: xorg-dev
 Architecture: all
-Depends: libdmx-dev,
+Depends:
+ libdmx-dev,
  libfontenc-dev,
  libfs-dev,
  libice-dev,
@@ -198,7 +224,8 @@ Depends: libdmx-dev,
  x11proto-xf86vidmode-dev,
  x11proto-xinerama-dev,
  xserver-xorg-dev,
- xtrans-dev
+ xtrans-dev,
+ ${misc:Depends},
 Description: the X.Org X Window System development libraries
  This metapackage provides the development libraries for the X.Org X Window
  System.
@@ -213,7 +240,9 @@ Description: the X.Org X Window System development libraries
 Package: xlibmesa-gl
 Section: libs
 Architecture: all
-Depends: libgl1-mesa-glx
+Depends:
+ libgl1-mesa-glx,
+ ${misc:Depends},
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
@@ -221,7 +250,9 @@ Description: transitional package for Debian etch
 Package: xlibmesa-gl-dev
 Section: libdevel
 Architecture: all
-Depends: libgl1-mesa-dev
+Depends:
+ libgl1-mesa-dev,
+ ${misc:Depends},
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
@@ -229,7 +260,9 @@ Description: transitional package for Debian etch
 Package: xlibmesa-glu
 Section: libdevel
 Architecture: all
-Depends: libglu1-mesa
+Depends:
+ libglu1-mesa,
+ ${misc:Depends},
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
@@ -237,7 +270,9 @@ Description: transitional package for Debian etch
 Package: libglu1-xorg
 Section: libs
 Architecture: all
-Depends: libglu1-mesa
+Depends:
+ libglu1-mesa,
+ ${misc:Depends},
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
@@ -245,7 +280,9 @@ Description: transitional package for Debian etch
 Package: libglu1-xorg-dev
 Section: libdevel
 Architecture: all
-Depends: libglu1-mesa-dev
+Depends:
+ libglu1-mesa-dev,
+ ${misc:Depends},
 Description: transitional package for Debian etch
  This package is provided to smooth upgrades from Debian 3.1 ("sarge") to
  Debian etch. It may be safely removed from your system.
@@ -253,8 +290,16 @@ Description: transitional package for Debian etch
 Package: xbase-clients
 Section: x11
 Architecture: all
-Depends: x11-apps, x11-session-utils, x11-utils, x11-xfs-utils, x11-xkb-utils,
- x11-xserver-utils, xauth, xinit
+Depends:
+ x11-apps,
+ x11-session-utils,
+ x11-utils,
+ x11-xfs-utils,
+ x11-xkb-utils,
+ x11-xserver-utils,
+ xauth,
+ xinit,
+ ${misc:Depends},
 Description: miscellaneous X clients - metapackage
  An X client is a program that interfaces with an X server (almost always via
  the X libraries), and thus with some input and output hardware like a
@@ -270,7 +315,13 @@ Description: miscellaneous X clients - metapackage
 Package: xutils
 Section: x11
 Architecture: all
-Depends: x11-xfs-utils, x11-utils, x11-xserver-utils, x11-session-utils, xfonts-utils
+Depends:
+ x11-xfs-utils,
+ x11-utils,
+ x11-xserver-utils,
+ x11-session-utils,
+ xfonts-utils,
+ ${misc:Depends},
 Description: X Window System utility programs metapackage
  xutils provides a set of utility programs shipped with the X Window System.
  Many of these programs are useful even on a system that does not have any X
