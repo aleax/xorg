@@ -87,13 +87,15 @@ Depends:
  xserver-xorg-video-all | xserver-xorg-video-6,
  xserver-xorg-input-all | xserver-xorg-input-7,
  xserver-xorg-input-evdev [alpha amd64 arm armeb armel hppa i386 ia64 lpia m32r m68k mips mipsel powerpc sparc],
- hal (>= 0.5.12~git20090406),
  console-setup (>= 1.29) | console-setup-mini (>= 1.29),
  ${shlibs:Depends},
  ${misc:Depends},
  xkb-data (>= 1.4),
  x11-xkb-utils
-Recommends: libgl1-mesa-dri, udev
+Recommends:
+ libgl1-mesa-dri,
+ udev [linux-any],
+ hal (>= 0.5.12~git20090406) [kfreebsd-any],
 Description: the X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server.  It does not provide the actual server itself.
