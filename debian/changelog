@@ -5,12 +5,13 @@ xorg (1:7.5~2) UNRELEASED; urgency=low
     nowadays.
   * xorg-dev: don't depend on libxevie-dev.
   * xserver-xorg-video-all: don't depend on -intel on non-linux.
-  * Switch hal dependency to a recommends, and make it kfreebsd-only.
+  * Switch hal dependency to a recommends, and make it kfreebsd-only (closes:
+    #515214).
   * Only install the hal fdi and callout on kfreebsd.
   * Add 'Old Changelog' in debian/changelog to make lintian happy.
   * Add ${misc:Depends} to all packages' Depends fields.
   * Drop dependency on console-setup, xserver-xorg-core now pulls in
-    keyboard-configuration.
+    keyboard-configuration (closes: #558236, #523960).
   * Depend on xserver-xorg-core 1.7.
   * xserver-xorg.NEWS: /etc/default/console-setup moved to
     /etc/default/keyboard.  Also note that evdev is Linux-only.
