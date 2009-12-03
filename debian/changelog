@@ -1,3 +1,77 @@
+xorg (1:7.5~3) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * On upgrade, restart hal on kfreebsd and run udevadm trigger on linux to
+    make sure we can pick up input devices correctly.
+  * Because of the above, move udev and hal from Recommends back to Depends.
+
+  [ Brice Goglin ]
+  * Add myself to Uploaders, remove Branden with his permission.
+
+ -- Brice Goglin <bgoglin@debian.org>  Wed, 02 Dec 2009 16:27:15 +0100
+
+xorg (1:7.5~2) experimental; urgency=low
+
+  * Drop xorg-dev dependency on libxkbui-dev, which has no users.
+  * Update xorg-dev long description.  There are no static-only X libs
+    nowadays.
+  * xorg-dev: don't depend on libxevie-dev.
+  * xserver-xorg-video-all: don't depend on -intel on non-linux.
+  * Switch hal dependency to a recommends, and make it kfreebsd-only (closes:
+    #515214).
+  * Only install the hal fdi and callout on kfreebsd.
+  * Add 'Old Changelog' in debian/changelog to make lintian happy.
+  * Add ${misc:Depends} to all packages' Depends fields.
+  * Drop dependency on console-setup, xserver-xorg-core now pulls in
+    keyboard-configuration (closes: #558236, #523960).
+  * Depend on xserver-xorg-core 1.7.
+  * xserver-xorg.NEWS: /etc/default/console-setup moved to
+    /etc/default/keyboard.  Also note that evdev is Linux-only.
+  * x11-common.NEWS: fix syntax (lintian).
+  * x11-common.templates: use "for internal use" instead of "internal use
+    only" in Description (lintian).
+  * Add lintian overrides for xorg, x11-common and xserver-xorg.
+  * Bump Standards-Version to 3.8.3.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 28 Nov 2009 20:10:31 +0100
+
+xorg (1:7.5~1) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Depend on xserver 1.7 RC.  Bump video and input driver ABI.
+
+  [ David Nusinow ]
+  * Update xsfbs to 5693792171d885769e58dcccc053c08b11acd12a
+  * Revert dh_clean change from last upload but use dh_prep instead
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 29 Sep 2009 22:17:04 +0200
+
+xorg (1:7.4+4) unstable; urgency=low
+
+  [ Timo Aaltonen ]
+  * debian-x11-keymap.fdi: Check for input.keys from info.capabilities.
+    (closes: #535291)
+  * control: Move xserver-xorg dependency on evdev after -input-all.
+    Otherwise only evdev is installed by default.
+
+  [ Julien Cristau ]
+  * xserver-wrapper: recognize /usr/bin/X as a path to the wrapper.
+  * xserver-wrapper: don't print an error message if Xwrapper.config doesn't
+    exist.
+  * xserver-wrapper: allow unprivileged -showDefaultModulePath and
+    -showDefaultLibPath options
+  * xserver-wrapper: don't check the mode of /dev/dri.  It leads to a spurious
+    error message in some cases, and isn't necessary.
+  Thanks to Pierre-Loup A. Griffais for pointing out the three above items
+  (closes: #540932).
+
+  [ David Nusinow ]
+  * Bump debhelper compat to v7. No changes necessary.
+  * Rename stamps to take advantage of dh_clean v7 handling them automatically
+  * Bump standards version to 3.8.2. No changes necessary.
+  
+ -- David Nusinow <dnusinow@debian.org>  Thu, 13 Aug 2009 21:19:12 -0400
+
 xorg (1:7.4+3ubuntu10) karmic-proposed; urgency=low
 
   * local/Failsafe/failsafeXServer:  Since dexconf no longer produces
@@ -3953,6 +4027,8 @@ xorg (7.0.0-0ubuntu1) dapper; urgency=low
     fix that.
 
  -- Daniel Stone <daniel.stone@ubuntu.com>  Thu,  13 Oct 2005 10:06:23 +1000
+
+Old Changelog:
 
   Older changelog entries (back to 4.0.1) can be found in changelog.Debian.old.
   Releases previous to this fixed the following security issues (details in

@@ -146,8 +146,12 @@ case "$1" in
     if dpkg --compare-versions "$2" lt-nl "1:7.3+13"; then
       update-rc.d xserver-xorg remove || true
     fi
-    if dpkg --compare-versions "$2" lt "1:7.4"; then
-      invoke-rc.d hal restart >/dev/null
+    if dpkg --compare-versions "$2" lt "1:7.5~3"; then
+      if [ `uname -s` = "Linux" ]; then
+        udevadm trigger --subsystem-match=input --action=change
+      elif [ `uname -s` = "GNU/kFreeBSD" ]; then
+        invoke-rc.d hal restart >/dev/null
+      fi
     fi
     ;;
 esac

@@ -79,6 +79,13 @@
  * Loïc Minier: on Linux, also consider alternate tty devices (major 5 and
  *              minor < 64) as consoles (24 Sep 2008)
  * Julien Cristau: remove the nice_value option
+ * Julien Cristau: recognize /usr/bin/X as a path to this wrapper (6 Jun 2009)
+ * Julien Cristau: don't print an error message if Xwrapper.config doesn't exist
+ *                 (11 Aug 2009)
+ * Julien Cristau: allow unprivileged -showDefaultModulePath and
+ *                 -showDefaultLibPath options (11 Aug 2009)
+ * Julien Cristau: don't check the mode of the DRI device directory
+ *                 (11 Aug 2009)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -119,8 +126,6 @@
 #define X_SERVER_SYMLINK "/etc/X11/X"
 #define X_SOCKET_DIR "/tmp/.X11-unix"
 #define X_SOCKET_DIR_MODE (S_ISVTX | S_IRWXU | S_IRWXG | S_IRWXO)
-#define X_DRI_DEVICE_DIR "/dev/dri"
-#define X_DRI_DEVICE_DIR_MODE (S_IRWXU | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH)
 
 #ifndef FALSE
 #define FALSE 0
@@ -249,8 +254,8 @@ main(int argc, char **argv)
 
     (void) fclose(cf);
   } else {
-    (void) fprintf(stderr, "X: unable to open wrapper config file %s\n",
-                   X_WRAPPER_CONFIG_FILE);
+    /* DEBUG (void) fprintf(stderr, "X: unable to open wrapper config file %s\n",
+                   X_WRAPPER_CONFIG_FILE); */
   }
 
   if (lstat(X_SERVER_SYMLINK, &statbuf)) {
@@ -269,8 +274,9 @@ main(int argc, char **argv)
 
   xserver[i] = '\0'; /* readlink() does not null-terminate the string */
 
-  if ((strncmp(xserver, "/usr/bin/X11/X", 1024) == 0) ||
-      (strncmp(xserver, "/usr/X11R6/bin/X", 1024) == 0)) {
+  if ((strcmp(xserver, "/usr/bin/X11/X") == 0) ||
+      (strcmp(xserver, "/usr/X11R6/bin/X") == 0) ||
+      (strcmp(xserver, "/usr/bin/X") == 0)) {
     (void) fprintf(stderr, "X: %s points back to X wrapper executable, "
                    "aborting.\n", X_SERVER_SYMLINK);
     exit(1);
@@ -310,17 +316,6 @@ main(int argc, char **argv)
       exit(1);
     }
 
-    /* do a check on the directory where the DRI device is created */
-    if (stat(X_DRI_DEVICE_DIR, &statbuf)) {
-      /* do nothing if it doesn't exist -- no problem */
-    } else {
-      if (statbuf.st_mode != (S_IFDIR | X_DRI_DEVICE_DIR_MODE)) {
-        (void) fprintf(stderr, "X: warning; %s has unusual mode (not %o) or "
-                       "is not a directory.\n", X_DRI_DEVICE_DIR,
-                       X_DRI_DEVICE_DIR_MODE);
-      }
-    }
-
     for (i = 1; i < argc; i++) {
       if (strlen(argv[i]) > 256) {
         if (setuid(getuid())) {
@@ -354,9 +349,11 @@ main(int argc, char **argv)
       /* DEBUG fprintf(stderr, "strcmp(argv[1], \"-showconfig\") = %d, strcmp(argv[1],
         \"-version\" = %d\n", (strcmp(argv[1], "-showconfig")), (strcmp(argv[1],
         "-version"))); */
-      if (argc == 2 && ( (strncmp(argv[1], "-help", 5)        == 0) ||
-                         (strncmp(argv[1], "-showconfig", 11) == 0) ||
-                         (strncmp(argv[1], "-version", 8)     == 0) ) ) {
+      if (argc == 2 && ( (strcmp(argv[1], "-help") == 0) ||
+                         (strcmp(argv[1], "-showconfig") == 0) ||
+                         (strcmp(argv[1], "-version") == 0) ||
+                         (strcmp(argv[1], "-showDefaultModulePath") == 0) ||
+                         (strcmp(argv[1], "-showDefaultLibPath") == 0) ) ) {
           if (setuid(getuid())) {
               perror("X unable to drop setuid privileges");
               exit(1);
