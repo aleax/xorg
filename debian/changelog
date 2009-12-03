@@ -1,3 +1,49 @@
+xorg (1:7.5~3ubuntu1) UNRELEASED; urgency=low
+
+  * Merge from Debian experimental. Remaining changes:
+    - apport/source_xorg.py, x11-common.install, x11-common.links:
+      + apport hook for xorg-server crashes
+    - control:
+      + Add xqbiff (<= 0.75-4) to the list of x11-common Conflicts.
+      + Add xinput to xorg Depends so xinput will stay in main
+      + Move xfonts-scalable to Recommends (LP 84938)
+    - rules, control: 
+      + Add a dependency to x11-common for each binary built to save
+        disk/livecd space.
+      + Symlink the doc directories to x11-common, explicitly remove the
+        doc directories on upgrade for the now symlinked doc directories
+    - local/Failsafe/*, x11-common.install, x11-common.failsafe-x.upstart,
+      rules: Bulletproof-X.
+    - local/Xsession:
+      + If ~/.xsession-errors is bigger than 0.5MiB, truncate it to the last
+        0.5MiB to avoid having it grow indefinitively. (This does not happen
+        with gdm anyway since gdm cleans the file on login).
+    - local/Xsession.d/60x11-common_localhost:
+      + Allow X connections from local unix domain sockets instead of
+        forcing TCP since hostname validation is not necessary in this case.
+        (LP 276357)
+    - local/dexconf:
+      + Add extra bits for ps3fb xorg.conf.
+      + dexconf: Bring Device back to the Screen-section, nvidia-settings
+        and aticonfig need that.
+      + Add customizations to detect if running in KVM/VBOX environment
+        and specify the driver, H/V rates, DefaultDepth, etc.
+    - local/xserver-wrapper.c:
+      + Stop handling -config specifically in the wrapper, as Xorg now
+        handles this itself.
+    - scripts/vars.*:
+      + Don't include radeonhd in video-all.
+    - scripts/vars.i386:
+      + Add geode to video-all.
+    - scripts/vars.{i386,amd64}:
+      + Add vmmouse (LP 407816).
+    - x11-common.postinst.in, postrm.in, preinst.in:
+      + Remove old configuration files.
+    - xserver-xorg.postinst.in:
+      + Migrate psb users to vesa.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Thu, 03 Dec 2009 11:03:17 +0200
+
 xorg (1:7.5~3) experimental; urgency=low
 
   [ Julien Cristau ]
