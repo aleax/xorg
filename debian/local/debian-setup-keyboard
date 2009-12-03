@@ -5,7 +5,7 @@
 
 [ -x /usr/bin/hal-set-property ] || exit 0
 
-. /etc/default/keyboard >/dev/null 2>&1 || exit 0
+. /etc/default/console-setup >/dev/null 2>&1 || exit 0
 
 hal_set () {
     if [ -n "$2" ]; then
