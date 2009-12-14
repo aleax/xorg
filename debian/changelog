@@ -1,3 +1,11 @@
+xorg (1:7.5~3ubuntu3) lucid; urgency=low
+
+  * debian/x11-common.failsafe-x.upstart: (LP: #453365)
+    - Start on the build-failed signal that DKMS may emit
+      during a failed build for nvidia or fglrx.
+
+ -- Mario Limonciello <mario_limonciello@dell.com>  Mon, 14 Dec 2009 14:17:21 -0600
+
 xorg (1:7.5~3ubuntu2) lucid; urgency=low
 
   * scripts/vars.*: Drop wacom from input-all until it builds again.
