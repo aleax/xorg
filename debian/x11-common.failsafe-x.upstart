@@ -5,10 +5,7 @@
 
 description	"Recovery options if gdm fails to start"
 
-start on (stopped gdm EXIT_STATUS=[!0]
-          or (stopped gdm
-              and (build-failed MODULE=nvidia
-                   or build-failed MODULE=fglrx)))
+start on stopped gdm EXIT_STATUS=[!0]
 stop on runlevel [06]
 
 task
