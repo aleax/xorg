@@ -1,8 +1,10 @@
-xorg (1:7.5~4) UNRELEASED; urgency=low
+xorg (1:7.5+1) UNRELEASED; urgency=low
 
   * Drop xorg-dev dependency on x11proto-xf86misc-dev and libxxf86misc-dev,
     which are obsolete.
   * Same with x11proto-trap-dev and libxtrap-dev.
+  * The call to udevadm trigger has moved to xserver-xorg-core and the
+    drivers, remove it from xserver-xorg.postinst.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 06 Dec 2009 14:06:59 +0100
 
