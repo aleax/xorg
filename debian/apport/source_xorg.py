@@ -39,6 +39,7 @@ def add_info(report):
             "libdrm2",
             "xserver-xorg-video-intel",
             "xserver-xorg-video-ati"
+            "xserver-xorg-video-nouveau"
             ])
 
     # Verify the bug is valid to be filed
