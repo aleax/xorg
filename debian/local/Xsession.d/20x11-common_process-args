@@ -33,7 +33,7 @@ case $# in
         ;;
       *)
         # Specific program was requested.
-        STARTUP_FULL_PATH=$(/usr/bin/which "$1" || true)
+        STARTUP_FULL_PATH=$(/usr/bin/which "${1%% *}" || true)
         if [ -n "$STARTUP_FULL_PATH" ] && [ -e "$STARTUP_FULL_PATH" ]; then
           if [ -x "$STARTUP_FULL_PATH" ]; then
             STARTUP="$1"

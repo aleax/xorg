@@ -62,7 +62,7 @@ display_reconfigure_menu() {
         --text "$(gettext 'How would you like to reconfigure your display?')" \
         --width $app_width --height $app_height \
         --column "" --column "$(gettext 'Choice')" --column "" \
-          TRUE   RUN_DEXCONF "$(gettext 'Use default (generic) configuration')" \
+          TRUE   DEFAULT_CONFIG "$(gettext 'Use default (generic) configuration')" \
           FALSE  RUN_XORGCONF "$(gettext 'Create new configuration for this hardware')" \
           FALSE  SELECT_BACKUP "$(gettext 'Use your backed-up configuration')" \
         --hide-column 2
@@ -107,14 +107,13 @@ backup_xorg_conf() {
     fi
 }
 
-run_dexconf() {
+default_config() {
     backup_xorg_conf || return 1
 
-    dexconf
+    rm /etc/X11/xorg.conf
     if [ $? == 0 ]; then
         zenity --info --text "$(gettext 'Your configuration has been restored to default,\nand your old configuration backed up.\nPlease restart.\n')"
     else
-        # TODO:  Copy $xorg_conf_backup to $xorg_conf if it exists
         zenity --error --text "$(gettext 'Failure restoring configuration to default.\nYour config has not been changed.')"
     fi
 }
@@ -191,7 +190,7 @@ while : ; do
         FILE_BUG )        choice=$(display_filebug_menu) ;;
 
         ## Reconfigure Menu ##
-        RUN_DEXCONF )     choice="RECONFIGURE"; run_dexconf ;;
+        DEFAULT_CONFIG )  choice="RECONFIGURE"; default_config ;;
         RUN_XORGCONF )    choice="RECONFIGURE"; run_xorgconf ;;
         SELECT_BACKUP )   choice="RECONFIGURE"; ;;
 
