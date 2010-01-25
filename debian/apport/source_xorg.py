@@ -18,6 +18,7 @@ the full text of the license.
 #  - Trim lshal output to just required info
 
 import os.path
+import glob
 import subprocess
 from apport.hookutils import *
 
@@ -66,11 +67,12 @@ def add_info(report):
     attach_hardware(report)
     report['PciDisplay'] = pci_devices(PCI_DISPLAY)
     
-    # Detect proprietary drivers
-    if 'fglrx' in report['ProcModules']:
-        report['fglrx'] = recent_syslog(re.compile('fglrx'))
-    else:
-        report['fglrx'] = 'Not loaded'
+    # Gather any dkms make.log files for proprietary drivers
+    for logfile in glob.glob("/var/lib/dkms/*/*/build/make.log"):
+        attach_file(report, logfile, "make.log")
+
+    # dkms status
+    report['DkmsStatus'] = command_output(['dkms', 'status'])
 
     # For resolution/multi-head bugs
     report['Xrandr'] = command_output(['xrandr', '--verbose'])
