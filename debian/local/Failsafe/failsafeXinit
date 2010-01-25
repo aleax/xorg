@@ -37,6 +37,12 @@ app_title="$(gettext 'Ubuntu Failsafe-X')"
 
 timestamp=$(date +%y%m%d%H%M%S)
 
+. gettext.sh
+TEXTDOMAIN=failsafexinit
+export TEXTDOMAIN
+TEXTDOMAINDIR=/usr/share/locale-langpack
+export TEXTDOMAINDIR
+
 display_main_menu() {
     zenity --list \
         --radiolist \
@@ -94,7 +100,7 @@ display_filebug_menu() {
             zenity --error --text "$(gettext 'Your bug could not be recorded successfully.\n')"
         fi
     else
-        zenity --error --text "$(gettext 'Cannot file bug:  $apport_hook is not present.')"
+        zenity --error --text "$(eval_gettext 'Cannot file bug:  \$apport_hook is not present.')"
     fi
 }
 
@@ -167,7 +173,7 @@ save_config_logs() {
     tar -cf ${xorg_backup_file} ${xorg_backup_dir}
     rm -rf ${xorg_backup_dir}
 
-    zenity --info --text "$(gettext 'Relevant configuration and log files have been saved to:\n')"$xorg_backup_file"\n$(gettext 'Bug reports can be submitted at http://www.launchpad.net/ubuntu/.\n')"
+    zenity --info --text "$(eval_gettext 'Relevant configuration and log files have been saved to:\n')"\$xorg_backup_file"\n$(gettext 'Bug reports can be submitted at http://www.launchpad.net/ubuntu/.\n')"
 }
 
 # Scan Xorg.0.log for errors

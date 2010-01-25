@@ -35,6 +35,7 @@ clean: cleanscripts
 	dh_testdir
 	dh_clean debian/local/X debian/po/pothead
 	-rm -rf stampdir
+	-rm -f debian/po-failsafe/failsafexinit.pot
 	-debconf-updatepo
 
 
@@ -56,6 +57,7 @@ build-stamp: scripts-stamp
 	dh_testdir
 	# build Debian's X server wrapper
 	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
+	xgettext -f debian/po-failsafe/POTFILES.in -d failsafexinit -o debian/po-failsafe/failsafexinit.pot -L Shell
 	touch $@
 
 build-arch-only: build
