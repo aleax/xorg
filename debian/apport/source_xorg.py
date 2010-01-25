@@ -56,9 +56,9 @@ def add_info(report):
         report['UnreportableReason'] = _('VMware is installed.  If you upgraded recently be sure to upgrade vmware to a compatible version.')
         return
 
-    attach_file(report, '/etc/X11/xorg.conf', 'XorgConf')
+    attach_file_if_exists(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
-    attach_file(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
+    attach_file_if_exists(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
     attach_file_if_exists(report, '/var/log/gdm/:0.log', 'GdmLog')
     attach_file_if_exists(report, '/var/log/gdm/:0.log.1', 'GdmLogOld')
 
