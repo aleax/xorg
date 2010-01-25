@@ -75,22 +75,25 @@ def add_info(report):
     # dkms status
     report['DkmsStatus'] = command_output(['dkms', 'status'])
 
-    # For resolution/multi-head bugs
-    report['Xrandr'] = command_output(['xrandr', '--verbose'])
-    attach_file_if_exists(report,
-                          os.path.expanduser('~/.config/monitors.xml'),
-                          'monitors.xml')
+    # Only collect the following data if X11 is available
+    if os.environ.get('DISPLAY'):
+        # For resolution/multi-head bugs
+        report['Xrandr'] = command_output(['xrandr', '--verbose'])
+        attach_file_if_exists(report,
+                              os.path.expanduser('~/.config/monitors.xml'),
+                              'monitors.xml')
 
+        # For font dpi bugs
+        if os.environ.get('DISPLAY'):
+            report['xdpyinfo'] = command_output(['xdpyinfo'])
 
-    # For font dpi bugs
-    report['xdpyinfo'] = command_output(['xdpyinfo'])
+        # For 3D/Compiz/Mesa bugs
+        if os.environ.get('DISPLAY'):
+            report['glxinfo'] = command_output(['glxinfo'])
 
-    # For 3D/Compiz/Mesa bugs
-    report['glxinfo'] = command_output(['glxinfo'])
-
-    # For keyboard bugs
-    report['setxkbmap'] = command_output(['setxkbmap', '-print'])
-    report['xkbcomp'] = command_output(['xkbcomp', ':0', '-w0', '-'])
+        # For keyboard bugs
+        report['setxkbmap'] = command_output(['setxkbmap', '-print'])
+        report['xkbcomp'] = command_output(['xkbcomp', ':0', '-w0', '-'])
 
 ## DEBUGING ##
 if __name__ == '__main__':
