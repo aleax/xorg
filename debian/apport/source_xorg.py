@@ -68,12 +68,13 @@ def add_info(report):
     attach_hardware(report)
     report['PciDisplay'] = pci_devices(PCI_DISPLAY)
     
-    # Gather any dkms make.log files for proprietary drivers
-    for logfile in glob.glob("/var/lib/dkms/*/*/build/make.log"):
-        attach_file(report, logfile, "make.log")
+    if [ os.path.lexists('/var/lib/dkms') ]:
+        # Gather any dkms make.log files for proprietary drivers
+        for logfile in glob.glob("/var/lib/dkms/*/*/build/make.log"):
+            attach_file(report, logfile, "make.log")
 
-    # dkms status
-    report['DkmsStatus'] = command_output(['dkms', 'status'])
+        # dkms status
+        report['DkmsStatus'] = command_output(['dkms', 'status'])
 
     # Only collect the following data if X11 is available
     if os.environ.get('DISPLAY'):
