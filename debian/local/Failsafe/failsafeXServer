@@ -76,7 +76,9 @@ pciids_in_order() {
 
 get_driver() {
     machine=$(uname -m)
-    if [ $machine = "ppc" ]; then
+    if grep -q -E '(nouveau|drm)fb' /proc/fb; then
+        echo "fbdev"
+    elif [ $machine = "ppc" ]; then
         echo "fbdev"
     elif [ $machine = "powerpc" ]; then
         echo "fbdev"
