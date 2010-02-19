@@ -1,3 +1,18 @@
+xorg (1:7.5+1ubuntu3) lucid; urgency=low
+
+  * Improve startup speed of Xsession.d scripts by eliminating all unnecessary
+    external program calls:
+    - In 20x11-common_process-args, cat $OPTIONFILE once into a variable and
+      use POSIX variable substitution in all scripts instead of calling grep
+      for every single test.
+    - Use shell built in "type" instead of external "which" to test for
+      programs.
+    - 30x11-common_xresources: Swap the order of tests to keep the most
+      unlikely (like "~/.Xresources exists") outside, to avoid running the
+      other tests (like "xrdb exists") on systems which don't use Xresources.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Thu, 18 Feb 2010 23:02:22 +0100
+
 xorg (1:7.5+1ubuntu2) lucid; urgency=low
 
   [ David Planella ]

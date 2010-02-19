@@ -7,7 +7,7 @@
 # executable, fall back to looking for a user's custom X session script, if
 # allowed by the options file.
 if [ -z "$STARTUP" ]; then
-  if grep -qs ^allow-user-xsession "$OPTIONFILE"; then
+  if [ "${OPTIONS#*allow-user-session}" != "$OPTIONS" ]; then
     for STARTUPFILE in "$USERXSESSION" "$ALTUSERXSESSION"; do
       if [ -e "$STARTUPFILE" ]; then
         if [ -x "$STARTUPFILE" ]; then
@@ -36,7 +36,7 @@ fi
 # If we still have not found a startup program, give up.
 if [ -z "$STARTUP" ]; then
   ERRMSG="unable to start X session ---"
-  if grep -qs ^allow-user-xsession "$OPTIONFILE"; then
+  if [ "${OPTIONS#*allow-user-session}" != "$OPTIONS" ]; then
     ERRMSG="$ERRMSG no \"$USERXSESSION\" file, no \"$ALTUSERXSESSION\" file,"
   fi
   errormsg "$ERRMSG no session managers, no window managers, and no terminal" \
