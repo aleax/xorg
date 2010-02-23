@@ -109,12 +109,11 @@ fi
 #      If a matching entry is found, then use VGA 640x480/16 mode
 driver=$(get_driver)
 
-# If no failsafe xorg.conf exists, generate a stock one
-if [ ! -e $xorg_conf_failsafe ]; then
-    cat > $xorg_conf_failsafe <<EOF
+# Generate a fresh xorg.conf.failsafe using identified driver
+cat > $xorg_conf_failsafe <<EOF
 Section "Device"
 	Identifier	"Configured Video Device"
-	Driver		"vesa"
+	Driver		"$driver"
 EndSection
 
 Section "Monitor"
@@ -127,15 +126,12 @@ Section "Screen"
 	Device		"Configured Video Device"
 EndSection
 EOF
-fi
 
 md5xorg=$(md5sum $xorg_conf)
 date +"%s $md5xorg" >> $failsafe_log
 if [ $? -ne 0 ]; then
     warn "Cannot write to $failsafe_log"
 fi
-
-# TODO:  Start up the failsafe X session using their regular user account
 
 if pidof /usr/sbin/gdm ; then
     clientargs="${clientargs} with-gdm"
