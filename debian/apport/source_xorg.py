@@ -59,6 +59,14 @@ def add_info(report):
         report['UnreportableReason'] = _('VMware is installed.  If you upgraded recently be sure to upgrade vmware to a compatible version.')
         return
 
+    matches = command_output(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'])
+    if (matches):
+        report['SourcePackage'] = "fglrx-installer"
+
+    matches = command_output(['grep', 'nvidia', '/var/log/kern.log', '/proc/modules'])
+    if (matches):
+        report['SourcePackage'] = "nvidia-graphics-drivers"
+
     attach_file_if_exists(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file_if_exists(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
