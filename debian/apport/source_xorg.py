@@ -67,8 +67,6 @@ def add_info(report):
     attach_file_if_exists(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file_if_exists(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
-    attach_file_if_exists(report, '/var/log/gdm/:0.log', 'GdmLog')
-    attach_file_if_exists(report, '/var/log/gdm/:0.log.1', 'GdmLogOld')
 
     # Capture hardware
     attach_hardware(report)
@@ -101,6 +99,12 @@ def add_info(report):
         # For keyboard bugs
         report['setxkbmap'] = command_output(['setxkbmap', '-print'])
         report['xkbcomp'] = command_output(['xkbcomp', ':0', '-w0', '-'])
+
+    response = ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?")
+    if response == True:
+        attach_file_if_exists(report, '/var/log/gdm/:0.log', 'GdmLog')
+        attach_file_if_exists(report, '/var/log/gdm/:0.log.1', 'GdmLog1')
+        attach_file_if_exists(report, '/var/log/gdm/:0.log.2', 'GdmLog2')
 
     report.setdefault('Tags', '')
     report['Tags'] += ' ' + ' '.join(tags)
