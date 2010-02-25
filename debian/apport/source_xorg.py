@@ -89,12 +89,10 @@ def add_info(report):
                               'monitors.xml')
 
         # For font dpi bugs
-        if os.environ.get('DISPLAY'):
-            report['xdpyinfo'] = command_output(['xdpyinfo'])
+        report['xdpyinfo'] = command_output(['xdpyinfo'])
 
         # For 3D/Compiz/Mesa bugs
-        if os.environ.get('DISPLAY'):
-            report['glxinfo'] = command_output(['glxinfo'])
+        report['glxinfo'] = command_output(['glxinfo'])
 
         # For keyboard bugs
         report['setxkbmap'] = command_output(['setxkbmap', '-print'])
