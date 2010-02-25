@@ -28,8 +28,14 @@ def installed_version(pkg):
     return output.split('\n')[1].replace("Installed: ", "")
 
 def add_info(report):
+    tags = []
+
     # Build System Environment
+    codename = command_output(['lsb_release','-c']).split(": ")[1]
+    tags.append(codename)
+
     report['system']  = "distro:             Ubuntu\n"
+    report['system'] += "codename:           " + codename
     report['system'] += "architecture:       " + command_output(['uname','-m'])
     report['system'] += "kernel:             " + command_output(['uname','-r'])
 
@@ -95,6 +101,9 @@ def add_info(report):
         # For keyboard bugs
         report['setxkbmap'] = command_output(['setxkbmap', '-print'])
         report['xkbcomp'] = command_output(['xkbcomp', ':0', '-w0', '-'])
+
+    report.setdefault('Tags', '')
+    report['Tags'] += ' ' + ' '.join(tags)
 
 ## DEBUGING ##
 if __name__ == '__main__':
