@@ -12,11 +12,6 @@ option) any later version.  See http://www.gnu.org/copyleft/gpl.html for
 the full text of the license.
 '''
 
-# TODO:
-#  - Create some general purpose routines (see source_network-manager.py)
-#  - Parse files to generate system_environment more concisely
-#  - Trim lshal output to just required info
-
 import os.path
 import glob
 import subprocess
@@ -56,7 +51,7 @@ def add_info(report):
 
     bios = report.get('dmi.bios.version', '')
     if bios.startswith('VirtualBox '):
-        report['UnreportableReason'] = _('VirtualBox has installed a video driver which is incompatible with your version of X.org.')
+        report['SourcePackage'] = "virtualbox-ose"
         return
 
     product_name = report.get('dmi.product.name', '')
