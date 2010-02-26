@@ -54,6 +54,7 @@ display_main_menu() {
           FALSE  RECONFIGURE "$(gettext 'Reconfigure graphics')" \
           FALSE  TROUBLESHOOT "$(gettext 'Troubleshoot the error')" \
           FALSE  EXIT_TO_CONSOLE "$(gettext 'Exit to console login')" \
+          FALSE  RESTART_X "$(gettext 'Restart X')" \
         --hide-column 2
 
 # TODO:          3 FILE_BUG "Report a bug about this failure" \
@@ -194,6 +195,7 @@ while : ; do
         RECONFIGURE )     choice=$(display_reconfigure_menu) ;;
         TROUBLESHOOT )    choice=$(display_troubleshooting_menu) ;;
         FILE_BUG )        choice=$(display_filebug_menu) ;;
+        RESTART_X )       with_gdm="restart"; break ;;
 
         ## Reconfigure Menu ##
         DEFAULT_CONFIG )  choice="RECONFIGURE"; default_config ;;
@@ -217,6 +219,8 @@ if [ "x$with_gdm" = "xwith-gdm" ]; then
     XORGCONFIG="/etc/X11/xorg.conf"
 elif [ "x$with_gdm" = "xlow-res" ]; then
     XORGCONFIG=${xorg_conf}
+elif [ "x$with_gdm" = "xrestart" ]; then
+    XORGCONFIG=""
 else
     chvt 2
     exit
