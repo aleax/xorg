@@ -103,9 +103,9 @@ def add_info(report, ui):
 
     response = ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?")
     if response == True:
-        attach_file_if_exists(report, '/var/log/gdm/:0.log', 'GdmLog')
-        attach_file_if_exists(report, '/var/log/gdm/:0.log.1', 'GdmLog1')
-        attach_file_if_exists(report, '/var/log/gdm/:0.log.2', 'GdmLog2')
+        report['GdmLog'] = root_command_output(['cat', '/var/log/gdm/:0.log'])
+        report['GdmLog1'] = root_command_output(['cat', '/var/log/gdm/:0.log.1'])
+        report['GdmLog2'] = root_command_output(['cat', '/var/log/gdm/:0.log.2'])
 
     report.setdefault('Tags', '')
     report['Tags'] += ' ' + ' '.join(tags)
