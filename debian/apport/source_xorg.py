@@ -22,11 +22,11 @@ def installed_version(pkg):
     output = script.communicate()[0]
     return output.split('\n')[1].replace("Installed: ", "")
 
-def add_info(report):
+def add_info(report, ui):
     tags = []
 
     # Build System Environment
-    codename = command_output(['lsb_release','-c']).split(": ")[1]
+    codename = command_output(['lsb_release','-sc'])
     tags.append(codename)
 
     report['system']  = "distro:             Ubuntu\n"
@@ -39,7 +39,7 @@ def add_info(report):
             "libgl1-mesa-glx",
             "libdrm2",
             "xserver-xorg-video-intel",
-            "xserver-xorg-video-ati"
+            "xserver-xorg-video-ati",
             "xserver-xorg-video-nouveau"
             ])
 
