@@ -13,7 +13,7 @@ if [ -d "$SYSRESOURCES" ] && type xrdb >/dev/null 2>&1; then
   fi
 fi
 
-if [ "${OPTIONS#*allow-user-resources}" != "$OPTIONS" ] && [ -f "$USRRESOURCES" ]; then
+if has_option allow-user-resources && [ -f "$USRRESOURCES" ]; then
   if type xrdb >/dev/null 2>&1; then
     xrdb -merge $USRRESOURCES
   else

@@ -6,7 +6,7 @@ STARTSSH=
 SSHAGENT=/usr/bin/ssh-agent
 SSHAGENTARGS=
 
-if [ "${OPTIONS#*use-ssh-agent}" != "$OPTIONS" ]; then
+if has_option use-ssh-agent; then
   if [ -x "$SSHAGENT" ] && [ -z "$SSH_AUTH_SOCK" ] \
      && [ -z "$SSH2_AUTH_SOCK" ]; then
     STARTSSH=yes

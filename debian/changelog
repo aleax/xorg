@@ -1,3 +1,14 @@
+xorg (1:7.5+1ubuntu11) lucid; urgency=low
+
+  * Reapply changes from 1:7.5+1ubuntu6, which got clobbered by a later
+    upload:
+    - Introduce an Xsession.d function has_option() to simplify option
+      checking. (LP: #530675)
+    - Fix $OPTIONFILE parsing to only match keywords on the beginning of
+      lines.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 02 Mar 2010 15:42:08 +0100
+
 xorg (1:7.5+1ubuntu10) lucid; urgency=low
 
   * debian/apport/source_xorg.py
