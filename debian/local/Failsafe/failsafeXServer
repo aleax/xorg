@@ -24,6 +24,16 @@
 # not, write to the Free Software Foundation, Inc., 59 Temple Place,
 # Suite 330, Boston, MA 02111-1307 USA
 
+# Upstart jobs don't have a particular environment, we need to source the
+# variables needed for localization ourselves
+if [ -r /etc/default/locale ]; then
+    . /etc/default/locale
+    export LANG LANGUAGE
+elif [ -r /etc/environment ]; then
+    . /etc/environment
+    export LANG LANGUAGE
+fi
+
 xorg_conf_failsafe=${BPX_XORG_CONF_FAILSAFE:-"/etc/X11/xorg.conf.failsafe"}
 xorg_conf=${BPX_XORG_CONF:-"/etc/X11/xorg.conf"}
 fallback_driver=${BPX_FALLBACK_DRIVER:-"vesa"}

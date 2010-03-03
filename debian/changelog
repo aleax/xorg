@@ -1,3 +1,13 @@
+xorg (1:7.5+1ubuntu12) lucid; urgency=low
+
+  * debian/local/Failsafe:
+    + udev rules don't have a particular environment set, so we must
+      set it up ourselves in order to get $LANG and $LANGUAGE so that
+      translations work properly.
+      (LP: #528908)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 03 Mar 2010 15:29:44 -0800
+
 xorg (1:7.5+1ubuntu11) lucid; urgency=low
 
   * Reapply changes from 1:7.5+1ubuntu6, which got clobbered by a later
