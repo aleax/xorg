@@ -83,6 +83,8 @@ binary-indep: build install
 	dh_link
 	dh_compress
 	dh_fixperms
+	chown root:root debian/x11-common/etc/X11/Xreset
+	chmod 755 debian/x11-common/etc/X11/Xreset
 	chown root:root debian/x11-common/etc/X11/Xsession
 	chmod 755 debian/x11-common/etc/X11/Xsession
 	dh_installdeb
