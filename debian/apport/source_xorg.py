@@ -22,6 +22,20 @@ def installed_version(pkg):
     output = script.communicate()[0]
     return output.split('\n')[1].replace("Installed: ", "")
 
+def nonfree_graphics_module(module_list = '/proc/modules'):
+    '''
+    Check loaded modules to see if a proprietary graphics driver is loaded.
+    Return the first such driver found.
+    '''
+    try:
+        mods = [l.split()[0] for l in open(module_list)]
+    except IOError:
+        return None
+
+    for m in mods:
+        if m == "nvidia" or m == "fglrx":
+            return m
+
 def add_info(report, ui):
     tags = []
 
@@ -30,9 +44,9 @@ def add_info(report, ui):
     tags.append(codename)
 
     report['system']  = "distro:             Ubuntu\n"
-    report['system'] += "codename:           " + codename
-    report['system'] += "architecture:       " + command_output(['uname','-m'])
-    report['system'] += "kernel:             " + command_output(['uname','-r'])
+    report['system'] += "codename:           " + codename + "\n"
+    report['system'] += "architecture:       " + command_output(['uname','-m']) + "\n"
+    report['system'] += "kernel:             " + command_output(['uname','-r']) + "\n"
 
     attach_related_packages(report, [
             "xserver-xorg",
@@ -60,12 +74,11 @@ def add_info(report, ui):
         return
 
     if report['ProblemType'] == 'Crash' and 'Traceback' not in report:
-        matches = command_output(['grep', 'fglrx', '/var/log/kern.log', '/proc/modules'])
-        if (matches):
+        nonfree_driver = nonfree_graphics_module()
+        if (nonfree_driver == "fglrx"):
             report['SourcePackage'] = "fglrx-installer"
 
-        matches = command_output(['grep', 'nvidia', '/var/log/kern.log', '/proc/modules'])
-        if (matches):
+        elif (nonfree_driver == "nvidia"):
             report['SourcePackage'] = "nvidia-graphics-drivers"
 
     attach_file_if_exists(report, '/etc/X11/xorg.conf', 'XorgConf')
