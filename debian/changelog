@@ -1,6 +1,16 @@
 xorg (1:7.5+4) UNRELEASED; urgency=low
 
   * Add Xreset and Xreset.d support, closes: #230422.
+  * Improve startup speed of Xsession.d scripts by eliminating all unnecessary
+    external program calls, thanks Martin Pitt, closes: #570447.
+    - In 20x11-common_process-args, cat $OPTIONFILE once into a variable and
+      use POSIX variable substitution in all scripts instead of calling grep
+      for every single test.
+    - Use shell built in "type" instead of external "which" to test for
+      programs.
+    - 30x11-common_xresources: Swap the order of tests to keep the most
+      unlikely (like "~/.Xresources exists") outside, to avoid running the
+      other tests (like "xrdb exists") on systems which don't use Xresources.
 
  -- Brice Goglin <bgoglin@debian.org>  Sat, 06 Mar 2010 16:15:01 +0100
 

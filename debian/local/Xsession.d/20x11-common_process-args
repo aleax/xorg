@@ -2,6 +2,18 @@
 
 # This file is sourced by Xsession(5), not executed.
 
+# read OPTIONFILE
+OPTIONS=$(cat "$OPTIONFILE") || true
+
+has_option() {
+  if [ "${OPTIONS#*
+$1}" != "$OPTIONS" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 # Determine how many arguments were provided.
 case $# in
   0)
@@ -12,7 +24,7 @@ case $# in
     case "$1" in
       failsafe)
         # Failsafe session was requested.
-        if grep -qs ^allow-failsafe "$OPTIONFILE"; then
+        if has_option allow-failsafe; then
           if [ -e /usr/bin/x-terminal-emulator ]; then
             if [ -x /usr/bin/x-terminal-emulator ]; then
               exec x-terminal-emulator -geometry +1+1
