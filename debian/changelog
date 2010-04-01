@@ -1,3 +1,26 @@
+xorg (1:7.5+5) unstable; urgency=low
+
+  * Fix typo in Xsession.d/50x11-common_determine-startup, closes: #573899.
+  * Bump Standards-Version to 3.8.4, no changes needed.
+
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 14 Mar 2010 22:45:09 +0100
+
+xorg (1:7.5+4) unstable; urgency=low
+
+  * Add Xreset and Xreset.d support, closes: #230422.
+  * Improve startup speed of Xsession.d scripts by eliminating all unnecessary
+    external program calls, thanks Martin Pitt, closes: #570447.
+    - In 20x11-common_process-args, cat $OPTIONFILE once into a variable and
+      use POSIX variable substitution in all scripts instead of calling grep
+      for every single test.
+    - Use shell built in "type" instead of external "which" to test for
+      programs.
+    - 30x11-common_xresources: Swap the order of tests to keep the most
+      unlikely (like "~/.Xresources exists") outside, to avoid running the
+      other tests (like "xrdb exists") on systems which don't use Xresources.
+
+ -- Brice Goglin <bgoglin@debian.org>  Sun, 14 Mar 2010 11:15:07 +0100
+
 xorg (1:7.5+3ubuntu1) lucid; urgency=low
 
   [Timo Aaltonen]
