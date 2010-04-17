@@ -1,3 +1,10 @@
+xorg (1:7.5+6) UNRELEASED; urgency=low
+
+  * Drop radeonhd from xserver-xorg-video-all.  We switched to kernel
+    modesetting for radeon, and that clashes with this driver.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 17 Apr 2010 17:27:16 +0200
+
 xorg (1:7.5+5) unstable; urgency=low
 
   * Fix typo in Xsession.d/50x11-common_determine-startup, closes: #573899.
