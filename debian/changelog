@@ -1,3 +1,16 @@
+xorg (1:7.5+6) unstable; urgency=medium
+
+  * Drop radeonhd from xserver-xorg-video-all.  We switched to kernel
+    modesetting for radeon, and that clashes with this driver.
+  * Drop v4l from xserver-xorg-video-all.  It depends on the obsolete V4L1
+    API, see #569103.
+  * Add nouveau to xserver-xorg-video-all on linux x86 and powerpc.  Other
+    arches can be added later if needed.
+  * x11-common.init: don't include /usr/{s,}bin in PATH, since we only depend
+    on $local_fs [lintian].
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 07 May 2010 13:34:32 +0200
+
 xorg (1:7.5+5ubuntu1) lucid; urgency=low
 
   * Merge from Debian unstable.
