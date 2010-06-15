@@ -73,6 +73,28 @@ def add_info(report, ui):
         report['UnreportableReason'] = _('VMware is installed.  If you upgraded recently be sure to upgrade vmware to a compatible version.')
         return
 
+    if os.path.exists('/var/log/nvidia-installer.log'):
+        # User has installed nVidia drivers manually at some point.
+        # This is likely to have caused problems.
+        if not ui.yesno("""It appears you may have installed the nVidia drivers manually from nvidia.com.  This can cause problems with the Ubuntu-supplied drivers.
+
+If you have not already uninstalled the drivers downloaded from nvidia.com, please uninstall them and reinstall the Ubuntu packages before filing a bug with Ubuntu.
+
+Have you uninstalled the drivers from nvidia.com?"""):
+            report['UnreportableReason'] = 'The drivers from nvidia.com are not supported by Ubuntu.  Please uninstall them and test whether your problem still occurs.'
+            return
+        attach_file(report, '/var/log/nvidia-installer.log', 'nvidia-installer.log')
+        tags.append('possible-manual-nvidia-install')
+
+    if nonfree_graphics_module() == 'nvidia':        
+        # Attach information for upstreaming nvidia binary bugs
+        for logfile in glob.glob('/proc/driver/nvidia/*'):
+            if os.path.isfile(logfile):
+                attach_file(report, logfile)
+        for logfile in glob.glob('/proc/driver/nvidia/*/*'):
+            if os.path.basename(logfile) != 'README':
+                attach_file(report, logfile)
+
     if report['ProblemType'] == 'Crash' and 'Traceback' not in report:
         nonfree_driver = nonfree_graphics_module()
         if (nonfree_driver == "fglrx"):
