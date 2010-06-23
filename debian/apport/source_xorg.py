@@ -116,6 +116,9 @@ Have you uninstalled the drivers from nvidia.com?"""):
     # Capture hardware
     attach_hardware(report)
     report['PciDisplay'] = pci_devices(PCI_DISPLAY)
+
+    # Capture KMS info if available
+    attach_drm_info(report)
     
     if [ os.path.lexists('/var/lib/dkms') ]:
         # Gather any dkms make.log files for proprietary drivers
