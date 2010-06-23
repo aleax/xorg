@@ -94,6 +94,12 @@ Have you uninstalled the drivers from nvidia.com?"""):
         for logfile in glob.glob('/proc/driver/nvidia/*/*'):
             if os.path.basename(logfile) != 'README':
                 attach_file(report, logfile)
+        if os.environ.get('DISPLAY'):
+            # Attach output of nvidia-settings --query if we've got a display
+            # to connect to.
+            report['nvidia-settings'] = command_output(['nvidia-settings', 
+                                                        '-q'])
+                                                       
 
     if report['ProblemType'] == 'Crash' and 'Traceback' not in report:
         nonfree_driver = nonfree_graphics_module()
