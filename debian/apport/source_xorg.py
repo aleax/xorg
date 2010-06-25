@@ -98,7 +98,7 @@ Have you uninstalled the drivers from nvidia.com?"""):
             # Attach output of nvidia-settings --query if we've got a display
             # to connect to.
             report['nvidia-settings'] = command_output(['nvidia-settings', 
-                                                        '-q'])
+                                                        '-q', 'all'])
                                                        
 
     if report['ProblemType'] == 'Crash' and 'Traceback' not in report:
