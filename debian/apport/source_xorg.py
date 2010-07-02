@@ -141,6 +141,9 @@ Have you uninstalled the drivers from nvidia.com?"""):
 
         # For 3D/Compiz/Mesa bugs
         report['glxinfo'] = command_output(['glxinfo'])
+        attach_file_if_exists(report,
+                              os.path.expanduser('~/.drirc'),
+                              'drirc')
 
         # For keyboard bugs
         report['setxkbmap'] = command_output(['setxkbmap', '-print'])
