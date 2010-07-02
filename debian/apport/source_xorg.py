@@ -149,6 +149,9 @@ Have you uninstalled the drivers from nvidia.com?"""):
         report['setxkbmap'] = command_output(['setxkbmap', '-print'])
         report['xkbcomp'] = command_output(['xkbcomp', ':0', '-w0', '-'])
 
+        # For input device bugs
+        report['peripherals'] = command_output(['gconftool-2', '-R', '/desktop/gnome/peripherals'])
+
     response = ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?")
     if response == True:
         report['GdmLog'] = root_command_output(['cat', '/var/log/gdm/:0.log'])
