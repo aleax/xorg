@@ -120,7 +120,7 @@ Have you uninstalled the drivers from nvidia.com?"""):
     # Capture KMS info if available
     attach_drm_info(report)
     
-    if [ os.path.lexists('/var/lib/dkms') ]:
+    if os.path.lexists('/var/lib/dkms'):
         # Gather any dkms make.log files for proprietary drivers
         for logfile in glob.glob("/var/lib/dkms/*/*/build/make.log"):
             attach_file(report, logfile, "make.log")
