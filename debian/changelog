@@ -4,8 +4,11 @@ xorg (1:7.5+6ubuntu3) UNRELEASED; urgency=low
     + Include .drirc if present
     + Include gconf's /desktop/gnome/peripherals data
     + Quell DkmsStatus no such file error message
+  * debian/x11-common.links:
+    + Add source package apport hook for xorg-server.  Otherwise,
+      apport-collect fails when used on bugs against xorg-server package.
 
- -- Bryce Harrington <bryce@ubuntu.com>  Thu, 01 Jul 2010 19:22:58 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 13 Jul 2010 06:16:10 -0700
 
 xorg (1:7.5+6ubuntu2) maverick; urgency=low
 
