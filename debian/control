@@ -25,8 +25,8 @@ Package: xserver-xorg
 Architecture: any
 Depends:
  xserver-xorg-core (>= 2:1.9.0.901),
- xserver-xorg-video-all | xserver-xorg-video-8,
- xserver-xorg-input-all | xserver-xorg-input-11,
+ xserver-xorg-video-all | xorg-driver-video,
+ xserver-xorg-input-all | xorg-driver-input,
  xserver-xorg-input-evdev [linux-any],
  hal (>= 0.5.12~git20090406) [kfreebsd-any],
  ${shlibs:Depends},
