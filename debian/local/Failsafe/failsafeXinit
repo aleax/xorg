@@ -174,7 +174,7 @@ save_config_logs() {
     tar -cf ${xorg_backup_file} ${xorg_backup_dir}
     rm -rf ${xorg_backup_dir}
 
-    zenity --info --text "$(eval_gettext 'Relevant configuration and log files have been saved to:\n')"\$xorg_backup_file"\n$(gettext 'Bug reports can be submitted at http://www.launchpad.net/ubuntu/.\n')"
+    zenity --info --text "$(eval_gettext 'Relevant configuration and log files have been saved to:\n')"$xorg_backup_file"\n$(gettext 'Bug reports can be submitted at http://www.launchpad.net/ubuntu/.\n')"
 }
 
 # Scan Xorg.0.log for errors
