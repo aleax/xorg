@@ -2,6 +2,9 @@ xorg (1:7.6~2) UNRELEASED; urgency=low
 
   * Drop xserver-xorg-video-nv, it's no longer supported.
   * Add variables to handle Recommends.
+  * Downgrade xserver-xorg-video-nouveau from Depends to Recommends. The
+    frequent ABI changes make it difficult to manage, but that shouldn't
+    stop people from using the xserver-xorg-video-all metapackage.
 
  -- Cyril Brulebois <kibi@debian.org>  Tue, 09 Nov 2010 15:12:14 +0100
 
