@@ -120,7 +120,9 @@ endif
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol -- -VF:XServer-Xorg-Video-Depends=$(XSERVER_XORG_VIDEO_DEPENDS) \
-	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS)
+	                 -VF:XServer-Xorg-Input-Depends=$(XSERVER_XORG_INPUT_DEPENDS) \
+	                 -VF:XServer-Xorg-Video-Recommends=$(XSERVER_XORG_VIDEO_RECOMMENDS) \
+	                 -VF:XServer-Xorg-Input-Recommends=$(XSERVER_XORG_INPUT_RECOMMENDS)
 	dh_md5sums
 	dh_builddeb
 	touch $@-stamp

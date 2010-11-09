@@ -44,6 +44,8 @@ Architecture: any
 Depends:
  ${F:XServer-Xorg-Video-Depends},
  ${misc:Depends},
+Recommends:
+ ${F:XServer-Xorg-Video-Recommends},
 Replaces: xserver-xorg-driver-all
 Conflicts: xserver-xorg-driver-all
 Description: the X.Org X server -- output driver metapackage
@@ -56,6 +58,8 @@ Architecture: any
 Depends:
  ${F:XServer-Xorg-Input-Depends},
  ${misc:Depends},
+Recommends:
+ ${F:XServer-Xorg-Input-Recommends},
 Description: the X.Org X server -- input driver metapackage
  This package depends on the full suite of input drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
