@@ -9,8 +9,11 @@ pdf_files = $(patsubst %.mdwn,%.pdf,$(mdwn_pages))
 MDWN_TO_HTML = ./mdwn2html
 HTML_TO_PDF  = wkhtmltopdf
 
-all: $(html_pages) $(pdf_files)
-	@echo "All done."
+all: html pdf
+
+html: $(html_pages)
+
+pdf: $(pdf_files)
 
 %.html: %.mdwn $(MDWN_TO_HTML)
 	$(MDWN_TO_HTML) $< $@
@@ -23,4 +26,4 @@ clean:
 	rm -f $(html_pages) $(pdf_files)
 
 
-.PHONY: clean
+.PHONY: clean html pdf all
