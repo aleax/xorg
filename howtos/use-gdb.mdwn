@@ -24,6 +24,13 @@ in case. The ampersand (`&`) at the end makes it a background job.
 That’s simpler, but then you need a second machine. Just log into the
 first machine from the second one, using `ssh`.
 
+### Needed packages
+
+Obviously, `gdb` is needed; `xserver-xorg-core-dbg` contains the
+debugging symbols for the server itself. Other needed packages can be
+determined by looking at the backtrace. **FIXME: More info about
+that.**
+
 ## Actual gdb work
 
 ### Attaching X from gdb
