@@ -10,18 +10,16 @@ VT. That’s why we’re recommending using a second machine to debug
 X. Nevertheless, here are some instructions to attempt debugging X
 with a single machine.
 
-## One-machine approach
+### One-machine approach
 
-From a console (let‘s assume it’s `vt1`), open a `root` terminal.
-
-Start a loop which will bring you back to this console after a given
-delay, just in case. In this example, every 60 seconds:
+From a console (let‘s assume it’s `vt1`), open a `root`
+terminal. Then, start a loop which will bring you back to this console
+after a given delay (in the following example, every 60 seconds), just
+in case. The ampersand (`&`) at the end makes it a background job.
 
     while :; do sleep 60; chvt 1; done &
 
-The ampersand (`&`) at the end makes it a background job.
-
-## Two-machine approach
+### Two-machine approach
 
 That’s simpler, but then you need a second machine. Just log into the
 first machine from the second one, using `ssh`.
@@ -40,7 +38,8 @@ running, that will do the job:
     (gdb) cont
 
 If there are several instances, one can use `ps aux` to determine the
-PID of the appropriate instance (2nd column), and then attach `$pid`:
+PID of the appropriate instance (2nd column → `$pid`), and then attach
+it:
 
     # gdb attach $pid
     [---GDB starts---]
@@ -49,13 +48,18 @@ PID of the appropriate instance (2nd column), and then attach `$pid`:
 
 ### Starting X from gdb
 
-In case X crashes at start-up,
-one way of starting X from `gdb` is the following:
+In case X crashes at start-up, one can start X from `gdb` in the
+following way. In this example, the only parameter is the display, but
+more parameters can be added.
 
     # gdb --args Xorg :0
     [---GDB starts---]
     (gdb) handle SIGPIPE nostop
     (gdb) run
 
-In this case, the only parameter is the display, but more parameters
-can be added.
+### What is SIGPIPE?
+
+`SIGPIPE` is a signal that can reach the X server quite easily,
+especially when performing a VT switch, or refreshing large parts of
+the screen. That’s why we ask `gdb` not to stop when such a signal is
+caught.
