@@ -13,12 +13,7 @@ all: $(html_pages) $(pdf_files)
 	@echo "All done."
 
 %.html: %.mdwn $(MDWN_TO_HTML)
-	@echo "Transforming $< into $@"
 	$(MDWN_TO_HTML) $< $@
-#	title="$(shell head -1 $@.tmp|sed 's,</\?h1>,,g')" \
-#		sed "s#@@title@@#$$title#" _head
-#	title=`head -1 $@.tmp|sed 's,</\?h1>,,g'` \
-#		sed "s#@@title@@#$title#" _head
 
 %.pdf: %.html
 	$(HTML_TO_PDF) $< $@
