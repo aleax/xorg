@@ -62,4 +62,31 @@ more parameters can be added.
 `SIGPIPE` is a signal that can reach the X server quite easily,
 especially when performing a VT switch, or refreshing large parts of
 the screen. That’s why we ask `gdb` not to stop when such a signal is
-caught.
+caught, thanks to the `handle SIGPIPE nostop` command.
+
+### How to display a backtrace?
+
+Once X is crashed, for example because it received a `SIGSEGV`
+(segmentation fault, usually because of a NULL pointer dereference),
+or a `SIGBUS`, one gets back to the `gdb` prompt. One can then request
+a backtrace (`bt`) or a full backtrace (`bt full`). The latter is what
+developers are usually interested in, because variable values are also
+available.
+
+    (gdb) bt
+    (gdb) bt full
+
+### How to save a backtrace?
+
+To save a recording of the gdb session to a file (`gdb.txt` by
+default):
+
+    (gdb) set logging on
+
+To save in a different file, use this instead:
+
+    (gdb) set logging file my-file.txt
+    (gdb) set logging on
+
+Once logging is enabled, you can request a (full) backtrace using the
+previous commands.
