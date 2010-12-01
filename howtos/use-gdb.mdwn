@@ -1,0 +1,13 @@
+# How to use gdb
+
+## Foreword
+
+One should note that X is responsible for VT switching, meaning
+switching between an X session and console terminals. In other words,
+`Ctrl+Alt+Fn` is handled by X. If X is stopped, for example because
+it's running under `gdb`, one can no longer switch to another
+VT. That's why we're recommending using a second machine to debug
+X. Nevertheless, here are some instructions to attempt debugging X
+with a single machine.
+
+## One-machine approach
