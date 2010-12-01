@@ -20,7 +20,7 @@ all: $(html_pages) $(pdf_files)
 
 clean:
 	@echo "Removing all generated html files"
-	rm -f $(html_pages)
+	rm -f $(html_pages) $(pdf_files)
 
 
 .PHONY: clean
