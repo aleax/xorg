@@ -1,6 +1,27 @@
-pre {
-  color: red;
-  margin-left: 60px;
+body {
+  background-image: url("xsf.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+h1 {
+  margin-left: 10px;
+  color: darkblue;
+  font-style: italic;
+}
+
+h2 {
+  margin-left: 20px;
+  border-bottom: 2px dashed darkred;
+  page-break-before: always;
+}
+/* No need to put only a h1 on a single page */
+h1 + h2 {
+  page-break-before: avoid;
+}
+
+h3 {
+  margin-left: 30px;
 }
 
 p {
@@ -9,34 +30,11 @@ p {
   text-align: justify;
 }
 
+pre {
+  margin-left: 60px;
+}
+
 code {
   color: darkred;
   font-weight: bold;
-}
-
-h1 {
-  color: darkblue;
-  font-style: italic;
-  margin-left: 10px;
-}
-
-h2 {
-  border-bottom: 2px dashed darkred;
-  margin-left: 20px;
-  page-break-before: always;
-}
-
-h3 {
-  margin-left: 30px;
-}
-
-/* No need to put only a h1 on a single page */
-h1 + h2 {
-  page-break-before: avoid;
-}
-
-body {
-  background-image: url("xsf.svg");
-  background-repeat: no-repeat;
-  background-position: top right;
 }
