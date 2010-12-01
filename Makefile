@@ -4,9 +4,12 @@ mdwn_pages = $(shell find -name '*.mdwn')
 
 html_pages = $(patsubst %.mdwn,%.html,$(mdwn_pages))
 
-MDWN_TO_HTML = ./mdwn2html
+pdf_files = $(patsubst %.mdwn,%.pdf,$(mdwn_pages))
 
-all: $(html_pages)
+MDWN_TO_HTML = ./mdwn2html
+HTML_TO_PDF  = wkhtmltopdf
+
+all: $(html_pages) $(pdf_files)
 	@echo "All done."
 
 %.html: %.mdwn $(MDWN_TO_HTML)
@@ -16,6 +19,9 @@ all: $(html_pages)
 #		sed "s#@@title@@#$$title#" _head
 #	title=`head -1 $@.tmp|sed 's,</\?h1>,,g'` \
 #		sed "s#@@title@@#$title#" _head
+
+%.pdf: %.html
+	$(HTML_TO_PDF) $< $@
 
 clean:
 	@echo "Removing all generated html files"
