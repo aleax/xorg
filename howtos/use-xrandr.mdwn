@@ -1,0 +1,30 @@
+# How to use xrandr
+
+## What is xrandr?
+
+`xrandr` is a command-line tool to interact with the X `RandR`
+extension [see [x.org](http://www.x.org/wiki/Projects/XRandR),
+[wikipedia](http://en.wikipedia.org/wiki/RandR)], which allows for
+live (re)configuration of the X server (*i.e.* without restarting it):
+It provides automatic discovery of modes (resolutions, refresh rates,
+etc.) together with the ability to configure outputs dynamically
+(resize, rotate, move, etc.).
+
+**FIXME: Status across drivers?**
+
+## What about xorg.conf?
+
+Starting with `squeeze`, removing the `xorg.conf` configuration file
+entirely should work well enough, but in case that doesn’t work out,
+let’s document what can be removed from it from a `RandR` point of
+view.
+
+### Mode detection
+
+With the driver detecting modes automatically, several configuration
+options become useless most of the time in your configuration file
+(xorg.conf). You might want to remove:
+
+ * `HorizSync` and `VertRefresh` from the `Monitor` section.
+ * Modes from `Display` subsection in `Screen` section.
+ * `ModeLine` from the `Monitor` section.
