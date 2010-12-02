@@ -140,3 +140,31 @@ should configure your `xorg.conf` by adding a `Virtual` line to the
       EndSubSection
     EndSection
 
+### Place outputs
+
+Outputs are placed using the following options:
+`--right-of`/`--left-of`/`--above`/`--below`. For instance, to place
+the `VGA1` output virtually-right of the internal panel (`LVDS1`):
+
+    $ xrandr --output VGA1 --right-of LVDS1
+
+Note that hardware and memory limitations may severely restrict the
+size of your virtual screen, see the Caveats section below.
+
+## Adding new modes
+
+Under some circumstances, some modes might be missing. For instance,
+if the monitor does not report correct EDID information. Or if the
+output didn't have a CRTC available at startup because another output
+was using it and you disabled it in the meantime.
+
+If a mode exist, you may add it to one output with:
+
+    $ xrandr --addmode VGA1 800x600
+
+If the mode does not exist, you may first create it by passing a modeline:
+
+    $ xrandr --newmode <ModeLine>
+
+You may create a modeline using the `gtf` or `cvt` tools (shipped in
+the `xserver-xorg-core` package).
