@@ -1,6 +1,8 @@
 # How to use xrandr
 
-## What is xrandr?
+## Getting started
+
+### What is xrandr?
 
 `xrandr` is a command-line tool to interact with the X `RandR`
 extension [see [x.org](http://www.x.org/wiki/Projects/XRandR),
@@ -12,14 +14,12 @@ etc.) together with the ability to configure outputs dynamically
 
 **FIXME: Status across drivers?**
 
-## What about xorg.conf?
+### What consequences for xorg.conf?
 
 Starting with `squeeze`, removing the `xorg.conf` configuration file
 entirely should work well enough, but in case that doesn’t work out,
 let’s document what can be removed from it from a `RandR` point of
 view.
-
-### Mode detection
 
 With the driver detecting modes automatically, several configuration
 options become useless most of the time in your configuration file
@@ -29,7 +29,8 @@ options become useless most of the time in your configuration file
  * Modes from `Display` subsection in `Screen` section.
  * `ModeLine` from the `Monitor` section.
 
-### Static dual-head configuration
+There’s also no need to keep static dual-head configuration. Some
+suggestions to get a tiny `xorg.conf`:
 
  * Drop dual `Device`/`Screen`/`Monitor` sections, a single one is
    needed.
@@ -39,10 +40,7 @@ options become useless most of the time in your configuration file
  * Drop `RightOf`/`LeftOf` indication of the remaining `Screen` line
    in `ServerLayout` section.
 
-## Using xrandr
-
-### Basics
-
+## Basic xrandr usage
 
 Once the configuration file (`xorg.conf`) is removed or updated,
 starting the server should enable some outputs by default. Their
@@ -114,7 +112,9 @@ To get back to the default mode:
 
     $ xrandr --output LVDS1 --auto
 
-### Placing outputs in a virtual screen
+## Placing outputs in a virtual screen
+
+### A bit of configuration for non-KMS setups:
 
 Let’s have a look at the maximal virtual screen size, we see
 `4096x4096` in this example:
