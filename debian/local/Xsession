@@ -80,8 +80,7 @@ if [ "`stat -c%s \"$ERRFILE\"`" -gt 500000 ]; then
   tail -c 500000 "$ERRFILE" > "$T" && mv -f "$T" "$ERRFILE" || rm -f "$T"
 fi
 
-# prevent wayward client apps to fill disk with error messages
-exec 2>&1 | head -c 5000000 >> "$ERRFILE"
+exec >>"$ERRFILE" 2>&1
 
 echo "$PROGNAME: X session started for $LOGNAME at $(date)"
 
