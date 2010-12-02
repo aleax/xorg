@@ -63,14 +63,36 @@ outputs, just run `xrandr`:
     DVI1 disconnected (normal left inverted right x axis y axis)
     TV1 disconnected (normal left inverted right x axis y axis)
 
-We see 4 outputs: `VGA1`, `LVDS1`, `DVI1`, `TV1`. Only the internal
-panel (`LVDS1`) is connected and it supports 4 modes at 60 Hz, 1 mode
-at 56 Hz.
+Comments:
 
-The mode marked with a star is the current mode.
-
-The one marked with a plus is the preferred one. Most monitors report
-a preferred mode to the driver. And the server/driver will generally
-choose it by default.
+ * We see 4 outputs: `VGA1`, `LVDS1`, `DVI1`, `TV1`.
+ * Only the internal panel (`LVDS1`) is connected and it supports 4
+   modes at 60 Hz, 1 mode at 56 Hz.
+ * The mode marked with a star (`*`) is the current mode.
+ * The one marked with a plus (`+`) is the preferred one. Most
+   monitors report a preferred mode to the driver. And the
+   server/driver will generally choose it by default.
 
 **FIXME: Mention output name conventions?**
+
+When manipulating `VGA1` output properties, you should use:
+
+    $ xrandr --output VGA1 <options>
+
+### Adding/removing heads dynamically
+
+The old days where you had to restart X when plugging a new monitor
+are gone. With `RandR` 1.2, you can plug/unplug monitors whenever you
+want. Running the following line will query all outputs and enable
+them with their default mode:
+
+    $ xrandr --auto
+
+You may also disable one output using:
+
+    $ xrandr --output LVDS1 --off
+
+This may be useful for some buggy application that don’t support
+multiple outputs well. Also, due to CRTC limitations (see the Caveats
+section below), it is often required to disable one output before
+enabling another since most hardware only support 2 at the same time.
