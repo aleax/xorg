@@ -28,3 +28,49 @@ options become useless most of the time in your configuration file
  * `HorizSync` and `VertRefresh` from the `Monitor` section.
  * Modes from `Display` subsection in `Screen` section.
  * `ModeLine` from the `Monitor` section.
+
+### Static dual-head configuration
+
+ * Drop dual `Device`/`Screen`/`Monitor` sections, a single one is
+   needed.
+ * Drop `MonitorLayout` option and `Screen` lines from the remaining
+   `Device` section.
+ * Drop the `ServerLayout` section(s).
+ * Drop `RightOf`/`LeftOf` indication of the remaining `Screen` line
+   in `ServerLayout` section.
+
+## Using xrandr
+
+### Basics
+
+
+Once the configuration file (`xorg.conf`) is removed or updated,
+starting the server should enable some outputs by default. Their
+top-left corners will be at the same part of the image, but their
+modes will probably be different.
+
+All outputs may be configured through `xrandr`. To see the available
+outputs, just run `xrandr`:
+
+    $ xrandr
+    Screen 0: minimum 320 x 200, current 1280 x 800, maximum 4096 x 4096
+    VGA1 disconnected (normal left inverted right x axis y axis)
+    LVDS1 connected 1280x800+0+0 inverted X and Y axis (normal left inverted right x axis y axis) 261mm x 163mm
+       1280x800       59.8*+
+       1024x768       60.0
+       800x600        60.3     56.2
+       640x480        59.9
+    DVI1 disconnected (normal left inverted right x axis y axis)
+    TV1 disconnected (normal left inverted right x axis y axis)
+
+We see 4 outputs: `VGA1`, `LVDS1`, `DVI1`, `TV1`. Only the internal
+panel (`LVDS1`) is connected and it supports 4 modes at 60 Hz, 1 mode
+at 56 Hz.
+
+The mode marked with a star is the current mode.
+
+The one marked with a plus is the preferred one. Most monitors report
+a preferred mode to the driver. And the server/driver will generally
+choose it by default.
+
+**FIXME: Mention output name conventions?**
