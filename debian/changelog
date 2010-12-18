@@ -1,8 +1,14 @@
-xorg (1:7.5+6ubuntu3) UNRELEASED; urgency=low
+xorg (1:7.5+6ubuntu4) UNRELEASED; urgency=low
 
   * debian/local/Failsafe/failsafeXinit:
     + Fix variable escaping so shows file name for debugging tarball
       (LP: #596819)
+  * debian/apport/source_xorg.py:
+    + Extract VGA pci info
+    + Quell display of errors when glxinfo, gdm logs, etc. aren't present
+    + Check for dist-upgraded systems
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Sat, 18 Dec 2010 01:01:12 -0800
 
 xorg (1:7.5+6ubuntu3) maverick; urgency=low
 
