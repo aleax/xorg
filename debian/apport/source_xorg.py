@@ -58,8 +58,8 @@ def retval(command_list):
         command_list, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 def ubuntu_variant_name():
-    if (retval(['which', 'kdesudo'] == 0) and
-        retval(['pgrep', '-x', '-u', str(os.getuid()), 'ksmserver'] == 0)):
+    if (retval(['which', 'kdesudo']) == 0 and
+        retval(['pgrep', '-x', '-u', str(os.getuid()), 'ksmserver']) == 0):
         return "kubuntu"
     else:
         return "ubuntu"
@@ -86,9 +86,11 @@ def attach_dist_upgrade_status(report):
 def attach_pci_info(report):
     info = ''
     display_pci = pci_devices(PCI_DISPLAY)
-    for paragraph in output.split('\n\n'):
+    for paragraph in display_pci.split('\n\n'):
         for line in paragraph.split('\n'):
-            key, value = line.split(':',1)
+            if ':' not in line:
+                continue
+            key, value = line.split(':', 1)
             value = value.strip()
             key = key.strip()
             if "VGA compatible controller" in key:
@@ -100,10 +102,10 @@ def attach_pci_info(report):
 def check_is_reportable(report):
     '''Checks system to see if there is any reason the configuration is not
     valid for filing bug reports'''
-    
+
     version_signature = report.get('ProcVersionSignature', '')
-    if not version_signature.startswith('Ubuntu '):
-        report['UnreportableReason'] = _('The running kernel is not an Ubuntu kernel')
+    if version_signature and not version_signature.startswith('Ubuntu '):
+        report['UnreportableReason'] = 'The running kernel is not an Ubuntu kernel: %s' %version_signature
         return False
 
     bios = report.get('dmi.bios.version', '')
@@ -113,12 +115,21 @@ def check_is_reportable(report):
 
     product_name = report.get('dmi.product.name', '')
     if product_name.startswith('VMware '):
-        report['UnreportableReason'] = _('VMware is installed.  If you upgraded recently be sure to upgrade vmware to a compatible version.')
+        report['UnreportableReason'] = 'VMware is installed.  If you upgraded recently be sure to upgrade vmware to a compatible version.'
         return False
 
     return True
 
-                        
+def attach_xorg_package_versions(report):
+    for package in [
+        "xserver-xorg",
+        "libgl1-mesa-glx",
+        "libdrm2",
+        "xserver-xorg-video-intel",
+        "xserver-xorg-video-ati",
+        "xserver-xorg-video-nouveau"]:
+        report['version.%s' %(package)] = package_versions(package)
+
 def add_info(report, ui):
     tags = []
 
@@ -127,15 +138,6 @@ def add_info(report, ui):
     tags.append(report['DistroCodename'])
     tags.append(report['DistroVariant'])
 
-    attach_related_packages(report, [
-            "xserver-xorg",
-            "libgl1-mesa-glx",
-            "libdrm2",
-            "xserver-xorg-video-intel",
-            "xserver-xorg-video-ati",
-            "xserver-xorg-video-nouveau"
-            ])
-
     # Verify the bug is valid to be filed
     if check_is_reportable(report) == False:
         return
@@ -143,7 +145,7 @@ def add_info(report, ui):
     if os.path.exists('/var/log/nvidia-installer.log'):
         # User has installed nVidia drivers manually at some point.
         # This is likely to have caused problems.
-        if not ui.yesno("""It appears you may have installed the nVidia drivers manually from nvidia.com.  This can cause problems with the Ubuntu-supplied drivers.
+        if ui and not ui.yesno("""It appears you may have installed the nVidia drivers manually from nvidia.com.  This can cause problems with the Ubuntu-supplied drivers.
 
 If you have not already uninstalled the drivers downloaded from nvidia.com, please uninstall them and reinstall the Ubuntu packages before filing a bug with Ubuntu.
 
@@ -167,7 +169,7 @@ Have you uninstalled the drivers from nvidia.com?"""):
             report['nvidia-settings'] = command_output(
                 ['nvidia-settings', '-q', 'all'])
                                                        
-    if report['ProblemType'] == 'Crash' and 'Traceback' not in report:
+    if (report.get('ProblemType', '') == 'Crash' and 'Traceback' not in report):
         nonfree_driver = nonfree_graphics_module()
         if (nonfree_driver == "fglrx"):
             report['SourcePackage'] = "fglrx-installer"
@@ -175,10 +177,12 @@ Have you uninstalled the drivers from nvidia.com?"""):
         elif (nonfree_driver == "nvidia"):
             report['SourcePackage'] = "nvidia-graphics-drivers"
 
+    attach_file_if_exists(report, '/var/log/plymouth-debug.log', 'PlymouthDebug')
     attach_file_if_exists(report, '/etc/X11/xorg.conf', 'XorgConf')
     attach_file_if_exists(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file_if_exists(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
 
+    attach_xorg_package_versions(report)
     attach_hardware(report)
     attach_drm_info(report)
     attach_dkms_info(report)
@@ -203,18 +207,19 @@ Have you uninstalled the drivers from nvidia.com?"""):
                               'drirc')
 
         # For keyboard bugs
-        if report['SourcePackage'] in keyboard_packages:
+        if report.get('SourcePackage','Unknown') in keyboard_packages:
             report['setxkbmap'] = command_output_quiet(['setxkbmap', '-print'])
             report['xkbcomp'] = command_output_quiet(['xkbcomp', ':0', '-w0', '-'])
 
         # For input device bugs
         report['peripherals'] = command_output_quiet(['gconftool-2', '-R', '/desktop/gnome/peripherals'])
 
-    response = ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?")
-    if response == True:
-        report['GdmLog']  = root_collect_file_contents('/var/log/gdm/:0.log')
-        report['GdmLog1'] = root_collect_file_contents('/var/log/gdm/:0.log.1')
-        report['GdmLog2'] = root_collect_file_contents('/var/log/gdm/:0.log.2')
+    if ui:
+        response = ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?")
+        if response == True:
+            report['GdmLog']  = root_collect_file_contents('/var/log/gdm/:0.log')
+            report['GdmLog1'] = root_collect_file_contents('/var/log/gdm/:0.log.1')
+            report['GdmLog2'] = root_collect_file_contents('/var/log/gdm/:0.log.2')
 
     report.setdefault('Tags', '')
     report['Tags'] += ' ' + ' '.join(tags)
@@ -223,6 +228,6 @@ Have you uninstalled the drivers from nvidia.com?"""):
 ## DEBUGING ##
 if __name__ == '__main__':
     report = {}
-    add_info(report)
+    add_info(report, None)
     for key in report:
         print '[%s]\n%s' % (key, report[key])
