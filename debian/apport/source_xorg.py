@@ -130,6 +130,14 @@ def attach_xorg_package_versions(report):
         "xserver-xorg-video-nouveau"]:
         report['version.%s' %(package)] = package_versions(package)
 
+def attach_compiz_configuration(report):
+    # Plugins
+    report['CompizPlugins'] = command_output([
+        'gconftool-2', '--get', '/apps/compiz-1/general/allscreens/options/active_plugins'])
+
+    # User configuration
+    report['GconfCompiz'] = command_output(['gconftool-2', '-R', '/apps/compiz-1'])
+
 def add_info(report, ui):
     tags = []
 
@@ -182,6 +190,7 @@ Have you uninstalled the drivers from nvidia.com?"""):
     attach_file_if_exists(report, '/var/log/Xorg.0.log', 'XorgLog')
     attach_file_if_exists(report, '/var/log/Xorg.0.log.old', 'XorgLogOld')
 
+    attach_compiz_configuration(report)
     attach_xorg_package_versions(report)
     attach_hardware(report)
     attach_drm_info(report)
