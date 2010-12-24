@@ -1,3 +1,19 @@
+xorg (1:7.5+6ubuntu5) natty; urgency=low
+
+  * debian/apport/source_xorg.py:
+    + Add compiz configuration data
+    + Detect whether compiz or kwin are actively running
+    + Detect software rendering and display in the report
+    + Detect the Ubuntu release version and if it is a non-development
+      release, suggest using technical support channels if appropriate.
+      Otherwise, give tags to bug reports so they're not lost in noise.
+    + Give reporter some feedback when software rendering is enabled
+    + Restructure code for clarity
+  * debian/x11-common.links:
+    + Add several more X packages to handle with the xorg apport hook
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 23 Dec 2010 18:16:22 -0800
+
 xorg (1:7.5+6ubuntu4) natty; urgency=low
 
   * debian/local/Failsafe/failsafeXinit:
