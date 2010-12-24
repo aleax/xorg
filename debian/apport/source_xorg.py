@@ -107,7 +107,7 @@ def ubuntu_code_name():
     '''
     Return the ubuntu release code name, 'dapper', 'natty', etc.
     '''
-    return command_output(['lsb_release','-sc'])
+    return command_output_quiet(['lsb_release','-sc'])
 
 
 ######
@@ -147,7 +147,9 @@ def check_is_supported(report, ui=None):
 
     elif status == "Supported" or status == "Current Stable Release":
         response = ui.choice(
-            "Development is completed for the '%s' version of Ubuntu, so you should use technical support channels unless you know for certain it should be reported here?" %(distro_codename),
+            "Development is completed for the '%s' version of Ubuntu, so\n"
+            "you should use technical support channels unless you know for\n"
+            "certain it should be reported here?" %(distro_codename),
             [
                 "I don't know",
                 "Yes, I already know the fix for this problem.",
@@ -158,18 +160,18 @@ def check_is_supported(report, ui=None):
         )    
 
         # Fix is known
-        if response == 1:
-            report['Tag'] += ' ' + 'patch'
+        if 1 in response:
+            report['Tags'] += ' ' + 'patch'
             ui.information("Thanks for helping improve Ubuntu!  Tip:  If you attach the fix to the bug report as a patch, it will be flagged to the developers and should get a swifter response.")
             return True
 
         # Regression after a system update
-        elif response == 2:
-            report['Tag'] += ' regression-update'
+        elif 2 in response:
+            report['Tags'] += ' regression-update'
             response = ui.yesno("Thanks for reporting this regression in Ubuntu %s.  Do you know exactly which package and version caused the regression?" %(distro_codename))
             if response:
                 ui.information("Excellent.  Please make sure to list the package name and version in the bug report's description.  That is vital information for pinpointing the cause of the regression, which will make solving this bug go much faster.")
-                report['Tag'] += ' needs-reassignment'
+                report['Tags'] += ' needs-reassignment'
                 return True
             else:
                 ui.information("Okay, your /var/log/dpkg.log will be attached.  Please indicate roughly when you first started noticing the problem.  This information will help in narrowing down the suspect package updates.")
@@ -177,7 +179,7 @@ def check_is_supported(report, ui=None):
                 return True
 
         # Referred by technical support
-        elif response == 3:
+        elif 3 in response:
             ui.information("Thanks for using technical support channels before filing this report.  In your bug report, please restate the issue and include a link or transcript of your discussion with them.")
             return True
 
@@ -317,7 +319,9 @@ def attach_2d_info(report, ui=None):
 
 def attach_3d_info(report, ui=None):
     if os.environ.get('DISPLAY'):
-        report['UnitySupportTest'] = command_output_quiet(['unity_support_test'])
+        if os.path.lexists('/usr/lib/nux/unity_support_test'):
+            report['UnitySupportTest'] = command_output_quiet([
+                '/usr/lib/nux/unity_support_test'])
         report['glxinfo'] = command_output_quiet(['glxinfo'])
         attach_file_if_exists(report,
                               os.path.expanduser('~/.drirc'),
@@ -383,7 +387,7 @@ def attach_nvidia_info(report, ui=None):
         if os.environ.get('DISPLAY'):
             # Attach output of nvidia-settings --query if we've got a display
             # to connect to.
-            report['nvidia-settings'] = command_output(
+            report['nvidia-settings'] = command_output_quiet(
                 ['nvidia-settings', '-q', 'all'])
 
         # File any X crash with -nvidia involved with the -nvidia bugs
@@ -408,7 +412,6 @@ def add_info(report, ui):
     if check_is_supported(report, ui) == False:
         return
 
-    return
     attach_xorg_package_versions(report, ui)
     attach_dist_upgrade_status(report, ui)
     attach_graphic_card_pci_info(report, ui)
