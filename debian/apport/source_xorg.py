@@ -376,6 +376,8 @@ def attach_input_device_info(report, ui=None):
 def attach_nvidia_info(report, ui=None):
     # Attach information for upstreaming nvidia binary bugs
     if nonfree_graphics_module() == 'nvidia':        
+        report['version.nvidia-graphics-drivers'] = package_versions("nvidia-graphics-drivers")
+
         for logfile in glob.glob('/proc/driver/nvidia/*'):
             if os.path.isfile(logfile):
                 attach_file(report, logfile)
@@ -397,6 +399,8 @@ def attach_nvidia_info(report, ui=None):
 
 def attach_fglrx_info(report, ui=None):
     if nonfree_graphics_module() == 'fglrx':
+
+        report['version.fglrx-installer'] = package_versions("fglrx-installer")
 
         # File any X crash with -fglrx involved with the -fglrx bugs
         if report.get('SourcePackage','Unknown') in core_x_packages:
