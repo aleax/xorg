@@ -1,3 +1,11 @@
+xorg (1:7.5+6ubuntu7) natty; urgency=low
+
+  * debian/control: Drop xfonts-{75,100}dpi from Depends: to Suggests:. We
+    don't need them for a normal desktop installation, and even xcalc/xterm
+    don't need them, but they are quite sizable.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 11 Jan 2011 18:41:09 -0600
+
 xorg (1:7.5+6ubuntu6) natty; urgency=low
 
   * debian/apport/source_xorg.py:
