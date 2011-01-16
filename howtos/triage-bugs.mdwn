@@ -1,0 +1,36 @@
+# How to triage bugs
+
+## Packaging bugs or upstream bugs?
+
+It’d be nice to get all upstream bugs tagged as such (`upstream` tag),
+forwarded upstream (<http://bugs.freedesktop.org/> for most packages),
+and marked as such
+(`forwarded X https://bugs.freedesktop.org/show_bug.cgi?id=Y`).
+
+Then `bts-link` comes into play and help us tracking upstream status,
+which is pretty nice to have.
+
+
+## Usertags
+
+Another feature of the BTS is usertagging. That lets people keep track
+of additional tags, “attached” to a given mail address. For XSF,
+that’s `debian-x@lists.debian.org`.
+
+The list of all usertagged bugs can be seen on:
+<http://bugs.debian.org/cgi-bin/pkgreport.cgi?users=debian-x@lists.debian.org>;
+the list of all used usertags is at the bottom, in the form.
+
+Let’s give some examples:
+
+ * `i810`, `i915`: helps triaging `-video-intel` bugs depending on the
+   chipset.
+ * `r200`, `r300`: ditto for `-video-ati`.
+ * `xset`, `xrandr`: helps triaging `x11-xserver-utils` bugs depending
+   on the affected tool (like other `x11-*` packages, that’s a bundle
+   of teeny tiny apps).
+ * `squeeze-candidate`: helps keeping a list of bugs we’d like to get
+   fixed in a point release (through a stable update).
+
+Here’s an example of URL, for the last tag:
+<http://bugs.debian.org/cgi-bin/pkgreport.cgi?users=debian-x@lists.debian.org&tag=squeeze-candidate>
