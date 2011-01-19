@@ -29,7 +29,7 @@ configure a few settings for this or that driver. Starting with
 
 Some packages ship a default configuration file under
 `/usr/share/X11/xorg.conf.d` with general rules to match appropriate
-hardware. The files under `/etc/X11/xorg.conf.d` takes precedence, as
+hardware. The files under `/etc/X11/xorg.conf.d` take precedence, as
 documented in the `xorg.conf` manpage.
 
 It’s probably mostly useful in the `synaptics` case, in case one wants
@@ -52,7 +52,7 @@ Quick words about the options:
 
  * They are comma-separated.
  * The list of options and a short description for each can be found
-   in the `/usr/share/X11/xkb/rules/base.lst` file (from the
+   in the `/usr/share/X11/xkb/rules/base.lst` file (shipped by the
    `xkb-data` package).
  * First option: `compose:menu`. This sets the `menu` key as the
    Compose key. More information about it can be found in the
@@ -125,7 +125,7 @@ can be found in the `synaptics` manpage.
 enabling tapping (upstream kept it disabled by default, Debian won’t
 deviate, no need to file bugs): `synclient TapButton1=1`; one can also
 disable the touchpad temporarily: `synclient TouchpadOff=1` to
-disable, `synclient TouchpadOff=0` to enable it again.
+disable it, `synclient TouchpadOff=0` to enable it again.
 
 Let’s check what a configuration snippet (mentioned in **General
 considerations**) would look like. Here is a fictional
@@ -153,7 +153,7 @@ Line by line walkthrough:
    vertical scrolling is enabled).
 
 Settings can also be changed by various settings managers, like
-Gnome’s, or KDE’s. An example of a graphical user interface making it
+Gnome’s or KDE’s. An example of a graphical user interface making it
 possible to set options in a clicky way: `gpointing-device-settings`.
 
 There’s a palm detection setting but that relies on hardware/firmware
