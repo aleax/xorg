@@ -148,3 +148,15 @@ Line by line walkthrough:
  * Finally the options we want to set. We enable tapping for the first
    button. And we enable horizontal scrolling (by default, only
    vertical scrolling is enabled).
+
+Settings can also be changed by various settings manager, like
+Gnome’s, or KDE’s. An example of a graphical user interface making it
+possible to set options in a clicky way: `gpointing-device-settings`.
+
+There’s a palm detection setting but that relies hardware/firmware
+support for the touchpad. The other tool shipped with the `synaptics`
+driver is `syndaemon`, which makes it trivial to disable the touchpad
+temporarily, when the keyboard is being used. Here’s an example:
+`syndaemon -d -i 0.5` makes `syndaemon` start in background (`-d` for
+daemon mode), waiting 0.5 second before enabling the touchpad again
+after the last keypress.
