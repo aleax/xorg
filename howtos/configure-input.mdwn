@@ -10,3 +10,46 @@ mentioned, all of them are under the `xserver-xorg-input-*` namespace.
    takes precedence over `evdev` automatically if both are installed.
  * On GNU/kFreeBSD and GNU/Hurd, `kbd` handles the keyboard and
    `mouse` handles mice, unsurprisingly.
+
+
+## Basic keyboard configuration
+
+The `keyboard-configuration` package ships `/etc/default/keyboard`
+which can be used to set the following `xkb` items: model, layout,
+variant, and options. Here’s an example:
+
+    XKBMODEL="pc105"
+    XKBLAYOUT="fr"
+    XKBVARIANT="oss"
+    XKBOPTIONS="compose:menu,terminate:ctrl_alt_bksp"
+
+Quick words about the options:
+
+ * They are comma-separated.
+ * The list of options and a short description for each can be found
+   in the `/usr/share/X11/xkb/rules/base.lst` file (from the
+   `xkb-data` package).
+ * First option: `compose:menu`. This sets the `menu` key as the
+   Compose key. More information about it can be found in the
+   `Compose` manpage.
+ * Second option: `terminate:ctrl_alt_bksp`. By default, the X server
+   is no longer killed through `Ctrl+Alt+Backspace`. This option
+   restores the old behaviour.
+
+Two ways to change the configuration:
+
+ * `dpkg-reconfigure keyboard-configuration` is going to ask questions
+   through debconf prompts.
+ * Manually editing `/etc/default/keyboard` also works.
+
+How does it propagate to X?
+
+ * When HAL is used (that is: on GNU/kFreeBSD and GNU/Hurd), one has
+   to restart it: `invoke-rc.d hal restart`
+ * When udev is used (on GNU/Linux, starting with `squeeze`), one has
+   to tell udev to reload input-related configuration
+   `udevadm trigger --subsystem-match=input --action=change`
+   (that can be found in `keyboard-configuration`’s `README.Debian`
+   file). Properties attached to the input devices are then updated,
+   and X uses those properties when it starts, as can be seen by
+   searching for `xkb_` in the X log.
