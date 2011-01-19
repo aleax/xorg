@@ -109,3 +109,42 @@ Line by line walkthrough:
    emulation (clicking left and right buttons at the same time then no
    longer acts as if the middle button was clicked). Then we swap x
    and y axes, just for the fun of it.
+
+
+### synaptics configuration
+
+The `synaptics` driver comes with two tools. The more interesting one
+is `synclient`, which can be used to list available options and
+current settings: `synclient -l`. The documentation for each option
+can be found in the `synaptics` manpage.
+
+`synclient` can also be used to set options. A common example is
+enabling tapping (upstream kept it disabled by default, Debian won’t
+deviate, no need to file bugs): `synclient TapButton1=1`; one can also
+disable the touchpad temporarily: `synclient TouchpadOff=1` to
+disable, `synclient TouchpadOff=0` to enable it again.
+
+Let’s check what a configuration snippet (mentioned in **General
+considerations**) would look like. Here is a fictional
+`/etc/X11/xorg.conf.d/42-synaptics.conf`:
+
+    Section "InputClass"
+        Identifier "touchpad tweaked catchall"
+        MatchIsTouchpad "on"
+        Driver "synaptics"
+        Option "TapButton1" "1"
+        Option "HorizEdgeScroll" "1"
+    EndSection
+
+Line by line walkthrough:
+
+ * To avoid specifying any device under `/dev/input` (`event$N` might
+   change, remember it’s about hotplug support!), we use an
+   `InputClass`.
+ * We need an identifier, the actual name doesn‘t matter.
+ * We match everything that looks like a touchpad. Meaning no generic
+   pointer, keyboard, or tablet.
+ * We specify the driver we want to use for the matched device(s).
+ * Finally the options we want to set. We enable tapping for the first
+   button. And we enable horizontal scrolling (by default, only
+   vertical scrolling is enabled).
