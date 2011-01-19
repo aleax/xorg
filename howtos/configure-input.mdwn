@@ -56,4 +56,5 @@ How does it propagate to X?
    and X uses those properties when it starts, as can be seen by
    searching for `xkb_` in the X log. Please note that trying
    `invoke-rc.d udev restart` changes nothing, one has to use
-   `udevadm`.
+   `udevadm`. Properties can be inspected through:
+   `/sbin/udevadm info --export-db`
