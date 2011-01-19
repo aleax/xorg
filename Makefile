@@ -10,8 +10,9 @@ MDWN_TO_HTML = ./mdwn2html
 HTML_TO_PDF  = wkhtmltopdf
 CSS_FILE     = xsf.css
 SVG_LOGO     = xsf.svg
+PNG_LOGO     = xsf.png
 
-all: html pdf
+all: html pdf $(PNG_LOGO)
 
 html: $(html_pages)
 
@@ -22,6 +23,11 @@ pdf: $(pdf_files)
 
 %.pdf: %.html $(CSS_FILE) $(SVG_LOGO)
 	$(HTML_TO_PDF) $< $@
+
+# We usually don't need to run this one, but it's easier to keep both
+# SVN and PNG logos in sync:
+$(PNG_LOGO): $(SVG_LOGO)
+	inkscape $< -e $@
 
 clean:
 	@echo "Removing all generated html files"
