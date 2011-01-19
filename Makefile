@@ -9,6 +9,7 @@ pdf_files = $(patsubst %.mdwn,%.pdf,$(mdwn_pages))
 MDWN_TO_HTML = ./mdwn2html
 HTML_TO_PDF  = wkhtmltopdf
 CSS_FILE     = xsf.css
+LOGO_FILE    = xsf.svg
 
 all: html pdf
 
@@ -19,7 +20,7 @@ pdf: $(pdf_files)
 %.html: %.mdwn $(MDWN_TO_HTML)
 	$(MDWN_TO_HTML) $< $@
 
-%.pdf: %.html $(CSS_FILE)
+%.pdf: %.html $(CSS_FILE) $(LOGO_FILE)
 	$(HTML_TO_PDF) $< $@
 
 clean:
