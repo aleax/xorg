@@ -24,9 +24,14 @@ configure a few settings for this or that driver. Starting with
 `/etc/X11/xorg.conf.d`, with a `.conf` suffix, as documented in the
 `xorg.conf` manpage.
 
+Some packages ship a default configuration file under
+`/usr/share/X11/xorg.conf.d` with general rules to match appropriate
+hardware. The files under `/etc/X11/xorg.conf.d` takes precedence, as
+documented in the `xorg.conf` manpage.
+
 It’s probably mostly useful in the `synaptics` case, in case one wants
-to change default settings on a system-wide fashion. See the mouse
-section below for an example.
+to change default settings on a system-wide fashion. See the **Pointer
+configuration** section below for an example.
 
 
 ## Basic keyboard configuration
@@ -73,3 +78,34 @@ How does it propagate to X?
    `invoke-rc.d udev restart` changes nothing, one has to use
    `udevadm`. Properties can be inspected through:
    `/sbin/udevadm info --export-db`
+
+
+## Pointer configuration
+
+### evdev configuration
+
+Available options are documented in the `evdev` manpage. Let’s check
+what a configuration snippet (mentioned in **General considerations**)
+would look like. Here is a fictional `/etc/X11/xorg.conf.d/42-evdev.conf`:
+
+    Section "InputClass"
+        Identifier "evdev pointer tweaked catchall"
+        MatchIsTouchpad "on"
+        Driver "evdev"
+        Option "Emulate3Buttons" "False"
+        Option "SwapAxes" "True"
+    EndSection
+
+Line by line walkthrough:
+
+ * To avoid specifying any device under `/dev/input` (`event$N` might
+   change, remember it’s about hotplug support!), we use an
+   `InputClass`.
+ * We need an identifier, the actual name doesn‘t matter.
+ * We match everything that looks like a touchpad. Meaning no generic
+   pointer, keyboard, or tablet.
+ * We specify the driver we want to use for the matched device(s).
+ * Finally the options we want to set. Here we disable the 3rd button
+   emulation (clicking left and right buttons at the same time then no
+   longer acts as if the middle button was clicked). Then we swap x
+   and y axes, just for the fun of it.
