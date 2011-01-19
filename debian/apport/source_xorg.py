@@ -167,11 +167,11 @@ def check_is_supported(report, ui=None):
 
         # Regression after a system update
         elif 2 in response:
-            report['Tags'] += ' regression-update'
+            report['Tags'] += ' ' + 'regression-update'
             response = ui.yesno("Thanks for reporting this regression in Ubuntu %s.  Do you know exactly which package and version caused the regression?" %(distro_codename))
             if response:
                 ui.information("Excellent.  Please make sure to list the package name and version in the bug report's description.  That is vital information for pinpointing the cause of the regression, which will make solving this bug go much faster.")
-                report['Tags'] += ' needs-reassignment'
+                report['Tags'] += ' ' + 'needs-reassignment'
                 return True
             else:
                 ui.information("Okay, your /var/log/dpkg.log will be attached.  Please indicate roughly when you first started noticing the problem.  This information will help in narrowing down the suspect package updates.")
@@ -225,7 +225,7 @@ Have you uninstalled the drivers from nvidia.com?"""):
             report['UnreportableReason'] = 'The drivers from nvidia.com are not supported by Ubuntu.  Please uninstall them and test whether your problem still occurs.'
             return
         attach_file(report, '/var/log/nvidia-installer.log', 'nvidia-installer.log')
-        tags.append('possible-manual-nvidia-install')
+        report['Tags'] += ' ' + 'possible-manual-nvidia-install'
 
     return True
 
