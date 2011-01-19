@@ -49,9 +49,11 @@ How does it propagate to X?
  * When HAL is used (that is: on GNU/kFreeBSD and GNU/Hurd), one has
    to restart it: `invoke-rc.d hal restart`
  * When udev is used (on GNU/Linux, starting with `squeeze`), one has
-   to tell udev to reload input-related configuration
+   to tell udev to reload input-related configuration:
    `udevadm trigger --subsystem-match=input --action=change`
    (that can be found in `keyboard-configuration`’s `README.Debian`
    file). Properties attached to the input devices are then updated,
    and X uses those properties when it starts, as can be seen by
-   searching for `xkb_` in the X log.
+   searching for `xkb_` in the X log. Please note that trying
+   `invoke-rc.d udev restart` changes nothing, one has to use
+   `udevadm`.
