@@ -7,6 +7,17 @@ body {
   font-family: Georgia;
 }
 
+/* Firefox before version 4 don't support SVG in backgrounds, use a
+   ugly workaround to change the background to the PNG version for
+   Mozilla-based browsers:
+     https://bugzilla.mozilla.org/show_bug.cgi?id=231179
+*/
+@-moz-document url-prefix() {
+  body {
+    background-image: url("xsf.png");
+  }
+}
+
 h1 {
   margin-left: 10px;
   color: darkblue;
