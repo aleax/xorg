@@ -16,6 +16,7 @@ Testing:  APPORT_STAGING="yes"
 
 import os.path
 import glob
+import re
 import subprocess
 from apport.hookutils import *
 from launchpadlib.launchpad import Launchpad
@@ -321,7 +322,7 @@ def attach_3d_info(report, ui=None):
     if os.environ.get('DISPLAY'):
         if os.path.lexists('/usr/lib/nux/unity_support_test'):
             report['UnitySupportTest'] = command_output_quiet([
-                '/usr/lib/nux/unity_support_test'])
+                '/usr/lib/nux/unity_support_test', '-p'])
         report['glxinfo'] = command_output_quiet(['glxinfo'])
         attach_file_if_exists(report,
                               os.path.expanduser('~/.drirc'),
@@ -356,11 +357,20 @@ def attach_3d_info(report, ui=None):
     # Plugins
     report['CompizPlugins'] = command_output_quiet([
         'gconftool-2',
-        '--get', '/apps/compiz-1/general/allscreens/options/active_plugins'])
+        '--get', '/apps/compiz-1/general/screen0/options/active_plugins'])
 
     # User configuration
     report['GconfCompiz'] = command_output_quiet([
         'gconftool-2', '-R', '/apps/compiz-1'])
+
+    # Compiz internal state if compiz crashed
+    if report.get('SourcePackage','Unknown') == "compiz" and report.has_key("ProcStatus"):
+        compiz_pid = 0
+        pid_line = re.search("Pid:\t(.*)\n", report["ProcStatus"])
+        if pid_line:
+            compiz_pid = pid_line.groups()[0]
+        compiz_state_file = '/tmp/compiz_internal_state%s' % compiz_pid
+        attach_file_if_exists(report, compiz_state_file, "compiz_internal_states")
 
 def attach_input_device_info(report, ui=None):
     # Only collect the following data if X11 is available
