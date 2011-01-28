@@ -1,3 +1,14 @@
+xorg (1:7.6~3) UNRELEASED; urgency=low
+
+  * x11-common: drop usage of /var/lib/x11/Xwrapper.config.{md5sum,roster}.
+    Since sarge (I think), no other package has been handling
+    /etc/X11/Xwrapper.config, so assume we're the only owner, remove the state
+    files on upgrade.  The checksum is also not needed, we read the
+    allowed_users value from the file in the config script and preserve it.
+    Closes: #611271.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 28 Jan 2011 12:40:27 +0100
+
 xorg (1:7.6~2) experimental; urgency=low
 
   * Drop xserver-xorg-video-nv, it's no longer supported.
