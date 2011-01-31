@@ -14,7 +14,6 @@ XSERVER_XORG_VIDEO_DEPENDS="xserver-xorg-video-apm, \
 	xserver-xorg-video-mga, \
 	xserver-xorg-video-neomagic, \
 	xserver-xorg-video-newport, \
-	xserver-xorg-video-nv, \
 	xserver-xorg-video-rendition, \
 	xserver-xorg-video-s3, \
 	xserver-xorg-video-s3virge, \
@@ -32,5 +31,7 @@ XSERVER_XORG_VIDEO_DEPENDS="xserver-xorg-video-apm, \
 #  xserver-xorg-video-glide
 
 XSERVER_XORG_INPUT_DEPENDS="xserver-xorg-input-evdev, \
-	xserver-xorg-input-synaptics, \
-	xserver-xorg-input-wacom"
+	xserver-xorg-input-synaptics"
+
+
+XSERVER_XORG_INPUT_RECOMMENDS="xserver-xorg-input-wacom"

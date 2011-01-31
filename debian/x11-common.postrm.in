@@ -34,41 +34,9 @@ esac
 
 # clean up non-conffile configuration files and related materials on purge
 if [ "$1" = "purge" ]; then
-  # de-register this package as a handler of the X server wrapper config file
-  if [ -e "$XWRAPPER_CONFIG_ROSTER" ]; then
-    # check existing roster file for our package name
-    if fgrep -qx "$THIS_PACKAGE" "$XWRAPPER_CONFIG_ROSTER" 2>/dev/null; then
-      # construct temporary roster file with our package name removed, ignoring
-      # failure
-      fgrep -vx "$THIS_PACKAGE" "$XWRAPPER_CONFIG_ROSTER" > \
-        "$XWRAPPER_CONFIG_ROSTER.dpkg-tmp" 2>/dev/null || true
-      # is there anything left?
-      if [ -s "$XWRAPPER_CONFIG_ROSTER.dpkg-tmp" ]; then
-        # yes, replace the roster file
-        mv "$XWRAPPER_CONFIG_ROSTER.dpkg-tmp" "$XWRAPPER_CONFIG_ROSTER"
-      else
-        # no; remove both the roster and our temporary copy
-        rm -f "$XWRAPPER_CONFIG_ROSTER" "$XWRAPPER_CONFIG_ROSTER.dpkg-tmp"
-        # remove X server wrapper config file if it was still managed by the
-        # package
-        if [ -e "$XWRAPPER_CONFIG_CHECKSUM" ]; then
-          # does it exist?
-          if [ -e "$XWRAPPER_CONFIG" ]; then
-            # does the current MD5 checksum match the stored checksum?
-            if [ "$(md5sum "$XWRAPPER_CONFIG")" \
-                 = "$(cat "$XWRAPPER_CONFIG_CHECKSUM")" ]; then
-              # yes; remove the config file
-              rm -f "$XWRAPPER_CONFIG"
-            fi
-          fi
-          # remove the checksum file; any remaining X server wrapper config file
-          # still on the system at this point is no longer being managed (local
-          # user customization)
-          rm -f "$XWRAPPER_CONFIG_CHECKSUM"
-        fi
-      fi
-    fi
-  fi
+  rm -f "$XWRAPPER_CONFIG_ROSTER"
+  rm -f "$XWRAPPER_CONFIG"
+  rm -f "$XWRAPPER_CONFIG_CHECKSUM"
 
   for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
       rmdir "$DIR" 2> /dev/null || true

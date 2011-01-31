@@ -12,12 +12,6 @@ set -e
 THIS_PACKAGE=x11-common
 THIS_SCRIPT=preinst
 CONFIG_DIR=/etc/X11
-XWRAPPER_CONFIG="$CONFIG_DIR/Xwrapper.config"
-CONFIG_AUX_DIR=/var/lib/x11
-XWRAPPER_CONFIG_ROSTER_BASE="${XWRAPPER_CONFIG##*/}.roster"
-XWRAPPER_CONFIG_ROSTER="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_ROSTER_BASE"
-XWRAPPER_CONFIG_CHECKSUM_BASE="${XWRAPPER_CONFIG##*/}.md5sum"
-XWRAPPER_CONFIG_CHECKSUM="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_CHECKSUM_BASE"
 
 #INCLUDE_SHELL_LIB#
 
@@ -32,21 +26,6 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
   fi
   if dpkg --compare-versions "$2" lt-nl "1:7.4~5ubuntu16"; then
     remove_conffile_lookup x11-common "/etc/X11/Xsession.d/60x11-localhost"
-  fi
-
-  # create the configuration files' main and auxiliary directories if they
-  # don't exist
-  for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
-    if ! [ -e "$DIR" ]; then
-      observe "creating $DIR"
-      mkdir --mode=755 --parents "$DIR"
-    fi
-  done
-
-  # place config files under management if they do *not* already exist
-  if ! [ -e "$XWRAPPER_CONFIG" ]; then
-    touch "$XWRAPPER_CONFIG"
-    md5sum "$XWRAPPER_CONFIG" > "$XWRAPPER_CONFIG_CHECKSUM"
   fi
 fi
 

@@ -1,3 +1,108 @@
+xorg (1:7.6~3ubuntu1) ; urgency=low
+
+  * Merge from (unreleased) Debian experimental.  Remaining Ubuntu changes:
+    - Add apport hook
+    - Demote xfonts-{75DPI,100DPI} to Suggests.  Demote xfonts-scalable to
+      Recommends.
+    - Keep old transitional packages; these still have rdepends in Ubuntu
+      + xlibmesa-gl
+      + xlibmesa-gl-dev
+      + xlibmesa-glu
+      + libglu1-xorg
+      + libglu1-xorg-dev
+    - debian/local/Failsafe*: Failsafe X hookup.
+    - debian/local/Xsession: Truncate xsession-errors on startup if too big
+    - debian/local/Xsession.d/20x11-common_process-args: Add support for
+      session command containing args.
+    - debian/local/Xsession.d/60x11-common_localhost: Authorise all processes
+      running with the user's credentials to connect to the server.
+    - debian/local/dexconf: Add rules for QEMU and VirtualBox virtual devices
+      when generating xorg.conf
+    - debian/rules, debian/control:
+      + Add dependencies on x11-common, and symlink /usr/share/doc directories
+        of all packages to x11-common's.
+    - debian/scripts/vars.*: Don't drop nouveau, wacom, synaptics from *-all
+    - debian/xserver-xorg.postinst.in:  Also migrate users from psb → vesa.
+    - debian/x11-common.postinst.in: 
+      debian/x11-common.postrm.in:
+      debian/x11-common.preinst.in: Remove obsolete conffiles from xinit.
+
+ -- Christopher James Halse Rogers <raof@ubuntu.com>  Mon, 31 Jan 2011 21:29:57 +1100
+
+xorg (1:7.6~3) UNRELEASED; urgency=low
+
+  * x11-common: drop usage of /var/lib/x11/Xwrapper.config.{md5sum,roster}.
+    Since sarge (I think), no other package has been handling
+    /etc/X11/Xwrapper.config, so assume we're the only owner, remove the state
+    files on upgrade.  The checksum is also not needed, we read the
+    allowed_users value from the file in the config script and preserve it.
+    Closes: #611271.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 28 Jan 2011 12:40:27 +0100
+
+xorg (1:7.6~2) experimental; urgency=low
+
+  * Drop xserver-xorg-video-nv, it's no longer supported.
+  * Add variables to handle Recommends.
+  * Downgrade xserver-xorg-video-nouveau from Depends to Recommends. The
+    frequent ABI changes make it difficult to manage, but that shouldn't
+    stop people from using the xserver-xorg-video-all metapackage.
+  * Downgrade xserver-xorg-input-wacom from Depends to Recommends. This is
+    only an interim measure aiming at making xserver-xorg-input-all
+    installable again. This input driver will probably be promoted to
+    Depends again when it is ready™.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 09 Nov 2010 16:13:06 +0100
+
+xorg (1:7.6~1) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * Bump version number, we're getting close to X11R7.6.
+  * Drop obsolete Breaks/Replaces/Conflicts from x11-common and xserver-xorg.
+  * Drop xlibmesa-gl, xlibmesa-gl-dev, xlibmesa-glu, libglu1-xorg and
+    libglu1-xorg-dev.  These were already transitional packages in etch, so
+    it's high time people updated their dependencies.
+  * Use non-versioned driver virtual packages for xserver-xorg dependencies.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 16 Oct 2010 15:57:09 +0200
+
+xorg (1:7.5+9) experimental; urgency=low
+
+  * Depend on Xserver 1.9.1 rc1. Bump input and video driver ABI.
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 13 Oct 2010 00:47:47 +0200
+
+xorg (1:7.5+8) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Add support for sparc64 (closes: #596828).  Thanks, Aurélien Jarno!
+  * Use linux-any instead of an ever-changing list of architectures for the
+    xserver-xorg-input-evdev dependency.
+
+  [ Cyril Brulebois ]
+  * Add a symlink to use xserver-xorg-core’s bug script so that we get
+    more info when one runs “reportbug xorg”.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Oct 2010 14:20:28 +0200
+
+xorg (1:7.5+7) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Nuke x11-common's Conflicts.  This was needed for upgrades from the
+    monolith, which aren't relevant anymore.
+  * Also drop Pre-Depends on debconf.  The debconf interaction in
+    x11-common.preinst was removed in 1:7.4+2.
+  * Drop versioned build-dep on dpkg 1.7.0.  Even woody had that..
+  * Drop x11-common Depends on debianutils 1.13.  That was also in woody.
+  * Add xserver-xorg-video-geode to -all on i386 (closes: #567909).
+
+  [ Cyril Brulebois ]
+  * Add myself to Uploaders.
+  * Update Debian po files by running debconf-updatepo (through
+    debian/rules clean).
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 04 Sep 2010 19:39:41 +0200
+
 xorg (1:7.5+6ubuntu9) natty; urgency=low
 
   [Didier Roche]
