@@ -127,7 +127,6 @@ def check_is_supported(report, ui=None):
     distro_codename = ubuntu_code_name()
     report['DistroCodename'] = distro_codename
     report['DistroVariant'] = ubuntu_variant_name()
-    report['Tags'] += ' ' + report['DistroCodename']
     report['Tags'] += ' ' + report['DistroVariant']
 
     if not ui:
