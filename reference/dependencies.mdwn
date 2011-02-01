@@ -46,7 +46,6 @@ two virtual packages in the `Provides` field of the server (for both
 `xserver-xorg-core` and `xserver-xorg-core-udeb`): `xorg-input-abi-$x`
 and `xorg-video-abi-$y`, where `$x` and `$y` are the major part of the
 version queried through `pkg-config` variables.
-***FIXME: Currently we have both major and minor.***
 
 To handle ascending compatibility for minors, we maintain in
 `debian/serverminver` the minimal version of `xserver-xorg-core` which
@@ -66,7 +65,11 @@ Example for `xinputdep`:
 
     xorg-input-abi-11, xserver-xorg-core (>= 2:1.8.99.904)
 
-***FIXME: Lies! That's currently `xorg-input-abi-11.0, …` instead.***
+To make sure we bump the `debian/serverminver` when there’s a minor
+ABI change, there’s a `abibumpcheck` target (on which `clean`
+depends), which extracts input and video ABI from the upstream header,
+and compares them to the previous ones stored in
+`debian/serverminver`, failing and diffing is something changed.
 
 
 ### Driver’s control file
@@ -126,6 +129,3 @@ To make it easy to compute substvars when using `dh`, we can ship a
 `dh` sequence to insert `dh_xsf_substvars` right before the
 `dh_gencontrol` call. That sequence could also be used to automate
 other stuff.
-
-We probably should have some way of tracking ABI bumps automatically,
-to make sure we bump `serverminver` when needed.
