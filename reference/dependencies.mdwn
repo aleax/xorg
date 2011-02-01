@@ -1,0 +1,131 @@
+# Dependencies between server and drivers
+
+Cyril Brulebois &lt;kibi@debian.org>
+
+
+## Upstream-side: ABI version numbers
+
+The X server defines several
+[ABI](http://en.wikipedia.org/wiki/Application_binary_interface) in
+`hw/xfree86/common/xf86Module.h`, through the
+`SET_ABI_VERSION(maj,min)` macro. In this document, the focus is on
+`ABI_VIDEODRV_VERSION` and `ABI_XINPUT_VERSION`, which are
+respectively about `video` drivers and `input` drivers.
+
+An example of input ABI is `12.1`, `12` being the `major`, `1` being
+the `minor`.
+
+Like in usual shared libraries, the major is bumped when interfaces
+are broken. There’s no compatibility at all in that case.
+
+The minor gets bumped when interfaces are added. In other words, if a
+driver is working with `x.y`, it should also work with higher minors:
+`x.z`; `z>y`. The converse is not true, if a driver requires a given
+minor (for example because it needs a new feature, like MultiTouch),
+it won’t work with lower minors (which didn’t provide the needed
+feature). Put another way: we have ascending compatibility with the
+minors.
+
+Conclusion: We need to keep track of both major and minor.
+
+Thanks to `pkg-config` we can query them:
+
+    $ pkg-config --variable=abi_videodrv xorg-server
+    9.0
+    $ pkg-config --variable=abi_xinput xorg-server
+    12.1
+
+
+## Debian-side: Using virtual packages
+
+### Server’s build system
+
+When `xorg-server` gets built, we use `pkg-config`’s output to
+determine the current major. Through substitution variables, we add
+two virtual packages in the `Provides` field of the server (for both
+`xserver-xorg-core` and `xserver-xorg-core-udeb`): `xorg-input-abi-$x`
+and `xorg-video-abi-$y`, where `$x` and `$y` are the major part of the
+version queried through `pkg-config` variables.
+***FIXME: Currently we have both major and minor.***
+
+To handle ascending compatibility for minors, we maintain in
+`debian/serverminver` the minimal version of `xserver-xorg-core` which
+is needed. When a minor is bumped, we store the server version in that
+file. This way, drivers built afterwards will depend on a *minimal*
+version of the driver, the last which saw a minor version bump. In
+other words: they will “depend on the server version they were built
+against, or a higher/compatible one”.
+
+Both ABI and minimal server version are recorded in two files shipped
+in `xserver-xorg-dev`, to be used while building drivers:
+
+   * `/usr/share/xserver-xorg/xinputdep`
+   * `/usr/share/xserver-xorg/videodrvdep`
+
+Example for `xinputdep`:
+
+    xorg-input-abi-11, xserver-xorg-core (>= 2:1.8.99.904)
+
+***FIXME: Lies! That's currently `xorg-input-abi-11.0, …` instead.***
+
+
+### Driver’s control file
+
+Drivers also use substitution variables in their control file,
+replaced at build time.
+
+    # Input driver:
+    Depends: ${xinpdriver:Depends}, …
+    Provides: ${xinpdriver:Provides}
+    
+    # Video driver:
+    Depends: ${xviddriver:Depends}, …
+    Provides: ${xviddriver:Provides}
+
+For now, `${xinpdriver:Provides}` is always replaced with
+`xorg-driver-input`, and `${xviddriver:Provides}` is always replaced
+with `xorg-driver-video`. Hopefully provided packages will not change,
+but using substitution variables is cheap, and makes it easy to add
+tweaks afterwards if needed.
+
+
+### Driver’s build system
+
+To set those variables, we ship a `dh_xsf_substvars` script in
+`xserver-xorg-dev` starting with ***FIXME_version***, to be run before
+`dh_gencontrol`. It iterates on the packages listed by
+`dh_listpackages` (very old `debhelper` command) and does the
+following work:
+
+ * It reads variables from the files mentioned above.
+ * If a package name ends with `-udeb`, it replaces
+   `xserver-xorg-core` with `xserver-xorg-core-udeb`.
+ * If a package name ends with `-dbg`, it does nothing for this
+   package. Debug packages usually depend strictly on the non-debug
+   packages, which in turn have appropriate dependencies.
+ * If a package name starts with `xserver-xorg-input-`, it appends
+   `xinpdriver:Depends=…` and `xinpdriver:Provides=…` to this
+   package’s substvars file.
+ * If a package name starts with `xserver-xorg-video-`, it appends
+   `xviddriver:Depends=…` and `xviddriver:Provides=…` to this
+   package’s substvars file.
+
+Why such heuristics? The idea is to avoid getting “unused substitution
+variable” warning messages while building. And since there’s a clear
+`xserver-xorg-{input,video}-*` namespace, we can use that to specify
+only input-related variables for input drivers, and only video-related
+variables for video drivers.
+
+
+## Possible improvements
+
+Once we’re done implementing the above stuff in `xorg-server`, and
+getting rid of deprecated features, we can do a bit more.
+
+To make it easy to compute substvars when using `dh`, we can ship a
+`dh` sequence to insert `dh_xsf_substvars` right before the
+`dh_gencontrol` call. That sequence could also be used to automate
+other stuff.
+
+We probably should have some way of tracking ABI bumps automatically,
+to make sure we bump `serverminver` when needed.
