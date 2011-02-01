@@ -292,6 +292,7 @@ def attach_xorg_package_versions(report, ui=None):
         "xserver-xorg",
         "libgl1-mesa-glx",
         "libdrm2",
+        "compiz",
         "xserver-xorg-video-intel",
         "xserver-xorg-video-ati",
         "xserver-xorg-video-nouveau"]:
@@ -330,6 +331,12 @@ def attach_3d_info(report, ui=None):
 
         if command_output_quiet(['pidof', 'compiz']):
             report['CompositorRunning'] = 'compiz'
+            compiz_version = command_output_quiet([
+                'compiz', '--version'])
+            versions = string.split(compiz_version.replace(' ', '-'), '.')
+            versions.pop()
+            compiz_version = string.join(versions, '.')
+            report['Tags'] += ' ' + report[compiz_version]
         elif command_output_quiet(['pidof', 'kwin']):
             report['CompisitorRunning'] = 'kwin'
         else:
