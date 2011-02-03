@@ -1,8 +1,18 @@
-xorg (1:7.6~3ubuntu2) UNRELEASED; urgency=low
+xorg (1:7.6~3ubuntu4) UNRELEASED; urgency=low
 
-  * apport/source_xorg.py:  Tag bugs with compiz version
+  * apport/source_xorg.py: Fix misspelling of CompositorRunning
 
- -- Bryce Harrington <bryce@ubuntu.com>  Mon, 31 Jan 2011 18:09:57 -0800
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 03 Feb 2011 15:24:18 -0800
+
+xorg (1:7.6~3ubuntu3) natty; urgency=low
+
+  * apport/source_xorg.py:
+    - Tag bugs with compiz version
+    - Trim out colored output from unity_support_test, which causes apport
+      to choke when reporting compiz bugs.
+      (LP: #710630)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 02 Feb 2011 16:03:57 -0800
 
 xorg (1:7.6~3ubuntu1) natty; urgency=low
 
@@ -29,8 +39,8 @@ xorg (1:7.6~3ubuntu1) natty; urgency=low
         of all packages to x11-common's.
     - debian/scripts/vars.*: Don't drop nouveau, wacom, synaptics from *-all
     - debian/xserver-xorg.postinst.in:  Also migrate users from psb → vesa.
-    - debian/x11-common.postinst.in: 
-      debian/x11-common.postrm.in:
+    - debian/x11-common.postinst.in,
+      debian/x11-common.postrm.in,
       debian/x11-common.preinst.in: Remove obsolete conffiles from xinit.
   * Bump Xserver dependency to 1.10RC1
 

@@ -321,8 +321,14 @@ def attach_2d_info(report, ui=None):
 def attach_3d_info(report, ui=None):
     if os.environ.get('DISPLAY'):
         if os.path.lexists('/usr/lib/nux/unity_support_test'):
-            report['UnitySupportTest'] = command_output_quiet([
-                '/usr/lib/nux/unity_support_test', '-p'])
+            try:
+                ust = command_output_quiet([
+                    '/usr/lib/nux/unity_support_test', '-p'])
+                ust = ust.replace('\x1b','').replace('[0;38;48m','').replace('[1;32;48m','')
+                report['UnitySupportTest'] = ust
+            except AssertionError:
+                report['UnitySupportTest'] = 'FAILED TO RUN'
+                
         report['glxinfo'] = command_output_quiet(['glxinfo'])
         attach_file_if_exists(report,
                               os.path.expanduser('~/.drirc'),
@@ -337,9 +343,9 @@ def attach_3d_info(report, ui=None):
             compiz_version = string.join(versions, '.')
             report['Tags'] += ' ' + report[compiz_version]
         elif command_output_quiet(['pidof', 'kwin']):
-            report['CompisitorRunning'] = 'kwin'
+            report['CompositorRunning'] = 'kwin'
         else:
-            report['CompisitorRunning'] = 'None'
+            report['CompositorRunning'] = 'None'
 
     # Detect software rasterizer
     glxinfo = report.get('glxinfo', '')
