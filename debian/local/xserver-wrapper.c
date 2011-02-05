@@ -213,7 +213,6 @@ main(int argc, char **argv)
   char value[257];
   int length;
   int i;
-  int intval;
   char *val;
   mode_t mask;
   SecurityLevel level = RootOnly;
