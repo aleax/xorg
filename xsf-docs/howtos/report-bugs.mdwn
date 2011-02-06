@@ -1,0 +1,30 @@
+# How to report bugs
+
+Cyril Brulebois &lt;kibi@debian.org>
+
+
+## Simple as reportbug
+
+### Initial report
+
+Unless you know which package to report the bug against, you can
+report the bug against the `xorg` metapackage:
+
+    reportbug xorg
+
+Like most packages related to the X server, reporting a bug against
+this package triggers a bug script which is going to collect X-related
+information, be it installed packages, running kernel, X
+configuration, X log, and so on.
+
+### Follow-up with more info
+
+If you reported a bug against another package and if that bug was
+reassigned to an X-related package, we might need more
+information. You can run the bug script manually and attach its output
+to your mail to the bug report:
+
+    /usr/share/bug/xorg/script 3>/tmp/script.log
+
+Note: Make sure there’s no space between `3` and `>`, that’s a shell
+redirection.

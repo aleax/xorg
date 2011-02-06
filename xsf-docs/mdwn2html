@@ -1,0 +1,48 @@
+#!/bin/sh
+set -e
+
+# Parameters:
+mdwn=$1
+html=$2
+
+# Usage check:
+if [ -z "$mdwn" -o -z "$html" ]; then
+    echo "Usage: $0 file.mdwn file.html"
+    exit 1
+fi
+
+# Sanity check:
+if ! which markdown >/dev/null; then
+    echo "E: Missing markdown command"
+    exit 1
+fi
+
+# Actual transformation:
+markdown $mdwn > $html.tmp
+
+# Include html headers, include title:
+title=$(head -1 $html.tmp|sed -e 's,</\?h1>,,g')
+sed "s#@@title@@#$title#" > $html <<EOF
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>@@title@@</title>
+<link rel="stylesheet" type="text/css" href="xsf.css" />
+<link rel="stylesheet" type="text/css" href="../xsf.css" />
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+</head>
+<body>
+EOF
+
+# Actual content
+cat $html.tmp >> $html
+
+# Add html footers:
+cat >> $html <<EOF
+</body>
+</html>
+EOF
+
+# Remove temporary file:
+rm -f $html.tmp

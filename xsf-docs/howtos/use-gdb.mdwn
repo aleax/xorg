@@ -1,0 +1,102 @@
+# How to use gdb
+
+Cyril Brulebois &lt;kibi@debian.org>
+
+
+## Foreword
+
+One should note that X is responsible for VT switching, meaning
+switching between an X session and console terminals. In other words,
+`Ctrl+Alt+Fn` is handled by X. If X is stopped, for example because
+it’s running under `gdb`, one can no longer switch to another
+VT. That’s why we’re recommending using a second machine to debug
+X. Nevertheless, here are some instructions to attempt debugging X
+with a single machine.
+
+### One-machine approach
+
+From a console (let‘s assume it’s `vt1`), open a `root`
+terminal. Then, start a loop which will bring you back to this console
+after a given delay (in the following example, every 60 seconds), just
+in case. The ampersand (`&`) at the end makes it a background job.
+
+    while :; do sleep 60; chvt 1; done &
+
+### Two-machine approach
+
+That’s simpler, but then you need a second machine. Just log into the
+first machine from the second one, using `ssh`.
+
+### Needed packages
+
+Obviously, `gdb` is needed; `xserver-xorg-core-dbg` contains the
+debugging symbols for the server itself. Other needed packages can be
+determined by looking at the backtrace. **FIXME: More info about
+that.**
+
+## Actual gdb work
+
+### Attaching X from gdb
+
+The way of starting X doesn’t really matter, as `gdb` makes it
+possible to attach a running process. If there’s a single X instance
+running, that will do the job:
+
+    # gdb attach $(pidof X)
+    [---GDB starts---]
+    (gdb) handle SIGPIPE nostop
+    (gdb) cont
+
+If there are several instances, one can use `ps aux` to determine the
+PID of the appropriate instance (2nd column → `$pid`), and then attach
+it:
+
+    # gdb attach $pid
+    [---GDB starts---]
+    (gdb) handle SIGPIPE nostop
+    (gdb) cont
+
+### Starting X from gdb
+
+In case X crashes at start-up, one can start X from `gdb` in the
+following way. In this example, the only parameter is the display, but
+more parameters can be added.
+
+    # gdb --args Xorg :0
+    [---GDB starts---]
+    (gdb) handle SIGPIPE nostop
+    (gdb) run
+
+### What is SIGPIPE?
+
+`SIGPIPE` is a signal that can reach the X server quite easily,
+especially when performing a VT switch, or refreshing large parts of
+the screen. That’s why we ask `gdb` not to stop when such a signal is
+caught, thanks to the `handle SIGPIPE nostop` command.
+
+### How to display a backtrace?
+
+Once X is crashed, for example because it received a `SIGSEGV`
+(segmentation fault, usually because of a NULL pointer dereference),
+or a `SIGBUS`, one gets back to the `gdb` prompt. One can then request
+a backtrace (`bt`) or a full backtrace (`bt full`). The latter is what
+developers are usually interested in, because variable values are also
+available.
+
+    (gdb) bt
+    (gdb) bt full
+
+### How to save a backtrace?
+
+To save a recording of the gdb session to a file (`gdb.txt` by
+default):
+
+    (gdb) set logging on
+
+To save in a different file, use this instead:
+
+    (gdb) set logging file my-file.txt
+    (gdb) set logging on
+
+Once logging is enabled, you can request a (full) backtrace using the
+previous commands.
