@@ -123,3 +123,84 @@ To make it easy to compute substvars when using `dh`, a `dh` sequence
 (`xsf.pm`) is shipped. As of `2:1.9.4-1`, it inserts
 `dh_xsf_substvars` right before the `dh_gencontrol` call. Other
 repetitive tasks could also be automated this way.
+
+
+## Sample driver packaging
+
+The following assumes:
+
+ * The upstream build system is sane enough, which lets us run
+   `autoreconf` at build time.
+ * It is a `video` driver. For an `input` driver, replace both
+   `xviddriver` occurrences with `xinpdriver`.
+
+### Sample debian/control file
+
+    Build-Depends:
+     debhelper (>= 8),
+     dh-autoreconf,
+     quilt,
+     xserver-xorg-dev (>= 2:1.9.4),
+     …
+
+    Depends:
+     ${shlibs:Depends},
+     ${misc:Depends},
+     ${xviddriver:Depends},
+    Provides:
+     ${xviddriver:Provides}
+
+
+### Sample debian/rules file
+
+    #!/usr/bin/make -f
+
+    # Configuration:
+    #override_dh_auto_configure:
+    #        dh_auto_configure -- --with-FOO --without-BAR
+
+    # Install in debian/tmp to retain control through dh_install:
+    override_dh_auto_install:
+            dh_auto_install --destdir=debian/tmp
+
+    # Kill *.la files, and forget no-one:
+    override_dh_install:
+            find debian/tmp -name '*.la' -delete
+            dh_install --fail-missing
+
+    ## Debug package:
+    #override_dh_strip:
+    #        dh_strip --dbg-package=xserver-xorg-video-DRIVER-dbg
+
+    # That's a plugin, use appropriate warning level:
+    override_dh_shlibdeps:
+            dh_shlibdeps -- --warnings=6
+
+    %:
+            dh $@ --with quilt,autoreconf,xsf --builddirectory=build/
+
+Some comments:
+
+ * `dh_auto_configure`: Commented out since there’s usually no
+   specific option to pass when building drivers. Sometimes needed to
+   get a related utility built.
+ * `dh_auto_install`: It behaves differently when operating on a
+   single package (it installs under `debian/PACKAGE` instead of
+   `debian/tmp`), so make it use `debian/tmp` in all cases. This way,
+   `dh_install` has to be used (see below). That also means that a
+   binary package (*e.g.* a debug package) can be added without
+   changing this part.
+ * `dh_install`: No point in keeping the `.la` files. Also, using
+   `--fail-missing` makes sure every file installed by upstream is
+   installed in some package, or explicitly ignored.
+ * `dh_strip`: Commented out, there’s only a few drivers shipping a
+   debug package.
+ * `dh_shlibdeps`: The comment really says it all.
+ * `dh`: The order is important! We want patching to happen before
+   autoreconfiguring (both `quilt` and `autoreconf` insert commands
+   before `dh_auto_configure`, and after `dh_clean`). Also, we build
+   out-of-tree. The `xsf` sequence is explained in the previous part.
+
+If one needs to build several flavours,
+[`fbdev`’s rules file](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-fbdev.git;a=blob;f=debian/rules)
+can be used as an example.
