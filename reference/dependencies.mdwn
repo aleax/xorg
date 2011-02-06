@@ -119,13 +119,7 @@ variable” warning messages while building. And since there’s a clear
 only input-related variables for input drivers, and only video-related
 variables for video drivers.
 
-
-## Possible improvements
-
-Once we’re done implementing the above stuff in `xorg-server`, and
-getting rid of deprecated features, we can do a bit more.
-
-To make it easy to compute substvars when using `dh`, we can ship a
-`dh` sequence to insert `dh_xsf_substvars` right before the
-`dh_gencontrol` call. That sequence could also be used to automate
-other stuff.
+To make it easy to compute substvars when using `dh`, a `dh` sequence
+(`xsf.pm`) is shipped. As of `2:1.9.4-1`, it inserts
+`dh_xsf_substvars` right before the `dh_gencontrol` call. Other
+repetitive tasks could also be automated this way.
