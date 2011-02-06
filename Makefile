@@ -29,8 +29,10 @@ txt: $(txt_files)
 %.pdf: %.html $(CSS_FILE) $(SVG_LOGO)
 	$(HTML_TO_PDF) $< $@
 
-%.txt: %.html
-	$(HTML_TO_TXT) $< > $@
+# Plain markdown is actually more readable than html dumped to plain
+# text (e.g. through w3m):
+%.txt: %.mdwn
+	cp $< $@
 
 # We usually don't need to run this one, but it's easier to keep both
 # SVN and PNG logos in sync:
