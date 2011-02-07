@@ -40,7 +40,7 @@ $(PNG_LOGO): $(SVG_LOGO)
 	inkscape $< -e $@
 
 clean:
-	@echo "Removing all generated html files"
+	@echo "Removing all generated files"
 	rm -f $(html_pages) $(pdf_files) $(txt_files)
 
 
