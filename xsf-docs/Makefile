@@ -15,6 +15,8 @@ CSS_FILE     = xsf.css
 SVG_LOGO     = xsf.svg
 PNG_LOGO     = xsf.png
 
+all_files = $(html_pages) $(pdf_files) $(txt_files) $(CSS_FILE) $(SVG_LOGO) $(PNG_LOGO)
+
 all: html pdf txt $(PNG_LOGO)
 
 html: $(html_pages)
@@ -38,6 +40,18 @@ txt: $(txt_files)
 # SVN and PNG logos in sync:
 $(PNG_LOGO): $(SVG_LOGO)
 	inkscape $< -e $@
+
+install: $(all_files)
+	@if [ -z "$(DESTDIR)" ]; then \
+		echo 'E: DESTDIR is not set, not installing.'; exit 1; \
+	fi
+	mkdir -p $(DESTDIR)
+	# There are probably better ways:
+	set -e; for i in $(all_files); do \
+		d=$(DESTDIR)/`dirname $$i` && \
+		mkdir -p $$d && \
+		install $$i $$d; \
+	done
 
 clean:
 	@echo "Removing all generated files"
