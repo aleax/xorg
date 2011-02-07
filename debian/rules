@@ -34,6 +34,7 @@ include debian/scripts/vars.$(ARCH)
 clean: cleanscripts
 	dh_testdir
 	dh_clean debian/local/X debian/po/pothead
+	$(MAKE) -C xsf-docs clean
 	-rm -rf stampdir
 	-debconf-updatepo
 
@@ -56,6 +57,8 @@ build-stamp: scripts-stamp
 	dh_testdir
 	# build Debian's X server wrapper
 	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
+	# build XSF docs, under xvfb for wkhtmltodpf:
+	xvfb-run -- $(MAKE) -C xsf-docs
 	touch $@
 
 build-arch-only: build

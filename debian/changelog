@@ -3,6 +3,9 @@ xorg (1:7.6+2) UNRELEASED; urgency=low
   * Merge xsf-docs documentation. That's an offline copy of the
     documentation available online (http://pkg-xorg.alioth.debian.org/) in
     the following formats: HTML, PDF, and TXT.
+  * Call make/make clean in xsf-docs/ accordingly. Do the “make” part
+    under xvfb-run since wkhtmltopdf requires a working display, at least
+    at the moment.
 
  -- Cyril Brulebois <kibi@debian.org>  Sun, 06 Feb 2011 20:22:01 +0100
 
