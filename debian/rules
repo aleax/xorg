@@ -69,6 +69,7 @@ install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_prep
+	$(MAKE) -C xsf-docs install DESTDIR=$(CURDIR)/debian/xorg/usr/share/doc/xorg
 	touch $@
 
 binary-indep: DH_OPTIONS=-i
