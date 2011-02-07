@@ -4,7 +4,13 @@ Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: Drew Parsons <dparsons@debian.org>, Cyril Brulebois <kibi@debian.org>
 Standards-Version: 3.9.1
-Build-Depends: po-debconf, debhelper (>= 7)
+Build-Depends:
+ debhelper (>= 7),
+ po-debconf,
+# xsf-docs:
+ markdown,
+ wkhtmltopdf,
+ xvfb,
 
 Package: x11-common
 Architecture: all
