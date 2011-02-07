@@ -7,6 +7,10 @@ xorg (1:7.6+2) UNRELEASED; urgency=low
     under xvfb-run since wkhtmltopdf requires a working display, at least
     at the moment.
   * Ship xsf-docs under /usr/share/doc in the xorg metapackage.
+  * Remove xbase-clients maintainer scripts: Stop caring about
+    /etc/X11/app-defaults/Beforelight, which was needed while upgrading
+    from versions earlier than 1:7.4+2. Now even squeeze has a newer
+    version.
 
  -- Cyril Brulebois <kibi@debian.org>  Sun, 06 Feb 2011 20:22:01 +0100
 
