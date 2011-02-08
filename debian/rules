@@ -44,12 +44,7 @@ SCRIPTS=$(shell ls debian/*.config.in debian/*.postinst.in debian/*.postrm.in de
 DEFAULT_DCRESOLUTIONS="1920x1440, 1920x1200, 1856x1392, 1792x1344, 1680x1050, 1600x1200, 1440x900, 1400x1050, 1280x1024, 1280x960, 1280x854, 1280x800, 1280x768, 1200x800, 1152x864, 1152x768, 1024x768, 800x600, 640x480"
 
 scripts: scripts-stamp
-scripts-stamp: genscripts validatescripts
-	touch $@
-
-validatescripts: genscripts validatescripts-stamp
-validatescripts-stamp: debian/local/dexconf
-	sh debian/scripts/validate-posix-sh $<
+scripts-stamp: genscripts
 	touch $@
 
 build: build-stamp
@@ -134,7 +129,7 @@ endif
 binary: binary-indep binary-arch
 
 .PHONY: default
-.PHONY: genscripts cleanscripts scripts validatescripts
+.PHONY: genscripts cleanscripts scripts
 .PHONY: updatepo
 .PHONY: clean configure install
 .PHONY: build build-arch-only build-all
