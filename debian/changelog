@@ -17,6 +17,9 @@ xorg (1:7.6+2) UNRELEASED; urgency=low
     version.
   * Ditto for xutils: Stop caring about /etc/X11/rstart, 1:7.3+11 was a
     long time ago.
+  * Tighten the dependency between xorg and xserver-xorg, to prevent from
+    being able to upgrade xorg only (e.g. to X11R7.6) while still having
+    xserver-xorg and xserver-xorg-core in a lower version (e.g. X11R7.5).
 
  -- Cyril Brulebois <kibi@debian.org>  Sun, 06 Feb 2011 20:22:01 +0100
 
