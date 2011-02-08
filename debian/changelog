@@ -20,6 +20,9 @@ xorg (1:7.6+2) UNRELEASED; urgency=low
   * Tighten the dependency between xorg and xserver-xorg, to prevent from
     being able to upgrade xorg only (e.g. to X11R7.6) while still having
     xserver-xorg and xserver-xorg-core in a lower version (e.g. X11R7.5).
+  * Ship a bug control file for xorg, making it report-with: xserver-xorg,
+    which gives us the exact version of the server (the bug script isn't
+    always sufficient), but also the drivers.
 
  -- Cyril Brulebois <kibi@debian.org>  Sun, 06 Feb 2011 20:22:01 +0100
 
