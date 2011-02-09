@@ -14,8 +14,8 @@ or backporting some bug fixes might lead to some painful I/O while
 generating the `.deb` files, and then installing/unpacking them. This
 is why this document was written: Helping users test other mesa
 releases, branches, bug fixes without having to build full packages,
-and without having to mess with their systems (*i.e.* you won’t need
-root access).
+and without having to mess with their systems (*i.e.* no root access
+is needed once the build dependencies are installed).
 
 We’ll focus on the DRI (Direct Rendering Infrastructure) flavour
 (`libgl1-mesa-dri`), which is the most common.
@@ -51,7 +51,8 @@ Get started by installing `mesa-utils`, which contains `glxinfo`.
         libGL: OpenDriver: trying /usr/lib/dri/tls/i915_dri.so
         libGL: OpenDriver: trying /usr/lib/dri/i915_dri.so
 
-   ↪ `i915`
+   ↪ `i915`, from the system directory: `/usr/lib/dri` (likely
+   installed through a Debian package).
 
  * *How can I get more debugging information?*
 
@@ -75,7 +76,7 @@ Grab the upstream mesa sources:
     $ cd mesa.git
     $ autoreconf -vfi
 
-Here’s how `./configure` arguments will look like:
+Here’s what the `./configure` call will look like:
 
     $ ./configure --enable-driglx-direct \
                   --enable-gallium \
@@ -89,7 +90,7 @@ Here’s how `./configure` arguments will look like:
                   --with-state-trackers=egl,glx,dri,vega \
                   …
 
-Now, what are the last options to replace “`…`” with? Basically, if
+Now, what are the parameters to replace “`…`” with? Basically, if
 you determined an Intel driver (`i915` or `i965`), you want to use the
 classic drivers and to disable the Gallium drivers. If you saw a
 Radeon driver (`r300` or `r600`), you should prefer the Gallium
@@ -126,10 +127,10 @@ Now, once you’ve run `./configure`, time for your favorite beverage:
 
 ## Running the newly-built mesa libraries
 
-Shared libraries end up in the `lib/` directory. The top-level
-contains the classic drivers, while Gallium drivers end up under
-`lib/gallium`. If you’re not an Intel user, overwrite the classic
-drivers with the Gallium ones:
+Shared libraries end up in the `lib/` directory. It contains the
+classic drivers, while Gallium drivers end up under `lib/gallium`. If
+you’re not an Intel user, overwrite the classic drivers with the
+Gallium ones:
 
     $ mv lib/gallium/* lib/
 
@@ -150,7 +151,7 @@ are used.
 
  * Set `LD_LIBRARY_PATH` to make sure the locally-built libraries
    (including those pulled through library dependencies) are used,
-   instead of system-wide ones:
+   instead of system ones:
 
         $ export LD_LIBRARY_PATH=lib
 
