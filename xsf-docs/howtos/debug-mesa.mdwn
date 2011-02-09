@@ -1,0 +1,87 @@
+# How to debug mesa
+
+Cyril Brulebois &lt;kibi@debian.org>
+
+
+## Gathering information
+
+Install `mesa-utils`, which contains `glxinfo`.
+
+ * *Is direct rendering enabled?*
+
+        $ glxinfo | grep ^direct
+        direct rendering: Yes
+
+   ↪ Yes.
+
+ * *Is this the classic or
+   [Gallium](http://en.wikipedia.org/wiki/Gallium3D) driver?*
+
+        $ glxinfo | grep 'renderer string'
+        OpenGL renderer string: Mesa DRI Intel(R) 945GM GEM 20100330 DEVELOPMENT
+
+   ↪ No “Gallium” here, therefore: “classic”.
+
+ * *Which driver is this?*
+
+        $ LIBGL_DEBUG=verbose glxinfo 2>&1 >/dev/null | grep so$
+        libGL: OpenDriver: trying /usr/lib/dri/tls/i915_dri.so
+        libGL: OpenDriver: trying /usr/lib/dri/i915_dri.so
+
+   ↪ `i915`
+
+ * *How can I get more debugging information?*
+
+        export LIBGL_DEBUG=verbose
+        export MESA_DEBUG=1
+        export EGL_LOG_LEVEL=debug
+
+
+## Preparing mesa sources
+
+To get started, installing all build dependencies of the `mesa` source
+package should be sufficient, along with the essential build tools,
+and `git`:
+
+    $ sudo apt-get install build-essential git
+    $ sudo apt-get build-dep mesa
+
+Grab the upstream mesa sources:
+
+    $ git clone git://anongit.freedesktop.org/mesa/mesa mesa.git
+    $ cd mesa.git
+    $ autoreconf -vfi
+
+Here’s how `./configure` arguments will look like:
+
+    $ ./configure --enable-driglx-direct \
+                  --enable-gallium \
+                  --enable-gles-overlay \
+                  --enable-gles1 \
+                  --enable-gles2 \
+                  --enable-glx-tls \
+                  --with-driver=dri \
+                  --with-dri-driverdir=/usr/lib/dri \
+                  --with-egl-platforms='drm x11' \
+                  --with-state-trackers=egl,glx,dri,vega \
+                  …
+
+Now, what are the last options to replace the `…` with? Basically, if
+you determined an Intel driver (`i915` or `i965`), you want to use the
+classic drivers and to disable the Gallium drivers. If you saw a
+Radeon driver (`r300` or `r600`), you should prefer the Gallium
+drivers.
+
+Examples:
+
+ * For `i915`, you need to add:
+
+        --with-dri-drivers=i915
+
+ * For `r300`, the options are named `radeon`. You need:
+
+        --with-dri-drivers=radeon --enable-gallium-radeon
+
+ * For `r600`, you need:
+
+        --with-dri-drivers=r600 --enable-gallium-r600
