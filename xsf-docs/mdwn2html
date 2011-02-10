@@ -17,8 +17,21 @@ if ! which markdown >/dev/null; then
     exit 1
 fi
 
+# Add a link back to the index:
+if [ "$mdwn" != "index.mdwn" ]; then
+    path=$(dirname $mdwn)/
+    if [ "$path" = "./" ]; then
+        path_to_root=./
+    else
+        path_to_root=$(echo $path|sed 's,[^/],,g;s,/,../,g')
+    fi
+    sed "s,^# ,# [XSF](${path_to_root}index.html) / ," $mdwn > $mdwn.tmp
+else
+    cp $mdwn $mdwn.tmp
+fi
+
 # Actual transformation:
-markdown $mdwn > $html.tmp
+markdown $mdwn.tmp > $html.tmp
 
 # Include html headers, include title:
 title=$(head -1 $html.tmp|sed -e 's,</\?h1>,,g')
@@ -44,5 +57,5 @@ cat >> $html <<EOF
 </html>
 EOF
 
-# Remove temporary file:
-rm -f $html.tmp
+# Remove temporary files:
+rm -f $mdwn.tmp $html.tmp
