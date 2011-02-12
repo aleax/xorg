@@ -11,6 +11,8 @@ xorg (1:7.6+3) UNRELEASED; urgency=low
   * As a consequence of this bug, users having installed x11-common using
     version 1:7.6+1 or 1:7.6+2 want to run “dpkg-reconfigure x11-common”
     to generate the Xwrapper.config file.
+  * Use “tempfile -m 644” to generate the temporary file which gets copied
+    back into place. There's no secret in there (Closes: #581338).
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 12 Feb 2011 11:19:54 +0100
 
