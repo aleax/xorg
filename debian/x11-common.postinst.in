@@ -50,10 +50,10 @@ EOF
     else
       sed -e '/^allowed_users.*/d' < "$XWRAPPER_CONFIG" > "$NEW_XWRAPPER_CONFIG"
       echo "allowed_users=$ALLOWED_USERS" >> "$NEW_XWRAPPER_CONFIG"
-      if ! cmp -s "$XWRAPPER_CONFIG" "$NEW_XWRAPPER_CONFIG"; then
-        cp "$NEW_XWRAPPER_CONFIG" "$XWRAPPER_CONFIG.dpkg-new"
-        mv "$XWRAPPER_CONFIG.dpkg-new" "$XWRAPPER_CONFIG"
-      fi
+    fi
+    if ! cmp -s "$XWRAPPER_CONFIG" "$NEW_XWRAPPER_CONFIG"; then
+      cp "$NEW_XWRAPPER_CONFIG" "$XWRAPPER_CONFIG.dpkg-new"
+      mv "$XWRAPPER_CONFIG.dpkg-new" "$XWRAPPER_CONFIG"
     fi
     rm -f "$NEW_XWRAPPER_CONFIG"
   else

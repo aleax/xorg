@@ -5,6 +5,9 @@ xorg (1:7.6+3) UNRELEASED; urgency=low
     - Add: reference/upstream-contacts
     - Update: howtos/report-bugs
   * rules: Get rid of DEFAULT_DCRESOLUTIONS, unused since 2009.
+  * Fix /etc/X11/Xwrapper.config handling:
+    - Don't forget to copy the new configuration file if there was none
+      previously. Thanks to Kyle Dassoff (Closes: #612979).
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 12 Feb 2011 11:19:54 +0100
 
