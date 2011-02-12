@@ -47,6 +47,14 @@ p {
   text-align: justify;
 }
 
+/* Avoid too much margin within lists. */
+li p {
+  margin-left: 0px;
+}
+li pre {
+  margin-left: 0px;
+}
+
 ul {
   margin-left: 40px;
   margin-right: 40px;
@@ -70,11 +78,11 @@ pre {
 
 code {
   color: darkred;
-  font-weight: bold;
+  font-size: 90%;
 }
 
 code, pre {
-  font-family: FreeMono;
+  font-family: Mono;
 }
 
 /* Assume it's the author(s) paragraph */
