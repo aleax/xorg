@@ -1,0 +1,39 @@
+# General FAQ
+
+Cyril Brulebois &lt;kibi@debian.org>
+
+
+## Video drivers
+
+### Intel driver
+
+ * *Why isn’t it working?*  
+   KMS is mandatory, as documented in its `README.Debian` (view it
+   online:
+   [git.debian.org](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian)). You
+   probably disabled KMS or didn’t include it in your kernel
+   configuration if you’re using a custom kernel.
+
+ * *X is crashing all the time with my “old” Intel card. What can I do?*  
+   Unfortunately, old cards are not very well supported, and you can’t
+   do much more than switching to a generic driver, like `fbdev` or
+   `vesa`, as documented in `README.Debian` (view it online:
+   [git.debian.org](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian)). Please
+   note that you need to disable `KMS` if you want to use the `vesa`
+   driver. A minimal `xorg.conf` would look like:
+
+        Section "Device"
+            Identifier "MyBuggyCard"
+            Driver     "fbdev"
+        EndSection
+
+
+### Nouveau driver
+
+ * *Why isn’t it working?*  
+   Since it’s still considered experimental by its authors, the
+   interfaces aren’t stable yet, so the driver has particular
+   dependencies on the kernel, which are documented in `README.Debian`
+   (view it online:
+   [for squeeze](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian;h=27ced6b1bf5102a5b72525318439efdfb330745d;hb=6c2f12ca18f55b55d49e083d86d87d970ce53a07),
+   [for sid](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian)).
