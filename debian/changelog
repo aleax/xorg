@@ -13,6 +13,8 @@ xorg (1:7.6+3) UNRELEASED; urgency=low
     to generate the Xwrapper.config file.
   * Use “tempfile -m 644” to generate the temporary file which gets copied
     back into place. There's no secret in there (Closes: #581338).
+  * 50x11-common_determine-startup: Take $SHELL into account, defaulting
+    to sh if SHELL is unset or null (Closes: #604010).
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 12 Feb 2011 11:19:54 +0100
 
