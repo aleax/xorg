@@ -8,6 +8,9 @@ xorg (1:7.6+3) UNRELEASED; urgency=low
   * Fix /etc/X11/Xwrapper.config handling:
     - Don't forget to copy the new configuration file if there was none
       previously. Thanks to Kyle Dassoff (Closes: #612979).
+  * As a consequence of this bug, users having installed x11-common using
+    version 1:7.6+1 or 1:7.6+2 want to run “dpkg-reconfigure x11-common”
+    to generate the Xwrapper.config file.
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 12 Feb 2011 11:19:54 +0100
 
