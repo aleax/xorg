@@ -104,7 +104,7 @@ would look like. Here is a fictional `/etc/X11/xorg.conf.d/42-evdev.conf`:
         Identifier "evdev pointer tweaked catchall"
         MatchIsPointer "on"
         Driver "evdev"
-        Option "Emulate3Buttons" "False"
+        Option "Emulate3Buttons" True"
         Option "SwapAxes" "True"
     EndSection
 
@@ -117,7 +117,7 @@ Line by line walkthrough:
  * We match everything that looks like a touchpad. Meaning no generic
    pointer, keyboard, or tablet.
  * We specify the driver we want to use for the matched device(s).
- * Finally the options we want to set. Here we disable the 3rd button
+ * Finally the options we want to set. Here we enable the 3rd button
    emulation (clicking left and right buttons at the same time then no
    longer acts as if the middle button was clicked). Then we swap x
    and y axes, just for the fun of it.
