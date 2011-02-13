@@ -50,6 +50,10 @@ build-stamp: scripts-stamp
 	dh_testdir
 	# build Debian's X server wrapper
 	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
+ifneq (,$(filter sparc sparc64,$(DEB_HOST_ARCH)))
+	# work around wkhtmltopdf's sigbus on sparc (#613141):
+	sed -i '/background-image.*svg/d' xsf-docs/xsf.css
+endif
 	# build XSF docs, under xvfb for wkhtmltodpf:
 	xvfb-run -- $(MAKE) -C xsf-docs
 	touch $@
