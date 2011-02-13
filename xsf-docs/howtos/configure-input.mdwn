@@ -102,7 +102,7 @@ would look like. Here is a fictional `/etc/X11/xorg.conf.d/42-evdev.conf`:
 
     Section "InputClass"
         Identifier "evdev pointer tweaked catchall"
-        MatchIsTouchpad "on"
+        MatchIsPointer "on"
         Driver "evdev"
         Option "Emulate3Buttons" "False"
         Option "SwapAxes" "True"
