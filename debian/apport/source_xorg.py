@@ -328,8 +328,7 @@ def attach_3d_info(report, ui=None):
                 report['UnitySupportTest'] = ust
             except AssertionError:
                 report['UnitySupportTest'] = 'FAILED TO RUN'
-                
-        report['glxinfo'] = command_output_quiet(['glxinfo'])
+
         attach_file_if_exists(report,
                               os.path.expanduser('~/.drirc'),
                               'drirc')
@@ -348,14 +347,8 @@ def attach_3d_info(report, ui=None):
             report['CompositorRunning'] = 'None'
 
     # Detect software rasterizer
-    glxinfo = report.get('glxinfo', '')
     xorglog = report.get('XorgLog', '')
-    if len(glxinfo)>0:
-        if 'renderer string: Software Rasterizer' in glxinfo:
-            report['Renderer'] = 'Software'
-        else:
-            report['Renderer'] = 'Hardware acceleration'
-    elif len(xorglog)>0:
+    if len(xorglog)>0:
         if 'reverting to software rendering' in xorglog:
             report['Renderer'] = 'Software'
         elif 'Direct rendering disabled' in xorglog:
