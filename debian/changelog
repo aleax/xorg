@@ -1,9 +1,12 @@
-xorg (1:7.6~3ubuntu5) UNRELEASED; urgency=low
+xorg (1:7.6~3ubuntu5) natty; urgency=low
 
   * apport/source_xorg.py:
     - Add 'locale' information (for keyboards)
+    - Drop 'glxinfo' since it's been demoted to universe (LP: #714784)
+    - Switch to new attach_root_command_outputs() call.  Prevents prompting
+      for password 3 times for 3 gdm files (thanks Pitti!) (LP: #716595)
 
- -- Bryce Harrington <bryce@ubuntu.com>  Wed, 16 Feb 2011 18:37:41 -0800
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 17 Feb 2011 11:42:58 -0800
 
 xorg (1:7.6~3ubuntu4) natty; urgency=low
 

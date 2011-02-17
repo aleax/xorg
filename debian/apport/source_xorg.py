@@ -78,15 +78,6 @@ def command_output_quiet(command_list):
         return None
     return log
 
-def root_collect_file_contents(path):
-    '''
-    Returns the contents of given file collected as root user
-    '''
-    log = root_command_output(['cat', path])
-    if log[:5] == "Error":
-        return "Not present"
-    return log
-
 def retval(command_list):
     '''
     Return the command exit code
@@ -314,9 +305,10 @@ def attach_2d_info(report, ui=None):
         report['xdpyinfo'] = command_output_quiet(['xdpyinfo'])
 
     if ui and ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?") == True:
-        report['GdmLog']  = root_collect_file_contents('/var/log/gdm/:0.log')
-        report['GdmLog1'] = root_collect_file_contents('/var/log/gdm/:0.log.1')
-        report['GdmLog2'] = root_collect_file_contents('/var/log/gdm/:0.log.2')
+        attach_root_command_outputs(report, {
+            'GdmLog': 'cat /var/log/gdm/:0.log',
+            'GdmLog1': 'cat /var/log/gdm/:0.log.1',
+            'GdmLog2': 'cat /var/log/gdm/:0.log.2'})
 
 def attach_3d_info(report, ui=None):
     if os.environ.get('DISPLAY'):
