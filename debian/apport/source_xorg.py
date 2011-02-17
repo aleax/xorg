@@ -391,6 +391,7 @@ def attach_input_device_info(report, ui=None):
         if report.get('SourcePackage','Unknown') in keyboard_packages:
             report['setxkbmap'] = command_output_quiet(['setxkbmap', '-print'])
             report['xkbcomp'] = command_output_quiet(['xkbcomp', ':0', '-w0', '-'])
+            report['locale'] = command_output_quiet(['locale'])
 
         # For input device bugs
         report['peripherals'] = command_output_quiet(['gconftool-2', '-R', '/desktop/gnome/peripherals'])
