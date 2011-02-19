@@ -268,7 +268,7 @@ def attach_graphic_card_pci_info(report, ui=None):
         for line in paragraph.split('\n'):
             if ':' not in line:
                 continue
-            key, value = line.split(':', 1)
+            key, value = line.split(': ', 1)
             value = value.strip()
             key = key.strip()
             if "VGA compatible controller" in key:
