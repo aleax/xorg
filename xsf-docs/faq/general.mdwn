@@ -37,3 +37,14 @@ Cyril Brulebois &lt;kibi@debian.org>
    (view it online:
    [for squeeze](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian;h=27ced6b1bf5102a5b72525318439efdfb330745d;hb=6c2f12ca18f55b55d49e083d86d87d970ce53a07),
    [for sid](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian)).
+
+
+## Others
+
+### Session management
+
+ * *How to start a bare X session (without Gnome, KDE, etc.)?*  
+   Assuming there’s no X running on the `:1` display, run this from a
+   VT:
+
+        startx /usr/bin/xterm -- :1
