@@ -208,9 +208,9 @@ def check_is_reportable(report, ui=None):
     if os.path.exists('/var/log/nvidia-installer.log'):
         # User has installed nVidia drivers manually at some point.
         # This is likely to have caused problems.
-        if ui and not ui.yesno("""It appears you may have installed the nVidia drivers manually from nvidia.com.  This can cause problems with the Ubuntu-supplied drivers.
+        if ui and not ui.yesno("""It appears you may have installed the nVidia drivers manually from nvidia.com at some point in the past.  This can cause problems with the Ubuntu-supplied drivers.
 
-If you have not already uninstalled the drivers downloaded from nvidia.com, please uninstall them and reinstall the Ubuntu packages before filing a bug with Ubuntu.
+If you have not already uninstalled the drivers downloaded from nvidia.com, please uninstall them and reinstall the Ubuntu packages before filing a bug with Ubuntu.  If you have uninstalled them, then you may want to remove the file /var/log/nvidia-installer.log as well.
 
 Have you uninstalled the drivers from nvidia.com?"""):
             report['UnreportableReason'] = 'The drivers from nvidia.com are not supported by Ubuntu.  Please uninstall them and test whether your problem still occurs.'
