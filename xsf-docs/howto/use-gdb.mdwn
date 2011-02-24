@@ -15,17 +15,15 @@ with a single machine.
 
 ### One-machine approach
 
-From a console (let’s assume it’s `vt1`), open a `root`
-terminal. Then, start a loop which will bring you back to this console
-after a given delay (in the following example, every 60 seconds), just
-in case. The ampersand (`&`) at the end makes it a background job.
-
-    while :; do sleep 60; chvt 1; done &
+This is a *post-mortem* approach. The idea is to run X with the
+`-core` option. Once it dies, a core file (`/etc/X11/core`) is
+generated, and can be loaded from `gdb`.
 
 ### Two-machine approach
 
-That’s simpler, but then you need a second machine. Just log into the
-first machine from the second one, using `ssh`.
+You pay the “need a second machine” price, but that buys you
+interactivity. Just log into the first machine from the second one,
+using `ssh`.
 
 ### Needed packages
 
