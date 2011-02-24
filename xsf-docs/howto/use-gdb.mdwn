@@ -34,6 +34,14 @@ that.**
 
 ## Actual gdb work
 
+### Loading a core file
+
+That’s trivial:
+
+    # gdb -c /etc/X11/core
+
+Now `gdb` is ready to display backtraces.
+
 ### Attaching X from gdb
 
 The way of starting X doesn’t really matter, as `gdb` makes it
