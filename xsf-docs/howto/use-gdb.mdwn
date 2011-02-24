@@ -63,9 +63,10 @@ that.**
 
 ### Loading a core file
 
-That’s trivial:
+That’s trivial, one just needs to pass both the core file and the path
+to the binary:
 
-    # gdb -c /etc/X11/core
+    # gdb -c /etc/X11/core /usr/bin/Xorg
 
 Now `gdb` is ready to display backtraces.
 
