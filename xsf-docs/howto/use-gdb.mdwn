@@ -45,6 +45,17 @@ that.**
 
 ## Actual gdb work
 
+### Getting a core file
+
+ * Using `gdm3`: The idea is to tweak the daemon’s
+   `LocalXserverCommand` setting, adding the `-core` option. As of
+   `gdm3 2.30`, the defaults can be found in
+   `/usr/share/gdm/gdm.schemas`. Sample `/etc/gdm3/daemon.conf`
+   excerpt:
+
+        [daemon]
+        LocalXserverCommand=/usr/bin/Xorg -br -verbose -audit 0 -novtswitch -core
+
 ### Loading a core file
 
 That’s trivial:
