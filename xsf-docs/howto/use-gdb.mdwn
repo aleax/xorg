@@ -56,6 +56,11 @@ that.**
         [daemon]
         LocalXserverCommand=/usr/bin/Xorg -br -verbose -audit 0 -novtswitch -core
 
+ * Using `kdm`: One should look for the `ServerArgsLocal` variable in
+   the `/etc/kde4/kdm/kdmrc` file, and add `-core` there. Example:
+
+        ServerArgsLocal=-br -nolisten tcp -core
+
  * Using `xdm`: It’s sufficient to add `-core` to the command
    configured through `/etc/X11/xdm/Xservers`, for example:
 
