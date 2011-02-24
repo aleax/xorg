@@ -56,6 +56,11 @@ that.**
         [daemon]
         LocalXserverCommand=/usr/bin/Xorg -br -verbose -audit 0 -novtswitch -core
 
+ * Using `xdm`: It’s sufficient to add `-core` to the command
+   configured through `/etc/X11/xdm/Xservers`, for example:
+
+        :0 local /usr/bin/X :0 vt7 -nolisten tcp -core
+
 ### Loading a core file
 
 That’s trivial:
