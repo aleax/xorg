@@ -19,11 +19,22 @@ This is a *post-mortem* approach. The idea is to run X with the
 `-core` option. Once it dies, a core file (`/etc/X11/core`) is
 generated, and can be loaded from `gdb`.
 
+Follow these steps:
+
+ 1. Getting a core file.
+ 2. Loading a core file.
+ 3. Displaying/saving a backtrace.
+
 ### Two-machine approach
 
 You pay the “need a second machine” price, but that buys you
 interactivity. Just log into the first machine from the second one,
 using `ssh`.
+
+Follow these steps:
+
+ 1. Attaching/Starting X from gdb.
+ 2. Displaying/saving a backtrace.
 
 ### Needed packages
 
