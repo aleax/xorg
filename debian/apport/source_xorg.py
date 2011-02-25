@@ -329,10 +329,10 @@ def attach_3d_info(report, ui=None):
             report['CompositorRunning'] = 'compiz'
             compiz_version = command_output_quiet([
                 'compiz', '--version'])
-            versions = string.split(compiz_version.replace(' ', '-'), '.')
-            versions.pop()
-            compiz_version = string.join(versions, '.')
-            report['Tags'] += ' ' + compiz_version
+            version = compiz_version.split(' ')[1]
+            version = version[:3]
+            compiz_version_string = 'compiz-%s' % version
+            report['Tags'] += ' ' + compiz_version_string
         elif command_output_quiet(['pidof', 'kwin']):
             report['CompositorRunning'] = 'kwin'
         else:
