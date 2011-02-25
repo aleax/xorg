@@ -15,17 +15,26 @@ with a single machine.
 
 ### One-machine approach
 
-From a console (let’s assume it’s `vt1`), open a `root`
-terminal. Then, start a loop which will bring you back to this console
-after a given delay (in the following example, every 60 seconds), just
-in case. The ampersand (`&`) at the end makes it a background job.
+This is a *post-mortem* approach. The idea is to run X with the
+`-core` option. Once it dies, a core file (`/etc/X11/core`) is
+generated, and can be loaded from `gdb`.
 
-    while :; do sleep 60; chvt 1; done &
+Follow these steps:
+
+ 1. Getting a core file.
+ 2. Loading a core file.
+ 3. Displaying/saving a backtrace.
 
 ### Two-machine approach
 
-That’s simpler, but then you need a second machine. Just log into the
-first machine from the second one, using `ssh`.
+You pay the “need a second machine” price, but that buys you
+interactivity. Just log into the first machine from the second one,
+using `ssh`.
+
+Follow these steps:
+
+ 1. Attaching/Starting X from gdb.
+ 2. Displaying/saving a backtrace.
 
 ### Needed packages
 
@@ -35,6 +44,36 @@ determined by looking at the backtrace. **FIXME: More info about
 that.**
 
 ## Actual gdb work
+
+### Getting a core file
+
+ * Using `gdm3`: The idea is to tweak the daemon’s
+   `LocalXserverCommand` setting, adding the `-core` option. As of
+   `gdm3 2.30`, the defaults can be found in
+   `/usr/share/gdm/gdm.schemas`. Sample `/etc/gdm3/daemon.conf`
+   excerpt:
+
+        [daemon]
+        LocalXserverCommand=/usr/bin/Xorg -br -verbose -audit 0 -novtswitch -core
+
+ * Using `kdm`: One should look for the `ServerArgsLocal` variable in
+   the `/etc/kde4/kdm/kdmrc` file, and add `-core` there. Example:
+
+        ServerArgsLocal=-br -nolisten tcp -core
+
+ * Using `xdm`: It’s sufficient to add `-core` to the command
+   configured through `/etc/X11/xdm/Xservers`, for example:
+
+        :0 local /usr/bin/X :0 vt7 -nolisten tcp -core
+
+### Loading a core file
+
+That’s trivial, one just needs to pass both the core file and the path
+to the binary:
+
+    # gdb -c /etc/X11/core /usr/bin/Xorg
+
+Now `gdb` is ready to display backtraces.
 
 ### Attaching X from gdb
 
