@@ -394,11 +394,22 @@ def attach_nvidia_info(report, ui=None):
             if os.path.basename(logfile) != 'README':
                 attach_file(report, logfile)
 
+        if os.path.lexists('/usr/lib/nvidia-current/bin/nvidia-bug-report.sh'):
+            if retval(['/usr/lib/nvidia-current/bin/nvidia-bug-report.sh'] == 0):
+                attach_file_if_exists(report, os.path.expanduser('~/nvidia-bug-report.log.gz'),
+                                      'NvidiaBugReportLog')
+
         if os.environ.get('DISPLAY'):
             # Attach output of nvidia-settings --query if we've got a display
             # to connect to.
             report['nvidia-settings'] = command_output_quiet(
                 ['nvidia-settings', '-q', 'all'])
+
+        report['JockeyStatus'] = command_output_quiet(
+            ['jockey-text', '-l'])
+
+        report['GlConf'] = command_output_quiet(
+            ['update-alternatives', '--display', 'gl_conf'])
 
         # File any X crash with -nvidia involved with the -nvidia bugs
         if (report.get('ProblemType', '') == 'Crash' and 'Traceback' not in report):
@@ -409,6 +420,12 @@ def attach_fglrx_info(report, ui=None):
     if nonfree_graphics_module() == 'fglrx':
 
         report['version.fglrx-installer'] = package_versions("fglrx-installer")
+
+        report['JockeyStatus'] = command_output_quiet(
+            ['jockey-text', '-l'])
+
+        report['GlConf'] = command_output_quiet(
+            ['update-alternatives', '--display', 'gl_conf'])
 
         # File any X crash with -fglrx involved with the -fglrx bugs
         if report.get('SourcePackage','Unknown') in core_x_packages:
