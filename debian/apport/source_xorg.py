@@ -69,6 +69,12 @@ def nonfree_graphics_module(module_list = '/proc/modules'):
         if m == "nvidia" or m == "fglrx":
             return m
 
+def attach_command_output(report, command_list, key):
+    log = command_output(command_list)
+    if not log or log[:5] == "Error":
+        return
+    report[key] = log
+
 def command_output_quiet(command_list):
     '''
     On errors, quell error message and just return empty string
@@ -236,7 +242,7 @@ def attach_dkms_info(report, ui=None):
         # Gather any dkms make.log files for proprietary drivers
         for logfile in glob.glob("/var/lib/dkms/*/*/build/make.log"):
             attach_file(report, logfile, "make.log")
-        report['DkmsStatus'] = command_output_quiet(['dkms', 'status'])
+        attach_command_output(report, ['dkms', 'status'], 'DkmsStatus')
 
 def attach_dist_upgrade_status(report, ui=None):
     '''
@@ -245,12 +251,10 @@ def attach_dist_upgrade_status(report, ui=None):
     '''
     if os.path.lexists('/var/log/dist-upgrade/apt.log'):
         # TODO: Not sure if this is quite exactly what I want, but close...
-        upgraded = command_output_quiet(
-            ['head', '-n', '1', '/var/log/dist-upgrade/apt.log'])
-        if upgraded and len(upgraded) > 0:
-            report['DistUpgraded'] = "Yes, recently upgraded %s" %(upgraded)
-        else:
-            report['DistUpgraded'] = "Unknown"
+        attach_command_output(
+            report,
+            ['head', '-n', '1', '/var/log/dist-upgrade/apt.log'],
+            'DistUpgraded')
         return True
     else:
         report['DistUpgraded'] = 'Fresh install'
@@ -296,13 +300,13 @@ def attach_2d_info(report, ui=None):
 
     if os.environ.get('DISPLAY'):
         # For resolution/multi-head bugs
-        report['Xrandr'] = command_output_quiet(['xrandr', '--verbose'])
+        attach_command_output(report, ['xrandr', '--verbose'], 'Xrandr')
         attach_file_if_exists(report,
                               os.path.expanduser('~/.config/monitors.xml'),
                               'monitors.xml')
 
         # For font dpi bugs
-        report['xdpyinfo'] = command_output_quiet(['xdpyinfo'])
+        attach_command_output(report, ['xdpyinfo'], 'xdpyinfo')
 
     if ui and ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?") == True:
         attach_root_command_outputs(report, {
@@ -329,10 +333,11 @@ def attach_3d_info(report, ui=None):
             report['CompositorRunning'] = 'compiz'
             compiz_version = command_output_quiet([
                 'compiz', '--version'])
-            version = compiz_version.split(' ')[1]
-            version = version[:3]
-            compiz_version_string = 'compiz-%s' % version
-            report['Tags'] += ' ' + compiz_version_string
+            if compiz_version:
+                version = compiz_version.split(' ')[1]
+                version = version[:3]
+                compiz_version_string = 'compiz-%s' % version
+                report['Tags'] += ' ' + compiz_version_string
         elif command_output_quiet(['pidof', 'kwin']):
             report['CompositorRunning'] = 'kwin'
         else:
@@ -352,13 +357,14 @@ def attach_3d_info(report, ui=None):
         ui.information("Your system is providing 3D via software rendering rather than hardware rendering.  This is a compatibility mode which should display 3D graphics properly but the performance may be very poor.  If the problem you're reporting is related to graphics performance, your real question may be why X didn't use hardware acceleration for your system.")
 
     # Plugins
-    report['CompizPlugins'] = command_output_quiet([
-        'gconftool-2',
-        '--get', '/apps/compiz-1/general/screen0/options/active_plugins'])
+    attach_command_output(report, [
+        'gconftool-2', '--get', '/apps/compiz-1/general/screen0/options/active_plugins'],
+        'CompizPlugins')
 
     # User configuration
-    report['GconfCompiz'] = command_output_quiet([
-        'gconftool-2', '-R', '/apps/compiz-1'])
+    attach_command_output(report, [
+        'gconftool-2', '-R', '/apps/compiz-1'],
+        'GconfCompiz')
 
     # Compiz internal state if compiz crashed
     if report.get('SourcePackage','Unknown') == "compiz" and report.has_key("ProcStatus"):
@@ -374,12 +380,12 @@ def attach_input_device_info(report, ui=None):
     if os.environ.get('DISPLAY'):
         # For keyboard bugs
         if report.get('SourcePackage','Unknown') in keyboard_packages:
-            report['setxkbmap'] = command_output_quiet(['setxkbmap', '-print'])
-            report['xkbcomp'] = command_output_quiet(['xkbcomp', ':0', '-w0', '-'])
-            report['locale'] = command_output_quiet(['locale'])
+            attach_command_output(report, ['setxkbmap', '-print'], 'setxkbmap')
+            attach_command_output(report, ['xkbcomp', ':0', '-w0', '-'], 'xkbcomp')
+            attach_command_output(report, ['locale'], 'locale')
 
         # For input device bugs
-        report['peripherals'] = command_output_quiet(['gconftool-2', '-R', '/desktop/gnome/peripherals'])
+        attach_command_output(report, ['gconftool-2', '-R', '/desktop/gnome/peripherals'], 'peripherals')
 
 def attach_nvidia_info(report, ui=None):
     # Attach information for upstreaming nvidia binary bugs
@@ -402,14 +408,10 @@ def attach_nvidia_info(report, ui=None):
         if os.environ.get('DISPLAY'):
             # Attach output of nvidia-settings --query if we've got a display
             # to connect to.
-            report['nvidia-settings'] = command_output_quiet(
-                ['nvidia-settings', '-q', 'all'])
+            attach_command_output(report, ['nvidia-settings', '-q', 'all'], 'nvidia-settings')
 
-        report['JockeyStatus'] = command_output_quiet(
-            ['jockey-text', '-l'])
-
-        report['GlConf'] = command_output_quiet(
-            ['update-alternatives', '--display', 'gl_conf'])
+        attach_command_output(report, ['jockey-text', '-l'], 'JockeyStatus')
+        attach_command_output(report, ['update-alternatives', '--display', 'gl_conf'], 'GlConf')
 
         # File any X crash with -nvidia involved with the -nvidia bugs
         if (report.get('ProblemType', '') == 'Crash' and 'Traceback' not in report):
@@ -421,11 +423,8 @@ def attach_fglrx_info(report, ui=None):
 
         report['version.fglrx-installer'] = package_versions("fglrx-installer")
 
-        report['JockeyStatus'] = command_output_quiet(
-            ['jockey-text', '-l'])
-
-        report['GlConf'] = command_output_quiet(
-            ['update-alternatives', '--display', 'gl_conf'])
+        attach_command_output(report, ['jockey-text', '-l'], 'JockeyStatus')
+        attach_command_output(report, ['update-alternatives', '--display', 'gl_conf'], 'GlConf')
 
         # File any X crash with -fglrx involved with the -fglrx bugs
         if report.get('SourcePackage','Unknown') in core_x_packages:
