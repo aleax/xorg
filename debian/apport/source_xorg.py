@@ -55,6 +55,12 @@ def installed_version(pkg):
     output = script.communicate()[0]
     return output.split('\n')[1].replace("Installed: ", "")
 
+def is_process_running(proc):
+    log = command_output(['pidof', proc])
+    if not log or log[:5] == "Error" or len(log)<1:
+        return False
+    return True
+
 def nonfree_graphics_module(module_list = '/proc/modules'):
     '''
     Check loaded modules to see if a proprietary graphics driver is loaded.
@@ -74,15 +80,6 @@ def attach_command_output(report, command_list, key):
     if not log or log[:5] == "Error":
         return
     report[key] = log
-
-def command_output_quiet(command_list):
-    '''
-    On errors, quell error message and just return empty string
-    '''
-    log = command_output(command_list)
-    if log[:5] == "Error":
-        return None
-    return log
 
 def retval(command_list):
     '''
@@ -105,8 +102,10 @@ def ubuntu_code_name():
     '''
     Return the ubuntu release code name, 'dapper', 'natty', etc.
     '''
-    return command_output_quiet(['lsb_release','-sc'])
-
+    code_name = command_output(['lsb_release','-sc'])
+    if code_name[:5] == "Error":
+        return None
+    return code_name
 
 ######
 #
@@ -329,16 +328,15 @@ def attach_3d_info(report, ui=None):
                               os.path.expanduser('~/.drirc'),
                               'drirc')
 
-        if command_output_quiet(['pidof', 'compiz']):
+        if is_process_running('compiz'):
             report['CompositorRunning'] = 'compiz'
-            compiz_version = command_output_quiet([
-                'compiz', '--version'])
+            compiz_version = command_output(['compiz', '--version'])
             if compiz_version:
                 version = compiz_version.split(' ')[1]
                 version = version[:3]
                 compiz_version_string = 'compiz-%s' % version
                 report['Tags'] += ' ' + compiz_version_string
-        elif command_output_quiet(['pidof', 'kwin']):
+        elif is_process_running('kwin'):
             report['CompositorRunning'] = 'kwin'
         else:
             report['CompositorRunning'] = 'None'

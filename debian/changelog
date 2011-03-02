@@ -1,3 +1,17 @@
+xorg (1:7.6~3ubuntu10) natty; urgency=low
+
+  * apport/source_xorg.py:
+    - Refactor command_output_quiet() to attach_command_output().
+      attach_command_output() is designed to follow the API style of
+      apport's attach_file() and attach_root_commands_output(), and is less
+      susceptible to faults caused by assigning None to elements of the
+      report[] dictionary.
+      (LP: #712109)
+    - Replace remaining calls to command_output_quiet() with specialized
+      routine is_process_running().
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 01 Mar 2011 18:15:59 -0800
+
 xorg (1:7.6~3ubuntu9) natty; urgency=low
 
   * apport/source_xorg.py:
