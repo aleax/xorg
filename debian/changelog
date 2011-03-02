@@ -5,8 +5,10 @@ xorg (1:7.6~3ubuntu9) natty; urgency=low
     - Collect update-alternatives info in case of proprietary drivers
     - Generate nvidia-bug-report.log.gz if -nvidia loaded
     - Don't quell errors calling unity_support_test (LP: #710630)
+    - Check for null when checking for upgrades.  Can fail if apt.log is
+      empty or unreadable. (LP: #723061)
 
- -- Bryce Harrington <bryce@ubuntu.com>  Tue, 01 Mar 2011 16:52:41 -0800
+ -- Bryce Harrington <bryce@ubuntu.com>  Tue, 01 Mar 2011 16:58:31 -0800
 
 xorg (1:7.6~3ubuntu8) natty; urgency=low
 

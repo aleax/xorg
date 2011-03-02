@@ -247,7 +247,7 @@ def attach_dist_upgrade_status(report, ui=None):
         # TODO: Not sure if this is quite exactly what I want, but close...
         upgraded = command_output_quiet(
             ['head', '-n', '1', '/var/log/dist-upgrade/apt.log'])
-        if len(upgraded) > 0:
+        if upgraded and len(upgraded) > 0:
             report['DistUpgraded'] = "Yes, recently upgraded %s" %(upgraded)
         else:
             report['DistUpgraded'] = "Unknown"
