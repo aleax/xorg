@@ -314,7 +314,7 @@ def attach_3d_info(report, ui=None):
     if os.environ.get('DISPLAY'):
         if os.path.lexists('/usr/lib/nux/unity_support_test'):
             try:
-                ust = command_output_quiet([
+                ust = command_output([
                     '/usr/lib/nux/unity_support_test', '-p'])
                 ust = ust.replace('\x1b','').replace('[0;38;48m','').replace('[1;32;48m','')
                 report['UnitySupportTest'] = ust
