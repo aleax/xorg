@@ -15,14 +15,13 @@ xorg (1:7.6+4ubuntu1) UNRELEASED; urgency=low
         of all packages to x11-common's.
     - debian/scripts/vars.*: Don't drop wacom, synaptics from *-all
     - debian/xserver-xorg.postinst.in: Also migrate users from psb → vesa.
-    - debian/x11-common.postinst.in,
-      debian/x11-common.postrm.in,
-      debian/x11-common.preinst.in: Remove obsolete conffiles from xinit.
   * Removed transitional xlibmesa-gl*, libglu1-* packages, they have only
     'Suggests' or 'Recommends' rdepends left, and other packages available
     that replace them.
   * x11-common: Remove obsolete failsafe configuration files from /etc/gdm.
     (LP: #654353)
+  * x11-common: Clean up old configuration file removals from
+    {preinst,postinst,postrm}.in.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 08 Mar 2011 15:48:47 +0200
 
