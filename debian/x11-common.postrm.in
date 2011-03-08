@@ -30,6 +30,13 @@ abort-install|abort-upgrade)
   if dpkg --compare-versions "$2" lt-nl "1:7.4~5ubuntu16"; then
     remove_conffile_rollback "/etc/X11/Xsession.d/60x11-localhost"
   fi
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu1"; then
+    remove_conffile_commit "/etc/gdm/failsafe-xorg.conf"
+    remove_conffile_commit "/etc/gdm/failsafeDexconf"
+    remove_conffile_commit "/etc/gdm/failsafeDexconf.old"
+    remove_conffile_commit "/etc/gdm/failsafeHelpmsg"
+    remove_conffile_commit "/etc/gdm/failsafeInstall"
+  fi
 esac
 
 # clean up non-conffile configuration files and related materials on purge
