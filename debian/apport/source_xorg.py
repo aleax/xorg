@@ -307,11 +307,12 @@ def attach_2d_info(report, ui=None):
         # For font dpi bugs
         attach_command_output(report, ['xdpyinfo'], 'xdpyinfo')
 
-    if ui and ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?") == True:
-        attach_root_command_outputs(report, {
-            'GdmLog': 'cat /var/log/gdm/:0.log',
-            'GdmLog1': 'cat /var/log/gdm/:0.log.1',
-            'GdmLog2': 'cat /var/log/gdm/:0.log.2'})
+    if os.path.lexists('/var/log/gdm'):
+        if ui and ui.yesno("Your gdm log files may help developers diagnose the bug, but may contain sensitive information.  Do you want to include these logs in your bug report?") == True:
+            attach_root_command_outputs(report, {
+                'GdmLog': 'cat /var/log/gdm/:0.log',
+                'GdmLog1': 'cat /var/log/gdm/:0.log.1',
+                'GdmLog2': 'cat /var/log/gdm/:0.log.2'})
 
 def attach_3d_info(report, ui=None):
     if os.environ.get('DISPLAY'):
@@ -399,7 +400,7 @@ def attach_nvidia_info(report, ui=None):
                 attach_file(report, logfile)
 
         if os.path.lexists('/usr/lib/nvidia-current/bin/nvidia-bug-report.sh'):
-            if retval(['/usr/lib/nvidia-current/bin/nvidia-bug-report.sh'] == 0):
+            if retval(['/usr/lib/nvidia-current/bin/nvidia-bug-report.sh']) == 0:
                 attach_file_if_exists(report, os.path.expanduser('~/nvidia-bug-report.log.gz'),
                                       'NvidiaBugReportLog')
 

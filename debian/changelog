@@ -118,6 +118,16 @@ xorg (1:7.6+1) unstable; urgency=low
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 05 Feb 2011 15:23:23 +0100
 
+xorg (1:7.6~3ubuntu11) natty; urgency=low
+
+  * apport/source_xorg.py:
+    - Fix typo in nvidia data collection
+    - Only collect gdm logs if gdm appears to be present, so as not to
+      cause "file not found" errors when it isn't.
+      (LP: #722914)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 02 Mar 2011 10:56:02 -0800
+
 xorg (1:7.6~3ubuntu10) natty; urgency=low
 
   * apport/source_xorg.py:
