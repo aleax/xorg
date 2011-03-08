@@ -1,0 +1,94 @@
+body {
+  color: black;
+  background-color: white;
+  background-image: url("xsf.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  font-family: Georgia;
+}
+
+/* Firefox before version 4 don't support SVG in backgrounds, use a
+   ugly workaround to change the background to the PNG version for
+   Mozilla-based browsers:
+     https://bugzilla.mozilla.org/show_bug.cgi?id=231179
+*/
+@-moz-document url-prefix() {
+  body {
+    background-image: url("xsf.png");
+  }
+}
+
+h1 {
+  margin-left: 10px;
+  color: darkblue;
+  font-style: italic;
+}
+
+h2 {
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid darkblue;
+  padding: 2px 5px 2px 5px;
+  page-break-before: always;
+}
+/* No need to put only a h1 on a single page */
+h1 + p + h2,
+h1 + h2 {
+  page-break-before: avoid;
+}
+
+h3 {
+  margin-left: 30px;
+}
+
+p {
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+}
+
+/* Avoid too much margin within lists. */
+li p {
+  margin-left: 0px;
+}
+li pre {
+  margin-left: 0px;
+}
+
+ul {
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+}
+
+ol {
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+}
+
+/* Avoid too much margin in nested lists */
+ul ul, ol ul, ul ol, ol ol {
+  margin-left: 0px;
+}
+
+pre {
+  margin-left: 60px;
+}
+
+code {
+  color: darkred;
+  font-size: 90%;
+}
+
+code, pre {
+  font-family: Mono;
+}
+
+/* Assume it's the author(s) paragraph */
+h1 + p {
+  text-align: right;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 90%;
+}

@@ -13,7 +13,8 @@ if [ -z "$STARTUP" ]; then
         if [ -x "$STARTUPFILE" ]; then
           STARTUP="$STARTUPFILE"
         else
-          STARTUP="sh $STARTUPFILE"
+          shell=${SHELL:-sh}
+          STARTUP="$shell $STARTUPFILE"
         fi
         break
       fi

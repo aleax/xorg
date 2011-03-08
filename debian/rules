@@ -34,6 +34,7 @@ include debian/scripts/vars.$(ARCH)
 clean: cleanscripts
 	dh_testdir
 	dh_clean debian/local/X debian/po/pothead
+	$(MAKE) -C xsf-docs clean
 	-rm -rf stampdir
 	-rm -f debian/po-failsafe/failsafexinit.pot
 	-debconf-updatepo
@@ -41,15 +42,8 @@ clean: cleanscripts
 
 SCRIPTS=$(shell ls debian/*.config.in debian/*.postinst.in debian/*.postrm.in debian/*.preinst.in debian/*.prerm.in)
 
-DEFAULT_DCRESOLUTIONS="1920x1440, 1920x1200, 1856x1392, 1792x1344, 1680x1050, 1600x1200, 1440x900, 1400x1050, 1280x1024, 1280x960, 1280x854, 1280x800, 1280x768, 1200x800, 1152x864, 1152x768, 1024x768, 800x600, 640x480"
-
 scripts: scripts-stamp
-scripts-stamp: genscripts validatescripts
-	touch $@
-
-validatescripts: genscripts validatescripts-stamp
-validatescripts-stamp: debian/local/dexconf
-	sh debian/scripts/validate-posix-sh $<
+scripts-stamp: genscripts
 	touch $@
 
 build: build-stamp
@@ -58,6 +52,12 @@ build-stamp: scripts-stamp
 	# build Debian's X server wrapper
 	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
 	xgettext -f debian/po-failsafe/POTFILES.in -d failsafexinit -o debian/po-failsafe/failsafexinit.pot -L Shell
+ifneq (,$(filter sparc sparc64,$(DEB_HOST_ARCH)))
+	# work around wkhtmltopdf's sigbus on sparc (#613141):
+	sed -i '/background-image.*svg/d' xsf-docs/xsf.css
+endif
+	# build XSF docs, under xvfb for wkhtmltodpf:
+	xvfb-run -- $(MAKE) -C xsf-docs
 	touch $@
 
 build-arch-only: build
@@ -68,6 +68,7 @@ install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_prep
+	$(MAKE) -C xsf-docs install DESTDIR=$(CURDIR)/debian/xserver-xorg/usr/share/doc/xorg
 	touch $@
 
 binary-indep: DH_OPTIONS=-i
@@ -155,7 +156,7 @@ endif
 binary: binary-indep binary-arch
 
 .PHONY: default
-.PHONY: genscripts cleanscripts scripts validatescripts
+.PHONY: genscripts cleanscripts scripts
 .PHONY: updatepo
 .PHONY: clean configure install
 .PHONY: build build-arch-only build-all

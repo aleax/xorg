@@ -1,3 +1,125 @@
+xorg (1:7.6+4ubuntu1) UNRELEASED; urgency=low
+
+  * Merge from Debian unstable. Remaining Ubuntu changes:
+    - Add apport hook
+    - Demote xfonts-{75DPI,100DPI} to Suggests. Demote xfonts-scalable to
+      Recommends.
+    - Keep old transitional packages; these still have rdepends in Ubuntu
+      + xlibmesa-gl
+      + xlibmesa-gl-dev
+      + xlibmesa-glu
+      + libglu1-xorg
+      + libglu1-xorg-dev
+    - debian/local/Failsafe*: Failsafe X hookup.
+    - debian/local/Xsession: Truncate xsession-errors on startup if too big
+    - debian/local/Xsession.d/20x11-common_process-args: Add support for
+      session command containing args.
+    - debian/local/Xsession.d/60x11-common_localhost: Authorise all processes
+      running with the user's credentials to connect to the server.
+    - debian/rules, debian/control:
+      + Add dependencies on x11-common, and symlink /usr/share/doc directories
+        of all packages to x11-common's.
+    - debian/scripts/vars.*: Don't drop wacom, synaptics from *-all
+    - debian/xserver-xorg.postinst.in: Also migrate users from psb → vesa.
+    - debian/x11-common.postinst.in,
+      debian/x11-common.postrm.in,
+      debian/x11-common.preinst.in: Remove obsolete conffiles from xinit.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 08 Mar 2011 15:48:47 +0200
+
+xorg (1:7.6+4) unstable; urgency=low
+
+  [ Steve Langasek ]
+  * Mark x11-common as Multi-Arch: foreign, so foreign-architecture libs
+    have their dependency satisfied by it.
+
+  [ Cyril Brulebois ]
+  * Merge xsf-docs up to the 4d4bfa3eaf commit:
+    - Add: faq/general
+    - Add: reference/squeeze-backports
+    - Update: howto/configure-input
+    - Update: howto/triage-bugs
+    - Update: howto/use-gdb (mention getting/using a core file)
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 25 Feb 2011 21:05:36 +0100
+
+xorg (1:7.6+3) unstable; urgency=low
+
+  * Merge xsf-docs up to the 8fc70f1e37 commit:
+    - Add: howtos/build-mesa
+    - Add: reference/upstream-contacts
+    - Update: howtos/report-bugs
+  * rules: Get rid of DEFAULT_DCRESOLUTIONS, unused since 2009.
+  * Fix /etc/X11/Xwrapper.config handling:
+    - Don't forget to copy the new configuration file if there was none
+      previously. Thanks to Kyle Dassoff (Closes: #612979).
+  * As a consequence of this bug, users having installed x11-common using
+    version 1:7.6+1 or 1:7.6+2 want to run “dpkg-reconfigure x11-common”
+    to generate the Xwrapper.config file.
+  * Use “tempfile -m 644” to generate the temporary file which gets copied
+    back into place. There's no secret in there (Closes: #581338).
+  * 50x11-common_determine-startup: Take $SHELL into account, defaulting
+    to sh if SHELL is unset or null (Closes: #604010).
+  * Fix FTBFS on sparc{,64} by working around wkhtmltopdf's #613141:
+    remove the SVG file from the CSS on these architectures.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 13 Feb 2011 07:34:14 +0100
+
+xorg (1:7.6+2) unstable; urgency=low
+
+  * Merge xsf-docs documentation. That's an offline copy of the
+    documentation available online (http://pkg-xorg.alioth.debian.org/) in
+    the following formats: HTML, PDF, and TXT.
+  * Call make/make clean in xsf-docs/ accordingly. Do the “make” part
+    under xvfb-run since wkhtmltopdf requires a working display, at least
+    at the moment.
+  * Ship xsf-docs in the xserver-xorg metapackage, under the following
+    directory: /usr/share/doc/xorg
+  * Add build-deps accordingly:
+    - markdown: .mdwn to .html
+    - wkhtmltopdf: .html to .pdf
+    - xvfb: wkhtmltopdf needs a display.
+    - xauth: xvfb-run needs it.
+  * Remove xbase-clients maintainer scripts: Stop caring about
+    /etc/X11/app-defaults/Beforelight, which was needed while upgrading
+    from versions earlier than 1:7.4+2. Now even squeeze has a newer
+    version.
+  * Ditto for xutils: Stop caring about /etc/X11/rstart, 1:7.3+11 was a
+    long time ago.
+  * Tighten the dependency between xorg and xserver-xorg, to prevent from
+    being able to upgrade xorg only (e.g. to X11R7.6) while still having
+    xserver-xorg and xserver-xorg-core in a lower version (e.g. X11R7.5).
+  * Ship a bug control file for xorg, making it report-with: xserver-xorg,
+    which gives us the exact version of the server (the bug script isn't
+    always sufficient), but also the drivers.
+  * Remove obsolete material:
+    - dexconf: Good bye!
+    - xorg.conf: No real need for an example, with autodetection. If some
+      documentation is still needed, it can be added to xsf-docs.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 08 Feb 2011 16:32:29 +0100
+
+xorg (1:7.6+1) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * x11-common: drop usage of /var/lib/x11/Xwrapper.config.{md5sum,roster}.
+    Since sarge (I think), no other package has been handling
+    /etc/X11/Xwrapper.config, so assume we're the only owner, remove the state
+    files on upgrade.  The checksum is also not needed, we read the
+    allowed_users value from the file in the config script and preserve it.
+    Closes: #611271.
+
+  [ Cyril Brulebois ]
+  * Make xserver-xorg-video-nouveau a dependency again.
+  * Make xserver-xorg-video-geode a recommended package. It's not
+    maintained by the X Strike Force, and that shouldn't prevent
+    xserver-xorg-video-all from being installable.
+  * xserver-wrapper.c: Fix compilation warnings.
+  * Update Uploaders list. Thanks, David & Brice!
+  * Bump Standards-Version to 3.9.1 (no changes needed).
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 05 Feb 2011 15:23:23 +0100
+
 xorg (1:7.6~3ubuntu10) natty; urgency=low
 
   * apport/source_xorg.py:
@@ -106,17 +228,6 @@ xorg (1:7.6~3ubuntu1) natty; urgency=low
   * Bump Xserver dependency to 1.10RC1
 
  -- Christopher James Halse Rogers <raof@ubuntu.com>  Mon, 31 Jan 2011 21:29:57 +1100
-
-xorg (1:7.6~3) UNRELEASED; urgency=low
-
-  * x11-common: drop usage of /var/lib/x11/Xwrapper.config.{md5sum,roster}.
-    Since sarge (I think), no other package has been handling
-    /etc/X11/Xwrapper.config, so assume we're the only owner, remove the state
-    files on upgrade.  The checksum is also not needed, we read the
-    allowed_users value from the file in the config script and preserve it.
-    Closes: #611271.
-
- -- Julien Cristau <jcristau@debian.org>  Fri, 28 Jan 2011 12:40:27 +0100
 
 xorg (1:7.6~2) experimental; urgency=low
 

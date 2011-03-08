@@ -3,9 +3,16 @@ Section: x11
 Priority: optional
 Maintainer: Ubuntu X-SWAT <ubuntu-x@lists.ubuntu.com>
 XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: David Nusinow <dnusinow@debian.org>, Drew Parsons <dparsons@debian.org>, Brice Goglin <bgoglin@debian.org>, Cyril Brulebois <kibi@debian.org>
-Standards-Version: 3.8.4
-Build-Depends: po-debconf, debhelper (>= 7.3.15ubuntu3)
+Uploaders: Drew Parsons <dparsons@debian.org>, Cyril Brulebois <kibi@debian.org>
+Standards-Version: 3.9.1
+Build-Depends:
+ debhelper (>= 7.3.15ubuntu3),
+ po-debconf,
+# xsf-docs:
+ markdown,
+ wkhtmltopdf,
+ xauth,
+ xvfb,
 Vcs-Git: git://git.debian.org/git/pkg-xorg/debian/xorg
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/debian/xorg.git
 
@@ -72,7 +79,7 @@ Description: the X.Org X server -- input driver metapackage
 Package: xorg
 Architecture: any
 Depends:
- xserver-xorg,
+ xserver-xorg (>= ${binary:Version}),
  libgl1-mesa-glx | libgl1,
  libgl1-mesa-dri,
  libglu1-mesa,
