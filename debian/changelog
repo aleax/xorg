@@ -4,12 +4,6 @@ xorg (1:7.6+4ubuntu1) UNRELEASED; urgency=low
     - Add apport hook
     - Demote xfonts-{75DPI,100DPI} to Suggests. Demote xfonts-scalable to
       Recommends.
-    - Keep old transitional packages; these still have rdepends in Ubuntu
-      + xlibmesa-gl
-      + xlibmesa-gl-dev
-      + xlibmesa-glu
-      + libglu1-xorg
-      + libglu1-xorg-dev
     - debian/local/Failsafe*: Failsafe X hookup.
     - debian/local/Xsession: Truncate xsession-errors on startup if too big
     - debian/local/Xsession.d/20x11-common_process-args: Add support for
@@ -24,6 +18,9 @@ xorg (1:7.6+4ubuntu1) UNRELEASED; urgency=low
     - debian/x11-common.postinst.in,
       debian/x11-common.postrm.in,
       debian/x11-common.preinst.in: Remove obsolete conffiles from xinit.
+  * Removed transitional xlibmesa-gl*, libglu1-* packages, they have only
+    'Suggests' or 'Recommends' rdepends left, and other packages available
+    that replace them.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Tue, 08 Mar 2011 15:48:47 +0200
 
