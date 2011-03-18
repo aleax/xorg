@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-txt_files = $(shell find -name '*.txt')
+txt_files = $(shell find -name '*.txt' -a ! -name '.*.txt')
 
 html_files = $(patsubst %.txt,%.html,$(txt_files))
 
