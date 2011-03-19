@@ -1,9 +1,11 @@
-# How to use gdb
+How to use gdb
+==============
 
-Cyril Brulebois &lt;kibi@debian.org>
+Cyril Brulebois <kibi@debian.org>
 
 
-## Foreword
+Foreword
+--------
 
 One should note that X is responsible for VT switching, meaning
 switching between an X session and console terminals. In other words,
@@ -13,9 +15,10 @@ VT. That’s why we’re recommending using a second machine to debug
 X. Nevertheless, here are some instructions to attempt debugging X
 with a single machine.
 
-### One-machine approach
+One-machine approach
+~~~~~~~~~~~~~~~~~~~~
 
-This is a *post-mortem* approach. The idea is to run X with the
+This is a _post-mortem_ approach. The idea is to run X with the
 `-core` option. Once it dies, a core file (`/etc/X11/core`) is
 generated, and can be loaded from `gdb`.
 
@@ -25,7 +28,8 @@ Follow these steps:
  2. Loading a core file.
  3. Displaying/saving a backtrace.
 
-### Two-machine approach
+Two-machine approach
+~~~~~~~~~~~~~~~~~~~~
 
 You pay the “need a second machine” price, but that buys you
 interactivity. Just log into the first machine from the second one,
@@ -36,16 +40,19 @@ Follow these steps:
  1. Attaching/Starting X from gdb.
  2. Displaying/saving a backtrace.
 
-### Needed packages
+Needed packages
+~~~~~~~~~~~~~~~
 
 Obviously, `gdb` is needed; `xserver-xorg-core-dbg` contains the
 debugging symbols for the server itself. Other needed packages can be
 determined by looking at the backtrace. **FIXME: More info about
 that.**
 
-## Actual gdb work
+Actual gdb work
+---------------
 
-### Getting a core file
+Getting a core file
+~~~~~~~~~~~~~~~~~~~
 
  * Using `gdm3`: The idea is to tweak the daemon’s
    `LocalXserverCommand` setting, adding the `-core` option. As of
@@ -66,7 +73,8 @@ that.**
 
         :0 local /usr/bin/X :0 vt7 -nolisten tcp -core
 
-### Loading a core file
+Loading a core file
+~~~~~~~~~~~~~~~~~~~
 
 That’s trivial, one just needs to pass both the core file and the path
 to the binary:
@@ -75,7 +83,8 @@ to the binary:
 
 Now `gdb` is ready to display backtraces.
 
-### Attaching X from gdb
+Attaching X from gdb
+~~~~~~~~~~~~~~~~~~~~
 
 The way of starting X doesn’t really matter, as `gdb` makes it
 possible to attach a running process. If there’s a single X instance
@@ -95,7 +104,8 @@ it:
     (gdb) handle SIGPIPE nostop
     (gdb) cont
 
-### Starting X from gdb
+Starting X from gdb
+~~~~~~~~~~~~~~~~~~~
 
 In case X crashes at start-up, one can start X from `gdb` in the
 following way. In this example, the only parameter is the display, but
@@ -106,14 +116,16 @@ more parameters can be added.
     (gdb) handle SIGPIPE nostop
     (gdb) run
 
-### What is SIGPIPE?
+What is SIGPIPE?
+~~~~~~~~~~~~~~~~
 
 `SIGPIPE` is a signal that can reach the X server quite easily,
 especially when performing a VT switch, or refreshing large parts of
 the screen. That’s why we ask `gdb` not to stop when such a signal is
 caught, thanks to the `handle SIGPIPE nostop` command.
 
-### How to display a backtrace?
+How to display a backtrace?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once X is crashed, for example because it received a `SIGSEGV`
 (segmentation fault, usually because of a NULL pointer dereference),
@@ -125,7 +137,8 @@ available.
     (gdb) bt
     (gdb) bt full
 
-### How to save a backtrace?
+How to save a backtrace?
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To save a recording of the gdb session to a file (`gdb.txt` by
 default):
