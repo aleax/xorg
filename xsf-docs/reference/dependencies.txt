@@ -1,12 +1,14 @@
-# Dependencies between server and drivers
+Dependencies between server and drivers
+=======================================
 
-Cyril Brulebois &lt;kibi@debian.org>
+Cyril Brulebois <kibi@debian.org>
 
 
-## Upstream-side: ABI version numbers
+Upstream-side: ABI version numbers
+----------------------------------
 
 The X server defines several
-[ABI](http://en.wikipedia.org/wiki/Application_binary_interface) version numbers in the
+link:http://en.wikipedia.org/wiki/Application_binary_interface[ABI] version numbers in the
 `hw/xfree86/common/xf86Module.h` header, through the
 `SET_ABI_VERSION(maj,min)` macro. In this document, the focus is on
 `ABI_VIDEODRV_VERSION` and `ABI_XINPUT_VERSION`, which are
@@ -36,11 +38,13 @@ Thanks to `pkg-config` we can query them:
     12.1
 
 
-## Debian-side: Using virtual packages
+Debian-side: Using virtual packages
+-----------------------------------
 
-### Server’s build system
+Server’s build system
+~~~~~~~~~~~~~~~~~~~~~
 
-When `xorg-server` gets built, we use `pkg-config`’s output to
+When `xorg-server` gets built, we use ++pkg-config++’s output to
 determine the current major. Through substitution variables, we add
 two virtual packages in the `Provides` field of the server (for both
 `xserver-xorg-core` and `xserver-xorg-core-udeb`): `xorg-input-abi-$x`
@@ -72,7 +76,8 @@ and compares them to the previous ones stored in
 `debian/serverminver`, failing and diffing is something changed.
 
 
-### Driver’s control file
+Driver’s control file
+~~~~~~~~~~~~~~~~~~~~~
 
 Drivers also use substitution variables in their control file,
 replaced at build time.
@@ -92,7 +97,8 @@ but using substitution variables is cheap, and makes it easy to add
 tweaks afterwards if needed.
 
 
-### Driver’s build system
+Driver’s build system
+~~~~~~~~~~~~~~~~~~~~~
 
 To set those variables, we ship a `dh_xsf_substvars` script in
 `xserver-xorg-dev` starting with `2:1.9.4`, to be run before
@@ -125,7 +131,8 @@ To make it easy to compute substvars when using `dh`, a `dh` sequence
 repetitive tasks could also be automated this way.
 
 
-## Sample driver packaging
+Sample driver packaging
+-----------------------
 
 The following assumes:
 
@@ -134,7 +141,8 @@ The following assumes:
  * It is a `video` driver. For an `input` driver, replace both
    `xviddriver` occurrences with `xinpdriver`.
 
-### Sample debian/control file
+Sample debian/control file
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Build-Depends:
      debhelper (>= 8),
@@ -151,7 +159,8 @@ The following assumes:
      ${xviddriver:Provides}
 
 
-### Sample debian/rules file
+Sample debian/rules file
+~~~~~~~~~~~~~~~~~~~~~~~~
 
     #!/usr/bin/make -f
 
@@ -202,11 +211,12 @@ Some comments:
    out-of-tree. The `xsf` sequence is explained in the previous part.
 
 If one needs to build several flavours,
-[`fbdev`’s rules file](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-fbdev.git;a=blob;f=debian/rules)
+link:http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-fbdev.git;a=blob;f=debian/rules[++fbdev++’s rules file]
 can be used as an example.
 
 
-## Staying tuned
+Staying tuned
+-------------
 
 Staying informed of driver-related changes can be a bit difficult in
 the following cases:
