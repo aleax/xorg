@@ -1,20 +1,24 @@
-# How to configure input
+How to configure input
+======================
 
-Cyril Brulebois &lt;kibi@debian.org>
+Cyril Brulebois <kibi@debian.org>
 
 
-## General considerations
+General considerations
+----------------------
 
-### Foreword
+Foreword
+~~~~~~~~
 
 The Debian wiki also contains an
-[input hotplug guide](http://wiki.debian.org/XStrikeForce/InputHotplugGuide)
+link:http://wiki.debian.org/XStrikeForce/InputHotplugGuide[input hotplug guide]
 which contains some context around X’s input subsystem. The present
 document is meant to be an executive summary, and might miss some
-bits. (**FIXME:** Merge those bits.)
+bits. (*FIXME:* Merge those bits.)
 
 
-### Rules of thumb
+Rules of thumb
+~~~~~~~~~~~~~~
 
 In this documentation, only the last part of the driver’s name will be
 mentioned, all of them are under the `xserver-xorg-input-*` namespace.
@@ -28,7 +32,8 @@ mentioned, all of them are under the `xserver-xorg-input-*` namespace.
    `mouse` handles mice, unsurprisingly.
 
 
-### Configuration snippets
+Configuration snippets
+~~~~~~~~~~~~~~~~~~~~~~
 
 X can now be run without `xorg.conf`, but sometimes one has to
 configure a few settings for this or that driver. Starting with
@@ -42,11 +47,12 @@ hardware. The files under `/etc/X11/xorg.conf.d` take precedence, as
 documented in the `xorg.conf` manpage.
 
 It’s probably mostly useful in the `synaptics` case, in case one wants
-to change default settings on a system-wide fashion. See the **Pointer
-configuration** section below for an example.
+to change default settings on a system-wide fashion. See the _Pointer
+configuration_ section below for an example.
 
 
-## Basic keyboard configuration
+Basic keyboard configuration
+----------------------------
 
 The `keyboard-configuration` package ships `/etc/default/keyboard`
 which can be used to set the following `xkb` items: model, layout,
@@ -83,7 +89,7 @@ How does it propagate to X?
  * When udev is used (on GNU/Linux, starting with `squeeze`), one has
    to tell udev to reload input-related configuration:
    `udevadm trigger --subsystem-match=input --action=change`
-   (that can be found in `keyboard-configuration`’s `README.Debian`
+   (that can be found in ++keyboard-configuration++’s `README.Debian`
    file). Properties attached to the input devices are then updated,
    and X uses those properties when it starts, as can be seen by
    searching for `xkb_` in the X log. Please note that trying
@@ -92,12 +98,14 @@ How does it propagate to X?
    `/sbin/udevadm info --export-db`
 
 
-## Pointer configuration
+Pointer configuration
+---------------------
 
-### evdev configuration
+evdev configuration
+~~~~~~~~~~~~~~~~~~~
 
 Available options are documented in the `evdev` manpage. Let’s check
-what a configuration snippet (mentioned in **General considerations**)
+what a configuration snippet (mentioned in _General considerations_)
 would look like. Here is a fictional `/etc/X11/xorg.conf.d/42-evdev.conf`:
 
     Section "InputClass"
@@ -123,7 +131,8 @@ Line by line walkthrough:
    and y axes, just for the fun of it.
 
 
-### synaptics configuration
+synaptics configuration
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The `synaptics` driver comes with two tools. The more interesting one
 is `synclient`, which can be used to list available options and
@@ -136,8 +145,8 @@ deviate, no need to file bugs): `synclient TapButton1=1`; one can also
 disable the touchpad temporarily: `synclient TouchpadOff=1` to
 disable it, `synclient TouchpadOff=0` to enable it again.
 
-Let’s check what a configuration snippet (mentioned in **General
-considerations**) would look like. Here is a fictional
+Let’s check what a configuration snippet (mentioned in _General
+considerations_) would look like. Here is a fictional
 `/etc/X11/xorg.conf.d/42-synaptics.conf`:
 
     Section "InputClass"
