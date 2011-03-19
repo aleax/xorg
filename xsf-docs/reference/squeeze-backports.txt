@@ -1,9 +1,11 @@
-# Backports policy for squeeze
+Backports policy for squeeze
+============================
 
-Cyril Brulebois &lt;kibi@debian.org>
+Cyril Brulebois <kibi@debian.org>
 
 
-## Proposed plans
+Proposed plans
+--------------
 
 If one forgets about libraries and clients, a whole X stack boils down
 to: the server itself, input and video drivers, libdrm, and mesa.
@@ -30,14 +32,16 @@ The plan is to backport a few drivers on a possibly regular fashion,
 and other drivers upon request.
 
 
-### Input drivers
+Input drivers
+~~~~~~~~~~~~~
 
  * `evdev`: Linux-only keyboard & mouse/pointer driver.
  * `keyboard` and `mouse`: Needed for non-Linux ports.
  * `synaptics`: Better touchpad support than `evdev`.
 
 
-### Video drivers
+Video drivers
+~~~~~~~~~~~~~
 
  * `ati`, `mach64`, `r128`: Drivers for ATI cards.
  * `intel`: Driver for Intel cards.
@@ -46,19 +50,21 @@ and other drivers upon request.
  * `dummy`: Dummy driver, suitable when there’s no monitor connected.
 
 
-### Libraries
+Libraries
+~~~~~~~~~
 
 The important libraries are `libdrm` and `mesa`. The former will
 likely get pulled at some point by a driver, so a backport will be
 needed for this library. The latter is under very heavy development,
 so one may want to try a new release or a snapshot without having to
 upgrade everything to `unstable`. It’s a huge package to build, so we
-[documented how to build it](../howto/build-mesa.html) locally. But
+link:../howto/build-mesa.html[documented how to build it] locally. But
 there’s some hope to make some weekly or daily builds available at
 some point.
 
 
-### Kernel
+Kernel
+~~~~~~
 
 Some of those drivers might need a more recent kernel version than
 the one in `squeeze`, but hopefully it’ll be available through
