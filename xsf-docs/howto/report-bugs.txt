@@ -19,9 +19,12 @@ this package triggers a bug script which is going to collect X-related
 information, be it installed packages, running kernel, X
 configuration, X log, and so on.
 
-Note: In case this metapackage wasn’t used to install your X stack,
+****
+.Note
+In case this metapackage wasn’t used to install your X stack,
 report a bug against `xserver-xorg` instead. And if that one isn’t
 installed either, go for `xserver-xorg-core`.
+****
 
 If a backtrace shows up in the X log, it’s much appreciated to try and
 get a link:use-gdb.html[full backtrace using gdb].
@@ -37,5 +40,8 @@ to your mail to the bug report:
 
     /usr/share/bug/xserver-xorg-core/script 3>/tmp/script.log
 
-Note: Make sure there’s no space between `3` and `>`, that’s a shell
+****
+.Note
+Make sure there’s no space between `3` and `>`, that’s a shell
 redirection.
+****
