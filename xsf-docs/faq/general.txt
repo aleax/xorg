@@ -1,43 +1,48 @@
-# General FAQ
+General FAQ
+===========
 
-Cyril Brulebois &lt;kibi@debian.org>
+Cyril Brulebois <kibi@debian.org>
 
 
-## Input drivers
+Input drivers
+-------------
 
- * *How do I configure input for X?*  
-   Look at the [how to configure input](../howto/configure-input.html) documentation.
+ * _How do I configure input for X?_ +
+   Look at the link:../howto/configure-input.html[how to configure input] documentation.
 
- * *Why can’t I kill X through `Ctrl+Alt+Backspace`?*  
+ * _Why can’t I kill X through `Ctrl+Alt+Backspace`?_ +
    That’s explained in the above-mentioned documentation.
 
-## Video drivers
+Video drivers
+-------------
 
-### All drivers
+All drivers
+~~~~~~~~~~~
 
- * *What’s wrong with the DPI setting?*  
+ * _What’s wrong with the DPI setting?_ +
    By the default, the X server uses 96 DPI, as seen on upstream bug
-   [#23705](https://bugs.freedesktop.org/show_bug.cgi?id=23705) (in
+   link:https://bugs.freedesktop.org/show_bug.cgi?id=23705[#23705] (in
    particular
-   [Keith’s comment](https://bugs.freedesktop.org/show_bug.cgi?id=23705#c6)). A
+   link:https://bugs.freedesktop.org/show_bug.cgi?id=23705#c6[Keith’s comment]). A
    particular DPI setting can be set through desktop environment’s
    preferences, through the `-dpi` X server command line option (see
-   `Xserver`’s manual page), or through `xrandr`’s `--dpi` option.
+   ++Xserver++’s manual page), or through ++xrandr++’s `--dpi` option.
 
-### Intel driver
+Intel driver
+~~~~~~~~~~~~
 
- * *Why isn’t it working?*  
+ * _Why isn’t it working?_ +
    KMS is mandatory, as documented in its `README.Debian` (view it
    online:
-   [git.debian.org](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian)). You
+   link:http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian[git.debian.org]). You
    probably disabled KMS or didn’t include it in your kernel
    configuration if you’re using a custom kernel.
 
- * *X is crashing all the time with my “old” Intel card. What can I do?*  
+ * _X is crashing all the time with my “old” Intel card. What can I do?_ +
    Unfortunately, old cards are not very well supported, and you can’t
    do much more than switching to a generic driver, like `fbdev` or
    `vesa`, as documented in `README.Debian` (view it online:
-   [git.debian.org](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian)). Please
+   link:http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian[git.debian.org]). Please
    note that you need to disable `KMS` if you want to use the `vesa`
    driver. A minimal `xorg.conf` would look like:
 
@@ -47,22 +52,25 @@ Cyril Brulebois &lt;kibi@debian.org>
         EndSection
 
 
-### Nouveau driver
+Nouveau driver
+~~~~~~~~~~~~~~
 
- * *Why isn’t it working?*  
+ * _Why isn’t it working?_ +
    Since it’s still considered experimental by its authors, the
    interfaces aren’t stable yet, so the driver has particular
    dependencies on the kernel, which are documented in `README.Debian`
    (view it online:
-   [for squeeze](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian;h=27ced6b1bf5102a5b72525318439efdfb330745d;hb=6c2f12ca18f55b55d49e083d86d87d970ce53a07),
-   [for sid](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian)).
+   link:http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian;h=27ced6b1bf5102a5b72525318439efdfb330745d;hb=6c2f12ca18f55b55d49e083d86d87d970ce53a07[for squeeze]),
+   link:http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nouveau.git;a=blob;f=debian/README.Debian[for sid]).
 
 
-## Others
+Others
+------
 
-### Session management
+Session management
+~~~~~~~~~~~~~~~~~~
 
- * *How to start a bare X session (without Gnome, KDE, etc.)?*  
+ * _How to start a bare X session (without Gnome, KDE, etc.)?_ +
    Assuming there’s no X running on the `:1` display, run this from a
    VT:
 
