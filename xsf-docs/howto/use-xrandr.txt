@@ -1,23 +1,27 @@
-# How to use xrandr
+How to use xrandr
+=================
 
-Cyril Brulebois &lt;kibi@debian.org>
+Cyril Brulebois <kibi@debian.org>
 
 
-## Getting started
+Getting started
+---------------
 
-### What is xrandr?
+What is xrandr?
+~~~~~~~~~~~~~~~
 
 `xrandr` is a command-line tool to interact with the X `RandR`
-extension [see [x.org](http://www.x.org/wiki/Projects/XRandR),
-[wikipedia](http://en.wikipedia.org/wiki/RandR)], which allows for
-live (re)configuration of the X server (*i.e.* without restarting it):
+extension [see link:http://www.x.org/wiki/Projects/XRandR[x.org],
+link:http://en.wikipedia.org/wiki/RandR[wikipedia]], which allows for
+live (re)configuration of the X server (_i.e._ without restarting it):
 It provides automatic discovery of modes (resolutions, refresh rates,
 etc.) together with the ability to configure outputs dynamically
 (resize, rotate, move, etc.).
 
-**FIXME: Status across drivers?**
+*FIXME: Status across drivers?*
 
-### What consequences for xorg.conf?
+What consequences for xorg.conf?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Starting with `squeeze`, removing the `xorg.conf` configuration file
 entirely should work well enough, but in case that doesn’t work out,
@@ -43,7 +47,8 @@ suggestions to get a tiny `xorg.conf`:
  * Drop `RightOf`/`LeftOf` indication of the remaining `Screen` line
    in `ServerLayout` section.
 
-## Basic xrandr usage
+Basic xrandr usage
+------------------
 
 Once the configuration file (`xorg.conf`) is removed or updated,
 starting the server should enable some outputs by default. Their
@@ -74,13 +79,14 @@ Comments:
    monitors report a preferred mode to the driver. And the
    server/driver will generally choose it by default.
 
-**FIXME: Mention output name conventions?**
+*FIXME: Mention output name conventions?*
 
 When manipulating `VGA1` output properties, you should use:
 
     $ xrandr --output VGA1 <options>
 
-### Adding/removing heads dynamically
+Adding/removing heads dynamically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The old days where you had to restart X when plugging a new monitor
 are gone. With `RandR` 1.2, you can plug/unplug monitors whenever you
@@ -98,7 +104,8 @@ multiple outputs well. Also, due to CRTC limitations (see the Caveats
 section below), it is often required to disable one output before
 enabling another since most hardware only support 2 at the same time.
 
-### Changing the mode
+Changing the mode
+~~~~~~~~~~~~~~~~~
 
 With the above `xrandr` output, you may change the `LVDS1` mode to
 `1024x768` using:
@@ -115,9 +122,11 @@ To get back to the default mode:
 
     $ xrandr --output LVDS1 --auto
 
-## Placing outputs in a virtual screen
+Placing outputs in a virtual screen
+-----------------------------------
 
-### A bit of configuration for non-KMS setups:
+A bit of configuration for non-KMS setups:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let’s have a look at the maximal virtual screen size, we see
 `4096x4096` in this example:
@@ -125,7 +134,7 @@ Let’s have a look at the maximal virtual screen size, we see
     $ xrandr|head -1
     Screen 0: minimum 320 x 200, current 1280 x 800, maximum 4096 x 4096
 
-With KMS (**FIXME: Link to a page which explains what KMS is**),
+With KMS (*FIXME: Link to a page which explains what KMS is*),
 there's no need to specify any `Virtual` option. With DRI and without
 KMS, that might be needed. Indeed, drivers will often create a default
 virtual screen with small dimensions, for instance `1600x1200`, to
@@ -143,7 +152,8 @@ should configure your `xorg.conf` by adding a `Virtual` line to the
       EndSubSection
     EndSection
 
-### Place outputs
+Place outputs
+~~~~~~~~~~~~~
 
 Outputs are placed using the following options:
 `--right-of`/`--left-of`/`--above`/`--below`. For instance, to place
@@ -154,7 +164,8 @@ the `VGA1` output virtually-right of the internal panel (`LVDS1`):
 Note that hardware and memory limitations may severely restrict the
 size of your virtual screen, see the Caveats section below.
 
-## Adding new modes
+Adding new modes
+----------------
 
 Under some circumstances, some modes might be missing. For instance,
 if the monitor does not report correct EDID information. Or if the
