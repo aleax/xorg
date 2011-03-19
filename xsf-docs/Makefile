@@ -21,7 +21,8 @@ html: $(html_files)
 pdf: $(pdf_files)
 
 %.html: %.txt
-	$(TXT_TO_HTML) $<
+	$(TXT_TO_HTML) -o $@.tmp $<
+	mv -f $@.tmp $@
 
 %.pdf: %.html $(CSS_FILE) $(SVG_LOGO)
 	$(HTML_TO_PDF) $< $@
