@@ -7,17 +7,6 @@ h1 {
   background-size: auto 95%;
 }
 
-/* Firefox before version 4 don't support SVG in backgrounds, use a
-   ugly workaround to change the background to the PNG version for
-   Mozilla-based browsers:
-     https://bugzilla.mozilla.org/show_bug.cgi?id=231179
-*/
-@-moz-document url-prefix() {
-  h1 {
-    background-image: url("xsf.png");
-  }
-}
-
 p, li {
   text-align: justify;
 }
