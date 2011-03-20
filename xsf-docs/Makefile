@@ -22,9 +22,12 @@ html: $(html_files)
 pdf: $(pdf_files)
 
 %.html: rel_path=$(shell echo $@|sed 's,[^/],,g;s,/,../,g')
+%.html: link_home=$(shell echo "<a href=\"$(rel_path)index.html\">XSF</a> / ")
 %.html: %.txt
 	@echo " HTML $@"
 	@$(TXT_TO_HTML) -o $@.tmp $<
+	@echo " HOME $@"
+	@if [ $< != index.txt ]; then sed -i 's,<h1>,<h1>$(link_home),' $@.tmp; fi
 	@echo " CSS  $@"
 	@sed -i 's,\(rel="stylesheet" href="\)[^"]*,\1$(rel_path)$(CSS_FILE),' $@.tmp
 	@echo " JS   $@"
