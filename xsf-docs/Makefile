@@ -10,11 +10,11 @@ TXT_TO_HTML  = asciidoc -a linkcss
 HTML_TO_PDF  = wkhtmltopdf
 CSS_FILE     = xsf.css
 ADOC_CSS_FILE= asciidoc-xhtml11.css
-JS_FILE      = asciidoc-xhtml11.js
+ADOC_JS_FILE = asciidoc-xhtml11.js
 SVG_LOGO     = xsf.svg
 PNG_LOGO     = xsf.png
 
-all_files = $(html_files) $(pdf_files) $(txt_files) $(CSS_FILE) $(ADOC_CSS_FILE) $(JS_FILE) $(SVG_LOGO) $(PNG_LOGO)
+all_files = $(html_files) $(pdf_files) $(txt_files) $(CSS_FILE) $(ADOC_CSS_FILE) $(ADOC_JS_FILE) $(SVG_LOGO) $(PNG_LOGO)
 
 all: html pdf $(PNG_LOGO)
 
@@ -32,10 +32,10 @@ pdf: $(pdf_files)
 	@echo " CSS  $@"
 	@sed -i 's,\(rel="stylesheet" href="\)[^"]*,\1$(rel_path)$(CSS_FILE),' $@.tmp
 	@echo " JS   $@"
-	@sed -i 's,\(type="text/javascript" src="\)[^"]*,\1$(rel_path)$(JS_FILE),' $@.tmp
+	@sed -i 's,\(type="text/javascript" src="\)[^"]*,\1$(rel_path)$(ADOC_JS_FILE),' $@.tmp
 	@mv $@.tmp $@
 
-%.pdf: %.html $(CSS_FILE) $(ADOC_CSS_FILE) $(JS_FILE) $(SVG_LOGO)
+%.pdf: %.html $(CSS_FILE) $(ADOC_CSS_FILE) $(ADOC_JS_FILE) $(SVG_LOGO)
 	@echo " GEN  $@"
 	@$(HTML_TO_PDF) $< $@
 
