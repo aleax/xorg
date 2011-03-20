@@ -6,9 +6,10 @@ html_files = $(patsubst %.txt,%.html,$(txt_files))
 
 pdf_files = $(patsubst %.txt,%.pdf,$(txt_files))
 
-TXT_TO_HTML  = asciidoc
+TXT_TO_HTML  = asciidoc -a linkcss
 HTML_TO_PDF  = wkhtmltopdf
 CSS_FILE     = xsf.css
+JS_FILE      = asciidoc-xhtml11.js
 SVG_LOGO     = xsf.svg
 PNG_LOGO     = xsf.png
 
@@ -20,9 +21,15 @@ html: $(html_files)
 
 pdf: $(pdf_files)
 
+%.html: rel_path=$(shell echo $@|sed 's,[^/],,g;s,/,../,g')
 %.html: %.txt
-	@echo " GEN  $@"
-	@$(TXT_TO_HTML) -o $@.tmp $< && mv -f $@.tmp $@
+	@echo " HTML $@"
+	@$(TXT_TO_HTML) -o $@.tmp $<
+	@echo " CSS  $@"
+	@sed -i 's,\(rel="stylesheet" href="\)[^"]*,\1$(rel_path)$(CSS_FILE),' $@.tmp
+	@echo " JS   $@"
+	@sed -i 's,\(type="text/javascript" src="\)[^"]*,\1$(rel_path)$(JS_FILE),' $@.tmp
+	@mv $@.tmp $@
 
 %.pdf: %.html $(CSS_FILE) $(SVG_LOGO)
 	@echo " GEN  $@"
