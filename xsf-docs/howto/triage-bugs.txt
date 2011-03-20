@@ -13,9 +13,11 @@ http://bugs.freedesktop.org/ for most packages), and marked as such.
 
 A mail to `control@bugs.debian.org` would look like:
 
-    tag X upstream
-    forwarded X https://bugs.freedesktop.org/show_bug.cgi?id=Y
-    thanks
+----
+tag X upstream
+forwarded X https://bugs.freedesktop.org/show_bug.cgi?id=Y
+thanks
+----
 
 Then http://bts-link.alioth.debian.org/[`bts-link`] comes into play
 and helps us tracking upstream status, which is pretty nice to have.
@@ -86,16 +88,17 @@ Needed steps for that to happen:
  * profit!
 
 To move the usertags, something like that should do the job:
+----
+# Adding usertags:
+user $package1@packages.debian.org
+usertag X xset
+usertag Y xrandr
+user $package2@packages.debian.org
+usertag Z i810
 
-    # Adding usertags:
-    user $package1@packages.debian.org
-    usertag X xset
-    usertag Y xrandr
-    user $package2@packages.debian.org
-    usertag Z i810
-    
-    # Removing tags which are no longer needed:
-    user debian-x@lists.debian.org
-    usertag X - xset
-    usertag Y - xrandr
-    usertag Z - i810
+# Removing tags which are no longer needed:
+user debian-x@lists.debian.org
+usertag X - xset
+usertag Y - xrandr
+usertag Z - i810
+----
