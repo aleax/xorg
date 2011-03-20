@@ -47,12 +47,12 @@ Intel driver
    http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-intel.git;a=blob;f=debian/README.Debian[git.debian.org]). Please
    note that you need to disable `KMS` if you want to use the `vesa`
    driver. A minimal `xorg.conf` would look like:
-
-        Section "Device"
-            Identifier "MyBuggyCard"
-            Driver     "fbdev"
-        EndSection
-
+----
+Section "Device"
+    Identifier "MyBuggyCard"
+    Driver     "fbdev"
+EndSection
+----
 
 Nouveau driver
 ~~~~~~~~~~~~~~
@@ -76,5 +76,6 @@ Session management
  * _How to start a bare X session (without Gnome, KDE, etc.)?_ +
    Assuming there’s no X running on the `:1` display, run this from a
    VT:
-
-        startx /usr/bin/xterm -- :1
+----
+startx /usr/bin/xterm -- :1
+----
