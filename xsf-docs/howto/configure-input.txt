@@ -59,10 +59,12 @@ The `keyboard-configuration` package ships `/etc/default/keyboard`
 which can be used to set the following `xkb` items: model, layout,
 variant, and options. Here’s an example:
 
-    XKBMODEL="pc105"
-    XKBLAYOUT="fr"
-    XKBVARIANT="oss"
-    XKBOPTIONS="compose:menu,terminate:ctrl_alt_bksp"
+----
+XKBMODEL="pc105"
+XKBLAYOUT="fr"
+XKBVARIANT="oss"
+XKBOPTIONS="compose:menu,terminate:ctrl_alt_bksp"
+----
 
 Quick words about the options:
 
@@ -110,13 +112,15 @@ Available options are documented in the `evdev` manpage. Let’s check
 what a configuration snippet (mentioned in _General considerations_)
 would look like. Here is a fictional `/etc/X11/xorg.conf.d/42-evdev.conf`:
 
-    Section "InputClass"
-        Identifier "evdev pointer tweaked catchall"
-        MatchIsPointer "on"
-        Driver "evdev"
-        Option "Emulate3Buttons" True"
-        Option "SwapAxes" "True"
-    EndSection
+----
+Section "InputClass"
+    Identifier "evdev pointer tweaked catchall"
+    MatchIsPointer "on"
+    Driver "evdev"
+    Option "Emulate3Buttons" True"
+    Option "SwapAxes" "True"
+EndSection
+----
 
 Line by line walkthrough:
 
@@ -151,13 +155,15 @@ Let’s check what a configuration snippet (mentioned in _General
 considerations_) would look like. Here is a fictional
 `/etc/X11/xorg.conf.d/42-synaptics.conf`:
 
-    Section "InputClass"
-        Identifier "touchpad tweaked catchall"
-        MatchIsTouchpad "on"
-        Driver "synaptics"
-        Option "TapButton1" "1"
-        Option "HorizEdgeScroll" "1"
-    EndSection
+----
+Section "InputClass"
+    Identifier "touchpad tweaked catchall"
+    MatchIsTouchpad "on"
+    Driver "synaptics"
+    Option "TapButton1" "1"
+    Option "HorizEdgeScroll" "1"
+EndSection
+----
 
 Line by line walkthrough:
 
