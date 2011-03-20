@@ -1,9 +1,10 @@
 @import url("asciidoc-xhtml11.css");
 
-body {
+h1 {
   background-image: url("xsf.svg");
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: center right;
+  background-size: auto 95%;
 }
 
 /* Firefox before version 4 don't support SVG in backgrounds, use a
@@ -12,7 +13,7 @@ body {
      https://bugzilla.mozilla.org/show_bug.cgi?id=231179
 */
 @-moz-document url-prefix() {
-  body {
+  h1 {
     background-image: url("xsf.png");
   }
 }
