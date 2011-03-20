@@ -85,8 +85,10 @@ To get started, installing all build dependencies of the `mesa` source
 package should be sufficient, along with the essential build tools,
 and `git`:
 
-    $ sudo apt-get install build-essential git
-    $ sudo apt-get build-dep mesa
+----
+$ sudo apt-get install build-essential git
+$ sudo apt-get build-dep mesa
+----
 
 If you’re on `squeeze` you may need to install a few more packages:
 newer `libdrm-dev` (*FIXME:* talk about picking it from `wheezy`? or
@@ -96,23 +98,27 @@ Make sure you have some disc space available, since the git repository
 is over 120MB, and since the mesa directory is over 500MB after a
 build. Once you’re ready, grab the upstream mesa sources:
 
-    $ git clone git://anongit.freedesktop.org/mesa/mesa mesa.git
-    $ cd mesa.git
-    $ autoreconf -vfi
+----
+$ git clone git://anongit.freedesktop.org/mesa/mesa mesa.git
+$ cd mesa.git
+$ autoreconf -vfi
+----
 
 Here’s what the `./configure` call will look like:
 
-    $ ./configure --enable-driglx-direct \
-                  --enable-gallium \
-                  --enable-gles-overlay \
-                  --enable-gles1 \
-                  --enable-gles2 \
-                  --enable-glx-tls \
-                  --with-driver=dri \
-                  --with-dri-driverdir=/usr/lib/dri \
-                  --with-egl-platforms='drm x11' \
-                  --with-state-trackers=egl,glx,dri,vega \
-                  …
+----
+$ ./configure --enable-driglx-direct \
+              --enable-gallium \
+              --enable-gles-overlay \
+              --enable-gles1 \
+              --enable-gles2 \
+              --enable-glx-tls \
+              --with-driver=dri \
+              --with-dri-driverdir=/usr/lib/dri \
+              --with-egl-platforms='drm x11' \
+              --with-state-trackers=egl,glx,dri,vega \
+              …
+----
 
 Now, what are the parameters to replace “++…++” with? Basically, if
 you determined an Intel driver (`i915` or `i965`), you want to use the
@@ -146,8 +152,9 @@ Examples for common drivers:
 
 Now, once you’ve run `./configure`, time for your favorite beverage:
 
-    $ make
-
+----
+$ make
+----
 
 <<<
 Running the newly-built mesa libraries
@@ -158,7 +165,9 @@ classic drivers, while Gallium drivers end up under `lib/gallium`. If
 you’re not an Intel user, overwrite the classic drivers with the
 Gallium ones:
 
-    $ mv lib/gallium/* lib/
+----
+$ mv lib/gallium/* lib/
+----
 
 Now, 3 variables need to be set, so that the locally-built libraries
 are used.
