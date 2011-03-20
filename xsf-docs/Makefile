@@ -21,11 +21,12 @@ html: $(html_files)
 pdf: $(pdf_files)
 
 %.html: %.txt
-	$(TXT_TO_HTML) -o $@.tmp $<
-	mv -f $@.tmp $@
+	@echo " GEN  $@"
+	@$(TXT_TO_HTML) -o $@.tmp $< && mv -f $@.tmp $@
 
 %.pdf: %.html $(CSS_FILE) $(SVG_LOGO)
-	$(HTML_TO_PDF) $< $@
+	@echo " GEN  $@"
+	@$(HTML_TO_PDF) $< $@
 
 # We usually don't need to run this one, but it's easier to keep both
 # SVN and PNG logos in sync:
