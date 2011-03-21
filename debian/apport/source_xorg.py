@@ -384,6 +384,7 @@ def attach_input_device_info(report, ui=None):
             attach_command_output(report, ['locale'], 'locale')
 
         # For input device bugs
+        attach_command_output(report, ['xinput', '--list'], 'xinput')
         attach_command_output(report, ['gconftool-2', '-R', '/desktop/gnome/peripherals'], 'peripherals')
 
 def attach_nvidia_info(report, ui=None):
