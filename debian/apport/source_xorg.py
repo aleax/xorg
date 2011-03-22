@@ -284,6 +284,7 @@ def attach_xorg_package_versions(report, ui=None):
     for package in [
         "xserver-xorg",
         "libgl1-mesa-glx",
+        "libgl1-mesa-dri*",
         "libdrm2",
         "compiz",
         "xserver-xorg-video-intel",
