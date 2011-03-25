@@ -291,6 +291,8 @@ def attach_xorg_package_versions(report, ui=None):
         "xserver-xorg-video-ati",
         "xserver-xorg-video-nouveau"]:
         report['version.%s' %(package)] = package_versions(package)
+    if report['Architecture'] == 'amd64':
+        report['version.ia32-libs'] = package_versions('ia32-libs')
 
 def attach_2d_info(report, ui=None):
     attach_file_if_exists(report, '/var/log/plymouth-debug.log', 'PlymouthDebug')
