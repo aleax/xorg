@@ -1,6 +1,6 @@
 xorg (1:7.6+4ubuntu1) natty; urgency=low
 
-  [Timo Aaltonen]
+  [ Timo Aaltonen ]
   * Merge from Debian unstable. Remaining Ubuntu changes:
     - Add apport hook
     - Demote xfonts-{75DPI,100DPI} to Suggests. Demote xfonts-scalable to
@@ -26,15 +26,17 @@ xorg (1:7.6+4ubuntu1) natty; urgency=low
   * control, rules: Don't build xsf-docs, markdown and wkhtmltopdf are in
     universe.
 
-  [Bryce Harrington]
+  [ Bryce Harrington ]
   * apport/source_xorg.py:
     - Include 'xinput list' output for input device issues.
     - For amd64 arch's, include version of ia32-libs package.
-  * scripts/amd64, scripts/i386: Include the -qxl video driver in
-    video-all for amd64 and i386, to provide remote graphical
-    desktop functionality for KVM.
+  * scripts/vars.amd64, scripts/vars.i386:
+    - Include the -qxl video driver in video-all for amd64 and i386, to
+      provide remote graphical desktop functionality for KVM.
+  * scripts/vars.arm, scripts/vars.armeb, scripts/vars.armel:
+    - Drop obscure drivers that are likely irrelevant for ARM.
 
- -- Bryce Harrington <bryce@ubuntu.com>  Thu, 31 Mar 2011 23:19:10 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 01 Apr 2011 00:05:38 -0700
 
 xorg (1:7.6+4) unstable; urgency=low
 
