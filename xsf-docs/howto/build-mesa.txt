@@ -1,9 +1,11 @@
-# How to build mesa
+How to build mesa
+=================
+:toc:
+Cyril Brulebois <kibi@debian.org>
 
-Cyril Brulebois &lt;kibi@debian.org>
 
-
-## Foreword
+Foreword
+--------
 
 Mesa is a special package since many flavours are built, which means
 it takes quite some time to get all packages ready, as well as some
@@ -14,7 +16,7 @@ or backporting some bug fixes might lead to some painful I/O while
 generating the `.deb` files, and then installing/unpacking them. This
 is why this document was written: Helping users test other mesa
 releases, branches, bug fixes without having to build full packages,
-and without having to mess with their systems (*i.e.* no root access
+and without having to mess with their systems (_i.e._ no root access
 is needed once the build dependencies are installed).
 
 We’ll focus on the DRI (Direct Rendering Infrastructure) flavour
@@ -25,94 +27,105 @@ in which case the appropriate options to be passed to `./configure`
 should be looked up in the `debian/rules` file of the Debian source
 package.
 
-*Note:* Before reading further, be aware that `nouveau` is a bit
- special.
+****
+.Note
+Before reading further, be aware that `nouveau` is a bit special:
 
  * It’s considered experimental, and shipped in the
    `libgl1-mesa-dri-experimental` package accordingly.
  * It may fail to build (both API and ABI are still changing).
  * We’re not shipping `nouveau_vieux_dri.so` yet (for cards from NV04
    to NV2X; `nouveau_dri.so` is for NV30 and later). See the upstream
-   [FeatureMatrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix)
+   http://nouveau.freedesktop.org/wiki/FeatureMatrix[FeatureMatrix]
    page to determine a card’s series.
+****
 
 
-## Gathering information
+<<<
+Gathering information
+---------------------
 
 Get started by installing `mesa-utils`, which contains `glxinfo`.
 
- * *Is direct rendering enabled?*
-
+ * _Is direct rendering enabled?_
++
         $ glxinfo | grep ^direct
         direct rendering: Yes
++
+↪ Yes.
 
-   ↪ Yes.
-
- * *Is this the classic or
-   [Gallium](http://en.wikipedia.org/wiki/Gallium3D) driver?*
-
+ * _Is this the classic or http://en.wikipedia.org/wiki/Gallium3D[Gallium] driver?_
++
         $ glxinfo | grep 'renderer string'
         OpenGL renderer string: Mesa DRI Intel(R) 945GM GEM 20100330 DEVELOPMENT
++
+↪ No “Gallium” here, therefore: “classic”.
 
-   ↪ No “Gallium” here, therefore: “classic”.
-
- * *Which driver is this, and where is it located?*
-
+ * _Which driver is this, and where is it located?_
++
         $ LIBGL_DEBUG=verbose glxinfo 2>&1 >/dev/null | grep so$
         libGL: OpenDriver: trying /usr/lib/dri/tls/i915_dri.so
         libGL: OpenDriver: trying /usr/lib/dri/i915_dri.so
++
+↪ `i915`, from the system directory: `/usr/lib/dri` (likely installed through a Debian package).
 
-   ↪ `i915`, from the system directory: `/usr/lib/dri` (likely
-   installed through a Debian package).
 
- * *How can I get more debugging information?*
+ * _How can I get more debugging information?_
 
         export LIBGL_DEBUG=verbose
         export MESA_DEBUG=1
         export EGL_LOG_LEVEL=debug
 
 
-## Preparing mesa sources
+<<<
+Preparing mesa sources
+----------------------
 
 To get started, installing all build dependencies of the `mesa` source
 package should be sufficient, along with the essential build tools,
 and `git`:
 
-    $ sudo apt-get install build-essential git
-    $ sudo apt-get build-dep mesa
+----
+$ sudo apt-get install build-essential git
+$ sudo apt-get build-dep mesa
+----
 
 If you’re on `squeeze` you may need to install a few more packages:
-newer `libdrm-dev` (**FIXME:** talk about picking it from `wheezy`? or
+newer `libdrm-dev` (*FIXME:* talk about picking it from `wheezy`? or
 about a local installation?), as well as `libxmu-dev`, `libxi-dev`.
 
 Make sure you have some disc space available, since the git repository
 is over 120MB, and since the mesa directory is over 500MB after a
 build. Once you’re ready, grab the upstream mesa sources:
 
-    $ git clone git://anongit.freedesktop.org/mesa/mesa mesa.git
-    $ cd mesa.git
-    $ autoreconf -vfi
+----
+$ git clone git://anongit.freedesktop.org/mesa/mesa mesa.git
+$ cd mesa.git
+$ autoreconf -vfi
+----
 
 Here’s what the `./configure` call will look like:
 
-    $ ./configure --enable-driglx-direct \
-                  --enable-gallium \
-                  --enable-gles-overlay \
-                  --enable-gles1 \
-                  --enable-gles2 \
-                  --enable-glx-tls \
-                  --with-driver=dri \
-                  --with-dri-driverdir=/usr/lib/dri \
-                  --with-egl-platforms='drm x11' \
-                  --with-state-trackers=egl,glx,dri,vega \
-                  …
+----
+$ ./configure --enable-driglx-direct \
+              --enable-gallium \
+              --enable-gles-overlay \
+              --enable-gles1 \
+              --enable-gles2 \
+              --enable-glx-tls \
+              --with-driver=dri \
+              --with-dri-driverdir=/usr/lib/dri \
+              --with-egl-platforms='drm x11' \
+              --with-state-trackers=egl,glx,dri,vega \
+              …
+----
 
-Now, what are the parameters to replace “`…`” with? Basically, if
+Now, what are the parameters to replace “++…++” with? Basically, if
 you determined an Intel driver (`i915` or `i965`), you want to use the
 classic drivers and to disable the Gallium drivers. If you saw a
 Radeon driver (`r300` or `r600`), you should prefer the Gallium
 drivers. If you’re using `nouveau`, make sure you read the note in the
-**Foreword**. The following assumes you’re using `nouveau_dri.so`.
+_Foreword_. The following assumes you’re using `nouveau_dri.so`.
 
 
 Examples for common drivers:
@@ -139,63 +152,69 @@ Examples for common drivers:
 
 Now, once you’ve run `./configure`, time for your favorite beverage:
 
-    $ make
+----
+$ make
+----
 
-
-## Running the newly-built mesa libraries
+<<<
+Running the newly-built mesa libraries
+--------------------------------------
 
 Shared libraries end up in the `lib/` directory. It contains the
 classic drivers, while Gallium drivers end up under `lib/gallium`. If
 you’re not an Intel user, overwrite the classic drivers with the
 Gallium ones:
 
-    $ mv lib/gallium/* lib/
+----
+$ mv lib/gallium/* lib/
+----
 
 Now, 3 variables need to be set, so that the locally-built libraries
 are used.
 
  * To begin with, libGL itself and its drivers:
-
++
         $ export LIBGL_DRIVERS_PATH=lib
-
-   *Did this work?*
-
++
+_Did this work?_
++
         $ LIBGL_DEBUG=verbose glxinfo 2>&1 >/dev/null | grep so$
         libGL: OpenDriver: trying lib/tls/i915_dri.so
         libGL: OpenDriver: trying lib/i915_dri.so
-
-   ↪ Yes: No system directory, paths are relative to `lib/`.
++
+↪ Yes: No system directory, paths are relative to `lib/`.
 
  * Set `LD_LIBRARY_PATH` to make sure the locally-built libraries
    (including those pulled through library dependencies) are used,
    instead of system ones:
-
++
         $ export LD_LIBRARY_PATH=lib
-
-   *Did this work?*
-
++
+_Did this work?_
++
         $ ldd lib/libGLESv2.so | grep glapi
             libglapi.so.0 => lib/libglapi.so.0 (0x00007fee3192e000)
-
-   ↪ Yes: Path is relative to `lib`.
++
+↪ Yes: Path is relative to `lib`.
 
  * Set the EGL search path:
-
++
         $ export EGL_DRIVERS_PATH=lib/egl
-
-   *Did this work?*
-
-   **FIXME: We should be shipping EGL-aware applications through
-   `mesa-utils`.**
-
++
+_Did this work?_
++
+*FIXME: We should be shipping EGL-aware applications through `mesa-utils`.*
++
         $ EGL_LOG_LEVEL=debug test_application 2>&1 >/dev/null | grep '\.so'
         libEGL debug: added lib/egl/egl_gallium.so to module array
         libEGL debug: dlopen(lib/egl/egl_gallium.so)
         libEGL debug: DRI2: dlopen(lib/i915_dri.so)
++
+↪ Yes: No system directory, paths are relative to `lib/`.
 
-   ↪ Yes: No system directory, paths are relative to `lib/`.
 
-
-### The end.
+[float]
+The end.
+~~~~~~~~
 
 Now you should be ready to test upstream’s suggestions!

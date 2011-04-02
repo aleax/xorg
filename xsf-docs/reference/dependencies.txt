@@ -1,12 +1,14 @@
-# Dependencies between server and drivers
+Dependencies between server and drivers
+=======================================
+:toc:
+Cyril Brulebois <kibi@debian.org>
 
-Cyril Brulebois &lt;kibi@debian.org>
 
-
-## Upstream-side: ABI version numbers
+Upstream-side: ABI version numbers
+----------------------------------
 
 The X server defines several
-[ABI](http://en.wikipedia.org/wiki/Application_binary_interface) version numbers in the
+http://en.wikipedia.org/wiki/Application_binary_interface[ABI] version numbers in the
 `hw/xfree86/common/xf86Module.h` header, through the
 `SET_ABI_VERSION(maj,min)` macro. In this document, the focus is on
 `ABI_VIDEODRV_VERSION` and `ABI_XINPUT_VERSION`, which are
@@ -30,17 +32,21 @@ Conclusion: We need to keep track of both major and minor.
 
 Thanks to `pkg-config` we can query them:
 
-    $ pkg-config --variable=abi_videodrv xorg-server
-    9.0
-    $ pkg-config --variable=abi_xinput xorg-server
-    12.1
+----
+$ pkg-config --variable=abi_videodrv xorg-server
+9.0
+$ pkg-config --variable=abi_xinput xorg-server
+12.1
+----
 
+<<<
+Debian-side: Using virtual packages
+-----------------------------------
 
-## Debian-side: Using virtual packages
+Server’s build system
+~~~~~~~~~~~~~~~~~~~~~
 
-### Server’s build system
-
-When `xorg-server` gets built, we use `pkg-config`’s output to
+When `xorg-server` gets built, we use ++pkg-config++’s output to
 determine the current major. Through substitution variables, we add
 two virtual packages in the `Provides` field of the server (for both
 `xserver-xorg-core` and `xserver-xorg-core-udeb`): `xorg-input-abi-$x`
@@ -63,8 +69,9 @@ in `xserver-xorg-dev`, to be used while building drivers:
 
 Example for `xinputdep`:
 
-    xorg-input-abi-11, xserver-xorg-core (>= 2:1.8.99.904)
-
+----
+xorg-input-abi-11, xserver-xorg-core (>= 2:1.8.99.904)
+----
 To make sure we bump the `debian/serverminver` when there’s a minor
 ABI change, there’s a `abibumpcheck` target (on which `clean`
 depends), which extracts input and video ABI from the upstream header,
@@ -72,18 +79,21 @@ and compares them to the previous ones stored in
 `debian/serverminver`, failing and diffing is something changed.
 
 
-### Driver’s control file
+Driver’s control file
+~~~~~~~~~~~~~~~~~~~~~
 
 Drivers also use substitution variables in their control file,
 replaced at build time.
 
-    # Input driver:
-    Depends: ${xinpdriver:Depends}, …
-    Provides: ${xinpdriver:Provides}
-    
-    # Video driver:
-    Depends: ${xviddriver:Depends}, …
-    Provides: ${xviddriver:Provides}
+----
+# Input driver:
+Depends: ${xinpdriver:Depends}, …
+Provides: ${xinpdriver:Provides}
+
+# Video driver:
+Depends: ${xviddriver:Depends}, …
+Provides: ${xviddriver:Provides}
+----
 
 For now, `${xinpdriver:Provides}` is always replaced with
 `xorg-driver-input`, and `${xviddriver:Provides}` is always replaced
@@ -92,7 +102,8 @@ but using substitution variables is cheap, and makes it easy to add
 tweaks afterwards if needed.
 
 
-### Driver’s build system
+Driver’s build system
+~~~~~~~~~~~~~~~~~~~~~
 
 To set those variables, we ship a `dh_xsf_substvars` script in
 `xserver-xorg-dev` starting with `2:1.9.4`, to be run before
@@ -125,7 +136,9 @@ To make it easy to compute substvars when using `dh`, a `dh` sequence
 repetitive tasks could also be automated this way.
 
 
-## Sample driver packaging
+<<<
+Sample driver packaging
+-----------------------
 
 The following assumes:
 
@@ -134,50 +147,56 @@ The following assumes:
  * It is a `video` driver. For an `input` driver, replace both
    `xviddriver` occurrences with `xinpdriver`.
 
-### Sample debian/control file
+Sample debian/control file
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Build-Depends:
-     debhelper (>= 8),
-     dh-autoreconf,
-     quilt,
-     xserver-xorg-dev (>= 2:1.9.4),
-     …
+----
+Build-Depends:
+ debhelper (>= 8),
+ dh-autoreconf,
+ quilt,
+ xserver-xorg-dev (>= 2:1.9.4),
+----
 
-    Depends:
-     ${shlibs:Depends},
-     ${misc:Depends},
-     ${xviddriver:Depends},
-    Provides:
-     ${xviddriver:Provides}
+----
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ${xviddriver:Depends},
+Provides:
+ ${xviddriver:Provides}
+----
 
+Sample debian/rules file
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Sample debian/rules file
+----
+#!/usr/bin/make -f
 
-    #!/usr/bin/make -f
+# Configuration:
+#override_dh_auto_configure:
+#        dh_auto_configure -- --with-FOO --without-BAR
 
-    # Configuration:
-    #override_dh_auto_configure:
-    #        dh_auto_configure -- --with-FOO --without-BAR
+# Install in debian/tmp to retain control through dh_install:
+override_dh_auto_install:
+        dh_auto_install --destdir=debian/tmp
 
-    # Install in debian/tmp to retain control through dh_install:
-    override_dh_auto_install:
-            dh_auto_install --destdir=debian/tmp
+# Kill *.la files, and forget no-one:
+override_dh_install:
+        find debian/tmp -name '*.la' -delete
+        dh_install --fail-missing
 
-    # Kill *.la files, and forget no-one:
-    override_dh_install:
-            find debian/tmp -name '*.la' -delete
-            dh_install --fail-missing
+## Debug package:
+#override_dh_strip:
+#        dh_strip --dbg-package=xserver-xorg-video-DRIVER-dbg
 
-    ## Debug package:
-    #override_dh_strip:
-    #        dh_strip --dbg-package=xserver-xorg-video-DRIVER-dbg
+# That's a plugin, use appropriate warning level:
+override_dh_shlibdeps:
+        dh_shlibdeps -- --warnings=6
 
-    # That's a plugin, use appropriate warning level:
-    override_dh_shlibdeps:
-            dh_shlibdeps -- --warnings=6
-
-    %:
-            dh $@ --with quilt,autoreconf,xsf --builddirectory=build/
+%:
+        dh $@ --with quilt,autoreconf,xsf --builddirectory=build/
+----
 
 Some comments:
 
@@ -188,7 +207,7 @@ Some comments:
    single package (it installs under `debian/PACKAGE` instead of
    `debian/tmp`), so make it use `debian/tmp` in all cases. This way,
    `dh_install` has to be used (see below). That also means that a
-   binary package (*e.g.* a debug package) can be added without
+   binary package (_e.g._ a debug package) can be added without
    changing this part.
  * `dh_install`: No point in keeping the `.la` files. Also, using
    `--fail-missing` makes sure every file installed by upstream is
@@ -202,11 +221,13 @@ Some comments:
    out-of-tree. The `xsf` sequence is explained in the previous part.
 
 If one needs to build several flavours,
-[`fbdev`’s rules file](http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-fbdev.git;a=blob;f=debian/rules)
+http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-fbdev.git;a=blob;f=debian/rules[++fbdev++’s rules file]
 can be used as an example.
 
 
-## Staying tuned
+<<<
+Staying tuned
+-------------
 
 Staying informed of driver-related changes can be a bit difficult in
 the following cases:
