@@ -16,7 +16,7 @@ PNG_LOGO     = xsf.png
 
 all_files = $(html_files) $(txt_files) $(CSS_FILE) $(ADOC_CSS_FILE) $(ADOC_JS_FILE) $(SVG_LOGO) $(PNG_LOGO)
 
-all: html pdf $(PNG_LOGO)
+all: html $(PNG_LOGO)
 
 html: $(html_files)
 
