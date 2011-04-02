@@ -14,7 +14,7 @@ ADOC_JS_FILE = asciidoc-xhtml11.js
 SVG_LOGO     = xsf.svg
 PNG_LOGO     = xsf.png
 
-all_files = $(html_files) $(pdf_files) $(txt_files) $(CSS_FILE) $(ADOC_CSS_FILE) $(ADOC_JS_FILE) $(SVG_LOGO) $(PNG_LOGO)
+all_files = $(html_files) $(txt_files) $(CSS_FILE) $(ADOC_CSS_FILE) $(ADOC_JS_FILE) $(SVG_LOGO) $(PNG_LOGO)
 
 all: html pdf $(PNG_LOGO)
 
