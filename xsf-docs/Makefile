@@ -44,7 +44,7 @@ pdf: $(pdf_files)
 $(PNG_LOGO): $(SVG_LOGO)
 	inkscape $< -e $@
 
-install: $(all_files)
+install:
 	@if [ -z "$(DESTDIR)" ]; then \
 		echo 'E: DESTDIR is not set, not installing.'; exit 1; \
 	fi
