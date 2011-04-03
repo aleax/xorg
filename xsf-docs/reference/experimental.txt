@@ -81,6 +81,17 @@ Instead, that seems more natural:
 
  * `1.42-1` to `unstable`.
  * `1.42-1+exp1` to `experimental`: bump the build-dep.
- * `1.42-2` to `unstable`: add a bugfix.
+ * `1.42-2` to `unstable`: add a bugfix to `unstable`’s version.
  * `1.42-2+exp1` to `experimental`: rebuild against experimental
    (merging or rebasing the build-dep bump).
+
+****
+.Note
+
+Remember `experimental` is special. With the above sequence of
+uploads, if the `1.42-2+exp1` version isn’t uploaded, the
+`1.42-1+exp1` upload might disappear from `experimental` after some
+time, since the version in `unstable` is more recent: the “obsolete”
+package goes away. That’s why it’s important to remember uploading to
+`experimental` as well when uploading a new driver to `unstable`.
+****
