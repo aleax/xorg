@@ -20,7 +20,7 @@ A quick overview of how things work upstream for the server:
 It doesn’t make much sense to try and package `master` on a continuous
 fashion, since the ABI can be broken multiple times, without a bump
 for the ABI version numbers every time. It’s usually done once a bunch
-of majors changes landed, and when things are supposed to be stable
+of major changes landed, and when things are supposed to be stable
 for a while. On the packaging side, as explained on the
 link:dependencies.html[dependencies between server and drivers] page,
 a bump means the need for a rebuild of the relevant drivers (input
@@ -29,8 +29,8 @@ and/or video).
 That’s why the idea is to concentrate on upstream release candidates
 and official releases. Depending on available developer time (both
 upstream and in Debian), several branches can be developed/maintained
-in parallel, so both `1.9` and `1.10` can be worth having at the same
-time.
+in parallel, so it can be worth having several versions available in
+parallel, which is where `experimental` is handy.
 
 Keeping on with this example, with `1.9` in `unstable`, release
 candidates for `1.10` can be uploaded to `experimental`, along with a
@@ -44,7 +44,8 @@ To avoid repetitive and sometimes pointless work, it’s probably a good
 idea to upload (to `experimental` as well) only a few drivers built
 against the server in `experimental`. ABI might be bumped between
 release candidates (that happened between `1.10rc3` and `1.10` for
-example), so drivers would need to be rebuilt.
+example), so drivers would need to be rebuilt (even though binNMUs
+might help).
 
 The proposed drivers can be seen on the
 link:squeeze-backports.html[backports policy for squeeze] page, along
@@ -54,7 +55,7 @@ with a tiny description for each.
 Building drivers in experimental
 --------------------------------
 
-Having a driver in experimental doesn’t change much: It is sufficient
+Having a driver in `experimental` doesn’t change much: It is sufficient
 to declare a build-dependency against `xserver-xorg-dev (>=
 $serverminver)`, where `$serverminver` can be seen in:
 
@@ -81,7 +82,7 @@ Instead, that seems more natural:
 
  * `1.42-1` to `unstable`.
  * `1.42-1+exp1` to `experimental`: bump the build-dep.
- * `1.42-2` to `unstable`: add a bugfix to `unstable`’s version.
+ * `1.42-2` to `unstable`: add a bugfix to ++unstable++’s version.
  * `1.42-2+exp1` to `experimental`: rebuild against experimental
    (merging or rebasing the build-dep bump).
 
