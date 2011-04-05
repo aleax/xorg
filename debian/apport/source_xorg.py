@@ -284,7 +284,8 @@ def attach_xorg_package_versions(report, ui=None):
     for package in [
         "xserver-xorg",
         "libgl1-mesa-glx",
-        "libgl1-mesa-dri*",
+        "libgl1-mesa-dri",
+        "libgl1-mesa-dri-experimental",
         "libdrm2",
         "compiz",
         "xserver-xorg-video-intel",
@@ -332,7 +333,9 @@ def attach_3d_info(report, ui=None):
                               os.path.expanduser('~/.drirc'),
                               'drirc')
 
-        if is_process_running('compiz'):
+        if (is_process_running('compiz') or
+            (report.get('SourcePackage','Unknown') == "compiz" and report.get('ProblemType', '') == 'Crash'
+             ):
             report['CompositorRunning'] = 'compiz'
             compiz_version = command_output(['compiz', '--version'])
             if compiz_version:

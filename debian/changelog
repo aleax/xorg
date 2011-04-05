@@ -1,3 +1,14 @@
+xorg (1:7.6+4ubuntu2) natty; urgency=low
+
+  * apport/source_xorg.py:
+    + Wildcarding package names doesn't seem to work.  Look for dri
+      experimental package directly.
+      (LP: #749809, #747725)
+    + Include compiz version tag if the problem is a compiz crash
+      (LP: #744355)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Mon, 04 Apr 2011 19:01:36 -0700
+
 xorg (1:7.6+4ubuntu1) natty; urgency=low
 
   [ Timo Aaltonen ]
