@@ -292,7 +292,7 @@ def attach_xorg_package_versions(report, ui=None):
         "xserver-xorg-video-ati",
         "xserver-xorg-video-nouveau"]:
         report['version.%s' %(package)] = package_versions(package)
-    if report['Architecture'] == 'amd64':
+    if 'Architecture' in report and report['Architecture'] == 'amd64':
         report['version.ia32-libs'] = package_versions('ia32-libs')
 
 def attach_2d_info(report, ui=None):
@@ -334,7 +334,7 @@ def attach_3d_info(report, ui=None):
                               'drirc')
 
         if (is_process_running('compiz') or
-            (report.get('SourcePackage','Unknown') == "compiz" and report.get('ProblemType', '') == 'Crash'
+            (report.get('SourcePackage','Unknown') == "compiz" and report.get('ProblemType', '') == 'Crash')
              ):
             report['CompositorRunning'] = 'compiz'
             compiz_version = command_output(['compiz', '--version'])
