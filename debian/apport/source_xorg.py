@@ -450,7 +450,6 @@ def add_info(report, ui):
     attach_dist_upgrade_status(report, ui)
     attach_graphic_card_pci_info(report, ui)
     attach_hardware(report)
-    attach_drm_info(report)
     attach_dkms_info(report, ui)
     attach_nvidia_info(report, ui)
     attach_fglrx_info(report, ui)
