@@ -43,11 +43,16 @@ Input drivers
 Video drivers
 ~~~~~~~~~~~~~
 
- * `ati`, `mach64`, `r128`: Drivers for ATI cards.
+ * `ati`: Drivers for ATI cards.
  * `intel`: Driver for Intel cards.
  * `nouveau`: Driver for NVidia cards.
  * `fbdev` and `vesa`: Generic drivers.
  * `dummy`: Dummy driver, suitable when there’s no monitor connected.
+
+.Note
+There are a few other drivers for ATI cards (`mach64`, `r128`), which
+are pulled by `ati`, but there are versions available in `squeeze`
+already, so backporting them isn’t required.
 
 
 Libraries
