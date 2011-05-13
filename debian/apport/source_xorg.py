@@ -148,9 +148,9 @@ def check_is_supported(report, ui=None):
             "certain it should be reported here?" %(distro_codename),
             [
                 "I don't know",
-                "Yes, I already know the fix for this problem.",
-                "Yes, The problem began right after doing a system software update.",
-                "Yes, I have gone through technical support, and they have referred me here.",
+                "Yes, and I know the fix for this problem.",
+                "Yes, the problem began right after doing a system software update.",
+                "Yes.",
                 "No, please point me to a good place to get support.",
                 ]
         )    
