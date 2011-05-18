@@ -27,6 +27,11 @@ abort-install|abort-upgrade)
     remove_conffile_commit "/etc/gdm/failsafeHelpmsg"
     remove_conffile_commit "/etc/gdm/failsafeInstall"
   fi
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
+    remove_conffile_commit "/etc/gdm/failsafeBlacklist"
+    remove_conffile_commit "/etc/gdm/failsafeXServer"
+    remove_conffile_commit "/etc/gdm/failsafeXinit"
+  fi
 esac
 
 # clean up non-conffile configuration files and related materials on purge
