@@ -30,6 +30,11 @@ configure)
     remove_conffile_commit "/etc/gdm/failsafeHelpmsg"
     remove_conffile_commit "/etc/gdm/failsafeInstall"
   fi
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
+    remove_conffile_commit "/etc/gdm/failsafeBlacklist"
+    remove_conffile_commit "/etc/gdm/failsafeXServer"
+    remove_conffile_commit "/etc/gdm/failsafeXinit"
+  fi
 esac
 
 # only mess with config file it exists; otherwise, assume that's the way the

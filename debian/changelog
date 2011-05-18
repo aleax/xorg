@@ -1,6 +1,8 @@
 xorg (1:7.6+4ubuntu4) UNRELEASED; urgency=low
 
   * apport/source_xorg.py:
+    - Move Failsafe-X out of the xorg package to xdiagnose
+      (LP: #480744)
     - Simplify answers for bug reporters filing post-release reports.
       (LP: #778758)
     - Remove attach_drm_info().  This is useful info but we use it very
@@ -8,7 +10,7 @@ xorg (1:7.6+4ubuntu4) UNRELEASED; urgency=low
       call makes bug reports a bit cluttered since it adds a lot of lines to
       the report itself.
 
- -- Bryce Harrington <bryce@ubuntu.com>  Thu, 07 Apr 2011 14:02:40 -0700
+ -- Bryce Harrington <bryce@ubuntu.com>  Wed, 18 May 2011 03:14:19 +0200
 
 xorg (1:7.6+4ubuntu3) natty; urgency=low
 
