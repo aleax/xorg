@@ -20,17 +20,15 @@ XWRAPPER_CONFIG_ROSTER="$CONFIG_AUX_DIR/${XWRAPPER_CONFIG##*/}.roster"
 
 case "$1" in
 abort-install|abort-upgrade)
-  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu1"; then
-    remove_conffile_commit "/etc/gdm/failsafe-xorg.conf"
-    remove_conffile_commit "/etc/gdm/failsafeDexconf"
-    remove_conffile_commit "/etc/gdm/failsafeDexconf.old"
-    remove_conffile_commit "/etc/gdm/failsafeHelpmsg"
-    remove_conffile_commit "/etc/gdm/failsafeInstall"
-  fi
   if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
-    remove_conffile_commit "/etc/gdm/failsafeBlacklist"
-    remove_conffile_commit "/etc/gdm/failsafeXServer"
-    remove_conffile_commit "/etc/gdm/failsafeXinit"
+    remove_conffile_rollback "/etc/gdm/failsafe-xorg.conf"
+    remove_conffile_rollback "/etc/gdm/failsafeBlacklist"
+    remove_conffile_rollback "/etc/gdm/failsafeDexconf"
+    remove_conffile_rollback "/etc/gdm/failsafeDexconf.old"
+    remove_conffile_rollback "/etc/gdm/failsafeHelpmsg"
+    remove_conffile_rollback "/etc/gdm/failsafeInstall"
+    remove_conffile_rollback "/etc/gdm/failsafeXServer"
+    remove_conffile_rollback "/etc/gdm/failsafeXinit"
   fi
 esac
 

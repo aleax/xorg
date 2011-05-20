@@ -16,17 +16,15 @@ CONFIG_DIR=/etc/X11
 #INCLUDE_SHELL_LIB#
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
-  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu1"; then
-    remove_conffile_commit "/etc/gdm/failsafe-xorg.conf"
-    remove_conffile_commit "/etc/gdm/failsafeDexconf"
-    remove_conffile_commit "/etc/gdm/failsafeDexconf.old"
-    remove_conffile_commit "/etc/gdm/failsafeHelpmsg"
-    remove_conffile_commit "/etc/gdm/failsafeInstall"
-  fi
   if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
-    remove_conffile_commit "/etc/gdm/failsafeXBackup"
-    remove_conffile_commit "/etc/gdm/failsafeXServer"
-    remove_conffile_commit "/etc/gdm/failsafeXinit"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafe-xorg.conf"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeBlacklist"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeDexconf"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeDexconf.old"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeHelpmsg"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeInstall"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeXServer"
+    remove_conffile_lookup x11-common "/etc/gdm/failsafeXinit"
   fi
 fi
 

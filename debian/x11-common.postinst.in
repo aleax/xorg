@@ -23,15 +23,13 @@ XWRAPPER_CONFIG_ROSTER="$CONFIG_AUX_DIR/$XWRAPPER_CONFIG_ROSTER_BASE"
 
 case "$1" in
 configure)
-  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu1"; then
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
     remove_conffile_commit "/etc/gdm/failsafe-xorg.conf"
+    remove_conffile_commit "/etc/gdm/failsafeBlacklist"
     remove_conffile_commit "/etc/gdm/failsafeDexconf"
     remove_conffile_commit "/etc/gdm/failsafeDexconf.old"
     remove_conffile_commit "/etc/gdm/failsafeHelpmsg"
     remove_conffile_commit "/etc/gdm/failsafeInstall"
-  fi
-  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
-    remove_conffile_commit "/etc/gdm/failsafeBlacklist"
     remove_conffile_commit "/etc/gdm/failsafeXServer"
     remove_conffile_commit "/etc/gdm/failsafeXinit"
   fi
