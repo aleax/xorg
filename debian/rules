@@ -56,7 +56,7 @@ ifneq (,$(filter sparc sparc64,$(DEB_HOST_ARCH)))
 endif
 	# build XSF docs, under xvfb for wkhtmltodpf:
 #	xvfb-run -- $(MAKE) -C xsf-docs
-#	touch $@
+	touch $@
 
 build-arch-only: build
 build-all:
