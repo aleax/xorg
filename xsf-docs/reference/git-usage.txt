@@ -33,6 +33,16 @@ so `origin` will likely point to `git.debian.org`. One can use
 `upstream` to point to `anongit.freedesktop.org`. The following
 documentation assumes this convention.
 
+The following bits in `~/.gitconfig` will make it possible to fetch
+updates using the `git` protocol (anonymously), and to push updates
+through `ssh` without having to fiddle with the remote’s URL (in other
+words: using `git://git.debian.org` everywhere):
+
+----
+[url "ssh://git.debian.org"]
+    pushInsteadOf = "git://git.debian.org"
+----
+
 To get the repository from `git.debian.org` one can run `debcheckout
 $package` (or `debcheckout $package $package.git`), which will use the
 `Vcs-Git` fields in the APT cache to pick the appropriate git
