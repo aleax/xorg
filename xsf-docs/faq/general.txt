@@ -30,6 +30,16 @@ All drivers
    preferences, through the `-dpi` X server command line option (see
    ++Xserver++’s manual page), or through ++xrandr++’s `--dpi` option.
 
+Ati driver
+~~~~~~~~~~
+
+ * _Why is it I’m getting low performances, or even crashes?_ +
+   Make sure you have installed the
+   link:http://packages.debian.org/firmware-linux&exact=1[`firmware-linux`
+   package].  The driver might still be working without the firmware,
+   but using code paths which aren’t supported as well as the “normal”
+   ones.
+
 Intel driver
 ~~~~~~~~~~~~
 
