@@ -10,8 +10,8 @@ http://wiki.debian.org/XStrikeForce/git-usage[wiki.debian.org/XSF/git-usage];
 this documentation is just a draft for now.
 
 
-Foreword
---------
+Getting started
+---------------
 
 Upstream repositories are hosted on
 http://cgit.freedesktop.org/[git.freedesktop.org]
@@ -32,6 +32,16 @@ Debian packaging, one usually starts by cloning the Debian repository,
 so `origin` will likely point to `git.debian.org`. One can use
 `upstream` to point to `anongit.freedesktop.org`. The following
 documentation assumes this convention.
+
+The following bits in `~/.gitconfig` will make it possible to fetch
+updates using the `git` protocol (anonymously), and to push updates
+through `ssh` without having to fiddle with the remote’s URL (in other
+words: using `git://git.debian.org` everywhere):
+
+----
+[url "ssh://git.debian.org"]
+    pushInsteadOf = "git://git.debian.org"
+----
 
 To get the repository from `git.debian.org` one can run `debcheckout
 $package` (or `debcheckout $package $package.git`), which will use the
