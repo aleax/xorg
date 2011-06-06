@@ -1,0 +1,200 @@
+Git usage
+=========
+:toc:
+Cyril Brulebois <kibi@debian.org>
+
+
+[NOTE]
+The old documentation is still available on the wiki:
+http://wiki.debian.org/XStrikeForce/git-usage[wiki.debian.org/XSF/git-usage];
+this documentation is just a draft for now.
+
+
+Getting started
+---------------
+
+Upstream repositories are hosted on
+http://cgit.freedesktop.org/[git.freedesktop.org]
+
+Debian repositories are hosted on
+http://git.debian.org/[git.debian.org] under the `pkg-xorg/*`
+namespace. Each repository is about a single Debian source package.
+
+We have two types of repositories:
+
+* *regular* packages: 1 upstream repository → 1 Debian repository → 1
+   Debian source package (non-native).
+* *bundle* packages: multiple upstream repositories → 1 Debian
+   repository → 1 Debian source package (native).
+
+A local git repository can have several remotes. In the context of
+Debian packaging, one usually starts by cloning the Debian repository,
+so `origin` will likely point to `git.debian.org`. One can use
+`upstream` to point to `anongit.freedesktop.org`. The following
+documentation assumes this convention.
+
+The following bits in `~/.gitconfig` will make it possible to fetch
+updates using the `git` protocol (anonymously), and to push updates
+through `ssh` without having to fiddle with the remote’s URL (in other
+words: using `git://git.debian.org` everywhere):
+
+----
+[url "ssh://git.debian.org"]
+    pushInsteadOf = "git://git.debian.org"
+----
+
+To get the repository from `git.debian.org` one can run `debcheckout
+$package` (or `debcheckout $package $package.git`), which will use the
+`Vcs-Git` fields in the APT cache to pick the appropriate git
+location. To add the `upstream` remote (using the info stored in
+`debian/watch`), one can use `xsf-remote-add-upstream` script from the
+http://git.debian.org/?p=pkg-xorg/debian/xsf-tools.git[pkg-xorg/debian/xsf-tools.git]
+repository.
+
+**TODO:** There will be more information about how to deal with the
+many repositories maintained by the X Strike Force in a later chapter.
+
+The usual workflow is to keep the target suite in `debian/changelog`
+to `UNRELEASED` until the upload happens, the last commit before a
+commit being only `dch -r`. To achieve that, and to avoid noise since
+those packages are comaintained, it’s advised to set the following
+variable in `~/.devscripts`:
+
+----
+DEBCHANGE_RELEASE_HEURISTIC=changelog
+----
+
+
+Regular packages
+----------------
+
+For most packages (exceptions include `xorg-server`), development is
+linear, and happens in a `master` branch. That `master` branch is
+pushed in the Debian repository as `upstream-$suite`
+(e.g. `upstream-unstable`), depending on the target suite. Usually,
+`upstream-unstable` tracks `upstream/master`.
+
+The packaging is kept in `debian-$suite` branches, branched from
+`upstream-$suite`. When cloning a Debian repository, the default
+branch is `debian-unstable`.
+
+To create the initial packaging from the `upstream-unstable` branch,
+just run `git checkout -b debian-unstable`, add packaging files
+(`changelog`, `control`, `copyright`, `rules` etc. under `debian/`),
+and that’s it.
+
+Here’s how to merge from upstream (`$foo` being a tag or
+`upstream/master`):
+
+----
+    git checkout upstream-unstable
+    git merge $foo
+    git log $foo > ChangeLog
+    dch -v $debianrevision
+    git commit -am 'Bump changelogs.'
+----
+
+`$debianrevision` is usually `$foo` with `-1` appended (first upload),
+and sometimes prepended with a epoch (for example `2:`). Passing
+`$foo-1` is usually a good rule of thumb, since `dch` will complain if
+the epoch is missing (given the specified version string wouldn’t be
+newer than the current one).
+
+When development isn’t linear
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For packages like `xorg-server` and `libx11`, there are stable
+branches which receive updates for a while. Trying to switch from
+`1.10.2` to `1.11.0` might trigger a lot of conflicts. But in the end
+what matters is the changes between `upstream-$suite` and
+`debian-$suite`. Here’s an example, supposing `upstream-unstable` and
+`debian-unstable` are pointing to the “old” branches, and supposing
+the new branch is `upstream/master`:
+
+----
+git checkout -b debian-unstable-new upstream/master
+git merge -s ours upstream-unstable
+git merge debian-unstable
+git branch -d debian-unstable
+git branch -m debian-unstable
+----
+
+Subtitles:
+
+* Create a `debian-unstable-new` branch starting with the upstream
+  `master` branch, and switch to it.
+* “Merge” the old `upstream-unstable` branch, actually keeping only
+  the new upstream branch.
+* Merge the old packaging on top of it.
+* Remove the old branch (so that the name can be reused).
+* Rename the current `debian-unstable-new` branch into
+  `debian-unstable`.
+
+Since the tip of the new `debian-unstable` branch is a descendant of
+the tip of the old `debian-unstable` one, it can be pushed normally.
+
+Since old `upstream-unstable` and new `upstream-unstable` diverged,
+this branch has to be pushed with a `-f` to force the update (it’s not
+a fast-forward).
+
+
+Bundle packages
+---------------
+
+One bundle package is a Debian native package, with just a (Debian)
+tarball, instead of an upstream tarball plus a Debian diff.
+
+There is no upstream branches here, only `debian-$suite`.
+
+The repository contains a `debian/` directory for the packaging, and
+one directory per upstream source. Merging a new upstream release
+means updating the contents of the relevant directory with the
+contents of the new upstream tarball. Fetching new tarballs is
+automated through a specific target: `make -f debian/rules
+get-tarballs`
+
+To perform an update, first run `dch -i` to create a new changelog
+entry if the previous commit was an upload (the new entry targets the
+`UNRELEASED` suite, see “Foreword”).
+
+Assuming `get-tarballs` made `foo-bar.tar.gz` appear in the top-level
+directory, here’s how to update (trailing slashes are not needed, just
+there to clarify we’re working on directories):
+
+----
+git rm -r foo/
+tar xf foo-bar.tar.gz
+mv foo-bar/ foo/
+git add foo/
+dch "foo bar"
+debcommit -a
+----
+
+Using the `xsf-remote-add-upstream` script will create several
+`upstream-$foo` remotes, using info stored in `debian/watch*`. This
+helps browsing the history of a given repository (rather than having
+to look at a big fat diff with autogenerated files in the middle).
+
+
+Upgrade checklist
+-----------------
+
+[NOTE]
+Since it’s likely for a reader of this page to be on her way to update
+a package, here’s a tiny upgrade checklist.
+
+Basic checks include looking into what happened to those files since
+the last packaging update:
+
+* `COPYING`: Update `debian/copyright` accordingly.
+* `configure.ac` (or `configure.in`): Update (build-)dependencies
+  accordingly.
+
+About xorg macros (they show up very often in the diff), they’re
+shipped in the `xutils-dev` package, which contains a file to help map
+macro versions and package versions:
+`/usr/share/doc/xutils-dev/versions`
+
+Some packages might have more specific instructions. That’s the case
+for at least `xorg-server`. See its `debian/README.source`, below the
+generic “how to use quilt” blurb.

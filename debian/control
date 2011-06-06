@@ -4,15 +4,12 @@ Priority: optional
 Maintainer: Ubuntu X-SWAT <ubuntu-x@lists.ubuntu.com>
 XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: Drew Parsons <dparsons@debian.org>, Cyril Brulebois <kibi@debian.org>
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Build-Depends:
  debhelper (>= 7.3.15ubuntu3),
  po-debconf,
 # xsf-docs:
-# markdown,
-# wkhtmltopdf,
-# xauth,
-# xvfb,
+ asciidoc,
 Vcs-Git: git://git.debian.org/git/pkg-xorg/debian/xorg
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/debian/xorg.git
 
@@ -47,7 +44,7 @@ Depends:
  x11-xkb-utils
 Recommends:
  libgl1-mesa-dri,
-Description: the X.Org X server
+Description: X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server.  It does not provide the actual server itself.
 
@@ -60,7 +57,7 @@ Recommends:
  ${F:XServer-Xorg-Video-Recommends},
 Replaces: xserver-xorg-driver-all
 Conflicts: xserver-xorg-driver-all
-Description: the X.Org X server -- output driver metapackage
+Description: X.Org X server -- output driver metapackage
  This package depends on the full suite of output drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
  to only have certain drivers installed.
@@ -72,7 +69,7 @@ Depends:
  ${misc:Depends},
 Recommends:
  ${F:XServer-Xorg-Input-Recommends},
-Description: the X.Org X server -- input driver metapackage
+Description: X.Org X server -- input driver metapackage
  This package depends on the full suite of input drivers for the X.Org X server
  (Xorg).  It does not provide any drivers itself, and may be removed if you wish
  to only have certain drivers installed.
@@ -179,7 +176,7 @@ Depends:
  xtrans-dev,
  ${misc:Depends},
  x11-common,
-Description: the X.Org X Window System development libraries
+Description: X.Org X Window System development libraries
  This metapackage provides the development libraries for the X.Org X Window
  System.
  .

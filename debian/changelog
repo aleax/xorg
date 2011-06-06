@@ -1,4 +1,4 @@
-xorg (1:7.6+4ubuntu4) UNRELEASED; urgency=low
+xorg (1:7.6+7ubuntu1) UNRELEASED; urgency=low
 
   [ Bryce Harrington ]
   * apport/source_xorg.py:
@@ -18,6 +18,49 @@ xorg (1:7.6+4ubuntu4) UNRELEASED; urgency=low
     handling, the previous ones added in 1:7.6+4ubuntu1 were wrong too.
 
  -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 20 May 2011 17:07:13 +0300
+
+xorg (1:7.6+7) unstable; urgency=low
+
+  * Remove long obsolete XF86Config-4 on purge (Closes: #610450). Thanks,
+    Bernhard R. Link!
+  * Add support for armhf (Closes: #605841), Thanks, Konstantinos
+    Margaritis! Keep wacom in Recommends rather than in Depends, though.
+  * Set the same permissions on all debian/scripts/vars.* files: no need
+    to have them +x.
+  * Remove debian/scripts/validate-posix-sh, unused.
+  * Address description-synopsis-starts-with-article lintian tag.
+  * Bump Standards-Version (no changes needed).
+  * Merge xsf-docs up to the f920810e8f commit:
+    - Add: reference/experimental
+    - Add: reference/git-usage
+    - Update: faq/general (firmware for ATI)
+    - and other minor updates.
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 03 Jun 2011 23:25:11 +0200
+
+xorg (1:7.6+6) unstable; urgency=low
+
+  * Merge xsf-docs up to the bd39472b0c commit:
+    - Conversion from markdown to asciidoc.
+  * Tweak the Makefile accordingly to stop trying to build and install PDF
+    documents, since wkhtmltopdf fails on several architectures. Let's
+    enable them again later, once bugs are fixed.
+  * Adjust build system and build-dependencies accordingly:
+    - Add asciidoc build-dep.
+    - Remove markdown build-dep.
+    - Remove wkhtmltopdf, xauth, xvfb build-dep.
+    - Stop wrapping make with xvfb-run.
+    - Get rid of the sparc-specific workaround.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Apr 2011 17:12:20 +0200
+
+xorg (1:7.6+5) unstable; urgency=low
+
+  * Drop ati and sisusb from video-all on hurd-i386, thanks to Samuel
+    Thibault (Closes: #619862).
+  * Add Vcs-* fields.
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 01 Apr 2011 02:08:54 +0200
 
 xorg (1:7.6+4ubuntu3) natty; urgency=low
 

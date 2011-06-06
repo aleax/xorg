@@ -31,7 +31,7 @@ if [ "$1" = "purge" ]; then
   rm -f "$SERVER_SYMLINK"
   rm -f "$XORGCONFIG_CHECKSUM" "$XORGCONFIG_ROSTER"
   rm -f "$SERVER_SYMLINK_CHECKSUM" "$SERVER_SYMLINK_ROSTER"
-  rm -f "$XORGCONFIG"
+  rm -f "$XORGCONFIG" "$XF86CONFIG"
 
   for DIR in "$CONFIG_DIR" "$CONFIG_AUX_DIR"; do
       rmdir "$DIR" 2> /dev/null || true

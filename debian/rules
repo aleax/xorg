@@ -34,7 +34,7 @@ include debian/scripts/vars.$(ARCH)
 clean: cleanscripts
 	dh_testdir
 	dh_clean debian/local/X debian/po/pothead
-#	$(MAKE) -C xsf-docs clean
+	$(MAKE) -C xsf-docs clean
 	-rm -rf stampdir
 	-debconf-updatepo
 
@@ -50,12 +50,7 @@ build-stamp: scripts-stamp
 	dh_testdir
 	# build Debian's X server wrapper
 	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
-ifneq (,$(filter sparc sparc64,$(DEB_HOST_ARCH)))
-	# work around wkhtmltopdf's sigbus on sparc (#613141):
-#	sed -i '/background-image.*svg/d' xsf-docs/xsf.css
-endif
-	# build XSF docs, under xvfb for wkhtmltodpf:
-#	xvfb-run -- $(MAKE) -C xsf-docs
+	$(MAKE) -C xsf-docs
 	touch $@
 
 build-arch-only: build
@@ -66,7 +61,7 @@ install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_prep
-#	$(MAKE) -C xsf-docs install DESTDIR=$(CURDIR)/debian/xserver-xorg/usr/share/doc/xorg
+	$(MAKE) -C xsf-docs install DESTDIR=$(CURDIR)/debian/xserver-xorg/usr/share/doc/xorg
 	touch $@
 
 binary-indep: DH_OPTIONS=-i

@@ -1,23 +1,27 @@
-# How to use xrandr
+How to use xrandr
+=================
+:toc:
+Cyril Brulebois <kibi@debian.org>
 
-Cyril Brulebois &lt;kibi@debian.org>
 
+Getting started
+---------------
 
-## Getting started
-
-### What is xrandr?
+What is xrandr?
+~~~~~~~~~~~~~~~
 
 `xrandr` is a command-line tool to interact with the X `RandR`
-extension [see [x.org](http://www.x.org/wiki/Projects/XRandR),
-[wikipedia](http://en.wikipedia.org/wiki/RandR)], which allows for
-live (re)configuration of the X server (*i.e.* without restarting it):
+extension [see http://www.x.org/wiki/Projects/XRandR[x.org],
+http://en.wikipedia.org/wiki/RandR[wikipedia]], which allows for
+live (re)configuration of the X server (_i.e._ without restarting it):
 It provides automatic discovery of modes (resolutions, refresh rates,
 etc.) together with the ability to configure outputs dynamically
 (resize, rotate, move, etc.).
 
-**FIXME: Status across drivers?**
+*FIXME: Status across drivers?*
 
-### What consequences for xorg.conf?
+What consequences for xorg.conf?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Starting with `squeeze`, removing the `xorg.conf` configuration file
 entirely should work well enough, but in case that doesn’t work out,
@@ -43,7 +47,10 @@ suggestions to get a tiny `xorg.conf`:
  * Drop `RightOf`/`LeftOf` indication of the remaining `Screen` line
    in `ServerLayout` section.
 
-## Basic xrandr usage
+
+<<<
+Basic xrandr usage
+------------------
 
 Once the configuration file (`xorg.conf`) is removed or updated,
 starting the server should enable some outputs by default. Their
@@ -53,16 +60,18 @@ modes will probably be different.
 All outputs may be configured through `xrandr`. To see the available
 outputs, just run `xrandr`:
 
-    $ xrandr
-    Screen 0: minimum 320 x 200, current 1280 x 800, maximum 4096 x 4096
-    VGA1 disconnected (normal left inverted right x axis y axis)
-    LVDS1 connected 1280x800+0+0 inverted X and Y axis (normal left inverted right x axis y axis) 261mm x 163mm
-       1280x800       59.8*+
-       1024x768       60.0
-       800x600        60.3     56.2
-       640x480        59.9
-    DVI1 disconnected (normal left inverted right x axis y axis)
-    TV1 disconnected (normal left inverted right x axis y axis)
+----
+$ xrandr
+Screen 0: minimum 320 x 200, current 1280 x 800, maximum 4096 x 4096
+VGA1 disconnected (normal left inverted right x axis y axis)
+LVDS1 connected 1280x800+0+0 inverted X and Y axis (normal left inverted right x axis y axis) 261mm x 163mm
+   1280x800       59.8*+
+   1024x768       60.0
+   800x600        60.3     56.2
+   640x480        59.9
+DVI1 disconnected (normal left inverted right x axis y axis)
+TV1 disconnected (normal left inverted right x axis y axis)
+----
 
 Comments:
 
@@ -74,58 +83,78 @@ Comments:
    monitors report a preferred mode to the driver. And the
    server/driver will generally choose it by default.
 
-**FIXME: Mention output name conventions?**
+*FIXME: Mention output name conventions?*
 
 When manipulating `VGA1` output properties, you should use:
 
-    $ xrandr --output VGA1 <options>
+----
+$ xrandr --output VGA1 <options>
+----
 
-### Adding/removing heads dynamically
+Adding/removing heads dynamically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The old days where you had to restart X when plugging a new monitor
 are gone. With `RandR` 1.2, you can plug/unplug monitors whenever you
 want. Running the following line will query all outputs and enable
 them with their default mode:
 
-    $ xrandr --auto
+----
+$ xrandr --auto
+----
 
 You may also disable one output using:
 
-    $ xrandr --output LVDS1 --off
+----
+$ xrandr --output LVDS1 --off
+----
 
 This may be useful for some buggy application that don’t support
 multiple outputs well. Also, due to CRTC limitations (see the Caveats
 section below), it is often required to disable one output before
 enabling another since most hardware only support 2 at the same time.
 
-### Changing the mode
+Changing the mode
+~~~~~~~~~~~~~~~~~
 
 With the above `xrandr` output, you may change the `LVDS1` mode to
 `1024x768` using:
 
-    $ xrandr --output LVDS1 --mode 1024x768
+----
+$ xrandr --output LVDS1 --mode 1024x768
+----
 
 The refresh rate may also be changed, either at the same time or
 independently:
 
-    $ xrandr --output LVDS1 --mode 1024x768 --rate 75
-    $ xrandr --output LVDS1 --rate 75
+----
+$ xrandr --output LVDS1 --mode 1024x768 --rate 75
+$ xrandr --output LVDS1 --rate 75
+----
 
 To get back to the default mode:
 
-    $ xrandr --output LVDS1 --auto
+----
+$ xrandr --output LVDS1 --auto
+----
 
-## Placing outputs in a virtual screen
 
-### A bit of configuration for non-KMS setups:
+<<<
+Placing outputs in a virtual screen
+-----------------------------------
+
+A bit of configuration for non-KMS setups:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let’s have a look at the maximal virtual screen size, we see
 `4096x4096` in this example:
 
-    $ xrandr|head -1
-    Screen 0: minimum 320 x 200, current 1280 x 800, maximum 4096 x 4096
+----
+$ xrandr|head -1
+Screen 0: minimum 320 x 200, current 1280 x 800, maximum 4096 x 4096
+----
 
-With KMS (**FIXME: Link to a page which explains what KMS is**),
+With KMS (*FIXME: Link to a page which explains what KMS is*),
 there's no need to specify any `Virtual` option. With DRI and without
 KMS, that might be needed. Indeed, drivers will often create a default
 virtual screen with small dimensions, for instance `1600x1200`, to
@@ -135,26 +164,34 @@ If you plan to use multiple outputs displaying different zones, you
 should configure your `xorg.conf` by adding a `Virtual` line to the
 `Display` subsection in the `Screen` section.
 
-    Section "Screen"
-      ...
-      SubSection "Display"
-        Depth 24
-        Virtual 3000 2000
-      EndSubSection
-    EndSection
+----
+Section "Screen"
+  …
+  SubSection "Display"
+    Depth 24
+    Virtual 3000 2000
+  EndSubSection
+EndSection
+----
 
-### Place outputs
+Place outputs
+~~~~~~~~~~~~~
 
 Outputs are placed using the following options:
 `--right-of`/`--left-of`/`--above`/`--below`. For instance, to place
 the `VGA1` output virtually-right of the internal panel (`LVDS1`):
 
-    $ xrandr --output VGA1 --right-of LVDS1
+----
+$ xrandr --output VGA1 --right-of LVDS1
+----
 
 Note that hardware and memory limitations may severely restrict the
 size of your virtual screen, see the Caveats section below.
 
-## Adding new modes
+
+<<<
+Adding new modes
+----------------
 
 Under some circumstances, some modes might be missing. For instance,
 if the monitor does not report correct EDID information. Or if the
@@ -163,11 +200,15 @@ was using it and you disabled it in the meantime.
 
 If a mode exist, you may add it to one output with:
 
-    $ xrandr --addmode VGA1 800x600
+----
+$ xrandr --addmode VGA1 800x600
+----
 
 If the mode does not exist, you may first create it by passing a modeline:
 
-    $ xrandr --newmode <ModeLine>
+----
+$ xrandr --newmode <ModeLine>
+----
 
 You may create a modeline using the `gtf` or `cvt` tools (shipped in
 the `xserver-xorg-core` package).
