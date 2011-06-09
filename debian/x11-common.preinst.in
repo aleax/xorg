@@ -16,7 +16,7 @@ CONFIG_DIR=/etc/X11
 #INCLUDE_SHELL_LIB#
 
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
-  if dpkg --compare-versions "$2" lt-nl "1:7.6+4ubuntu4"; then
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+7ubuntu1"; then
     remove_conffile_lookup x11-common "/etc/gdm/failsafe-xorg.conf"
     remove_conffile_lookup x11-common "/etc/gdm/failsafeBlacklist"
     remove_conffile_lookup x11-common "/etc/gdm/failsafeDexconf"
