@@ -1,3 +1,12 @@
+xorg (1:7.6+7ubuntu3) oneiric; urgency=low
+
+  * debian/rules:
+    - Reverse the symlinking of /usr/share/doc directories to x11-common.
+      This should now be handled automatically by pkgbinarymangler, and the
+      directory symlink now causes file conflicts.  (LP: #812665)
+  
+ -- Christopher James Halse Rogers <raof@ubuntu.com>  Tue, 19 Jul 2011 17:32:01 +1000
+
 xorg (1:7.6+7ubuntu2) oneiric; urgency=low
 
   * debian/local/Xsession.d/60x11-common_xdg_path: Add session script to

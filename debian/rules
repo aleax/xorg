@@ -78,14 +78,13 @@ binary-indep: build install
 	dh_lintian
 	dh_link
 	dh_compress
-	t=x11-common; \
-	for p in $$(dh_listpackages -i -N$$t); do \
-	  rm -rf debian/$$p/usr/share/doc/$$p; \
-	  ln -s $$t debian/$$p/usr/share/doc/$$p; \
+	set -e ;\
+	for p in $$(dh_listpackages -i); do \
 	  ( \
-	    echo "# doc dir is now a symlink to $$p"; \
-	    echo 'if [ "$$1" = upgrade ] && [ ! -L /usr/share/doc/'$$p' ]; then'; \
-	    echo "    rm -rf /usr/share/doc/$$p"; \
+	    echo "# Undo doc-dir symlinking.  Leave this to pkgbinarymangler"; \
+	    echo "# This can be removed after the next LTS" ; \
+	    echo 'if [ "$$1" = upgrade ] && [ -L /usr/share/doc/'$$p' ]; then'; \
+	    echo "    rm -f /usr/share/doc/$$p"; \
 	    echo "fi"; \
 	  ) >> debian/$$p.preinst.debhelper; \
 	done
@@ -121,14 +120,13 @@ endif
 	dh_link
 	dh_strip
 	dh_compress
-	t=x11-common; \
-	for p in $$(dh_listpackages -s -N$$t); do \
-	  rm -rf debian/$$p/usr/share/doc/$$p; \
-	  ln -s $$t debian/$$p/usr/share/doc/$$p; \
+	set -e ;\
+	for p in $$(dh_listpackages -a); do \
 	  ( \
-	    echo "# doc dir is now a symlink to $$p"; \
-	    echo 'if [ "$$1" = upgrade ] && [ ! -L /usr/share/doc/'$$p' ]; then'; \
-	    echo "    rm -rf /usr/share/doc/$$p"; \
+	    echo "# Undo doc-dir symlinking.  Leave this to pkgbinarymangler."; \
+	    echo "# This can be removed after the next LTS" ; \
+	    echo 'if [ "$$1" = upgrade ] && [ -L /usr/share/doc/'$$p' ]; then'; \
+	    echo "    rm -f /usr/share/doc/$$p"; \
 	    echo "fi"; \
 	  ) >> debian/$$p.preinst.debhelper; \
 	done
