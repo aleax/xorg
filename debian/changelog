@@ -1,3 +1,11 @@
+xorg (1:7.6+7ubuntu5) oneiric; urgency=low
+
+  * debian/control: Move xdiagnose dependency to ubuntu-desktop.
+    xdiagnose has a gtk dependency, which would pull in gtk3 to kubuntu.
+    (LP: #814346)
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Thu, 21 Jul 2011 17:47:16 -0700
+
 xorg (1:7.6+7ubuntu4) oneiric; urgency=low
 
   * debian/control:  Add Depends on xdiagnose, to ensure it always gets
