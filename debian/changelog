@@ -1,3 +1,12 @@
+xorg (1:7.6+7ubuntu6) oneiric; urgency=low
+
+  * debian/control: Remove Recommends on xdiagnose as well; apparently it
+    still causes gtk3 to be included for kubuntu.  Derivitive distros will
+    need to opt-in with their seeds if they wish to have X diagnostics
+    included.
+
+ -- Bryce Harrington <bryce@ubuntu.com>  Fri, 22 Jul 2011 13:30:15 -0700
+
 xorg (1:7.6+7ubuntu5) oneiric; urgency=low
 
   * debian/control: Move xdiagnose dependency to ubuntu-desktop.
