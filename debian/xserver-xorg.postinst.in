@@ -137,6 +137,21 @@ if dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
   fi
 fi
 
+get_hal_pid() {
+  dbus-send --system --dest=org.freedesktop.DBus --print-reply \
+    /org/freedesktop/DBus org.freedesktop.DBus.GetConnectionUnixProcessID \
+    string:org.freedesktop.Hal 2>/dev/null | awk '/uint32/ {print $2}'
+}
+
+restart_hal() {
+  # restart hald if it was running before
+  pid=$(get_hal_pid)
+  if [ -n "$pid" ]; then
+    kill $pid 2>/dev/null || true
+    lshal >/dev/null || true # will trigger through D-Bus activation
+  fi
+}
+
 case "$1" in
   configure)
     if dpkg --compare-versions "$2" lt-nl "1:7.3+11"; then
@@ -147,7 +162,7 @@ case "$1" in
     fi
     if dpkg --compare-versions "$2" lt "1:7.5~3"; then
       if [ `uname -s` = "GNU/kFreeBSD" ]; then
-        invoke-rc.d hal restart >/dev/null
+        restart_hal
       fi
     fi
     ;;
