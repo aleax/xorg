@@ -1,4 +1,4 @@
-xorg (1:7.6+8) UNRELEASED; urgency=medium
+xorg (1:7.6+8) UNRELEASED; urgency=high
 
   [ Julien Cristau ]
   * Add Provides: xserver to xserver-xorg.
@@ -10,7 +10,9 @@ xorg (1:7.6+8) UNRELEASED; urgency=medium
   [ Cyril Brulebois ]
   * Merge xsf-docs up to the f931b66804 commit:
     - Update: reference/squeeze-backports
-  * Set urgency to “medium” for the HAL vs. GNU/kFreeBSD bug fix.
+  * Set urgency to “medium” for the HAL vs. GNU/kFreeBSD bug fix, and then
+    to “high” to speed up backporting since this source package is the last
+    missing step.
   * Run debian-updatepo, and specify language fields.
 
  -- Julien Cristau <jcristau@debian.org>  Mon, 01 Aug 2011 01:23:42 +0200
