@@ -58,6 +58,7 @@ everything from `squeeze-backports`.
 ----
 apt-get purge xserver-xorg-input-wacom
 apt-get install -t squeeze-backports xorg xserver-xorg xserver-xorg-core xserver-xorg-input-all xserver-xorg-video-all
+apt-get install -t squeeze-backports libgl1-mesa-dri libgl1-mesa-glx
 ----
 
 In case only the needed packages were installed, like the `synaptics`
@@ -65,6 +66,7 @@ input driver and the `intel` video driver, the following should be
 sufficient:
 ----
 apt-get install -t squeeze-backports xorg xserver-xorg xserver-xorg-core xserver-xorg-input-synaptics xserver-xorg-video-intel
+apt-get install -t squeeze-backports libgl1-mesa-dri libgl1-mesa-glx
 ----
 
 It is probably a very good idea to install the Linux kernel from
