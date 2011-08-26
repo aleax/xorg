@@ -26,6 +26,9 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
     remove_conffile_lookup x11-common "/etc/gdm/failsafeXServer"
     remove_conffile_lookup x11-common "/etc/gdm/failsafeXinit"
   fi
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+7ubuntu7"; then
+    remove_conffile_lookup x11-common "/etc/init/failsafe-x.conf"
+  fi
 fi
 
 #DEBHELPER#

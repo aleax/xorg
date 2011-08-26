@@ -30,6 +30,9 @@ abort-install|abort-upgrade)
     remove_conffile_rollback "/etc/gdm/failsafeXServer"
     remove_conffile_rollback "/etc/gdm/failsafeXinit"
   fi
+  if dpkg --compare-versions "$2" lt-nl "1:7.6+7ubuntu7"; then
+    remove_conffile_rollback "/etc/init/failsafe-x.conf"
+  fi
 esac
 
 # clean up non-conffile configuration files and related materials on purge
