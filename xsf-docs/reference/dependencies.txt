@@ -226,6 +226,24 @@ can be used as an example.
 
 
 <<<
+Handling a transition
+---------------------
+
+When a new major version of the server comes up, it can be updated
+following its `README.source`. Usually, drivers can be rebuilt using
+binNMUs. Be sure `xorg-server` is marked as `Installed` on all
+buildds, or set a `dep-wait`.
+
+On the release team side, a transition page can be asked for, to track
+fully rebuilt drivers. For the input 12→13 and video 10→11
+transitions, the settings are:
+
+ * Affected: `.build-depends ~ /xserver-xorg-dev/`
+ * Good: `.depends ~ /xorg-input-abi-13/ | .depends ~ /xorg-video-abi-11/`
+ * Bad: `.depends ~ /xorg-input-abi-12/ | .depends ~ /xorg-video-abi-10/`
+
+
+<<<
 Staying tuned
 -------------
 
