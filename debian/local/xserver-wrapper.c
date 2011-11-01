@@ -82,6 +82,7 @@
  *                 -showDefaultLibPath options (11 Aug 2009)
  * Julien Cristau: don't check the mode of the DRI device directory
  *                 (11 Aug 2009)
+ * Julien Cristau: also drop group privileges (1 Nov 2011)
  *
  * This is free software; you may redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -313,12 +314,12 @@ main(int argc, char **argv)
 
     for (i = 1; i < argc; i++) {
       if (!strcmp(argv[i], "-config") || !strcmp(argv[i], "-xf86config")) {
-        if (setuid(getuid())) {
+        if (setgid(getgid()) || setuid(getuid())) {
           perror("X unable to drop setuid privileges for alternate config");
           exit(1);
         }
       } else if (strlen(argv[i]) > 256) {
-        if (setuid(getuid())) {
+        if (setgid(getgid()) || setuid(getuid())) {
           perror("X unable to drop setuid privileges for suspiciously long "
                  "argument");
           exit(1);
@@ -354,7 +355,7 @@ main(int argc, char **argv)
                          (strcmp(argv[1], "-version") == 0) ||
                          (strcmp(argv[1], "-showDefaultModulePath") == 0) ||
                          (strcmp(argv[1], "-showDefaultLibPath") == 0) ) ) {
-          if (setuid(getuid())) {
+          if (setgid(getgid()) || setuid(getuid())) {
               perror("X unable to drop setuid privileges");
               exit(1);
           }

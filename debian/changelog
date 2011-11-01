@@ -1,3 +1,10 @@
+xorg (1:7.6+10) UNRELEASED; urgency=low
+
+  * xserver-wrapper: when we drop privileges, don't forget to also reset
+    effective group id, since we're installed setgid root.
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 01 Nov 2011 15:13:52 +0100
+
 xorg (1:7.6+9) unstable; urgency=low
 
   [ Julien Cristau ]
