@@ -16,6 +16,7 @@ xorg (1:7.6+10) unstable; urgency=high
     - revert change to allow devices with major 5 as consoles.  This includes
       things like /dev/tty and /dev/ptmx, which are world-readable (closes:
       #652249).  Thanks to vladz for the report.
+      Reference: CVE-2011-4613.
     - use major() and minor() macros instead of manually extracting them
   * Build the X wrapper with hardening enabled.
 
