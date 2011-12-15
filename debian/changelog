@@ -1,5 +1,13 @@
 xorg (1:7.6+10) UNRELEASED; urgency=low
 
+  [ Josselin Mouette ]
+  * debian/local/Xsession.d/35x11-common_xhost-local: add a new script 
+    to the default X session. It will give access to the running X 
+    server to the logged on user. This is useful for gdm3 which does not 
+    give access to $XAUTHORITY outside the session, but can also be of 
+    use for other display managers. Closes: #586685.
+
+  [ Julien Cristau ]
   * Fixes for xserver-wrapper:
     - when we drop privileges, don't forget to also reset effective group id,
       since we're installed setgid root.
@@ -9,7 +17,7 @@ xorg (1:7.6+10) UNRELEASED; urgency=low
     - use major() and minor() macros instead of manually extracting them
   * Build the X wrapper with hardening enabled.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 01 Nov 2011 15:13:52 +0100
+ -- Josselin Mouette <joss@debian.org>  Thu, 24 Nov 2011 22:52:19 +0100
 
 xorg (1:7.6+9) unstable; urgency=low
 
