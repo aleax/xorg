@@ -162,8 +162,8 @@ onConsole()
     return FALSE;
   }
   if (S_ISCHR(s.st_mode) &&
-        (((s.st_rdev >> 8) & 0xff) == TTY_MAJOR_DEV &&
-          (s.st_rdev & 0xff) < 64)) {
+        (major(s.st_rdev) == TTY_MAJOR_DEV &&
+         minor(s.st_rdev) < 64)) {
     return TRUE;
   }
 #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
