@@ -2,6 +2,9 @@ xorg (1:7.6+10) UNRELEASED; urgency=low
 
   * xserver-wrapper: when we drop privileges, don't forget to also reset
     effective group id, since we're installed setgid root.
+  * xserver-wrapper: revert change to allow devices with major 5 as consoles.
+    This includes things like /dev/tty and /dev/ptmx, which are
+    world-readable (closes: #652249).  Thanks to vladz for the report.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 01 Nov 2011 15:13:52 +0100
 
