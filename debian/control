@@ -6,6 +6,7 @@ XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: Drew Parsons <dparsons@debian.org>, Cyril Brulebois <kibi@debian.org>
 Standards-Version: 3.9.2
 Build-Depends:
+ dpkg (>= 1.16.1),
  debhelper (>= 7.3.15ubuntu3),
  po-debconf,
 # xsf-docs:
@@ -32,17 +33,18 @@ Description: X Window System (X.Org) infrastructure
 Package: xserver-xorg
 Architecture: any
 Depends:
- xserver-xorg-core (>= 2:1.9.99.901+git20110131),
+ xserver-xorg-core (>= 2:1.11),
  xserver-xorg-video-all | xorg-driver-video,
  xserver-xorg-input-all | xorg-driver-input,
  xserver-xorg-input-evdev [linux-any],
- hal (>= 0.5.12~git20090406) [kfreebsd-any],
+ hal (>= 0.5.14-4~) [kfreebsd-any],
  ${shlibs:Depends},
  ${misc:Depends},
  xkb-data (>= 1.4),
  x11-xkb-utils
 Recommends:
  libgl1-mesa-dri,
+Provides: xserver
 Description: X.Org X server
  This package depends on the full suite of the server and drivers for the
  X.Org X server.  It does not provide the actual server itself.

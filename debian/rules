@@ -19,6 +19,13 @@ CC=$(DEB_HOST_GNU_TYPE)-gcc
 else
 CC ?=gcc
 endif
+CFLAGS = \
+	-Wall \
+	$(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get CFLAGS)
+CPPFLAGS = \
+	$(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get CPPFLAGS)
+LDFLAGS = \
+	$(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get LDFLAGS)
 
 # debhelper
 export DH_OPTIONS
@@ -49,7 +56,7 @@ build: build-stamp
 build-stamp: scripts-stamp
 	dh_testdir
 	# build Debian's X server wrapper
-	$(CC) -Wall -g -O2 -o debian/local/X debian/local/xserver-wrapper.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -o debian/local/X debian/local/xserver-wrapper.c
 	$(MAKE) -C xsf-docs
 	touch $@
 
