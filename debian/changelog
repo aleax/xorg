@@ -1,3 +1,37 @@
+xorg (1:7.6+10ubuntu1) UNRELEASED; urgency=low
+
+  * Merge from Debian unstable, remaining changes:
+    - Add apport hook
+    - Demote xfonts-{75DPI,100DPI} to Suggests. Demote xfonts-scalable to
+      Recommends.
+    - debian/local/Xsession:
+      Truncate xsession-errors on startup if too big
+    - debian/local/Xsession.d/20x11-common_process-args:
+      Add support for session command containing args.
+    - debian/local/Xsession.d/60x11-common_localhost:
+      Authorise all processes running with the user's credentials to connect
+      to the server.
+    - debian/local/Xsession.d/60x11-common_xdg_path:
+      Add session script to set xdg path depending on the selected session.
+    - debian/rules, debian/control:
+      Add dependencies on x11-common, since pkgbinarymangler moves the docs
+      there to save some space on the image.
+    - debian/scripts/vars.*:
+      + Don't drop wacom from input-all.
+      + Add -vmmouse to input-all for amd64 and i386.
+      + Add -qxl to video-all for amd64 and i386.
+      + Add -geode to video-all for i386.
+      + Drop video drivers that are likely irrelevant for ARM.
+      + Drop apm, ark, chips, i128, i740, rendition, s3virge, tseng, voodoo
+	from xserver-xorg-video-all dependencies. They are unmaintained and
+	obsolete.
+    - debian/xserver-xorg.postinst.in:
+      Also migrate users from psb → vesa.
+    - debian/x11-common.{preinst,postinst,postrm}.in:
+      Clean up the old failsafe-x files.
+
+ -- Timo Aaltonen <tjaalton@ubuntu.com>  Fri, 20 Jan 2012 16:56:59 +0200
+
 xorg (1:7.6+10) unstable; urgency=high
 
   * Fixes for xserver-wrapper:
