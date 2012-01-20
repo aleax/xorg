@@ -117,15 +117,14 @@ if [ -n "$UPGRADE" ]; then
     fi
 fi
 
-if dpkg --compare-versions "$2" lt-nl "1:7.4~5ubuntu1"; then
+if dpkg --compare-versions "$2" lt-nl "1:7.4~3"; then
   # We're upgrading from pre-7.4.  We need to replace i810 with intel, and
-  # via with openchrome, and psb with vesa.
+  # via with openchrome.
   if [ -e "$XORGCONFIG" ]; then
     LC_ALL=C sed -e'
 	/^[[:space:]]*Section[[:space:]]\+"Device"[[:space:]]*$/I,/^[[:space:]]*EndSection[[:space:]]*$/I {
 	/^[[:space:]]*Driver[[:space:]]\+"i810"/I s/i810/intel/I
 	/^[[:space:]]*Driver[[:space:]]\+"via"/I s/via/openchrome/I
-	/^[[:space:]]*Driver[[:space:]]\+"psb"/s/psb/vesa/
 	}
 	' $XORGCONFIG > ${XORGCONFIG}.madwizard-new
     if ! cmp -s $XORGCONFIG ${XORGCONFIG}.madwizard-new; then
