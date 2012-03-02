@@ -1,3 +1,14 @@
+xorg (1:7.6+12) UNRELEASED; urgency=high
+
+  * Fix unsafe manipulation of /tmp/.X11-unix and /tmp/.ICE-unix in the
+    x11-common init script.  A malicious user could trick us into changing
+    ownership/permissions of an arbitrary directory, and elevate their
+    privileges (closes: #661627).  Reference: CVE-2012-1093.  Thanks to
+    "vladz", Tim Morgan and Bernhard R. Link for their help getting this right
+    (any remaining bugs are my own).
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 02 Mar 2012 21:38:07 +0100
+
 xorg (1:7.6+11) unstable; urgency=low
 
   * Team upload.
