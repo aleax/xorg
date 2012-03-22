@@ -186,6 +186,13 @@ the user's
 .I $HOME/.Xresources
 file is merged in the same way.
 .TP
+.I /etc/X11/Xsession.d/35x11\-common_xhost\-local
+Give access to the X server to the same user on the local host.
+If the
+.I xhost
+command is available, it will use it to allow any process of the same 
+user running on the local host to access the X server.
+.TP
 .I /etc/X11/Xsession.d/40x11\-common_xsessionrc
 Source global environment variables.
 This script will source anything in 

@@ -1,3 +1,25 @@
+xorg (1:7.6+12) unstable; urgency=high
+
+  * Fix unsafe manipulation of /tmp/.X11-unix and /tmp/.ICE-unix in the
+    x11-common init script.  A malicious user could trick us into changing
+    ownership/permissions of an arbitrary directory, and elevate their
+    privileges (closes: #661627).  Reference: CVE-2012-1093.  Thanks to
+    "vladz", Tim Morgan and Bernhard R. Link for their help getting this right
+    (any remaining bugs are my own).
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 03 Mar 2012 18:54:30 +0100
+
+xorg (1:7.6+11) unstable; urgency=low
+
+  * Team upload.
+  * debian/local/Xsession.d/35x11-common_xhost-local: add a new script 
+    to the default X session. It will give access to the running X 
+    server to the logged on user. This is useful for gdm3 which does not 
+    give access to $XAUTHORITY outside the session, but can also be of 
+    use for other display managers. Closes: #586685.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 28 Jan 2012 12:42:38 +0100
+
 xorg (1:7.6+10ubuntu1) precise; urgency=low
 
   * Merge from Debian unstable, remaining changes:
@@ -38,6 +60,7 @@ xorg (1:7.6+10) unstable; urgency=high
     - revert change to allow devices with major 5 as consoles.  This includes
       things like /dev/tty and /dev/ptmx, which are world-readable (closes:
       #652249).  Thanks to vladz for the report.
+      Reference: CVE-2011-4613.
     - use major() and minor() macros instead of manually extracting them
   * Build the X wrapper with hardening enabled.
 
