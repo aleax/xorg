@@ -1,5 +1,6 @@
 xorg (1:7.6+13) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Drop debian/scripts/debconf-updatepo, it looks like we're not using it
     anymore.
   * Update debian/copyright to
@@ -11,6 +12,11 @@ xorg (1:7.6+13) UNRELEASED; urgency=low
     Still unclear if the "Copyright Software in the Public Interest, Inc."
     bits make sense, so leave them in for now.
     Closes: #630830.
+
+  [ Cyril Brulebois ]
+  * Drop some videos drivers from the xserver-xorg-video-all meta package
+    on ia64, they were dropped following the domain I/O support code removal
+    in X server 1.12.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 03 Mar 2012 19:16:19 +0100
 
