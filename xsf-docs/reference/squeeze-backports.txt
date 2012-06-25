@@ -48,16 +48,13 @@ cases.
 
 In the usual case, both the `xserver-xorg-input-all` and
 `xserver-xorg-video-all` meta packages were installed, and pulled a
-lot of packages, which should work for most users. In that case, due
-to a bug in `apt`, one has to remove the `wacom` input package before
-proceeding to the upgrade (the `xserver-xorg-input-all` package might
-be scheduled for removal as a consequence, but that doesn’t
-hurt). Then specifying a few packages to upgrade should pull
+lot of packages, which should work for most users.
+Specifying a few packages to upgrade should pull
 everything from `squeeze-backports`.
 
 ----
-apt-get purge xserver-xorg-input-wacom
 apt-get install -t squeeze-backports xorg xserver-xorg xserver-xorg-core xserver-xorg-input-all xserver-xorg-video-all
+apt-get install -t squeeze-backports libgl1-mesa-dri libgl1-mesa-glx
 ----
 
 In case only the needed packages were installed, like the `synaptics`
@@ -65,6 +62,7 @@ input driver and the `intel` video driver, the following should be
 sufficient:
 ----
 apt-get install -t squeeze-backports xorg xserver-xorg xserver-xorg-core xserver-xorg-input-synaptics xserver-xorg-video-intel
+apt-get install -t squeeze-backports libgl1-mesa-dri libgl1-mesa-glx
 ----
 
 It is probably a very good idea to install the Linux kernel from
