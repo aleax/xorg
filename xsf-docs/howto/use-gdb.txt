@@ -56,7 +56,10 @@ Actual gdb work
 Getting a core file
 ~~~~~~~~~~~~~~~~~~~
 
- * Using `gdm3`: The idea is to tweak the daemon’s
+ * Using `gdm3` 3.4.1 and above: uncomment `Enable = true` in the
+   `[debug]` section of the `/etc/gdm3/daemon.conf` file.
+
+ * Using an older `gdm3` package: The idea is to tweak the daemon’s
    `LocalXserverCommand` setting, adding the `-core` option. As of
    `gdm3 2.30`, the defaults can be found in
    `/usr/share/gdm/gdm.schemas`. Sample `/etc/gdm3/daemon.conf`

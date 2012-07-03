@@ -1,3 +1,38 @@
+xorg (1:7.7+1) unstable; urgency=low
+
+  * Merge xsf-docs up to 6b4a944090 commit:
+    - index: Improve wording.
+    - faq/general: Add a reference to how to build mesa.
+    - howto/build-mesa: Update the section about nouveau.
+    - howto/use-gdb: Mention new gdm3 setting (thanks to Joss).
+    - reference/dependencies: Add how to handle transitions.
+    - reference/squeeze-backports: Update for current situation.
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 25 Jun 2012 22:40:14 +0200
+
+xorg (1:7.6+13) unstable; urgency=high
+
+  [ Julien Cristau ]
+  * Drop debian/scripts/debconf-updatepo, it looks like we're not using it
+    anymore.
+  * Update debian/copyright to
+    - add missing copyright statements
+    - add missing license notes
+    - not pretend the Debian and Ubuntu packages have different copyright
+      status; parts of the package are copyright Canonical, others are
+      copyright by various Debian folks.
+    Still unclear if the "Copyright Software in the Public Interest, Inc."
+    bits make sense, so leave them in for now.
+    Closes: #630830.
+
+  [ Cyril Brulebois ]
+  * Drop some videos drivers from the xserver-xorg-video-all meta package
+    on ia64, they were dropped following the domain I/O support code removal
+    in X server 1.12.
+  * Set urgency to “high” for the ongoing xorg transition.
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 11 May 2012 12:24:22 +0200
+
 xorg (1:7.6+12ubuntu1) precise; urgency=low
 
   * Merge from Debian unstable.

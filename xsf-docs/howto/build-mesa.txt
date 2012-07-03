@@ -34,10 +34,6 @@ Before reading further, be aware that `nouveau` is a bit special:
  * It’s considered experimental, and shipped in the
    `libgl1-mesa-dri-experimental` package accordingly.
  * It may fail to build (both API and ABI are still changing).
- * We’re not shipping `nouveau_vieux_dri.so` yet (for cards from NV04
-   to NV2X; `nouveau_dri.so` is for NV30 and later). See the upstream
-   http://nouveau.freedesktop.org/wiki/FeatureMatrix[FeatureMatrix]
-   page to determine a card’s series.
 ****
 
 
@@ -91,8 +87,8 @@ $ sudo apt-get build-dep mesa
 ----
 
 If you’re on `squeeze` you may need to install a few more packages:
-newer `libdrm-dev` (*FIXME:* talk about picking it from `wheezy`? or
-about a local installation?), as well as `libxmu-dev`, `libxi-dev`.
+newer `libdrm-dev` (it is available in `squeeze-backports`),
+as well as `libxmu-dev`, `libxi-dev`.
 
 Make sure you have some disc space available, since the git repository
 is over 120MB, and since the mesa directory is over 500MB after a
